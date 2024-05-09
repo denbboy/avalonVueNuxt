@@ -1,0 +1,74 @@
+.page-left-enter-active,
+.page-right-enter-active,
+.page-left-leave-active,
+.page-right-leave-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease-out;
+}
+
+.page-left-enter-from, .page-right-leave-to {
+    opacity: 0;
+}
+
+.page-left-leave-to, .page-right-enter-from {
+    opacity: 0;
+}
+
+.page-left-enter-to, .page-right-enter-to {
+    opacity: 1;
+}
+
+.blockquote-lines {
+    @apply md:absolute md:left-0 md:before:w-[1px] md:before:h-10 before:h-[1px] before:w-10 before:bg-blue-400 before:mr-3 before:block md:after:h-10 md:after:w-[1px] after:h-[1px] after:w-10 after:bg-blue-400 after:ml-3 md:after:ml-0 md:before:mb-3 md:after:mt-3 md:before:mr-0 after:block flex md:flex-col items-center mb-4;
+}
+
+.block-bottom-point {
+    @apply after:w-full after:h-full after:absolute after:rounded-md after:bg-blue-600 absolute w-4 h-4 bottom-0 right-0 bg-blue-500 box-content border-blue-500 border-[12px] rounded-tl-[10px] border-b-0 border-r-0;
+}
+
+* {
+    @apply font-normalidad
+}
+
+.text-content blockquote,
+.text-content b,
+.text-content p {
+    max-width: 1047px;
+}
+
+
+body {
+    background: #0A4A7F;
+}
+
+.swiper-pagination-bullet {
+    background: #fff !important;
+    opacity: 0.5 !important;
+    width: 6px !important;
+    height: 6px !important;
+    transition: all .5s .1s ease;
+    margin: 0 7px !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: transparent !important;
+    width: 14px !important;
+    height: 14px !important;
+    border: 2px solid #fff !important;
+    opacity: 1 !important;
+    transition: all .1s ease;
+}
+
+.swiper-wrapper {
+    padding-bottom: 40px;
+}
+
+.swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+}
