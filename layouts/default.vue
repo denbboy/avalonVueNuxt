@@ -1,9 +1,11 @@
 <template>
-  <div>
+  <div class="flex flex-col min-h-[200vh] justify-between">
     <Header/>
+
     <slot/>
 
     <Modal/>
+    <Footer/>
   </div>
 </template>
 
@@ -12,6 +14,4 @@
 </style>
 
 <script setup>
-import Header from '../components/Header.vue'
-import Modal from '../components/modals/Modal.vue'
 </script>

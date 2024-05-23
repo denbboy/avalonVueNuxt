@@ -1,5 +1,6 @@
 /* ./assets/css/main.css */
 @import url('./../fonts/grandis/stylesheet.css');
+@import url('./../css/general.css');
 
 @tailwind base;
 @tailwind components;

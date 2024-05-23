@@ -1,5 +1,5 @@
 <template>
-    <a href="discountsSingle.html" class="group relative rounded-2xl overflow-hidden">
+    <a href="discountsSingle.html" class="group block relative rounded-2xl transition-all">
         <div class="block-bottom-point z-20 border-white bg-white after:bg-blue-500"></div>
         <img src="/assets/img/news/cardImage.jpg" alt="Image" class="z-0 relative rounded-2xl">
         <div
@@ -7,10 +7,10 @@
         </div>
         <div class="absolute z-20 w-full h-full top-0 left-0 p-5 flex flex-col">
             <div
-                class="bg-[url('/assets/img/icons/bgd-blue-dor-rd.svg')] px-3 py-2 bg-no-repeat bg-cover bg-right-bottom rounded-l-lg rounded-tr-lg text-xs text-white ml-auto w-fit block md:text-sm md:p-3">
+                class="bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] px-3 py-2 bg-no-repeat bg-cover bg-right-bottom rounded-l-lg rounded-tr-lg text-xs text-white ml-auto w-fit block md:text-sm md:p-3">
                 Действует до <strong>30 марта 2024</strong>
             </div>
-            <strong class="mt-auto text-white mb-2 md:text-lg group-hover:underline">
+            <strong class="mt-auto text-white mb-2 md:text-lg">
                 Курс 36,6 грн/$ <br>на первый взнос
             </strong>
             <div class="flex items-center opacity-60">

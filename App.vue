@@ -13,6 +13,6 @@
 </template>
 
 <style>
-@import "/assets/fonts/grandis/stylesheet.css";
-@import "/assets/css/general.css";
+/* @import "/assets/fonts/grandis/stylesheet.css"; */
+/* @import "/assets/css/general.css"; */
 </style>

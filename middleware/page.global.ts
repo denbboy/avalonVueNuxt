@@ -1,6 +1,6 @@
 export default defineNuxtRouteMiddleware((to, from) => {
-    const getDepth = (path) => {
-        return path.split('/').filter(seg => seg.length > 0).length;
+    const getDepth = (path: any) => {
+        return path.split('/').filter((seg: any) => seg.length > 0).length;
     }
 
     const toDepth = getDepth(to.path);
