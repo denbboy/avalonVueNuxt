@@ -138,11 +138,13 @@
           </a>
         </div>
 
-        <button id="burgerBtn" type="button" class="3xl:hidden block ">
+        <button @click="handleOpenBurger" id="burgerBtn" type="button" class="3xl:hidden block ">
           <img src="/assets/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic">
         </button>
-        <div id="burgerMenu"
-          class="burger__body hidden absolute top-[47px] lg:top-[114px] left-0 bg-blue-500 w-[calc(100%_+_60px)] -ml-[30px] flex-col flex text-center pt-12 pb-8 text-white text-lg border-t-2 border-whiteOp-300 z-10">
+        <div id="burgerMenu" :class="[
+          { hidden: !isOpenBurger, flex: isOpenBurger },
+          'burger__body absolute top-[47px] lg:top-[114px] left-0 bg-blue-500 w-[calc(100%_+_60px)] -ml-[30px] flex-col text-center pt-12 pb-8 text-white text-lg border-t-2 border-whiteOp-300 z-10'
+        ]">
           <div class="burger__proj mb-8 lg:hidden block">
             <p id="toggleProjects"
               class="flex items-center gap-1 justify-center hover:text-blue-400 transition-all cursor-pointer">
@@ -237,13 +239,19 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-const { header } = defineProps(['header'])
+import { ref, defineProps, onMounted } from 'vue';
 
+const props = defineProps(['header'])
+
+const isOpenBurger = ref(false);
 const isScrolled = ref(false);
-const isOpen = ref(false)
+const isOpen = ref(false);
+
+const handleOpenBurger = () => {
+  isOpenBurger.value = !isOpenBurger.value;
+}
 
 const handleOpen = () => {
-  isOpen.value = !isOpen.value
+  isOpen.value = !isOpen.value;
 }
 </script>
