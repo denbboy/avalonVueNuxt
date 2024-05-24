@@ -1,8 +1,10 @@
 <template>
 
-    <NuxtLayout>
-      <NuxtPage/>
-    </NuxtLayout>
+  <NuxtLayout>
+    <transition name="fade">
+      <NuxtPage />
+    </transition>
+  </NuxtLayout>
 
 </template>
 
@@ -10,6 +12,13 @@
 </script>
 
 <style>
-/* @import "/assets/fonts/grandis/stylesheet.css"; */
-/* @import "/assets/css/general.css"; */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
 </style>

@@ -21,9 +21,15 @@ export default defineNuxtConfig({
     loading: {
         color: '#0f0',
     },
-    app: {
-        // pageTransition: { name: 'page', mode: 'out-in' }
+    experimental: {
+        viewTransition: true
     },
+    // app: {
+    //     pageTransition: {
+    //         name: 'page',
+    //         mode: 'out-in',
+    //     },
+    // },
     devtools: { enabled: true },
     postcss: {
         plugins: {
