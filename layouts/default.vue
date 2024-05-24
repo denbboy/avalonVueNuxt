@@ -1,17 +1,15 @@
 <template>
-  <div class="flex flex-col min-h-[200vh] justify-between">
+  <div class="flex flex-col min-h-[100vh] justify-between">
     <Header/>
-
     <slot/>
-
-    <Modal/>
+    <ModalsModal/>
     <Footer/>
   </div>
 </template>
 
-<style scoped>
-/*.router-link-exact-active {}*/
-</style>
-
 <script setup>
 </script>
+
+<style scoped>
+/* .flex */
+</style>

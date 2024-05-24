@@ -1,5 +1,7 @@
+
+
 <template>
-    <footer class="mt-a bg-blue-600 pt-14 md:pt-24 mt-auto">
+    <footer id="contacts" class="mt-a bg-blue-600 pt-14 md:pt-24 mt-auto">
         <div class="container">
 
             <div class="md:flex md:items-center gap-5 justify-between md:mb-24">
@@ -80,8 +82,11 @@
                     <div class="flex flex-col gap-3 lg:gap-0">
                         <input type="text" placeholder="Имя"
                             class="bg-white/10 lg:mb-[10px] rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-6 md:text-base w-full">
-                        <input id="phone" type="tel"
-                            class="bg-white/10 rounded-xl text-white text-sm py-4 leading-[90%] px-5 md:pl-[70px] outline-none md:p-6 md:text-base w-full">
+                        <!-- <input id="phone" type="tel" class="bg-white/10 rounded-xl text-white text-sm py-4 leading-[90%] px-5 md:pl-[70px] outline-none md:p-6 md:text-base w-full"> -->
+                        <div class="phone-vti">
+                            <VueTelInput v-model="phone" />
+                        </div>
+
                         <button type="submit" class="white-button w-full leading-[110%] lg:mt-8 lg:py-6">
                             Отправить заявку
                         </button>
@@ -131,3 +136,22 @@
         </div>
     </footer>
 </template>
+
+<script>
+  import { ref } from 'vue';
+  import { VueTelInput } from 'vue-tel-input';
+  import 'vue-tel-input/vue-tel-input.css';
+
+  export default {
+    components: {
+      VueTelInput,
+    },
+    setup() {
+      const phone = ref(null);
+
+      return {
+        phone,
+      };
+    },
+  };
+</script>

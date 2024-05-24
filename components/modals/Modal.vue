@@ -1,14 +1,77 @@
 <template>
   <Transition>
-    <div v-if="modals[0]" class="modal fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center">
-      <div class="modal__bgd bg-black/70 absolute w-full h-full z-10" @click="closeModal">
+    <div v-if="modals[0]"
+      class="transition-all modal fixed top-0 left-0 w-full h-full z-50 flex justify-center items-center modal-special modal">
+      <div class="modal__bgd absolute top-0 left-0 bg-[#031523]/90 w-full h-full z-0" @click="closeModal">
 
       </div>
-      <div class="modal__content absolute z-20 bg-white p-4 rounded-xl">
-        <div class="modal__close absolute -top-5 -right-3 text-white cursor-pointer" @click="closeModal">
-          x
+      <div
+        class="modal__content relative z-10 bg-blue-500 lg:rounded-[20px] h-full lg:h-auto flex items-center justify-center flex-col">
+        <div class="modal__cross modal__close absolute top-2 right-2 lg:-top-10 z-[1] lg:-right-10 cursor-pointer"
+          @click="closeModal">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect class="hidden lg:block" opacity="0.2" x="0.5" y="0.5" width="29" height="29" rx="9.5"
+              stroke="white" />
+            <g class="opacity-100 lg:opacity-50">
+              <rect x="8.05469" y="7" width="20.9207" height="1.49433" transform="rotate(45 8.05469 7)" fill="white" />
+              <rect x="7" y="21.9434" width="20.9207" height="1.49433" transform="rotate(-45 7 21.9434)" fill="white" />
+            </g>
+          </svg>
         </div>
-        {{ modals[0] }}
+
+        <img src="/assets/img/modals/modal-banner-2.jpg" class="mt-10 lg:-mt-10 w-full lg:rounded-t-[20px] max-w-none "
+          alt="ph">
+
+        <div
+          class="content__inner z-0 relative overflow-hidden p-5 lg:p-10 max-w-[600px] flex flex-col items-center justify-center h-full">
+
+          <div class="absolute right-[-34px] -top-5 lg:top-5 z-0">
+            <img src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo">
+          </div>
+          <div class="absolute left-[-34px] bottom-0 lg:bottom-[154px] z-0">
+            <img src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo">
+          </div>
+
+          <h2 class="text-white text-lg md:text-2xl font-bold text-center mb-5 ">
+            Оставьте контакт, чтобы получить презентацию по нашим проектам
+          </h2>
+
+          <form action="" class="flex w-full flex-col text-center">
+
+            <div class="flex flex-col">
+              <label for="phone-modals" class="flex text-white text-xs mb-[10px] md:text-base">
+                Телефон для связи в мессенджерах*
+              </label>
+
+              <div class="phone-vti">
+                <VueTelInput v-model="phone" />
+              </div>
+
+              <label for="some" class="flex flex-col text-start mb-[10px] mt-5">
+                <span class="text-white text-xs md:text-base">
+                  Альтерентивный способ связи*
+                </span>
+                <span class="text-white/50 text-xs">
+                  Это может быть ещё 1 номер телефона, email, имя пользователя Telegram и т.д
+                </span>
+              </label>
+              <input type="text" id="some"
+                class="bg-whiteOp-200 rounded-xl text-white text-sm px-5 py-4 outline-none lg:p-6 lg:text-base w-full"
+                placeholder="Альтерентивный способ связи*">
+              <button type="submit" class="white-button w-full mt-5 lg:leading-[120%] lg:py-5 leading-[90%]">
+                Получить предложение
+              </button>
+
+              <p class="text-center text-white text-xs lg:text-sm w-full mt-5">Вы также можете <a href="#"
+                  class="text-blue-400 font-bold underline transition-all hover:text-blue-700">связаться с нами в
+                  WhatsApp</a> прямо сейчас, отправив нам любой символ или эмодзи</p>
+
+            </div>
+          </form>
+
+        </div>
+
+        <!-- {{ modals[0] }} -->
       </div>
     </div>
   </Transition>
@@ -27,18 +90,27 @@
 </style>
 
 <script setup>
-import {useModalsStore} from "./../../stores/modals.js";
-import {ref, watch} from 'vue';
+import { ref, watch } from 'vue';
+import { storeToRefs } from 'pinia';
+import { useModalsStore } from './../../stores/modals.js';
+import { VueTelInput } from 'vue-tel-input';
+import 'vue-tel-input/vue-tel-input.css';
 
+// Modal Store
+const modalsStore = useModalsStore();
+const { modals } = storeToRefs(modalsStore);
 const showModal = ref(false);
-const modalStore = useModalsStore();
-const {modals} = storeToRefs(modalStore)
 
-const closeModal = () => {
-  modalStore.removeModal("test");
-}
+// Phone Input
+const phone = ref(null);
 
-watch(() => modalStore[0], () => {
-  showModal.value = !!modalStore[0];
+// Watcher for modals
+watch(modals, (newModals) => {
+  showModal.value = newModals.length > 0 && newModals[0] === 'test';
 });
+
+// Close Modal Function
+const closeModal = () => {
+  modalsStore.removeModal('test');
+};
 </script>

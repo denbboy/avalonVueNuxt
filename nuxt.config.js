@@ -15,22 +15,25 @@ export default defineNuxtConfig({
             content: 'ie=edge',
         }],
         link: [
-            {rel: 'stylesheet', href: '/assets/fonts/grandis/stylesheet.css'}
+            { rel: 'stylesheet', href: '/assets/fonts/grandis/stylesheet.css' }
         ],
     },
     loading: {
         color: '#0f0',
     },
     app: {
-        pageTransition: {name: 'page', mode: 'out-in'}
+        // pageTransition: { name: 'page', mode: 'out-in' }
     },
-    devtools: {enabled: true},
+    devtools: { enabled: true },
     postcss: {
         plugins: {
             tailwindcss: {},
             autoprefixer: {},
         },
     },
+    plugins: [
+        { src: '~/plugins/vue-tel-input.js', ssr: false }
+    ],
     css: ['~/assets/css/main.css'],
     modules: ['@nuxtjs/tailwindcss', "@pinia/nuxt", 'nuxt-aos'],
     swiper: {

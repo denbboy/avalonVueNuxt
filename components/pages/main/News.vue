@@ -8,9 +8,9 @@
           </h2>
 
           <div class="w-fit hidden md:flex">
-            <a href="news.html" class="mr-12 text-blue-600 font-bold underline hover:no-underline">
+            <NuxtLink href="/news" class="mr-12 text-blue-600 font-bold underline hover:no-underline">
               Все новости
-            </a>
+            </NuxtLink>
             <button type="button" class="opacity-20 hover:opacity-100 transition-all news-button-prev mr-9">
               <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -31,7 +31,7 @@
         <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
           :breakpoints="breakpoints" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
           <swiper-slide>
-            <a href="newsSingle.html" class="w-full h-full block group">
+            <NuxtLink href="/news/123" class="w-full h-full block group">
               <div class="relative mb-5 w-full">
                 <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
                 <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
@@ -43,10 +43,10 @@
               <p class="text-base md:text-lg group-hover:text-blue-400 text-blue-600 font-bold">
                 СТАРТ ПРОДАЖ клубного дома <br>на 7 видовых квартир
               </p>
-            </a>
+            </NuxtLink>
           </swiper-slide>
           <swiper-slide>
-            <a href="newsSingle.html" class="w-full h-full block group">
+            <NuxtLink href="/news/123" class="w-full h-full block group">
               <div class="relative mb-5 w-full">
                 <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
                 <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
@@ -58,10 +58,10 @@
               <p class="text-base md:text-lg group-hover:text-blue-400 text-blue-600 font-bold">
                 СТАРТ ПРОДАЖ клубного дома <br>на 7 видовых квартир
               </p>
-            </a>
+            </NuxtLink>
           </swiper-slide>
           <swiper-slide>
-            <a href="newsSingle.html" class="w-full h-full block group">
+            <NuxtLink href="/news/123" class="w-full h-full block group">
               <div class="relative mb-5 w-full">
                 <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
                 <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
@@ -73,10 +73,10 @@
               <p class="text-base md:text-lg group-hover:text-blue-400 text-blue-600 font-bold">
                 СТАРТ ПРОДАЖ клубного дома <br>на 7 видовых квартир
               </p>
-            </a>
+            </NuxtLink>
           </swiper-slide>
           <swiper-slide>
-            <a href="newsSingle.html" class="w-full h-full block group">
+            <NuxtLink href="/news/123" class="w-full h-full block group">
               <div class="relative mb-5 w-full">
                 <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
                 <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
@@ -88,7 +88,7 @@
               <p class="text-base md:text-lg group-hover:text-blue-400 text-blue-600 font-bold">
                 СТАРТ ПРОДАЖ клубного дома <br>на 7 видовых квартир
               </p>
-            </a>
+            </NuxtLink>
           </swiper-slide>
           <div class="swiper-pagination"></div>
         </swiper>

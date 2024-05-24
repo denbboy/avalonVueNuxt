@@ -1,16 +1,13 @@
 <template>
-  <transition
-      name="fade"
-      @after-leave="maybeNavigate"
-  >
 
     <NuxtLayout>
       <NuxtPage/>
     </NuxtLayout>
 
-
-  </transition>
 </template>
+
+<script setup>
+</script>
 
 <style>
 /* @import "/assets/fonts/grandis/stylesheet.css"; */

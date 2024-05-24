@@ -47,9 +47,9 @@
                   для жизни <br class="md:hidden"> и инвестиций
                 </span>
               </h2>
-              <a href="#" class="white-button mt-7 lg:mt-12">
+              <button @click="addModal" class="white-button mt-7 lg:mt-12">
                 Скачать презентацию
-              </a>
+              </button>
             </div>
 
             <div class="hidden md:block mr-52">
@@ -209,6 +209,14 @@
 
   </section>
 </template>
+
+<script setup>
+const modalsStore = useModalsStore()
+
+const addModal = () => {
+  modalsStore.addModal('test')
+}
+</script>
 
 <script>
 // import Swiper core and required modules

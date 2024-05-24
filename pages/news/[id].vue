@@ -57,5 +57,5 @@
 </template>
 
 <script setup>
-const {newsId} = useRoute().params
+const {id} = useRoute().params
 </script>

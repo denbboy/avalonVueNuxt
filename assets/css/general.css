@@ -1,63 +1,42 @@
-.page-left-enter-active,
-.page-right-enter-active,
-.page-left-leave-active,
-.page-right-leave-active {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    transition: all 0.3s ease-out;
-}
-
-.page-left-enter-from, .page-right-leave-to {
-    opacity: 0;
-}
-
-.page-left-leave-to, .page-right-enter-from {
-    opacity: 0;
-}
-
-.page-left-enter-to, .page-right-enter-to {
-    opacity: 1;
-}
-
 @layer components {
     .blockquote-lines {
         @apply md:absolute md:left-0 md:before:w-[1px] md:before:h-10 before:h-[1px] before:w-10 before:bg-blue-400 before:mr-3 before:block md:after:h-10 md:after:w-[1px] after:h-[1px] after:w-10 after:bg-blue-400 after:ml-3 md:after:ml-0 md:before:mb-3 md:after:mt-3 md:before:mr-0 after:block flex md:flex-col items-center mb-4;
     }
+
     .block-bottom-point {
         @apply after:w-full after:h-full after:absolute after:rounded-md after:bg-blue-600 absolute w-4 h-4 bottom-0 right-0 bg-blue-500 box-content border-blue-500 border-[12px] rounded-tl-[10px] border-b-0 border-r-0;
     }
+
     .career-select {
         @apply border-t border-t-blue-700 last:border-b last:border-b-blue-700
     }
+
     .career-select-body {
         @apply invisible pb-12 opacity-0 hidden group-[.active]:block group-[.active]:visible group-[.active]:opacity-100 group-[.active]:mt-7 transition-all [&_*]:text-white [&_*]:text-sm md:[&_*]:text-lg [&_*]:py-1 mt-8 [&_li]:before:w-[6px] md:[&_li]:before:w-[8px] [&_li]:before:h-[6px] md:[&_li]:before:h-[8px] [&_li]:before:min-w-[6px] md:[&_li]:before:min-w-[8px] [&_li]:before:mr-2 [&_li]:before:rounded-full [&_li]:before:bg-white [&_li]:before:block [&_li]:flex [&_li]:items-center
     }
+
     .white-button {
         @apply w-fit px-5 md:px-8 py-4 lg:py-5 block text-sm md:text-base bg-white rounded-xl text-center font-bold whitespace-nowrap text-blue-500 hover:text-white hover:bg-blue-400 transition-all md:m-0
     }
+
     .white-border-button {
         @apply text-white font-bold hover:bg-white hover:text-blue-400 transition-all rounded-[10px] border-white border-[1px] text-sm md:text-base cursor-pointer px-7 py-4 md:py-5 mx-auto block mt-12
     }
+
     .blue-border-button {
         @apply text-blue-600 py-4 px-8 text-sm font-bold border border-blue-600 rounded-[10px] block w-fit
     }
+
     .custom-input {
         @apply bg-white/10 px-5 py-4 lg:py-6 w-full text-sm text-white leading-[120%] lg:leading-[90%] rounded-[10px] outline-none placeholder:text-white/60 block
     }
-}
-
-.text-content blockquote,
-.text-content b,
-.text-content p {
-    max-width: 1047px;
 }
 
 @media screen and (min-width: 768px) {
     .swiper-banner .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet-active {
         position: relative;
     }
+
     .swiper-banner .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet-active::after {
         content: "";
         position: absolute;
@@ -68,6 +47,7 @@
         width: 1px;
         height: 35px;
     }
+
     .swiper-banner .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
         position: absolute;
         transform: rotate(90deg);
@@ -80,9 +60,10 @@
 
 * {
     font-family: 'Grandis Extended';
+    scroll-behavior: smooth;
 }
 
-body{
+body {
     background: #0A4A7F;
 }
 
@@ -125,83 +106,42 @@ body{
     width: 50%;
 }
 
-
-/* // intelInput */
-
-.iti {
-    width: 100%;
-}
-
-.iti__selected-flag {
-    margin-left: 20px;
-    padding-right: 20px;
-}
-
-.iti__country-list {
-    width: 100%;
-    max-width: 425px;
-    background-color: #002D52 !important;
-    border-radius: 10px;
-    position: static !important;
-    margin-top: 10px !important;
-
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #fff;
-    top: 80px;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
-}
-
-.iti--allow-dropdown input, .iti--allow-dropdown input[type=text], .iti--allow-dropdown input[type=tel], .iti--separate-dial-code input, .iti--separate-dial-code input[type=text], .iti--separate-dial-code input[type=tel] {
-    padding-left: 70px !important;
-}
-
-.iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
-    background: transparent !important;
-}
-
-.iti__arrow {
-    border-top: 4px solid rgba(255, 255, 255, 0.6) !important;
-}
-
-.iti__arrow--up {
-    border-top: 3px solid transparent !important;
-    border-bottom: 4px solid rgba(255, 255, 255, 0.6) !important;
-}
-
-
 /* // radio btn ABOUT page  */
 
-input[type="radio"]:checked ~ label {
+input[type="radio"]:checked~label {
     font-weight: 700;
     color: #fff;
     border-bottom: 1px solid #fff;
 }
 
 
+/* MODALS */
 
 .modal {
     .air-datepicker.-inline- {
         background: transparent;
     }
+
     .air-datepicker-body--cells {
         --adp-day-cell-height: 44px;
         --adp-day-cell-width: 44px;
         gap: 5px;
         --adp-color: #fff;
     }
+
     .air-datepicker-cell.-day-.-disabled- {
         opacity: 0.5;
     }
+
     .air-datepicker-nav--action svg {
         width: 10px;
     }
+
     .air-datepicker-nav--action svg path {
         stroke: none;
         fill: #fff
     }
+
     .air-datepicker-nav--action {
         --adp-nav-arrow-color: #fff;
         width: 38px;
@@ -209,25 +149,32 @@ input[type="radio"]:checked ~ label {
         display: flex;
         align-items: center;
         justify-content: center;
+
         path {
             width: 8px;
         }
     }
+
     .air-datepicker-nav--title {
         font-size: 16px;
     }
+
     .air-datepicker-nav {
         max-width: 256px;
         margin: 0 auto;
     }
+
     .air-datepicker-nav--action:hover {
         background: transparent;
     }
+
     .air-datepicker-cell {
         color: #fff;
     }
+
     .air-datepicker-cell.-day-.-current- {
         position: relative;
+
         &:after {
             content: '';
             width: 4px;
@@ -241,29 +188,36 @@ input[type="radio"]:checked ~ label {
             background: #fff;
         }
     }
+
     .air-datepicker-body--day-name {
         color: #fff;
     }
+
     .air-datepicker-cell.-day-.-other-month- {
         opacity: 0;
         visibility: hidden;
     }
+
     .air-datepicker.-inline-,
     .air-datepicker-nav {
         border: none;
     }
+
     .air-datepicker-nav--title,
     .air-datepicker-nav--title i {
         color: #fff;
     }
+
     .air-datepicker-nav--action.-disabled- {
         visibility: visible;
         pointer-events: none;
         opacity: 0.2;
     }
+
     .air-datepicker-nav--title:hover {
         background: transparent;
     }
+
     .air-datepicker-nav--action:hover,
     .air-datepicker-cell.-day-.-focus-.-current-,
     .air-datepicker-cell.-day-.-focus-,
@@ -283,16 +237,49 @@ input[type="radio"]:checked ~ label {
     }
 }
 
-/* // scrollbar */
+/* MODALS */
 
-.about-scroll {
-    &::-webkit-scrollbar {
-        width: 2px;
-        height: 3px;
-        background: rgba(#355B7B, .1);
-    }
-    &::-webkit-scrollbar-thumb {
-        background: #6A89A4;
-    }
+/* SCROLLBAR */
+
+.about-scroll::-webkit-scrollbar {
+    width: 2px;
+    height: 3px;
+    background: rgba(#355B7B, .1);
 }
 
+.about-scroll::-webkit-scrollbar-thumb {
+    background: #6A89A4;
+}
+
+/* SCROLLBAR */
+
+/* INTEL INPUT */
+
+.phone-vti input::placeholder {
+    color: #fff;
+    opacity: 0.5;
+}
+
+.phone-vti .vue-tel-input {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    border-radius: 0.75rem;
+    height: 72px;
+    border: none;
+    box-shadow: none !important;
+}
+
+.phone-vti .vti__dropdown {
+    background: transparent !important;
+}
+
+.vti__dropdown-list.below {
+    margin-top: 20px;
+}
+
+.phone-vti input {
+    background: transparent;
+    color: #fff;
+}
+
+/* INTEL INPUT */

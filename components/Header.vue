@@ -10,7 +10,7 @@
 
 
         <div class="items-center gap-10 hidden lg:flex">
-          <div class="relative ">
+          <div class="relative group">
             <button type="button" class="projectsButton flex items-center gap-1 text-white text-sm
 							before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 							after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
@@ -19,33 +19,33 @@
               <img src="/assets/img/index/small-arrow-white.svg" alt="ic">
             </button>
             <div
-              class="projectsMenu flex flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-0 border border-whiteOp-300 hidden">
-              <a href="#" class="text-white text-sm mb-4 whitespace-nowrap relative
+              class="projectsMenu opacity-0 invisible group-hover:opacity-100 group-hover:visible flex transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-0 border border-whiteOp-300">
+              <NuxtLink href="/projects/123" class="text-white text-sm mb-4 whitespace-nowrap relative
 								before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 								after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 							">
                 BUDDHA | Club House
-              </a>
-              <a href="#" class="text-white text-sm mb-4 relative
+              </NuxtLink>
+              <NuxtLink href="/projects/123" class="text-white text-sm mb-4 relative
 								before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 								after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 							">
                 OM | Club House
-              </a>
-              <a href="#" class="text-white text-sm relative
+              </NuxtLink>
+              <NuxtLink href="/projects/123" class="text-white text-sm relative
 								before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 								after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 							">
                 JUST Club House
-              </a>
+              </NuxtLink>
             </div>
           </div>
-          <a href="#" class="text-white text-sm relative transition-all
+          <NuxtLink href="/about" class="text-white text-sm relative transition-all
 						before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 						after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 					">
             Про компанию
-          </a>
+          </NuxtLink>
           <a href="#" class="text-white text-sm relative
 						before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 						after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
@@ -58,13 +58,13 @@
 					">
             Сотрудничество
           </NuxtLink>
-          <a href="#" class="text-white text-sm relative
+          <NuxtLink href="/career" class="text-white text-sm relative
 						before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 						after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 					">
             Карьера
-          </a>
-          <a href="#" class="text-white text-sm relative
+          </NuxtLink>
+          <a href="#contacts" class="text-white text-sm relative
 						before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 						after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 					">
@@ -86,13 +86,13 @@
 
           +62 (812) 4650-27-83
         </a>
-        <div class="hidden xl:flex xl:flex-col relative">
+        <div class="hidden group xl:flex xl:flex-col relative">
           <button class="projectsButton flex items-center gap-1 text-white text-sm">
             EN
             <img src="/assets/img/index/small-arrow-white.svg" alt="ic">
           </button>
           <div
-            class="projectsMenu flex flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-[50%] translate-x-[-50%] border border-whiteOp-300 hidden">
+            class="projectsMenu flex opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-[50%] translate-x-[-50%] border border-whiteOp-300">
             <a href="#" class="text-white text-sm mb-4 hover:text-blue-400 transition-all">
               UA
             </a>
@@ -242,18 +242,6 @@ const { header } = defineProps(['header'])
 
 const isScrolled = ref(false);
 const isOpen = ref(false)
-
-// onMounted(() => {
-//   window.addEventListener('scroll', handleScroll);
-// });
-
-// const handleScroll = () => {
-//   if (window.scrollY > 50) {
-//     isScrolled.value = true;
-//   } else {
-//     isScrolled.value = false;
-//   }
-// };
 
 const handleOpen = () => {
   isOpen.value = !isOpen.value

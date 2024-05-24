@@ -1,0 +1,266 @@
+<template>
+    <section class="bg-blue-500 pt-32 md:pt-64 relative overflow-hidden">
+        <div class="bg-[url('./../img/news/bgd-single.jpg')] absolute top-0 left-0 w-full h-screen z-0 opacity-70">
+            <div class="bg-gradient-to-t from-blue-500 absolute top-0 left-0 w-full h-full"></div>
+        </div>
+        <div class="absolute -right-36 bottom-36 w-72 h-72 z-10">
+            <img src="/assets/img/icons/vector-logo.svg" alt="vector-logo">
+        </div>
+        <div class="container relative z-10">
+
+            <div class="pb-14">
+
+                <div class="flex before:rounded-sm items-center">
+                    <span
+                        class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-sm text-white">
+                        Действует до 30 марта 2024
+                    </span>
+                </div>
+                <h1
+                    class="btn-primary mb-14 text-white text-[30px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[876px] md:text-[65px]">
+                    Живите лучше на Подоле в клубном доме OLEGIV Podil
+                </h1>
+
+                <div class="md:flex justify-between w-full">
+
+                    <div class="max-w-[900px] block w-full">
+
+                        <b class="text-white text-base md:text-xl mb-2 block">
+                            Квартиры в эко-городе LUCKY LAND от строительной компании DIM теперь можно приобрести по
+                            государственным
+                            программам доступного кредитования жилья «еОселя» и компенсации за разрушенное или
+                            поврежденное
+                            жилье
+                            «еВосстановление».
+                        </b>
+                        <p class="text-white text-base md:text-xl my-2 md:my-12">
+                            Дополнительные опции приобретения жилья в LUCKY LAND открылись благодаря тому, что дом №3
+                            эко-города
+                            недавно получил официальный адрес.
+                        </p>
+                        <blockquote class="text-white text-base md:text-xl mt-7 md:pl-9 relative">
+                            <div class="blockquote-lines">
+                                <img src="/assets/img/icons/quotes.svg" alt="Quotes">
+                            </div>
+                            «Сегодня мы получаем все больше запросов на покупку недвижимости по государственным
+                            программам.
+                            Поэтому
+                            как только наши проекты получают все необходимые разрешительные документы, мы присоединяемся
+                            к
+                            таким
+                            программам. Для нас важно реализовать все возможности, которые сделают для украинцев покупку
+                            жилья более
+                            комфортной», — комментирует управляющий партнер группы компаний DIM Александр Насиковский.
+                        </blockquote>
+                        <p class="text-white text-base md:text-xl my-2 md:my-12">
+                            Программа «еОселя» – это государственная инициатива для поддержки населения, желающего
+                            приобрести
+                            собственное жилье. Она дает желающим возможность получить ипотеку от государства с
+                            фиксированной
+                            ставкой
+                            от 3 до 7% сроком до 20 лет.
+                        </p>
+                        <p class="text-white text-base md:text-xl my-2 md:my-12">
+                            Программа «еВосстановление» — государственная программа помощи владельцам разрушенного или
+                            поврежденного
+                            в результате войны жилья, позволяющая получить компенсацию в зависимости от уровня ущерба.
+                        </p>
+                        <p class="text-white text-base md:text-xl mt-8">
+                            Узнать больше об условиях приобретения квартиры в LUCKY LAND по одной из программ можно в
+                            отделе
+                            продаж
+                            по ул. Берковецкой, 4Д.
+                        </p>
+
+                    </div>
+
+                    <div class="max-w-[508px] mt-14 md:mt-0">
+                        <p class="text-base md:text-xl text-white opacity-40 mb-4 md:mb-7">Проекты участвующие в акции
+                        </p>
+
+                        <div
+                            class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
+                            <img src="/assets/img/discounts/image.jpg" class="opacity-50" alt="">
+                            <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
+
+                            <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
+                                <div class="block-bottom-point"></div>
+
+                                <div class="flex justify-between mb-auto">
+                                    <img class="w-[90px]" src="/assets/img/icons/icon-club.svg" alt="">
+                                    <span
+                                        class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-sm text-white">
+                                        80% Продано
+                                    </span>
+                                </div>
+                                <div class="max-w-96">
+                                    <h2 class="text-white font-bold text-2xl md:text-3xl mb-5 md:mb-7">
+                                        OM | Club House
+                                    </h2>
+                                    <p class="text-white text-xs md:text-sm mb-5 md:mb-7">
+                                        Премиум апартаменты в современном клубном доме. Погрузитесь в уникальную
+                                        атмосферу
+                                        роскоши и
+                                        уюта в центре Чангу.
+                                    </p>
+                                    <div class="flex items-center mb-5 md:mb-7">
+                                        <strong class="text-xl md:text-2xl text-white mr-[6px]">от $120 000</strong>
+                                        <span class="text-white/60 text-[12px] hidden md:block">*включая налоги</span>
+                                    </div>
+
+                                    <div class="flex">
+                                        <button
+                                            class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
+                                            Подробнее
+                                        </button>
+                                        <div class="flex items-center">
+                                            <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
+                                            <span class="ml-1 text-sm text-white">Чангу</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-blue-600 pt-14 pb-24 border-b border-b-white/20">
+        <div class="container">
+            <div class="">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-white font-bold text-[30px]">
+                        Другие акции
+                    </h2>
+
+                    <div class="w-fit opacity-20 hidden md:flex">
+                        <button type="button" class="button-prev mr-9">
+                            <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.95971 10.8841L13.5787 2.26518L12 0.686525L0.686291 12.0002L12 23.3139L13.5787 21.7353L4.96009 13.1167L21.6296 13.1167L21.6297 10.8841L4.95971 10.8841Z"
+                                    fill="white" style="fill:white;fill-opacity:1;" />
+                            </svg>
+                        </button>
+                        <button type="button" class="button-next">
+                            <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M17.0403 10.8841L8.42134 2.26518L10 0.686525L21.3137 12.0002L10 23.3139L8.42133 21.7353L17.0399 13.1167L0.370369 13.1167L0.370346 10.8841L17.0403 10.8841Z"
+                                    fill="white" style="fill:white;fill-opacity:1;" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="swiper else-news">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="discountsSingle.html" class="group relative rounded-2xl overflow-hidden">
+                                <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
+                                </div>
+                                <img src="/assets/img/news/cardImage.jpg" alt="Image" class="z-0 relative rounded-2xl">
+                                <div
+                                    class="bg-gradient-to-t from-blue-600/80 rounded-2xl transition-all group-hover:from-blue-400 from-20% absolute top-0 left-0 w-full h-full z-10 opacity-90">
+                                </div>
+                                <div class="absolute z-20 w-full h-full top-0 left-0 p-5 flex flex-col">
+                                    <div
+                                        class="bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] px-3 py-2 bg-no-repeat bg-cover bg-right-bottom rounded-l-lg rounded-tr-lg text-xs text-white ml-auto w-fit block md:text-sm md:p-3">
+                                        Действует до <strong>30 марта 2024</strong>
+                                    </div>
+                                    <strong class="mt-auto text-white mb-2 md:text-lg group-hover:underline">
+                                        Курс 36,6 грн/$ <br>на первый взнос
+                                    </strong>
+                                    <div class="flex items-center opacity-60">
+                                        <img class="w-2 md:w-3" src="/assets/img/icons/point-white.svg" alt="">
+                                        <span class="text-white ml-1 text-xs md:text-sm">Bukit</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="discountsSingle.html" class="group relative rounded-2xl overflow-hidden">
+                                <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
+                                </div>
+                                <img src="/assets/img/news/cardImage.jpg" alt="Image" class="z-0 relative rounded-2xl">
+                                <div
+                                    class="bg-gradient-to-t from-blue-600 rounded-2xl transition-all group-hover:from-blue-400 from-20% absolute top-0 left-0 w-full h-full z-10 opacity-90">
+                                </div>
+                                <div class="absolute z-20 w-full h-full top-0 left-0 p-5 flex flex-col">
+                                    <div
+                                        class="bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] px-3 py-2 bg-no-repeat bg-cover bg-right-bottom rounded-l-lg rounded-tr-lg text-xs text-white ml-auto w-fit block md:text-sm md:p-3">
+                                        Действует до <strong>30 марта 2024</strong>
+                                    </div>
+                                    <strong class="mt-auto text-white mb-2 md:text-lg group-hover:underline">
+                                        Курс 36,6 грн/$ <br>на первый взнос
+                                    </strong>
+                                    <div class="flex items-center opacity-60">
+                                        <img class="w-2 md:w-3" src="/assets/img/icons/point-white.svg" alt="">
+                                        <span class="text-white ml-1 text-xs md:text-sm">Bukit</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="discountsSingle.html" class="group relative rounded-2xl overflow-hidden">
+                                <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
+                                </div>
+                                <img src="/assets/img/news/cardImage.jpg" alt="Image" class="z-0 relative rounded-2xl">
+                                <div
+                                    class="bg-gradient-to-t from-blue-600 rounded-2xl transition-all group-hover:from-blue-400 from-20% absolute top-0 left-0 w-full h-full z-10 opacity-90">
+                                </div>
+                                <div class="absolute z-20 w-full h-full top-0 left-0 p-5 flex flex-col">
+                                    <div
+                                        class="bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] px-3 py-2 bg-no-repeat bg-cover bg-right-bottom rounded-l-lg rounded-tr-lg text-xs text-white ml-auto w-fit block md:text-sm md:p-3">
+                                        Действует до <strong>30 марта 2024</strong>
+                                    </div>
+                                    <strong class="mt-auto text-white mb-2 md:text-lg group-hover:underline">
+                                        Курс 36,6 грн/$ <br>на первый взнос
+                                    </strong>
+                                    <div class="flex items-center opacity-60">
+                                        <img class="w-2 md:w-3" src="/assets/img/icons/point-white.svg" alt="">
+                                        <span class="text-white ml-1 text-xs md:text-sm">Bukit</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="discountsSingle.html" class="group relative rounded-2xl overflow-hidden">
+                                <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
+                                </div>
+                                <img src="/assets/img/news/cardImage.jpg" alt="Image" class="z-0 relative rounded-2xl">
+                                <div
+                                    class="bg-gradient-to-t from-blue-600 rounded-2xl transition-all group-hover:from-blue-400 from-20% absolute top-0 left-0 w-full h-full z-10 opacity-90">
+                                </div>
+                                <div class="absolute z-20 w-full h-full top-0 left-0 p-5 flex flex-col">
+                                    <div
+                                        class="bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] px-3 py-2 bg-no-repeat bg-cover bg-right-bottom rounded-l-lg rounded-tr-lg text-xs text-white ml-auto w-fit block md:text-sm md:p-3">
+                                        Действует до <strong>30 марта 2024</strong>
+                                    </div>
+                                    <strong class="mt-auto text-white mb-2 md:text-lg group-hover:underline">
+                                        Курс 36,6 грн/$ <br>на первый взнос
+                                    </strong>
+                                    <div class="flex items-center opacity-60">
+                                        <img class="w-2 md:w-3" src="/assets/img/icons/point-white.svg" alt="">
+                                        <span class="text-white ml-1 text-xs md:text-sm">Bukit</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<script setup>
+const { id } = useRoute().params
+</script>

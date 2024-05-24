@@ -1,0 +1,202 @@
+<template>
+    <section class="bg-blue-500 pt-32 md:pt-64">
+        <div class="bg-[url('./../img/news/bgd-single.jpg')] absolute top-0 left-0 w-full h-screen z-0 opacity-70">
+            <div class="bg-gradient-to-t from-blue-500 absolute top-0 left-0 w-full h-full"></div>
+        </div>
+        <div class="container relative z-10">
+            <div class="absolute right-0 bottom-56 w-72 h-72 z-10">
+                <img src="/assets/img/icons/vector-logo.svg" alt="vector-logo">
+            </div>
+
+            <div class="pb-14 text-content">
+                <div
+                    class="flex before:w-[6px] before:rounded-sm before:h-[6px] before:bg-white before:mr-[10px] opacity-60 items-center">
+                    <span class="text-white text-sm">5 апреля 2024</span>
+                </div>
+                <h1
+                    class="text-white text-[30px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[1200px] md:text-[65px]">
+                    Инвестиции в недвижимость во время войны: как уберечь и приумножить средства без существенных рисков
+                </h1>
+                <a href="#"
+                    class="rounded-full border-[1px] border-white w-10 h-10 flex items-center justify-center mt-8 mb-14 md:w-14 md:h-14">
+                    <img src="/assets/img/icons/socials.svg" class="md:w-6" alt="Soc">
+                </a>
+                <b class="text-white text-base md:text-xl mb-2 block">
+                    Квартиры в эко-городе LUCKY LAND от строительной компании DIM теперь можно приобрести по
+                    государственным
+                    программам доступного кредитования жилья «еОселя» и компенсации за разрушенное или поврежденное
+                    жилье
+                    «еВосстановление».
+                </b>
+                <p class="text-white text-base md:text-xl my-2 md:my-12">
+                    Дополнительные опции приобретения жилья в LUCKY LAND открылись благодаря тому, что дом №3 эко-города
+                    недавно получил официальный адрес.
+                </p>
+                <img class="my-14 rounded-[20px]" src="/assets/img/news/bgd-single.jpg" alt="">
+                <blockquote class="text-white text-base md:text-xl mt-7 md:pl-9 relative">
+                    <div class="blockquote-lines">
+                        <img src="/assets/img/icons/quotes.svg" alt="Quotes">
+                    </div>
+                    «Сегодня мы получаем все больше запросов на покупку недвижимости по государственным программам.
+                    Поэтому
+                    как только наши проекты получают все необходимые разрешительные документы, мы присоединяемся к таким
+                    программам. Для нас важно реализовать все возможности, которые сделают для украинцев покупку жилья
+                    более
+                    комфортной», — комментирует управляющий партнер группы компаний DIM Александр Насиковский.
+                </blockquote>
+                <p class="text-white text-base md:text-xl my-2 md:my-12">
+                    Программа «еОселя» – это государственная инициатива для поддержки населения, желающего приобрести
+                    собственное жилье. Она дает желающим возможность получить ипотеку от государства с фиксированной
+                    ставкой
+                    от 3 до 7% сроком до 20 лет.
+                </p>
+                <p class="text-white text-base md:text-xl my-2 md:my-12">
+                    Программа «еВосстановление» — государственная программа помощи владельцам разрушенного или
+                    поврежденного
+                    в результате войны жилья, позволяющая получить компенсацию в зависимости от уровня ущерба.
+                </p>
+                <p class="text-white text-base md:text-xl mt-8">
+                    Узнать больше об условиях приобретения квартиры в LUCKY LAND по одной из программ можно в отделе
+                    продаж
+                    по ул. Берковецкой, 4Д.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-blue-600 pt-14 pb-24">
+        <div class="container">
+            <div class="">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-white font-bold text-[30px]">
+                        Другие акции
+                    </h2>
+
+                    <div class="w-fit opacity-20 hidden md:flex">
+                        <button type="button" class="button-prev mr-9">
+                            <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.95971 10.8841L13.5787 2.26518L12 0.686525L0.686291 12.0002L12 23.3139L13.5787 21.7353L4.96009 13.1167L21.6296 13.1167L21.6297 10.8841L4.95971 10.8841Z"
+                                    fill="white" style="fill:white;fill-opacity:1;" />
+                            </svg>
+                        </button>
+                        <button type="button" class="button-next">
+                            <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M17.0403 10.8841L8.42134 2.26518L10 0.686525L21.3137 12.0002L10 23.3139L8.42133 21.7353L17.0399 13.1167L0.370369 13.1167L0.370346 10.8841L17.0403 10.8841Z"
+                                    fill="white" style="fill:white;fill-opacity:1;" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="swiper else-articles">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="articlesSingle.html" class="group">
+                                <div class="relative">
+                                    <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
+                                    </div>
+                                    <img class="mb-5 rounded-3xl w-full h-[210px] md:h-[300px] object-cover"
+                                        src="/assets/img/news/cardImage.jpg" alt="Image">
+                                </div>
+                                <h2
+                                    class="mb-4 group-hover:underline text-white text-base md:text-lg leading-4 md:leading-5">
+                                    <strong>Название интересной <br>статьи в две строки</strong>
+                                </h2>
+                                <p class="text-white line-clamp-2 text-sm opacity-60">Our properties are situated in
+                                    various
+                                    areas across the island of Bali, offering a range of locations to suit every
+                                    preference,
+                                    offering a range of locations to suit every preference</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="articlesSingle.html" class="group">
+                                <div class="relative">
+                                    <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
+                                    </div>
+                                    <img class="mb-5 rounded-3xl w-full h-[210px] md:h-[300px] object-cover"
+                                        src="/assets/img/news/cardImage.jpg" alt="Image">
+                                </div>
+                                <h2
+                                    class="mb-4 group-hover:underline text-white text-base md:text-lg leading-4 md:leading-5">
+                                    <strong>Название интересной <br>статьи в две строки</strong>
+                                </h2>
+                                <p class="text-white line-clamp-2 text-sm opacity-60">Our properties are situated in
+                                    various
+                                    areas across the island of Bali, offering a range of locations to suit every
+                                    preference,
+                                    offering a range of locations to suit every preference</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="articlesSingle.html" class="group">
+                                <div class="relative">
+                                    <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
+                                    </div>
+                                    <img class="mb-5 rounded-3xl w-full h-[210px] md:h-[300px] object-cover"
+                                        src="/assets/img/news/cardImage.jpg" alt="Image">
+                                </div>
+                                <h2
+                                    class="mb-4 group-hover:underline text-white text-base md:text-lg leading-4 md:leading-5">
+                                    <strong>Название интересной <br>статьи в две строки</strong>
+                                </h2>
+                                <p class="text-white line-clamp-2 text-sm opacity-60">Our properties are situated in
+                                    various
+                                    areas across the island of Bali, offering a range of locations to suit every
+                                    preference,
+                                    offering a range of locations to suit every preference</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="articlesSingle.html" class="group">
+                                <div class="relative">
+                                    <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
+                                    </div>
+                                    <img class="mb-5 rounded-3xl w-full h-[210px] md:h-[300px] object-cover"
+                                        src="/assets/img/news/cardImage.jpg" alt="Image">
+                                </div>
+                                <h2
+                                    class="mb-4 group-hover:underline text-white text-base md:text-lg leading-4 md:leading-5">
+                                    <strong>Название интересной <br>статьи в две строки</strong>
+                                </h2>
+                                <p class="text-white line-clamp-2 text-sm opacity-60">Our properties are situated in
+                                    various
+                                    areas across the island of Bali, offering a range of locations to suit every
+                                    preference,
+                                    offering a range of locations to suit every preference</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="articlesSingle.html" class="group">
+                                <div class="relative">
+                                    <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
+                                    </div>
+                                    <img class="mb-5 rounded-3xl w-full h-[210px] md:h-[300px] object-cover"
+                                        src="/assets/img/news/cardImage.jpg" alt="Image">
+                                </div>
+                                <h2
+                                    class="mb-4 group-hover:underline text-white text-base md:text-lg leading-4 md:leading-5">
+                                    <strong>Название интересной <br>статьи в две строки</strong>
+                                </h2>
+                                <p class="text-white line-clamp-2 text-sm opacity-60">Our properties are situated in
+                                    various
+                                    areas across the island of Bali, offering a range of locations to suit every
+                                    preference,
+                                    offering a range of locations to suit every preference</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<script setup>
+const { id } = useRoute().params
+</script>
