@@ -116,7 +116,7 @@
                             условия для своих клиентов, а также первыми узнают о новых объектах и ​​специальных
                             предложениях.
                         </p>
-                        <button class="white-button hidden md:block">Начать сотрудничество</button>
+                        <button @click="handleOpenModal" class="white-button hidden md:block">Начать сотрудничество</button>
                     </div>
                     <img data-aos="fade-up" class="max-w-[740px] w-full h-[180px] md:h-[412px] rounded-[20px]"
                         src="/assets/img/career/img.jpg" alt="img">
@@ -581,9 +581,16 @@ export default {
       prevEl: '.button-prev',
     };
 
+    const modalsStore = useModalsStore()
+
+    const handleOpenModal = () => {
+        modalsStore.addModal('vacancy')
+    }
+
     return {
       modules,
-      navigationConfig
+      navigationConfig,
+      handleOpenModal,
     };
   },
 };

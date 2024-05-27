@@ -214,7 +214,7 @@
 const modalsStore = useModalsStore()
 
 const addModal = () => {
-  modalsStore.addModal('test')
+  modalsStore.addModal('presentation')
 }
 </script>
 

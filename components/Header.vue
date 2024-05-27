@@ -46,12 +46,12 @@
 					">
             Про компанию
           </NuxtLink>
-          <a href="#" class="text-white text-sm relative
+          <NuxtLink href="/whyballi" class="text-white text-sm relative
 						before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 						after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 					">
             Почему Бали?
-          </a>
+          </NuxtLink>
           <NuxtLink href="/cooperation" class="text-white text-sm relative
 						before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 						after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
@@ -64,16 +64,16 @@
 					">
             Карьера
           </NuxtLink>
-          <a href="#contacts" class="text-white text-sm relative
+          <NuxtLink href="#contacts" class="text-white text-sm relative
 						before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 						after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 					">
             Контакты
-          </a>
+          </NuxtLink>
         </div>
 
 
-        <button type="button"
+        <button type="button" @click="handleOpenModal"
           class="3xl:flex hidden w-full max-w-[250px] border border-whiteOp-400 rounded-xl p-4 text-white text-sm font-bold hover:bg-white hover:text-blue-400 hover:border-white transition-all xl:justify-center">
           Запланировать встречу
         </button>
@@ -249,6 +249,12 @@ const isOpen = ref(false);
 
 const handleOpenBurger = () => {
   isOpenBurger.value = !isOpenBurger.value;
+}
+
+const modalsStore = useModalsStore()
+
+const handleOpenModal = () => {
+  modalsStore.addModal("calendar")
 }
 
 const handleOpen = () => {

@@ -1,0 +1,115 @@
+<template>
+    <div
+        class="content__inner z-0 relative overflow-x-hidden overflow-y-auto p-5 lg:p-10 max-w-[600px] lg:max-h-[90vh]">
+
+        <div class="absolute right-[-34px] -top-5 lg:top-5 z-0">
+            <img src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo">
+        </div>
+        <div class="absolute left-[-34px] bottom-0 lg:bottom-[154px] z-0">
+            <img src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo">
+        </div>
+
+        <h2 class="text-white text-lg lg:text-2xl font-bold text-center mb-5">Отклик на вакансию</h2>
+
+        <form @submit.prevent="handleSubmitForm" class="relative z-[1]">
+
+            <label
+                class="border border-dashed border-white/20 w-full flex items-center justify-center flex-col cursor-pointer py-5 lg:py-8 rounded-xl mb-[10px]">
+                <input @change="handleFileChange" type="file" class="hidden">
+                <p class="flex items-center">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.0261 0C6.70014 0.00366211 4.00473 2.59089 4.00043 5.78382V15.6797C3.97809 17.216 4.81902 18.6448 6.2013 19.4192C7.58358 20.1936 9.29309 20.1936 10.6754 19.4192C12.0576 18.6448 12.8986 17.216 12.8762 15.6797V8.07042C12.8762 6.55931 11.6002 5.33431 10.0261 5.33431C8.45203 5.33431 7.17599 6.55931 7.17599 8.07042V14.5406C7.17599 14.9994 7.56349 15.3714 8.0415 15.3714C8.5195 15.3714 8.90701 14.9994 8.90701 14.5406V8.07042C8.90701 7.47708 9.40805 6.99608 10.0261 6.99608C10.6442 6.99608 11.1452 7.47708 11.1452 8.07042V15.6797C11.1627 16.6192 10.6506 17.4946 9.80594 17.9692C8.96123 18.4439 7.91543 18.4439 7.07073 17.9692C6.22602 17.4946 5.71395 16.6192 5.73145 15.6797V5.78382C5.73145 3.50682 7.65424 1.66095 10.0261 1.66095C12.398 1.66095 14.3208 3.50682 14.3208 5.78382V12.0479C14.3208 12.5068 14.7083 12.8788 15.1863 12.8788C15.6643 12.8788 16.0518 12.5068 16.0518 12.0479V5.78382C16.0475 2.59089 13.3521 0.00366211 10.0261 0Z"
+                            fill="white" />
+                    </svg>
+                    <span v-if="!file" class="text-white text-xs lg:text-base font-bold lg:ml-2">Прикрепить файл с резюме</span>
+                    <span v-if="file" class="text-white text-xs lg:text-base font-bold lg:ml-2">{{ file.name }}</span>
+                </p>
+                <p v-if="!file" class="text-white/40 mt-2 text-xs lg:text-base"> .doc, .docx, .txt, .rtf, .odt, .pdf до 5 Мб.</p>
+            </label>
+
+            <input v-model="fullName" class="custom-input mb-[10px]" type="text" placeholder="Имя и фамилия">
+            <input v-model="email" class="custom-input mb-[10px]" type="email" placeholder="Email">
+            <textarea v-model="message" class="custom-input resize-none h-[94px] lg:h-[120px]" name="" id=""
+                placeholder="Введите текст сопроводительного письма"></textarea>
+
+            <p v-if="isError" class="text-red-700 text-left mt-2">
+                Пожалуйста, заполните поле выше
+            </p>
+            <p v-if="isSending" class="text-white/50 text-left mt-2">
+                Подождите, идет отправка
+            </p>
+            <p v-if="isSuccess" class="text-green-500 text-left mt-2">
+                Ваше сообщение успешно отправлено
+            </p>
+
+            <button type="submit" class="white-button w-full mt-5 lg:leading-[120%] lg:py-5 leading-[90%]">
+                Отправить резюме
+            </button>
+
+            <p class="text-center text-white text-xs lg:text-sm w-full mt-5">Нажимая на кнопку “Отправить резюме”, вы
+                соглашаетесь с нашей <a href="#"
+                    class="text-blue-400 font-bold underline transition-all hover:text-blue-700">Политикой
+                    конфиденциальности</a></p>
+
+        </form>
+
+    </div>
+</template>
+
+<script>
+export default {
+    setup() {
+
+        const file = ref(null);
+        const fullName = ref('');
+        const email = ref('');
+        const message = ref('');
+        const isError = ref(false);
+        const isSending = ref(false);
+        const isSuccess = ref(false);
+
+        const resetForm = () => {
+            fullName.value = ''
+            email.value = ''
+            message.value = ''
+            file.value = null;
+        }
+
+        const validateEmail = (email) => {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        const handleSubmitForm = () => {
+            if (!fullName.value || !email.value || !message.value || !file.value || !validateEmail(email.value)) return isError.value = true;
+            else isError.value = false
+
+            isSending.value = true
+
+            setTimeout(() => {
+                isSending.value = false
+                isSuccess.value = true
+
+                resetForm()
+            }, 1000)
+        }
+
+        const handleFileChange = (event) => {
+            file.value = event.target.files[0];
+            console.log(event.target.files[0]);
+        }
+
+        return {
+            handleSubmitForm,
+            handleFileChange,
+            file,
+            fullName,
+            email,
+            message,
+            isError,
+            isSending,
+            isSuccess,
+        }
+    }
+}
+</script>

@@ -1,5 +1,3 @@
-
-
 <template>
     <footer id="contacts" class="mt-a bg-blue-600 pt-14 md:pt-24 mt-auto">
         <div class="container">
@@ -72,7 +70,7 @@
 
                 </div>
 
-                <form action=""
+                <form action="" @submit.prevent="submitForm"
                     class="flex flex-col p-5 border border-whiteOp-300 rounded-2xl text-center md:p-12 relative mb-14 md:mb-0">
                     <img src="/assets/img/index/dot-decor-2.png" class="absolute right-[-1px] bottom-[-1px] w-5 md:w-8"
                         alt="decor">
@@ -80,12 +78,20 @@
                         Хотите узнать больше?
                     </h2>
                     <div class="flex flex-col gap-3 lg:gap-0">
-                        <input type="text" placeholder="Имя"
+                        <input type="text" v-model="name" placeholder="Имя"
                             class="bg-white/10 lg:mb-[10px] rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-6 md:text-base w-full">
-                        <!-- <input id="phone" type="tel" class="bg-white/10 rounded-xl text-white text-sm py-4 leading-[90%] px-5 md:pl-[70px] outline-none md:p-6 md:text-base w-full"> -->
                         <div class="phone-vti">
-                            <VueTelInput v-model="phone" />
+                            <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone" />
                         </div>
+                        <p v-if="isError" class="text-red-700 text-left mt-2">
+                            Пожалуйста, заполните все поля в форме
+                        </p>
+                        <p v-if="isSending" class="text-white/50 text-left mt-2">
+                            Подождите, идет отправка
+                        </p>
+                        <p v-if="isSuccess" class="text-green-500 text-left mt-2">
+                            Ваше сообщение успешно отправлено
+                        </p>
 
                         <button type="submit" class="white-button w-full leading-[110%] lg:mt-8 lg:py-6">
                             Отправить заявку
@@ -138,20 +144,51 @@
 </template>
 
 <script>
-  import { ref } from 'vue';
-  import { VueTelInput } from 'vue-tel-input';
-  import 'vue-tel-input/vue-tel-input.css';
+import { ref } from 'vue';
+import { VueTelInput } from 'vue-tel-input';
+import 'vue-tel-input/vue-tel-input.css';
 
-  export default {
+export default {
     components: {
-      VueTelInput,
+        VueTelInput,
     },
     setup() {
-      const phone = ref(null);
+        const name = ref(null);
+        const phone = ref(null);
+        const isError = ref(null);
+        const isSending = ref(null);
+        const isSuccess = ref(null);
 
-      return {
-        phone,
-      };
+        const resetForm = () => {
+            name.value = "";
+            phone.value = "";
+        }
+
+        const submitForm = () => {
+            console.log(name.value, phone.value, isError.value);
+
+            if (!name.value || !phone.value) return isError.value = true
+            else isError.value = false
+
+            isSending.value = true
+
+            setTimeout(() => {
+                isSending.value = false
+                isSuccess.value = true
+
+                resetForm()
+            }, 1000)
+
+        };
+
+        return {
+            phone,
+            name,
+            isError,
+            isSending,
+            isSuccess,
+            submitForm,
+        };
     },
-  };
+};
 </script>

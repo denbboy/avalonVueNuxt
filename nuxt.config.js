@@ -38,7 +38,8 @@ export default defineNuxtConfig({
         },
     },
     plugins: [
-        { src: '~/plugins/vue-tel-input.js', ssr: false }
+        { src: '~/plugins/vue-tel-input.js', ssr: false },
+        { src: '~/plugins/vuelidate.js', ssr: false },
     ],
     css: ['~/assets/css/main.css'],
     modules: ['@nuxtjs/tailwindcss', "@pinia/nuxt", 'nuxt-aos'],

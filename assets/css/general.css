@@ -269,12 +269,24 @@ input[type="radio"]:checked~label {
     box-shadow: none !important;
 }
 
+@media screen and (max-width: 768px) {
+    .phone-vti .vue-tel-input {
+        height: 50px;
+        padding: 10px;
+        font-size: 0.875rem;
+    }
+}
+
 .phone-vti .vti__dropdown {
     background: transparent !important;
 }
 
-.vti__dropdown-list.below {
+.phone-vti .vti__dropdown-list.below {
     margin-top: 20px;
+}
+
+.phone-vti .vti__dropdown-arrow {
+    color: #fff;
 }
 
 .phone-vti input {
