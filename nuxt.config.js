@@ -24,12 +24,6 @@ export default defineNuxtConfig({
     experimental: {
         viewTransition: true
     },
-    // app: {
-    //     pageTransition: {
-    //         name: 'page',
-    //         mode: 'out-in',
-    //     },
-    // },
     devtools: { enabled: true },
     postcss: {
         plugins: {
@@ -40,9 +34,19 @@ export default defineNuxtConfig({
     plugins: [
         { src: '~/plugins/vue-tel-input.js', ssr: false },
         { src: '~/plugins/vuelidate.js', ssr: false },
+        { src: '~/plugins/i18n.config.js', ssr: false },
     ],
     css: ['~/assets/css/main.css'],
-    modules: ['@nuxtjs/tailwindcss', "@pinia/nuxt", 'nuxt-aos'],
+    modules: ['@nuxtjs/tailwindcss', "@pinia/nuxt", 'nuxt-aos', '@nuxtjs/i18n'],
+    i18n: {
+        locales: [
+            { code: 'ua', iso: 'ua-US', name: 'Ukraine', file: 'ua.json' },
+            { code: 'ru', iso: 'ru-RU', name: 'Русский', file: 'ru.json' }
+        ],
+        defaultLocale: 'ua',
+        langDir: 'locales/',
+        vueI18n: './i18n.js'
+    },
     swiper: {
         modules: ['navigation', 'pagination'],
     },

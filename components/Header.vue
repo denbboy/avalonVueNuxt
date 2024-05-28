@@ -15,7 +15,7 @@
 							before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 							after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 						">
-              Проекты
+              {{ $t('project') }}
               <img src="/assets/img/index/small-arrow-white.svg" alt="ic">
             </button>
             <div
@@ -44,38 +44,38 @@
 						before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 						after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 					">
-            Про компанию
+            {{ $t('about_company') }}
           </NuxtLink>
           <NuxtLink href="/whyballi" class="text-white text-sm relative
 						before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 						after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 					">
-            Почему Бали?
+            {{ $t('why_bali') }}
           </NuxtLink>
           <NuxtLink href="/cooperation" class="text-white text-sm relative
 						before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 						after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 					">
-            Сотрудничество
+            {{ $t('cooperation') }}
           </NuxtLink>
           <NuxtLink href="/career" class="text-white text-sm relative
 						before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 						after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 					">
-            Карьера
+            {{ $t('career') }}
           </NuxtLink>
           <NuxtLink href="#contacts" class="text-white text-sm relative
 						before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 						after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 					">
-            Контакты
+            {{ $t('contacts') }}
           </NuxtLink>
         </div>
 
 
         <button type="button" @click="handleOpenModal"
           class="3xl:flex hidden w-full max-w-[250px] border border-whiteOp-400 rounded-xl p-4 text-white text-sm font-bold hover:bg-white hover:text-blue-400 hover:border-white transition-all xl:justify-center">
-          Запланировать встречу
+          {{ $t('make_a_meeting') }}
         </button>
         <a href="tel:+6281246502783" class="3xl:flex hidden items-center gap-1 text-white text-base font-bold ">
           <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,18 +87,18 @@
           +62 (812) 4650-27-83
         </a>
         <div class="hidden group xl:flex xl:flex-col relative">
-          <button class="projectsButton flex items-center gap-1 text-white text-sm">
-            EN
+          <button class="projectsButton flex items-center gap-1 text-white text-sm uppercase">
+            {{ locale }}
             <img src="/assets/img/index/small-arrow-white.svg" alt="ic">
           </button>
           <div
             class="projectsMenu flex opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-[50%] translate-x-[-50%] border border-whiteOp-300">
-            <a href="#" class="text-white text-sm mb-4 hover:text-blue-400 transition-all">
+            <button @click="changeLocale('ua')" class="text-white text-sm mb-4 hover:text-blue-400 transition-all">
               UA
-            </a>
-            <a href="#" class="text-white text-sm hover:text-blue-400 transition-all">
+            </button>
+            <button @click="changeLocale('ru')" class="text-white text-sm hover:text-blue-400 transition-all">
               RU
-            </a>
+            </button>
           </div>
         </div>
         <div class="gap-1 hidden xl:flex">
@@ -199,14 +199,14 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="hover:text-blue-400 transition-all text-white text-base">
+                <button @click="changeLocale('ua')" class="hover:text-blue-400 transition-all text-white text-base">
                   UA
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" class="hover:text-blue-400 transition-all text-white text-base">
+                <button @click="changeLocale('ru')" class="hover:text-blue-400 transition-all text-white text-base">
                   RU
-                </a>
+                </button>
               </li>
             </ul>
             <ul class="flex items-center gap-1">
@@ -240,6 +240,9 @@
 
 <script setup>
 import { ref, defineProps, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
 
 const props = defineProps(['header'])
 
@@ -251,6 +254,10 @@ const handleOpenBurger = () => {
   isOpenBurger.value = !isOpenBurger.value;
 }
 
+const changeLocale = (newLocale) => {
+  locale.value = newLocale
+}
+
 const modalsStore = useModalsStore()
 
 const handleOpenModal = () => {
@@ -260,4 +267,5 @@ const handleOpenModal = () => {
 const handleOpen = () => {
   isOpen.value = !isOpen.value;
 }
+
 </script>
