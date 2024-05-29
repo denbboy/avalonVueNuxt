@@ -32,6 +32,7 @@
     }
 }
 
+
 @media screen and (min-width: 768px) {
     .swiper-banner .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet-active {
         position: relative;

@@ -1,7 +1,5 @@
-<script setup>
-</script>
-
 <template>
+    <!-- <PagesProjectGoogleMap /> -->
     <section class="pb-12">
         <div class="swiper-slide pb-10 pt-36 lg:pt-[290px] relative overflow-hidden">
             <div
@@ -771,11 +769,11 @@
         </div>
     </section>
 
-    <PagesMainReasons/>
+    <PagesMainReasons />
 
-    <PagesMainNumbers/>
+    <PagesMainNumbers />
 
-    <PagesMainProcess/>
+    <PagesMainProcess />
 
     <section class="uslugi pt-[23px] pb-12 md:py-24 relative overflow-hidden">
         <div class="absolute lg:-right-36 top-0 lg:top-auto lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">

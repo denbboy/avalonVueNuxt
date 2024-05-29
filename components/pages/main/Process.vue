@@ -1,7 +1,11 @@
 <template>
     <section class=" bg-no-repeat bg-cover pt-14 pb-32 relative overflow-hidden">
-        <img class="thumbnail absolute top-0 left-0 z-0 h-full w-full object-cover" src="/assets/img/index/buy-bgd.jpg"
-            alt="image">
+        <!-- <img class="thumbnail absolute top-0 left-0 z-0 h-full w-full object-cover" src="/assets/img/index/buy-bgd.jpg"
+            alt="image"> -->
+        <Parallaxy class="absolute top-0 left-0 z-0 h-full w-full" :speed="70"
+            :animation="(delta: number) => `transform: translate3d(0, ${delta}px, 0);`">
+            <img class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg">
+        </Parallaxy>
         <div class="container relative z-10">
 
             <!-- bg-[url('./../img/index/buy-list-bg.png')] lg:bg-[url('./../img/index/buy-bg-desk.png')] bg-no-repeat bg-cover -->
@@ -271,3 +275,7 @@
         </div>
     </section>
 </template>
+
+<script setup>
+import Parallaxy from '@lucien144/vue3-parallaxy';
+</script>
