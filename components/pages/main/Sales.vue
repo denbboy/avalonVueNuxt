@@ -8,9 +8,9 @@
           </h2>
 
           <div class="w-fit hidden md:flex">
-            <a href="discounts.html" class="mr-12 text-blue-600 font-bold underline hover:no-underline">
+            <NuxtLink href="/sales" class="mr-12 text-blue-600 font-bold underline hover:no-underline">
               Все акции
-            </a>
+            </NuxtLink>
             <button type="button" class="opacity-20 hover:opacity-100 transition-all sales-button-prev mr-9">
               <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -47,9 +47,9 @@
         </swiper>
         <div class="swiper-pagination swiper-pagination_blue"></div>
 
-        <a href="#" class="blue-border-button mx-auto mt-5 lg:hidden">
+        <button type="button" class="blue-border-button mx-auto mt-5 lg:hidden">
           Все акции
-        </a>
+        </button>
 
       </div>
     </div>

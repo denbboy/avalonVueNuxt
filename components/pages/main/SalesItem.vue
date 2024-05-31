@@ -1,5 +1,5 @@
 <template>
-    <a href="discountsSingle.html" class="group block relative rounded-2xl transition-all">
+    <NuxtLink href="/sales/123" class="group block relative rounded-2xl transition-all">
         <div class="block-bottom-point z-20 border-white bg-white after:bg-blue-500"></div>
         <img src="/assets/img/news/cardImage.jpg" alt="Image" class="z-0 relative rounded-2xl">
         <div
@@ -18,5 +18,5 @@
                 <span class="text-white ml-1 text-xs md:text-sm">Bukit</span>
             </div>
         </div>
-    </a>
+    </NuxtLink>
 </template>

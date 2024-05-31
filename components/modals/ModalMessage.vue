@@ -27,13 +27,22 @@
                     <VueTelInput v-model="phone" />
                 </div>
 
-                <p v-if="isError" class="text-red-700 text-left mt-2">
-                    Пожалуйста, заполните поле выше
+                <p class="text-red-700 text-left transition-all h-full" :class="{
+                    'max-h-10 opacity-100 mt-2': isError,
+                    'max-h-0 opacity-0': !isError
+                }">
+                    Пожалуйста, заполните все поля в форме
                 </p>
-                <p v-if="isSending" class="text-white/50 text-left mt-2">
+                <p class="text-white/50 text-left transition-all h-full" :class="{
+                    'max-h-10 opacity-100 mt-2': isSending,
+                    'max-h-0 opacity-0': !isSending
+                }">
                     Подождите, идет отправка
                 </p>
-                <p v-if="isSuccess" class="text-green-500 text-left mt-2">
+                <p class="text-green-500 text-left transition-all h-full" :class="{
+                    'max-h-10 opacity-100 mt-2': isSuccess,
+                    'max-h-0 opacity-0': !isSuccess
+                }">
                     Ваше сообщение успешно отправлено
                 </p>
 

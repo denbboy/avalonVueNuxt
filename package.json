@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@fawmi/vue-google-maps": "^0.9.79",
     "@intlify/core": "^9.13.1",
     "@intlify/core-base": "^9.13.1",
     "@intlify/message-compiler": "^9.13.1",

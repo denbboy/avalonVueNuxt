@@ -8,9 +8,9 @@
           </h2>
 
           <div class="w-fit hidden md:flex">
-            <a href="articles.html" class="mr-12 text-blue-600 font-bold underline hover:no-underline">
+            <NuxtLink href="/articles" class="mr-12 text-blue-600 font-bold underline hover:no-underline">
               Все статьи
-            </a>
+            </NuxtLink>
             <button type="button" class="articles-button-prev opacity-20 hover:opacity-100 transition-all mr-9">
               <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -31,7 +31,7 @@
         <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
           :breakpoints="breakpoints" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
           <swiper-slide>
-            <a href="newsSingle.html" class="w-full h-full block group lg:max-w-[375px]">
+            <NuxtLink href="/articles/123" class="w-full h-full block group lg:max-w-[375px]">
               <div class="relative mb-5 w-full">
                 <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
                 <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
@@ -44,10 +44,10 @@
                 Our properties are situated in various areas across the island of Bali, offering a range
                 of locations to suit every preference
               </span>
-            </a>
+            </NuxtLink>
           </swiper-slide>
           <swiper-slide>
-            <a href="newsSingle.html" class="w-full h-full block group lg:max-w-[375px]">
+            <NuxtLink href="/articles/123" class="w-full h-full block group lg:max-w-[375px]">
               <div class="relative mb-5 w-full">
                 <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
                 <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
@@ -60,10 +60,10 @@
                 Our properties are situated in various areas across the island of Bali, offering a range
                 of locations to suit every preference
               </span>
-            </a>
+            </NuxtLink>
           </swiper-slide>
           <swiper-slide>
-            <a href="newsSingle.html" class="w-full h-full block group lg:max-w-[375px]">
+            <NuxtLink href="/articles/123" class="w-full h-full block group lg:max-w-[375px]">
               <div class="relative mb-5 w-full">
                 <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
                 <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
@@ -76,10 +76,10 @@
                 Our properties are situated in various areas across the island of Bali, offering a range
                 of locations to suit every preference
               </span>
-            </a>
+            </NuxtLink>
           </swiper-slide>
           <swiper-slide>
-            <a href="newsSingle.html" class="w-full h-full block group lg:max-w-[375px]">
+            <NuxtLink href="/articles/123" class="w-full h-full block group lg:max-w-[375px]">
               <div class="relative mb-5 w-full">
                 <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
                 <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
@@ -92,10 +92,10 @@
                 Our properties are situated in various areas across the island of Bali, offering a range
                 of locations to suit every preference
               </span>
-            </a>
+            </NuxtLink>
           </swiper-slide>
           <swiper-slide>
-            <a href="newsSingle.html" class="w-full h-full block group lg:max-w-[375px]">
+            <NuxtLink href="/articles/123" class="w-full h-full block group lg:max-w-[375px]">
               <div class="relative mb-5 w-full">
                 <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
                 <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
@@ -108,7 +108,7 @@
                 Our properties are situated in various areas across the island of Bali, offering a range
                 of locations to suit every preference
               </span>
-            </a>
+            </NuxtLink>
           </swiper-slide>
           <div class="swiper-pagination"></div>
         </swiper>
