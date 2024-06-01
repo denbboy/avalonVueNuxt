@@ -3,9 +3,9 @@ import ua from './../locales/ua.json'
 import ru from './../locales/ru.json'
 
 export default defineI18nConfig(() => ({
-  legacy: false, // Используйте Composition API
-  locale: 'ua',
-  fallbackLocale: 'ua',
+  legacy: false,
+  locale: 'ru',
+  fallbackLocale: 'ru',
   messages: {
     ua,
     ru

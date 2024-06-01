@@ -78,7 +78,7 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { storeToRefs } from 'pinia';
-import { useModalsStore } from './../../stores/modals.js';
+import { useModalsStore } from '../../stores/functions/modals.js';
 import 'vue-tel-input/vue-tel-input.css';
 
 // Modal Store

@@ -236,11 +236,26 @@
       </div>
     </div>
   </header>
+
+  <div class="fixed left-0 top-0 h-full w-full z-50 bg-blue-500 transition-all duration-150 flex items-center justify-center"
+    :class="loading ? 'visible opacity-100' : 'opacity-0 invisible'">
+    <img class="w-[100px]" src="/assets/img/loader.gif" alt="">
+    </div>
 </template>
 
 <script setup>
 import { ref, defineProps, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n'
+import { useLangStore } from './../stores/functions/language';
+
+const nuxtApp = useNuxtApp();
+const loading = ref(false);
+// nuxtApp.hook("page:start", () => {
+//   loading.value = true;
+// });
+// nuxtApp.hook("page:finish", () => {
+//   loading.value = false;
+// });
 
 const { locale } = useI18n()
 
@@ -250,12 +265,22 @@ const isOpenBurger = ref(false);
 const isScrolled = ref(false);
 const isOpen = ref(false);
 
+const langStore = useLangStore()
+
 const handleOpenBurger = () => {
   isOpenBurger.value = !isOpenBurger.value;
 }
 
 const changeLocale = (newLocale) => {
-  locale.value = newLocale
+  setTimeout(() => {
+    locale.value = newLocale
+    langStore.setLang(newLocale)
+  }, 100)
+
+  loading.value = true
+  setTimeout(() => {
+    loading.value = false
+  }, 500)
 }
 
 const modalsStore = useModalsStore()

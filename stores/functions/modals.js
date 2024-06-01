@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 
 export const useModalsStore = defineStore('modalsStore', {
     state: () => ({
-        modals: []
+        modals: [],
     }),
     actions: {
         addModal(modal) {
@@ -10,6 +10,6 @@ export const useModalsStore = defineStore('modalsStore', {
         },
         removeModal(modal) {
             this.modals = this.modals.filter(item => item !== modal)
-        }
+        },
     }
 })
