@@ -36,6 +36,9 @@ export default defineNuxtConfig({
         { src: '~/plugins/vuelidate.js', ssr: false },
         { src: '~/plugins/i18n.config.js', ssr: false },
     ],
+    aos: {
+        once: true
+    },
     css: ['~/assets/css/main.css'],
     modules: ['@nuxtjs/tailwindcss', "@pinia/nuxt", 'nuxt-aos', '@nuxtjs/i18n', 'nuxt-calendly'],
     calendly: {
