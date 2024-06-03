@@ -37,7 +37,12 @@ export default defineNuxtConfig({
         { src: '~/plugins/i18n.config.js', ssr: false },
     ],
     css: ['~/assets/css/main.css'],
-    modules: ['@nuxtjs/tailwindcss', "@pinia/nuxt", 'nuxt-aos', '@nuxtjs/i18n'],
+    modules: ['@nuxtjs/tailwindcss', "@pinia/nuxt", 'nuxt-aos', '@nuxtjs/i18n', 'nuxt-calendly'],
+    calendly: {
+        isEnabled: true,
+        loadWidgetCSS: true,
+        loadWidgetCloseIconSvg: true
+    },
     i18n: {
         locales: [
             { code: 'ua', iso: 'ua-US', name: 'Ukraine', file: 'ua.json' },

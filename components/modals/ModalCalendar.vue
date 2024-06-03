@@ -27,7 +27,7 @@
                     </svg>
                     30 минут
                 </p>
-                <div class="hidden md:flex gap-y-4 gap-x-[10px] flex-wrap mt-[30px] max-w-[320px] md:mr-10">
+                <div class="hidden md:flex gap-y-4 gap-x-[10px] flex-wrap mt-[30px] max-w-[320px] md:mr-10 lg:mt-auto">
                     <label for="rad-1" class="flex items-center cursor-pointer text-sm text-white/50">
                         <input type="radio" id="rad-1" name="location" class="hidden peer">
                         <span
@@ -47,44 +47,16 @@
                         Онлайн встреча с командой продаж
                     </label>
                 </div>
-                <a href="#"
+                <!-- <a href="#"
                     class="hidden md:block text-white text-xs mt-auto border-b border-transparent hover:border-b hover:border-blue-400 hover:text-blue-400 transition-all">
                     Настройки cookie
-                </a>
+                </a> -->
             </div>
             <div class="md:p-10 md:w-full">
                 <h2 class="mb-5 text-white font-bold text-lg md:text-2xl">
                     Выберите дату <br class="hidden md:block">и время
                 </h2>
-
-                <div id="inline-picker" class="ml-[-30px] md:ml-[-20px]"></div>
-
-                <h4 class="text-white font-bold text-base mt-10 mb-[10px]">
-                    Часовой пояс
-                </h4>
-                <div class="flex items-center gap-[5px]">
-                    <img src="/assets/img/icons/world-modal.svg" alt="ic">
-                    <p class="text-white text-xs">
-                        Восточноевропейское время
-                    </p>
-                    <div>
-                        <div class="flex items-center gap-[5px]">
-                            <span class="text-white text-xs">
-                                (17:37)
-                            </span>
-                            <img src="/assets/img/icons/arrow-down-modals.svg" alt="ic">
-                        </div>
-                        <div class="hidden">
-                            <span>
-                                (17:37)
-                            </span>
-                            <span>
-                                (17:37)
-                            </span>
-                        </div>
-                    </div>
-
-                </div>
+                <CalendlyInlineWidget id="my-calendar" v-bind="options" />
             </div>
         </div>
 
@@ -92,5 +64,8 @@
     </div>
 </template>
 
-<script>
+<script setup>
+const options = {
+    url: 'https://calendly.com/vz-web-dev/30min',
+}
 </script>
