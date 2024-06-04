@@ -278,6 +278,18 @@ input[type="radio"]:checked~label {
     }
 }
 
+.vti__dropdown-item {
+    color: #fff;
+}
+.vti__dropdown-item.highlighted {
+    background: rgb(8, 50, 90) !important;
+}
+.vti__dropdown-list {
+    background: rgb(10 74 127) !important;
+    border-radius: 10px;
+    border: 1px solid rgba(42, 93, 140, 1) !important;
+    box-shadow: 0 0 10px 5px rgb(6, 46, 84);
+}
 .phone-vti .vti__dropdown {
     background: transparent !important;
 }

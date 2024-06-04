@@ -24,7 +24,7 @@
                 </label>
 
                 <div class="phone-vti">
-                    <VueTelInput v-model="phone" />
+                    <VueTelInput v-model="phone" :only-countries="onlyCountries" />
                 </div>
 
                 <label for="some" class="flex flex-col text-start mb-[10px] mt-5">
@@ -110,6 +110,17 @@ export default {
 
         };
 
+        const onlyCountries = [
+            'id', // Индонезия
+            'ua', // Украина
+            'ru', // Россия
+            'by', // Беларусь
+            'kz', // Казахстан
+            'us', // США
+            'gb', // Англия
+            'fr', // Франция
+            'cn', // КНР
+        ];
         return {
             phone,
             name,
@@ -117,6 +128,7 @@ export default {
             isSending,
             isSuccess,
             submitForm,
+            onlyCountries
         };
     },
 };

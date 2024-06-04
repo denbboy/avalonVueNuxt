@@ -1,6 +1,11 @@
 <template>
-    <section class="bg-[url('./../img/about/bgd-sec-changy.jpg')] bg-no-repeat bg-cover py-14 md:py-24">
-        <div class="container">
+    <section class=" bg-no-repeat bg-cover py-14 md:py-24 relative overflow-hidden">
+        <Parallaxy class="absolute top-0 left-0 z-0 h-full w-full" :speed="70"
+            :animation="(delta: number) => `transform: translate3d(0, ${delta}px, 0);`">
+            <!-- <img class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg"> -->
+            <img class="h-full w-full object-cover scale-125" src="/assets/img/about/bgd-sec-changy.jpg">
+        </Parallaxy>
+        <div class="container relative z-10">
             <div
                 class="bg-[url('./../img/about/changy-bgd.png')] lg:bg-[url('./../img/about/chang-bgd.png')] bg-no-repeat bg-cover pt-14 pb-9 px-5 relative md:px-10 lg:flex lg:items-center lg:gap-7 lg:py-24 lg:pr-[82px] lg:pl-[125px]">
                 <img src="/assets/img/about/phone-mob.png" class="absolute top-[-40px] right-[-30px] lg:hidden"
@@ -78,4 +83,5 @@
 </template>
 
 <script setup>
+import Parallaxy from '@lucien144/vue3-parallaxy';
 </script>

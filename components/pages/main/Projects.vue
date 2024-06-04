@@ -14,9 +14,9 @@
                         Наши проекты
                     </h2>
                 </div>
-                <a href="#" class="white-button mt-5 mb-7 lg:my-0">
+                <button @click="handleOpenModal" class="white-button mt-5 mb-7 lg:my-0">
                     Получить каталог
-                </a>
+                </button>
             </div>
 
             <div class="flex flex-col gap-5 items-center md:flex-wrap lg:flex-row lg:flex-nowrap z-10 relative">
@@ -53,10 +53,10 @@
                                 </div>
 
                                 <div class="flex">
-                                    <button
+                                    <NuxtLink href="/projects/123"
                                         class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
                                         Подробнее
-                                    </button>
+                                    </NuxtLink>
                                     <div class="flex items-center">
                                         <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
                                         <span class="ml-1 text-sm text-white">Чангу</span>
@@ -101,10 +101,10 @@
                                 </div>
 
                                 <div class="flex">
-                                    <button
+                                    <NuxtLink href="/projects/123"
                                         class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
                                         Подробнее
-                                    </button>
+                                    </NuxtLink>
                                     <div class="flex items-center">
                                         <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
                                         <span class="ml-1 text-sm text-white">Чангу</span>
@@ -149,10 +149,10 @@
                                 </div>
 
                                 <div class="flex">
-                                    <button
+                                    <NuxtLink href="/projects/123"
                                         class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
                                         Подробнее
-                                    </button>
+                                    </NuxtLink>
                                     <div class="flex items-center">
                                         <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
                                         <span class="ml-1 text-sm text-white">Чангу</span>
@@ -168,3 +168,11 @@
         </div>
     </section>
 </template>
+
+<script setup>
+const modalsStore = useModalsStore()
+
+const handleOpenModal = () => {
+    modalsStore.addModal("presentation")
+}
+</script>

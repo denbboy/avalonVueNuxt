@@ -55,10 +55,11 @@
                             доме. Погрузитесь в уникальную атмосферу роскоши
                             и уюта в центре Чангу
                         </p>
-                        <a href="#"
+                        <button
+                        @click="handleOpenModal"
                             class="w-full max-w-56 md:max-w-72 px-5 py-4 block text-sm md:text-base bg-white rounded-xl text-center font-bold whitespace-nowrap text-blue-500 hover:text-white hover:bg-blue-400 my-10 transition-all md:mt-12 md:mb-32">
                             Скачать презентацию
-                        </a>
+                        </button>
                     </div>
                     <div class="flex flex-col md:mt-10">
                         <button type="button"
@@ -105,5 +106,9 @@
 </template>
 
 <script setup>
+const modalsStore = useModalsStore()
 
+const handleOpenModal = () => {
+    modalsStore.addModal("presentation")
+}
 </script>

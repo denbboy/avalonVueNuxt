@@ -1,7 +1,7 @@
 <template>
     <main class="overflow-hidden">
 
-        <PagesCooperationMain/>
+        <PagesCooperationMain />
 
         <section id="broker" class="py-[60px] lg:py-[100px]">
             <div class="container">
@@ -17,7 +17,8 @@
                             условия для своих клиентов, а также первыми узнают о новых объектах и ​​специальных
                             предложениях.
                         </p>
-                        <button @click="handleOpenModal" class="white-button hidden md:block">Начать сотрудничество</button>
+                        <button @click="handleOpenModal" class="white-button hidden md:block">Начать
+                            сотрудничество</button>
                     </div>
                     <img data-aos="fade-up" class="max-w-[740px] w-full h-[180px] md:h-[412px] rounded-[20px]"
                         src="/assets/img/career/img.jpg" alt="img">
@@ -85,7 +86,7 @@
                         </li>
                     </ol>
                 </div>
-                <button class="white-button md:hidden mt-8">Начать сотрудничество</button>
+                <button @click="handleOpenModal" class="white-button md:hidden mt-8">Начать сотрудничество</button>
             </div>
         </section>
 
@@ -102,7 +103,8 @@
                             предлагать своим клиентам квартиры в жилых комплексах SAGA Development и получать за это
                             достойное
                             вознаграждение.</p>
-                        <button class="white-button hidden md:block">Начать сотрудничество</button>
+                        <button @click="handleOpenModal" class="white-button hidden md:block">Начать
+                            сотрудничество</button>
                     </div>
                     <img data-aos="fade-left" class="max-w-[740px] w-full h-[180px] md:h-[412px] rounded-[20px]"
                         src="/assets/img/career/img.jpg" alt="img">
@@ -145,7 +147,7 @@
                     прозрачности отношений
                     предусмотрена фиксация клиента за определенным риелтором. А после заключения сделки — выплата
                     вознаграждения.</p>
-                <button class="white-button md:hidden mt-8">Начать сотрудничество</button>
+                <button @click="handleOpenModal" class="white-button md:hidden mt-8">Начать сотрудничество</button>
             </div>
         </section>
 
@@ -163,7 +165,8 @@
                             хотите провести мероприятие на бульваре RYBALSKY или съемку в CHICAGO Central House,
                             заполняйте
                             форму обратной связи на этой странице. </p>
-                        <button class="white-button hidden md:block">Начать сотрудничество</button>
+                        <button @click="handleOpenModal" class="white-button hidden md:block">Начать
+                            сотрудничество</button>
                     </div>
                     <img data-aos="fade-right" class="max-w-[740px] w-full h-[180px] md:h-[412px] rounded-[20px]"
                         src="/assets/img/career/img.jpg" alt="img">
@@ -202,7 +205,7 @@
                         </li>
                     </ol>
                 </div>
-                <button class="white-button md:hidden mt-8">Начать сотрудничество</button>
+                <button @click="handleOpenModal" class="white-button md:hidden mt-8">Начать сотрудничество</button>
             </div>
         </section>
 
@@ -220,7 +223,8 @@
                             философия наших компаний совпадают. Также мы открыты для предложений о земельных участках и
                             перспективных проектах.
                         </p>
-                        <button class="white-button hidden md:block">Начать сотрудничество</button>
+                        <button @click="handleOpenModal" class="white-button hidden md:block">Начать
+                            сотрудничество</button>
                     </div>
                     <img data-aos="fade-up" class="max-w-[740px] w-full h-[180px] md:h-[412px] rounded-[20px]"
                         src="/assets/img/career/img.jpg" alt="img">
@@ -288,7 +292,7 @@
                         </li>
                     </ol>
                 </div>
-                <button class="white-button md:hidden mt-8">Начать сотрудничество</button>
+                <button @click="handleOpenModal" class="white-button md:hidden mt-8">Начать сотрудничество</button>
             </div>
         </section>
 
@@ -299,8 +303,8 @@
                     Наши проекты
                 </h2>
 
-                <swiper :modules="modules" :navigation="navigationConfig" :space-between="20"
-                    :slides-per-view="3" @swiper="onSwiper" @slideChange="onSlideChange">
+                <swiper :modules="modules" :navigation="navigationConfig" :space-between="20" :slides-per-view="3"
+                    @swiper="onSwiper" @slideChange="onSlideChange">
                     <swiper-slide>
                         <div
                             class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
@@ -336,10 +340,10 @@
                                     </div>
 
                                     <div class="flex">
-                                        <button
+                                        <NuxtLink href="/projects/123"
                                             class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
                                             Подробнее
-                                        </button>
+                                        </NuxtLink>
                                         <div class="flex items-center">
                                             <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
                                             <span class="ml-1 text-sm text-white">Чангу</span>
@@ -385,10 +389,10 @@
                                     </div>
 
                                     <div class="flex">
-                                        <button
+                                        <NuxtLink href="/projects/123"
                                             class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
                                             Подробнее
-                                        </button>
+                                        </NuxtLink>
                                         <div class="flex items-center">
                                             <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
                                             <span class="ml-1 text-sm text-white">Чангу</span>
@@ -434,10 +438,10 @@
                                     </div>
 
                                     <div class="flex">
-                                        <button
+                                        <NuxtLink href="/projects/123"
                                             class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
                                             Подробнее
-                                        </button>
+                                        </NuxtLink>
                                         <div class="flex items-center">
                                             <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
                                             <span class="ml-1 text-sm text-white">Чангу</span>
@@ -468,31 +472,31 @@ import 'swiper/css/navigation';
 SwiperCore.use([Navigation, A11y]);
 
 export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    const modules = {
-      navigation: true,
-      a11y: true,
-    };
-    const navigationConfig = {
-      nextEl: '.button-next',
-      prevEl: '.button-prev',
-    };
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
+    setup() {
+        const modules = {
+            navigation: true,
+            a11y: true,
+        };
+        const navigationConfig = {
+            nextEl: '.button-next',
+            prevEl: '.button-prev',
+        };
 
-    const modalsStore = useModalsStore()
+        const modalsStore = useModalsStore()
 
-    const handleOpenModal = () => {
-        modalsStore.addModal('vacancy')
-    }
+        const handleOpenModal = () => {
+            modalsStore.addModal('vacancy')
+        }
 
-    return {
-      modules,
-      navigationConfig,
-      handleOpenModal,
-    };
-  },
+        return {
+            modules,
+            navigationConfig,
+            handleOpenModal,
+        };
+    },
 };
 </script>

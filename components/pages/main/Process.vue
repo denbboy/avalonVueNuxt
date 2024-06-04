@@ -1,10 +1,9 @@
 <template>
     <section class=" bg-no-repeat bg-cover pt-14 pb-32 relative overflow-hidden">
-        <!-- <img class="thumbnail absolute top-0 left-0 z-0 h-full w-full object-cover" src="/assets/img/index/buy-bgd.jpg"
-            alt="image"> -->
         <Parallaxy class="absolute top-0 left-0 z-0 h-full w-full" :speed="70"
             :animation="(delta: number) => `transform: translate3d(0, ${delta}px, 0);`">
-            <img class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg">
+            <!-- <img class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg"> -->
+            <img class="h-full w-full object-cover scale-125" src="/assets/img/about/stock-photo-kelingking-beach-at-sunset-in-nusa-penida-island-bali-indonesia-1486525196.jpg">
         </Parallaxy>
         <div class="container relative z-10">
 
@@ -240,7 +239,7 @@
 
                 <div
                     class="lg:flex relative z-10 lg:flex-row-reverse lg:justify-between lg:items-center lg:pt-10 lg:border-t lg:border-whiteOp-300">
-                    <button type="button"
+                    <button @click="handleOpenModal" type="button"
                         class="w-full bg-white p-4 font-bold text-blue-500 text-sm rounded-xl transition-all hover:bg-blue-400 hover:text-white mb-5 lg:max-w-[300px]">
                         Получить консультацию
                     </button>
@@ -278,4 +277,10 @@
 
 <script setup>
 import Parallaxy from '@lucien144/vue3-parallaxy';
+
+const modalsStore = useModalsStore()
+
+const handleOpenModal = () => {
+    modalsStore.addModal("presentation")
+}
 </script>

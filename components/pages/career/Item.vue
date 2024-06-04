@@ -59,7 +59,7 @@
                 <br>
                 <p><b>Тебе зацікавила наша робота? Надішли нам своє резюме, і ми зв’яжемося з тобою!</b></p>
                 <br>
-                <button class="white-button px-14">Отправить резюме</button>
+                <button @click="handleOpenModal" class="white-button px-14">Отправить резюме</button>
             </div>
         </div>
     </div>
@@ -71,6 +71,12 @@ const isOpen = ref(false)
 
 const handleOpen = () => {
     isOpen.value = !isOpen.value
+}
+
+const modalsStore = useModalsStore()
+
+const handleOpenModal = () => {
+    modalsStore.addModal("presentation")
 }
 
 </script>
