@@ -131,6 +131,8 @@
         </div>
     </section>
 
+    <PagesMainContacts/>
+
     <section class="bg-blue-600 pt-14 pb-24 border-b border-b-white/20">
         <div class="container">
             <div class="">
@@ -159,103 +161,23 @@
                     </div>
                 </div>
 
-                <div class="swiper else-news">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a href="discountsSingle.html" class="group relative rounded-2xl overflow-hidden">
-                                <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
-                                </div>
-                                <img src="/assets/img/news/cardImage.jpg" alt="Image" class="z-0 relative rounded-2xl">
-                                <div
-                                    class="bg-gradient-to-t from-blue-600/80 rounded-2xl transition-all group-hover:from-blue-400 from-20% absolute top-0 left-0 w-full h-full z-10 opacity-90">
-                                </div>
-                                <div class="absolute z-20 w-full h-full top-0 left-0 p-5 flex flex-col">
-                                    <div
-                                        class="bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] px-3 py-2 bg-no-repeat bg-cover bg-right-bottom rounded-l-lg rounded-tr-lg text-xs text-white ml-auto w-fit block md:text-sm md:p-3">
-                                        Действует до <strong>30 марта 2024</strong>
-                                    </div>
-                                    <strong class="mt-auto text-white mb-2 md:text-lg group-hover:underline">
-                                        Курс 36,6 грн/$ <br>на первый взнос
-                                    </strong>
-                                    <div class="flex items-center opacity-60">
-                                        <img class="w-2 md:w-3" src="/assets/img/icons/point-white.svg" alt="">
-                                        <span class="text-white ml-1 text-xs md:text-sm">Bukit</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="discountsSingle.html" class="group relative rounded-2xl overflow-hidden">
-                                <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
-                                </div>
-                                <img src="/assets/img/news/cardImage.jpg" alt="Image" class="z-0 relative rounded-2xl">
-                                <div
-                                    class="bg-gradient-to-t from-blue-600 rounded-2xl transition-all group-hover:from-blue-400 from-20% absolute top-0 left-0 w-full h-full z-10 opacity-90">
-                                </div>
-                                <div class="absolute z-20 w-full h-full top-0 left-0 p-5 flex flex-col">
-                                    <div
-                                        class="bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] px-3 py-2 bg-no-repeat bg-cover bg-right-bottom rounded-l-lg rounded-tr-lg text-xs text-white ml-auto w-fit block md:text-sm md:p-3">
-                                        Действует до <strong>30 марта 2024</strong>
-                                    </div>
-                                    <strong class="mt-auto text-white mb-2 md:text-lg group-hover:underline">
-                                        Курс 36,6 грн/$ <br>на первый взнос
-                                    </strong>
-                                    <div class="flex items-center opacity-60">
-                                        <img class="w-2 md:w-3" src="/assets/img/icons/point-white.svg" alt="">
-                                        <span class="text-white ml-1 text-xs md:text-sm">Bukit</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="discountsSingle.html" class="group relative rounded-2xl overflow-hidden">
-                                <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
-                                </div>
-                                <img src="/assets/img/news/cardImage.jpg" alt="Image" class="z-0 relative rounded-2xl">
-                                <div
-                                    class="bg-gradient-to-t from-blue-600 rounded-2xl transition-all group-hover:from-blue-400 from-20% absolute top-0 left-0 w-full h-full z-10 opacity-90">
-                                </div>
-                                <div class="absolute z-20 w-full h-full top-0 left-0 p-5 flex flex-col">
-                                    <div
-                                        class="bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] px-3 py-2 bg-no-repeat bg-cover bg-right-bottom rounded-l-lg rounded-tr-lg text-xs text-white ml-auto w-fit block md:text-sm md:p-3">
-                                        Действует до <strong>30 марта 2024</strong>
-                                    </div>
-                                    <strong class="mt-auto text-white mb-2 md:text-lg group-hover:underline">
-                                        Курс 36,6 грн/$ <br>на первый взнос
-                                    </strong>
-                                    <div class="flex items-center opacity-60">
-                                        <img class="w-2 md:w-3" src="/assets/img/icons/point-white.svg" alt="">
-                                        <span class="text-white ml-1 text-xs md:text-sm">Bukit</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="discountsSingle.html" class="group relative rounded-2xl overflow-hidden">
-                                <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
-                                </div>
-                                <img src="/assets/img/news/cardImage.jpg" alt="Image" class="z-0 relative rounded-2xl">
-                                <div
-                                    class="bg-gradient-to-t from-blue-600 rounded-2xl transition-all group-hover:from-blue-400 from-20% absolute top-0 left-0 w-full h-full z-10 opacity-90">
-                                </div>
-                                <div class="absolute z-20 w-full h-full top-0 left-0 p-5 flex flex-col">
-                                    <div
-                                        class="bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] px-3 py-2 bg-no-repeat bg-cover bg-right-bottom rounded-l-lg rounded-tr-lg text-xs text-white ml-auto w-fit block md:text-sm md:p-3">
-                                        Действует до <strong>30 марта 2024</strong>
-                                    </div>
-                                    <strong class="mt-auto text-white mb-2 md:text-lg group-hover:underline">
-                                        Курс 36,6 грн/$ <br>на первый взнос
-                                    </strong>
-                                    <div class="flex items-center opacity-60">
-                                        <img class="w-2 md:w-3" src="/assets/img/icons/point-white.svg" alt="">
-                                        <span class="text-white ml-1 text-xs md:text-sm">Bukit</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
+                <swiper :modules="modules" :slides-per-view="3" :pagination="pagination" :navigation="navigationConfig"
+                    :breakpoints="breakpoints" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
+
+                    <swiper-slide>
+                        <SalesItem bgdColor="blue-600" />
+                    </swiper-slide>
+                    <swiper-slide>
+                        <SalesItem bgdColor="blue-600" />
+                    </swiper-slide>
+                    <swiper-slide>
+                        <SalesItem bgdColor="blue-600" />
+                    </swiper-slide>
+                    <swiper-slide>
+                        <SalesItem bgdColor="blue-600" />
+                    </swiper-slide>
+
+                </swiper>
             </div>
         </div>
     </section>
@@ -264,3 +186,49 @@
 <script setup>
 const { id } = useRoute().params
 </script>
+
+<script>
+import { Navigation, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import SwiperCore from 'swiper';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+SwiperCore.use([Navigation, A11y]);
+
+export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    const modules = {
+      navigation: true,
+      pagination: true,
+      a11y: true,
+    };
+    const navigationConfig = {
+      nextEl: '.sales-button-next',
+      prevEl: '.sales-button-prev',
+    };
+    const pagination = {
+      el: '.swiper-pagination',
+      clickable: true,
+    };
+    const breakpoints = {
+      768: {
+        slidesPerView: 3
+      },
+    }
+
+    return {
+      modules,
+      navigationConfig,
+      breakpoints,
+      pagination
+    };
+  },
+};
+</script>
+

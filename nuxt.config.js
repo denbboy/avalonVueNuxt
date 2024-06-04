@@ -39,7 +39,9 @@ export default defineNuxtConfig({
     aos: {
         once: true
     },
-    css: ['~/assets/css/main.css'],
+    css: [
+        '~/assets/css/main.css',
+    ],
     modules: ['@nuxtjs/tailwindcss', "@pinia/nuxt", 'nuxt-aos', '@nuxtjs/i18n', 'nuxt-calendly'],
     calendly: {
         isEnabled: true,

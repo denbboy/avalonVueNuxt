@@ -2,30 +2,37 @@
 </script>
 
 <template>
-  <PagesMainBanner/>
+  <PagesMainBanner />
 
-  <PagesMainServices/>
+  <PagesMainServices />
 
-  <PagesMainMap/>
+  <PagesMainMap />
 
-  <PagesMainReasons/>
+  <PagesMainReasons />
 
-  <PagesMainNumbers/>
+  <PagesMainNumbers />
 
-  <PagesMainCompanies/>
+  <PagesMainCompanies />
 
-  <PagesMainProcess/>
+  <PagesMainProcess />
 
-  <PagesMainAboutUs/>
+  <PagesMainAboutUs />
 
-  <PagesMainTeam/>
+  <PagesMainTeam />
 
-  <PagesMainContacts/>
+  <PagesMainContacts />
 
-  <PagesMainSales/>
+  <PagesMainSales />
 
-  <PagesMainNews/>
+  <PagesMainNews />
 
-  <PagesMainArticles/>
+  <PagesMainArticles />
+
+  <button type="button"
+    class="fixed bottom-8 right-8 z-40 hidden lg:flex items-center gap-2 py-5 px-10px w-full bg-blue-400 rounded-xl max-w-[260px] text-white text-sm font-bold justify-center transition-all hover:bg-blue-600 ">
+    <div class="animate-ping absolute top-0 left-0 w-full h-full bg-blue-400/50 rounded-xl"></div>
+    <img src="/assets/img/index/head-whatss.svg" class="max-w-[15px] relative z-10" alt="ic">
+    <span class="relative z-10">Cвязаться в WhatsApp</span>
+  </button>
 
 </template>

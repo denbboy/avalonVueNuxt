@@ -1,4 +1,5 @@
 <template>
+
   <header
     class="bg-blue-500 py-4 border-b-2 border-b-whiteOp-300 z-30 lg:bg-transparent lg:border-none transition-all absolute w-full">
     <div class="container xl:max-w-[1920px]">
@@ -237,10 +238,11 @@
     </div>
   </header>
 
-  <div class="fixed left-0 top-0 h-full w-full z-50 bg-blue-500 transition-all duration-150 flex items-center justify-center"
+  <div
+    class="fixed left-0 top-0 h-full w-full z-50 bg-blue-500 transition-all duration-150 flex items-center justify-center"
     :class="loading ? 'visible opacity-100' : 'opacity-0 invisible'">
     <img class="w-[100px]" src="/assets/img/loader.gif" alt="">
-    </div>
+  </div>
 </template>
 
 <script setup>
@@ -249,13 +251,11 @@ import { useI18n } from 'vue-i18n'
 import { useLangStore } from './../stores/functions/language';
 
 const nuxtApp = useNuxtApp();
-const loading = ref(false);
-// nuxtApp.hook("page:start", () => {
-//   loading.value = true;
-// });
-// nuxtApp.hook("page:finish", () => {
-//   loading.value = false;
-// });
+const loading = ref(true);
+
+setTimeout(() => {
+  loading.value = false
+}, 500)
 
 const { locale } = useI18n()
 

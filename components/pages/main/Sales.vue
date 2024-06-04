@@ -32,16 +32,16 @@
           :breakpoints="breakpoints" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
 
           <swiper-slide>
-            <PagesMainSalesItem />
+            <SalesItem bgdColor="white" />
           </swiper-slide>
           <swiper-slide>
-            <PagesMainSalesItem />
+            <SalesItem bgdColor="white" />
           </swiper-slide>
           <swiper-slide>
-            <PagesMainSalesItem />
+            <SalesItem bgdColor="white" />
           </swiper-slide>
           <swiper-slide>
-            <PagesMainSalesItem />
+            <SalesItem bgdColor="white" />
           </swiper-slide>
 
         </swiper>

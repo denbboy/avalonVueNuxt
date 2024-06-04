@@ -31,64 +31,16 @@
         <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
           :breakpoints="breakpoints" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
           <swiper-slide>
-            <NuxtLink href="/news/123" class="w-full h-full block group">
-              <div class="relative mb-5 w-full">
-                <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
-                <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
-              </div>
-              <span
-                class="mb-3 md:mb-4 flex items-center text-blue-600 text-sm opacity-60 before:w-[6px] before:h-[6px] before:block before:bg-blue-600 before:rounded-sm before:mr-2">
-                1 июня 2023
-              </span>
-              <p class="text-base md:text-lg group-hover:text-blue-400 text-blue-600 font-bold">
-                СТАРТ ПРОДАЖ клубного дома <br>на 7 видовых квартир
-              </p>
-            </NuxtLink>
+            <NewsItem bgdColor="white" />
           </swiper-slide>
           <swiper-slide>
-            <NuxtLink href="/news/123" class="w-full h-full block group">
-              <div class="relative mb-5 w-full">
-                <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
-                <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
-              </div>
-              <span
-                class="mb-3 md:mb-4 flex items-center text-blue-600 text-sm opacity-60 before:w-[6px] before:h-[6px] before:block before:bg-blue-600 before:rounded-sm before:mr-2">
-                1 июня 2023
-              </span>
-              <p class="text-base md:text-lg group-hover:text-blue-400 text-blue-600 font-bold">
-                СТАРТ ПРОДАЖ клубного дома <br>на 7 видовых квартир
-              </p>
-            </NuxtLink>
+            <NewsItem bgdColor="white" />
           </swiper-slide>
           <swiper-slide>
-            <NuxtLink href="/news/123" class="w-full h-full block group">
-              <div class="relative mb-5 w-full">
-                <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
-                <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
-              </div>
-              <span
-                class="mb-3 md:mb-4 flex items-center text-blue-600 text-sm opacity-60 before:w-[6px] before:h-[6px] before:block before:bg-blue-600 before:rounded-sm before:mr-2">
-                1 июня 2023
-              </span>
-              <p class="text-base md:text-lg group-hover:text-blue-400 text-blue-600 font-bold">
-                СТАРТ ПРОДАЖ клубного дома <br>на 7 видовых квартир
-              </p>
-            </NuxtLink>
+            <NewsItem bgdColor="white" />
           </swiper-slide>
           <swiper-slide>
-            <NuxtLink href="/news/123" class="w-full h-full block group">
-              <div class="relative mb-5 w-full">
-                <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
-                <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
-              </div>
-              <span
-                class="mb-3 md:mb-4 flex items-center text-blue-600 text-sm opacity-60 before:w-[6px] before:h-[6px] before:block before:bg-blue-600 before:rounded-sm before:mr-2">
-                1 июня 2023
-              </span>
-              <p class="text-base md:text-lg group-hover:text-blue-400 text-blue-600 font-bold">
-                СТАРТ ПРОДАЖ клубного дома <br>на 7 видовых квартир
-              </p>
-            </NuxtLink>
+            <NewsItem bgdColor="white" />
           </swiper-slide>
           <div class="swiper-pagination"></div>
         </swiper>

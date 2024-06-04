@@ -14,6 +14,8 @@
 
     <PagesProjectInclusions />
 
+    <PagesMainContacts/>
+
     <PagesProject3D />
 
     <PagesProjectForecast />

@@ -31,84 +31,19 @@
         <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
           :breakpoints="breakpoints" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
           <swiper-slide>
-            <NuxtLink href="/articles/123" class="w-full h-full block group lg:max-w-[375px]">
-              <div class="relative mb-5 w-full">
-                <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
-                <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
-              </div>
-
-              <p class="text-base md:text-lg group-hover:text-blue-400 text-blue-600 font-bold">
-                СТАРТ ПРОДАЖ клубного дома <br>на 7 видовых квартир
-              </p>
-              <span class="mt-3 md:mt-4 flex items-center text-blue-600 text-sm opacity-60">
-                Our properties are situated in various areas across the island of Bali, offering a range
-                of locations to suit every preference
-              </span>
-            </NuxtLink>
+            <ArticlesItem isWhiteBgd="true"/>
           </swiper-slide>
           <swiper-slide>
-            <NuxtLink href="/articles/123" class="w-full h-full block group lg:max-w-[375px]">
-              <div class="relative mb-5 w-full">
-                <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
-                <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
-              </div>
-
-              <p class="text-base md:text-lg group-hover:text-blue-400 text-blue-600 font-bold">
-                СТАРТ ПРОДАЖ клубного дома <br>на 7 видовых квартир
-              </p>
-              <span class="mt-3 md:mt-4 flex items-center text-blue-600 text-sm opacity-60">
-                Our properties are situated in various areas across the island of Bali, offering a range
-                of locations to suit every preference
-              </span>
-            </NuxtLink>
+            <ArticlesItem isWhiteBgd="true"/>
           </swiper-slide>
           <swiper-slide>
-            <NuxtLink href="/articles/123" class="w-full h-full block group lg:max-w-[375px]">
-              <div class="relative mb-5 w-full">
-                <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
-                <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
-              </div>
-
-              <p class="text-base md:text-lg group-hover:text-blue-400 text-blue-600 font-bold">
-                СТАРТ ПРОДАЖ клубного дома <br>на 7 видовых квартир
-              </p>
-              <span class="mt-3 md:mt-4 flex items-center text-blue-600 text-sm opacity-60">
-                Our properties are situated in various areas across the island of Bali, offering a range
-                of locations to suit every preference
-              </span>
-            </NuxtLink>
+            <ArticlesItem isWhiteBgd="true"/>
           </swiper-slide>
           <swiper-slide>
-            <NuxtLink href="/articles/123" class="w-full h-full block group lg:max-w-[375px]">
-              <div class="relative mb-5 w-full">
-                <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
-                <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
-              </div>
-
-              <p class="text-base md:text-lg group-hover:text-blue-400 text-blue-600 font-bold">
-                СТАРТ ПРОДАЖ клубного дома <br>на 7 видовых квартир
-              </p>
-              <span class="mt-3 md:mt-4 flex items-center text-blue-600 text-sm opacity-60">
-                Our properties are situated in various areas across the island of Bali, offering a range
-                of locations to suit every preference
-              </span>
-            </NuxtLink>
+            <ArticlesItem isWhiteBgd="true"/>
           </swiper-slide>
           <swiper-slide>
-            <NuxtLink href="/articles/123" class="w-full h-full block group lg:max-w-[375px]">
-              <div class="relative mb-5 w-full">
-                <div class="block-bottom-point border-white bg-white after:bg-blue-500"></div>
-                <img class="rounded-[20px] w-full h-full object-cover" src="/assets/img/news/cardImage.jpg" alt="">
-              </div>
-
-              <p class="text-base md:text-lg group-hover:text-blue-400 text-blue-600 font-bold">
-                СТАРТ ПРОДАЖ клубного дома <br>на 7 видовых квартир
-              </p>
-              <span class="mt-3 md:mt-4 flex items-center text-blue-600 text-sm opacity-60">
-                Our properties are situated in various areas across the island of Bali, offering a range
-                of locations to suit every preference
-              </span>
-            </NuxtLink>
+            <ArticlesItem isWhiteBgd="true"/>
           </swiper-slide>
           <div class="swiper-pagination"></div>
         </swiper>

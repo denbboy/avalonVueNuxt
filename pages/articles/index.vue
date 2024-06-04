@@ -15,16 +15,16 @@
                     вас шаги.</p>
             </div>
             <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid gap-x-5 gap-y-8 md:gap-y-12 mt-12">
-                <a href="articlesSingle.html" class="group">
-                    <img class="mb-5 rounded-3xl w-full h-[210px] md:h-[300px] object-cover"
-                        src="/assets/img/news/cardImage.jpg" alt="Image">
-                    <h2 class="mb-4 group-hover:underline text-white text-base md:text-lg leading-4 md:leading-5">
-                        <strong>Название интересной <br>статьи в две строки</strong>
-                    </h2>
-                    <p class="text-white line-clamp-2 text-sm opacity-60">Our properties are situated in various areas
-                        across the island of Bali, offering a range of locations to suit every preference, offering a
-                        range of locations to suit every preference</p>
-                </a>
+
+                <ArticlesItem/>
+                <ArticlesItem/>
+                <ArticlesItem/>
+                <ArticlesItem/>
+                <ArticlesItem/>
+                <ArticlesItem/>
+                <ArticlesItem/>
+                <ArticlesItem/>
+
             </div>
             <button class="white-border-button">
                 Показать больше

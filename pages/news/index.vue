@@ -54,12 +54,12 @@
         </div>
       </div>
       <div class="md:grid-cols-2 lg:grid-cols-3 grid grid-cols-1 gap-x-5 gap-y-10 mt-12">
-        <NewsItem />
-        <NewsItem />
-        <NewsItem />
-        <NewsItem />
-        <NewsItem />
-        <NewsItem />
+        <NewsItem bgdColor="blue-500"/>
+        <NewsItem bgdColor="blue-500"/>
+        <NewsItem bgdColor="blue-500"/>
+        <NewsItem bgdColor="blue-500"/>
+        <NewsItem bgdColor="blue-500"/>
+        <NewsItem bgdColor="blue-500"/>
       </div>
       <button
         class="text-white h-[60px] rounded-[10px] border-white border-[1px] cursor-pointer px-7 mx-auto block mt-12">

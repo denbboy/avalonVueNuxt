@@ -1,3 +1,5 @@
+import { transform } from 'typescript';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -11,6 +13,15 @@ export default {
   plugins: [],
   theme: {
     extend: {
+      keyframes: {
+        ping: {
+          "0%": { transform: 'scale(1)', opacity: "1" },
+          "75%, 100%": { transform: 'scale(1.5)', opacity: "0" }
+        }
+      },
+      animation: {
+        ping: 'ping 3s ease infinite'
+      },
       grayscale: {
         100: '100%',
       },
