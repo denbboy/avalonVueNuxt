@@ -163,9 +163,9 @@
                   для жизни <br class="md:hidden"> и инвестиций
                 </span>
               </h2>
-              <a href="#" class="white-button mt-7 lg:mt-12">
+              <button @click="addModal" class="white-button mt-7 lg:mt-12">
                 Скачать презентацию
-              </a>
+              </button>
             </div>
 
             <div class="hidden md:block mr-52">
@@ -191,11 +191,6 @@
                 </span>
               </div>
             </div>
-            <button type="button"
-              class="hidden lg:flex items-center gap-2 py-5 px-10px w-full bg-blue-400 rounded-xl max-w-[260px] text-white text-sm font-bold justify-center transition-all hover:bg-blue-600 ">
-              <img src="/assets/img/index/head-whatss.svg" class="max-w-[15px]" alt="ic">
-              Cвязаться в WhatsApp
-            </button>
           </div>
         </div>
       </swiper-slide>

@@ -23,7 +23,7 @@
           Если вы на острове,
           мы с радостью проведём вам экскурсию по объекту!
         </p>
-        <button type="button" class="white-button px-7 mx-auto lg:mx-0 lg:px-[60px]">
+        <button @click="handleOpenModal" type="button" class="white-button px-7 mx-auto lg:mx-0 lg:px-[60px]">
           Записаться на просмотр
         </button>
       </div>
@@ -33,4 +33,9 @@
 </template>
 
 <script setup>
+const modalsStore = useModalsStore()
+
+const handleOpenModal = () => {
+  modalsStore.addModal('presentation')
+}
 </script>

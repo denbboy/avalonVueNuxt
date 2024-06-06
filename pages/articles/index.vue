@@ -16,19 +16,22 @@
             </div>
             <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid gap-x-5 gap-y-8 md:gap-y-12 mt-12">
 
-                <ArticlesItem/>
-                <ArticlesItem/>
-                <ArticlesItem/>
-                <ArticlesItem/>
-                <ArticlesItem/>
-                <ArticlesItem/>
-                <ArticlesItem/>
-                <ArticlesItem/>
+                <ArticlesItem bgdColor="blue-500" />
+                <ArticlesItem bgdColor="blue-500" />
+                <ArticlesItem bgdColor="blue-500" />
+                <ArticlesItem bgdColor="blue-500" />
+                <ArticlesItem bgdColor="blue-500" />
+                <ArticlesItem bgdColor="blue-500" />
+                <ArticlesItem bgdColor="blue-500" />
+                <ArticlesItem bgdColor="blue-500" />
 
             </div>
-            <button class="white-border-button">
+
+            <!-- TODO Сделать кнопку -->
+
+            <!-- <button class="white-border-button">
                 Показать больше
-            </button>
+            </button> -->
         </div>
 
         <div class="absolute -right-36 bottom-40 w-72 h-72 z-10">

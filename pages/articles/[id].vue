@@ -64,7 +64,7 @@
         </div>
     </section>
 
-    <section class="bg-blue-600 pt-14 pb-24">
+    <section class="bg-blue-600 pt-14">
         <div class="container">
             <div class="">
                 <div class="flex justify-between items-center mb-8">
@@ -72,8 +72,8 @@
                         Другие акции
                     </h2>
 
-                    <div class="w-fit opacity-20 hidden md:flex">
-                        <button type="button" class="button-prev mr-9">
+                    <div class="w-fit hidden md:flex">
+                        <button type="button" class="articles-button-prev opacity-20 hover:opacity-100 transition-all mr-9">
                             <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -81,7 +81,7 @@
                                     fill="white" style="fill:white;fill-opacity:1;" />
                             </svg>
                         </button>
-                        <button type="button" class="button-next">
+                        <button type="button" class="articles-button-next opacity-20 hover:opacity-100 transition-all">
                             <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -92,111 +92,74 @@
                     </div>
                 </div>
 
-                <div class="swiper else-articles">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a href="articlesSingle.html" class="group">
-                                <div class="relative">
-                                    <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
-                                    </div>
-                                    <img class="mb-5 rounded-3xl w-full h-[210px] md:h-[300px] object-cover"
-                                        src="/assets/img/news/cardImage.jpg" alt="Image">
-                                </div>
-                                <h2
-                                    class="mb-4 group-hover:underline text-white text-base md:text-lg leading-4 md:leading-5">
-                                    <strong>Название интересной <br>статьи в две строки</strong>
-                                </h2>
-                                <p class="text-white line-clamp-2 text-sm opacity-60">Our properties are situated in
-                                    various
-                                    areas across the island of Bali, offering a range of locations to suit every
-                                    preference,
-                                    offering a range of locations to suit every preference</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="articlesSingle.html" class="group">
-                                <div class="relative">
-                                    <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
-                                    </div>
-                                    <img class="mb-5 rounded-3xl w-full h-[210px] md:h-[300px] object-cover"
-                                        src="/assets/img/news/cardImage.jpg" alt="Image">
-                                </div>
-                                <h2
-                                    class="mb-4 group-hover:underline text-white text-base md:text-lg leading-4 md:leading-5">
-                                    <strong>Название интересной <br>статьи в две строки</strong>
-                                </h2>
-                                <p class="text-white line-clamp-2 text-sm opacity-60">Our properties are situated in
-                                    various
-                                    areas across the island of Bali, offering a range of locations to suit every
-                                    preference,
-                                    offering a range of locations to suit every preference</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="articlesSingle.html" class="group">
-                                <div class="relative">
-                                    <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
-                                    </div>
-                                    <img class="mb-5 rounded-3xl w-full h-[210px] md:h-[300px] object-cover"
-                                        src="/assets/img/news/cardImage.jpg" alt="Image">
-                                </div>
-                                <h2
-                                    class="mb-4 group-hover:underline text-white text-base md:text-lg leading-4 md:leading-5">
-                                    <strong>Название интересной <br>статьи в две строки</strong>
-                                </h2>
-                                <p class="text-white line-clamp-2 text-sm opacity-60">Our properties are situated in
-                                    various
-                                    areas across the island of Bali, offering a range of locations to suit every
-                                    preference,
-                                    offering a range of locations to suit every preference</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="articlesSingle.html" class="group">
-                                <div class="relative">
-                                    <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
-                                    </div>
-                                    <img class="mb-5 rounded-3xl w-full h-[210px] md:h-[300px] object-cover"
-                                        src="/assets/img/news/cardImage.jpg" alt="Image">
-                                </div>
-                                <h2
-                                    class="mb-4 group-hover:underline text-white text-base md:text-lg leading-4 md:leading-5">
-                                    <strong>Название интересной <br>статьи в две строки</strong>
-                                </h2>
-                                <p class="text-white line-clamp-2 text-sm opacity-60">Our properties are situated in
-                                    various
-                                    areas across the island of Bali, offering a range of locations to suit every
-                                    preference,
-                                    offering a range of locations to suit every preference</p>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="articlesSingle.html" class="group">
-                                <div class="relative">
-                                    <div class="block-bottom-point z-20 border-blue-600 bg-blue-600 after:bg-blue-500">
-                                    </div>
-                                    <img class="mb-5 rounded-3xl w-full h-[210px] md:h-[300px] object-cover"
-                                        src="/assets/img/news/cardImage.jpg" alt="Image">
-                                </div>
-                                <h2
-                                    class="mb-4 group-hover:underline text-white text-base md:text-lg leading-4 md:leading-5">
-                                    <strong>Название интересной <br>статьи в две строки</strong>
-                                </h2>
-                                <p class="text-white line-clamp-2 text-sm opacity-60">Our properties are situated in
-                                    various
-                                    areas across the island of Bali, offering a range of locations to suit every
-                                    preference,
-                                    offering a range of locations to suit every preference</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
+                <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
+                    :breakpoints="breakpoints" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
+                    <swiper-slide>
+                        <ArticlesItem bgdColor="blue-600" />
+                    </swiper-slide>
+                    <swiper-slide>
+                        <ArticlesItem bgdColor="blue-600" />
+                    </swiper-slide>
+                    <swiper-slide>
+                        <ArticlesItem bgdColor="blue-600" />
+                    </swiper-slide>
+                    <swiper-slide>
+                        <ArticlesItem bgdColor="blue-600" />
+                    </swiper-slide>
+                    <swiper-slide>
+                        <ArticlesItem bgdColor="blue-600" />
+                    </swiper-slide>
+                    <!-- <div class="swiper-pagination"></div> -->
+                </swiper>
             </div>
         </div>
     </section>
 </template>
 
-<script setup>
-const { id } = useRoute().params
+<script>
+import { Navigation, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import SwiperCore from 'swiper';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+SwiperCore.use([Navigation, A11y]);
+
+export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    const modules = {
+      navigation: true,
+      pagination: true,
+      a11y: true,
+    };
+    const navigationConfig = {
+      nextEl: '.articles-button-next',
+      prevEl: '.articles-button-prev',
+    };
+    const pagination = {
+      el: '.swiper-pagination',
+      clickable: true,
+    };
+    const breakpoints = {
+      768: {
+        slidesPerView: 3
+      },
+      1024: {
+        slidesPerView: 4
+      },
+    }
+
+    return {
+      modules,
+      navigationConfig,
+      breakpoints,
+      pagination
+    };
+  },
+};
 </script>

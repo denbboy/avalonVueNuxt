@@ -31,19 +31,19 @@
         <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
           :breakpoints="breakpoints" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
           <swiper-slide>
-            <ArticlesItem isWhiteBgd="true"/>
+            <ArticlesItem bgdColor="white"/>
           </swiper-slide>
           <swiper-slide>
-            <ArticlesItem isWhiteBgd="true"/>
+            <ArticlesItem bgdColor="white"/>
           </swiper-slide>
           <swiper-slide>
-            <ArticlesItem isWhiteBgd="true"/>
+            <ArticlesItem bgdColor="white"/>
           </swiper-slide>
           <swiper-slide>
-            <ArticlesItem isWhiteBgd="true"/>
+            <ArticlesItem bgdColor="white"/>
           </swiper-slide>
           <swiper-slide>
-            <ArticlesItem isWhiteBgd="true"/>
+            <ArticlesItem bgdColor="white"/>
           </swiper-slide>
           <div class="swiper-pagination"></div>
         </swiper>

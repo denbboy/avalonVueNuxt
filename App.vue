@@ -13,7 +13,7 @@
   const modalsStore = useModalsStore()
 
   setTimeout(() => {
-    // modalsStore.addModal('message')
+    modalsStore.addModal('message')
   }, 4000)
 
 </script>

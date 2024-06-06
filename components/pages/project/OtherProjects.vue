@@ -42,10 +42,10 @@
                                 </div>
 
                                 <div class="flex">
-                                    <button
+                                    <NuxtLink href="/projects/asdwe3"
                                         class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
                                         Подробнее
-                                    </button>
+                                    </NuxtLink>
                                     <div class="flex items-center">
                                         <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
                                         <span class="ml-1 text-sm text-white">Чангу</span>
@@ -90,10 +90,10 @@
                                 </div>
 
                                 <div class="flex">
-                                    <button
+                                    <NuxtLink href="/projects/421412"
                                         class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
                                         Подробнее
-                                    </button>
+                                    </NuxtLink>
                                     <div class="flex items-center">
                                         <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
                                         <span class="ml-1 text-sm text-white">Чангу</span>
@@ -138,10 +138,10 @@
                                 </div>
 
                                 <div class="flex">
-                                    <button
+                                    <NuxtLink href="/projects/321"
                                         class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
                                         Подробнее
-                                    </button>
+                                    </NuxtLink>
                                     <div class="flex items-center">
                                         <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
                                         <span class="ml-1 text-sm text-white">Чангу</span>
