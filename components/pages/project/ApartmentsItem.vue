@@ -2,7 +2,9 @@
     <div
         class="bg-blue-600 py-10 px-5 rounded-2xl relative lg:flex lg:items-center lg:gap-10 lg:flex-row-reverse lg:justify-between lg:py-[100px] lg:px-[100px] mb-5 md:mb-12 last:mb-0">
         <div
-            class="min-w-[84px] h-[84px] md:min-w-[137px] md:h-[137px] bg-blue-400 text-center rounded-full flex justify-center items-center flex-col before:border before:border-blue-400 before:rounded-full before:w-[98px] before:h-[98px] md:before:w-[160px] md:before:h-[160px] before:absolute before:top-[-7px] before:left-[-7px] md:before:top-[-11px] md:before:left-[-12px]  absolute top-[0px] left-[60px] z-10 md:top-[70px] md:left-auto md:right-[60px]">
+            class="min-w-[84px] h-[84px] md:min-w-[137px] md:h-[137px] bg-blue-400 text-center rounded-full flex justify-center items-center flex-col before:border  absolute top-[0px] left-[60px] z-10 md:top-[70px] md:left-auto md:right-[60px]">
+            <div
+                        class="block animate-ping w-[84px] h-[84px] md:w-[137px] md:h-[137px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]"></div>
             <p class="text-white text-xs md:text-lg md:uppercase">
                 Roi
             </p>
@@ -43,11 +45,11 @@
                     <g clip-path="url(#clip0_840_7236)">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M23.2802 17.1629L16.816 10.6986L18 9.51465L26.4853 17.9999L18 26.4852L16.816 25.3012L23.2799 18.8373L10.7778 18.8373L10.7778 17.1629L23.2802 17.1629Z"
-                            fill="white" style="fill:white;fill-opacity:1;" />
+                            fill="white" />
                     </g>
                     <defs>
                         <clipPath id="clip0_840_7236">
-                            <rect width="12" height="12" fill="white" style="fill:white;fill-opacity:1;"
+                            <rect width="12" height="12" fill="white"
                                 transform="translate(18 9.51465) rotate(45)" />
                         </clipPath>
                     </defs>
@@ -61,11 +63,11 @@
                     <g clip-path="url(#clip0_840_7231)">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M12.7198 17.1629L19.184 10.6986L18 9.51465L9.51472 17.9999L18 26.4852L19.184 25.3012L12.7201 18.8373L25.2222 18.8373L25.2222 17.1629L12.7198 17.1629Z"
-                            fill="white" style="fill:white;fill-opacity:1;" />
+                            fill="white" />
                     </g>
                     <defs>
                         <clipPath id="clip0_840_7231">
-                            <rect width="12" height="12" fill="white" style="fill:white;fill-opacity:1;"
+                            <rect width="12" height="12" fill="white"
                                 transform="matrix(-0.707107 0.707107 0.707107 0.707107 18 9.51465)" />
                         </clipPath>
                     </defs>

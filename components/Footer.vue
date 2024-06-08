@@ -3,7 +3,13 @@
         <div class="container">
 
             <div class="md:flex md:items-center gap-5 justify-between md:mb-24">
-                <img src="/assets/img/index/a-footer.png" class="max-w-[379px] hidden lg:block" alt="ph">
+                <!-- <img src="/assets/img/index/a-footer.png" class="max-w-[379px] hidden lg:block" alt="ph"> -->
+
+                <div class="logo-clip-path hidden lg:block">
+                    <video class="w-[379px] h-[392px] object-cover" muted autoplay
+                        src="/assets/video/video-logo.webm"></video>
+                </div>
+
                 <div class="w-fit">
                     <div class="md:mb-[30px] md:pb-[30px] border-b border-white/10 mb-5 pb-5">
                         <a href="tel:+6281246502783" class="flex items-center gap-4 mb-7 md:gap-5 group">
@@ -86,19 +92,19 @@
                         <p class="text-red-700 text-left transition-all h-full" :class="{
                             'max-h-10 opacity-100 mt-2': isError,
                             'max-h-0 opacity-0': !isError
-                            }">
+                        }">
                             Пожалуйста, заполните все поля в форме
                         </p>
                         <p class="text-white/50 text-left transition-all h-full" :class="{
                             'max-h-10 opacity-100 mt-2': isSending,
                             'max-h-0 opacity-0': !isSending
-                            }">
+                        }">
                             Подождите, идет отправка
                         </p>
                         <p class="text-green-500 text-left transition-all h-full" :class="{
                             'max-h-10 opacity-100 mt-2': isSuccess,
                             'max-h-0 opacity-0': !isSuccess
-                            }">
+                        }">
                             Ваше сообщение успешно отправлено
                         </p>
 
@@ -113,7 +119,13 @@
         <div class="bg-blue-500 py-7 md:py-2">
             <div class="container">
                 <div class="flex items-center justify-between gap-8">
-                    <img src="/assets/img/index/a-footer.png" class="max-w-[96px] md:hidden" alt="ph">
+                    <!-- <img src="/assets/img/index/a-footer.png" class="max-w-[96px] md:hidden" alt="ph"> -->
+
+                    <div class="logo-clip-path md:hidden">
+                        <video class="w-[96px] h-[100px] object-cover" muted autoplay
+                            src="/assets/video/video-logo.webm"></video>
+                    </div>
+
                     <ul class="md:flex md:items-center py-2 md:justify-center md:w-full">
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 lg:mb-0 lg:border-r lg:pr-[14px] lg:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">

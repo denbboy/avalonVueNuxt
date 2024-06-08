@@ -1,5 +1,5 @@
 <template>
-    <section class="prognoz  bg-[url('./../img/about/prognoz-bgd.png')] bg-no-repeat bg-cover py-14 md:py-24">
+    <section id="investors" class="prognoz  bg-[url('./../img/about/prognoz-bgd.png')] bg-no-repeat bg-cover py-14 md:py-24">
         <div class="container">
             <h2 class="text-white text-3xl font-bold mb-[30px] md:text-center md:text-[56px] md:mb-[50px]">
                 Прогноз ROI

@@ -1,5 +1,5 @@
 <template>
-    <section class="club py-14 bg-blue-600 lg:py-0 lg:pb-24">
+    <section id="about" class="club py-14 bg-blue-600 lg:py-0 lg:pb-24">
         <div class="container">
             <div class="lg:flex lg:gap-7 lg:items-center">
                 <div class="md:max-w-[650px] lg:min-w-[420px]">

@@ -14,13 +14,24 @@ export default {
   theme: {
     extend: {
       keyframes: {
+        'fade': {
+          "0%": {
+            opacity: 0
+          },
+          "100%": {
+            opacity: 1
+          }
+        },
         ping: {
           "0%": { transform: 'scale(1)', opacity: "1" },
           "75%, 100%": { transform: 'scale(1.5)', opacity: "0" }
         }
       },
       animation: {
-        ping: 'ping 3s ease infinite'
+        ping: 'ping 3s ease infinite',
+        'fade': 'fade .6s ease-in infinite alternate-reverse',
+        'fade-1s': 'fade .6s 0.4s ease-in infinite alternate-reverse',
+        'fade-2s': 'fade .6s 0.8s ease-in infinite alternate-reverse'
       },
       grayscale: {
         100: '100%',

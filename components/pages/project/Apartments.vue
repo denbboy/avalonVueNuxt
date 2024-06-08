@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-[url('./../img/about/apartment-bgd.jpg')] bg-no-repeat bg-cover py-14 md:py-24">
+    <section id="apartments" class="bg-[url('./../img/about/apartments.jpg')] bg-no-repeat bg-cover py-14 md:py-24">
         <div class="container">
             
             <PagesProjectApartmentsItem id="1" />

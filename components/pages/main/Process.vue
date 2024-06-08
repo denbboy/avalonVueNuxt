@@ -3,7 +3,8 @@
         <Parallaxy class="absolute top-0 left-0 z-0 h-full w-full" :speed="70"
             :animation="(delta: number) => `transform: translate3d(0, ${delta}px, 0);`">
             <!-- <img class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg"> -->
-            <img class="h-full w-full object-cover scale-125" src="/assets/img/about/stock-photo-kelingking-beach-at-sunset-in-nusa-penida-island-bali-indonesia-1486525196.jpg">
+            <img class="h-full w-full object-cover scale-125"
+                src="/assets/img/about/stock-photo-kelingking-beach-at-sunset-in-nusa-penida-island-bali-indonesia-1486525196.jpg">
         </Parallaxy>
         <div class="container relative z-10">
 
@@ -259,8 +260,11 @@
                 </div>
 
 
-                <button type="button"
-                    class="w-[170px] h-[170px] md:w-[244px] md:h-[244px] rounded-full bg-blue-400 transition-all hover:bg-blue-500 flex flex-col items-center justify-center gap-1 before:block before:w-[200px] before:h-[200px] md:before:w-[284px] md:before:h-[284px] before:border before:border-whiteOp-200 before:hover:border-blue-500 before:transition-all before:rounded-full before:absolute bafore:top-[-14px] bafore:left-[-14px] absolute bottom-[-85px] md:bottom-[-122px] left-[50%] lg:bottom-auto 3xl:left-0 3xl:top-[50%] lg:translate-y-[-50%] translate-x-[-50%] lg:top-[75%] lg:left-28">
+                <div
+                    class="w-[170px] h-[170px] md:w-[244px] md:h-[244px] text-center rounded-full bg-blue-400 transition-all flex flex-col items-center justify-center gap-1 absolute bottom-[-85px] md:bottom-[-122px] left-[50%] lg:bottom-auto 3xl:left-0 3xl:top-[50%] lg:translate-y-[-50%] translate-x-[-50%] lg:top-[75%] lg:left-28">
+                    <div
+                        class="block animate-ping w-[170px] h-[170px] md:w-[244px] md:h-[244px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]">
+                    </div>
                     <b class="block font-bold text-white md:text-[60px] leading-[100%] text-[40px]">
                         -5%
                     </b>
@@ -269,7 +273,7 @@
                         при единоразовой
                         100% оплате
                     </span>
-                </button>
+                </div>
             </div>
         </div>
     </section>

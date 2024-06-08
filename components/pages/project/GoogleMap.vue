@@ -1,6 +1,6 @@
 <template>
 
-  <section class="map py-14 md:py-24">
+  <section id="location" class="map py-14 md:py-24">
     <div class="container">
       <h2 class="font-bold text-white text-3xl text-center mb-8 lg:hidden">
         Топовая локация
