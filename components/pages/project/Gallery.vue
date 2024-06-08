@@ -5,31 +5,31 @@
                 class="grid gap-4 grid-cols-2 md:grid-cols-3 md:[&>.image:nth-child(3n+1)]:col-start-auto md:[&>.image:nth-child(3n+1)]:col-end-auto [&>.image:nth-child(3n+1)]:col-start-1 [&>.image:nth-child(3n+1)]:col-end-3 md:[&>.image:nth-child(7n+1)]:col-start-1 md:[&>.image:nth-child(7n+1)]:col-end-3 md:[&>.image:nth-child(7n+7)]:col-start-2 md:[&>.image:nth-child(7n+7)]:col-end-4">
 
                 <client-only>
-                    <a class="image" data-fancybox="gallery" href="/_nuxt/assets/img/about/gallery-ph-1.png">
+                    <a data-aos="fade-up" class="image" data-fancybox="gallery" href="/_nuxt/assets/img/about/gallery-ph-1.png">
                         <img src="/assets/img/about/gallery-ph-1.png"
                             class="rounded-2xl h-full w-full flex items-center justify-center" alt="ph">
                     </a>
-                    <a class="image" data-fancybox="gallery" href="/_nuxt/assets/img/about/gallery-ph-2.png">
+                    <a data-aos="fade-up" class="image" data-fancybox="gallery" href="/_nuxt/assets/img/about/gallery-ph-2.png">
                         <img src="/assets/img/about/gallery-ph-2.png"
                             class="rounded-2xl h-full w-full flex items-center justify-center" alt="ph">
                     </a>
-                    <a class="image" data-fancybox="gallery" href="/_nuxt/assets/img/about/gallery-ph-3.png">
+                    <a data-aos="fade-up" class="image" data-fancybox="gallery" href="/_nuxt/assets/img/about/gallery-ph-3.png">
                         <img src="/assets/img/about/gallery-ph-3.png"
                             class="rounded-2xl h-full w-full flex items-center justify-center" alt="ph">
                     </a>
-                    <a class="image" data-fancybox="gallery" href="/_nuxt/assets/img/about/gallery-ph-4.png">
+                    <a data-aos="fade-up" class="image" data-fancybox="gallery" href="/_nuxt/assets/img/about/gallery-ph-4.png">
                         <img src="/assets/img/about/gallery-ph-4.png"
                             class="rounded-2xl h-full w-full flex items-center justify-center" alt="ph">
                     </a>
-                    <a class="image" data-fancybox="gallery" href="/_nuxt/assets/img/about/gallery-ph-5.png">
+                    <a data-aos="fade-up" class="image" data-fancybox="gallery" href="/_nuxt/assets/img/about/gallery-ph-5.png">
                         <img src="/assets/img/about/gallery-ph-5.png"
                             class="rounded-2xl h-full w-full flex items-center justify-center" alt="ph">
                     </a>
-                    <a class="image" data-fancybox="gallery" href="/_nuxt/assets/img/about/gallery-ph-6.png">
+                    <a data-aos="fade-up" class="image" data-fancybox="gallery" href="/_nuxt/assets/img/about/gallery-ph-6.png">
                         <img src="/assets/img/about/gallery-ph-6.png"
                             class="rounded-2xl h-full w-full flex items-center justify-center" alt="ph">
                     </a>
-                    <a class="image" data-fancybox="gallery" href="/_nuxt/assets/img/about/gallery-ph-7.png">
+                    <a data-aos="fade-up" class="image" data-fancybox="gallery" href="/_nuxt/assets/img/about/gallery-ph-7.png">
                         <img src="/assets/img/about/gallery-ph-7.png"
                             class="rounded-2xl h-full w-full flex items-center justify-center" alt="ph">
                     </a>

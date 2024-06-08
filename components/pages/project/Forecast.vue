@@ -1,12 +1,12 @@
 <template>
     <section id="investors" class="prognoz  bg-[url('./../img/about/prognoz-bgd.png')] bg-no-repeat bg-cover py-14 md:py-24">
         <div class="container">
-            <h2 class="text-white text-3xl font-bold mb-[30px] md:text-center md:text-[56px] md:mb-[50px]">
+            <h2 data-aos="fade-up" class="text-white text-3xl font-bold mb-[30px] md:text-center md:text-[56px] md:mb-[50px]">
                 Прогноз ROI
             </h2>
 
             <div class="">
-                <div class="flex w-full">
+                <div data-aos="fade-up" class="flex w-full">
                     <div class="w-full mb-[15px] md:mb-[30px]">
                         <input @change="handleChange" type="radio" name="data1" value="option1" id="option1"
                             class="sr-only" checked>

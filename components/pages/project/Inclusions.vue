@@ -1,11 +1,11 @@
 <template>
     <section class="cost py-14 md:py-24">
         <div class="container">
-            <h2 class="font-bold text-white text-3xl mb-8 md:mb-12 md:text-center md:text-[56px]">
+            <h2 data-aos="fade-up" class="font-bold text-white text-3xl mb-8 md:mb-12 md:text-center md:text-[56px]">
                 Что входит в стоимость
             </h2>
 
-            <div class="lg:grid grid-cols-3 gap-5">
+            <div data-aos="fade-up" class="lg:grid grid-cols-3 gap-5">
 
                 <div
                     class="flex items-center gap-5 py-7 border-t border-whiteOp-300 lg:gap-7 lg:py-14 lg:px-10 lg:border lg:rounded-2xl">

@@ -2,7 +2,7 @@
     <section id="about" class="club py-14 bg-blue-600 lg:py-0 lg:pb-24">
         <div class="container">
             <div class="lg:flex lg:gap-7 lg:items-center">
-                <div class="md:max-w-[650px] lg:min-w-[420px]">
+                <div data-aos="fade-right" class="md:max-w-[650px] lg:min-w-[420px]">
                     <h2 class="font-bold text-white text-3xl mb-7 md:text-[56px] md:mb-12">
                         OM | Club House
                     </h2>
@@ -17,12 +17,12 @@
                         XO Complex идеально подойдёт для тех, кто любит быть в эпицентре событий.
                     </p>
                 </div>
-                <div class="">
+                <div data-aos="fade-left" class="">
                     <img src="/assets/img/about/club-img.png" alt="ph">
                 </div>
             </div>
 
-            <ul class="border border-blue-400 lg:border-blue-500 rounded-2xl md:flex">
+            <ul data-aos="fade-up" class="border border-blue-400 lg:border-blue-500 rounded-2xl md:flex">
                 <li
                     class="py-8 px-5 w-full border-b border-blue-400 lg:border-blue-500 lg:py-12 lg:px-8 md:border-b-0 md:border-r">
                     <span class="block font-bold text-white text-2xl mb-2 md:text-[40px] md:mb-4">

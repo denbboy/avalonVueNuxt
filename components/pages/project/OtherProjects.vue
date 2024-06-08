@@ -4,11 +4,11 @@
             <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
         </div>
         <div class="container">
-            <h2 class="text-white text-3xl font-bold text-center md:text-[56px] leading-[100%] mb-[30px] md:mb-[50px]">
+            <h2 data-aos="fade-up" class="text-white text-3xl font-bold text-center md:text-[56px] leading-[100%] mb-[30px] md:mb-[50px]">
                 Другие проекты
             </h2>
 
-            <div class="flex flex-col gap-5 items-center md:flex-wrap lg:flex-row lg:flex-nowrap z-10 relative">
+            <div data-aos="fade-up" class="flex flex-col gap-5 items-center md:flex-wrap lg:flex-row lg:flex-nowrap z-10 relative">
 
                 <div class="max-w-[508px]">
 
