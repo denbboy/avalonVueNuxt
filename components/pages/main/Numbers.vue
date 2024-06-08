@@ -5,7 +5,7 @@
     </div>
 
     <div class="container">
-      <div class="bali_con grid grid-cols-2 gap-x-2 gap-y-7 lg:grid-cols-3 lg:gap-y-12 lg:gap-x-5">
+      <div class="bali_con grid grid-cols-2 gap-x-2 gap-y-7 lg:grid-cols-3 lg:gap-y-12 lg:gap-x-5" data-aos="fade-up">
         <h2 class="font-bold text-white text-3xl md:text-[56px] md:leading-[100%] col-start-1 col-end-3 lg:col-end-1">
           Бали <br class="hidden md:block">в цифрах
         </h2>

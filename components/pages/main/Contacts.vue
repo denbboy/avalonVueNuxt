@@ -1,5 +1,5 @@
 <template>
-  <section class="contat pb-14 md:pb-24">
+  <section class="contat pb-14 md:pb-24" data-aos="fade-up">
     <div class="container">
       <form @submit.prevent="submitForm"
         class="flex flex-col p-5 lg:py-12 lg:px-[130px] border border-whiteOp-300 rounded-2xl text-center md:p-12 relative">

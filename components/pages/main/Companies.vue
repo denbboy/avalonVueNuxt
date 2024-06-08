@@ -1,5 +1,5 @@
 <template>
-  <section class="company lg:bg-white lg:pt-24 lg:pb-16 relative overflow-hidden bg-blue-600">
+  <section class="company lg:bg-white lg:pt-24 lg:pb-16 relative overflow-hidden bg-blue-600" data-aos="fade-up">
     <div class="absolute -left-36 bottom-20 w-72 h-72 z-10">
       <img src="/assets/img/icons/vector-logo.svg" class="invert" alt="vector-logo">
     </div>

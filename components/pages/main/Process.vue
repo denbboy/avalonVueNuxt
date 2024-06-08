@@ -29,17 +29,17 @@
                 <div class="mb-7 lg:flex lg:items-center lg:mb-[50px] relative z-10">
 
                     <h2
-                        class="font-bold text-white text-3xl mb-7 md:text-[56px] md:leading-[56px] md:text-center lg:text-left lg:m-0">
+                        class="font-bold text-white text-3xl mb-7 md:text-[56px] md:leading-[56px] md:text-center lg:text-left lg:m-0" data-aos="fade-up">
                         Как просходит процесс покупки
                     </h2>
-                    <p class="text-white opacity-50 text-sm md:text-base md:text-center lg:text-left lg:max-w-[500px]">
+                    <p class="text-white opacity-50 text-sm md:text-base md:text-center lg:text-left lg:max-w-[500px]" data-aos="fade-up">
                         Для того, чтобы приобрести недвижимость, вам не обязательно прилетать на Бали, многие сделки
                         теперь
                         происходят дистанционно
                     </p>
                 </div>
 
-                <div class="relative z-10">
+                <div class="relative z-10" data-aos="fade-up">
                     <img src="/assets/img/index/point-line.png"
                         class="hidden lg:block absolute lg:top-[90px] h-[260px] right-[-40px] w-full max-w-[1188px]"
                         alt="line ph">
@@ -239,7 +239,7 @@
                 </div>
 
                 <div
-                    class="lg:flex relative z-10 lg:flex-row-reverse lg:justify-between lg:items-center lg:pt-10 lg:border-t lg:border-whiteOp-300">
+                    class="lg:flex relative z-10 lg:flex-row-reverse lg:justify-between lg:items-center lg:pt-10 lg:border-t lg:border-whiteOp-300" data-aos="fade-up">
                     <button @click="handleOpenModal" type="button"
                         class="w-full bg-white p-4 font-bold text-blue-500 text-sm rounded-xl transition-all hover:bg-blue-400 hover:text-white mb-5 lg:max-w-[300px]">
                         Получить консультацию
@@ -261,7 +261,7 @@
 
 
                 <div
-                    class="w-[170px] h-[170px] md:w-[244px] md:h-[244px] text-center rounded-full bg-blue-400 transition-all flex flex-col items-center justify-center gap-1 absolute bottom-[-85px] md:bottom-[-122px] left-[50%] lg:bottom-auto 3xl:left-0 3xl:top-[50%] lg:translate-y-[-50%] translate-x-[-50%] lg:top-[75%] lg:left-28">
+                    class="w-[170px] h-[170px] md:w-[244px] md:h-[244px] text-center rounded-full bg-blue-400 transition-all flex flex-col items-center justify-center gap-1 absolute bottom-[-85px] md:bottom-[-122px] left-[50%] lg:bottom-auto 3xl:left-0 3xl:top-[50%] lg:translate-y-[-50%] translate-x-[-50%] lg:top-[75%] lg:left-28" data-aos="fade-right">
                     <div
                         class="block animate-ping w-[170px] h-[170px] md:w-[244px] md:h-[244px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]">
                     </div>

@@ -8,7 +8,7 @@
     <div class="container">
       <div class="lg:flex lg:items-center gap-8 justify-between">
         <div class="lg:-mr-12">
-          <div class="flex items-center mb-8 md:mb-12">
+          <div class="flex items-center mb-8 md:mb-12" data-aos="fade-up">
             <img src="/assets/img/index/a-us-decor.svg" class="max-w-[60px] mr-4 md:max-w-[112px] md:mr-5" alt="ic a">
             <h2 class="flex flex-col font-bold text-white text-3xl md:text-[56px]">
               AVALON
@@ -18,7 +18,7 @@
             </h2>
           </div>
 
-          <div class="mb-8 md:mb-14">
+          <div class="mb-8 md:mb-14" data-aos="fade-up">
             <h3 class="font-bold text-white text-base mb-4 md:text-[26px] md:mb-7 md:leading-[140%]">
               Наша сила в нашей коллективной <br class="hidden md:block">приверженности к совершенству
             </h3>
@@ -29,7 +29,7 @@
             </p>
           </div>
 
-          <ul class="grid grid-cols-2 gap-y-8 gap-x-3 md:gap-x-5 md:gap-y-14">
+          <ul class="grid grid-cols-2 gap-y-8 gap-x-3 md:gap-x-5 md:gap-y-14" data-aos="fade-up">
             <li class="pb-5 border-b border-whiteOp-300 md:pb-8">
               <b class="font-bold text-white text-2xl mb-3 md:text-[40px] md:mb-4 block">
                 С 2007 г.
@@ -71,7 +71,7 @@
             </li>
           </ul>
         </div>
-        <img src="/assets/img/index/us-ph-main.png" class="mt-7 lg:w-full lg:max-w-[860px] -mr-20" alt="ph">
+        <img src="/assets/img/index/us-ph-main.png" class="mt-7 lg:w-full lg:max-w-[860px] -mr-20" alt="ph" data-aos="fade-left">
       </div>
     </div>
   </section>

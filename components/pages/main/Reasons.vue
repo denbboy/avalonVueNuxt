@@ -2,16 +2,16 @@
   <section class="island py-14 md:py-24 relative overflow-hidden">
     <div class="container">
       <div class="mb-8 text-center md:mb-12">
-        <p class="text-white mb-2 text-sm md:text-base">
+        <p class="text-white mb-2 text-sm md:text-base" data-aos="fade-up">
           Почему выбирают Бали?
         </p>
-        <h2 class="text-white font-bold text-2xl md:text-[56px] leading-[100%]">
+        <h2 class="text-white font-bold text-2xl md:text-[56px] leading-[100%]" data-aos="fade-up">
           Остров Богов
         </h2>
       </div>
       <div class="con_list lg:flex">
         <ul class="flex flex-col gap-4">
-          <li class="flex gap-4 lg:gap-7 items-center md:items-start">
+          <li class="flex gap-4 lg:gap-7 items-center md:items-start" data-aos="fade-right">
             <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center lg:min-w-12 lg:h-12">
               <span class="font-bold text-white text-xs lg:text-lg">
                 1
@@ -29,7 +29,7 @@
             </div>
           </li>
           <div class="h-[1px] w-[calc(100%+20px)] hidden lg:block ml-auto -mr-24 my-auto bg-white/20"></div>
-          <li class="flex gap-4 lg:gap-7 items-center md:items-start">
+          <li class="flex gap-4 lg:gap-7 items-center md:items-start" data-aos="fade-right">
             <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center lg:min-w-12 lg:h-12">
               <span class="font-bold text-white text-xs lg:text-lg">
                 2
@@ -47,7 +47,7 @@
             </div>
           </li>
           <div class="h-[1px] hidden lg:block w-[calc(100%-76px)] ml-auto my-auto bg-white/20"></div>
-          <li class="flex gap-4 lg:gap-7 items-center md:items-start">
+          <li class="flex gap-4 lg:gap-7 items-center md:items-start" data-aos="fade-right">
             <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center lg:min-w-12 lg:h-12">
               <span class="font-bold text-white text-xs lg:text-lg">
                 3
@@ -66,10 +66,10 @@
           </li>
         </ul>
 
-        <img src="/assets/img/index/island-img.png" class="my-8 max-w-56 m-auto lg:max-w-[500px] lg:m-0" alt="ph">
+        <img src="/assets/img/index/island-img.png" class="my-8 max-w-56 m-auto lg:max-w-[500px] lg:m-0" alt="ph" data-aos="zoom-in">
 
         <ul class="flex flex-col gap-4">
-          <li class="flex gap-4 items-center md:items-start lg:gap-7 md:first:-ml-16 lg:flex-row-reverse lg:text-end">
+          <li class="flex gap-4 items-center md:items-start lg:gap-7 md:first:-ml-16 lg:flex-row-reverse lg:text-end" data-aos="fade-left">
             <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center lg:min-w-12 lg:h-12">
               <span class="font-bold text-white text-xs lg:text-lg">
                 4
@@ -87,7 +87,7 @@
             </div>
           </li>
           <div class="h-[1px] w-[calc(100%+20px)] hidden lg:block -ml-24 my-auto bg-white/20"></div>
-          <li class="flex gap-4 items-center md:items-start lg:gap-7 md:first:-ml-16 lg:flex-row-reverse lg:text-end">
+          <li class="flex gap-4 items-center md:items-start lg:gap-7 md:first:-ml-16 lg:flex-row-reverse lg:text-end" data-aos="fade-left">
             <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center lg:min-w-12 lg:h-12">
               <span class="font-bold text-white text-xs lg:text-lg">
                 5
@@ -104,7 +104,7 @@
             </div>
           </li>
           <div class="h-[1px] hidden lg:block w-[calc(100%-76px)] my-auto bg-white/20"></div>
-          <li class="flex gap-4 lg:gap-7 md:items-start md:first:-ml-16 lg:flex-row-reverse lg:text-end">
+          <li class="flex gap-4 lg:gap-7 md:items-start md:first:-ml-16 lg:flex-row-reverse lg:text-end" data-aos="fade-left">
             <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center lg:min-w-12 lg:h-12">
               <span class="font-bold text-white text-xs lg:text-lg">
                 6
@@ -124,7 +124,7 @@
         </ul>
       </div>
 
-      <div class="border border-blue-400 rounded-2xl overflow-hidden mt-14 md:flex md:h-48 md:items-center">
+      <div class="border border-blue-400 rounded-2xl overflow-hidden mt-14 md:flex md:h-48 md:items-center" data-aos="fade-left">
         <div
           class="flex items-center gap-4 py-7 px-5 border-b border-blue-400 md:border-r md:border-b-0 md:h-full md:px-8 md:w-full">
           <img src="/assets/img/index/cool.svg" class="w-16" alt="svg">

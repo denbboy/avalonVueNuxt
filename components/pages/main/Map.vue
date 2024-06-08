@@ -13,16 +13,16 @@
           <img src="/assets/img/index/map.svg" class="w-full" alt="ic">
         </div>
         <div class="md:absolute bottom-0 max-w-[752px] right-0 mt-8">
-          <h2 class="text-white font-bold text-2xl md:text-[56px] leading-[100%] mb-7 md:text-6xl md:mb-12">
+          <h2 class="text-white font-bold text-2xl md:text-[56px] leading-[100%] mb-7 md:text-6xl md:mb-12" data-aos="fade-up">
             Топовые локации объектов
           </h2>
-          <p class="text-white text-sm mb-5 md:text-xl leading-[140%]">
+          <p class="text-white text-sm mb-5 md:text-xl leading-[140%]" data-aos="fade-up">
             Наши апартаменты находятся в самом привлекательном районе Бали. Это идеальное место для
             инвестирования в недвижимость, благодаря своему превосходному расположению и потенциалу для высокой
             доходности
           </p>
           <ul
-            class="text-white flex gap-4 items-center text-base font-semibold justify-center md:text-xl md:justify-start">
+            class="text-white flex gap-4 items-center text-base font-semibold justify-center md:text-xl md:justify-start" data-aos="fade-up">
             <li class="relative">
               <p
                 class="before:block before:rounded-[3px] before:w-[5px] before:h-[5px] md:before:w-[10px] md:before:h-[10px] before:border-blue-400 before:bg-transparent before:border before:absolute before:right-0 before:top-[50%] before:translate-y-[-50%] pr-6">
