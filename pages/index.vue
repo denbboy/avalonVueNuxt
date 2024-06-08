@@ -4,7 +4,7 @@
 <template>
   <PagesMainBanner />
 
-  123
+  qwe
 
   <PagesMainProjects />
 

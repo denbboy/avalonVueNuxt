@@ -1,7 +1,8 @@
 <template>
   <section class="pb-12">
 
-    <swiper class="swiper-banner" :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 3000, disableOnInteraction: false }" :speed="1500">
+    <!-- :modules="modules" -->
+    <swiper class="swiper-banner" :slides-per-view="1" :pagination="{ clickable: true }" :autoplay="{ delay: 3000, disableOnInteraction: false }" :speed="1500">
 
       <swiper-slide class="pt-40 lg:pt-[250px] relative overflow-hidden">
         <div class="container">
@@ -283,7 +284,7 @@ const handlePlayVideo = () => {
 
 <script>
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
 
 import SwiperCore from 'swiper';
 
@@ -307,11 +308,10 @@ export default {
     const modules = {
       navigation: true,
       pagination: true,
-      Scrollbar: true,
       a11y: true,
     };
     return {
-      modules,
+      // modules,
     };
   },
 };
