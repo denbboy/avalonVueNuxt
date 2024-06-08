@@ -9,8 +9,8 @@
             alt="Image">
 
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
-            <h1 class="md:text-5xl lg:text-6xl text-3xl text-white font-normalidad font-bold mb-5">Акции</h1>
-            <div class="md:flex justify-between items-center">
+            <h1 class="md:text-5xl lg:text-6xl text-3xl text-white font-normalidad font-bold mb-5" data-aos="fade-up">Акции</h1>
+            <div class="md:flex justify-between items-center" data-aos="fade-up">
                 <p class="md:text-lg text-white text-sm">Ваше будущее жилье — в наших руках. Мы понимаем, как важны для
                     вас
                     шаги.</p>
@@ -46,7 +46,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="md:grid-cols-2 lg:grid-cols-3 grid grid-cols-1 gap-x-5 gap-y-5 mt-12">
+            <div class="md:grid-cols-2 lg:grid-cols-3 grid grid-cols-1 gap-x-5 gap-y-5 mt-12" data-aos="fade-up">
 
                 <SalesItem bgdColor="blue-500" />
                 <SalesItem bgdColor="blue-500" />

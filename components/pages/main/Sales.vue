@@ -6,11 +6,11 @@
     <div class="container relative z-10">
       <div>
         <div class="flex justify-between items-center mb-8">
-          <h2 class="text-blue-600 font-bold text-[30px] lg:text-[56px] leading-[110%]">
+          <h2 class="text-blue-600 font-bold text-[30px] lg:text-[56px] leading-[110%]" data-aos="fade-up">
             Актуальные акции
           </h2>
 
-          <div class="w-fit hidden md:flex">
+          <div class="w-fit hidden md:flex" data-aos="fade-up">
             <NuxtLink href="/sales" class="mr-12 text-blue-600 font-bold underline hover:no-underline">
               Все акции
             </NuxtLink>

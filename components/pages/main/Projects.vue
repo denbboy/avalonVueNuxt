@@ -1,11 +1,11 @@
 <template>
-    <section class="uslugi pt-[23px] pb-12 relative overflow-hidden">
+    <section class="uslugi pt-[23px] pb-12 relative overflow-hidden" >
         <div class="absolute lg:-right-36 top-0 lg:top-auto lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
             <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
         </div>
         <div class="container">
             <div
-                class="w-full flex flex-col items-center text-center md:flex-row md:justify-between md:mb-12 md:text-start">
+                class="w-full flex flex-col items-center text-center md:flex-row md:justify-between md:mb-12 md:text-start" data-aos="fade-up">
                 <div class="">
                     <p class="text-white mb-[10px] text-sm md:text-base md:mb-[10px] leading-[100%]">
                         Воплоти мечту в реальность
@@ -21,7 +21,7 @@
 
             <div class="flex flex-col gap-5 items-center md:flex-wrap lg:flex-row lg:flex-nowrap z-10 relative">
 
-                <div class="max-w-[508px]">
+                <div class="max-w-[508px]" data-aos="fade-right" data-aos-duration="300">
 
                     <div
                         class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
@@ -69,7 +69,7 @@
 
                 </div>
 
-                <div class="max-w-[508px]">
+                <div class="max-w-[508px]" data-aos="fade-right" data-aos-duration="700">
 
                     <div
                         class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
@@ -117,7 +117,7 @@
 
                 </div>
 
-                <div class="max-w-[508px]">
+                <div class="max-w-[508px]" data-aos="fade-right" data-aos-duration="1100">
 
                     <div
                         class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
