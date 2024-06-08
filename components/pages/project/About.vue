@@ -1,6 +1,9 @@
 <template>
-    <section id="about" class="club py-14 bg-blue-600 lg:py-0 lg:pb-24">
-        <div class="container">
+    <section id="about" class="club py-14 bg-blue-600 lg:py-0 lg:pb-24 relative">
+        <div class="absolute lg:-right-36 top-0 lg:top-1/2 -translate-y-1/2 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
+            <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
+        </div>
+        <div class="container relative z-10">
             <div class="lg:flex lg:gap-7 lg:items-center">
                 <div data-aos="fade-right" class="md:max-w-[650px] lg:min-w-[420px]">
                     <h2 class="font-bold text-white text-3xl mb-7 md:text-[56px] md:mb-12">

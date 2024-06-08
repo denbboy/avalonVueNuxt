@@ -1,7 +1,13 @@
 <template>
 
-  <section id="location" class="map py-14 md:py-24">
-    <div class="container">
+  <section id="location" class="map py-14 md:py-24 relative">
+    <div class="absolute lg:-right-36 top-0 lg:top-0 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
+      <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
+    </div>
+    <div class="absolute lg:-left-36 top-0 lg:top-auto lg:right-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
+      <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
+    </div>
+    <div class="container relative z-10">
       <h2 data-aos="fade-up" class="font-bold text-white text-3xl text-center mb-8 lg:hidden">
         Топовая локация
       </h2>
@@ -15,7 +21,8 @@
           referrerpolicy="no-referrer-when-downgrade"></iframe> -->
 
         <!-- <iframe src="https://www.google.com/maps/d/u/0/edit?mid=1eQ_MuJRI84FyOBXEQNonemBuQKR1hfo&usp=sharing" width="640" height="480"></iframe> -->
-        <iframe src="https://www.google.com/maps/d/embed?mid=1eQ_MuJRI84FyOBXEQNonemBuQKR1hfo&ehbc=2E312F" class="w-full h-[700px] border-none -mt-[100px]"></iframe>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1eQ_MuJRI84FyOBXEQNonemBuQKR1hfo&ehbc=2E312F"
+          class="w-full h-[700px] border-none -mt-[100px]"></iframe>
       </div>
       <div
         class="lg:flex lg:items-center lg:justify-between lg:gap-5 lg:py-10 lg:px-7 lg:border lg:border-whiteOp-300 lg:rounded-b-2xl lg:mt-[-1px]">

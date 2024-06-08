@@ -1,6 +1,12 @@
 <template>
-    <section class="gallery py-14">
-        <div class="container">
+    <section class="gallery py-14 relative">
+        <div class="absolute lg:-right-36 top-0 lg:top-0 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
+            <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
+        </div>
+        <div class="absolute lg:-left-36 top-0 lg:top-auto lg:right-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
+            <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
+        </div>
+        <div class="container relative z-10">
             <div
                 class="grid gap-4 grid-cols-2 md:grid-cols-3 md:[&>.image:nth-child(3n+1)]:col-start-auto md:[&>.image:nth-child(3n+1)]:col-end-auto [&>.image:nth-child(3n+1)]:col-start-1 [&>.image:nth-child(3n+1)]:col-end-3 md:[&>.image:nth-child(7n+1)]:col-start-1 md:[&>.image:nth-child(7n+1)]:col-end-3 md:[&>.image:nth-child(7n+7)]:col-start-2 md:[&>.image:nth-child(7n+7)]:col-end-4">
 
