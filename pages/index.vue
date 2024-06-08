@@ -4,6 +4,8 @@
 <template>
   <!-- <PagesMainBanner /> -->
 
+  asd
+
   <PagesMainProjects />
 
   <PagesMainMap />
