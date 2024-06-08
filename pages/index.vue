@@ -4,8 +4,6 @@
 <template>
   <PagesMainBanner />
 
-  qwe
-
   <PagesMainProjects />
 
   <PagesMainMap />
