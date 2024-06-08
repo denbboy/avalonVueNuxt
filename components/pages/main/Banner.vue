@@ -1,8 +1,8 @@
 <template>
   <section class="pb-12">
 
-    <swiper class="swiper-banner" :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }"
-      :autoplay="{ delay: 3000, disableOnInteraction: false }" :speed="1500">
+    <!-- :autoplay="{ delay: 3000, disableOnInteraction: false }" :speed="1500" -->
+    <swiper class="swiper-banner" :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }">
 
       <swiper-slide class="pt-40 lg:pt-[250px] relative overflow-hidden">
         <div class="container">
