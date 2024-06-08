@@ -2,8 +2,7 @@
   <section class="pb-12">
 
     <swiper class="swiper-banner" :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }"
-      @swiper="onSwiper" @slideChange="onSlideChange" :autoplay="{ delay: 3000, disableOnInteraction: false }"
-      :speed="1500">
+      :autoplay="{ delay: 3000, disableOnInteraction: false }" :speed="1500">
 
       <swiper-slide class="pt-40 lg:pt-[250px] relative overflow-hidden">
         <div class="container">
@@ -279,7 +278,7 @@ const addModal = () => {
 }
 
 const handlePlayVideo = () => {
-    document.querySelector('.banner iframe').setAttribute('src', 'https://www.youtube.com/embed/zHcr32gRRCs?si=73xg2tsfV1tnZjwg&autoplay=1&mute=1&loop=1&playlist=zHcr32gRRCs')
+  document.querySelector('.banner iframe').setAttribute('src', 'https://www.youtube.com/embed/zHcr32gRRCs?si=73xg2tsfV1tnZjwg&autoplay=1&mute=1&loop=1&playlist=zHcr32gRRCs')
 }
 </script>
 
@@ -306,16 +305,14 @@ export default {
     SwiperSlide,
   },
   setup() {
-    const onSwiper = (swiper) => {
-      console.log(swiper);
-    };
-    const onSlideChange = () => {
-      console.log('slide change');
+    const modules = {
+      navigation: true,
+      pagination: true,
+      Scrollbar: true,
+      a11y: true,
     };
     return {
-      onSwiper,
-      onSlideChange,
-      modules: [Navigation, Pagination, Scrollbar, A11y],
+      modules,
     };
   },
 };
