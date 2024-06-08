@@ -2,9 +2,9 @@
 </script>
 
 <template>
-  <!-- <PagesMainBanner /> -->
+  <PagesMainBanner />
 
-  asd
+  123
 
   <PagesMainProjects />
 
