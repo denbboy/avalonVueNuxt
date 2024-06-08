@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <PagesMainBanner />
+  <!-- <PagesMainBanner /> -->
 
   <PagesMainProjects />
 
