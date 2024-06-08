@@ -246,7 +246,7 @@
 </template>
 
 <script setup>
-import { ref, defineProps, onMounted } from 'vue';
+import { ref, defineProps, onMounted, watch } from 'vue';
 import { useI18n } from 'vue-i18n'
 import { useLangStore } from './../stores/functions/language';
 
@@ -266,6 +266,7 @@ const isScrolled = ref(false);
 const isOpen = ref(false);
 
 const langStore = useLangStore()
+const route = useRoute();
 
 const handleOpenBurger = () => {
   isOpenBurger.value = !isOpenBurger.value;
@@ -292,5 +293,11 @@ const handleOpenModal = () => {
 const handleOpen = () => {
   isOpen.value = !isOpen.value;
 }
+
+const { lang } = storeToRefs(langStore);
+
+// watch(() => route.fullPath, (newPath) => {
+//   locale.value = lang.value
+// });
 
 </script>

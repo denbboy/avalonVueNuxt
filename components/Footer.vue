@@ -135,27 +135,27 @@
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 lg:mb-0 lg:border-r lg:pr-[14px] lg:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
-                            <a href="#" class="hover:text-blue-400 transition-all">
+                            <NuxtLink href="/docs/privacy-policy" class="hover:text-blue-400 transition-all">
                                 Privacy Policy
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 lg:mb-0 lg:border-r lg:pr-[14px] lg:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
-                            <a href="#" class="hover:text-blue-400 transition-all">
+                            <NuxtLink href="/docs/terms" class="hover:text-blue-400 transition-all">
                                 Terms & Conditions
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 lg:mb-0 lg:border-r lg:pr-[14px] lg:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
-                            <a href="#" class="hover:text-blue-400 transition-all">
+                            <NuxtLink href="/cooperation" class="hover:text-blue-400 transition-all">
                                 Сотрудничество
-                            </a>
+                            </NuxtLink>
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 lg:mb-0 lg:border-r lg:pr-[14px] lg:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
-                            <a href="#" class="hover:text-blue-400 transition-all">
+                            <NuxtLink href="/career" class="hover:text-blue-400 transition-all">
                                 Карьера
-                            </a>
+                            </NuxtLink>
                         </li>
                     </ul>
                 </div>
