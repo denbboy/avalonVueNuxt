@@ -135,63 +135,42 @@
         <button @click="handleOpenBurger" id="burgerBtn" type="button" class="3xl:hidden block ">
           <img src="/assets/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic">
         </button>
-        <div id="burgerMenu" :class="[
-          { hidden: !isOpenBurger, flex: isOpenBurger },
-          'burger__body absolute top-[47px] lg:top-[114px] left-0 bg-blue-500 w-[calc(100%_+_60px)] -ml-[30px] flex-col text-center pt-12 pb-8 text-white text-lg border-t-2 border-whiteOp-300 z-10'
-        ]">
-          <div class="burger__proj mb-8 lg:hidden block">
-            <p id="toggleProjects"
-              class="flex items-center gap-1 justify-center hover:text-blue-400 transition-all cursor-pointer">
-              Проекты
-              <img src="/assets/img/index/small-arrow-white.svg" alt="">
-            </p>
-            <div id="projectsBody" class="burger__proj_body mt-8 flex flex-col hidden">
-              <a href="#" class="mb-8 hover:text-blue-400 transition-all">
-                BUDDHA | Club House
-              </a>
-              <a href="#" class="mb-8 hover:text-blue-400 transition-all">
-                OM | Club House
-              </a>
-              <a href="#" class=" hover:text-blue-400 transition-all">
-                JUST Club House
-              </a>
-            </div>
-          </div>
+        <div id="burgerMenu"
+          class="'burger__body absolute top-[47px] transition-all lg:top-[114px] left-0 bg-blue-500 w-[calc(100%_+_60px)] -ml-[30px] flex-col text-center pt-12 pb-8 text-white text-lg border-t-2 border-whiteOp-300 z-10'"
+          :class="isOpenBurger ? 'opacity-100 visible' : 'opacity-0 invisible'">
           <div class="lg:hidden flex flex-col gap-8 mb-12 pb-7 border-b border-whiteOp-300">
-            <a href="#" class="hover:text-blue-400 transition-all">
-              Про компанию
-            </a>
-            <a href="#" class="hover:text-blue-400 transition-all">
-              Почему Бали?
-            </a>
-            <a href="#" class="hover:text-blue-400 transition-all">
-              Агентам
-            </a>
-            <a href="#" class="hover:text-blue-400 transition-all">
-              Вакансии
-            </a>
-            <a href="#" class=" hover:text-blue-400 transition-all">
+            <NuxtLink @click="handleCloseBurger" href="/" class="hover:text-blue-400 transition-all">
+              Главная
+            </NuxtLink>
+            <NuxtLink @click="handleCloseBurger" href="#about" class="hover:text-blue-400 transition-all">
+              Про комплекс
+            </NuxtLink>
+            <NuxtLink @click="handleCloseBurger" href="#location" class="hover:text-blue-400 transition-all">
+              Локация
+            </NuxtLink>
+            <NuxtLink @click="handleCloseBurger" href="#apartment" class="hover:text-blue-400 transition-all">
+              Апартаменты
+            </NuxtLink>
+            <NuxtLink @click="handleCloseBurger" href="#investors" class=" hover:text-blue-400 transition-all">
+              Инвесторам
+            </NuxtLink>
+            <NuxtLink @click="handleCloseBurger" href="#contacts" class=" hover:text-blue-400 transition-all">
               Контакты
-            </a>
+            </NuxtLink>
 
           </div>
           <div class=" flex flex-col gap-4">
-            <a href="tel:+6281246502783" class="hover:text-blue-400 transition-all font-bold text-white text-base">+62
-              (812)
-              4650-27-83</a>
+            <a href="tel:+6281246502783" class="hover:text-blue-400 transition-all font-bold text-white text-base">
+              +62 (812) 4650-27-83
+            </a>
 
-            <button type="button"
+            <button type="button" @click="handleOpenModal"
               class="py-4 w-full text-white text-xs font-bold max-w-56 m-auto border border-white rounded-xl transition-all hover:bg-white hover:text-blue-400">
-              Запланировать встречу
+              {{ $t('make_a_meeting') }}
             </button>
           </div>
           <div class="flex xl:hidden mt-12 pt-7 border-t border-whiteOp-300 gap-11 justify-center">
             <ul class="flex items-center gap-4">
-              <li>
-                <a href="#" class="hover:text-blue-400 transition-all text-white text-base">
-                  EN
-                </a>
-              </li>
               <li>
                 <button @click="changeLocale('ua')" class="hover:text-blue-400 transition-all text-white text-base">
                   UA
@@ -262,6 +241,9 @@ const langStore = useLangStore()
 
 const handleOpenBurger = () => {
   isOpenBurger.value = !isOpenBurger.value;
+}
+const handleCloseBurger = () => {
+  isOpenBurger.value = false
 }
 
 const changeLocale = (newLocale) => {

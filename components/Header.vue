@@ -84,7 +84,6 @@
               d="M15.403 2.633C13.708 0.936 11.454 0.001 9.053 0C4.105 0 0.077 4.027 0.075 8.977C0.075 10.559 0.488 12.103 1.273 13.465L0 18.116L4.759 16.867C6.071 17.582 7.547 17.959 9.049 17.96H9.053C14 17.96 18.028 13.933 18.03 8.983C18.03 6.585 17.098 4.33 15.403 2.633ZM9.053 16.445H9.05C7.711 16.444 6.398 16.085 5.252 15.404L4.98 15.242L2.156 15.983L2.909 13.23L2.732 12.948C1.985 11.76 1.591 10.387 1.591 8.977C1.593 4.863 4.94 1.516 9.056 1.516C11.049 1.517 12.922 2.294 14.331 3.704C15.739 5.115 16.515 6.989 16.514 8.983C16.512 13.097 13.165 16.445 9.053 16.445ZM13.146 10.856C12.921 10.743 11.819 10.201 11.613 10.126C11.408 10.051 11.259 10.014 11.109 10.238C10.959 10.462 10.529 10.967 10.398 11.117C10.267 11.267 10.136 11.285 9.912 11.173C9.688 11.061 8.965 10.824 8.108 10.06C7.441 9.465 6.991 8.731 6.86 8.506C6.729 8.281 6.846 8.16 6.959 8.048C7.06 7.948 7.183 7.786 7.295 7.655C7.407 7.524 7.444 7.431 7.519 7.281C7.594 7.131 7.557 7 7.5 6.888C7.444 6.775 6.995 5.671 6.808 5.222C6.627 4.787 6.442 4.845 6.304 4.839C6.174 4.833 6.024 4.831 5.875 4.831C5.725 4.831 5.482 4.887 5.276 5.111C5.07 5.336 4.491 5.878 4.491 6.982C4.491 8.086 5.295 9.153 5.407 9.303C5.519 9.453 6.989 11.718 9.239 12.69C9.775 12.921 10.193 13.059 10.518 13.163C11.055 13.334 11.544 13.309 11.931 13.252C12.362 13.188 13.258 12.71 13.445 12.186C13.632 11.662 13.632 11.213 13.576 11.119C13.52 11.025 13.369 10.968 13.146 10.856Z"
               fill="white" style="fill:white;fill-opacity:1;" />
           </svg>
-
           +62 (812) 4650-27-83
         </a>
         <div class="hidden group xl:flex xl:flex-col relative">
@@ -142,63 +141,64 @@
         <button @click="handleOpenBurger" id="burgerBtn" type="button" class="3xl:hidden block ">
           <img src="/assets/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic">
         </button>
-        <div id="burgerMenu" :class="[
-          { hidden: !isOpenBurger, flex: isOpenBurger },
-          'burger__body absolute top-[47px] lg:top-[114px] left-0 bg-blue-500 w-[calc(100%_+_60px)] -ml-[30px] flex-col text-center pt-12 pb-8 text-white text-lg border-t-2 border-whiteOp-300 z-10'
-        ]">
-          <div class="burger__proj mb-8 lg:hidden block">
-            <p id="toggleProjects"
+        <div id="burgerMenu"
+          class="'burger__body absolute top-[47px] transition-all lg:top-[114px] left-0 bg-blue-500 w-[calc(100%_+_60px)] -ml-[30px] flex-col text-center pt-12 pb-8 text-white text-lg border-t-2 border-whiteOp-300 z-10'"
+          :class="isOpenBurger ? 'opacity-100 visible' : 'opacity-0 invisible'">
+          <div class="group burger__proj mb-8 lg:hidden block">
+            <p @click="openSubMenu" id="toggleProjects"
               class="flex items-center gap-1 justify-center hover:text-blue-400 transition-all cursor-pointer">
               Проекты
-              <img src="/assets/img/index/small-arrow-white.svg" alt="">
+              <svg class="group-hover:-scale-y-100 transition-all" width="6" height="5" viewBox="0 0 6 5" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path class="fill-white group-hover:fill-blue-400 transition-all"
+                  d="M3.63428 3.93725L5.98828 0.25L0.00303125 0.25L2.36528 3.93575C2.43272 4.04304 2.52625 4.13149 2.63713 4.19285C2.74802 4.2542 2.87264 4.28646 2.99937 4.28661C3.12609 4.28676 3.25079 4.2548 3.36182 4.19371C3.47285 4.13261 3.56659 4.04438 3.63428 3.93725Z" />
+              </svg>
             </p>
-            <div id="projectsBody" class="burger__proj_body mt-8 flex flex-col hidden">
-              <a href="#" class="mb-8 hover:text-blue-400 transition-all">
+            <div id="projectsBody" :class="isOpenSubMenu ? 'max-h-96 mt-8' : 'max-h-0 mt-0'" class="burger__proj_body h-full overflow-hidden flex transition-all flex-col">
+              <NuxtLink @click="handleCloseBurger" href="/projects/123"
+                class="mb-4 text-sm hover:text-blue-400 transition-all">
                 BUDDHA | Club House
-              </a>
-              <a href="#" class="mb-8 hover:text-blue-400 transition-all">
+              </NuxtLink>
+              <NuxtLink @click="handleCloseBurger" href="/projects/123"
+                class="mb-4 text-sm hover:text-blue-400 transition-all">
                 OM | Club House
-              </a>
-              <a href="#" class=" hover:text-blue-400 transition-all">
+              </NuxtLink>
+              <NuxtLink @click="handleCloseBurger" href="/projects/123"
+                class=" text-sm hover:text-blue-400 transition-all">
                 JUST Club House
-              </a>
+              </NuxtLink>
             </div>
           </div>
           <div class="lg:hidden flex flex-col gap-8 mb-12 pb-7 border-b border-whiteOp-300">
-            <a href="#" class="hover:text-blue-400 transition-all">
-              Про компанию
-            </a>
-            <a href="#" class="hover:text-blue-400 transition-all">
-              Почему Бали?
-            </a>
-            <a href="#" class="hover:text-blue-400 transition-all">
-              Агентам
-            </a>
-            <a href="#" class="hover:text-blue-400 transition-all">
-              Вакансии
-            </a>
-            <a href="#" class=" hover:text-blue-400 transition-all">
-              Контакты
-            </a>
+            <NuxtLink @click="handleCloseBurger" href="/about" class="hover:text-blue-400 transition-all">
+              {{ $t('about_company') }}
+            </NuxtLink>
+            <NuxtLink @click="handleCloseBurger" href="/reason" class="hover:text-blue-400 transition-all">
+              {{ $t('why_bali') }}
+            </NuxtLink>
+            <NuxtLink @click="handleCloseBurger" href="/cooperation" class="hover:text-blue-400 transition-all">
+              {{ $t('cooperation') }}
+            </NuxtLink>
+            <NuxtLink @click="handleCloseBurger" href="/career" class="hover:text-blue-400 transition-all">
+              {{ $t('career') }}
+            </NuxtLink>
+            <NuxtLink @click="handleCloseBurger" href="#contacts" class=" hover:text-blue-400 transition-all">
+              {{ $t('contacts') }}
+            </NuxtLink>
 
           </div>
           <div class=" flex flex-col gap-4">
-            <a href="tel:+6281246502783" class="hover:text-blue-400 transition-all font-bold text-white text-base">+62
-              (812)
-              4650-27-83</a>
+            <a href="tel:+6281246502783" class="hover:text-blue-400 transition-all font-bold text-white text-base">
+              +62 (812) 4650-27-83
+            </a>
 
-            <button type="button"
+            <button type="button" @click="handleOpenModal"
               class="py-4 w-full text-white text-xs font-bold max-w-56 m-auto border border-white rounded-xl transition-all hover:bg-white hover:text-blue-400">
-              Запланировать встречу
+              {{ $t('make_a_meeting') }}
             </button>
           </div>
           <div class="flex xl:hidden mt-12 pt-7 border-t border-whiteOp-300 gap-11 justify-center">
             <ul class="flex items-center gap-4">
-              <li>
-                <a href="#" class="hover:text-blue-400 transition-all text-white text-base">
-                  EN
-                </a>
-              </li>
               <li>
                 <button @click="changeLocale('ua')" class="hover:text-blue-400 transition-all text-white text-base">
                   UA
@@ -271,6 +271,9 @@ const route = useRoute();
 const handleOpenBurger = () => {
   isOpenBurger.value = !isOpenBurger.value;
 }
+const handleCloseBurger = () => {
+  isOpenBurger.value = false
+}
 
 const changeLocale = (newLocale) => {
   setTimeout(() => {
@@ -284,10 +287,17 @@ const changeLocale = (newLocale) => {
   }, 500)
 }
 
+
+const isOpenSubMenu = ref(false)
+const openSubMenu = () => {
+  isOpenSubMenu.value = !isOpenSubMenu.value
+}
+
 const modalsStore = useModalsStore()
 
 const handleOpenModal = () => {
   modalsStore.addModal("calendar")
+  handleCloseBurger()
 }
 
 const handleOpen = () => {
