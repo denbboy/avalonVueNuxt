@@ -14,9 +14,9 @@
         </div>
 
         <div class="relative lg:max-w-[600px] lg:mr-0 lg:ml-auto lg:m-0 lg:rounded-3xl rounded-2xl overflow-hidden">
-            <a href="#" class="absolute top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
+            <NuxtLink href="#3d-object" class="absolute top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
                 <img src="/assets/img/about/360.png" class="max-w-[95px]" alt="ph">
-            </a>
+            </NuxtLink>
 
             <swiper class="mySwiper-about" :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }"
                 :navigation="navigationConfig" :space-between="15" @swiper="onSwiper" @slideChange="onSlideChange">

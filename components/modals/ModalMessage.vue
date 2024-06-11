@@ -24,7 +24,7 @@
                     Телефон для связи в мессенджерах*
                 </label>
                 <div class="phone-vti">
-                    <VueTelInput v-model="phone" />
+                    <VueTelInput v-model="phone" :only-countries="onlyCountries" />
                 </div>
 
                 <p class="text-red-700 text-left transition-all h-full" :class="{
@@ -71,18 +71,21 @@ export default {
         VueTelInput,
     },
     setup() {
+        const name = ref(null);
         const phone = ref(null);
         const isError = ref(null);
         const isSending = ref(null);
         const isSuccess = ref(null);
 
         const resetForm = () => {
+            name.value = "";
             phone.value = "";
         }
 
         const submitForm = () => {
+            console.log(name.value, phone.value, isError.value);
 
-            if (!phone.value) return isError.value = true
+            if (!name.value || !phone.value) return isError.value = true
             else isError.value = false
 
             isSending.value = true
@@ -96,12 +99,25 @@ export default {
 
         };
 
+        const onlyCountries = [
+            'id', // Индонезия
+            'ua', // Украина
+            'ru', // Россия
+            'by', // Беларусь
+            'kz', // Казахстан
+            'us', // США
+            'gb', // Англия
+            'fr', // Франция
+            'cn', // КНР
+        ];
         return {
             phone,
+            name,
             isError,
             isSending,
             isSuccess,
             submitForm,
+            onlyCountries
         };
     },
 };

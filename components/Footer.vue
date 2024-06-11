@@ -87,7 +87,7 @@
                         <input type="text" v-model="name" placeholder="Имя"
                             class="bg-white/10 lg:mb-[10px] rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-6 md:text-base w-full">
                         <div class="phone-vti">
-                            <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone" />
+                            <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone" :only-countries="onlyCountries" />
                         </div>
                         <p class="text-red-700 text-left transition-all h-full" :class="{
                             'max-h-10 opacity-100 mt-2': isError,
@@ -122,7 +122,7 @@
                     <!-- <img src="/assets/img/index/a-footer.png" class="max-w-[96px] md:hidden" alt="ph"> -->
 
                     <div class="logo-clip-path md:hidden">
-                        <video class="w-[96px] h-[100px] object-cover" muted autoplay
+                        <video loop class="w-[96px] h-[100px] object-cover" muted autoplay
                             src="/assets/video/video-logo.webm"></video>
                     </div>
 
@@ -202,6 +202,17 @@ export default {
 
         };
 
+        const onlyCountries = [
+            'id', // Индонезия
+            'ua', // Украина
+            'ru', // Россия
+            'by', // Беларусь
+            'kz', // Казахстан
+            'us', // США
+            'gb', // Англия
+            'fr', // Франция
+            'cn', // КНР
+        ];
         return {
             phone,
             name,
@@ -209,6 +220,7 @@ export default {
             isSending,
             isSuccess,
             submitForm,
+            onlyCountries
         };
     },
 };

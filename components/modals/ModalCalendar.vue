@@ -13,7 +13,7 @@
             <div
                 class="pb-10 border-b border-whiteOp-300 mb-10 md:border-b-0 flex flex-col md:mb-0 md:bg-blue-600 md:p-10 md:pr-0 md:w-full">
                 <div class="hidden md:block md:mb-[65px] pb-10 border-b border-whiteOp-300 md:-ml-10">
-                    <img src="/assets/img/modals/modal-logo.svg" class="ml-10" alt="ic logo">
+                    <img src="/assets/img/modals/modal-logo.svg" class="mx-auto" alt="ic logo">
                 </div>
                 <h2 class="text-white text-lg md:text-[30px] md:leading-[30px] font-bold mb-5">
                     Живая встреча <br>
@@ -56,7 +56,7 @@
                 <h2 class="mb-5 text-white font-bold text-lg md:text-2xl">
                     Выберите дату <br class="hidden md:block">и время
                 </h2>
-                <CalendlyInlineWidget id="my-calendar" v-bind="options" />
+                <CalendlyInlineWidget style="height: 400px;" id="my-calendar" v-bind="options" />
             </div>
         </div>
 

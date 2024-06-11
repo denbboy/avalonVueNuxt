@@ -41,13 +41,13 @@
               </NuxtLink>
             </div>
           </div>
-          <NuxtLink href="/about" class="text-white text-sm relative transition-all
+          <NuxtLink href="#about-company" class="text-white text-sm relative transition-all
 						before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 						after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 					">
             {{ $t('about_company') }}
           </NuxtLink>
-          <NuxtLink href="/whyballi" class="text-white text-sm relative
+          <NuxtLink href="#island" class="text-white text-sm relative
 						before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
 						after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
 					">

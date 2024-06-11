@@ -1,5 +1,5 @@
 <template>
-  <section class="island py-14 md:py-24 relative overflow-hidden">
+  <section id="island" class="island py-14 md:py-24 relative overflow-hidden">
     <div class="container">
       <div class="mb-8 text-center md:mb-12">
         <p class="text-white mb-2 text-sm md:text-base" data-aos="fade-up">

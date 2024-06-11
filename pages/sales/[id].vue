@@ -79,7 +79,7 @@
                         </p>
 
                         <div
-                            class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
+                            class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] hover:bg-[#333] transition-all rounded-br-none">
                             <img src="/assets/img/discounts/image.jpg" class="opacity-50" alt="">
                             <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
 
@@ -109,10 +109,10 @@
                                     </div>
 
                                     <div class="flex">
-                                        <button
+                                        <NuxtLink href="/projects/123"
                                             class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
                                             Подробнее
-                                        </button>
+                                        </NuxtLink>
                                         <div class="flex items-center">
                                             <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
                                             <span class="ml-1 text-sm text-white">Чангу</span>

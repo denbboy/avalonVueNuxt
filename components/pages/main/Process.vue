@@ -10,7 +10,7 @@
 
             <!-- bg-[url('./../img/index/buy-list-bg.png')] lg:bg-[url('./../img/index/buy-bg-desk.png')] bg-no-repeat bg-cover -->
             <div
-                class=" lg:rounded-tr-3xl lg:rounded-bl-3xl pt-14 pb-28 px-5 relative md:pb-40 md:px-8 lg:px-[120px] lg:py-[100px]">
+                class=" lg:rounded-tr-3xl lg:rounded-bl-3xl pt-14 pb-28 px-5 relative md:pb-11 md:px-8 lg:px-[120px] lg:pt-[100px]">
 
                 <img src="/assets/img/index/buy-bg-desk.png"
                     class="absolute top-0 left-0 w-full h-full z-0 hidden md:block backdrop-blur" alt="">
@@ -261,7 +261,7 @@
 
 
                 <div
-                    class="w-[170px] h-[170px] md:w-[244px] md:h-[244px] text-center rounded-full bg-blue-400 transition-all flex flex-col items-center justify-center gap-1 absolute bottom-[-85px] md:bottom-[-122px] left-[50%] lg:bottom-auto 3xl:left-0 3xl:top-[50%] lg:translate-y-[-50%] translate-x-[-50%] lg:top-[75%] lg:left-28" data-aos="fade-right">
+                    class="w-[170px] h-[170px] md:w-[244px] md:h-[244px] text-center rounded-full bg-blue-400 transition-all flex flex-col items-center justify-center gap-1 absolute bottom-[-85px] md:bottom-[-122px] left-[50%] lg:bottom-auto 3xl:left-0 3xl:top-[50%] lg:translate-y-[-50%] translate-x-[-50%] lg:top-[75%] lg:left-28">
                     <div
                         class="block animate-ping w-[170px] h-[170px] md:w-[244px] md:h-[244px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]">
                     </div>

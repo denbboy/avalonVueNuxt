@@ -11,7 +11,7 @@
           <input v-model="name" type="text" placeholder="Имя"
             class="bg-whiteOp-200 rounded-xl text-white text-sm px-5 py-4 outline-none lg:p-6 lg:text-base w-full">
           <div class="phone-vti">
-            <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone" />
+            <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone" :only-countries="onlyCountries" />
           </div>
 
           <button type="submit" class="white-button w-full">
@@ -53,46 +53,58 @@ import { VueTelInput } from 'vue-tel-input';
 import 'vue-tel-input/vue-tel-input.css';
 
 export default {
-  components: {
-    VueTelInput,
-  },
-  setup() {
-    const name = ref(null);
-    const phone = ref(null);
-    const isError = ref(null);
-    const isSending = ref(null);
-    const isSuccess = ref(null);
+    components: {
+        VueTelInput,
+    },
+    setup() {
+        const name = ref(null);
+        const phone = ref(null);
+        const isError = ref(null);
+        const isSending = ref(null);
+        const isSuccess = ref(null);
 
-    const resetForm = () => {
-      name.value = "";
-      phone.value = "";
-    }
+        const resetForm = () => {
+            name.value = "";
+            phone.value = "";
+        }
 
-    const submitForm = () => {
-      console.log(name.value, phone.value, isError.value);
+        const submitForm = () => {
+            console.log(name.value, phone.value, isError.value);
 
-      if (!name.value || !phone.value) return isError.value = true
-      else isError.value = false
+            if (!name.value || !phone.value) return isError.value = true
+            else isError.value = false
 
-      isSending.value = true
+            isSending.value = true
 
-      setTimeout(() => {
-        isSending.value = false
-        isSuccess.value = true
+            setTimeout(() => {
+                isSending.value = false
+                isSuccess.value = true
 
-        resetForm()
-      }, 1000)
+                resetForm()
+            }, 1000)
 
-    };
+        };
 
-    return {
-      phone,
-      name,
-      isError,
-      isSending,
-      isSuccess,
-      submitForm,
-    };
-  },
+        const onlyCountries = [
+            'id', // Индонезия
+            'ua', // Украина
+            'ru', // Россия
+            'by', // Беларусь
+            'kz', // Казахстан
+            'us', // США
+            'gb', // Англия
+            'fr', // Франция
+            'cn', // КНР
+        ];
+        return {
+            phone,
+            name,
+            isError,
+            isSending,
+            isSuccess,
+            submitForm,
+            onlyCountries
+        };
+    },
 };
 </script>

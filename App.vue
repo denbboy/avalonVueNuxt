@@ -14,7 +14,7 @@
 
   setTimeout(() => {
     modalsStore.addModal('message')
-  }, 4000)
+  }, 10000)
 
 </script>
 

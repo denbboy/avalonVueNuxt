@@ -93,7 +93,6 @@ watch(modals, (newModals) => {
 
 // Close Modal Function
 const closeModal = () => {
-  console.log(modals.value[modals.value.length - 1]);
   modalsStore.removeModal(modals.value[modals.value.length - 1]);
 };
 </script>
