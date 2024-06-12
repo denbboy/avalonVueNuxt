@@ -6,7 +6,7 @@
                 <!-- <img src="/assets/img/index/a-footer.png" class="max-w-[379px] hidden lg:block" alt="ph"> -->
 
                 <div class="logo-clip-path hidden lg:block">
-                    <video class="w-[379px] h-[392px] object-cover" muted autoplay
+                    <video loop class="w-[379px] h-[392px] object-cover" muted autoplay
                         src="/assets/video/video-logo.webm"></video>
                 </div>
 
