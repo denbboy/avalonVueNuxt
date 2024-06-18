@@ -3,12 +3,12 @@
         <div class="container">
 
             <div class="md:flex md:items-center gap-5 justify-between md:mb-24">
-                <!-- <img src="/assets/img/index/a-footer.png" class="max-w-[379px] hidden lg:block" alt="ph"> -->
+                <img src="/assets/img/index/a-footer.png" class="max-w-[379px] hidden lg:block" alt="ph">
 
-                <div class="logo-clip-path hidden lg:block">
+                <!-- <div class="logo-clip-path hidden lg:block">
                     <video loop class="w-[379px] h-[392px] object-cover" muted autoplay
                         src="/assets/video/video-logo.webm"></video>
-                </div>
+                </div> -->
 
                 <div class="w-fit">
                     <div class="md:mb-[30px] md:pb-[30px] border-b border-white/10 mb-5 pb-5">
@@ -76,7 +76,7 @@
 
                 </div>
 
-                <form action="" @submit.prevent="submitForm"
+                <form @submit.prevent="submitForm"
                     class="flex flex-col p-5 border border-whiteOp-300 rounded-2xl text-center md:p-12 relative mb-14 md:mb-0">
                     <img src="/assets/img/index/dot-decor-2.png" class="absolute right-[-1px] bottom-[-1px] w-5 md:w-8"
                         alt="decor">
@@ -87,7 +87,8 @@
                         <input type="text" v-model="name" placeholder="Имя"
                             class="bg-white/10 lg:mb-[10px] rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-6 md:text-base w-full">
                         <div class="phone-vti">
-                            <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone" :only-countries="onlyCountries" />
+                            <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone"
+                                :only-countries="onlyCountries" />
                         </div>
                         <p class="text-red-700 text-left transition-all h-full" :class="{
                             'max-h-10 opacity-100 mt-2': isError,
@@ -185,20 +186,38 @@ export default {
             phone.value = "";
         }
 
-        const submitForm = () => {
-            console.log(name.value, phone.value, isError.value);
+        const submitForm = async () => {
+
+            // https://crm.g-plus.app/api/actions
 
             if (!name.value || !phone.value) return isError.value = true
             else isError.value = false
 
             isSending.value = true
 
-            setTimeout(() => {
+            await useFetch('https://crm.g-plus.app/api/actions', {
+                method: 'POST',
+                body: {
+                    action: 'partner-custom-form',
+                    token: '123',
+                    partner_id: '123',
+                    name: name.value,
+                    phone: phone.value,
+                    // email: email,
+                    building_id: '123',
+                    lang: 'ua',
+                    note: 'Запит з форми контактів',
+                    adv_id: '123123123'
+                }
+            }).then((data) => {
+                console.log('22222', data);
                 isSending.value = false
                 isSuccess.value = true
 
                 resetForm()
-            }, 1000)
+            }).catch(err => {
+                console.log('11111', err);
+            })
 
         };
 

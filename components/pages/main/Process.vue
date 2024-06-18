@@ -4,7 +4,7 @@
             :animation="(delta: number) => `transform: translate3d(0, ${delta}px, 0);`">
             <!-- <img class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg"> -->
             <img class="h-full w-full object-cover scale-125"
-                src="/assets/img/about/stock-photo-kelingking-beach-at-sunset-in-nusa-penida-island-bali-indonesia-1486525196.jpg">
+                src="/assets/img/about/process.jpg">
         </Parallaxy>
         <div class="container relative z-10">
 
