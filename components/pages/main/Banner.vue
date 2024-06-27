@@ -49,10 +49,10 @@
                   </div>
                 </div>
               </div>
-              <h2 class="text-3xl font-light text-white mt-5 md:text-[65px] leading-[100%] md:mt-12 md:max-w-[825px]">
+              <h2 class="text-3xl font-light text-white mt-5 md:text-[55px] leading-[100%] md:leading-[55px] md:mt-12 md:max-w-[825px]">
                 Современные апартаменты <br class="md:hidden">
                 <span class="font-bold">
-                  для жизни <br class="md:hidden"> и инвестиций
+                  для <br class="hidden md:block"> жизни <br class="md:hidden"> и инвестиций
                 </span>
               </h2>
               <button @click="addModal" class="white-button mt-7 lg:mt-12">
@@ -60,7 +60,7 @@
               </button>
             </div>
 
-            <div class="hidden md:block mr-52">
+            <div class="hidden md:block">
               <img src="/assets/img/index/banner-logo.svg" alt="">
             </div>
           </div>
@@ -113,7 +113,7 @@
               </div>
             </div>
           </div>
-          <h2 class="text-3xl text-white mt-5 md:text-6xl md:mt-12 md:max-w-[825px]">
+          <h2 class="text-3xl text-white mt-5 md:text-[65px] md:leading-[65px] md:mt-[40px] md:max-w-[900px]">
             <span class="font-bold">
               BUDDHA | Club House
             </span>
@@ -172,10 +172,10 @@
                   </div>
                 </div>
               </div>
-              <h2 class="text-3xl font-light text-white mt-5 md:text-[65px] leading-[100%] md:mt-12 md:max-w-[825px]">
+              <h2 class="text-3xl font-light text-white mt-5 md:text-[55px] md:leading-[55px] leading-[100%] md:mt-12 md:max-w-[825px]">
                 Современные апартаменты <br class="md:hidden">
                 <span class="font-bold">
-                  для жизни <br class="md:hidden"> и инвестиций
+                  для <br class="hidden md:block"> жизни <br class="md:hidden"> и инвестиций
                 </span>
               </h2>
               <button @click="addModal" class="white-button mt-7 lg:mt-12">
@@ -183,7 +183,7 @@
               </button>
             </div>
 
-            <div class="hidden md:block mr-52">
+            <div class="hidden md:block">
               <img src="/assets/img/index/banner-logo.svg" alt="">
             </div>
           </div>
