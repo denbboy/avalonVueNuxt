@@ -5,7 +5,7 @@
         <p class="text-white mb-2 text-sm md:text-base" data-aos="fade-up">
           Почему выбирают Бали?
         </p>
-        <h2 class="text-white font-bold text-2xl md:text-[56px] leading-[100%]" data-aos="fade-up">
+        <h2 class="text-white font-bold text-2xl md:text-[45px] leading-[100%]" data-aos="fade-up">
           Остров Богов
         </h2>
       </div>
@@ -19,10 +19,10 @@
             </div>
             <div class="">
               <h3
-                class="font-bold text-white text-base w-full decoration-dashed underline lg:no-underline lg:text-3xl lg:mb-5 lg:border-none">
+                class="font-bold text-white text-base w-full decoration-dashed underline lg:no-underline md:text-[18px] md:mb-5 lg:border-none">
                 Высокая доходность
               </h3>
-              <p class="text-white text-sm lg:text-base hidden md:block">
+              <p class="text-white text-sm md:text-[14px] hidden md:block">
                 Инвестиции в недвижимость на Бали обеспечивают до 20% доходности в год благодаря высокому
                 спросу на аренду
               </p>
@@ -37,10 +37,10 @@
             </div>
             <div class="">
               <h3
-                class="font-bold text-white text-base decoration-dashed underline lg:no-underline w-full lg:text-3xl lg:mb-5 lg:border-none">
+                class="font-bold text-white text-base w-full decoration-dashed underline lg:no-underline md:text-[18px] md:mb-5 lg:border-none">
                 Быстрая окупаемость
               </h3>
-              <p class="text-white text-sm lg:text-base hidden md:block mt-4">
+              <p class="text-white text-sm md:text-[14px] hidden md:block mt-4">
                 Стабильный спрос на аренду и рост цен обеспечивают быструю окупаемость инвестиций в
                 недвижимость на Бали.
               </p>
@@ -55,10 +55,10 @@
             </div>
             <div>
               <h3
-                class="font-bold text-white text-base decoration-dashed underline lg:no-underline w-full lg:text-3xl lg:mb-5 lg:border-none">
+                class="font-bold text-white text-base w-full decoration-dashed underline lg:no-underline md:text-[18px] md:mb-5 lg:border-none">
                 Туристический поток
               </h3>
-              <p class="text-white text-sm lg:text-base hidden md:block mt-4">
+              <p class="text-white text-sm md:text-[14px] hidden md:block mt-4">
                 Бали привлекает огромное количество туристов каждый год, обеспечивая стабильный поток
                 арендных доходов.
               </p>
@@ -82,10 +82,10 @@
             </div>
             <div class="">
               <h3
-                class="font-bold text-white text-base w-full decoration-dashed underline lg:no-underline lg:text-3xl lg:mb-5 lg:border-none">
+                class="font-bold text-white text-base w-full decoration-dashed underline lg:no-underline md:text-[18px] md:mb-5 lg:border-none">
                 Стабильная экономика
               </h3>
-              <p class="text-white text-sm lg:text-base hidden md:block mt-4">
+              <p class="text-white text-sm md:text-[14px] hidden md:block mt-4">
                 Стабильная экономика способствует росту цен на недвижимость и обеспечивает долгосрочный
                 роста капитала.
               </p>
@@ -101,10 +101,10 @@
             </div>
             <div class="">
               <h3
-                class="font-bold text-white leading-[120%] text-base w-full decoration-dashed underline lg:no-underline lg:text-3xl lg:mb-5 lg:border-none">
+                class="font-bold text-white text-base w-full decoration-dashed underline lg:no-underline md:text-[18px] md:mb-5 lg:border-none">
                 Политическая стабильность
               </h3>
-              <p class="text-white text-sm lg:text-base hidden md:block mt-4">
+              <p class="text-white text-sm md:text-[14px] hidden md:block mt-4">
                 Политическая стабильность создает благоприятную среду для инвестиций в недвижимость на Бали.
               </p>
             </div>
@@ -119,10 +119,10 @@
             </div>
             <div>
               <h3
-                class="font-bold text-white text-base decoration-dashed underline lg:no-underline w-full lg:text-3xl lg:mb-5 lg:border-none">
+                class="font-bold text-white text-base w-full decoration-dashed underline lg:no-underline md:text-[18px] md:mb-5 lg:border-none">
                 Низкая инфляция
               </h3>
-              <p class="text-white text-sm lg:text-base md:block mt-4">
+              <p class="text-white text-sm md:text-[14px] hidden md:block mt-4">
                 Низкий уровень инфляции обеспечивает прогнозируемые цены на аренду, делая инвестиции
                 предсказуемыми.
               </p>
@@ -136,34 +136,34 @@
         <div
           class="flex items-center gap-4 py-7 px-5 border-b border-blue-400 md:border-r md:border-b-0 md:h-full md:px-8 md:w-full">
           <img src="/assets/img/index/cool.svg" class="w-16" alt="svg">
-          <span class="text-base text-white md:max-w-56 md:text-base">
+          <span class="text-base text-white md:max-w-56 md:text-[14px]">
             Инновационные проекты в ключевых локациях острова
           </span>
         </div>
         <div
           class="py-7 px-5 border-b border-blue-400 md:border-r md:border-b-0 md:h-full flex flex-col md:justify-center md:w-full">
-          <p class="text-white text-3xl font-bold mb-2 md:text-4xl">
+          <p class="text-white text-3xl font-bold mb-2 md:text-[30px]">
             От 20%
           </p>
-          <span class="text-base text-white md:text-base">
+          <span class="text-base text-white md:text-[14px]">
             первый взнос
           </span>
         </div>
         <div
           class="py-7 px-5 border-b border-blue-400 md:border-r md:border-b-0 md:h-full flex flex-col md:justify-center md:w-full">
-          <p class="text-white text-3xl font-bold mb-2 md:text-4xl">
+          <p class="text-white text-3xl font-bold mb-2 md:text-[30px]">
             0%
           </p>
-          <span class="text-base text-white md:text-base">
+          <span class="text-base text-white md:text-[14px]">
             рассрочка
           </span>
         </div>
         <div class="py-7 px-5 bg-blue-400 md:h-full flex flex-col md:justify-center md:w-full">
-          <p class="text-white text-3xl font-bold mb-2 flex md:text-4xl items-center">
+          <p class="text-white text-3xl font-bold mb-2 flex md:text-[30px] items-center">
             ROI 17-22%
             <img src="/assets/img/index/A-decor.svg" class="ml-5 max-w-5 md:max-w-7" alt="ic">
           </p>
-          <span class="text-base text-white md:text-base">
+          <span class="text-base text-white md:text-[14px]">
             годовых
           </span>
         </div>
