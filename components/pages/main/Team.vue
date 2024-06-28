@@ -3,7 +3,7 @@
     <div class="container">
       <div class="">
         <div class="flex justify-between items-center mb-8">
-          <h2 class="text-white font-bold text-[30px] md:text-[56px]" data-aos="fade-up">
+          <h2 class="text-white font-bold text-[30px] md:text-[45px]" data-aos="fade-up">
             Наша команда
           </h2>
 
