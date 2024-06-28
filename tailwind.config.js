@@ -54,7 +54,7 @@ export default {
           'md': 'none',
           'lg': 'none',
           'xl': 'none',
-          '2xl': '1116px',
+          '2xl': '1560px',
         },
         maxWidth: {
           'none': 'none',
