@@ -22,7 +22,7 @@
             <div class="flex flex-col gap-5 items-center md:flex-wrap md:justify-between lg:flex-row lg:flex-nowrap z-10 relative">
 
                 <div class="" data-aos="fade-right" data-aos-duration="300">
-                    <div class="h-[500px] md:h-[422px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none md:aspect-video">
+                    <div class="h-[500px] md:h-[100%] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none md:aspect-video">
                         <img src="/assets/img/discounts/image.jpg" class="opacity-50" alt="">
                         <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
                         <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
@@ -55,7 +55,7 @@
                 <div class="" data-aos="fade-right" data-aos-duration="700">
 
                     <div
-                        class="h-[500px] md:h-[422px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none md:aspect-video">
+                        class="h-[500px] md:h-[100%] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none md:aspect-video">
                         <img src="/assets/img/discounts/image.jpg" class="opacity-50" alt="">
                         <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
 
@@ -103,7 +103,7 @@
                 <div class="" data-aos="fade-right" data-aos-duration="1100">
 
                     <div
-                        class="h-[500px] md:h-[422px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none md:aspect-video">
+                        class="h-[500px] md:h-[100%] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none md:aspect-video">
                         <img src="/assets/img/discounts/image.jpg" class="opacity-50" alt="">
                         <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
 

@@ -13,10 +13,10 @@
           <img src="/assets/img/index/map.svg" class="w-full" alt="ic">
         </div>
         <div class="md:absolute bottom-0 max-w-[752px] right-0 mt-8">
-          <h2 class="text-white font-bold text-2xl md:text-[56px] leading-[100%] mb-7 md:text-6xl md:mb-12" data-aos="fade-up">
-            Топовые локации объектов
+          <h2 class="text-white font-bold text-2xl md:text-[45px] leading-[100%] mb-7 md:mb-[32px]" data-aos="fade-up">
+            Топовые локации <br class="hidden md:block"/> объектов
           </h2>
-          <p class="text-white text-sm mb-5 md:text-xl leading-[140%]" data-aos="fade-up">
+          <p class="text-white text-sm mb-5 md:text-xl leading-[140%] md:leading-[28px] md:mb-[16px] md:max-w-[600px]" data-aos="fade-up">
             Наши апартаменты находятся в самом привлекательном районе Бали. Это идеальное место для
             инвестирования в недвижимость, благодаря своему превосходному расположению и потенциалу для высокой
             доходности
