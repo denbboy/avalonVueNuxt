@@ -29,10 +29,10 @@
                 <div class="mb-7 lg:flex lg:items-center lg:mb-[50px] relative z-10">
 
                     <h2
-                        class="font-bold text-white text-3xl mb-7 md:text-[56px] md:leading-[56px] md:text-center lg:text-left lg:m-0" data-aos="fade-up">
-                        Как просходит процесс покупки
+                        class="font-bold text-white text-3xl mb-7 md:text-[45px] md:leading-[45px] md:text-center lg:text-left lg:m-0" data-aos="fade-up">
+                        Как просходит <br class="hidden md:block"> процесс покупки
                     </h2>
-                    <p class="text-white opacity-50 text-sm md:text-base md:text-center lg:text-left lg:max-w-[500px]" data-aos="fade-up">
+                    <p class="text-white opacity-50 text-sm md:text-[14px] md:text-center lg:text-left md:ml-auto lg:max-w-[400px]" data-aos="fade-up">
                         Для того, чтобы приобрести недвижимость, вам не обязательно прилетать на Бали, многие сделки
                         теперь
                         происходят дистанционно
@@ -241,17 +241,17 @@
                 <div
                     class="lg:flex relative z-10 lg:flex-row-reverse lg:justify-between lg:items-center lg:pt-10 lg:border-t lg:border-whiteOp-300" data-aos="fade-up">
                     <button @click="handleOpenModal" type="button"
-                        class="w-full bg-white p-4 font-bold text-blue-500 text-sm rounded-xl transition-all hover:bg-blue-400 hover:text-white mb-5 lg:max-w-[300px]">
+                        class="w-full bg-white p-4 font-bold text-blue-500 text-sm rounded-xl transition-all hover:bg-blue-400 hover:text-white lg:mb-0 md:py-[23px] md:text-base mb-5 lg:max-w-[300px]">
                         Получить консультацию
                     </button>
 
                     <div class="flex items-center gap-10">
                         <img src="/assets/img/index/a-decor-op.svg" class="hidden lg:block" alt="decor">
                         <div class="pt-5 border-t border-whiteOp-300 lg:border-none lg:pt-0 lg:max-w-[526px]">
-                            <p class="text-white opacity-50 text-sm mb-5 md:text-base md:text-center lg:text-left">
+                            <p class="text-white opacity-50 text-sm mb-5 md:text-[14px] md:text-center lg:text-left">
                                 По мере развития комплекса, реальная стоимость недвижимости увеличивается.
                             </p>
-                            <p class="text-white opacity-50 text-sm md:text-base md:text-center lg:text-left">
+                            <p class="text-white opacity-50 text-sm md:text-[14px] md:text-center lg:text-left">
                                 У нас есть возможность перепродать недвижимость с прибылью на любом этапе.
                             </p>
                         </div>
@@ -265,7 +265,7 @@
                     <div
                         class="block animate-ping w-[170px] h-[170px] md:w-[244px] md:h-[244px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]">
                     </div>
-                    <b class="block font-bold text-white md:text-[60px] leading-[100%] text-[40px]">
+                    <b class="block font-bold text-white md:text-[45px] leading-[100%] text-[40px] md:mb-3">
                         -5%
                     </b>
                     <span class="text-white text-xs md:text-base max-w-[130px]">
