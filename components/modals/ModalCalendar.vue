@@ -1,11 +1,11 @@
 <template>
     <div
-        class="content__inner z-0 relative overflow-hidden p-5 lg:p-0 w-full flex flex-col items-center justify-center h-full md:rounded-[20px]">
+        class="content__inner z-0 relative overflow-hidden p-5 md:p-0 w-full flex flex-col items-center justify-center h-full md:rounded-[20px]">
 
-        <div class="absolute right-[-34px] -top-5 lg:top-5 z-0">
+        <div class="absolute right-[-34px] -top-5 md:top-5 z-0">
             <img src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo">
         </div>
-        <div class="absolute left-[-34px] bottom-0 lg:bottom-[154px] z-0">
+        <div class="absolute left-[-34px] bottom-0 md:bottom-[154px] z-0">
             <img src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo">
         </div>
 
@@ -27,7 +27,7 @@
                     </svg>
                     30 минут
                 </p>
-                <div class="hidden md:flex gap-y-4 gap-x-[10px] flex-wrap mt-[30px] max-w-[320px] md:mr-10 lg:mt-auto">
+                <div class="hidden md:flex gap-y-4 gap-x-[10px] flex-wrap mt-[30px] max-w-[320px] md:mr-10 md:mt-auto">
                     <label for="rad-1" class="flex items-center cursor-pointer text-sm text-white/50">
                         <input type="radio" id="rad-1" name="location" class="hidden peer">
                         <span

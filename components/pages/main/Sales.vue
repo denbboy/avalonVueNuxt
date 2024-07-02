@@ -6,7 +6,7 @@
     <div class="container relative z-10">
       <div>
         <div class="flex justify-between items-center mb-8">
-          <h2 class="text-blue-600 font-bold text-[30px] lg:text-[56px] leading-[110%]" data-aos="fade-up">
+          <h2 class="text-blue-600 font-bold text-[45px] lg:text-[56px] leading-[110%]" data-aos="fade-up">
             Актуальные акции
           </h2>
 
@@ -32,7 +32,7 @@
         </div>
 
         <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
-          :breakpoints="breakpoints" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
+          :breakpoints="breakpoints" :space-between="24" @swiper="onSwiper" @slideChange="onSlideChange">
 
           <swiper-slide>
             <SalesItem bgdColor="white" />
@@ -90,6 +90,10 @@ export default {
     };
     const breakpoints = {
       768: {
+        slidesPerView: 3
+      },
+      1441: {
+        spaceBetween: 50,
         slidesPerView: 3
       },
     }

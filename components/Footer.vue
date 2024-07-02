@@ -3,7 +3,7 @@
         <div class="container">
 
             <div class="md:flex md:items-center gap-5 justify-between md:mb-24">
-                <img src="/assets/img/index/a-footer.png" class="max-w-[379px] hidden lg:block" alt="ph">
+                <img src="/assets/img/index/a-footer.png" class="lg:max-w-[379px] md:max-w-[338px] hidden md:block" alt="ph">
 
                 <!-- <div class="logo-clip-path hidden lg:block">
                     <video loop class="w-[379px] h-[392px] object-cover" muted autoplay
@@ -12,7 +12,7 @@
 
                 <div class="w-fit">
                     <div class="md:mb-[30px] md:pb-[30px] border-b border-white/10 mb-5 pb-5">
-                        <a href="tel:+6281246502783" class="flex items-center gap-4 mb-7 md:gap-5 group">
+                        <a href="tel:+6281246502783" class="flex items-center gap-4 mb-7 md:gap-4 lg:gap-5 group">
                             <img src="/assets/img/index/whatsap.svg" class="md:w-[70px] md:h-[70px]" alt="ic">
                             <div>
                                 <span class="text-white/40 text-sm md:text-base md:mb-2">
@@ -77,15 +77,15 @@
                 </div>
 
                 <form @submit.prevent="submitForm"
-                    class="flex flex-col p-5 border border-whiteOp-300 rounded-2xl text-center md:p-12 relative mb-14 md:mb-0">
+                    class="flex md:max-w-[381px] lg:max-w-full flex-col p-5 md:px-5 md:py-12 border border-whiteOp-300 rounded-2xl text-center lg:p-12 relative mb-14 md:mb-0">
                     <img src="/assets/img/index/dot-decor-2.png" class="absolute right-[-1px] bottom-[-1px] w-5 md:w-8"
                         alt="decor">
-                    <h2 class="font-bold text-white text-2xl mb-4 md:text-3xl md:mb-7 leading-[100%]">
+                    <h2 class="font-bold text-white md:text-2xl mb-4 lg:text-3xl md:mb-7 leading-[100%]">
                         Хотите узнать больше?
                     </h2>
                     <div class="flex flex-col gap-3 lg:gap-0">
                         <input type="text" v-model="name" placeholder="Имя"
-                            class="bg-white/10 lg:mb-[10px] rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-6 md:text-base w-full">
+                            class="bg-white/10 lg:mb-[10px] rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-5 lg:p-6 md:text-base w-full">
                         <div class="phone-vti">
                             <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone"
                                 :only-countries="onlyCountries" />

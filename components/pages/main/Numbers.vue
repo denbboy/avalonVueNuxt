@@ -5,8 +5,8 @@
     </div>
 
     <div class="container">
-      <div class="bali_con grid grid-cols-2 gap-x-2 gap-y-7 lg:grid-cols-3 lg:gap-y-12 lg:gap-x-5" data-aos="fade-up">
-        <h2 class="font-bold text-white text-3xl md:text-[45px] md:leading-[100%] col-start-1 col-end-3 lg:col-end-1">
+      <div class="bali_con grid grid-cols-2 gap-x-2 gap-y-7 md:grid-cols-3 md:gap-y-12 md:gap-x-5" data-aos="fade-up">
+        <h2 class="font-bold text-white text-3xl md:text-[45px] md:leading-[100%] col-start-1 col-end-3 md:col-end-1">
           Бали <br class="hidden md:block">в цифрах
         </h2>
         <!-- <div class="grid grid-cols-2 gap-x-2 gap-y-7"> -->
@@ -54,7 +54,7 @@
             Ежегодный рост спроса на недвижимость
           </p>
         </div>
-        <img src="/assets/img/index/a-bali-decor.svg" class="m-auto lg:hidden" alt="ic">
+        <img src="/assets/img/index/a-bali-decor.svg" class="m-auto md:hidden" alt="ic">
         <!-- </div> -->
       </div>
     </div>

@@ -6,7 +6,7 @@
       <img src="/assets/img/icons/vector-logo.svg" alt="vector-logo">
     </div>
     <div class="container">
-      <div class="lg:flex lg:items-center gap-8 justify-between">
+      <div class="md:flex md:items-center gap-8 justify-between">
         <div class="lg:-mr-12">
           <div class="flex items-center mb-8 md:mb-10" data-aos="fade-up">
             <img src="/assets/img/index/a-us-decor.svg" class="max-w-[60px] mr-4 md:max-w-[80px] md:mr-5" alt="ic a">
@@ -19,10 +19,10 @@
           </div>
 
           <div class="mb-8 md:mb-9" data-aos="fade-up">
-            <h3 class="font-bold text-white text-base mb-4 md:text-[20px] md:mb-6 md:leading-[28px]">
+            <h3 class="font-bold text-white text-base mb-4 md:text-[20px] lg:text-[26px] md:mb-6 md:leading-[28px]">
               Наша сила в нашей коллективной <br class="hidden md:block">приверженности к совершенству
             </h3>
-            <p class="text-white text-sm md:text-sm md:leading-[20px]">
+            <p class="text-white md:text-sm lg:text-lg md:leading-[20px]">
               Мы действительно верим в силу коллективной приверженности к совершенству. Мы стремимся создавать
               качественные, эстетически привлекательные и функциональные строительные проекты, которые
               превосходят ожидания наших клиентов.
@@ -31,31 +31,31 @@
 
           <ul class="grid grid-cols-2 gap-y-8 gap-x-3 md:gap-x-5 md:gap-y-[32px]" data-aos="fade-up">
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
-              <b class="font-bold text-white text-2xl mb-3 md:text-[32px] md:mb-4 block">
+              <b class="font-bold text-white text-2xl mb-3 md:text-[32px] lg:text-[40px] md:mb-4 block">
                 С 2007 г.
               </b>
-              <p class="text-white text-sm md:text-sm">
+              <p class="text-white text-sm lg:text-base">
                 занимаемся строительством
               </p>
             </li>
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
-              <b class="font-bold text-white text-2xl mb-3 md:text-[32px] md:mb-4 block">
+              <b class="font-bold text-white text-2xl mb-3 md:text-[32px] lg:text-[40px] md:mb-4 block">
                 С 2019 г.
               </b>
-              <p class="text-white text-sm md:text-sm">
+              <p class="text-white text-sm lg:text-base">
                 строим на острове Бали
               </p>
             </li>
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
-              <b class="font-bold text-white text-2xl mb-3 md:text-[32px] md:mb-4 block">
+              <b class="font-bold text-white text-2xl mb-3 md:text-[32px] lg:text-[40px] md:mb-4 block">
                 100+
               </b>
-              <p class="text-white text-sm md:text-sm">
+              <p class="text-white text-sm lg:text-base">
                 реализованных объектов
               </p>
             </li>
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
-              <b class="font-bold text-2xl mb-3 text-blue-400 md:text-[32px] md:mb-4 flex items-center">
+              <b class="font-bold text-2xl mb-3 text-blue-400 md:text-[32px] lg:text-[40px] md:mb-4 flex items-center">
                 ROI 22,5%
                 <svg width="30" height="31" viewBox="0 0 30 31" fill="none" class="ml-3 hidden md:block"
                   xmlns="http://www.w3.org/2000/svg">
@@ -65,13 +65,13 @@
                 </svg>
 
               </b>
-              <p class="text-white text-sm md:text-sm">
+              <p class="text-white text-sm lg:text-base">
                 по уже построенным объектам
               </p>
             </li>
           </ul>
         </div>
-        <img src="/assets/img/index/us-ph-main.png" class="mt-7 lg:w-full lg:max-w-[760px] -mr-20" alt="ph" data-aos="fade-left">
+        <img src="/assets/img/index/us-ph-main.png" class="mt-7 lg:w-full md:max-w-[567px] lg:max-w-[760px] -mr-20" alt="ph" data-aos="fade-left">
       </div>
     </div>
   </section>

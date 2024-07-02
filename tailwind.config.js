@@ -48,13 +48,13 @@ export default {
       },
       container: {
         center: true,
-        padding: "160px",
+        padding: "30px",
         screens: {
           'sm': 'none',
           'md': 'none',
           'lg': 'none',
           'xl': 'none',
-          '2xl': '1560px',
+          '2xl': 'none',
         },
         maxWidth: {
           'none': 'none',

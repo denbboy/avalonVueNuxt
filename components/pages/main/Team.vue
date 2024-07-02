@@ -1,9 +1,9 @@
 <template>
-  <section class="pt-14 pb-24">
+  <section class="pt-14 pb-12 lg:pb-24">
     <div class="container">
       <div class="">
         <div class="flex justify-between items-center mb-8">
-          <h2 class="text-white font-bold text-[30px] md:text-[45px]" data-aos="fade-up">
+          <h2 class="text-white font-bold text-[30px] md:text-[45px] lg:text-[56px]" data-aos="fade-up">
             Наша команда
           </h2>
 
@@ -25,12 +25,25 @@
           </div>
         </div>
 
-        <swiper class="swiper team" :modules="modules" :navigation="navigationConfig" :space-between="20" :slides-per-view="6"
+        <swiper class="swiper team" :modules="modules" :breakpoints="breakpoints" :navigation="navigationConfig" :space-between="20" :slides-per-view="2"
           @swiper="onSwiper" @slideChange="onSlideChange">
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <img src="/assets/img/index/user-1.png" class="m-auto  grayscale" alt="ph">
+              <img src="/assets/img/index/user-1.png" class="w-full h-full grayscale" alt="ph">
+            </div>
+            <div class="text-center mt-4">
+              <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
+                Дмитрий Грицай
+              </h3>
+              <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
+                Учредитель
+              </p>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
+              <img src="/assets/img/index/user-2.png" class="w-full h-full grayscale" alt="ph">
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
@@ -44,7 +57,7 @@
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <img src="/assets/img/index/user-2.png" class="m-auto  grayscale" alt="ph">
+              <img src="/assets/img/index/user-3.png" class="w-full h-full grayscale" alt="ph">
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
@@ -58,7 +71,7 @@
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <img src="/assets/img/index/user-3.png" class="m-auto  grayscale" alt="ph">
+              <img src="/assets/img/index/user-4.png" class="w-full h-full grayscale" alt="ph">
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
@@ -72,7 +85,7 @@
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <img src="/assets/img/index/user-4.png" class="m-auto  grayscale" alt="ph">
+              <img src="/assets/img/index/user-5.png" class="w-full h-full grayscale" alt="ph">
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
@@ -86,7 +99,7 @@
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <img src="/assets/img/index/user-5.png" class="m-auto  grayscale" alt="ph">
+              <img src="/assets/img/index/user-6.png" class="w-full h-full grayscale" alt="ph">
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
@@ -100,21 +113,7 @@
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <img src="/assets/img/index/user-6.png" class="m-auto  grayscale" alt="ph">
-            </div>
-            <div class="text-center mt-4">
-              <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
-                Дмитрий Грицай
-              </h3>
-              <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
-                Учредитель
-              </p>
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div
-              class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <img src="/assets/img/index/user-1.png" class="m-auto  grayscale" alt="ph">
+              <img src="/assets/img/index/user-1.png" class="w-full h-full grayscale" alt="ph">
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
@@ -156,10 +155,19 @@ export default {
       nextEl: '.button-next',
       prevEl: '.button-prev',
     };
+    const breakpoints = {
+      1024: {
+        slidesPerView: 4
+      },
+      1441: {
+        slidesPerView: 6
+      }
+    };
 
     return {
       modules,
-      navigationConfig
+      navigationConfig,
+      breakpoints
     };
   },
 };

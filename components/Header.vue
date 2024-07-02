@@ -142,7 +142,7 @@
           <img src="/assets/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic">
         </button>
         <div id="burgerMenu"
-          class="'burger__body absolute top-[47px] transition-all md:top-[114px] left-0 bg-blue-500 w-[calc(100%_+_60px)] -ml-[30px] flex-col text-center pt-12 pb-8 text-white text-lg border-t-2 border-whiteOp-300 z-10'"
+          class="'burger__body absolute top-[47px] transition-all md:top-[114px] w-full left-0 bg-blue-500 w-[calc(100%_+_60px)] -ml-[30px] flex-col text-center pt-12 pb-8 text-white text-lg border-t-2 border-whiteOp-300 z-10'"
           :class="isOpenBurger ? 'opacity-100 visible' : 'opacity-0 invisible'">
           <div class="group burger__proj mb-8 md:hidden block">
             <p @click="openSubMenu" id="toggleProjects"

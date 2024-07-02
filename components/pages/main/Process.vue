@@ -8,9 +8,9 @@
         </Parallaxy>
         <div class="container relative z-10">
 
-            <!-- bg-[url('./../img/index/buy-list-bg.png')] lg:bg-[url('./../img/index/buy-bg-desk.png')] bg-no-repeat bg-cover -->
+            <!-- bg-[url('./../img/index/buy-list-bg.png')] md:bg-[url('./../img/index/buy-bg-desk.png')] bg-no-repeat bg-cover -->
             <div
-                class=" lg:rounded-tr-3xl lg:rounded-bl-3xl pt-14 pb-28 px-5 relative md:pb-11 md:px-8 lg:px-[120px] lg:pt-[100px]">
+                class=" md:rounded-tr-3xl md:rounded-bl-3xl pt-14 pb-28 px-5 relative md:pb-11 md:px-[80px] lg:px-[120px] md:pt-[100px]">
 
                 <img src="/assets/img/index/buy-bg-desk.png"
                     class="absolute top-0 left-0 w-full h-full z-0 hidden md:block backdrop-blur" alt="">
@@ -26,13 +26,13 @@
                         style="fill:#0E88EC;fill:color(display-p3 0.0553 0.5317 0.9262);fill-opacity:1;" />
                 </svg>
 
-                <div class="mb-7 lg:flex lg:items-center lg:mb-[50px] relative z-10">
+                <div class="mb-7 md:flex md:items-center md:mb-[50px] relative z-10">
 
                     <h2
-                        class="font-bold text-white text-3xl mb-7 md:text-[45px] md:leading-[45px] md:text-center lg:text-left lg:m-0" data-aos="fade-up">
+                        class="font-bold text-white text-3xl mb-7 md:text-[45px] md:leading-[45px] lg:text-[56px] lg:leading-[56px] md:text-left md:m-0" data-aos="fade-up">
                         Как просходит <br class="hidden md:block"> процесс покупки
                     </h2>
-                    <p class="text-white opacity-50 text-sm md:text-[14px] md:text-center lg:text-left md:ml-auto lg:max-w-[400px]" data-aos="fade-up">
+                    <p class="text-white/60 opacity-50 text-sm md:text-sm lg:text-base md:text-left md:ml-auto md:max-w-[400px]" data-aos="fade-up">
                         Для того, чтобы приобрести недвижимость, вам не обязательно прилетать на Бали, многие сделки
                         теперь
                         происходят дистанционно
@@ -41,197 +41,197 @@
 
                 <div class="relative z-10" data-aos="fade-up">
                     <img src="/assets/img/index/point-line.png"
-                        class="hidden lg:block absolute lg:top-[90px] h-[260px] right-[-40px] w-full max-w-[1188px]"
+                        class="hidden md:block absolute md:top-[71px] lg:top-[90px] md:h-[209px] lg:h-[260px] right-[-40px] w-full md:max-w-[910px] lg:max-w-[1188px]"
                         alt="line ph">
                     <ul
-                        class="mb-7 lg:mb-12 lg:grid lg:grid-cols-5 lg:gap-5 lg:after:hidden after:w-[1px] after:h-[calc(100%-30px)] after:bg-white/40 after:absolute after:bottom-0 after:left-[24.5px]">
-                        <li class="mb-5 flex items-center lg:flex-col">
+                        class="mb-7 md:mb-12 md:grid md:grid-cols-5 md:gap-5 md:after:hidden after:w-[1px] after:h-[calc(100%-30px)] after:bg-white/40 after:absolute after:bottom-0 after:left-[24.5px]">
+                        <li class="mb-5 flex items-center md:flex-col">
                             <div
-                                class="relative w-full max-w-[50px] mr-4 lg:mr-0 lg:mb-14 flex items-center justify-center md:max-w-[66px] md:h-[66px]">
+                                class="relative w-full max-w-[50px] mr-4 md:mr-0 md:mb-14 flex items-center justify-center md:max-w-[47px] md:h-[47px] lg:max-w-[66px] lg:h-[66px]">
                                 <div class="">
                                 </div>
                                 <div
-                                    class="hidden lg:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
+                                    class="hidden md:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[24px] h-[24px] flex items-center justify-center rounded-md md:w-full md:h-full md:rounded-2xl z-[3]">
-                                    <span class="text-white font-bold text-xs md:text-lg">
+                                    <span class="text-white font-bold text-xs lg:text-lg">
                                         1
                                     </span>
                                 </div>
                             </div>
-                            <p class="text-white text-sm md:text-base lg:text-center">
+                            <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
                                 Выбор и бронирование апартаментов
                             </p>
                         </li>
-                        <li class="mb-5 flex items-center lg:flex-col">
+                        <li class="mb-5 flex items-center md:flex-col">
                             <div
-                                class="relative w-full max-w-[50px] mr-4 lg:mr-0 lg:mb-14 flex items-center justify-center md:max-w-[66px] md:h-[66px]">
+                                class="relative w-full max-w-[50px] mr-4 md:mr-0 md:mb-14 flex items-center justify-center md:max-w-[47px] md:h-[47px] lg:max-w-[66px] lg:h-[66px]">
                                 <div class="">
                                 </div>
                                 <div
-                                    class="hidden lg:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
+                                    class="hidden md:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[27px] h-[27px] flex items-center justify-center rounded-md md:w-full md:h-full md:rounded-2xl z-[3]">
-                                    <span class="text-white font-bold text-xs md:text-lg">
+                                    <span class="text-white font-bold text-xs lg:text-lg">
                                         2
                                     </span>
                                 </div>
                             </div>
-                            <p class="text-white text-sm md:text-base lg:text-center">
+                            <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
                                 Подписание меморандума о взаимопонимании
                             </p>
                         </li>
-                        <li class="mb-5 flex items-center lg:flex-col">
+                        <li class="mb-5 flex items-center md:flex-col">
                             <div
-                                class=" relative w-full max-w-[50px] mr-4 lg:mr-0 lg:mb-14 flex items-center justify-center md:max-w-[66px] md:h-[66px]">
+                                class=" relative w-full max-w-[50px] mr-4 md:mr-0 md:mb-14 flex items-center justify-center md:max-w-[47px] md:h-[47px] lg:max-w-[66px] lg:h-[66px]">
                                 <div
-                                    class="hidden lg:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
+                                    class="hidden md:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
                                 </div>
                                 <div class="">
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[30px] h-[30px] flex items-center justify-center rounded-lg z-[3] md:w-full md:h-full md:rounded-2xl">
-                                    <span class="text-white font-bold text-xs md:text-lg">
+                                    <span class="text-white font-bold text-xs lg:text-lg">
                                         3
                                     </span>
                                 </div>
                             </div>
-                            <p class="text-white text-sm md:text-base lg:text-center">
+                            <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
                                 Оплата первого взноса 20%
                             </p>
                         </li>
-                        <li class="mb-5 flex items-center lg:flex-col">
+                        <li class="mb-5 flex items-center md:flex-col">
                             <div
-                                class="relative w-full max-w-[50px] mr-4 lg:mr-0 lg:mb-14 flex items-center justify-center md:max-w-[66px] md:h-[66px]">
+                                class="relative w-full max-w-[50px] mr-4 md:mr-0 md:mb-14 flex items-center justify-center md:max-w-[47px] md:h-[47px] lg:max-w-[66px] lg:h-[66px]">
                                 <div
-                                    class="hidden lg:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
+                                    class="hidden md:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
                                 </div>
                                 <div class="">
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[33px] h-[33px] flex items-center justify-center rounded-lg z-[3] md:w-full md:h-full md:rounded-2xl">
-                                    <span class="text-white font-bold text-xs md:text-lg">
+                                    <span class="text-white font-bold text-xs lg:text-lg">
                                         4
                                     </span>
                                 </div>
                             </div>
-                            <p class="text-white text-sm md:text-base lg:text-center">
+                            <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
                                 Беспроцентные платежи на 12 месяцев
                             </p>
                         </li>
-                        <li class="mb-5 flex items-center lg:flex-col">
+                        <li class="mb-5 flex items-center md:flex-col">
                             <div
-                                class="relative w-full max-w-[50px] mr-4 lg:mr-0 lg:mb-14 flex items-center justify-center md:max-w-[66px] md:h-[66px]">
+                                class="relative w-full max-w-[50px] mr-4 md:mr-0 md:mb-14 flex items-center justify-center md:max-w-[47px] md:h-[47px] lg:max-w-[66px] lg:h-[66px]">
                                 <div
-                                    class="hidden lg:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
+                                    class="hidden md:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
                                 </div>
                                 <div class="">
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[36px] h-[36px] flex items-center justify-center rounded-lg z-[3] md:w-full md:h-full md:rounded-2xl">
-                                    <span class="text-white font-bold text-xs md:text-lg">
+                                    <span class="text-white font-bold text-xs lg:text-lg">
                                         5
                                     </span>
                                 </div>
                             </div>
-                            <p class="text-white text-sm md:text-base lg:text-center">
+                            <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
                                 Привлечение арендаторов
                                 за счет собственной управляющей компании
                             </p>
                         </li>
-                        <li class="mb-5 flex items-center lg:flex-col">
+                        <li class="mb-5 flex items-center md:flex-col">
                             <div
-                                class="relative w-full max-w-[50px] mr-4 lg:mr-0 lg:mb-14 flex items-center justify-center md:max-w-[66px] md:h-[66px]">
+                                class="relative w-full max-w-[50px] mr-4 md:mr-0 md:mb-14 flex items-center justify-center md:max-w-[47px] md:h-[47px] lg:max-w-[66px] lg:h-[66px]">
                                 <div
-                                    class="hidden lg:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
+                                    class="hidden md:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
                                 </div>
                                 <div class="">
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[39px] h-[39px] flex items-center justify-center rounded-xl z-[3] md:w-full md:h-full md:rounded-2xl">
-                                    <span class="text-white font-bold text-xs md:text-lg">
+                                    <span class="text-white font-bold text-xs lg:text-lg">
                                         6
                                     </span>
                                 </div>
                             </div>
-                            <p class="text-white text-sm md:text-base lg:text-center">
+                            <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
                                 Ввод здания я в эксплуатацию
                                 1 июня 2024 года
                             </p>
                         </li>
-                        <li class="mb-5 flex items-center lg:flex-col">
+                        <li class="mb-5 flex items-center md:flex-col">
                             <div
-                                class="relative w-full max-w-[50px] mr-4 lg:mr-0 lg:mb-14 flex items-center justify-center md:max-w-[66px] md:h-[66px]">
+                                class="relative w-full max-w-[50px] mr-4 md:mr-0 md:mb-14 flex items-center justify-center md:max-w-[47px] md:h-[47px] lg:max-w-[66px] lg:h-[66px]">
                                 <div
-                                    class="hidden lg:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
+                                    class="hidden md:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
                                 </div>
                                 <div class="">
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[42px] h-[42px] flex items-center justify-center rounded-xl after:block z-[3] md:w-full md:h-full md:rounded-2xl">
-                                    <span class="text-white font-bold text-xs md:text-lg">
+                                    <span class="text-white font-bold text-xs lg:text-lg">
                                         7
                                     </span>
                                 </div>
                             </div>
-                            <p class="text-white text-sm md:text-base lg:text-center">
+                            <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
                                 Регистрация договора аренды на 25 лет с возможностью продления на 25 лет
                             </p>
                         </li>
-                        <li class="mb-5 flex items-center lg:flex-col">
+                        <li class="mb-5 flex items-center md:flex-col">
                             <div
-                                class="relative w-full max-w-[50px] mr-4 lg:mr-0 lg:mb-14 flex items-center justify-center md:max-w-[66px] md:h-[66px]">
+                                class="relative w-full max-w-[50px] mr-4 md:mr-0 md:mb-14 flex items-center justify-center md:max-w-[47px] md:h-[47px] lg:max-w-[66px] lg:h-[66px]">
                                 <div
-                                    class="hidden lg:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
+                                    class="hidden md:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
                                 </div>
                                 <div class="">
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[45px] h-[45px] flex items-center justify-center rounded-xl z-[3] md:w-full md:h-full md:rounded-2xl">
-                                    <span class="text-white font-bold text-xs md:text-lg">
+                                    <span class="text-white font-bold text-xs lg:text-lg">
                                         8
                                     </span>
                                 </div>
                             </div>
-                            <p class="text-white text-sm md:text-base lg:text-center">
+                            <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
                                 Завершения строительных и отделочных работ
                             </p>
                         </li>
-                        <li class="mb-5 flex items-center lg:flex-col">
+                        <li class="mb-5 flex items-center md:flex-col">
                             <div
-                                class="relative w-full max-w-[50px] mr-4 lg:mr-0 lg:mb-14 flex items-center justify-center md:max-w-[66px] md:h-[66px]">
+                                class="relative w-full max-w-[50px] mr-4 md:mr-0 md:mb-14 flex items-center justify-center md:max-w-[47px] md:h-[47px] lg:max-w-[66px] lg:h-[66px]">
                                 <div
-                                    class="hidden lg:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
+                                    class="hidden md:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
                                 </div>
                                 <div class="">
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[48px] h-[48px] flex items-center justify-center rounded-xl z-[3] md:w-full md:h-full md:rounded-2xl">
-                                    <span class="text-white font-bold text-xs md:text-lg">
+                                    <span class="text-white font-bold text-xs lg:text-lg">
                                         9
                                     </span>
                                 </div>
                             </div>
-                            <p class="text-white text-sm md:text-base lg:text-center">
+                            <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
                                 Сдача в аренду вашей собственности
                             </p>
                         </li>
-                        <li class="mb-5 flex items-center lg:flex-col">
+                        <li class="mb-5 flex items-center md:flex-col">
                             <div
-                                class="relative w-full max-w-[50px] mr-4 lg:mr-0 lg:mb-14 flex items-center justify-center md:max-w-[66px] md:h-[66px]">
+                                class="relative w-full max-w-[50px] mr-4 md:mr-0 md:mb-14 flex items-center justify-center md:max-w-[47px] md:h-[47px] lg:max-w-[66px] lg:h-[66px]">
                                 <div
-                                    class="hidden lg:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
+                                    class="hidden md:block min-w-[10px] h-[10px] bg-blue-400 rounded absolute bottom-[-30px] left-[50%] translate-x-[-50%]">
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[50px] h-[50px] flex items-center justify-center rounded-2xl md:w-full md:h-full md:rounded-2xl z-[3]">
-                                    <span class="text-white font-bold text-xs md:text-lg">
+                                    <span class="text-white font-bold text-xs lg:text-lg">
                                         10
                                     </span>
                                 </div>
                             </div>
-                            <p class="text-white text-sm md:text-base lg:text-center">
+                            <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
                                 Ежемесячная выплата прибыли инвесторам
                             </p>
                         </li>
@@ -239,19 +239,19 @@
                 </div>
 
                 <div
-                    class="lg:flex relative z-10 lg:flex-row-reverse lg:justify-between lg:items-center lg:pt-10 lg:border-t lg:border-whiteOp-300" data-aos="fade-up">
+                    class="md:flex relative z-10 md:flex-row-reverse md:justify-between md:items-center md:pt-10 md:border-t md:border-whiteOp-300" data-aos="fade-up">
                     <button @click="handleOpenModal" type="button"
-                        class="w-full bg-white p-4 font-bold text-blue-500 text-sm rounded-xl transition-all hover:bg-blue-400 hover:text-white lg:mb-0 md:py-[23px] md:text-base mb-5 lg:max-w-[300px]">
+                        class="w-full bg-white p-4 font-bold text-blue-500 text-sm rounded-xl transition-all hover:bg-blue-400 hover:text-white md:mb-0 md:py-[23px] md:text-base mb-5 md:max-w-[300px]">
                         Получить консультацию
                     </button>
 
                     <div class="flex items-center gap-10">
-                        <img src="/assets/img/index/a-decor-op.svg" class="hidden lg:block" alt="decor">
-                        <div class="pt-5 border-t border-whiteOp-300 lg:border-none lg:pt-0 lg:max-w-[526px]">
-                            <p class="text-white opacity-50 text-sm mb-5 md:text-[14px] md:text-center lg:text-left">
+                        <img src="/assets/img/index/a-decor-op.svg" class="hidden md:block md:max-w-[112px]" alt="decor">
+                        <div class="pt-5 border-t border-whiteOp-300 md:border-none md:pt-0 md:max-w-[526px]">
+                            <p class="text-white opacity-50 text-sm mb-5 md:text-[14px] md:text-left">
                                 По мере развития комплекса, реальная стоимость недвижимости увеличивается.
                             </p>
-                            <p class="text-white opacity-50 text-sm md:text-[14px] md:text-center lg:text-left">
+                            <p class="text-white opacity-50 text-sm md:text-[14px] md:text-left">
                                 У нас есть возможность перепродать недвижимость с прибылью на любом этапе.
                             </p>
                         </div>
@@ -261,14 +261,14 @@
 
 
                 <div
-                    class="w-[170px] h-[170px] md:w-[244px] md:h-[244px] text-center rounded-full bg-blue-400 transition-all flex flex-col items-center justify-center gap-1 absolute bottom-[-85px] md:bottom-[-122px] left-[50%] lg:bottom-auto 3xl:left-0 3xl:top-[50%] lg:translate-y-[-50%] translate-x-[-50%] lg:top-[75%] lg:left-28">
+                    class="w-[170px] h-[170px] lg:w-[244px] lg:h-[244px] text-center rounded-full bg-blue-400 transition-all flex flex-col items-center justify-center gap-1 absolute bottom-[-85px] left-[50%] 3xl:left-0 3xl:top-[50%] md:translate-y-[-50%] translate-x-[-50%] md:top-[50%] md:left-2">
                     <div
                         class="block animate-ping w-[170px] h-[170px] md:w-[244px] md:h-[244px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]">
                     </div>
-                    <b class="block font-bold text-white md:text-[45px] leading-[100%] text-[40px] md:mb-3">
+                    <b class="block font-bold text-white md:text-[45px] lg:text-[60px] leading-[100%] text-[40px] md:mb-3">
                         -5%
                     </b>
-                    <span class="text-white text-xs md:text-base max-w-[130px]">
+                    <span class="text-white text-xs lg:text-base max-w-[130px]">
                         Скидка
                         при единоразовой
                         100% оплате

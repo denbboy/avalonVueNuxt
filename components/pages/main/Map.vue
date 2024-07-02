@@ -9,11 +9,11 @@
 
     <div class="container relative z-20">
       <div class="md:flex">
-        <div class="md:-ml-20 mx-[-150px] lg:mr-0 w-[calc(100%+400px)] lg:w-full lg:max-w-[1298px]">
+        <div class="lg:-ml-20 mx-[-150px] md:-ml-44 md:mr-0 w-[calc(100%+400px)] md:w-full md:max-w-[1298px]">
           <img src="/assets/img/index/map.svg" class="w-full" alt="ic">
         </div>
-        <div class="md:absolute bottom-0 max-w-[752px] right-0 mt-8">
-          <h2 class="text-white font-bold text-2xl md:text-[45px] leading-[100%] mb-7 md:mb-[32px]" data-aos="fade-up">
+        <div class="md:absolute bottom-0 max-w-[752px] md:right-[160px] lg:right-[180px] mt-8">
+          <h2 class="text-white font-bold text-2xl md:text-[45px] lg:text-[56px] leading-[100%] mb-7 md:mb-[32px]" data-aos="fade-up">
             Топовые локации <br class="hidden md:block"/> объектов
           </h2>
           <p class="text-white text-sm mb-5 md:text-xl leading-[140%] md:leading-[28px] md:mb-[16px] md:max-w-[600px]" data-aos="fade-up">
