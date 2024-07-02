@@ -23,7 +23,7 @@
               </div>
               <div class="banner__item__head md:flex">
                 <div class="flex">
-                  <h1 class="text-white text-[45px] leading-1 md:text-[70px] mr-3">
+                  <h1 class="text-white text-[45px] leading-1 lg:text-[70px] mr-3">
                     AVALON
                   </h1>
                   <span
