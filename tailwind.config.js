@@ -43,12 +43,12 @@ export default {
         'DEFAULT': '300ms',
       },
       screens: {
-        'lgs': '1025px',
+        'lg': '1441px',
         '3xl': '1770px',
       },
       container: {
         center: true,
-        padding: "30px",
+        padding: "160px",
         screens: {
           'sm': 'none',
           'md': 'none',
@@ -59,7 +59,7 @@ export default {
         maxWidth: {
           'none': 'none',
           'sm': 'none',
-          'md': 'none',
+          'md': '1440px',
           'lg': 'none',
           'xl': 'none',
           '2xl': 'none',
