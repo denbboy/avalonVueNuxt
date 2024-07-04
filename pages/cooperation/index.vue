@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="md:flex md:flex-row-reverse md:items-center gap-[80px] mb-8 md:mb-20">
                     <div data-aos="fade-left" class="">
-                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[56px] md:mb-12">Для брокеров</h2>
+                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">Для брокеров</h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">Мы ценим вклад тех, кто помогает развитию
                             рынка
                             недвижимости в Украине. Поэтому мы разработали специальную программу сотрудничества с
@@ -94,7 +94,7 @@
             <div class="container">
                 <div class="md:flex md:flex-row md:items-center gap-[80px] mb-8 md:mb-20">
                     <div data-aos="fade-right" class="">
-                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[56px] leading-[55px] md:mb-12">Агентствам
+                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] leading-[55px] md:mb-12">Агентствам
                             недвижимости</h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">Для сотрудничества с риелторами мы
                             разработали
@@ -155,7 +155,7 @@
             <div class="container">
                 <div class="md:flex md:flex-row-reverse md:items-center gap-[80px] mb-8 md:mb-20">
                     <div data-aos="fade-left" class="">
-                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[56px] md:mb-12">Маркетингу</h2>
+                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">Маркетингу</h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">Знакомы с нашими проектами и у вас есть
                             крутая
                             идея для сотрудничества? Мы открыты для предложений! Если ваша компания занимается рекламной
@@ -177,31 +177,31 @@
                         class="text-xl text-white font-bold mb-[30px] md:text-3xl relative after:absolute after:top-2/4 after:-translate-x-2/4 after:right-[12px] after:w-[6px] after:h-[6px] after:bg-blue-400 before:w-[34px] md:before:w-[120px] before:h-[1px] before:bg-white/20 md:after:rounded-[4px] md:before:mt-[4px] before:mt-[2.5px] before:top-2/4 before:-translate-x-2/4 before:absolute md:before:right-[-180px] before:right-[-30px] md:after:w-[10px] md:after:right-[-15px] md:after:h-[10px] after:rounded-sm">
                         Сотрудничество с маркетологами:
                     </h3>
-                    <ol class="md:flex relative justify-between after:top-[89px] md:gap-5">
-                        <li class="flex items-center mb-8 last:mb-0 md:mb-0">
+                    <ol class="flex flex-col xl:flex-row relative justify-between after:top-[89px] md:gap-5">
+                        <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
-                                class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
+                                class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 <img class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="">
                             </div>
-                            <p class="text-sm md:text-lg text-white ml-5">Оказываем информационную поддержку по нашим
+                            <p class="text-sm md:text-lg text-white ">Оказываем информационную поддержку по нашим
                                 проектам
                             </p>
                         </li>
-                        <li class="flex items-center mb-8 last:mb-0 md:mb-0">
+                        <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
-                                class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
+                                class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 <img class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="">
                             </div>
-                            <p class="text-sm md:text-lg text-white ml-5">Консультируем относительно ведения рекламных
+                            <p class="text-sm md:text-lg text-white ">Консультируем относительно ведения рекламных
                                 кампаний
                             </p>
                         </li>
-                        <li class="flex items-center mb-8 last:mb-0 md:mb-0">
+                        <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
-                                class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
+                                class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 <img class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="">
                             </div>
-                            <p class="text-sm md:text-lg text-white ml-5">Помогаем в решении юридических вопросов.</p>
+                            <p class="text-sm md:text-lg text-white ">Помогаем в решении юридических вопросов.</p>
                         </li>
                     </ol>
                 </div>
@@ -213,7 +213,7 @@
             <div class="container">
                 <div class="md:flex md:flex-row md:items-center gap-[80px] mb-8 md:mb-20">
                     <div data-aos="fade-right" class="">
-                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[56px] md:mb-12">
+                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">
                             Партнерам
                         </h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">
@@ -299,7 +299,7 @@
         <section class="py-[60px] lg:py-[100px] md:py-24">
             <div class="container">
                 <h2 data-aos="fade-up"
-                    class="text-white md:text-center md:mx-auto text-3xl font-bold md:text-[56px] mb-8 md:mb-12">
+                    class="text-white md:text-center md:mx-auto text-3xl font-bold md:text-[45px] lg:text-[56px] mb-8 md:mb-12">
                     Наши проекты
                 </h2>
 

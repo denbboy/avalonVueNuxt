@@ -73,7 +73,7 @@ body {
 
 .swiper-pagination-bullet:after {
     content: "";
-    background: #fff !important;
+    background: #fff;
     opacity: 0.5 !important;
     width: 6px !important;
     height: 6px !important;
@@ -130,7 +130,7 @@ body {
     background: transparent !important;
     width: 14px !important;
     height: 14px !important;
-    border: 2px solid #fff !important;
+    border: 2px solid #fff;
     opacity: 1 !important;
     transition: all .1s ease;
     position: relative;
@@ -147,6 +147,24 @@ body {
     bottom: 0;
 }
 
+.swiper-pagination_blue .swiper-pagination-bullet-active{
+    border: 2px solid #0A4A7F !important;
+
+}
+
+.swiper-pagination_blue .swiper-pagination-bullet::after{
+    background: #0A4A7F;
+
+}
+
+.swiper-pagination_blue .swiper-pagination-bullet::before{
+    background: #0A4A7F;
+
+}
+
+.swiper-button-disabled{
+    opacity: 20%;
+}
 
 
 .projectsButton:hover .line-before {

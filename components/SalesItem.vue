@@ -5,7 +5,7 @@
             'border-blue-500 bg-blue-500': props.bgdColor === 'blue-500',
             'border-blue-600 bg-blue-600 after:bg-blue-500': props.bgdColor === 'blue-600',
         }" class="block-bottom-point z-20"></div>
-        <img src="/assets/img/news/cardImage.jpg" alt="Image" class="z-0 relative rounded-2xl">
+        <img src="/assets/img/news/cardImage.jpg" alt="Image" class="z-0 w-full h-full object-cover relative rounded-2xl">
         <div
             class="bg-gradient-to-t transition-all from-blue-600/80 rounded-2xl opacity-90 group-hover:opacity-0 from-20% absolute top-0 left-0 w-full h-full z-10">
         </div>

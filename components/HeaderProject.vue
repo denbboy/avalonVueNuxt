@@ -23,7 +23,7 @@
         </NuxtLink>
 
 
-        <div class="items-center gap-[26px] 3xl:gap-10 hidden xl:flex">
+        <div class="items-center gap-[26px] 3xl:gap-10 hidden md:flex">
           <NuxtLink href="/" class="text-white text-[12px] 3xl:text-sm relative transition-all
                           before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
                           after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
@@ -135,10 +135,12 @@
         <button @click="handleOpenBurger" id="burgerBtn" type="button" class="xl:hidden block ">
           <img src="/assets/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic">
         </button>
-        <div id="burgerMenu"
-          class="'burger__body absolute top-[47px] transition-all lg:top-[114px] left-0 bg-blue-500 w-full -ml-[30px] flex-col text-center pt-12 pb-8 text-white text-lg border-t-2 border-whiteOp-300 z-10'"
+        
+      </div>
+      <div id="burgerMenu"
+          class="'burger__body absolute top-full transition-all left-0 bg-blue-500 w-full flex-col text-center pt-12 pb-8 text-white text-lg border-t-2 border-whiteOp-300 z-10'"
           :class="isOpenBurger ? 'opacity-100 visible' : 'opacity-0 invisible'">
-          <div class="lg:hidden flex flex-col gap-8 mb-12 pb-7 border-b border-whiteOp-300">
+          <div class="md:hidden flex flex-col gap-8 mb-12 pb-7 border-b border-whiteOp-300">
             <NuxtLink @click="handleCloseBurger" href="/" class="hover:text-blue-400 transition-all">
               Главная
             </NuxtLink>
@@ -206,7 +208,6 @@
             </ul>
           </div>
         </div>
-      </div>
   </header>
 
   <div
