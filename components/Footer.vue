@@ -2,8 +2,8 @@
     <footer id="contacts" class="mt-a bg-blue-600 pt-14 md:pt-24 mt-auto">
         <div class="container">
 
-            <div class="md:flex md:items-center gap-5 justify-between md:mb-24">
-                <img src="/assets/img/index/a-footer.png" class="lg:max-w-[379px] md:max-w-[338px] hidden md:block" alt="ph">
+            <div class="xl:flex xl:items-center gap-5 justify-between md:mb-24">
+                <img src="/assets/img/index/a-footer.png" class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph">
 
                 <!-- <div class="logo-clip-path hidden lg:block">
                     <video loop class="w-[379px] h-[392px] object-cover" muted autoplay
@@ -77,7 +77,7 @@
                 </div>
 
                 <form @submit.prevent="submitForm"
-                    class="flex md:max-w-[381px] lg:max-w-full flex-col p-5 md:px-5 md:py-12 border border-whiteOp-300 rounded-2xl text-center lg:p-12 relative mb-14 md:mb-0">
+                    class="flex xl:max-w-[381px] lg:max-w-full flex-col p-5 md:px-5 md:py-12 border border-whiteOp-300 rounded-2xl text-center lg:p-12 relative mb-14 md:mb-0">
                     <img src="/assets/img/index/dot-decor-2.png" class="absolute right-[-1px] bottom-[-1px] w-5 md:w-8"
                         alt="decor">
                     <h2 class="font-bold text-white md:text-2xl mb-4 lg:text-3xl md:mb-7 leading-[100%]">

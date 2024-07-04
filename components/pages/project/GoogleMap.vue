@@ -32,8 +32,8 @@
         <div id="map"></div>
       </div>
       <div
-        class="lg:flex lg:items-center lg:justify-between lg:gap-5 lg:py-10 lg:px-7 lg:border lg:border-whiteOp-300 lg:rounded-b-2xl lg:mt-[-1px]">
-        <p class="mb-5 text-white text-base text-center md:text-xl lg:text-left lg:m-0">
+        class="md:flex md:items-center md:justify-between md:gap-5 md:py-10 md:px-7 md:border md:border-whiteOp-300 md:rounded-b-2xl md:mt-[-1px]">
+        <p class="mb-5 text-white text-base text-center md:text-start md:text-xl lg:text-left lg:m-0">
           Если вы на острове,
           мы с радостью проведём вам экскурсию по объекту!
         </p>

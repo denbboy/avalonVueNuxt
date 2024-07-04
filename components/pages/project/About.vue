@@ -6,7 +6,7 @@
         <div class="container relative z-10">
             <div class="lg:flex lg:gap-7 lg:items-center">
                 <div data-aos="fade-right" class="md:max-w-[650px] lg:min-w-[420px]">
-                    <h2 class="font-bold text-white text-3xl mb-7 md:text-[56px] md:mb-12">
+                    <h2 class="font-bold text-white text-3xl mb-7 md:text-[45px] lg:text-[56px] md:mb-12">
                         OM | Club House
                     </h2>
                     <p class="text-white text-sm mb-4 md:text-xl md:mb-5">

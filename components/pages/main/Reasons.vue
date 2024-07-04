@@ -9,7 +9,7 @@
           Остров Богов
         </h2>
       </div>
-      <div class="con_list md:grid md:grid-cols-[1fr_1.1fr_1fr]">
+      <div class="con_list grid gap-[30px] xl:gap-0 xl:grid-cols-[1fr_1.1fr_1fr]">
         <ul class="flex flex-col gap-4">
           <li class="flex gap-4 md:gap-7 items-center md:items-start" data-aos="fade-right">
             <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center md:min-w-12 md:h-12">
@@ -68,12 +68,12 @@
 
         <!-- <img src="/assets/img/index/island-img.png" class="my-8 max-w-56 m-auto md:max-w-[500px] md:m-0" alt="ph" data-aos="zoom-in"> -->
 
-        <div class="logo-clip-path md:min-w-[318px] md:h-[380px] lg:min-w-[553px] lg:h-[573px] my-auto">
-          <video loop class="md:min-w-[318px] md:h-[380px] lg:min-w-[553px] lg:h-[573px] min-w-[214px] w-full h-[222px] object-cover" muted autoplay src="/assets/video/video-logo.webm"></video>
+        <div class="logo-clip-path max-h-[222px] max-w-[214px] md:max-w-full md:max-h-full md:min-w-[318px] md:h-[380px] lg:min-w-[553px] lg:h-[573px] mx-auto my-auto">
+          <video loop class="md:min-w-[318px]  md:h-[380px] lg:min-w-[553px] lg:h-[573px] min-w-[214px] w-full h-[222px] object-cover" muted autoplay src="/assets/video/video-logo.webm"></video>
         </div>
 
         <ul class="flex flex-col gap-4">
-          <li class="flex gap-4 items-center md:items-start md:gap-7 md:first:-ml-16 md:flex-row-reverse md:text-end"
+          <li class="flex gap-4 items-center xl:items-start md:gap-7 xl:first:-ml-16 xl:flex-row-reverse xl:text-end"
             data-aos="fade-left">
             <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center md:min-w-12 md:h-12">
               <span class="font-bold text-white text-xs md:text-lg">
@@ -91,8 +91,8 @@
               </p>
             </div>
           </li>
-          <div class="h-[1px] w-[calc(100%+20px)] hidden md:block -ml-24 my-auto bg-white/20"></div>
-          <li class="flex gap-4 items-center md:items-start md:gap-7 md:first:-ml-16 md:flex-row-reverse md:text-end"
+          <div class="h-[1px] w-[calc(100%+20px)] hidden xl:block -ml-24 my-auto bg-white/20"></div>
+          <li class="flex gap-4 items-center xl:items-start md:gap-7 xl:first:-ml-16 xl:flex-row-reverse xl:text-end"
             data-aos="fade-left">
             <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center md:min-w-12 md:h-12">
               <span class="font-bold text-white text-xs md:text-lg">
@@ -109,8 +109,8 @@
               </p>
             </div>
           </li>
-          <div class="h-[1px] hidden md:block w-[calc(100%-76px)] my-auto bg-white/20"></div>
-          <li class="flex gap-4 md:gap-7 md:items-start md:first:-ml-16 md:flex-row-reverse md:text-end"
+          <div class="h-[1px] hidden xl:block w-[calc(100%-76px)] my-auto bg-white/20"></div>
+          <li class="flex gap-4 md:gap-7 xl:items-start xl:first:-ml-16 xl:flex-row-reverse xl:text-end"
             data-aos="fade-left">
             <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center md:min-w-12 md:h-12">
               <span class="font-bold text-white text-xs md:text-lg">
@@ -131,7 +131,7 @@
         </ul>
       </div>
 
-      <div class="border border-blue-400 rounded-2xl overflow-hidden lg:mt-[68px] md:mt-[80px] md:flex md:h-32 lg:h-48 md:items-center"
+      <div class="border border-blue-400 rounded-2xl mt-[60px] overflow-hidden lg:mt-[68px] md:mt-[80px] md:flex md:h-32 lg:h-48 md:items-center"
         data-aos="fade-left">
         <div
           class="flex items-center gap-4 py-7 px-5 border-b border-blue-400 md:border-r md:border-b-0 md:h-full md:px-8 md:w-full">
