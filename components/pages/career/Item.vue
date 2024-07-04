@@ -4,7 +4,7 @@
             <div class="select__head py-6 flex justify-between items-center cursor-pointer" @click="handleOpen">
                 <div class="mr-7">
                     <time class="mb-2 block text-white/60 text-xs md:text-base md:mb-5">03/10/2023</time>
-                    <h2 class="text-lg text-white leading-5 font-bold md:text-3xl">Главный архитектор проекта</h2>
+                    <h2 class="text-lg text-white leading-5 font-bold md:text-2xl lg:text-3xl">Главный архитектор проекта</h2>
                 </div>
                 <div
                     class="flex items-center transition-all justify-center rounded-[10px] w-11 h-11 min-w-11 group-[.active]:bg-blue-400 bg-blue-700">

@@ -98,9 +98,6 @@ export default {
       1280: {
         slidesPerView: 3
       },
-      1441: {
-        spaceBetween: 50,
-      },
     }
 
     return {
