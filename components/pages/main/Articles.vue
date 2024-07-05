@@ -3,7 +3,7 @@
     <div class="container">
       <div class="">
         <div class="flex justify-between items-center mb-8">
-          <h2 class="text-blue-600 font-bold text-[45px] lg:text-[56px] leading-[110%]" data-aos="fade-up">
+          <h2 class="text-blue-600 font-bold text-[30px] md:text-[45px] lg:text-[56px] leading-[110%]" data-aos="fade-up">
             Статьи
           </h2>
 
@@ -45,7 +45,7 @@
           <swiper-slide>
             <ArticlesItem bgdColor="white"/>
           </swiper-slide>
-          <div class="swiper-pagination"></div>
+          <div class="swiper-pagination swiper-pagination_blue"></div>
         </swiper>
       </div>
     </div>
@@ -84,11 +84,13 @@ export default {
     };
     const breakpoints = {
       768: {
-        slidesPerView: 3
+        slidesPerView: 3,
+        pagination: false,
       },
-      1441: {
+      1280: {
         slidesPerView: 4
       },
+     
     }
 
     return {

@@ -10,7 +10,7 @@
 
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
             <h1 data-aos="fade-up"
-                class="md:text-5xl lg:text-6xl text-3xl text-white font-normalidad font-bold mb-5 md:mb-12">
+                class="text-[30px] md:text-[55px] lg:text-[65px] text-3xl text-white font-normalidad font-bold mb-5 md:mb-12">
                 Сотрудничество
             </h1>
             <div data-aos="fade-up" data-aos-delay="100" class="justify-between items-center mb-10">
@@ -24,7 +24,7 @@
 
             <div data-aos="fade-up" class="grid lg:grid-cols-4 lg:gap-5">
                 <NuxtLink href="#broker"
-                    class="border cursor-pointer group relative lg:h-[172px] mb-[10px] last:mb-0 lg:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
+                    class="border cursor-pointer group relative mb-[10px] last:mb-0 lg:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
                     <img class="absolute hidden top-0 lg:block h-full w-full"
                         src="/assets/img/cooperation/border-bgd.svg" alt="">
                     <img class="absolute lg:group-hover:opacity-100 transition-all opacity-0 top-0 h-full w-full"
@@ -57,7 +57,7 @@
                     </div>
                 </NuxtLink>
                 <NuxtLink href="#agency"
-                    class="border cursor-pointer group relative lg:h-[172px] mb-[10px] last:mb-0 lg:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
+                    class="border cursor-pointer group relative  mb-[10px] last:mb-0 lg:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
                     <img class="absolute hidden top-0 lg:block h-full w-full"
                         src="/assets/img/cooperation/border-bgd.svg" alt="">
                     <img class="absolute lg:group-hover:opacity-100 transition-all opacity-0 top-0 h-full w-full"
@@ -92,7 +92,7 @@
                     </div>
                 </NuxtLink>
                 <NuxtLink href="#marketing"
-                    class="border cursor-pointer group relative lg:h-[172px] mb-[10px] last:mb-0 lg:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
+                    class="border cursor-pointer group relative  mb-[10px] last:mb-0 lg:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
                     <img class="absolute hidden top-0 lg:block h-full w-full"
                         src="/assets/img/cooperation/border-bgd.svg" alt="">
                     <img class="absolute lg:group-hover:opacity-100 transition-all opacity-0 top-0 h-full w-full"
@@ -127,7 +127,7 @@
                     </div>
                 </NuxtLink>
                 <NuxtLink href="#partners"
-                    class="border cursor-pointer group relative lg:h-[172px] mb-[10px] last:mb-0 lg:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
+                    class="border cursor-pointer group relative  mb-[10px] last:mb-0 lg:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
                     <img class="absolute hidden top-0 lg:block h-full w-full"
                         src="/assets/img/cooperation/border-bgd.svg" alt="">
                     <img class="absolute lg:group-hover:opacity-100 transition-all opacity-0 top-0 h-full w-full"

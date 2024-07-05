@@ -9,7 +9,7 @@
             src="/assets/img/news/news-bgd.jpg" alt="Image">
 
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
-            <h1 class="md:text-5xl lg:text-6xl text-3xl text-white font-normalidad font-bold mb-5" data-aos="fade-up">Статьи</h1>
+            <h1 class="text-[30px] md:text-[55px] lg:text-[65px] text-white font-normalidad font-bold mb-5" data-aos="fade-up">Статьи</h1>
             <div class="md:flex justify-between items-center">
                 <p class="md:text-lg text-white text-sm" data-aos="fade-up">Ваше будущее жилье — в наших руках. Мы понимаем, как важны для
                     вас шаги.</p>

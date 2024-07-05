@@ -7,11 +7,11 @@
         </Parallaxy>
         <div class="container relative z-10">
             <div
-                class="bg-[url('./../img/about/changy-bgd.png')] lg:bg-[url('./../img/about/chang-bgd.png')] bg-no-repeat bg-cover pt-14 pb-9 px-5 relative md:px-10 lg:flex lg:items-center lg:gap-7 lg:py-24 lg:pr-[82px] lg:pl-[125px]">
+                class="bg-[url('./../img/about/changy-bgd.png')] lg:bg-[url('./../img/about/chang-bgd.png')] bg-no-repeat bg-cover pt-[60px] pb-9 px-5 relative md:px-10 lg:flex lg:items-center lg:gap-7 lg:py-24 lg:pr-[82px] lg:pl-[125px]">
                 <img src="/assets/img/about/phone-mob.png" class="absolute top-[-40px] right-[-30px] lg:hidden"
                     alt="ph">
                 <div>
-                    <h2 data-aos="fade-up" class="font-bold text-white text-3xl mb-7 md:text-[56px] md:mb-[50px]">
+                    <h2 data-aos="fade-up" class="font-bold text-white text-3xl mb-7 md:text-[40px] lg:text-[56px] md:mb-[50px]">
                         Чангу
                     </h2>
                     <div data-aos="fade-up" class=" mb-5 md:mb-[30px] md:flex md:gap-2">

@@ -87,12 +87,12 @@
 
                             </div>
                         </div>
-                        <h2 class="text-3xl text-white mt-5 md:text-6xl md:mt-12 md:max-w-[825px]">
+                        <h2 class="text-3xl text-white mt-5 md:text-[55px] lg:text-[65px] md:mt-12 md:max-w-[825px] md:text-nowrap">
                             <span class="font-bold">
                                 OM | Club House
                             </span>
                         </h2>
-                        <p data-aos="fade-up" class="text-white text-sm max-w-64 md:max-w-[416px] md:text-base mt-3 md:mt-12">
+                        <p data-aos="fade-up" class="text-white text-sm max-w-64 md:max-w-[501px] md:text-base mt-3 md:mt-12">
                             Премиум апартаменты в современном клубном
                             доме. Погрузитесь в уникальную атмосферу роскоши
                             и уюта в центре Чангу
@@ -102,15 +102,15 @@
                             Скачать презентацию
                         </button>
                     </div>
-                    <div class="flex flex-col md:mt-10">
+                    <div class="flex flex-col items-end md:mt-10 md:w-full">
                         <button data-aos="fade-up" @click="handlePlayVideo" type="button"
                             class="flex items-center mb-10 gap-5 text-white text-sm md:text-base md:flex-col md:ml-auto">
                             <img src="/assets/img/icons/play-video-A.svg" class="max-w-[95px] md:max-w-[165px]"
                                 alt="ic">
                             Посмотреть видео
                         </button>
-                        <div data-aos="fade-up" class="flex gap-[10px] md:gap-5 md:mt-[100px] lg:grid lg:grid-cols-[repeat(3,_240px)]">
-                            <div class="pb-[15px] border-b border-whiteOp-300 md:pb-[30px] hidden lg:block w-full">
+                        <div data-aos="fade-up" class="flex gap-[10px] md:gap-5 md:mt-[100px] 3xl:grid 3xl:grid-cols-[repeat(3,_240px)]">
+                            <div class="pb-[15px] border-b border-whiteOp-300 md:pb-[30px] hidden md:block w-full">
                                 <h3 class="text-white text-2xl font-bold mb-[10px] md:mb-[15px] md:text-[40px]">
                                     6
                                 </h3>
@@ -118,7 +118,7 @@
                                     вилл
                                 </p>
                             </div>
-                            <div class="pb-[15px] border-b border-whiteOp-300 md:pb-[30px] w-full lg:order-1">
+                            <div class="pb-[15px] border-b border-whiteOp-300 md:pb-[30px] w-full md:order-1">
                                 <h3
                                     class="flex items-center gap-2 md:gap-[10px] text-blue-400 text-2xl font-bold mb-[10px] md:mb-[15px] md:text-[40px]">
                                     17%

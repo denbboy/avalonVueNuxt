@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="md:flex md:flex-row-reverse md:items-center gap-[80px] mb-8 md:mb-20">
                     <div data-aos="fade-left" class="">
-                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[56px] md:mb-12">Для брокеров</h2>
+                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">Для брокеров</h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">Мы ценим вклад тех, кто помогает развитию
                             рынка
                             недвижимости в Украине. Поэтому мы разработали специальную программу сотрудничества с
@@ -24,61 +24,74 @@
                         src="/assets/img/career/img.jpg" alt="img">
                 </div>
                 <div data-aos="fade-up"
-                    class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] md:pt-20 md:pb-24 md:pl md:pl-[120px] md:pr-[120px]">
+                    class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] md:pt-20 md:pb-24 md:pl lg:pl-[120px] lg::pr-[120px]">
                     <h3 class="text-xl text-white font-bold mb-[30px] md:text-3xl">Этапы работы с брокерами</h3>
                     <ol
-                        class="md:flex after:hidden md:after:block after:h-[1px] after:absolute relative after:bg-white/20 after:z-0 justify-between after:top-[89px] after:w-[calc(100%-300px)] after:left-2/4 after:-translate-x-2/4">
-                        <li class="flex items-center z-10 md:block mb-5 last:mb-0">
+                        class="md:grid md:grid-cols-4  relative  justify-between ">
+                        <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10 mb-5 last:mb-0">
                             <div
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 1
+
                             </div>
                             <div
-                                class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] hidden md:block md:mx-auto md:mt-5 md: mb-8">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:left-2/4 after:-translate-y-[6px]">
+                                <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
+
+                                </span>
                             </div>
-                            <p class="text-sm md:text-base text-white ml-5 md:max-w-[295px] md:text-center md:ml-0">
+                            <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
                                 Оставить
                                 заявку в
                                 форме
                                 ниже или на любом сайте компании в разделе «Контакты»</p>
                         </li>
-                        <li class="flex items-center z-10 md:block mb-5 last:mb-0">
+                        <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10 mb-5 last:mb-0">
                             <div
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 1
                             </div>
                             <div
-                                class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] hidden md:block md:mx-auto md:mt-5 md: mb-8">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:left-0 after:-translate-y-[6px]">
+                                <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
+
+                                </span>
                             </div>
-                            <p class="text-sm md:text-base text-white ml-5 md:max-w-[295px] md:text-center md:ml-0">
+                            <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
                                 Оставить
                                 заявку в
                                 форме
                                 ниже или на любом сайте компании в разделе «Контакты»</p>
                         </li>
-                        <li class="flex items-center z-10 md:block mb-5 last:mb-0">
+                        <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10  mb-5 last:mb-0">
                             <div
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 1
                             </div>
                             <div
-                                class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] hidden md:block md:mx-auto md:mt-5 md: mb-8">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:left-0 after:-translate-y-[6px]">
+                                <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
+
+                                </span>
                             </div>
-                            <p class="text-sm md:text-base text-white ml-5 md:max-w-[295px] md:text-center md:ml-0">
+                            <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
                                 Оставить
                                 заявку в
                                 форме
                                 ниже или на любом сайте компании в разделе «Контакты»</p>
                         </li>
-                        <li class="flex items-center z-10 md:block mb-5 last:mb-0">
+                        <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10  mb-5 last:mb-0">
                             <div
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 1
                             </div>
                             <div
-                                class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] hidden md:block md:mx-auto md:mt-5 md: mb-8">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:right-1/2 after:-translate-y-[6px]">
+                                <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
+
+                                </span>
                             </div>
-                            <p class="text-sm md:text-base text-white ml-5 md:max-w-[295px] md:text-center md:ml-0">
+                            <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center">
                                 Оставить
                                 заявку в
                                 форме
@@ -94,7 +107,7 @@
             <div class="container">
                 <div class="md:flex md:flex-row md:items-center gap-[80px] mb-8 md:mb-20">
                     <div data-aos="fade-right" class="">
-                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[56px] leading-[55px] md:mb-12">Агентствам
+                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] leading-[55px] md:mb-12">Агентствам
                             недвижимости</h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">Для сотрудничества с риелторами мы
                             разработали
@@ -115,31 +128,31 @@
                         class="text-xl text-white font-bold mb-[30px] md:text-3xl relative after:absolute after:top-2/4 after:-translate-x-2/4 after:right-[12px] after:w-[6px] after:h-[6px] after:bg-blue-400 before:w-[34px] md:before:w-[120px] before:h-[1px] before:bg-white/20 md:after:rounded-[4px] md:before:mt-[4px] before:mt-[2.5px] before:top-2/4 before:-translate-x-2/4 before:absolute md:before:right-[-180px] before:right-[-30px] md:after:w-[10px] md:after:right-[-15px] md:after:h-[10px] after:rounded-sm">
                         Мы сопровождаем риелторов на всех этапах сотрудничества:
                     </h3>
-                    <ol class="md:flex relative justify-between after:top-[89px] md:gap-5">
-                        <li class="flex items-center mb-8 last:mb-0 md:mb-0">
+                    <ol class="flex flex-col xl:flex-row relative justify-between after:top-[89px] md:gap-5">
+                        <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
-                                class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
+                                class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 <img class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="">
                             </div>
-                            <p class="text-sm md:text-lg text-white ml-5">Оказываем информационную поддержку по нашим
+                            <p class="text-sm md:text-lg text-white ">Оказываем информационную поддержку по нашим
                                 проектам
                             </p>
                         </li>
-                        <li class="flex items-center mb-8 last:mb-0 md:mb-0">
+                        <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
-                                class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
+                                class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 <img class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="">
                             </div>
-                            <p class="text-sm md:text-lg text-white ml-5">Консультируем относительно ведения рекламных
+                            <p class="text-sm md:text-lg text-white ">Консультируем относительно ведения рекламных
                                 кампаний
                             </p>
                         </li>
-                        <li class="flex items-center mb-8 last:mb-0 md:mb-0">
+                        <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
-                                class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
+                                class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 <img class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="">
                             </div>
-                            <p class="text-sm md:text-lg text-white ml-5">Помогаем в решении юридических вопросов.</p>
+                            <p class="text-sm md:text-lg text-white ">Помогаем в решении юридических вопросов.</p>
                         </li>
                     </ol>
                 </div>
@@ -155,7 +168,7 @@
             <div class="container">
                 <div class="md:flex md:flex-row-reverse md:items-center gap-[80px] mb-8 md:mb-20">
                     <div data-aos="fade-left" class="">
-                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[56px] md:mb-12">Маркетингу</h2>
+                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">Маркетингу</h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">Знакомы с нашими проектами и у вас есть
                             крутая
                             идея для сотрудничества? Мы открыты для предложений! Если ваша компания занимается рекламной
@@ -177,31 +190,31 @@
                         class="text-xl text-white font-bold mb-[30px] md:text-3xl relative after:absolute after:top-2/4 after:-translate-x-2/4 after:right-[12px] after:w-[6px] after:h-[6px] after:bg-blue-400 before:w-[34px] md:before:w-[120px] before:h-[1px] before:bg-white/20 md:after:rounded-[4px] md:before:mt-[4px] before:mt-[2.5px] before:top-2/4 before:-translate-x-2/4 before:absolute md:before:right-[-180px] before:right-[-30px] md:after:w-[10px] md:after:right-[-15px] md:after:h-[10px] after:rounded-sm">
                         Сотрудничество с маркетологами:
                     </h3>
-                    <ol class="md:flex relative justify-between after:top-[89px] md:gap-5">
-                        <li class="flex items-center mb-8 last:mb-0 md:mb-0">
+                    <ol class="flex flex-col xl:flex-row relative justify-between after:top-[89px] md:gap-5">
+                        <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
-                                class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
+                                class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 <img class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="">
                             </div>
-                            <p class="text-sm md:text-lg text-white ml-5">Оказываем информационную поддержку по нашим
+                            <p class="text-sm md:text-lg text-white ">Оказываем информационную поддержку по нашим
                                 проектам
                             </p>
                         </li>
-                        <li class="flex items-center mb-8 last:mb-0 md:mb-0">
+                        <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
-                                class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
+                                class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 <img class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="">
                             </div>
-                            <p class="text-sm md:text-lg text-white ml-5">Консультируем относительно ведения рекламных
+                            <p class="text-sm md:text-lg text-white ">Консультируем относительно ведения рекламных
                                 кампаний
                             </p>
                         </li>
-                        <li class="flex items-center mb-8 last:mb-0 md:mb-0">
+                        <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
-                                class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
+                                class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 <img class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="">
                             </div>
-                            <p class="text-sm md:text-lg text-white ml-5">Помогаем в решении юридических вопросов.</p>
+                            <p class="text-sm md:text-lg text-white ">Помогаем в решении юридических вопросов.</p>
                         </li>
                     </ol>
                 </div>
@@ -213,7 +226,7 @@
             <div class="container">
                 <div class="md:flex md:flex-row md:items-center gap-[80px] mb-8 md:mb-20">
                     <div data-aos="fade-right" class="">
-                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[56px] md:mb-12">
+                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">
                             Партнерам
                         </h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">
@@ -233,58 +246,71 @@
                     class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] md:pt-20 md:pb-24 md:pl md:pl-[120px] md:pr-[120px]">
                     <h3 class="text-xl text-white font-bold mb-[30px] md:text-3xl">Этапы работы с брокерами</h3>
                     <ol
-                        class="md:flex after:hidden md:after:block after:h-[1px] after:absolute relative after:bg-white/20 after:z-0 justify-between after:top-[89px] after:w-[calc(100%-300px)] after:left-2/4 after:-translate-x-2/4">
-                        <li class="flex items-center z-10 md:block mb-5 last:mb-0">
+                        class="md:grid md:grid-cols-4  relative  justify-between ">
+                        <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10 mb-5 last:mb-0">
                             <div
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 1
+
                             </div>
                             <div
-                                class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] hidden md:block md:mx-auto md:mt-5 md: mb-8">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:left-2/4 after:-translate-y-[6px]">
+                                <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
+
+                                </span>
                             </div>
-                            <p class="text-sm md:text-base text-white ml-5 md:max-w-[295px] md:text-center md:ml-0">
+                            <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
                                 Оставить
                                 заявку в
                                 форме
                                 ниже или на любом сайте компании в разделе «Контакты»</p>
                         </li>
-                        <li class="flex items-center z-10 md:block mb-5 last:mb-0">
+                        <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10 mb-5 last:mb-0">
                             <div
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 1
                             </div>
                             <div
-                                class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] hidden md:block md:mx-auto md:mt-5 md: mb-8">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:left-0 after:-translate-y-[6px]">
+                                <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
+
+                                </span>
                             </div>
-                            <p class="text-sm md:text-base text-white ml-5 md:max-w-[295px] md:text-center md:ml-0">
+                            <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
                                 Оставить
                                 заявку в
                                 форме
                                 ниже или на любом сайте компании в разделе «Контакты»</p>
                         </li>
-                        <li class="flex items-center z-10 md:block mb-5 last:mb-0">
+                        <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10  mb-5 last:mb-0">
                             <div
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 1
                             </div>
                             <div
-                                class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] hidden md:block md:mx-auto md:mt-5 md: mb-8">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:left-0 after:-translate-y-[6px]">
+                                <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
+
+                                </span>
                             </div>
-                            <p class="text-sm md:text-base text-white ml-5 md:max-w-[295px] md:text-center md:ml-0">
+                            <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
                                 Оставить
                                 заявку в
                                 форме
                                 ниже или на любом сайте компании в разделе «Контакты»</p>
                         </li>
-                        <li class="flex items-center z-10 md:block mb-5 last:mb-0">
+                        <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10  mb-5 last:mb-0">
                             <div
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 1
                             </div>
                             <div
-                                class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] hidden md:block md:mx-auto md:mt-5 md: mb-8">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:right-1/2 after:-translate-y-[6px]">
+                                <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
+
+                                </span>
                             </div>
-                            <p class="text-sm md:text-base text-white ml-5 md:max-w-[295px] md:text-center md:ml-0">
+                            <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center">
                                 Оставить
                                 заявку в
                                 форме
@@ -299,16 +325,16 @@
         <section class="py-[60px] lg:py-[100px] md:py-24">
             <div class="container">
                 <h2 data-aos="fade-up"
-                    class="text-white md:text-center md:mx-auto text-3xl font-bold md:text-[56px] mb-8 md:mb-12">
+                    class="text-white md:text-center md:mx-auto text-3xl font-bold md:text-[45px] lg:text-[56px] mb-8 md:mb-12">
                     Наши проекты
                 </h2>
 
-                <swiper :modules="modules" :navigation="navigationConfig" :space-between="20" :slides-per-view="3"
-                    @swiper="onSwiper" @slideChange="onSlideChange">
+                <swiper :modules="modules" :navigation="navigationConfig" :space-between="20" :slides-per-view="1"
+                    :breakpoints="breakpoints" :pagination="pagination" @swiper="onSwiper" @slideChange="onSlideChange" class="relative">
                     <swiper-slide>
                         <div
                             class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
-                            <img src="/assets/img/discounts/image.jpg" class="opacity-50" alt="">
+                            <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover" alt="">
                             <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4">
                             </div>
 
@@ -357,7 +383,7 @@
                     <swiper-slide>
                         <div
                             class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
-                            <img src="/assets/img/discounts/image.jpg" class="opacity-50" alt="">
+                            <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover" alt="">
                             <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4">
                             </div>
 
@@ -406,7 +432,7 @@
                     <swiper-slide>
                         <div
                             class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
-                            <img src="/assets/img/discounts/image.jpg" class="opacity-50" alt="">
+                            <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover" alt="">
                             <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4">
                             </div>
 
@@ -452,6 +478,8 @@
                             </div>
                         </div>
                     </swiper-slide>
+
+                  <div class="swiper-pagination"></div>
 
                 </swiper>
 
@@ -480,22 +508,43 @@ export default {
         const modules = {
             navigation: true,
             a11y: true,
+            pagination: true,
+
         };
         const navigationConfig = {
             nextEl: '.button-next',
             prevEl: '.button-prev',
         };
-
+        const pagination = {
+            el: '.swiper-pagination',
+            clickable: true,
+        };
         const modalsStore = useModalsStore()
 
         const handleOpenModal = () => {
             modalsStore.addModal('vacancy')
         }
+        
+        const breakpoints = {
+            768: {
+                slidesPerView: 2,
+                pagination: false,
+            },
+            1280: {
+                slidesPerView: 3
+            },
+            1441: {
+                spaceBetween: 50,
+            },
+        }
 
         return {
             modules,
+            pagination,
             navigationConfig,
             handleOpenModal,
+            breakpoints,
+
         };
     },
 };

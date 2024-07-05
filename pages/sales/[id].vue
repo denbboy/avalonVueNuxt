@@ -17,7 +17,7 @@
                     </span>
                 </div>
                 <h1
-                    class="btn-primary mb-14 text-white text-[30px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[876px] md:text-[65px]">
+                    class="btn-primary mb-14 text-white text-[30px] md:text-[55px] lg:text-[65px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[876px]">
                     Живите лучше на Подоле в клубном доме OLEGIV Podil
                 </h1>
 
