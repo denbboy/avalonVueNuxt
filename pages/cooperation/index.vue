@@ -5,7 +5,7 @@
 
         <section id="broker" class="py-[60px] lg:py-[100px]">
             <div class="container">
-                <div class="md:flex md:flex-row-reverse md:items-center gap-[80px] mb-8 md:mb-20">
+                <div class="xl:flex xl:flex-row-reverse xl:items-center gap-[80px] mb-8 xl:mb-20">
                     <div data-aos="fade-left" class="">
                         <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">Для брокеров</h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">Мы ценим вклад тех, кто помогает развитию
@@ -17,14 +17,14 @@
                             условия для своих клиентов, а также первыми узнают о новых объектах и ​​специальных
                             предложениях.
                         </p>
-                        <button @click="handleOpenModal" class="white-button hidden md:block">Начать
+                        <button @click="handleOpenModal" class="white-button hidden xl:block">Начать
                             сотрудничество</button>
                     </div>
-                    <img data-aos="fade-up" class="max-w-[740px] w-full h-[180px] md:h-[412px] rounded-[20px]"
+                    <img data-aos="fade-up" class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
                         src="/assets/img/career/img.jpg" alt="img">
                 </div>
                 <div data-aos="fade-up"
-                    class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] md:pt-20 md:pb-24 md:pl lg:pl-[120px] lg::pr-[120px]">
+                    class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] xl:pt-20 xl:pb-24 xl:pl lg:pl-[120px] lg::pr-[120px]">
                     <h3 class="text-xl text-white font-bold mb-[30px] md:text-3xl">Этапы работы с брокерами</h3>
                     <ol
                         class="md:grid md:grid-cols-4  relative  justify-between ">
@@ -35,10 +35,10 @@
 
                             </div>
                             <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:left-2/4 after:-translate-y-[6px]">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
-
                                 </span>
+                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-2/4 -translate-y-[6px]"></div>
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
                                 Оставить
@@ -52,10 +52,12 @@
                                 1
                             </div>
                             <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:left-0 after:-translate-y-[6px]">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
 
                                 </span>
+                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-0 -translate-y-[6px]"></div>
+
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
                                 Оставить
@@ -69,10 +71,12 @@
                                 1
                             </div>
                             <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:left-0 after:-translate-y-[6px]">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
 
                                 </span>
+                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-0 -translate-y-[6px]"></div>
+
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
                                 Оставить
@@ -86,10 +90,12 @@
                                 1
                             </div>
                             <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:right-1/2 after:-translate-y-[6px]">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
 
                                 </span>
+                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen right-1/2 -translate-y-[6px]"></div>
+
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center">
                                 Оставить
@@ -99,15 +105,15 @@
                         </li>
                     </ol>
                 </div>
-                <button @click="handleOpenModal" class="white-button md:hidden mt-8">Начать сотрудничество</button>
+                <button @click="handleOpenModal" class="white-button xl:hidden mt-8">Начать сотрудничество</button>
             </div>
         </section>
 
         <section id="agency" class="py-[60px] lg:py-[100px] bg-blue-600">
             <div class="container">
-                <div class="md:flex md:flex-row md:items-center gap-[80px] mb-8 md:mb-20">
+                <div class="xl:flex xl:flex-row xl:items-center gap-[80px] mb-8 xl:mb-20">
                     <div data-aos="fade-right" class="">
-                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] leading-[55px] md:mb-12">Агентствам
+                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">Агентствам
                             недвижимости</h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">Для сотрудничества с риелторами мы
                             разработали
@@ -116,10 +122,10 @@
                             предлагать своим клиентам квартиры в жилых комплексах SAGA Development и получать за это
                             достойное
                             вознаграждение.</p>
-                        <button @click="handleOpenModal" class="white-button hidden md:block">Начать
+                        <button @click="handleOpenModal" class="white-button hidden xl:block">Начать
                             сотрудничество</button>
                     </div>
-                    <img data-aos="fade-left" class="max-w-[740px] w-full h-[180px] md:h-[412px] rounded-[20px]"
+                    <img data-aos="fade-left" class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
                         src="/assets/img/career/img.jpg" alt="img">
                 </div>
                 <div data-aos="fade-up"
@@ -160,13 +166,13 @@
                     прозрачности отношений
                     предусмотрена фиксация клиента за определенным риелтором. А после заключения сделки — выплата
                     вознаграждения.</p>
-                <button @click="handleOpenModal" class="white-button md:hidden mt-8">Начать сотрудничество</button>
+                <button @click="handleOpenModal" class="white-button xl:hidden mt-8">Начать сотрудничество</button>
             </div>
         </section>
 
         <section id="marketing" class="py-[60px] lg:py-[100px] bg-blue-500">
             <div class="container">
-                <div class="md:flex md:flex-row-reverse md:items-center gap-[80px] mb-8 md:mb-20">
+                <div class="xl:flex xl:flex-row-reverse xl:items-center gap-[80px] mb-8 xl:mb-20">
                     <div data-aos="fade-left" class="">
                         <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">Маркетингу</h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">Знакомы с нашими проектами и у вас есть
@@ -178,10 +184,10 @@
                             хотите провести мероприятие на бульваре RYBALSKY или съемку в CHICAGO Central House,
                             заполняйте
                             форму обратной связи на этой странице. </p>
-                        <button @click="handleOpenModal" class="white-button hidden md:block">Начать
+                        <button @click="handleOpenModal" class="white-button hidden xl:block">Начать
                             сотрудничество</button>
                     </div>
-                    <img data-aos="fade-right" class="max-w-[740px] w-full h-[180px] md:h-[412px] rounded-[20px]"
+                    <img data-aos="fade-right" class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
                         src="/assets/img/career/img.jpg" alt="img">
                 </div>
                 <div data-aos="fade-up"
@@ -218,13 +224,13 @@
                         </li>
                     </ol>
                 </div>
-                <button @click="handleOpenModal" class="white-button md:hidden mt-8">Начать сотрудничество</button>
+                <button @click="handleOpenModal" class="white-button xl:hidden mt-8">Начать сотрудничество</button>
             </div>
         </section>
 
         <section id="partners" class="py-[60px] lg:py-[100px] bg-blue-600">
             <div class="container">
-                <div class="md:flex md:flex-row md:items-center gap-[80px] mb-8 md:mb-20">
+                <div class="xl:flex xl:flex-row md:items-center gap-[80px] mb-8 xl:mb-20">
                     <div data-aos="fade-right" class="">
                         <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">
                             Партнерам
@@ -236,14 +242,14 @@
                             философия наших компаний совпадают. Также мы открыты для предложений о земельных участках и
                             перспективных проектах.
                         </p>
-                        <button @click="handleOpenModal" class="white-button hidden md:block">Начать
+                        <button @click="handleOpenModal" class="white-button hidden xl:block">Начать
                             сотрудничество</button>
                     </div>
-                    <img data-aos="fade-up" class="max-w-[740px] w-full h-[180px] md:h-[412px] rounded-[20px]"
+                    <img data-aos="fade-up" class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
                         src="/assets/img/career/img.jpg" alt="img">
                 </div>
                 <div data-aos="fade-up"
-                    class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] md:pt-20 md:pb-24 md:pl md:pl-[120px] md:pr-[120px]">
+                    class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] xl:pt-20 xl:pb-24 xl:pl lg:pl-[120px] lg::pr-[120px]">
                     <h3 class="text-xl text-white font-bold mb-[30px] md:text-3xl">Этапы работы с брокерами</h3>
                     <ol
                         class="md:grid md:grid-cols-4  relative  justify-between ">
@@ -254,10 +260,10 @@
 
                             </div>
                             <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:left-2/4 after:-translate-y-[6px]">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
-
                                 </span>
+                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-2/4 -translate-y-[6px]"></div>
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
                                 Оставить
@@ -271,10 +277,12 @@
                                 1
                             </div>
                             <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:left-0 after:-translate-y-[6px]">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
 
                                 </span>
+                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-0 -translate-y-[6px]"></div>
+
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
                                 Оставить
@@ -288,10 +296,12 @@
                                 1
                             </div>
                             <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:left-0 after:-translate-y-[6px]">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
 
                                 </span>
+                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-0 -translate-y-[6px]"></div>
+
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
                                 Оставить
@@ -305,10 +315,12 @@
                                 1
                             </div>
                             <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative after:hidden md:after:block after:h-[1px] after:absolute after:bg-white/20 after:-z-[1] after:top-[50%] after:w-screen after:right-1/2 after:-translate-y-[6px]">
+                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
 
                                 </span>
+                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen right-1/2 -translate-y-[6px]"></div>
+
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center">
                                 Оставить
@@ -318,7 +330,7 @@
                         </li>
                     </ol>
                 </div>
-                <button @click="handleOpenModal" class="white-button md:hidden mt-8">Начать сотрудничество</button>
+                <button @click="handleOpenModal" class="white-button xl:hidden mt-8">Начать сотрудничество</button>
             </div>
         </section>
 

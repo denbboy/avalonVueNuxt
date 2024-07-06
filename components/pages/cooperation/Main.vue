@@ -22,16 +22,16 @@
                 </p>
             </div>
 
-            <div data-aos="fade-up" class="grid lg:grid-cols-4 lg:gap-5">
+            <div data-aos="fade-up" class="grid xl:grid-cols-4 xl:gap-5">
                 <NuxtLink href="#broker"
-                    class="border cursor-pointer group relative mb-[10px] last:mb-0 lg:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
-                    <img class="absolute hidden top-0 lg:block h-full w-full"
+                    class="border cursor-pointer group relative mb-[10px] last:mb-0 xl:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat h-[172px] w-full">
+                    <img class="absolute hidden top-0 left-0  xl:block h-full  w-full"
                         src="/assets/img/cooperation/border-bgd.svg" alt="">
-                    <img class="absolute lg:group-hover:opacity-100 transition-all opacity-0 top-0 h-full w-full"
+                    <img class="absolute xl:group-hover:opacity-100 transition-all opacity-0 top-0 h-full w-full"
                         src="/assets/img/cooperation/border-bgd-hover.svg" alt="">
 
                     <div
-                        class="flex items-center justify-center lg:p-4 lg:bg-blue-400 lg:w-fit lg:rounded-[20px] lg:mx-auto lg:mt-[-60px]">
+                        class="flex items-center justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
                         <img class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-1.svg" alt="img">
                     </div>
                     <div class="relative z-10">
@@ -57,14 +57,14 @@
                     </div>
                 </NuxtLink>
                 <NuxtLink href="#agency"
-                    class="border cursor-pointer group relative  mb-[10px] last:mb-0 lg:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
-                    <img class="absolute hidden top-0 lg:block h-full w-full"
+                    class="border cursor-pointer group relative  mb-[10px] last:mb-0 xl:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
+                    <img class="absolute hidden top-0 xl:block h-full w-full"
                         src="/assets/img/cooperation/border-bgd.svg" alt="">
-                    <img class="absolute lg:group-hover:opacity-100 transition-all opacity-0 top-0 h-full w-full"
+                    <img class="absolute xl:group-hover:opacity-100 transition-all opacity-0 top-0 h-full w-full"
                         src="/assets/img/cooperation/border-bgd-hover.svg" alt="">
 
                     <div
-                        class="flex items-center justify-center lg:p-4 lg:bg-blue-400 lg:w-fit lg:rounded-[20px] lg:mx-auto lg:mt-[-60px]">
+                        class="flex items-center justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
                         <img class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-2.svg" alt="img">
                     </div>
                     <div class="relative z-10">
@@ -92,14 +92,14 @@
                     </div>
                 </NuxtLink>
                 <NuxtLink href="#marketing"
-                    class="border cursor-pointer group relative  mb-[10px] last:mb-0 lg:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
-                    <img class="absolute hidden top-0 lg:block h-full w-full"
+                    class="border cursor-pointer group relative  mb-[10px] last:mb-0 xl:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
+                    <img class="absolute hidden top-0 xl:block h-full w-full"
                         src="/assets/img/cooperation/border-bgd.svg" alt="">
-                    <img class="absolute lg:group-hover:opacity-100 transition-all opacity-0 top-0 h-full w-full"
+                    <img class="absolute xl:group-hover:opacity-100 transition-all opacity-0 top-0 h-full w-full"
                         src="/assets/img/cooperation/border-bgd-hover.svg" alt="">
 
                     <div
-                        class="flex items-center justify-center lg:p-4 lg:bg-blue-400 lg:w-fit lg:rounded-[20px] lg:mx-auto lg:mt-[-60px]">
+                        class="flex items-center justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
                         <img class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-3.svg" alt="img">
                     </div>
                     <div class="relative z-10">
@@ -127,14 +127,14 @@
                     </div>
                 </NuxtLink>
                 <NuxtLink href="#partners"
-                    class="border cursor-pointer group relative  mb-[10px] last:mb-0 lg:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
-                    <img class="absolute hidden top-0 lg:block h-full w-full"
+                    class="border cursor-pointer group relative  mb-[10px] last:mb-0 xl:border-none border-white/50 rounded-[10px] py-8 bg-no-repeat w-full">
+                    <img class="absolute hidden top-0 xl:block h-full w-full"
                         src="/assets/img/cooperation/border-bgd.svg" alt="">
-                    <img class="absolute lg:group-hover:opacity-100 transition-all opacity-0 top-0 h-full w-full"
+                    <img class="absolute xl:group-hover:opacity-100 transition-all opacity-0 top-0 h-full w-full"
                         src="/assets/img/cooperation/border-bgd-hover.svg" alt="">
 
                     <div
-                        class="flex items-center justify-center lg:p-4 lg:bg-blue-400 lg:w-fit lg:rounded-[20px] lg:mx-auto lg:mt-[-60px]">
+                        class="flex items-center justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
                         <img class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-4.svg" alt="img">
                     </div>
                     <div class="relative z-10">
