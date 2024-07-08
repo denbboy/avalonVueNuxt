@@ -51,7 +51,7 @@
         </swiper>
 
         <div class="swiper-pagination swiper-pagination_blue"></div>
-        <a href="#" class="blue-border-button mx-auto mt-5 lg:hidden">
+        <a href="#" class="blue-border-button mx-auto mt-5 md:hidden">
           Все новости
         </a>
       </div>
@@ -94,8 +94,9 @@ export default {
         pagination: false,
       },
       1441: {
-        spaceBetween: 50,
-        slidesPerView: 3
+        slidesPerView: 3,
+        pagination: false,
+
       },
     }
 

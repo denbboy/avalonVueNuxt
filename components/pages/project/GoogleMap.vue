@@ -33,7 +33,7 @@
       </div>
       <div
         class="md:flex md:items-center md:justify-between md:gap-5 md:py-10 md:px-7 md:border md:border-whiteOp-300 md:rounded-b-2xl md:mt-[-1px]">
-        <p class="mb-5 text-white text-base text-center md:text-start md:text-xl lg:text-left lg:m-0">
+        <p class=" text-white text-base text-center md:text-start md:text-xl lg:text-left lg:m-0">
           Если вы на острове,
           мы с радостью проведём вам экскурсию по объекту!
         </p>
@@ -50,6 +50,11 @@
 #map {
   height: 500px;
   width: 100%;
+}
+@media (min-width: 1441px) {
+  #map {
+    height: 700px;
+  }
 }
 </style>
 

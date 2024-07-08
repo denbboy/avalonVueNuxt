@@ -14,7 +14,7 @@
                 <p class="md:text-lg text-white text-sm" data-aos="fade-up">Ваше будущее жилье — в наших руках. Мы понимаем, как важны для
                     вас шаги.</p>
             </div>
-            <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid gap-x-5 gap-y-8 md:gap-y-12 mt-12" data-aos="fade-up">
+            <div class="grid-cols-1 md:grid-cols-3 xl:grid-cols-3 lg:grid-cols-4 grid gap-x-5 gap-y-8 md:gap-y-12 mt-12" data-aos="fade-up">
 
                 <ArticlesItem bgdColor="blue-500" />
                 <ArticlesItem bgdColor="blue-500" />

@@ -52,7 +52,7 @@
 
         </swiper>
 
-        <button type="button" class="blue-border-button mx-auto mt-5 lg:hidden">
+        <button type="button" class="blue-border-button mx-auto mt-5 md:hidden">
           Все акции
         </button>
 
@@ -96,7 +96,9 @@ export default {
         pagination: false,
       },
       1280: {
-        slidesPerView: 3
+        slidesPerView: 3,
+        pagination: false,
+
       },
     }
 
