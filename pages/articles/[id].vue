@@ -109,7 +109,7 @@
                     <swiper-slide>
                         <ArticlesItem bgdColor="blue-600" />
                     </swiper-slide>
-                    <!-- <div class="swiper-pagination"></div> -->
+                    <div class="swiper-pagination"></div>
                 </swiper>
             </div>
         </div>
@@ -147,9 +147,10 @@ export default {
     };
     const breakpoints = {
       768: {
-        slidesPerView: 3
+        slidesPerView: 3,
+        pagination: false,
       },
-      1024: {
+      1441: {
         slidesPerView: 4
       },
     }
