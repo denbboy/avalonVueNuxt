@@ -1,6 +1,6 @@
 <template>
     <div data-aos="fade-up"
-        class="bg-blue-600 py-10 px-5 rounded-2xl relative lg:flex lg:items-center lg:gap-10 lg:flex-row-reverse lg:justify-between lg:py-[100px] lg:px-[100px] mb-5 md:mb-12 last:mb-0">
+        class="bg-blue-600 py-10 px-5 rounded-2xl relative xl:flex xl:items-center xl:gap-10 xl:flex-row-reverse xl:justify-between xl:py-[100px] xl:px-[100px] mb-5 md:mb-12 last:mb-0">
         <div
             class="min-w-[84px] h-[84px] md:min-w-[137px] md:h-[137px] bg-blue-400 text-center rounded-full flex justify-center items-center flex-col before:border  absolute top-[0px] left-[60px] z-10 md:top-[70px] md:left-auto md:right-[60px]">
             <div

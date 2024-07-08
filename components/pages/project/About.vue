@@ -4,7 +4,7 @@
             <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
         </div>
         <div class="container relative z-10">
-            <div class="lg:flex lg:gap-7 lg:items-center">
+            <div class="xl:flex xl:gap-7 xl:items-center">
                 <div data-aos="fade-right" class="md:max-w-[650px] lg:min-w-[420px]">
                     <h2 class="font-bold text-white text-3xl mb-7 md:text-[45px] lg:text-[56px] md:mb-12">
                         OM | Club House
