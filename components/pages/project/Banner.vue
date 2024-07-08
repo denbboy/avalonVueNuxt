@@ -10,7 +10,7 @@
             </div>
 
             <div class="container">
-                <div class="md:flex md:justify-between md:gap-10">
+                <div class="xl:flex xl:justify-between xl:gap-[20px]">
                     <div>
                         <div data-aos="fade-up" class="banner__item__head flex flex-wrap items-center gap-[10px] md:gap-5">
                             <div
@@ -102,14 +102,14 @@
                             Скачать презентацию
                         </button>
                     </div>
-                    <div class="flex flex-col items-end md:mt-10 md:w-full">
+                    <div class="flex flex-col xl:items-end xl:mt-10 xl:w-full">
                         <button data-aos="fade-up" @click="handlePlayVideo" type="button"
-                            class="flex items-center mb-10 gap-5 text-white text-sm md:text-base md:flex-col md:ml-auto">
-                            <img src="/assets/img/icons/play-video-A.svg" class="max-w-[95px] md:max-w-[165px]"
+                            class="flex items-center mb-10 gap-5 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
+                            <img src="/assets/img/icons/play-video-A.svg" class="max-w-[95px] xl:max-w-[165px]"
                                 alt="ic">
                             Посмотреть видео
                         </button>
-                        <div data-aos="fade-up" class="flex gap-[10px] md:gap-5 md:mt-[100px] 3xl:grid 3xl:grid-cols-[repeat(3,_240px)]">
+                        <div data-aos="fade-up" class="flex gap-[10px] xl:gap-5 xl:mt-[100px] xl:grid-cols-3 xl:grid 3xl:grid-cols-[repeat(3,_240px)]">
                             <div class="pb-[15px] border-b border-whiteOp-300 md:pb-[30px] hidden md:block w-full">
                                 <h3 class="text-white text-2xl font-bold mb-[10px] md:mb-[15px] md:text-[40px]">
                                     6

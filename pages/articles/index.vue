@@ -11,10 +11,10 @@
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
             <h1 class="text-[30px] md:text-[55px] lg:text-[65px] text-white font-normalidad font-bold mb-5" data-aos="fade-up">Статьи</h1>
             <div class="md:flex justify-between items-center">
-                <p class="md:text-lg text-white text-sm" data-aos="fade-up">Ваше будущее жилье — в наших руках. Мы понимаем, как важны для
+                <p class="md:text-lg md:max-w-[355px] 3xl:max-w-fit text-white text-sm" data-aos="fade-up">Ваше будущее жилье — в наших руках. Мы понимаем, как важны для
                     вас шаги.</p>
             </div>
-            <div class="grid-cols-1 md:grid-cols-3 xl:grid-cols-3 lg:grid-cols-4 grid gap-x-5 gap-y-8 md:gap-y-12 mt-12" data-aos="fade-up">
+            <div class="grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 grid gap-x-5 gap-y-8 md:gap-y-12 mt-12" data-aos="fade-up">
 
                 <ArticlesItem bgdColor="blue-500" />
                 <ArticlesItem bgdColor="blue-500" />
