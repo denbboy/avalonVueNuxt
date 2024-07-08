@@ -11,7 +11,7 @@
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
             <h1 class="text-[30px] md:text-[55px] lg:text-[65px] text-white font-normalidad font-bold mb-5" data-aos="fade-up">Акции</h1>
             <div class="md:flex justify-between items-center" data-aos="fade-up">
-                <p class="md:text-lg text-white text-sm">Ваше будущее жилье — в наших руках. Мы понимаем, как важны для
+                <p class="md:text-lg md:max-w-[355px] 3xl:max-w-fit text-white text-sm">Ваше будущее жилье — в наших руках. Мы понимаем, как важны для
                     вас
                     шаги.</p>
                 <div :class="isOpenPopup ? 'active' : ''"
@@ -46,7 +46,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-5 mt-12" data-aos="fade-up">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-x-5 gap-y-5 mt-12" data-aos="fade-up">
 
                 <SalesItem bgdColor="blue-500" />
                 <SalesItem bgdColor="blue-500" />

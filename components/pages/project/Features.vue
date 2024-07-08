@@ -7,15 +7,15 @@
         </Parallaxy>
         <div class="container relative z-10">
             <div
-                class="bg-[url('./../img/about/changy-bgd.png')] lg:bg-[url('./../img/about/chang-bgd.png')] bg-no-repeat bg-cover pt-[60px] pb-9 px-5 relative md:px-10 lg:flex lg:items-center lg:gap-7 lg:py-24 lg:pr-[82px] lg:pl-[125px]">
-                <img src="/assets/img/about/phone-mob.png" class="absolute top-[-40px] right-[-30px] lg:hidden"
+                class="bg-[url('./../img/about/changy-bgd.png')] xl:bg-[url('./../img/about/chang-bgd.png')] bg-no-repeat bg-cover pt-[60px] pb-9 px-5 xl:pl-[70px] xl:pr-0 relative md:px-10 xl:grid xl:grid-cols-2 xl:items-center xl:gap-7 xl:py-24 lg:pr-[82px] lg:pl-[125px]">
+                <img src="/assets/img/about/phone-mob.png" class="absolute top-[-40px] right-[-30px] xl:hidden"
                     alt="ph">
                 <div>
                     <h2 data-aos="fade-up" class="font-bold text-white text-3xl mb-7 md:text-[40px] lg:text-[56px] md:mb-[50px]">
                         Чангу
                     </h2>
-                    <div data-aos="fade-up" class=" mb-5 md:mb-[30px] md:flex md:gap-2">
-                        <strong class="font-bold text-white text-lg uppercase md:text-[30px] md:font-normal">
+                    <div data-aos="fade-up" class=" mb-5 md:mb-[30px] md:flex md:gap-2 text-nowrap">
+                        <strong class="font-bold text-white text-lg uppercase md:text-[26px] md:font-normal">
                             Лучшее место
                         </strong>
                         <span class="block font-bold text-sm text-white md:text-[18px] md:font-normal md:mt-auto">
@@ -36,7 +36,7 @@
                         </p>
                     </div>
 
-                    <ul class="max-w-[225px] lg:max-w-none">
+                    <ul class="max-w-[255px] md:max-w-none">
                         <li data-aos="fade-up" class="flex items-center gap-[10px] md:gap-[20px] mb-4 md:mb-5">
                             <img src="/assets/img/about/galka.svg" class="max-w-[15px] md:max-w-none" alt="ic">
                             <p class="text-white text-sm md:text-base">
@@ -76,7 +76,7 @@
                         </li>
                     </ul>
                 </div>
-                <img data-aos="fade-left" src="/assets/img/about/tel-desk.png" class="hidden lg:block" alt="ph">
+                <img data-aos="fade-left" src="/assets/img/about/tel-desk.png" class="hidden xl:block aspect-[624/673]" alt="ph">
             </div>
         </div>
     </section>

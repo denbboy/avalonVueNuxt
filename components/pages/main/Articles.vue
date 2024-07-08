@@ -87,7 +87,7 @@ export default {
         slidesPerView: 3,
         pagination: false,
       },
-      1280: {
+      1441: {
         slidesPerView: 4,
         pagination: false,
 
