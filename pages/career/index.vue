@@ -1,50 +1,28 @@
-<!-- <script setup>
-import { onMounted } from 'vue';
-import axios from 'axios';
-
-onMounted(() => {
-    axios.get('https://avalon-panel.sonisapps.com/items/Page/1?fields=*,translations.*')
-        .then(response => {
-            // handle success
-            console.log(response);
-        })
-        .catch(error => {
-            // handle error
-            console.log(error);
-        })
-        .finally(() => {
-            // always executed
-        });
-});
-</script> -->
-
 <script setup>
 const { getItems } = useDirectusItems();
-const router = useRouter();
+
+const langStore = useLangStore()
+let currentPageReqest = {};
 
 const fetchArticles = async () => {
     try {
-        // const filters = { content: "testcontent", title: "Test1" };
         const items = await getItems({
             collection: "Page",
             params: {
-                // filter: filters,
+                filter: {
+                    slug: {
+                        _eq: 'career',
+                    },
+                },
+                fields: '*,translations.*'
             },
         });
 
-        console.log(items);
+        currentPageReqest = items[0].translations;
     } catch (e) { }
 };
 
 await fetchArticles()
-
-
-
-const user = useDirectusUser();
-console.log(user);
-
-const { token } = useDirectusToken();
-console.log(token.value);
 </script>
 
 <template>
@@ -64,13 +42,11 @@ console.log(token.value);
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
             <h1 data-aos="fade-up"
                 class="md:text-[55px] lg:text-[65px] text-3xl text-white font-normalidad font-bold mb-5 md:mb-12">
-                Карьера
+                {{ currentPageReqest.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
             </h1>
             <div data-aos="fade-up" data-aos-delay="100" class="justify-between items-center mb-10 lg:mb-48">
                 <p class="md:text-lg text-white text-sm mb-7 max-w-[548px]">
-                    Для достижения амбициозных целей мы объединяем лучших. Специалисты компании имеют многолетний опыт
-                    создания проектов, которые меняют города и делают комфортнее жизнь их обитателей. Если вы хотите
-                    изменить мир вместе с нами, присоединяйтесь к команде SAGA Development.
+                    {{ currentPageReqest.filter(item => item.languages_code.includes(langStore.lang))[0]?.description }}
                 </p>
 
                 <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,8 +68,7 @@ console.log(token.value);
             </div>
 
 
-            <PagesCareerItem />
-            <PagesCareerItem />
+            <PagesCareerItemsList />
         </div>
 
     </section>
