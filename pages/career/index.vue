@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 import { onMounted } from 'vue';
 import axios from 'axios';
 
@@ -16,8 +16,36 @@ onMounted(() => {
             // always executed
         });
 });
-</script>
+</script> -->
 
+<script setup>
+const { getItems } = useDirectusItems();
+const router = useRouter();
+
+const fetchArticles = async () => {
+    try {
+        // const filters = { content: "testcontent", title: "Test1" };
+        const items = await getItems({
+            collection: "Page",
+            params: {
+                // filter: filters,
+            },
+        });
+
+        console.log(items);
+    } catch (e) { }
+};
+
+await fetchArticles()
+
+
+
+const user = useDirectusUser();
+console.log(user);
+
+const { token } = useDirectusToken();
+console.log(token.value);
+</script>
 
 <template>
     <section class="pb-24 relative bg-blue-500 overflow-hidden">

@@ -8,15 +8,24 @@ export default defineNuxtConfig({
         htmlAttrs: {
             lang: 'ru',
         },
-        meta: [{
-            charset: 'utf-8',
-        }, {
-            name: 'viewport',
-            content: 'width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes',
-        }, {
-            'http-equiv': 'x-ua-compatible',
-            content: 'ie=edge',
-        }],
+        meta: [
+            {
+                charset: 'utf-8',
+            },
+            {
+                name: 'viewport',
+                content: 'width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes',
+            },
+            {
+                'http-equiv': 'x-ua-compatible',
+                content: 'ie=edge',
+            },
+            {
+                hid: 'csp',
+                httpEquiv: 'Content-Security-Policy',
+                content: "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; frame-src 'self' https://avalon-vue-nuxt.vercel.app; child-src 'self' blob:; connect-src 'self' https://avalon-vue-nuxt.vercel.app;"
+            }
+        ],
         link: [
             { rel: 'stylesheet', href: '/assets/fonts/grandis/stylesheet.css' }
         ],
@@ -45,7 +54,10 @@ export default defineNuxtConfig({
     css: [
         '~/assets/css/main.css',
     ],
-    modules: ['@nuxtjs/tailwindcss', "@pinia/nuxt", 'nuxt-aos', '@nuxtjs/i18n', 'nuxt-calendly'],
+    modules: ['@nuxtjs/tailwindcss', "@pinia/nuxt", 'nuxt-aos', '@nuxtjs/i18n', 'nuxt-calendly', 'nuxt-directus'],
+    directus: {
+        url: "https://avalon-panel.sonisapps.com/"
+    },
     calendly: {
         isEnabled: true,
         loadWidgetCSS: true,
