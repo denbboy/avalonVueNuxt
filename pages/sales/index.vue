@@ -48,12 +48,7 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-x-5 gap-y-5 mt-12" data-aos="fade-up">
 
-                <SalesItem bgdColor="blue-500" />
-                <SalesItem bgdColor="blue-500" />
-                <SalesItem bgdColor="blue-500" />
-                <SalesItem bgdColor="blue-500" />
-                <SalesItem bgdColor="blue-500" />
-                <SalesItem bgdColor="blue-500" />
+                <SalesItem v-for="item in itemsList" :item="item" :key="item.id" bgdColor="blue-500" />
 
             </div>
 
@@ -71,6 +66,30 @@
 </template>
 
 <script setup>
+
+const { getItems } = useDirectusItems();
+
+const langStore = useLangStore();
+
+const itemsList = ref([]);
+
+const fetchArticles = async () => {
+  try {
+    const items = await getItems({
+      collection: "Sale",
+      params: {
+        fields: '*,translations.*'
+      },
+    });
+    itemsList.value = items;
+    console.log(items);
+  } catch (e) {
+    console.error('Error fetching items:', e);
+  }
+};
+
+onMounted(fetchArticles);
+
 const projectsList = [
   {
     label: "All",

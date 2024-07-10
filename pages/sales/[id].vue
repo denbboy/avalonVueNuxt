@@ -18,61 +18,12 @@
                 </div>
                 <h1
                     class="btn-primary mb-14 text-white text-[30px] md:text-[55px] lg:text-[65px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[876px]">
-                    Живите лучше на Подоле в клубном доме OLEGIV Podil
+                    {{ itemData.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
                 </h1>
 
                 <div class="md:flex justify-between w-full">
 
-                    <div class="max-w-[900px] block w-full">
-
-                        <b class="text-white text-base md:text-xl mb-2 block">
-                            Квартиры в эко-городе LUCKY LAND от строительной компании DIM теперь можно приобрести по
-                            государственным
-                            программам доступного кредитования жилья «еОселя» и компенсации за разрушенное или
-                            поврежденное
-                            жилье
-                            «еВосстановление».
-                        </b>
-                        <p class="text-white text-base md:text-xl my-2 md:my-12">
-                            Дополнительные опции приобретения жилья в LUCKY LAND открылись благодаря тому, что дом №3
-                            эко-города
-                            недавно получил официальный адрес.
-                        </p>
-                        <blockquote class="text-white text-base md:text-xl mt-7 md:pl-9 relative">
-                            <div class="blockquote-lines">
-                                <img src="/assets/img/icons/quotes.svg" alt="Quotes">
-                            </div>
-                            «Сегодня мы получаем все больше запросов на покупку недвижимости по государственным
-                            программам.
-                            Поэтому
-                            как только наши проекты получают все необходимые разрешительные документы, мы присоединяемся
-                            к
-                            таким
-                            программам. Для нас важно реализовать все возможности, которые сделают для украинцев покупку
-                            жилья более
-                            комфортной», — комментирует управляющий партнер группы компаний DIM Александр Насиковский.
-                        </blockquote>
-                        <p class="text-white text-base md:text-xl my-2 md:my-12">
-                            Программа «еОселя» – это государственная инициатива для поддержки населения, желающего
-                            приобрести
-                            собственное жилье. Она дает желающим возможность получить ипотеку от государства с
-                            фиксированной
-                            ставкой
-                            от 3 до 7% сроком до 20 лет.
-                        </p>
-                        <p class="text-white text-base md:text-xl my-2 md:my-12">
-                            Программа «еВосстановление» — государственная программа помощи владельцам разрушенного или
-                            поврежденного
-                            в результате войны жилья, позволяющая получить компенсацию в зависимости от уровня ущерба.
-                        </p>
-                        <p class="text-white text-base md:text-xl mt-8">
-                            Узнать больше об условиях приобретения квартиры в LUCKY LAND по одной из программ можно в
-                            отделе
-                            продаж
-                            по ул. Берковецкой, 4Д.
-                        </p>
-
-                    </div>
+                    <div class="text-content max-w-[900px] block w-full" v-html="itemData.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></div>
 
                     <div class="max-w-[508px] mt-14 md:mt-0">
                         <p class="text-base md:text-xl text-white opacity-40 mb-4 md:mb-7">Проекты участвующие в акции
@@ -142,7 +93,8 @@
                     </h2>
 
                     <div class="w-fit hidden md:flex">
-                        <button type="button" class="transition-all opacity-20 hover:opacity-100 sales-button-prev mr-9">
+                        <button type="button"
+                            class="transition-all opacity-20 hover:opacity-100 sales-button-prev mr-9">
                             <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -164,17 +116,8 @@
                 <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
                     :breakpoints="breakpoints" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
 
-                    <swiper-slide>
-                        <SalesItem bgdColor="blue-600" />
-                    </swiper-slide>
-                    <swiper-slide>
-                        <SalesItem bgdColor="blue-600" />
-                    </swiper-slide>
-                    <swiper-slide>
-                        <SalesItem bgdColor="blue-600" />
-                    </swiper-slide>
-                    <swiper-slide>
-                        <SalesItem bgdColor="blue-600" />
+                    <swiper-slide v-for="item in itemsList" :key="item?.id">
+                        <SalesItem bgdColor="blue-600" :item="item" />
                     </swiper-slide>
 
                 </swiper>
@@ -183,47 +126,91 @@
     </section>
 </template>
 
-<script>
+<style scoped>
+.text-content blockquote {
+    padding-left: 36px;
+}
+    
+.text-content,
+.text-content b {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 8px;
+    display: block;
+}
+</style>
+
+<script setup>
+import { ref, onMounted } from 'vue';
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 SwiperCore.use([Navigation, A11y]);
 
-export default {
-    components: {
-        Swiper,
-        SwiperSlide,
-    },
-    setup() {
-        const modules = {
-            navigation: true,
-            pagination: true,
-            a11y: true,
-        };
-        const navigationConfig = {
-            nextEl: '.sales-button-next',
-            prevEl: '.sales-button-prev',
-        };
-        const pagination = {
-            el: '.swiper-pagination',
-            clickable: true,
-        };
-        const breakpoints = {
-            768: {
-                slidesPerView: 3
-            },
-        }
+const { getItems } = useDirectusItems();
+const langStore = useLangStore();
+const route = useRoute();
 
-        return {
-            modules,
-            navigationConfig,
-            breakpoints,
-            pagination
-        };
-    },
+// GET OTHER SALES
+const itemsList = ref([]);
+const fetchArticles = async () => {
+  try {
+    const items = await getItems({
+      collection: "Sale",
+      params: {
+        fields: '*,translations.*'
+      },
+    });
+    itemsList.value = items;
+    console.log(items);
+  } catch (e) {
+    console.error('Error fetching items:', e);
+  }
+};
+onMounted(fetchArticles);
+// GET OTHER SALES
+
+// GET POST
+const itemData = ref([]);
+const fetchItemData = async () => {
+  try {
+    const items = await getItems({
+      collection: `Sale/${route.params.id}`,
+      params: {
+        fields: '*,translations.*'
+      },
+    });
+
+    itemData.value = items;
+    console.log('ITEM_DATA', items);
+  } catch (e) {
+    console.error('Error fetching items:', e);
+  }
+};
+onMounted(fetchItemData);
+// GET POST
+
+const navigationConfig = {
+  nextEl: '.sales-button-next',
+  prevEl: '.sales-button-prev',
+};
+
+const pagination = {
+  el: '.swiper-pagination',
+  clickable: true,
+};
+
+const breakpoints = {
+  768: {
+    slidesPerView: 2,
+    pagination: false,
+  },
+  1280: {
+    slidesPerView: 3,
+    pagination: false,
+  },
 };
 </script>

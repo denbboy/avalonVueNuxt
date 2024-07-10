@@ -1,12 +1,13 @@
 <template>
   <section class="bg-white pt-14 relative overflow-hidden">
     <div class="absolute -left-14 lg:-left-36 bottom-0 lg:bottom-0 w-28 lg:w-72 lg:h-72 z-10">
-        <img src="/assets/img/icons/vector-logo.svg" class="invert" alt="vector-logo">
+      <img src="/assets/img/icons/vector-logo.svg" class="invert" alt="vector-logo">
     </div>
     <div class="container relative z-10">
       <div>
         <div class="flex justify-between items-center mb-8">
-          <h2 class="text-blue-600 font-bold text-[30px] md:text-[45px] lg:text-[56px] leading-[110%]" data-aos="fade-up">
+          <h2 class="text-blue-600 font-bold text-[30px] md:text-[45px] lg:text-[56px] leading-[110%]"
+            data-aos="fade-up">
             Актуальные акции
           </h2>
 
@@ -34,20 +35,11 @@
         <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
           :breakpoints="breakpoints" :space-between="24" @swiper="onSwiper" @slideChange="onSlideChange">
 
-          <swiper-slide>
-            <SalesItem bgdColor="white" />
-          </swiper-slide>
-          <swiper-slide>
-            <SalesItem bgdColor="white" />
-          </swiper-slide>
-          <swiper-slide>
-            <SalesItem bgdColor="white" />
-          </swiper-slide>
-          <swiper-slide>
-            <SalesItem bgdColor="white" />
+          <swiper-slide v-for="item in itemsList" :key="item.id">
+            <SalesItem bgdColor="white" :item="item" />
           </swiper-slide>
 
-                  <div class="swiper-pagination swiper-pagination_blue"></div>
+          <div class="swiper-pagination swiper-pagination_blue"></div>
 
 
         </swiper>
@@ -61,53 +53,57 @@
   </section>
 </template>
 
-<script>
+<script setup>
+import { ref, onMounted } from 'vue';
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 SwiperCore.use([Navigation, A11y]);
 
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
+const { getItems } = useDirectusItems();
+
+const langStore = useLangStore();
+
+const itemsList = ref([]);
+
+const fetchArticles = async () => {
+  try {
+    const items = await getItems({
+      collection: "Sale",
+      params: {
+        fields: '*,translations.*'
+      },
+    });
+    itemsList.value = items;
+    console.log(items);
+  } catch (e) {
+    console.error('Error fetching items:', e);
+  }
+};
+
+onMounted(fetchArticles);
+
+const navigationConfig = {
+  nextEl: '.sales-button-next',
+  prevEl: '.sales-button-prev',
+};
+
+const pagination = {
+  el: '.swiper-pagination',
+  clickable: true,
+};
+
+const breakpoints = {
+  768: {
+    slidesPerView: 2,
+    pagination: false,
   },
-  setup() {
-    const modules = {
-      navigation: true,
-      pagination: true,
-      a11y: true,
-    };
-    const navigationConfig = {
-      nextEl: '.sales-button-next',
-      prevEl: '.sales-button-prev',
-    };
-    const pagination = {
-      el: '.swiper-pagination',
-      clickable: true,
-    };
-    const breakpoints = {
-      768: {
-        slidesPerView: 2,
-        pagination: false,
-      },
-      1280: {
-        slidesPerView: 3,
-        pagination: false,
-
-      },
-    }
-
-    return {
-      modules,
-      navigationConfig,
-      breakpoints,
-      pagination
-    };
+  1280: {
+    slidesPerView: 3,
+    pagination: false,
   },
 };
 </script>
