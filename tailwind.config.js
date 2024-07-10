@@ -43,6 +43,7 @@ export default {
         'DEFAULT': '300ms',
       },
       screens: {
+        '375':'375px',
         'lg': '1441px',
         '3xl': '1770px',
       },

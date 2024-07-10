@@ -5,7 +5,7 @@
 
         <section id="broker" class="py-[60px] lg:py-[100px]">
             <div class="container">
-                <div class="xl:flex xl:flex-row-reverse xl:items-center gap-[80px] mb-8 xl:mb-20">
+                <div class="xl:flex xl:flex-row-reverse xl:items-center gap-6 3xl:gap-[80px] mb-8 xl:mb-20">
                     <div data-aos="fade-left" class="">
                         <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">Для брокеров</h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">Мы ценим вклад тех, кто помогает развитию
@@ -25,7 +25,7 @@
                 </div>
                 <div data-aos="fade-up"
                     class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] xl:pt-20 xl:pb-24 xl:pl lg:pl-[120px] lg::pr-[120px]">
-                    <h3 class="text-xl text-white font-bold mb-[30px] md:text-3xl">Этапы работы с брокерами</h3>
+                    <h3 class="text-xl md:text-2xl 3xl:text-3xl text-white font-bold mb-[30px] ">Этапы работы с брокерами</h3>
                     <ol
                         class="md:grid md:grid-cols-4  relative  justify-between ">
                         <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10 mb-5 last:mb-0">
@@ -111,7 +111,7 @@
 
         <section id="agency" class="py-[60px] lg:py-[100px] bg-blue-600">
             <div class="container">
-                <div class="xl:flex xl:flex-row xl:items-center gap-[80px] mb-8 xl:mb-20">
+                <div class="xl:flex xl:flex-row xl:items-center gap-6 3xl:gap-[80px] mb-8 xl:mb-20">
                     <div data-aos="fade-right" class="">
                         <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">Агентствам
                             недвижимости</h2>
@@ -129,9 +129,9 @@
                         src="/assets/img/career/img.jpg" alt="img">
                 </div>
                 <div data-aos="fade-up"
-                    class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] md:pt-20 md:pb-24 md:pl md:pl-[120px] md:pr-[120px]">
+                    class="border border-white/20 px-[48px] pt-[48px] pb-6 3xl:py-[80px] 3xl:px-[120px] rounded-[20px] overflow-hidden">
                     <h3
-                        class="text-xl text-white font-bold mb-[30px] md:text-3xl relative after:absolute after:top-2/4 after:-translate-x-2/4 after:right-[12px] after:w-[6px] after:h-[6px] after:bg-blue-400 before:w-[34px] md:before:w-[120px] before:h-[1px] before:bg-white/20 md:after:rounded-[4px] md:before:mt-[4px] before:mt-[2.5px] before:top-2/4 before:-translate-x-2/4 before:absolute md:before:right-[-180px] before:right-[-30px] md:after:w-[10px] md:after:right-[-15px] md:after:h-[10px] after:rounded-sm">
+                        class="text-xl w-fit md:text-2xl 3xl:text-3xl pr-4 text-white font-bold mb-[30px]  relative after:absolute after:top-2/4   after:w-[6px] after:h-[6px] md:after:w-[10px] md:after:h-[10px] after:bg-blue-400 before:w-screen before:left-[100%] before:h-[1px] before:bg-white/20 md:after:rounded-[4px] md:before:mt-[4px] before:mt-[2.5px] before:top-2/4  before:absolute after:left-full  after:rounded-sm">
                         Мы сопровождаем риелторов на всех этапах сотрудничества:
                     </h3>
                     <ol class="flex flex-col xl:flex-row relative justify-between after:top-[89px] md:gap-5">
@@ -172,7 +172,7 @@
 
         <section id="marketing" class="py-[60px] lg:py-[100px] bg-blue-500">
             <div class="container">
-                <div class="xl:flex xl:flex-row-reverse xl:items-center gap-[80px] mb-8 xl:mb-20">
+                <div class="xl:flex xl:flex-row-reverse xl:items-center gap-6 3xl:gap-[80px] mb-8 xl:mb-20">
                     <div data-aos="fade-left" class="">
                         <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">Маркетингу</h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">Знакомы с нашими проектами и у вас есть
@@ -191,9 +191,11 @@
                         src="/assets/img/career/img.jpg" alt="img">
                 </div>
                 <div data-aos="fade-up"
-                    class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] md:pt-20 md:pb-24 md:pl md:pl-[120px] md:pr-[120px]">
+                    class="border border-white/20 px-[48px] pt-[48px] pb-6 3xl:py-[80px] 3xl:px-[120px] rounded-[20px] overflow-hidden">
                     <h3
-                        class="text-xl text-white font-bold mb-[30px] md:text-3xl relative after:absolute after:top-2/4 after:-translate-x-2/4 after:right-[12px] after:w-[6px] after:h-[6px] after:bg-blue-400 before:w-[34px] md:before:w-[120px] before:h-[1px] before:bg-white/20 md:after:rounded-[4px] md:before:mt-[4px] before:mt-[2.5px] before:top-2/4 before:-translate-x-2/4 before:absolute md:before:right-[-180px] before:right-[-30px] md:after:w-[10px] md:after:right-[-15px] md:after:h-[10px] after:rounded-sm">
+                         class="text-xl w-fit md:text-2xl 3xl:text-3xl pr-4 text-white font-bold mb-[30px]  relative after:absolute after:top-2/4   after:w-[6px] after:h-[6px] md:after:w-[10px] md:after:h-[10px] after:bg-blue-400 before:w-screen before:left-[100%] before:h-[1px] before:bg-white/20 md:after:rounded-[4px] md:before:mt-[4px] before:mt-[2.5px] before:top-2/4  before:absolute after:left-full  after:rounded-sm">
+
+
                         Сотрудничество с маркетологами:
                     </h3>
                     <ol class="flex flex-col xl:flex-row relative justify-between after:top-[89px] md:gap-5">
@@ -230,7 +232,7 @@
 
         <section id="partners" class="py-[60px] lg:py-[100px] bg-blue-600">
             <div class="container">
-                <div class="xl:flex xl:flex-row md:items-center gap-[80px] mb-8 xl:mb-20">
+                <div class="xl:flex xl:flex-row md:items-center gap-6 3xl:gap-[80px] mb-8 xl:mb-20">
                     <div data-aos="fade-right" class="">
                         <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">
                             Партнерам
@@ -250,7 +252,7 @@
                 </div>
                 <div data-aos="fade-up"
                     class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] xl:pt-20 xl:pb-24 xl:pl lg:pl-[120px] lg::pr-[120px]">
-                    <h3 class="text-xl text-white font-bold mb-[30px] md:text-3xl">Этапы работы с брокерами</h3>
+                    <h3 class="text-xl md:text-2xl 3xl:text-3xl text-white font-bold mb-[30px]">Этапы работы с брокерами</h3>
                     <ol
                         class="md:grid md:grid-cols-4  relative  justify-between ">
                         <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10 mb-5 last:mb-0">
