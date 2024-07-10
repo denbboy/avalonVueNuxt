@@ -64,7 +64,7 @@
               <img src="/assets/img/index/banner-logo.svg" alt="">
             </div>
           </div>
-          <div class="flex justify-between items-end lg:mt-28 mt-10">
+          <div class="flex justify-between items-end lg:mt-28 xl:mt-36 mt-10">
             <div class="flex gap-5">
               <div class="pr-5 border-r border-whiteOp-300">
                 <p class="font-bold text-white text-2xl mb-2 md:text-4xl md:mb-3">
