@@ -13,25 +13,25 @@
                 <div class="w-fit">
                     <div class="md:mb-[30px] md:pb-[30px] border-b border-white/10 mb-5 pb-5">
                         <a :href="toolkitStore?.settings?.soc_link_whats" target="_blank" class="flex items-center gap-4 mb-7 md:gap-4 lg:gap-5 group">
-                            <img src="/assets/img/index/whatsap.svg" class="md:w-[70px] md:h-[70px]" alt="ic">
+                            <img src="/assets/img/index/whatsap.svg" class="w-[60px] h-[60px] 3xl:w-[70px] 3xl:h-[70px]" alt="ic">
                             <div>
                                 <span class="text-white/40 text-sm md:text-base md:mb-2">
                                     WhatsApp 24/7 online
                                 </span>
                                 <p
-                                    class="text-white font-bold text-sm md:text-xl group-hover:text-blue-400 transition-all">
+                                    class="text-white font-bold text-sm md:text-[16px] 3xl:text-xl group-hover:text-blue-400 transition-all">
                                     {{ toolkitStore?.settings?.phone }}
                                 </p>
                             </div>
                         </a>
                         <a :href="`mailto:${toolkitStore?.settings?.email}`" target="_blank" class="flex items-center gap-4 md:gap-5 group">
-                            <img src="/assets/img/index/mail.svg" class="md:w-[70px] md:h-[70px]" alt="ic">
+                            <img src="/assets/img/index/mail.svg" class="w-[60px] h-[60px] 3xl:w-[70px] 3xl:h-[70px]" alt="ic">
                             <div>
                                 <span class="text-white/40 text-sm md:text-base md:mb-2">
                                     Email us
                                 </span>
                                 <p
-                                    class="text-white font-bold text-sm md:text-xl group-hover:text-blue-400 transition-all">
+                                    class="text-white font-bold text-sm md:text-[16px] 3xl:text-xl group-hover:text-blue-400 transition-all">
                                     {{ toolkitStore?.settings?.email }}
                                 </p>
                             </div>
