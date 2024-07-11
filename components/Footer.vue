@@ -80,7 +80,7 @@
                     class="flex xl:max-w-[381px] lg:max-w-full flex-col p-5 md:px-5 md:py-12 border border-whiteOp-300 rounded-2xl text-center lg:p-12 relative mb-14 md:mb-0">
                     <img src="/assets/img/index/dot-decor-2.png" class="absolute right-[-1px] bottom-[-1px] w-5 md:w-8"
                         alt="decor">
-                    <h2 class="font-bold text-white md:text-2xl mb-4 lg:text-3xl md:mb-7 leading-[100%]">
+                    <h2 class="font-bold text-white md:text-2xl mb-4 3xl:text-3xl md:mb-7 leading-[100%]">
                         Хотите узнать больше?
                     </h2>
                     <div class="flex flex-col gap-3 lg:gap-0">
@@ -109,7 +109,7 @@
                             Ваше сообщение успешно отправлено
                         </p>
 
-                        <button type="submit" class="white-button w-full leading-[110%] lg:mt-8 lg:py-6">
+                        <button type="submit" class="white-button w-full leading-[110%] lg:mt-8 h-[48px] py-2 xl:h-[64px]">
                             Отправить заявку
                         </button>
                     </div>
