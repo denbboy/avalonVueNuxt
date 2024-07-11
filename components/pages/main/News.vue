@@ -1,12 +1,13 @@
 <template>
   <section class="bg-white pt-14 relative overflow-hidden">
     <div class="absolute -right-14 lg:-right-36 bottom-0 lg:bottom-40 w-28 lg:w-72 lg:h-72 z-10">
-        <img src="/assets/img/icons/vector-logo.svg" class="invert" alt="vector-logo">
+      <img src="/assets/img/icons/vector-logo.svg" class="invert" alt="vector-logo">
     </div>
     <div class="container relative z-10">
       <div class="">
         <div class="flex justify-between items-center mb-8">
-          <h2 class="text-blue-600 font-bold text-[30px] md:text-[45px] lg:text-[56px] leading-[110%]" data-aos="fade-up">
+          <h2 class="text-blue-600 font-bold text-[30px] md:text-[45px] lg:text-[56px] leading-[110%]"
+            data-aos="fade-up">
             Последние новости
           </h2>
 
@@ -33,18 +34,10 @@
 
         <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
           :breakpoints="breakpoints" :space-between="24" @swiper="onSwiper" @slideChange="onSlideChange">
-          <swiper-slide>
-            <NewsItem bgdColor="white" />
+          <swiper-slide v-for="item in itemsList" :key="item.id">
+            <NewsItem bgdColor="white" :item="item" />
           </swiper-slide>
-          <swiper-slide>
-            <NewsItem bgdColor="white" />
-          </swiper-slide>
-          <swiper-slide>
-            <NewsItem bgdColor="white" />
-          </swiper-slide>
-          <swiper-slide>
-            <NewsItem bgdColor="white" />
-          </swiper-slide>
+        
 
           <div class="swiper-pagination swiper-pagination_blue"></div>
 
@@ -59,6 +52,65 @@
   </section>
 </template>
 
+<script setup>
+import { Navigation, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import SwiperCore from 'swiper';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+const { getItems } = useDirectusItems();
+
+const langStore = useLangStore();
+
+const itemsList = ref([]);
+
+const fetchArticles = async () => {
+  try {
+    const items = await getItems({
+      collection: "News",
+      params: {
+        fields: '*,translations.*'
+      },
+    });
+    itemsList.value = items;
+    console.log(items);
+  } catch (e) {
+    console.error('Error fetching items:', e);
+  }
+};
+
+onMounted(fetchArticles);
+
+const modules = {
+  Navigation,
+  A11y,
+};
+
+const navigationConfig = {
+  nextEl: '.news-button-next',
+  prevEl: '.news-button-prev',
+};
+
+const pagination = {
+  el: '.swiper-pagination',
+  clickable: true,
+};
+
+const breakpoints = {
+  768: {
+    slidesPerView: 3,
+    pagination: false,
+  },
+  1441: {
+    slidesPerView: 3,
+    pagination: false,
+  },
+};
+
+</script>
+<!-- 
 <script>
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -108,4 +160,4 @@ export default {
     };
   },
 };
-</script>
+</script> -->

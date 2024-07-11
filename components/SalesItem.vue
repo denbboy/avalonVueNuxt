@@ -19,12 +19,12 @@
                 Действует до 
                 <strong>
                     <!-- 30 марта 2024 -->
-                    {{ new Date(props?.item?.expired_date).getDay() }} {{ $t(`month${new Date(props?.item?.expired_date).getMonth() ?? "0" + 1}`) }} {{ new Date(props?.item?.expired_date).getFullYear() }}
+                    {{ new Date(props?.item?.expired_date).getDate() }} {{ $t(`month${new Date(props?.item?.expired_date).getMonth() ?? "0" + 1}`) }} {{ new Date(props?.item?.expired_date).getFullYear() }}
                 </strong>
             </div>
-            <strong class="mt-auto text-white mb-2 md:text-lg">
-                <span v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></span>
-            </strong>
+
+            <strong class="mt-auto text-white mb-2 md:text-lg" v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></strong>
+
             <div class="flex items-center opacity-60">
                 <img class="w-2 md:w-3" src="/assets/img/icons/point-white.svg" alt="">
                 <span class="text-white ml-1 text-xs md:text-sm">Bukit</span>

@@ -10,9 +10,11 @@
       <h1 class="text-[30px] md:text-[55px] lg:text-[65px] text-white font-bold mb-5" data-aos="fade-up">
         Новости</h1>
       <div class="md:flex justify-between items-center" data-aos="fade-up">
-        <p class="md:text-lg md:max-w-[355px] 3xl:max-w-fit text-white text-sm" >Ваше будущее жилье — в наших руках. Мы понимаем, как важны для вас
+        <p class="md:text-lg md:max-w-[355px] 3xl:max-w-fit text-white text-sm">Ваше будущее жилье — в наших руках. Мы
+          понимаем, как важны для вас
           шаги.</p>
-        <div :class="isOpenPopup ? 'active' : ''" class="select group relative z-40 flex md:hidden border-white/40 border-[1px] rounded-[10px] mt-7">
+        <div :class="isOpenPopup ? 'active' : ''"
+          class="select group relative z-40 flex md:hidden border-white/40 border-[1px] rounded-[10px] mt-7">
           <button @click="handleOpenPopup" class="select__head flex items-center justify-between w-full h-12 px-4">
             <span class="text-sm text-white font-bold">
               {{ activeProject.label }}
@@ -22,7 +24,8 @@
           </button>
           <div
             class="select__body transition-all group-[.active]:visible group-[.active]:opacity-100 group-[.active]:mt-2 invisible opacity-0 absolute top-full mt-0 px-4 border-white/40 border-[1px] rounded-[10px] w-full bg-blue-500">
-            <button @click="_ => handleChooseProject(item)" v-for="item in projectsList" class="select__item block text-white py-2">
+            <button @click="_ => handleChooseProject(item)" v-for="item in projectsList"
+              class="select__item block text-white py-2">
               {{ item.label }}
             </button>
           </div>
@@ -41,17 +44,13 @@
           </ul>
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-x-5 gap-y-10 mt-12" data-aos="fade-up">
-        <NewsItem bgdColor="blue-500" />
-        <NewsItem bgdColor="blue-500" />
-        <NewsItem bgdColor="blue-500" />
-        <NewsItem bgdColor="blue-500" />
-        <NewsItem bgdColor="blue-500" />
-        <NewsItem bgdColor="blue-500" />
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-x-5 gap-y-10 mt-12"
+        data-aos="fade-up">
+        <NewsItem v-for="item in itemsList" :key="item.id" :item="item" bgdColor="blue-500" />
       </div>
 
       <!-- TODO Сделать кнопку -->
-      
+
       <!-- <button
         class="text-white h-[60px] rounded-[10px] border-white border-[1px] cursor-pointer px-7 mx-auto block mt-12">
         Показать больше
@@ -66,6 +65,30 @@
 </template>
 
 <script setup>
+
+const { getItems } = useDirectusItems();
+
+const langStore = useLangStore();
+
+const itemsList = ref([]);
+
+const fetchArticles = async () => {
+  try {
+    const items = await getItems({
+      collection: "News",
+      params: {
+        fields: '*,translations.*'
+      },
+    });
+    itemsList.value = items;
+    console.log(items);
+  } catch (e) {
+    console.error('Error fetching items:', e);
+  }
+};
+
+onMounted(fetchArticles);
+
 const projectsList = [
   {
     label: "All",

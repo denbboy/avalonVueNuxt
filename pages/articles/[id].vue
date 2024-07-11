@@ -11,69 +11,39 @@
             <div class="pb-14 text-content">
                 <div
                     class="flex before:w-[6px] before:rounded-sm before:h-[6px] before:bg-white before:mr-[10px] opacity-60 items-center">
-                    <span class="text-white text-sm">5 апреля 2024</span>
+                    <span class="text-white text-sm">
+                        {{ new Date(itemData?.date_created).getDate() }} {{ $t(`month${new
+                            Date(itemData?.date_created).getMonth()
+                        ?? "0" + 1}`) }} {{ new Date(itemData?.date_created).getFullYear() }}
+                    </span>
                 </div>
                 <h1
                     class="text-white text-[30px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[1200px] md:text-[65px]">
-                    Инвестиции в недвижимость во время войны: как уберечь и приумножить средства без существенных рисков
+                    
+                    {{ itemData?.title }}
+
                 </h1>
                 <a href="#"
                     class="rounded-full border-[1px] border-white w-10 h-10 flex items-center justify-center mt-8 mb-14 md:w-14 md:h-14">
                     <img src="/assets/img/icons/socials.svg" class="md:w-6" alt="Soc">
                 </a>
-                <b class="text-white text-base md:text-xl mb-2 block">
-                    Квартиры в эко-городе LUCKY LAND от строительной компании DIM теперь можно приобрести по
-                    государственным
-                    программам доступного кредитования жилья «еОселя» и компенсации за разрушенное или поврежденное
-                    жилье
-                    «еВосстановление».
-                </b>
-                <p class="text-white text-base md:text-xl my-2 md:my-12">
-                    Дополнительные опции приобретения жилья в LUCKY LAND открылись благодаря тому, что дом №3 эко-города
-                    недавно получил официальный адрес.
-                </p>
-                <img class="my-14 rounded-[20px]" src="/assets/img/news/bgd-single.jpg" alt="">
-                <blockquote class="text-white text-base md:text-xl mt-7 md:pl-9 relative">
-                    <div class="blockquote-lines">
-                        <img src="/assets/img/icons/quotes.svg" alt="Quotes">
-                    </div>
-                    «Сегодня мы получаем все больше запросов на покупку недвижимости по государственным программам.
-                    Поэтому
-                    как только наши проекты получают все необходимые разрешительные документы, мы присоединяемся к таким
-                    программам. Для нас важно реализовать все возможности, которые сделают для украинцев покупку жилья
-                    более
-                    комфортной», — комментирует управляющий партнер группы компаний DIM Александр Насиковский.
-                </blockquote>
-                <p class="text-white text-base md:text-xl my-2 md:my-12">
-                    Программа «еОселя» – это государственная инициатива для поддержки населения, желающего приобрести
-                    собственное жилье. Она дает желающим возможность получить ипотеку от государства с фиксированной
-                    ставкой
-                    от 3 до 7% сроком до 20 лет.
-                </p>
-                <p class="text-white text-base md:text-xl my-2 md:my-12">
-                    Программа «еВосстановление» — государственная программа помощи владельцам разрушенного или
-                    поврежденного
-                    в результате войны жилья, позволяющая получить компенсацию в зависимости от уровня ущерба.
-                </p>
-                <p class="text-white text-base md:text-xl mt-8">
-                    Узнать больше об условиях приобретения квартиры в LUCKY LAND по одной из программ можно в отделе
-                    продаж
-                    по ул. Берковецкой, 4Д.
-                </p>
+                
+                <div v-html="itemData?.description"></div>
             </div>
         </div>
     </section>
 
-    <section class="bg-blue-600 pt-14">
+    <section class="bg-blue-600 pt-14 z-10">
         <div class="container">
             <div class="">
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-white font-bold text-[30px]">
-                        Другие акции
+                        Другие статьи
                     </h2>
 
                     <div class="w-fit hidden md:flex">
-                        <button type="button" class="articles-button-prev opacity-20 hover:opacity-100 transition-all mr-9">
+                        <button type="button"
+                            class="articles-button-prev opacity-20 hover:opacity-100 transition-all mr-9">
                             <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -94,21 +64,11 @@
 
                 <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
                     :breakpoints="breakpoints" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
-                    <swiper-slide>
-                        <ArticlesItem bgdColor="blue-600" />
+
+                    <swiper-slide v-for="item in itemsList" :key="item?.id">
+                        <ArticlesItem bgdColor="blue-600" :item="item" />
                     </swiper-slide>
-                    <swiper-slide>
-                        <ArticlesItem bgdColor="blue-600" />
-                    </swiper-slide>
-                    <swiper-slide>
-                        <ArticlesItem bgdColor="blue-600" />
-                    </swiper-slide>
-                    <swiper-slide>
-                        <ArticlesItem bgdColor="blue-600" />
-                    </swiper-slide>
-                    <swiper-slide>
-                        <ArticlesItem bgdColor="blue-600" />
-                    </swiper-slide>
+
                     <div class="swiper-pagination"></div>
                 </swiper>
             </div>
@@ -116,51 +76,98 @@
     </section>
 </template>
 
-<script>
+
+
+<style>
+.text-content blockquote {
+    padding-left: 36px;
+}
+    
+.text-content {
+    color: #fff;
+    font-size: 20px;
+    display: block;
+}
+
+.text-content b,
+.text-content li,
+.text-content p {
+    margin: 20px 0 !important;
+}
+</style>
+
+<script setup>
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
+const { getItems } = useDirectusItems();
+const langStore = useLangStore();
+const route = useRoute();
 
-SwiperCore.use([Navigation, A11y]);
+// GET OTHER SALES
+const itemsList = ref([]);
+const fetchArticles = async () => {
+  try {
+    const items = await getItems({
+      collection: "Article",
+      params: {
+        fields: '*,translations.*'
+      },
+    });
+    itemsList.value = items;
+    console.log(items);
+  } catch (e) {
+    console.error('Error fetching items:', e);
+  }
+};
+onMounted(fetchArticles);
+// GET OTHER SALES
 
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    const modules = {
-      navigation: true,
-      pagination: true,
-      a11y: true,
-    };
-    const navigationConfig = {
-      nextEl: '.articles-button-next',
-      prevEl: '.articles-button-prev',
-    };
-    const pagination = {
-      el: '.swiper-pagination',
-      clickable: true,
-    };
-    const breakpoints = {
-      768: {
+// GET POST
+const itemData = ref([]);
+const fetchItemData = async () => {
+  try {
+    const items = await getItems({
+      collection: `Article/${route.params.id}`,
+      params: {
+        fields: '*,translations.*'
+      },
+    });
+
+    itemData.value = items;
+    console.log('ITEM_DATA', items);
+  } catch (e) {
+    console.error('Error fetching items:', e);
+  }
+};
+onMounted(fetchItemData);
+// GET POST
+
+const modules = {
+    Navigation,
+    A11y,
+};
+
+const navigationConfig = {
+    nextEl: '.news-button-next',
+    prevEl: '.news-button-prev',
+};
+
+const pagination = {
+    el: '.swiper-pagination',
+    clickable: true,
+};
+
+const breakpoints = {
+    768: {
         slidesPerView: 3,
         pagination: false,
-      },
-      1441: {
-        slidesPerView: 4
-      },
-    }
-
-    return {
-      modules,
-      navigationConfig,
-      breakpoints,
-      pagination
-    };
-  },
+    },
+    1441: {
+        slidesPerView: 4,
+        pagination: false,
+    },
 };
+
 </script>

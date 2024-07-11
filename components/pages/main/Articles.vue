@@ -3,7 +3,8 @@
     <div class="container">
       <div class="">
         <div class="flex justify-between items-center mb-8">
-          <h2 class="text-blue-600 font-bold text-[30px] md:text-[45px] lg:text-[56px] leading-[110%]" data-aos="fade-up">
+          <h2 class="text-blue-600 font-bold text-[30px] md:text-[45px] lg:text-[56px] leading-[110%]"
+            data-aos="fade-up">
             Статьи
           </h2>
 
@@ -30,21 +31,11 @@
 
         <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
           :breakpoints="breakpoints" :space-between="24" @swiper="onSwiper" @slideChange="onSlideChange">
-          <swiper-slide>
-            <ArticlesItem bgdColor="white"/>
+
+          <swiper-slide v-for="item in itemsList" :key="item?.id">
+            <ArticlesItem bgdColor="white" :item="item" />
           </swiper-slide>
-          <swiper-slide>
-            <ArticlesItem bgdColor="white"/>
-          </swiper-slide>
-          <swiper-slide>
-            <ArticlesItem bgdColor="white"/>
-          </swiper-slide>
-          <swiper-slide>
-            <ArticlesItem bgdColor="white"/>
-          </swiper-slide>
-          <swiper-slide>
-            <ArticlesItem bgdColor="white"/>
-          </swiper-slide>
+
           <div class="swiper-pagination swiper-pagination_blue"></div>
         </swiper>
       </div>
@@ -52,55 +43,58 @@
   </section>
 </template>
 
-
-<script>
+<script setup>
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
+const { getItems } = useDirectusItems();
 
-SwiperCore.use([Navigation, A11y]);
+const langStore = useLangStore();
 
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
+const itemsList = ref([]);
+
+const fetchArticles = async () => {
+  try {
+    const items = await getItems({
+      collection: "Article",
+      params: {
+        fields: '*,translations.*'
+      },
+    });
+    itemsList.value = items;
+    console.log(items);
+  } catch (e) {
+    console.error('Error fetching items:', e);
+  }
+};
+
+onMounted(fetchArticles);
+
+
+const modules = {
+  Navigation,
+  A11y,
+};
+
+const navigationConfig = {
+  nextEl: '.news-button-next',
+  prevEl: '.news-button-prev',
+};
+
+const pagination = {
+  el: '.swiper-pagination',
+  clickable: true,
+};
+
+const breakpoints = {
+  768: {
+    slidesPerView: 3,
+    pagination: false,
   },
-  setup() {
-    const modules = {
-      navigation: true,
-      pagination: true,
-      a11y: true,
-    };
-    const navigationConfig = {
-      nextEl: '.articles-button-next',
-      prevEl: '.articles-button-prev',
-    };
-    const pagination = {
-      el: '.swiper-pagination',
-      clickable: true,
-    };
-    const breakpoints = {
-      768: {
-        slidesPerView: 3,
-        pagination: false,
-      },
-      1441: {
-        slidesPerView: 4,
-        pagination: false,
-
-      },
-     
-    }
-
-    return {
-      modules,
-      navigationConfig,
-      breakpoints,
-      pagination
-    };
+  1441: {
+    slidesPerView: 4,
+    pagination: false,
   },
 };
 </script>
