@@ -13,12 +13,13 @@ import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import HeaderProject from '~/components/HeaderProject.vue';
 import { useToolkit } from './../stores/functions/toolkit';
+import { useProjectsStore } from './../stores/functions/projects';
 
 const route = useRoute();
-
 const toolkitStore = useToolkit();
-
+const projectsStore = useProjectsStore();
 const { getItems } = useDirectusItems();
+
 const fetchArticles = async () => {
   try {
     const items = await getItems({
@@ -30,8 +31,26 @@ const fetchArticles = async () => {
     console.error('Error fetching items:', e);
   }
 };
-
 onMounted(fetchArticles);
+
+
+const fetchProjects = async () => {
+  try {
+    const items = await getItems({
+      collection: "Project",
+      params: {
+        fields: '*,translations.*'
+      },
+    });
+    
+    projectsStore.setProjects(items);
+    console.log(items);
+  } catch (e) {
+    console.error('Error fetching items:', e);
+  }
+};
+onMounted(fetchProjects);
+
 
 const isProjectHeader = ref(route.fullPath.includes('/projects/'));
 

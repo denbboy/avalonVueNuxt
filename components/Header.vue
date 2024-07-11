@@ -23,24 +23,14 @@
               </button>
               <div
                 class="projectsMenu opacity-0 invisible group-hover:opacity-100 group-hover:visible flex transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-0 border border-whiteOp-300">
-                <NuxtLink href="/projects/123" class="text-white md:text-xs lg:text-sm mb-4 whitespace-nowrap relative
+
+                <NuxtLink :href="`/projects/${item.id}`" v-for="item in projectsStore.projects" :key="item.id" class="text-white md:text-xs lg:text-sm last:mb-0 mb-4 whitespace-nowrap relative
                   before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
                   after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
                 ">
-                  BUDDHA | Club House
+                  {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
                 </NuxtLink>
-                <NuxtLink href="/projects/321" class="text-white md:text-xs lg:text-sm mb-4 relative
-                  before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
-                  after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
-                ">
-                  OM | Club House
-                </NuxtLink>
-                <NuxtLink href="/projects/123123" class="text-white md:text-xs lg:text-sm relative
-                  before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
-                  after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
-                ">
-                  JUST Club House
-                </NuxtLink>
+
               </div>
             </div>
             <NuxtLink href="#about-company" class="text-white md:text-xs lg:text-sm relative transition-all
@@ -258,6 +248,7 @@ import { ref, defineProps, onMounted, watch } from 'vue';
 import { useI18n } from 'vue-i18n'
 import { useLangStore } from './../stores/functions/language';
 import { useToolkit } from './../stores/functions/toolkit';
+import { useProjectsStore } from '~/stores/functions/projects';
 
 const nuxtApp = useNuxtApp();
 const loading = ref(true);
@@ -274,6 +265,7 @@ const isOpenBurger = ref(false);
 const isScrolled = ref(false);
 const isOpen = ref(false);
 
+const projectsStore = useProjectsStore();
 const toolkitStore = useToolkit();
 const langStore = useLangStore()
 const route = useRoute();
@@ -315,9 +307,5 @@ const handleOpen = () => {
 }
 
 const { lang } = storeToRefs(langStore);
-
-// watch(() => route.fullPath, (newPath) => {
-//   locale.value = lang.value
-// });
 
 </script>

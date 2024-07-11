@@ -11,34 +11,12 @@
                 class="grid gap-4 grid-cols-2 md:grid-cols-3 md:[&>.image:nth-child(3n+1)]:col-start-auto md:[&>.image:nth-child(3n+1)]:col-end-auto [&>.image:nth-child(3n+1)]:col-start-1 [&>.image:nth-child(3n+1)]:col-end-3 md:[&>.image:nth-child(7n+1)]:col-start-1 md:[&>.image:nth-child(7n+1)]:col-end-3 md:[&>.image:nth-child(7n+7)]:col-start-2 md:[&>.image:nth-child(7n+7)]:col-end-4">
 
                 <client-only>
-                    <a data-aos="fade-up" class="image" data-fancybox="gallery" href="https://avalon-vue-nuxt.vercel.app/_nuxt/gallery-ph-1.DBPUfZCe.png">
-                        <img src="/assets/img/about/gallery-ph-1.png"
-                            class="rounded-2xl h-full w-full flex items-center justify-center" alt="ph">
+
+                    <a v-for="image in gallery" :key="image.id" data-aos="fade-up" class="image" data-fancybox="gallery" :href="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`">
+                        <img :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`"
+                            class="rounded-2xl h-full w-full flex items-center justify-center max-h-[500px] object-cover" alt="ph">
                     </a>
-                    <a data-aos="fade-up" class="image" data-fancybox="gallery" href="https://avalon-vue-nuxt.vercel.app/_nuxt/gallery-ph-1.DBPUfZCe.png">
-                        <img src="/assets/img/about/gallery-ph-2.png"
-                            class="rounded-2xl h-full w-full flex items-center justify-center" alt="ph">
-                    </a>
-                    <a data-aos="fade-up" class="image" data-fancybox="gallery" href="https://avalon-vue-nuxt.vercel.app/_nuxt/gallery-ph-1.DBPUfZCe.png">
-                        <img src="/assets/img/about/gallery-ph-3.png"
-                            class="rounded-2xl h-full w-full flex items-center justify-center" alt="ph">
-                    </a>
-                    <a data-aos="fade-up" class="image" data-fancybox="gallery" href="https://avalon-vue-nuxt.vercel.app/_nuxt/gallery-ph-1.DBPUfZCe.png">
-                        <img src="/assets/img/about/gallery-ph-4.png"
-                            class="rounded-2xl h-full w-full flex items-center justify-center" alt="ph">
-                    </a>
-                    <a data-aos="fade-up" class="image" data-fancybox="gallery" href="https://avalon-vue-nuxt.vercel.app/_nuxt/gallery-ph-1.DBPUfZCe.png">
-                        <img src="/assets/img/about/gallery-ph-5.png"
-                            class="rounded-2xl h-full w-full flex items-center justify-center" alt="ph">
-                    </a>
-                    <a data-aos="fade-up" class="image" data-fancybox="gallery" href="https://avalon-vue-nuxt.vercel.app/_nuxt/gallery-ph-1.DBPUfZCe.png">
-                        <img src="/assets/img/about/gallery-ph-6.png"
-                            class="rounded-2xl h-full w-full flex items-center justify-center" alt="ph">
-                    </a>
-                    <a data-aos="fade-up" class="image" data-fancybox="gallery" href="https://avalon-vue-nuxt.vercel.app/_nuxt/gallery-ph-1.DBPUfZCe.png">
-                        <img src="/assets/img/about/gallery-ph-7.png"
-                            class="rounded-2xl h-full w-full flex items-center justify-center" alt="ph">
-                    </a>
+
                 </client-only>
             </div>
 
@@ -53,4 +31,7 @@
 </template>
 
 <script setup>
+
+const {gallery} = defineProps(['gallery'])
+
 </script>

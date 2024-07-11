@@ -2,7 +2,9 @@
 
     <section class="pb-12">
         <div class="pb-10 pt-36 lg:pt-[290px] relative overflow-hidden">
-            <div class="banner bg-[url('./../img/about/about-banner.jpg')] max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-50">
+            <!-- bg-[url('./../img/about/about-banner.jpg')] -->
+            <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-50">
+                <img :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`" class="absolute top-0 left-0 w-full h-full z-0" alt="">
                 <iframe class="scale-125" width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div class="bg-gradient-to-t from-blue-500 from-30% w-full h-52 absolute -z-10 bottom-0 left-0"></div>
@@ -30,9 +32,10 @@
                                         src="/assets/img/index/bgd-decor.png" alt="bgd">
                                     <img class="absolute top-0 left-0 -z-10 hidden md:block h-[-webkit-fill-available]"
                                         src="/assets/img/index/bgd-decor-2.png" alt="bgd">
-                                    <h2 class="text-sm text-white">
-                                        Стоимость <br class="hidden md:block"> <span class="font-bold md:text-xl">от
-                                            $70.000</span>
+                                    <h2 v-if="itemData?.price" class="text-sm text-white">
+                                        Стоимость <br class="hidden md:block"> <span class="font-bold md:text-xl">
+                                            от ${{ itemData?.price }}
+                                        </span>
                                     </h2>
                                     <p class="text-xs text-slate-50 opacity-60 text-center">
                                         *включая налоги
@@ -89,13 +92,11 @@
                         </div>
                         <h2 class="text-3xl text-white mt-5 md:text-[55px] lg:text-[65px] md:mt-12 md:max-w-[825px] md:text-nowrap">
                             <span class="font-bold">
-                                OM | Club House
+                                {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
                             </span>
                         </h2>
                         <p data-aos="fade-up" class="text-white text-sm max-w-64 md:max-w-[501px] md:text-base mt-3 md:mt-12">
-                            Премиум апартаменты в современном клубном
-                            доме. Погрузитесь в уникальную атмосферу роскоши
-                            и уюта в центре Чангу
+                            {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description }}
                         </p>
                         <button data-aos="fade-up" @click="handleOpenModal"
                             class="w-full max-w-56 md:max-w-72 px-5 py-4 block text-sm md:text-base bg-white rounded-xl text-center font-bold whitespace-nowrap text-blue-500 hover:text-white hover:bg-blue-400 my-10 transition-all md:mt-12 md:mb-32">
@@ -110,18 +111,18 @@
                             Посмотреть видео
                         </button>
                         <div data-aos="fade-up" class="flex gap-[10px] xl:gap-5 xl:mt-[100px] xl:grid-cols-3 xl:grid 3xl:grid-cols-[repeat(3,_240px)]">
-                            <div class="pb-[15px] border-b border-whiteOp-300 md:pb-[30px] hidden md:block w-full">
+                            <div v-if="itemData?.villa_count" class="pb-[15px] border-b border-whiteOp-300 md:pb-[30px] hidden md:block w-full">
                                 <h3 class="text-white text-2xl font-bold mb-[10px] md:mb-[15px] md:text-[40px]">
-                                    6
+                                    {{ itemData?.villa_count }}
                                 </h3>
                                 <p class="text-white text-sm md:text-base">
                                     вилл
                                 </p>
                             </div>
-                            <div class="pb-[15px] border-b border-whiteOp-300 md:pb-[30px] w-full md:order-1">
+                            <div v-if="itemData?.roi_procent" class="pb-[15px] border-b border-whiteOp-300 md:pb-[30px] w-full md:order-1">
                                 <h3
                                     class="flex items-center gap-2 md:gap-[10px] text-blue-400 text-2xl font-bold mb-[10px] md:mb-[15px] md:text-[40px]">
-                                    17%
+                                    {{ itemData?.roi_procent }}%
                                     <img src="/assets/img/icons/about-banner-A-ic.svg"
                                         class="max-w-[20px] md:max-w-[30px]" alt="ic">
                                 </h3>
@@ -129,9 +130,9 @@
                                     прогнозируемый <br class="md:hidden">ROI
                                 </p>
                             </div>
-                            <div class="pb-[15px] border-b border-whiteOp-300 md:pb-[30px] w-full">
+                            <div v-if="itemData?.apartments_count" class="pb-[15px] border-b border-whiteOp-300 md:pb-[30px] w-full">
                                 <h3 class="text-white text-2xl font-bold mb-[10px] md:mb-[15px] md:text-[40px]">
-                                    32
+                                    {{ itemData?.apartments_count }}
                                 </h3>
                                 <p class="text-white text-sm md:text-base">
                                     апартамента
@@ -148,6 +149,9 @@
 
 <script setup>
 const modalsStore = useModalsStore()
+
+const langStore = useLangStore()
+const {itemData} = defineProps(['itemData'])
 
 const handleOpenModal = () => {
     modalsStore.addModal("presentation")

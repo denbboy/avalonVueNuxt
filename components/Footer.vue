@@ -3,7 +3,7 @@
         <div class="container">
 
             <div class="xl:flex xl:items-center gap-5 justify-between md:mb-24">
-                <img src="/assets/img/index/a-footer.png" class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph">
+                <img :src="`https://avalon-panel.sonisapps.com/assets/${toolkitStore.settings.footer_img}`" class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph">
 
                 <!-- <div class="logo-clip-path hidden lg:block">
                     <video loop class="w-[379px] h-[392px] object-cover" muted autoplay
