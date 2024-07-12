@@ -71,6 +71,11 @@ body {
     background: #0A4A7F;
 }
 
+.swiper-sales .swiper-slide{
+    height: auto;
+    
+}
+
 .swiper-pagination-bullet:after {
     content: "";
     background: #fff;

@@ -4,49 +4,49 @@
             <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
         </div>
         <div class="container relative z-10">
-            <h2 data-aos="fade-up" class="font-bold text-white text-3xl mb-8 md:mb-12 md:text-center md:text-[56px]">
+            <h2 data-aos="fade-up" class="font-bold text-white text-3xl mb-8 md:mb-12 md:text-center md:text-[45px] 3xl:md:text-[56px]">
                 Что входит в стоимость
             </h2>
 
             <div data-aos="fade-up" class="md:grid grid-cols-3 gap-5">
 
                 <div
-                    class="flex items-center gap-5 py-7 border-t border-whiteOp-300 xl:gap-7 xl:py-14 xl:px-10 xl:border xl:rounded-2xl">
+                    class="flex items-center gap-5 py-7 border-t border-whiteOp-300 xl:gap-7 xl:min-h-[180px] xl:px-10 xl:border xl:rounded-2xl">
                     <img src="/assets/img/about/cost-ic-1.svg" class="max-w-[40px] md:max-w-none" alt="ic">
                     <p class="text-white text-sm md:text-base">
                         Полное юридическое сопровождение
                     </p>
                 </div>
                 <div
-                    class="flex items-center gap-5 py-7 border-t border-whiteOp-300 xl:gap-7 xl:py-14 xl:px-10 xl:border xl:rounded-2xl">
+                    class="flex items-center gap-5 py-7 border-t border-whiteOp-300 xl:gap-7 xl:min-h-[180px] xl:px-10 xl:border xl:rounded-2xl">
                     <img src="/assets/img/about/cost-ic-2.svg" class="max-w-[40px] md:max-w-none" alt="ic">
                     <p class="text-white text-sm md:text-base">
                         Проектирование и разработка дизайн проектов
                     </p>
                 </div>
                 <div
-                    class="flex items-center gap-5 py-7 border-t border-whiteOp-300 xl:gap-7 xl:py-14 xl:px-10 xl:border xl:rounded-2xl">
+                    class="flex items-center gap-5 py-7 border-t border-whiteOp-300 xl:gap-7 xl:min-h-[180px] xl:px-10 xl:border xl:rounded-2xl">
                     <img src="/assets/img/about/cost-ic-3.svg" class="max-w-[40px] md:max-w-none" alt="ic">
                     <p class="text-white text-sm md:text-base">
                         Строительство и технический надзор обьекта
                     </p>
                 </div>
                 <div
-                    class="flex items-center gap-5 py-7 border-t md:border-b border-whiteOp-300 xl:gap-7 xl:py-14 xl:px-10 xl:border xl:rounded-2xl">
+                    class="flex items-center gap-5 py-7 border-t md:border-b border-whiteOp-300 xl:gap-7 xl:min-h-[180px] xl:px-10 xl:border xl:rounded-2xl">
                     <img src="/assets/img/about/cost-ic-4.svg" class="max-w-[40px] md:max-w-none" alt="ic">
                     <p class="text-white text-sm md:text-base">
                         Внутренняя отделка и мебелирование
                     </p>
                 </div>
                 <div
-                    class="flex items-center gap-5 py-7 border-t md:border-b border-whiteOp-300 xl:gap-7 xl:py-14 xl:px-10 xl:border xl:rounded-2xl">
+                    class="flex items-center gap-5 py-7 border-t md:border-b border-whiteOp-300 xl:gap-7 xl:min-h-[180px] xl:px-10 xl:border xl:rounded-2xl">
                     <img src="/assets/img/about/cost-ic-5.svg" class="max-w-[40px] md:max-w-none" alt="ic">
                     <p class="text-white text-sm md:text-base">
                         Разработка бизнес-плана по управлению объектом после сдачи
                     </p>
                 </div>
                 <div
-                    class="flex items-center gap-5 py-7 border-t border-b border-whiteOp-300 xl:gap-7 xl:py-14 xl:px-10 xl:border xl:rounded-2xl">
+                    class="flex items-center gap-5 py-7 border-t border-b border-whiteOp-300 xl:gap-7 xl:min-h-[180px] xl:px-10 xl:border xl:rounded-2xl">
                     <img src="/assets/img/about/cost-ic-6.svg" class="max-w-[40px] md:max-w-none" alt="ic">
                     <p class="text-white text-sm md:text-base">
                         Консультирование по открытию компании, расчетного счета, рабочих виз
