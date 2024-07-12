@@ -8,8 +8,7 @@
         </Parallaxy>
         <div class="container">
 
-            <PagesProjectApartmentsItem id="1" />
-            <PagesProjectApartmentsItem id="2" />
+            <PagesProjectApartmentsItem v-for="item in apartments" :key="item.id" :itemData="item" />
 
         </div>
     </section>
@@ -17,5 +16,8 @@
 
 <script setup>
 import Parallaxy from '@lucien144/vue3-parallaxy';
+
+const {apartments} = defineProps(['apartments'])
+
 </script>
 

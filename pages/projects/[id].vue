@@ -6,17 +6,17 @@
 
     <PagesProjectAbout />
 
-    <PagesProjectGoogleMap />
+    <PagesProjectGoogleMap :itemData="itemData" />
 
     <PagesProjectFeatures />
 
-    <PagesProjectApartments />
+    <PagesProjectApartments :apartments="itemData.apartments" />
 
     <PagesProjectInclusions />
 
     <PagesMainContacts />
 
-    <PagesProject3D />
+    <PagesProject3D :apartments="itemData.apartments" />
 
     <PagesProjectForecast />
 
@@ -48,6 +48,7 @@ export default {
 <script setup>
 const { getItems } = useDirectusItems();
 const router = useRoute();
+const projectsStore = useProjectsStore();
 
 const itemData = ref({});
 
@@ -56,11 +57,12 @@ const fetchProjects = async () => {
         const items = await getItems({
             collection: `Project/${router.params.id}`,
             params: {
-                fields: '*,translations.*,gallery.*,apartments.*'
+                fields: '*,translations.*,gallery.*,apartments.*.*,blocks.Block_id.*.*.*.*.*'
             },
         });
 
         console.log(items);
+        projectsStore.setCurrentProject(items);
         itemData.value = items;
     } catch (e) {
         console.error('Error fetching items:', e);
