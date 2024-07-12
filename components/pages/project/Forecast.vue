@@ -30,9 +30,9 @@
                                 апартаменты
                             </h2>
 
-                            <div class="xl:flex xl:gap-5">
+                            <div class="xl:flex items-stretch xl:gap-5">
                                 <div
-                                    class="p-[15px] border border-whiteOp-300 rounded-[15px] mb-[10px] md:p-[30px] w-full lg:max-w-[320px] lg:mb-0">
+                                    class="p-[15px] border border-whiteOp-300 rounded-[15px] mb-[10px] xl:pt-[30px] 3xl:p-[30px] w-full lg:max-w-[320px] xl:mb-0">
                                     <div
                                         class="flex gap-3 items-center mb-[10px] md:flex-col md:items-start md:gap-0 md:mb-[15px]">
                                         <h3
@@ -48,7 +48,7 @@
                                     </p>
                                 </div>
                                 <div
-                                    class="p-[15px] border border-whiteOp-300 rounded-[15px] mb-[10px] md:p-[30px] w-full lg:max-w-[320px] lg:mb-0">
+                                    class="p-[15px] border border-whiteOp-300 rounded-[15px] mb-[10px] xl:pt-[30px] 3xl:p-[30px] w-full lg:max-w-[320px] xl:mb-0">
                                     <div
                                         class="flex gap-3 items-center mb-[10px] md:flex-col md:items-start md:gap-0 md:mb-[15px]">
                                         <h3
@@ -65,7 +65,7 @@
                                     </p>
                                 </div>
                                 <div
-                                    class="p-[15px] border border-whiteOp-300 rounded-[15px] md:p-[30px] w-full lg:max-w-[320px]">
+                                    class="p-[15px] border border-whiteOp-300 rounded-[15px] xl:pt-[30px] 3xl:p-[30px] w-full lg:max-w-[320px]">
                                     <div
                                         class="flex gap-3 items-center mb-[10px] md:flex-col md:items-start md:gap-0 md:mb-[15px]">
                                         <h3
@@ -76,7 +76,7 @@
                                             *включая <br class="md:hidden">налоги
                                         </span>
                                     </div>
-                                    <p class="text-white text-sm md:text-base">
+                                    <p class="text-white text-sm 3xl:text-base">
                                         Стоимость после
                                         окончания строительства
                                     </p>

@@ -129,7 +129,7 @@
                         src="/assets/img/career/img.jpg" alt="img">
                 </div>
                 <div data-aos="fade-up"
-                    class="border border-white/20 px-[48px] pt-[48px] pb-6 3xl:py-[80px] 3xl:px-[120px] rounded-[20px] overflow-hidden">
+                    class="border border-white/20 px-[20px] py-[60px] md:p-[48px] pb-6 3xl:py-[80px] 3xl:px-[120px] rounded-[20px] overflow-hidden">
                     <h3
                         class="text-xl w-fit md:text-2xl 3xl:text-3xl pr-4 text-white font-bold mb-[30px]  relative after:absolute after:top-2/4   after:w-[6px] after:h-[6px] md:after:w-[10px] md:after:h-[10px] after:bg-blue-400 before:w-screen before:left-[100%] before:h-[1px] before:bg-white/20 md:after:rounded-[4px] md:before:mt-[4px] before:mt-[2.5px] before:top-2/4  before:absolute after:left-full  after:rounded-sm">
                         Мы сопровождаем риелторов на всех этапах сотрудничества:
@@ -191,7 +191,7 @@
                         src="/assets/img/career/img.jpg" alt="img">
                 </div>
                 <div data-aos="fade-up"
-                    class="border border-white/20 px-[48px] pt-[48px] pb-6 3xl:py-[80px] 3xl:px-[120px] rounded-[20px] overflow-hidden">
+                    class="border border-white/20 px-[20px] py-[60px] md:p-[48px] pb-6 3xl:py-[80px] 3xl:px-[120px] rounded-[20px] overflow-hidden">
                     <h3
                          class="text-xl w-fit md:text-2xl 3xl:text-3xl pr-4 text-white font-bold mb-[30px]  relative after:absolute after:top-2/4   after:w-[6px] after:h-[6px] md:after:w-[10px] md:after:h-[10px] after:bg-blue-400 before:w-screen before:left-[100%] before:h-[1px] before:bg-white/20 md:after:rounded-[4px] md:before:mt-[4px] before:mt-[2.5px] before:top-2/4  before:absolute after:left-full  after:rounded-sm">
 

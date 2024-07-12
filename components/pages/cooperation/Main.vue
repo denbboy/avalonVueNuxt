@@ -10,7 +10,7 @@
 
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
             <h1 data-aos="fade-up"
-                class="text-[30px] md:text-[55px] lg:text-[65px] text-3xl text-white font-normalidad font-bold mb-5 md:mb-12">
+                class="text-[24px] 375:text-[30px] md:text-[55px] lg:text-[65px] text-3xl text-white font-normalidad font-bold mb-5 md:mb-12">
                 Сотрудничество
             </h1>
             <div data-aos="fade-up" data-aos-delay="100" class="justify-between items-center mb-10">
@@ -24,15 +24,15 @@
 
             <div data-aos="fade-up" class="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
                 <NuxtLink href="#broker"
-                    class=" w-full py-[30px] xl:px-2 xl:p-0 xl:border-none border border-white/50 rounded-[10px] xl:max-w-[375px]">
+                    class=" w-full py-[30px] px-2 xl:p-0 xl:border-none border border-white/50 rounded-[10px] xl:max-w-[375px]">
 
                     <div
                         class="flex items-center xl:translate-y-[32px] justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
                         <img class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-1.svg" alt="img">
                     </div>
-                    <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-3 xl:h-[172px] ">
+                    <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
-                            <p class="my-4 text-white font-bold text-center">Брокерам</p>
+                            <p class="my-4 text-white font-bold leading-none text-center">Брокерам</p>
                             <svg class="mx-auto" width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_670_12563)">
                                     <path
@@ -72,15 +72,15 @@
                     </div>
                 </NuxtLink>
                 <NuxtLink href="#agency"
-                    class=" w-full py-[30px] xl:px-2 xl:p-0 xl:border-none border border-white/50 rounded-[10px] xl:max-w-[375px]">
+                    class=" w-full py-[30px] px-2 xl:p-0 xl:border-none border border-white/50 rounded-[10px] xl:max-w-[375px]">
 
                     <div
                         class="flex items-center xl:translate-y-[32px] justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
                         <img class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-2.svg" alt="img">
                     </div>
-                    <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-3 xl:h-[172px] ">
+                    <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
-                            <p class="my-4 text-white font-bold text-center">Агентствам недвижимости</p>
+                            <p class="my-4 text-white leading-none font-bold text-center">Агентствам недвижимости</p>
                             <svg class="mx-auto" width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_670_12563)">
                                     <path
@@ -120,15 +120,15 @@
                     </div>
                 </NuxtLink>
                 <NuxtLink href="#marketing"
-                    class=" w-full py-[30px] xl:px-2 xl:p-0 xl:border-none border border-white/50 rounded-[10px] xl:max-w-[375px]">
+                    class=" w-full py-[30px] px-2 xl:p-0 xl:border-none border border-white/50 rounded-[10px] xl:max-w-[375px]">
 
                     <div
                         class="flex items-center xl:translate-y-[32px] justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
                         <img class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-3.svg" alt="img">
                     </div>
-                    <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-3 xl:h-[172px] ">
+                    <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
-                            <p class="my-4 text-white font-bold text-center">Маркетингу</p>
+                            <p class="my-4 text-white font-bold leading-none text-center">Маркетингу</p>
                             <svg class="mx-auto" width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_670_12563)">
                                     <path
@@ -165,15 +165,15 @@
                     </div>
                 </NuxtLink>
                 <NuxtLink href="#partners"
-                    class=" w-full py-[30px] xl:px-2 xl:p-0 xl:border-none border border-white/50 rounded-[10px] xl:max-w-[375px]">
+                    class=" w-full py-[30px] px-2 xl:p-0 xl:border-none border border-white/50 rounded-[10px] xl:max-w-[375px]">
 
                     <div
                         class="flex items-center xl:translate-y-[32px] justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
                         <img class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-4.svg" alt="img">
                     </div>
-                    <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-3 xl:h-[172px] ">
+                    <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
-                            <p class="my-4 text-white font-bold text-center">Партнерство</p>
+                            <p class="my-4 text-white font-bold leading-none text-center">Партнерство</p>
                             <svg class="mx-auto" width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_670_12563)">
                                     <path

@@ -78,8 +78,8 @@ const modules = {
 };
 
 const navigationConfig = {
-  nextEl: '.news-button-next',
-  prevEl: '.news-button-prev',
+  nextEl: '.articles-button-next',
+  prevEl: '.articles-button-prev',
 };
 
 const pagination = {

@@ -13,25 +13,25 @@
                 <div class="w-fit">
                     <div class="md:mb-[30px] md:pb-[30px] border-b border-white/10 mb-5 pb-5">
                         <a :href="toolkitStore?.settings?.soc_link_whats" target="_blank" class="flex items-center gap-4 mb-7 md:gap-4 lg:gap-5 group">
-                            <img src="/assets/img/index/whatsap.svg" class="md:w-[70px] md:h-[70px]" alt="ic">
+                            <img src="/assets/img/index/whatsap.svg" class="w-[60px] h-[60px] 3xl:w-[70px] 3xl:h-[70px]" alt="ic">
                             <div>
                                 <span class="text-white/40 text-sm md:text-base md:mb-2">
                                     WhatsApp 24/7 online
                                 </span>
                                 <p
-                                    class="text-white font-bold text-sm md:text-xl group-hover:text-blue-400 transition-all">
+                                    class="text-white font-bold text-sm md:text-[16px] 3xl:text-xl group-hover:text-blue-400 transition-all">
                                     {{ toolkitStore?.settings?.phone }}
                                 </p>
                             </div>
                         </a>
                         <a :href="`mailto:${toolkitStore?.settings?.email}`" target="_blank" class="flex items-center gap-4 md:gap-5 group">
-                            <img src="/assets/img/index/mail.svg" class="md:w-[70px] md:h-[70px]" alt="ic">
+                            <img src="/assets/img/index/mail.svg" class="w-[60px] h-[60px] 3xl:w-[70px] 3xl:h-[70px]" alt="ic">
                             <div>
                                 <span class="text-white/40 text-sm md:text-base md:mb-2">
                                     Email us
                                 </span>
                                 <p
-                                    class="text-white font-bold text-sm md:text-xl group-hover:text-blue-400 transition-all">
+                                    class="text-white font-bold text-sm md:text-[16px] 3xl:text-xl group-hover:text-blue-400 transition-all">
                                     {{ toolkitStore?.settings?.email }}
                                 </p>
                             </div>
@@ -80,7 +80,7 @@
                     class="flex xl:max-w-[381px] lg:max-w-full flex-col p-5 md:px-5 md:py-12 border border-whiteOp-300 rounded-2xl text-center lg:p-12 relative mb-14 md:mb-0">
                     <img src="/assets/img/index/dot-decor-2.png" class="absolute right-[-1px] bottom-[-1px] w-5 md:w-8"
                         alt="decor">
-                    <h2 class="font-bold text-white md:text-2xl mb-4 lg:text-3xl md:mb-7 leading-[100%]">
+                    <h2 class="font-bold text-white md:text-2xl mb-4 3xl:text-3xl md:mb-7 leading-[100%]">
                         Хотите узнать больше?
                     </h2>
                     <div class="flex flex-col gap-3 lg:gap-0">
@@ -109,7 +109,7 @@
                             Ваше сообщение успешно отправлено
                         </p>
 
-                        <button type="submit" class="white-button w-full leading-[110%] lg:mt-8 lg:py-6">
+                        <button type="submit" class="white-button w-full leading-[110%] lg:mt-8 h-[48px] py-2 xl:h-[64px]">
                             Отправить заявку
                         </button>
                     </div>
