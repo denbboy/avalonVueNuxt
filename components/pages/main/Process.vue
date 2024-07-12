@@ -241,7 +241,7 @@
                 <div
                     class="md:flex relative z-10 md:flex-row-reverse md:justify-between md:items-center md:pt-10 md:border-t md:border-whiteOp-300" data-aos="fade-up">
                     <button @click="handleOpenModal" type="button"
-                        class="w-full bg-white p-4 font-bold text-blue-500 text-sm rounded-xl transition-all hover:bg-blue-400 hover:text-white md:mb-0 md:py-[23px] md:text-base mb-5 md:max-w-[300px]">
+                        class="w-full bg-white p-4 font-bold text-blue-500 text-sm rounded-xl transition-all hover:bg-blue-400 hover:text-white md:mb-0 h-[48px] md:h-[70px] md:text-base mb-5 md:max-w-[300px]">
                         Получить консультацию
                     </button>
 
