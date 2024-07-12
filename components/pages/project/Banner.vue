@@ -4,7 +4,7 @@
         <div class="pb-10 pt-36 lg:pt-[290px] relative overflow-hidden">
             <!-- bg-[url('./../img/about/about-banner.jpg')] -->
             <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-50">
-                <img :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`" class="absolute top-0 left-0 w-full h-full z-0" alt="">
+                <img :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`" class="absolute top-0 left-0 w-full h-full object-cover z-0" alt="">
                 <iframe class="scale-125" width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div class="bg-gradient-to-t from-blue-500 from-30% w-full h-52 absolute -z-10 bottom-0 left-0"></div>
@@ -13,7 +13,7 @@
 
             <div class="container">
                 <div class="xl:flex xl:justify-between xl:gap-[20px]">
-                    <div>
+                    <div class=" w-full max-w-[650px]">
                         <div data-aos="fade-up" class="banner__item__head flex flex-wrap items-center gap-[10px] md:gap-5">
                             <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
@@ -27,7 +27,7 @@
                                 </p>
                             </div>
                             <div class="con order-1 md:order-none">
-                                <div class="relative px-5 py-3 w-fit md:text-center md:px-7">
+                                <div class="relative px-5 py-3 w-fit md:text-center md:px-7 min-w-[228px] md:min-w-0">
                                     <img class="absolute top-0 left-0 -z-10 md:hidden"
                                         src="/assets/img/index/bgd-decor.png" alt="bgd">
                                     <img class="absolute top-0 left-0 -z-10 hidden md:block h-[-webkit-fill-available]"
@@ -90,8 +90,8 @@
 
                             </div>
                         </div>
-                        <h2 class="text-3xl text-white mt-5 md:text-[55px] lg:text-[65px] md:mt-12 md:max-w-[825px] md:text-nowrap">
-                            <span class="font-bold">
+                        <h2 class="text-3xl text-white mt-5 md:text-[55px] lg:text-[65px] md:mt-12 md:max-w-[825px]">
+                            <span class="font-bold leading-[120%]">
                                 {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
                             </span>
                         </h2>
@@ -99,19 +99,19 @@
                             {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description }}
                         </p>
                         <button data-aos="fade-up" @click="handleOpenModal"
-                            class="w-full max-w-56 md:max-w-72 px-5 py-4 block text-sm md:text-base bg-white rounded-xl text-center font-bold whitespace-nowrap text-blue-500 hover:text-white hover:bg-blue-400 my-10 transition-all md:mt-12 md:mb-32">
+                            class="w-full max-w-56 md:max-w-72 px-5 py-4 block text-sm md:text-base bg-white rounded-xl text-center font-bold whitespace-nowrap text-blue-500 hover:text-white hover:bg-blue-400 my-10 transition-all ">
                             Скачать презентацию
                         </button>
                     </div>
-                    <div class="flex flex-col xl:items-end xl:mt-10 xl:w-full">
+                    <div class="flex flex-col xl:items-end justify-end xl:w-full">
                         <button data-aos="fade-up" @click="handlePlayVideo" type="button"
                             class="flex items-center mb-10 gap-5 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
                             <img src="/assets/img/icons/play-video-A.svg" class="max-w-[95px] xl:max-w-[165px]"
                                 alt="ic">
                             Посмотреть видео
                         </button>
-                        <div data-aos="fade-up" class="flex gap-[10px] xl:gap-5 xl:mt-[100px] xl:grid-cols-3 xl:grid 3xl:grid-cols-[repeat(3,_240px)]">
-                            <div v-if="itemData?.villa_count" class="pb-[15px] border-b border-whiteOp-300 md:pb-[30px] hidden md:block w-full">
+                        <div data-aos="fade-up" class=" w-full flex gap-[10px] xl:gap-5 xl:mt-[100px] xl:flex  xl:justify-end items-stretch">
+                            <div v-if="itemData?.villa_count" class="pb-[15px] flex-1 max-w-[240px] border-b border-whiteOp-300 md:pb-[30px] hidden md:block w-full">
                                 <h3 class="text-white text-2xl font-bold mb-[10px] md:mb-[15px] md:text-[40px]">
                                     {{ itemData?.villa_count }}
                                 </h3>
@@ -119,7 +119,7 @@
                                     вилл
                                 </p>
                             </div>
-                            <div v-if="itemData?.roi_procent" class="pb-[15px] border-b border-whiteOp-300 md:pb-[30px] w-full md:order-1">
+                            <div v-if="itemData?.roi_procent" class="pb-[15px] flex-1 max-w-[240px] border-b border-whiteOp-300 md:pb-[30px] w-full md:order-1">
                                 <h3
                                     class="flex items-center gap-2 md:gap-[10px] text-blue-400 text-2xl font-bold mb-[10px] md:mb-[15px] md:text-[40px]">
                                     {{ itemData?.roi_procent }}%
@@ -130,7 +130,7 @@
                                     прогнозируемый <br class="md:hidden">ROI
                                 </p>
                             </div>
-                            <div v-if="itemData?.apartments_count" class="pb-[15px] border-b border-whiteOp-300 md:pb-[30px] w-full">
+                            <div v-if="itemData?.apartments_count" class="pb-[15px] flex-1 max-w-[240px] border-b border-whiteOp-300 md:pb-[30px] w-full">
                                 <h3 class="text-white text-2xl font-bold mb-[10px] md:mb-[15px] md:text-[40px]">
                                     {{ itemData?.apartments_count }}
                                 </h3>
