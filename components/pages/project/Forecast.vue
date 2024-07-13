@@ -22,7 +22,7 @@
                 </div>
 
                 <Transition>
-                    <div v-if="type === 'option1'" class="bg-blue-600 rounded-2xl px-5 py-[30px] md:p-[30px] ">
+                    <div v-if="type === 'option1'" class="bg-blue-600 rounded-2xl px-5 py-[30px] md:p-[30px]  3xl:p-[50px]">
                         <div
                             class="xl:flex xl:items-center xl:justify-between xl:gap-[52px] pb-5 xl:pb-[50px] border-b border-whiteOp-300">
                             <h2 class="text-white font-bold text-2xl mb-5 md:text-2xl 3xl:text-3xl lg:mb-0">
@@ -88,54 +88,54 @@
                             <div class="text-white w-full flex flex-col gap-y-[15px]">
                                 <!-- Headers -->
                                 <div
-                                    class="font-bold justify-between w-full flex items-stretch  gap-x-[10px] md:gap-x-[20px] md:mb-[10px]">
+                                    class="font-bold justify-between w-full grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch  gap-x-[10px] md:gap-x-[20px] md:mb-[10px]">
                                     <div
-                                        class="w-[140px] md:w-[189px] lg:w-[243px] shrink-0  py-5 md:py-0">
+                                        class="w-full md:w-[189px] lg:w-full shrink-0  py-5 md:py-0">
                                         
                                     </div>
-                                    <div class="w-[124px] lg:w-[180px] shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                    <div class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>Стоимость <br>за сутки</p>
                                     </div>
-                                    <div class="w-[124px] lg:w-[180px] shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                    <div class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>Заполняемость</p>
                                     </div>
-                                    <div class="w-[124px] lg:w-[180px] shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                    <div class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>Месячная <br>выручка</p>
                                     </div>
-                                    <div class="w-[124px] lg:w-[180px] shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                    <div class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>Годовой <br>доход</p>
                                     </div>
-                                    <div class="w-[124px] lg:w-[180px] shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                    <div class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>Чистый доход (минус УК, минус налоги)</p>
                                     </div>
-                                    <div class="w-[124px] lg:w-[180px] shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                    <div class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>ROI (return on investment)</p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
-                                        class="w-[140px] md:w-[189px]  lg:w-[243px] shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
+                                        class=" w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
                                         <p class="font-bold text-wrap text-white text-xs md:text-[14px] md:text-end">
                                             Пессимистический <br>прогноз
                                         </p>
                                     </div>
                                     <div
-                                        class="w-[124px] lg:w-[180px] shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl md:leading-6">
                                             70 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="w-[124px] lg:w-[180px] shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
 
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             70 %
                                         </p>
                                     </div>
                                     <div
-                                        class="w-[124px] lg:w-[180px] shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
 
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             1 470 $
@@ -143,118 +143,118 @@
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="w-[124px] lg:w-[180px] shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             17 640 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="w-[124px] lg:w-[180px] shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             12 348 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="w-[124px] lg:w-[180px] shrink-0 whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             11 %
                                         </p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
-                                        class="w-[140px] md:w-[189px] lg:w-[243px] shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
+                                        class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
                                         <p class="font-bold text-white text-xs md:text-[14px] md:text-end">
                                             Реалистичный <br>прогноз
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             95 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             80 %
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             2 280 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             27 360 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             19 152 $
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             17 %
                                         </p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
-                                        class="w-[140px] md:w-[189px] lg:w-[243px] shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
+                                        class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
                                         <p class="font-bold text-white text-xs md:text-[14px] md:text-end">
                                             Оптичистичный <br>прогноз
                                         </p>
                                     </div>
                                     <div
-                                        class=" whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class=" whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             100 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             90 %
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             2 700 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             32 400 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             22 680 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             21 %
                                         </p>
@@ -329,54 +329,54 @@
                             <div class="text-white w-full flex flex-col gap-y-[15px]">
                                 <!-- Headers -->
                                 <div
-                                    class="font-bold justify-between w-full flex items-stretch  gap-x-[10px] md:gap-x-[20px] md:mb-[10px]">
+                                    class="font-bold justify-between w-full grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch  gap-x-[10px] md:gap-x-[20px] md:mb-[10px]">
                                     <div
-                                        class="w-[140px] md:w-[189px] lg:w-[243px] shrink-0  py-5 md:py-0">
+                                        class="w-full md:w-[189px] lg:w-full shrink-0  py-5 md:py-0">
                                         
                                     </div>
-                                    <div class="w-[124px] lg:w-[180px] shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                    <div class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>Стоимость <br>за сутки</p>
                                     </div>
-                                    <div class="w-[124px] lg:w-[180px] shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                    <div class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>Заполняемость</p>
                                     </div>
-                                    <div class="w-[124px] lg:w-[180px] shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                    <div class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>Месячная <br>выручка</p>
                                     </div>
-                                    <div class="w-[124px] lg:w-[180px] shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                    <div class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>Годовой <br>доход</p>
                                     </div>
-                                    <div class="w-[124px] lg:w-[180px] shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                    <div class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>Чистый доход (минус УК, минус налоги)</p>
                                     </div>
-                                    <div class="w-[124px] lg:w-[180px] shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                    <div class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>ROI (return on investment)</p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
-                                        class="w-[140px] md:w-[189px]  lg:w-[243px] shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
+                                        class=" w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
                                         <p class="font-bold text-wrap text-white text-xs md:text-[14px] md:text-end">
                                             Пессимистический <br>прогноз
                                         </p>
                                     </div>
                                     <div
-                                        class="w-[124px] lg:w-[180px] shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl md:leading-6">
                                             70 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="w-[124px] lg:w-[180px] shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
 
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             70 %
                                         </p>
                                     </div>
                                     <div
-                                        class="w-[124px] lg:w-[180px] shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
 
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             1 470 $
@@ -384,118 +384,118 @@
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="w-[124px] lg:w-[180px] shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             17 640 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="w-[124px] lg:w-[180px] shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             12 348 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="w-[124px] lg:w-[180px] shrink-0 whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             11 %
                                         </p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
-                                        class="w-[140px] md:w-[189px] lg:w-[243px] shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
+                                        class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
                                         <p class="font-bold text-white text-xs md:text-[14px] md:text-end">
                                             Реалистичный <br>прогноз
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             95 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             80 %
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             2 280 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             27 360 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             19 152 $
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             17 %
                                         </p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
-                                        class="w-[140px] md:w-[189px] lg:w-[243px] shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
+                                        class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
                                         <p class="font-bold text-white text-xs md:text-[14px] md:text-end">
                                             Оптичистичный <br>прогноз
                                         </p>
                                     </div>
                                     <div
-                                        class=" whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class=" whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             100 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             90 %
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             2 700 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             32 400 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             22 680 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">*включая налоги</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-[124px] lg:w-[180px] shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             21 %
                                         </p>
