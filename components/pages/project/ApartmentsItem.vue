@@ -15,11 +15,11 @@
         </div>
 
         <div>
-            <div class="mb-6 3xl:mb-12">
-                <h2 class="font-bold text-white text-2xl 375:text-3xl mb-[10px] md:text-[56px] md:mb-7">
+            <div class="mb-[21px] 3xl:mb-12">
+                <h2 class="font-bold text-white text-[24px] leading-none 375:text-[30px] mb-[10px] md:text-[40px] 3xl:text-[56px] md:mb-[21px] 3xl:mb-[31px]">
                     {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
                 </h2>
-                <p class="text-blue-400 text-lg md:text-xl flex items-center">
+                <p class="text-blue-400 leading-none text-[18px] md:text-[20px] flex items-center">
                     От {{ itemData?.price }}$
                     <span class="text-white/60 text-xs ml-2">
                         *включая налоги
@@ -27,9 +27,9 @@
                 </p>
             </div>
 
-            <div class="flex flex-col 375:flex-row items-center gap-5 mb-6 3xl:mb-12 max-w-[436px] w-full">
+            <div class="flex flex-col 375:flex-row items-center gap-5 mb-[30px] 3xl:mb-[50px] max-w-[436px] w-full">
                 <div class="border border-blue-400 p-4 rounded-2xl w-full">
-                    <h3 class="font-bold text-white mb-1 md:text-xl 3xl:mb-4 lg:leading-[100%]">
+                    <h3 class="font-bold text-white mb-1 leading-none md:text-[20px] 3xl:mb-4">
                         {{ itemData?.full_size }} м²
                     </h3>
                     <p class="text-white text-sm md:text-base lg:leading-[120%]">
@@ -37,7 +37,7 @@
                     </p>
                 </div>
                 <div class="border border-blue-400 p-4 max-w-[208px] rounded-2xl w-full">
-                    <h3 class="font-bold text-white mb-1 md:text-xl 3xl:mb-4 lg:leading-[100%]">
+                    <h3 class="font-bold text-white mb-1 leading-none md:text-[20px] 3xl:mb-4">
                         {{ itemData?.floors }}
                     </h3>
                     <p class="text-white text-sm md:text-base lg:leading-[120%]">
@@ -49,37 +49,37 @@
             <ul class="grid grid-cols-2 gap-5 max-w-[436px] w-full">
                 <li class="border-b border-whiteOp-300 max-w-[208px] pb-4">
                     <h3
-                        class="font-bold text-white mb-1 lg:leading-[100%] md:text-xl 3xl:mb-4 before:block before:h-[6px] before:w-[6px] lg:before:w-[10px] lg:before:h-[10px] lg:before:rounded before:rounded-sm before:bg-blue-400 flex items-center before:mr-2">
+                        class="font-bold text-white mb-1 leading-none md:text-[20px] 3xl:mb-4 before:block before:h-[6px] before:w-[6px] xl:before:w-[10px] xl:before:h-[10px] lg:before:rounded before:rounded-sm before:bg-blue-400 flex items-center before:mr-2">
                         {{ itemData?.room_living_size }} м²
                     </h3>
-                    <p class="text-white text-sm md:text-base lg:leading-[120%]">
+                    <p class="text-white text-sm md:text-base leading-[19px]">
                         площадь <br>прихожей
                     </p>
                 </li>
                 <li class="border-b border-whiteOp-300 max-w-[208px] pb-4">
                     <h3
-                        class="font-bold text-white mb-1 lg:leading-[100%] md:text-xl 3xl:mb-4 before:block before:h-[6px] before:w-[6px] lg:before:w-[10px] lg:before:h-[10px] lg:before:rounded before:rounded-sm before:bg-blue-400 flex items-center before:mr-2">
+                        class="font-bold text-white mb-1 leading-none md:text-[20px] 3xl:mb-4 before:block before:h-[6px] before:w-[6px] xl:before:w-[10px] xl:before:h-[10px] lg:before:rounded before:rounded-sm before:bg-blue-400 flex items-center before:mr-2">
                         {{ itemData?.room_kitchen_size }} м²
                     </h3>
-                    <p class="text-white text-sm md:text-base lg:leading-[120%]">
+                    <p class="text-white text-sm md:text-base leading-[19px]">
                         площадь <br>кухни
                     </p>
                 </li>
                 <li class="border-b border-whiteOp-300 max-w-[208px] pb-4">
                     <h3
-                        class="font-bold text-white mb-1 lg:leading-[100%] md:text-xl 3xl:mb-4 before:block before:h-[6px] before:w-[6px] lg:before:w-[10px] lg:before:h-[10px] lg:before:rounded before:rounded-sm before:bg-blue-400 flex items-center before:mr-2">
+                        class="font-bold text-white mb-1 leading-none md:text-[20px] 3xl:mb-4 before:block before:h-[6px] before:w-[6px] xl:before:w-[10px] xl:before:h-[10px] lg:before:rounded before:rounded-sm before:bg-blue-400 flex items-center before:mr-2">
                         {{ itemData?.room_bathroom_size }} м²
                     </h3>
-                    <p class="text-white text-sm md:text-base lg:leading-[120%]">
+                    <p class="text-white text-sm md:text-base leading-[19px]">
                         площадь <br>санузла
                     </p>
                 </li>
                 <li class="border-b border-whiteOp-300 max-w-[208px] pb-4">
                     <h3
-                        class="font-bold text-white mb-1 lg:leading-[100%] md:text-xl 3xl:mb-4 before:block before:h-[6px] before:w-[6px] lg:before:w-[10px] lg:before:h-[10px] lg:before:rounded before:rounded-sm before:bg-blue-400 flex items-center before:mr-2">
+                        class="font-bold text-white mb-1 leading-none md:text-[20px] 3xl:mb-4 before:block before:h-[6px] before:w-[6px] xl:before:w-[10px] xl:before:h-[10px] lg:before:rounded-[2px] before:rounded-sm before:bg-blue-400 flex items-center before:mr-2">
                         {{ itemData?.room_badroom_size }} м²
                     </h3>
-                    <p class="text-white text-sm md:text-base lg:leading-[120%]">
+                    <p class="text-white text-sm md:text-base leading-[19px]">
                         площадь спальни <br>/гостиной
                     </p>
                 </li>
@@ -100,14 +100,14 @@
                     {{ itemData?.roi }}%
                 </span>
             </div>
-            <div class="relative lg:max-w-[600px] lg:rounded-3xl rounded-2xl overflow-hidden">
+            <div class="relative xl:max-w-[456px] 3xl:max-w-[600px] xl:max-h-[403px] 3xl:max-h-[516px] lg:rounded-3xl rounded-2xl overflow-hidden">
 
                 <NuxtLink v-if="itemData?.video_360" :href="`#3d-object-${itemData?.id}`"
                     class="absolute top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
                     <img src="/assets/img/about/360.png" class="max-w-[95px]" alt="ph">
                 </NuxtLink>
 
-                <swiper class="mySwiper-about" :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }"
+                <swiper class="swiper-apartments w-full h-full" :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }"
                     :navigation="navigationConfig" :space-between="15">
 
                     <swiper-slide v-for="image in itemData?.gallery" :key="image?.id"

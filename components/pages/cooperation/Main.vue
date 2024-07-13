@@ -13,8 +13,8 @@
                 class="text-[24px] 375:text-[30px] md:text-[55px] lg:text-[65px] text-3xl text-white font-normalidad font-bold mb-5 md:mb-12">
                 Сотрудничество
             </h1>
-            <div data-aos="fade-up" data-aos-delay="100" class="justify-between items-center mb-10">
-                <p class="md:text-lg text-white text-sm mb-14 max-w-[548px]">
+            <div data-aos="fade-up" data-aos-delay="100" class="justify-between items-center mb-[30px] xl:mb-[81px] 3xl:mb-[60px]">
+                <p class="md:text-lg text-white text-sm  max-w-[548px]">
                     Ваше будущее жилье — в наших руках. Мы понимаем, как важны для вас шаги. Создаем уникальные
                     проекты
                     с

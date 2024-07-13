@@ -145,6 +145,10 @@ body {
     padding-bottom: 40px;
 }
 
+.swiper-apartments .swiper-wrapper {
+    padding-bottom: 0;
+}
+
 .swiper-pagination {
     display: flex;
     align-items: center;
