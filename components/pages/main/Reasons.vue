@@ -5,7 +5,7 @@
         <p class="text-white mb-2 text-sm md:text-base" data-aos="fade-up">
           Почему выбирают Бали?
         </p>
-        <h2 class="text-white font-bold text-2xl md:text-[45px] leading-[100%]" data-aos="fade-up">
+        <h2 class="text-white font-bold text-2xl md:text-[45px] 3xl:text-[56px] leading-[100%]" data-aos="fade-up">
           Остров Богов
         </h2>
       </div>
@@ -136,13 +136,13 @@
         <div
           class="flex items-center gap-4 py-7 px-5 border-b border-blue-400 md:border-r md:border-b-0 md:h-full md:px-8 md:w-full">
           <img src="/assets/img/index/cool.svg" class="w-16" alt="svg">
-          <span class="text-base text-white md:max-w-56 md:text-[14px]">
+          <span class="text-base text-white md:max-w-56 md:text-[14px] 3xl:text-[16px]">
             Инновационные проекты в ключевых локациях острова
           </span>
         </div>
         <div
           class="py-7 px-5 border-b border-blue-400 md:border-r md:border-b-0 md:h-full flex flex-col md:justify-center md:w-full">
-          <p class="text-white text-3xl font-bold mb-2 md:text-[30px]">
+          <p class="text-white text-3xl font-bold mb-2 md:text-[30px] 3xl:text-[40px]">
             От 20%
           </p>
           <span class="text-base text-white md:text-[14px]">
@@ -151,10 +151,10 @@
         </div>
         <div
           class="py-7 px-5 border-b border-blue-400 md:border-r md:border-b-0 md:h-full flex flex-col md:justify-center md:w-full">
-          <p class="text-white text-3xl font-bold mb-2 md:text-[30px]">
+          <p class="text-white text-3xl font-bold mb-2 md:text-[30px] 3xl:text-[40px]">
             0%
           </p>
-          <span class="text-base text-white md:text-[14px]">
+          <span class=" text-white text-[13px] 3xl:text-base">
             рассрочка
           </span>
         </div>
@@ -163,7 +163,7 @@
             ROI 17-22%
             <img src="/assets/img/index/A-decor.svg" class="ml-1 max-w-5 md:max-w-5 md:-mt-1 lg:max-w-7" alt="ic">
           </p>
-          <span class="text-base text-white md:text-[14px]">
+          <span class=" text-white text-[13px] 3xl:text-base">
             годовых
           </span>
         </div>

@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink :href="`/sales/${props?.item?.id}`" class="group block relative rounded-2xl transition-all">
+    <NuxtLink :href="`/sales/${props?.item?.id}`" class="group h-full block relative rounded-2xl transition-all">
         <div :class="{
             'border-white bg-white after:bg-blue-500': props.bgdColor === 'white',
             'border-blue-500 bg-blue-500': props.bgdColor === 'blue-500',
