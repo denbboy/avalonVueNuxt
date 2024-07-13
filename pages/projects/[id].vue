@@ -26,7 +26,7 @@
 
     <PagesMainProcess />
 
-    <PagesProjectOtherProjects />
+    <PagesProjectOtherProjects :projects="itemData?.relative_projects" />
 
     <PagesMainSales />
 
@@ -57,7 +57,21 @@ const fetchProjects = async () => {
         const items = await getItems({
             collection: `Project/${router.params.id}`,
             params: {
-                fields: '*,translations.*,gallery.*,apartments.*.*,blocks.Block_id.*.*.*.*.*'
+                // fields: '*,translations.*,gallery.*,apartments.*.*,blocks.Block_id.*.*.*.*.*,relative_projects.Project_id'
+                fields: [
+                    '*',
+                    'translations.*',
+                    'gallery.*',
+                    'apartments.*.*',
+                    'blocks.Block_id.*.*.*.*.*',
+                    // 'relative_projects.*.*.*',
+                    'relative_projects.related_Project_id.id',
+                    'relative_projects.related_Project_id.translations.*',
+                    'relative_projects.related_Project_id.logo',
+                    'relative_projects.related_Project_id.preview',
+                    'relative_projects.related_Project_id.price',
+                    'relative_projects.related_Project_id.roi_procent',
+                ]
             },
         });
 

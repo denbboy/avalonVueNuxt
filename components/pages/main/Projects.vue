@@ -19,89 +19,33 @@
                 </button>
             </div>
 
-            <div class="flex flex-col gap-5 flex-wrap items-center md:justify-between md:flex-row lg:flex-row md:flex-nowrap z-10 relative">
+            <div class="grid flex-col gap-5 grid-cols-3 flex-wrap items-center md:justify-between md:flex-row lg:flex-row z-10 relative">
 
-                <div class="" data-aos="fade-right" data-aos-duration="300">
-                    <div class="relative md:rounded-[14px] lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[500px] md:min-h-[400px] rounded-br-none md:aspect-[9/11]">
-                        <img src="/assets/img/discounts/image.jpg" class="opacity-50 h-full" alt="">
+                <div class="relative md:rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[500px] md:min-h-[400px]" v-for="item in projectsStore.projects" :key="item.id" >
+                    <div class="">
+                        <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}`" class="opacity-50 w-full absolute object-cover h-full" alt="">
                         <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
                         <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
                             <div class="block-bottom-point"></div>
                             <div class="flex justify-between mb-auto">
-                                <img class="w-[90px]" src="/assets/img/icons/icon-club.svg" alt="">
-                                <span class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
-                                    80% Продано
+                                <img class="w-[90px]" :src="`https://avalon-panel.sonisapps.com/assets/${item?.logo}`" alt="">
+                                <span v-if="item?.roi_procent" class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
+                                   {{ item?.roi_procent }}% Продано
                                 </span>
                             </div>
                             <div class="max-w-96">
-                                <h2 class="text-white font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">OM | Club House</h2>
-                                <p class="text-white text-xs md:text-[11px] lg:text-sm mb-5">Премиум апартаменты в современном клубном доме. Погрузитесь в уникальную атмосферу роскоши и уюта в центре Чангу.</p>
+                                <h2 class="text-white font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">
+                                    {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+                                </h2>
+                                <p class="text-white text-xs md:text-[11px] lg:text-sm mb-5">
+                                    {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description }}
+                                </p>
                                 <div class="flex items-center mb-5">
-                                    <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">от $120 000</strong>
+                                    <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">от ${{ String(item?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}</strong>
                                     <span class="text-white/60 text-xs hidden md:block">*включая налоги</span>
                                 </div>
                                 <div class="flex">
-                                    <NuxtLink href="/projects/123" class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-[12px] px-5 rounded-[10px] text-white font-bold text-sm md:text-xs lg:text-base mr-7">Подробнее</NuxtLink>
-                                    <div class="flex items-center">
-                                        <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
-                                        <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">Чангу</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="" data-aos="fade-right" data-aos-duration="300">
-                    <div class="relative md:rounded-[14px] lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[500px] md:min-h-[400px] rounded-br-none md:aspect-[9/11]">
-                        <img src="/assets/img/discounts/image.jpg" class="opacity-50 h-full" alt="">
-                        <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
-                        <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
-                            <div class="block-bottom-point"></div>
-                            <div class="flex justify-between mb-auto">
-                                <img class="w-[90px]" src="/assets/img/icons/icon-club.svg" alt="">
-                                <span class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
-                                    80% Продано
-                                </span>
-                            </div>
-                            <div class="max-w-96">
-                                <h2 class="text-white font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">OM | Club House</h2>
-                                <p class="text-white text-xs md:text-[11px] lg:text-sm mb-5">Премиум апартаменты в современном клубном доме. Погрузитесь в уникальную атмосферу роскоши и уюта в центре Чангу.</p>
-                                <div class="flex items-center mb-5">
-                                    <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">от $120 000</strong>
-                                    <span class="text-white/60 text-xs hidden md:block">*включая налоги</span>
-                                </div>
-                                <div class="flex">
-                                    <NuxtLink href="/projects/123" class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-[12px] px-5 rounded-[10px] text-white font-bold text-sm md:text-xs lg:text-base mr-7">Подробнее</NuxtLink>
-                                    <div class="flex items-center">
-                                        <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
-                                        <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">Чангу</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="" data-aos="fade-right" data-aos-duration="300">
-                    <div class="relative md:rounded-[14px] lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[500px] md:min-h-[400px] rounded-br-none md:aspect-[9/11]">
-                        <img src="/assets/img/discounts/image.jpg" class="opacity-50 h-full" alt="">
-                        <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
-                        <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
-                            <div class="block-bottom-point"></div>
-                            <div class="flex justify-between mb-auto">
-                                <img class="w-[90px]" src="/assets/img/icons/icon-club.svg" alt="">
-                                <span class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
-                                    80% Продано
-                                </span>
-                            </div>
-                            <div class="max-w-96">
-                                <h2 class="text-white font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">OM | Club House</h2>
-                                <p class="text-white text-xs md:text-[11px] lg:text-sm mb-5">Премиум апартаменты в современном клубном доме. Погрузитесь в уникальную атмосферу роскоши и уюта в центре Чангу.</p>
-                                <div class="flex items-center mb-5">
-                                    <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">от $120 000</strong>
-                                    <span class="text-white/60 text-xs hidden md:block">*включая налоги</span>
-                                </div>
-                                <div class="flex">
-                                    <NuxtLink href="/projects/123" class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-[12px] px-5 rounded-[10px] text-white font-bold text-sm md:text-xs lg:text-base mr-7">Подробнее</NuxtLink>
+                                    <NuxtLink :href="`/projects/${item?.id}`" class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-[12px] px-5 rounded-[10px] text-white font-bold text-sm md:text-xs lg:text-base mr-7">Подробнее</NuxtLink>
                                     <div class="flex items-center">
                                         <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
                                         <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">Чангу</span>
@@ -119,6 +63,8 @@
 
 <script setup>
 const modalsStore = useModalsStore()
+const projectsStore = useProjectsStore();
+const langStore = useLangStore();
 
 const handleOpenModal = () => {
     modalsStore.addModal("presentation")

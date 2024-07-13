@@ -4,159 +4,69 @@
             <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
         </div>
         <div class="container">
-            <h2 data-aos="fade-up" class="text-white text-3xl font-bold text-center md:text-[45px] lg:text-[56px] leading-[100%] mb-[30px] md:mb-[50px]">
+            <h2 data-aos="fade-up"
+                class="text-white text-3xl font-bold text-center md:text-[45px] lg:text-[56px] leading-[100%] mb-[30px] md:mb-[50px]">
                 Другие проекты
             </h2>
 
-            <div data-aos="fade-up" class="flex flex-col gap-5 items-center md:flex-wrap xl:flex-row xl:flex-nowrap z-10 relative">
+            <div
+                class="grid flex-col gap-5 grid-cols-3 flex-wrap items-center md:justify-between md:flex-row lg:flex-row z-10 relative">
 
-                <div class="max-w-[508px]">
-
-                    <div
-                        class="h-[500px] md:h-[422px] xl:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
-                        <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover" alt="">
+                <div class="relative md:rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[500px] md:min-h-[400px]"
+                    v-for="item in props.projects" :key="item.related_Project_id?.id">
+                    <div class="">
+                        <img :src="`https://avalon-panel.sonisapps.com/assets/${item.related_Project_id?.preview}`"
+                            class="opacity-50 w-full absolute object-cover h-full" alt="">
                         <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
-
-                        <div class="absolute top-0 left-0 w-full h-full p-5 3xl:p-7 flex flex-col">
+                        <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
                             <div class="block-bottom-point"></div>
-
                             <div class="flex justify-between mb-auto">
-                                <img class="w-[63px] 3xl:w-[90px]" src="/assets/img/icons/icon-club.svg" alt="">
-                                <span
-                                    class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-sm text-white">
-                                    80% Продано
+                                <img class="w-[90px]" :src="`https://avalon-panel.sonisapps.com/assets/${item.related_Project_id?.logo}`"
+                                    alt="">
+                                <span v-if="item.related_Project_id?.roi_procent"
+                                    class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
+                                    {{ item.related_Project_id?.roi_procent }}% Продано
                                 </span>
                             </div>
-                            <div class=" max-w-[270px] 3xl:max-w-[376px] flex flex-col gap-5 md:gap-[30px]">
-                                <h2 class="text-white font-bold text-2xl 3xl:text-3xl ">
-                                    OM | Club House
+                            <div class="max-w-96">
+                                <h2 class="text-white font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">
+                                    {{ item.related_Project_id?.translations?.filter(item =>
+                                        item?.languages_code?.includes(langStore.lang))[0]?.title }}
                                 </h2>
-                                <p class="text-white text-xs md:text-sm ">
-                                    Премиум апартаменты в современном клубном доме. Погрузитесь в уникальную атмосферу
-                                    роскоши и
-                                    уюта в центре Чангу.
+                                <p class="text-white text-xs md:text-[11px] lg:text-sm mb-5">
+                                    {{ item.related_Project_id?.translations?.filter(item =>
+                                        item?.languages_code?.includes(langStore.lang))[0]?.description }}
                                 </p>
-                                <div class="flex items-center ">
-                                    <strong class="text-xl 3xl:text-2xl text-white mr-[6px]">от $120 000</strong>
-                                    <span class="text-white/60 text-[12px] hidden md:block">*включая налоги</span>
+                                <div class="flex items-center mb-5">
+                                    <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">от ${{
+                                        String(item.related_Project_id?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}</strong>
+                                    <span class="text-white/60 text-xs hidden md:block">*включая налоги</span>
                                 </div>
-
                                 <div class="flex">
-                                    <NuxtLink href="/projects/asdwe3"
-                                        class="hover:bg-white h-[35px] 3xl:h-[50px] flex items-center justify-center text-center hover:text-blue-400 transition-all border-white border-[1px] py-1 px-7 rounded-[10px] text-white font-bold text-[12px] 3xl:text-[16px] mr-7">
-                                        Подробнее
-                                    </NuxtLink>
+                                    <NuxtLink :href="`/projects/${item.related_Project_id?.id}`"
+                                        class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-[12px] px-5 rounded-[10px] text-white font-bold text-sm md:text-xs lg:text-base mr-7">
+                                        Подробнее</NuxtLink>
                                     <div class="flex items-center">
                                         <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
-                                        <span class="ml-1 text-sm text-white">Чангу</span>
+                                        <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">Чангу</span>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
 
-                <div class="max-w-[508px]">
-
-                    <div
-                        class="h-[500px] md:h-[422px] xl:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
-                        <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover" alt="">
-                        <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
-
-                        <div class="absolute top-0 left-0 w-full h-full p-5 3xl:p-7 flex flex-col">
-                            <div class="block-bottom-point"></div>
-
-                            <div class="flex justify-between mb-auto">
-                                <img class="w-[63px] 3xl:w-[90px]" src="/assets/img/icons/icon-club.svg" alt="">
-                                <span
-                                    class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-sm text-white">
-                                    80% Продано
-                                </span>
-                            </div>
-                            <div class=" max-w-[270px] 3xl:max-w-[376px] flex flex-col gap-5 md:gap-[30px]">
-                                <h2 class="text-white font-bold text-2xl 3xl:text-3xl ">
-                                    OM | Club House
-                                </h2>
-                                <p class="text-white text-xs md:text-sm ">
-                                    Премиум апартаменты в современном клубном доме. Погрузитесь в уникальную атмосферу
-                                    роскоши и
-                                    уюта в центре Чангу.
-                                </p>
-                                <div class="flex items-center ">
-                                    <strong class="text-xl 3xl:text-2xl text-white mr-[6px]">от $120 000</strong>
-                                    <span class="text-white/60 text-[12px] hidden md:block">*включая налоги</span>
-                                </div>
-
-                                <div class="flex">
-                                    <NuxtLink href="/projects/asdwe3"
-                                        class="hover:bg-white h-[35px] 3xl:h-[50px] flex items-center justify-center text-center hover:text-blue-400 transition-all border-white border-[1px] py-1 px-7 rounded-[10px] text-white font-bold text-[12px] 3xl:text-[16px] mr-7">
-                                        Подробнее
-                                    </NuxtLink>
-                                    <div class="flex items-center">
-                                        <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
-                                        <span class="ml-1 text-sm text-white">Чангу</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="max-w-[508px]">
-
-                    <div
-                        class="h-[500px] md:h-[422px] xl:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
-                        <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover" alt="">
-                        <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
-
-                        <div class="absolute top-0 left-0 w-full h-full p-5 3xl:p-7 flex flex-col">
-                            <div class="block-bottom-point"></div>
-
-                            <div class="flex justify-between mb-auto">
-                                <img class="w-[63px] 3xl:w-[90px]" src="/assets/img/icons/icon-club.svg" alt="">
-                                <span
-                                    class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-sm text-white">
-                                    80% Продано
-                                </span>
-                            </div>
-                            <div class=" max-w-[270px] 3xl:max-w-[376px] flex flex-col gap-5 md:gap-[30px]">
-                                <h2 class="text-white font-bold text-2xl 3xl:text-3xl ">
-                                    OM | Club House
-                                </h2>
-                                <p class="text-white text-xs md:text-sm ">
-                                    Премиум апартаменты в современном клубном доме. Погрузитесь в уникальную атмосферу
-                                    роскоши и
-                                    уюта в центре Чангу.
-                                </p>
-                                <div class="flex items-center ">
-                                    <strong class="text-xl 3xl:text-2xl text-white mr-[6px]">от $120 000</strong>
-                                    <span class="text-white/60 text-[12px] hidden md:block">*включая налоги</span>
-                                </div>
-
-                                <div class="flex">
-                                    <NuxtLink href="/projects/asdwe3"
-                                        class="hover:bg-white h-[35px] 3xl:h-[50px] flex items-center justify-center text-center hover:text-blue-400 transition-all border-white border-[1px] py-1 px-7 rounded-[10px] text-white font-bold text-[12px] 3xl:text-[16px] mr-7">
-                                        Подробнее
-                                    </NuxtLink>
-                                    <div class="flex items-center">
-                                        <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
-                                        <span class="ml-1 text-sm text-white">Чангу</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </div>
     </section>
 </template>
 
 <script setup>
+const props = defineProps(['projects']);
+const langStore = useLangStore();
+
+watch(props, async (newValue) => {
+  console.log(newValue.projects);
+})
+
 </script>
