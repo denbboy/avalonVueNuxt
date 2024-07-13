@@ -5,20 +5,13 @@
         </div>
         <div class="container relative z-10 flex flex-col gap-[60px]">
             <div class="xl:flex xl:gap-7 justify-between xl:items-center">
-                <div data-aos="fade-right" class="md:max-w-[650px] lg:min-w-[420px]">
+                <div data-aos="fade-right" class="md:max-w-[650px] lg:min-w-[420px] [&>p]:text-white [&>p]:text-sm [&>p]:mb-4 [&>p]:md:text-xl [&>p]:md:mb-5">
                     <h2 class="font-bold text-white text-3xl mb-7 md:text-[45px] lg:text-[56px] md:mb-12">
-                        OM | Club House
+                        {{ props.itemInfo?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
                     </h2>
-                    <p class="text-white text-sm mb-4 md:text-xl md:mb-5">
-                        Уникальный проект, располагающийся на самой туристической улице Canggu - Batu Bolong.
-                    </p>
-                    <p class="text-white text-sm mb-4 md:text-xl md:mb-5">
-                        XO - это комплекс, объединяющий в себе двуспальные виллы, а также 4 этажа апартаментов. Комплекс
-                        оснащён rooftop, где можно перекусить в баре или посмотреть фильм под открытым небом.
-                    </p>
-                    <p class="text-white text-sm md:text-xl">
-                        XO Complex идеально подойдёт для тех, кто любит быть в эпицентре событий.
-                    </p>
+
+                    <div class="text-white text-sm mb-4 md:text-xl md:mb-5" v-html="props.itemInfo?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></div>
+
                 </div>
                 <div data-aos="fade-left" class="">
                     <img class="max-w-[591px]" src="/assets/img/about/club-img.png" alt="ph">
@@ -29,32 +22,29 @@
                 <li
                     class="py-8 px-5 w-full border-b border-blue-400 lg:border-blue-500 lg:py-12 lg:px-8 md:border-b-0 md:border-r">
                     <span class="block font-bold text-white text-2xl mb-2 md:text-[40px] md:mb-4">
-                        32
+                        {{ props.itemData?.filter(item => item.String_id.id === 115)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                     </span>
-                    <p class="text-white text-sm md:text-base">
-                        однокомнатных <br class="hidden lg:block">апартамента
+                    <p class="text-white text-sm md:text-base" v-html="props.itemData?.filter(item => item.String_id.id === 115)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
                     </p>
                 </li>
                 <li
                     class="py-8 px-5 w-full border-b border-blue-400 lg:border-blue-500 lg:py-12 lg:px-8 md:border-b-0 md:border-r">
                     <span class="block font-bold text-white text-2xl mb-2 md:text-[40px] md:mb-4">
-                        6
+                        {{ props.itemData?.filter(item => item.String_id.id === 116)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                     </span>
-                    <p class="text-white text-sm md:text-base">
-                        двуспальных <br class="hidden lg:block">вилл
+                    <p class="text-white text-sm md:text-base" v-html="props.itemData?.filter(item => item.String_id.id === 116)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
                     </p>
                 </li>
                 <li
                     class="py-8 px-5 w-full border-b border-blue-400 lg:border-blue-500 lg:py-12 lg:px-8 md:border-b-0 md:border-r">
                     <img src="/assets/img/about/camera.svg" class="max-w-[25px] mb-2 md:mb-4 md:max-w-[40px]" alt="ic">
-                    <p class="text-white text-sm md:text-base">
-                        кинотеатр под <br class="hidden lg:block">открытым небом
+                    <p class="text-white text-sm md:text-base" v-html="props.itemData?.filter(item => item.String_id.id === 117)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
                     </p>
                 </li>
                 <li class="py-8 px-5 w-full lg:py-12 lg:px-8">
                     <img src="/assets/img/about/whater.svg" class="max-w-[25px] mb-2 md:mb-4 md:max-w-[40px]" alt="ic">
-                    <p class="text-white text-sm md:text-base">
-                        rooftop с баром <br class="hidden lg:block">и видом на океан
+                    <p class="text-white text-sm md:text-base" v-html="props.itemData?.filter(item => item.String_id.id === 118)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
+                        
                     </p>
                 </li>
             </ul>
@@ -62,4 +52,15 @@
     </section>
 </template>
 
-<script setup></script>
+<script setup>
+const props = defineProps(['itemData', 'itemInfo']);
+const langStore = useLangStore();
+
+const strings = ref(null);
+
+
+watch(props, async (newValue) => {
+    console.log(props.itemData?.filter(item => item.String_id.id === 115)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title);
+    strings.value = newValue.itemData
+})
+</script>

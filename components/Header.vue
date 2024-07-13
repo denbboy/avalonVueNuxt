@@ -267,7 +267,7 @@ const isOpen = ref(false);
 
 const projectsStore = useProjectsStore();
 const toolkitStore = useToolkit();
-const langStore = useLangStore()
+const langStore = useLangStore();
 const route = useRoute();
 
 const handleOpenBurger = () => {

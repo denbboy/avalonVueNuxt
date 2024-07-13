@@ -4,7 +4,7 @@
 
     <PagesProjectGallery :gallery="itemData.gallery" />
 
-    <PagesProjectAbout />
+    <PagesProjectAbout :itemInfo="itemData" :itemData="itemData?.blocks?.filter(item => item?.Block_id?.title === 'OM | Club House')[0].Block_id?.strings" />
 
     <PagesProjectGoogleMap :itemData="itemData" />
 
@@ -64,7 +64,6 @@ const fetchProjects = async () => {
                     'gallery.*',
                     'apartments.*.*',
                     'blocks.Block_id.*.*.*.*.*',
-                    // 'relative_projects.*.*.*',
                     'relative_projects.related_Project_id.id',
                     'relative_projects.related_Project_id.translations.*',
                     'relative_projects.related_Project_id.logo',
