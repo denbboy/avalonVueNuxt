@@ -7,7 +7,7 @@
     <div class="container">
       <div class="bali_con grid grid-cols-2 gap-x-2 gap-y-7 md:grid-cols-3 md:gap-y-12 md:gap-x-5" data-aos="fade-up">
         <h2 class="font-bold text-white text-3xl md:text-[45px] md:leading-[100%] col-start-1 col-end-3 md:col-end-1">
-          Бали <br class="hidden md:block">в цифрах
+          {{ itemStrings?.filter(item => item.id === 130)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
         </h2>
         <!-- <div class="grid grid-cols-2 gap-x-2 gap-y-7"> -->
         <div class="border-b border-whiteOp-300 pb-5 md:pb-8">
@@ -20,39 +20,39 @@
           
           </span>
           <p class="text-white text-sm mt-2 md:text-[14px] md:mt-4">
-            Лучший остров в мире
+            {{ itemStrings?.filter(item => item.id === 132)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
           </p>
         </div>
         <div class="border-b border-whiteOp-300 pb-5 md:pb-8">
           <span class="font-bold text-white text-3xl md:text-[32px]">
-            300%
+            {{ itemStrings?.filter(item => item.id === 133)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
           </span>
           <p class="text-white text-sm mt-2 md:text-[14px] md:mt-4">
-            Рост стоимости земли с 2017 года
+            {{ itemStrings?.filter(item => item.id === 133)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
           </p>
         </div>
         <div class="border-b border-whiteOp-300 pb-5 md:pb-8">
           <span class="font-bold text-white text-3xl md:text-[32px]">
-            6,3 млн.
+            {{ itemStrings?.filter(item => item.id === 131)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
           </span>
           <p class="text-white text-sm mt-2 md:text-[14px] md:mt-4">
-            Туристов в 2023 году
+            {{ itemStrings?.filter(item => item.id === 131)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
           </p>
         </div>
         <div class="border-b border-whiteOp-300 pb-5 md:pb-8">
           <span class="font-bold text-white text-3xl md:text-[32px]">
-            75%
+            {{ itemStrings?.filter(item => item.id === 134)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
           </span>
           <p class="text-white text-sm mt-2 md:text-[14px] md:mt-4">
-            Средняя заполняемость в 2023 году
+            {{ itemStrings?.filter(item => item.id === 134)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
           </p>
         </div>
         <div class="border-b border-whiteOp-300 pb-5 md:pb-8">
           <span class="font-bold text-white text-3xl md:text-[32px]">
-            35%
+            {{ itemStrings?.filter(item => item.id === 135)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
           </span>
           <p class="text-white text-sm mt-2 md:text-[14px] md:mt-4">
-            Ежегодный рост спроса на недвижимость
+            {{ itemStrings?.filter(item => item.id === 135)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
           </p>
         </div>
         <img src="/assets/img/index/a-bali-decor.svg" class="m-auto md:hidden" alt="ic">
@@ -61,3 +61,35 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { useBlocksStore } from '~/stores/functions/blocks';
+
+const props = defineProps(['itemStrings'])
+
+const itemStrings = ref([]);
+const route = useRoute();
+const langStore = useLangStore();
+const blocksStore = useBlocksStore();
+
+watch([props, blocksStore], async ([newProps, newBlocksStore]) => {
+    if (window.location.href.includes('/projects/')) {
+        itemStrings.value = newProps.itemStrings;
+    } else {
+        const block = newBlocksStore.blocks?.find(item => item?.id === 30);
+        itemStrings.value = block?.strings || [];
+    }
+});
+
+watchEffect(() => {
+  const isProjectPage = route.path.includes('/projects/');
+  
+  if (isProjectPage) {
+    itemStrings.value = props.itemStrings ?? (blocksStore.blocks?.filter(item => item?.id === 30)[0]?.strings || []);
+  } else {
+    const block = blocksStore.blocks?.find(item => item?.id === 30);
+    itemStrings.value = block?.strings || [];
+  }
+});
+
+</script>

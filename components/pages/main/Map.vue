@@ -13,16 +13,17 @@
           <img src="/assets/img/index/map.svg" class="w-full" alt="ic">
         </div>
         <div class="md:absolute bottom-0 max-w-[752px] md:right-[160px] lg:right-[180px] mt-8">
-          <h2 class="text-white font-bold text-2xl md:text-[45px] lg:text-[56px] leading-[100%] mb-7 md:mb-[32px]" data-aos="fade-up">
-            Топовые локации <br class="hidden md:block"/> объектов
+          <h2 class="text-white font-bold text-2xl md:text-[45px] lg:text-[56px] leading-[100%] mb-7 md:mb-[32px]"
+            data-aos="fade-up">
+            {{ itemStrings?.filter(item => item.id === 2)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
           </h2>
-          <p class="text-white text-sm mb-5 md:text-xl leading-[140%] md:leading-[28px] md:mb-[16px] md:max-w-[600px]" data-aos="fade-up">
-            Наши апартаменты находятся в самом привлекательном районе Бали. Это идеальное место для
-            инвестирования в недвижимость, благодаря своему превосходному расположению и потенциалу для высокой
-            доходности
+          <p class="text-white text-sm mb-5 md:text-xl leading-[140%] md:leading-[28px] md:mb-[16px] md:max-w-[600px]"
+            data-aos="fade-up">
+            {{ itemStrings?.filter(item => item.id === 2)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
           </p>
           <ul
-            class="text-white flex gap-4 items-center text-base font-semibold justify-center md:text-xl md:justify-start" data-aos="fade-up">
+            class="text-white flex gap-4 items-center text-base font-semibold justify-center md:text-xl md:justify-start"
+            data-aos="fade-up">
             <li class="relative">
               <p
                 class="before:block before:rounded-[3px] before:w-[5px] before:h-[5px] md:before:w-[10px] md:before:h-[10px] before:border-blue-400 before:bg-transparent before:border before:absolute before:right-0 before:top-[50%] before:translate-y-[-50%] pr-6">
@@ -46,3 +47,28 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { useBlocksStore } from '~/stores/functions/blocks';
+
+const blocksStore = useBlocksStore();
+const itemStrings = ref([]);
+const route = useRoute();
+const langStore = useLangStore();
+
+watch(blocksStore, async (newValue) => {
+  itemStrings.value = newValue.blocks?.filter(item => item?.id === 4)[0]?.strings
+})
+
+watchEffect(() => {
+  const isProjectPage = route.path.includes('/projects/');
+  
+  if (isProjectPage) {
+    itemStrings.value = props.itemStrings ?? (blocksStore.blocks?.filter(item => item?.id === 4)[0]?.strings || []);
+  } else {
+    const block = blocksStore.blocks?.find(item => item?.id === 4);
+    itemStrings.value = block?.strings || [];
+  }
+});
+
+</script>

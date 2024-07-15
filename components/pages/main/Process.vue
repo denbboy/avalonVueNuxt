@@ -28,14 +28,11 @@
 
                 <div class="mb-7 md:flex md:items-center md:mb-[50px] relative z-10">
 
-                    <h2
-                        class="font-bold text-white text-3xl mb-7 md:text-[45px] md:leading-[45px] lg:text-[56px] lg:leading-[56px] md:text-left md:m-0" data-aos="fade-up">
-                        Как просходит <br class="hidden md:block"> процесс покупки
+                    <h2 class="font-bold text-white text-3xl mb-7 md:text-[45px] md:leading-[45px] lg:text-[56px] lg:leading-[56px] md:text-left md:m-0" data-aos="fade-up">
+                        {{ itemStrings?.filter(item => item.id === 136)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                     </h2>
                     <p class="text-white/60 opacity-50 text-sm md:text-sm lg:text-base md:text-left md:ml-auto md:max-w-[400px]" data-aos="fade-up">
-                        Для того, чтобы приобрести недвижимость, вам не обязательно прилетать на Бали, многие сделки
-                        теперь
-                        происходят дистанционно
+                        {{ itemStrings?.filter(item => item.id === 136)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
                     </p>
                 </div>
 
@@ -61,7 +58,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                Выбор и бронирование апартаментов
+                                {{ itemStrings?.filter(item => item.id === 138)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -80,7 +77,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                Подписание меморандума о взаимопонимании
+                                {{ itemStrings?.filter(item => item.id === 139)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -99,7 +96,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                Оплата первого взноса 20%
+                                {{ itemStrings?.filter(item => item.id === 140)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -118,7 +115,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                Беспроцентные платежи на 12 месяцев
+                                {{ itemStrings?.filter(item => item.id === 141)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -137,8 +134,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                Привлечение арендаторов
-                                за счет собственной управляющей компании
+                                {{ itemStrings?.filter(item => item.id === 142)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -152,13 +148,12 @@
                                 <div
                                     class=" bg-blue-400 min-w-[39px] h-[39px] flex items-center justify-center rounded-xl z-[3] md:w-full md:h-full md:rounded-2xl">
                                     <span class="text-white font-bold text-xs lg:text-lg">
-                                        6
+                                        10
                                     </span>
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                Ввод здания я в эксплуатацию
-                                1 июня 2024 года
+                                {{ itemStrings?.filter(item => item.id === 147)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -172,12 +167,12 @@
                                 <div
                                     class=" bg-blue-400 min-w-[42px] h-[42px] flex items-center justify-center rounded-xl after:block z-[3] md:w-full md:h-full md:rounded-2xl">
                                     <span class="text-white font-bold text-xs lg:text-lg">
-                                        7
+                                        9
                                     </span>
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                Регистрация договора аренды на 25 лет с возможностью продления на 25 лет
+                                {{ itemStrings?.filter(item => item.id === 146)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -196,7 +191,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                Завершения строительных и отделочных работ
+                                {{ itemStrings?.filter(item => item.id === 145)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -210,12 +205,12 @@
                                 <div
                                     class=" bg-blue-400 min-w-[48px] h-[48px] flex items-center justify-center rounded-xl z-[3] md:w-full md:h-full md:rounded-2xl">
                                     <span class="text-white font-bold text-xs lg:text-lg">
-                                        9
+                                        7
                                     </span>
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                Сдача в аренду вашей собственности
+                                {{ itemStrings?.filter(item => item.id === 144)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -227,12 +222,12 @@
                                 <div
                                     class=" bg-blue-400 min-w-[50px] h-[50px] flex items-center justify-center rounded-2xl md:w-full md:h-full md:rounded-2xl z-[3]">
                                     <span class="text-white font-bold text-xs lg:text-lg">
-                                        10
+                                        6
                                     </span>
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                Ежемесячная выплата прибыли инвесторам
+                                {{ itemStrings?.filter(item => item.id === 143)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                             </p>
                         </li>
                     </ul>
@@ -249,10 +244,10 @@
                         <img src="/assets/img/index/a-decor-op.svg" class="hidden md:block md:max-w-[112px]" alt="decor">
                         <div class="pt-5 border-t border-whiteOp-300 md:border-none md:pt-0 md:max-w-[526px]">
                             <p class="text-white opacity-50 text-sm mb-5 md:text-[14px] md:text-left">
-                                По мере развития комплекса, реальная стоимость недвижимости увеличивается.
+                                {{ itemStrings?.filter(item => item.id === 148)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                             </p>
                             <p class="text-white opacity-50 text-sm md:text-[14px] md:text-left">
-                                У нас есть возможность перепродать недвижимость с прибылью на любом этапе.
+                                {{ itemStrings?.filter(item => item.id === 149)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                             </p>
                         </div>
                     </div>
@@ -266,12 +261,10 @@
                         class="block animate-ping w-[170px] h-[170px] md:w-[244px] md:h-[244px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]">
                     </div>
                     <b class="block font-bold text-white md:text-[45px] lg:text-[60px] leading-[100%] text-[40px] md:mb-3">
-                        -5%
+                        {{ itemStrings?.filter(item => item.id === 137)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                     </b>
                     <span class="text-white text-xs lg:text-base max-w-[130px]">
-                        Скидка
-                        при единоразовой
-                        100% оплате
+                        {{ itemStrings?.filter(item => item.id === 137)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
                     </span>
                 </div>
             </div>
@@ -281,10 +274,43 @@
 
 <script setup>
 import Parallaxy from '@lucien144/vue3-parallaxy';
+import { useBlocksStore } from '~/stores/functions/blocks';
 
 const modalsStore = useModalsStore()
+const langStore = useLangStore()
+const blocksStore = useBlocksStore()
 
 const handleOpenModal = () => {
     modalsStore.addModal("presentation")
 }
+
+const props = defineProps(['itemStrings'])
+
+const route = useRoute();
+const itemStrings = ref([]);
+
+watchEffect(() => {
+  const isProjectPage = route.path.includes('/projects/');
+  
+  if (isProjectPage) {
+    itemStrings.value = props.itemStrings ?? (blocksStore.blocks?.filter(item => item?.id === 31)[0]?.strings || []);
+  } else {
+    const block = blocksStore.blocks?.find(item => item?.id === 31);
+    itemStrings.value = block?.strings || [];
+  }
+});
+
+watch(props, async (newValue) => {
+
+    if (window.location.href.includes('/projects/')) {
+        itemStrings.value = newValue.itemStrings ?? newValue.blocks?.filter(item => item?.id === 31)[0];
+    }
+});
+watch(blocksStore, async (newValue) => {
+
+    if (!window.location.href.includes('/projects/')) {
+        const block = newValue.blocks?.filter(item => item?.id === 31)[0];
+        itemStrings.value = block?.strings || [];
+    }
+});
 </script>

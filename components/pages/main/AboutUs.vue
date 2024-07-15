@@ -20,43 +20,41 @@
 
           <div class="mb-8 md:mb-9" data-aos="fade-up">
             <h3 class="font-bold text-white text-base mb-4 md:text-[20px] lg:text-[26px] md:mb-6 md:leading-[28px]">
-              Наша сила в нашей коллективной <br class="hidden md:block">приверженности к совершенству
+              {{ itemStrings?.filter(item => item.id === 37)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
             </h3>
             <p class="text-white md:text-sm lg:text-lg md:leading-[20px]">
-              Мы действительно верим в силу коллективной приверженности к совершенству. Мы стремимся создавать
-              качественные, эстетически привлекательные и функциональные строительные проекты, которые
-              превосходят ожидания наших клиентов.
+              {{ itemStrings?.filter(item => item.id === 37)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
             </p>
           </div>
 
           <ul class="grid grid-cols-2 gap-y-8 gap-x-3 md:gap-x-5 md:gap-y-[32px]" data-aos="fade-up">
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
               <b class="font-bold text-white text-2xl mb-3 md:text-[32px] lg:text-[40px] md:mb-4 block">
-                С 2007 г.
+                {{ itemStrings?.filter(item => item.id === 38)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </b>
               <p class="text-white text-sm lg:text-base">
-                занимаемся строительством
+                {{ itemStrings?.filter(item => item.id === 38)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
               </p>
             </li>
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
               <b class="font-bold text-white text-2xl mb-3 md:text-[32px] lg:text-[40px] md:mb-4 block">
-                С 2019 г.
+                {{ itemStrings?.filter(item => item.id === 39)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </b>
               <p class="text-white text-sm lg:text-base">
-                строим на острове Бали
+                {{ itemStrings?.filter(item => item.id === 39)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
               </p>
             </li>
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
               <b class="font-bold text-white text-2xl mb-3 md:text-[32px] lg:text-[40px] md:mb-4 block">
-                100+
+                {{ itemStrings?.filter(item => item.id === 40)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </b>
               <p class="text-white text-sm lg:text-base">
-                реализованных объектов
+                {{ itemStrings?.filter(item => item.id === 40)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
               </p>
             </li>
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
               <b class="font-bold text-2xl mb-3 text-blue-400 md:text-[32px] lg:text-[40px] md:mb-4 flex items-center">
-                ROI 22,5%
+                {{ itemStrings?.filter(item => item.id === 41)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                 <svg width="30" height="31" viewBox="0 0 30 31" fill="none" class="ml-3 hidden md:block"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -66,7 +64,7 @@
 
               </b>
               <p class="text-white text-sm lg:text-base">
-                по уже построенным объектам
+                {{ itemStrings?.filter(item => item.id === 41)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
               </p>
             </li>
           </ul>
@@ -76,3 +74,27 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { useBlocksStore } from '~/stores/functions/blocks';
+
+const blocksStore = useBlocksStore();
+const itemStrings = ref([]);
+const route = useRoute();
+const langStore = useLangStore();
+
+watch(blocksStore, async (newValue) => {
+  itemStrings.value = newValue.blocks?.filter(item => item?.id === 8)[0]?.strings
+})
+
+watchEffect(() => {
+  const isProjectPage = route.path.includes('/projects/');
+  
+  if (isProjectPage) {
+    itemStrings.value = props.itemStrings ?? (blocksStore.blocks?.filter(item => item?.id === 8)[0]?.strings || []);
+  } else {
+    const block = blocksStore.blocks?.find(item => item?.id === 8);
+    itemStrings.value = block?.strings || [];
+  }
+});
+</script>

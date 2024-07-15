@@ -4,15 +4,15 @@
 
     <PagesProjectGallery :gallery="itemData.gallery" />
 
-    <PagesProjectAbout :itemInfo="itemData" :itemData="itemData?.blocks?.filter(item => item?.Block_id?.title === 'OM | Club House')[0].Block_id?.strings" />
+    <PagesProjectAbout :itemInfo="itemData" :itemData="itemData?.blocks?.filter(item => item?.Block_id?.title === 'OM | Club House')[0]?.Block_id?.strings" />
 
     <PagesProjectGoogleMap :itemData="itemData" />
 
-    <PagesProjectFeatures />
+    <PagesProjectFeatures :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 25)[0]?.Block_id?.strings" />
 
     <PagesProjectApartments :apartments="itemData.apartments" />
 
-    <PagesProjectInclusions />
+    <PagesProjectInclusions :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 28)[0]?.Block_id?.strings" />
 
     <PagesMainContacts />
 
@@ -20,15 +20,15 @@
 
     <PagesProjectForecast />
 
-    <PagesMainReasons />
+    <PagesMainReasons :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 29)[0]?.Block_id?.strings" />
 
-    <PagesMainNumbers />
+    <PagesMainNumbers :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 30)[0]?.Block_id?.strings" />
 
-    <PagesMainProcess />
+    <PagesMainProcess :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 31)[0]?.Block_id?.strings" />
 
     <PagesProjectOtherProjects :projects="itemData?.relative_projects" />
 
-    <PagesMainSales />
+    <PagesMainSales :list="itemData?.sales?.map(item => item.Sale_id)" />
 
     <PagesMainNews />
 
@@ -57,7 +57,6 @@ const fetchProjects = async () => {
         const items = await getItems({
             collection: `Project/${router.params.id}`,
             params: {
-                // fields: '*,translations.*,gallery.*,apartments.*.*,blocks.Block_id.*.*.*.*.*,relative_projects.Project_id'
                 fields: [
                     '*',
                     'translations.*',
@@ -70,11 +69,14 @@ const fetchProjects = async () => {
                     'relative_projects.related_Project_id.preview',
                     'relative_projects.related_Project_id.price',
                     'relative_projects.related_Project_id.roi_procent',
+                    'sales.Sale_id.translations.*',
+                    'sales.Sale_id.expired_date',
+                    'sales.Sale_id.preview',
+                    'sales.Sale_id.id',
                 ]
             },
         });
 
-        console.log(items);
         projectsStore.setCurrentProject(items);
         itemData.value = items;
     } catch (e) {

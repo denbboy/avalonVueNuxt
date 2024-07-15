@@ -68,7 +68,6 @@ const { getItems } = useDirectusItems();
 const langStore = useLangStore();
 
 const itemsList = ref([]);
-
 const fetchArticles = async () => {
   try {
     const items = await getItems({
@@ -78,13 +77,16 @@ const fetchArticles = async () => {
       },
     });
     itemsList.value = items;
-    console.log(items);
   } catch (e) {
     console.error('Error fetching items:', e);
   }
 };
-
 onMounted(fetchArticles);
+
+const props = defineProps(['list'])
+watch(props, async (newValue) => {
+  itemsList.value = newValue.list;
+})
 
 const navigationConfig = {
   nextEl: '.sales-button-next',

@@ -32,8 +32,6 @@ const props = defineProps({
     }
 })
 
-const langStore = useLangStore()
-
 const isOpen = ref(false)
 
 const handleOpen = () => {
@@ -41,6 +39,7 @@ const handleOpen = () => {
 }
 
 const modalsStore = useModalsStore()
+const langStore = useLangStore()
 
 const handleOpenModal = () => {
     modalsStore.addModal("presentation")

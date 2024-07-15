@@ -14,10 +14,12 @@ import { useRoute } from 'vue-router';
 import HeaderProject from '~/components/HeaderProject.vue';
 import { useToolkit } from './../stores/functions/toolkit';
 import { useProjectsStore } from './../stores/functions/projects';
+import { useBlocksStore } from './../stores/functions/blocks';
 
 const route = useRoute();
 const toolkitStore = useToolkit();
 const projectsStore = useProjectsStore();
+const blocksStore = useBlocksStore();
 const { getItems } = useDirectusItems();
 
 const fetchArticles = async () => {
@@ -44,12 +46,39 @@ const fetchProjects = async () => {
     });
     
     projectsStore.setProjects(items);
-    console.log(items);
   } catch (e) {
     console.error('Error fetching items:', e);
   }
 };
 onMounted(fetchProjects);
+
+
+const fetchBlocks = async () => {
+  // if(window.location.href.includes('/projects/')) return;
+
+  try {
+    const items = await getItems({
+      collection: "Block",
+      params: {
+        fields: [
+          '*',
+          'id',
+          'title',
+          'strings.id',
+          'strings.String_id.translations.description',
+          'strings.String_id.translations.id',
+          'strings.String_id.translations.title',
+          'strings.String_id.translations.languages_code.*',
+        ]
+      },
+    });
+    
+    blocksStore.setBlocks(items)
+  } catch (e) {
+    console.error('Error fetching items:', e);
+  }
+};
+onMounted(fetchBlocks);
 
 
 const isProjectHeader = ref(route.fullPath.includes('/projects/'));
