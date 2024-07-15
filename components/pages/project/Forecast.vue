@@ -264,7 +264,7 @@
                         </div>
                     </div>
 
-                    <div v-else-if="type === 'option2'" class="bg-blue-600 rounded-2xl px-5 py-[30px] md:p-[30px] ">
+                    <div v-else-if="type === 'option2'" class="bg-blue-600 rounded-2xl px-5 py-[30px] md:p-[30px]  3xl:p-[50px]">
                         <div
                             class="xl:flex xl:items-center xl:justify-between xl:gap-[52px] pb-5 xl:pb-[50px] border-b border-whiteOp-300">
                             <h2 class="text-white font-bold text-2xl mb-5 md:text-2xl 3xl:text-3xl lg:mb-0">
