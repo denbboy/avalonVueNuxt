@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
     <section class="md:pb-20 relative bg-blue-500 overflow-hidden">
         <div class="bg-gradient-to-t from-blue-500 from-60% lg:from-60%  w-full h-[2000px] absolute z-10"></div>
@@ -11,14 +8,11 @@
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
             <h1 data-aos="fade-up"
                 class="text-[24px] 375:text-[30px] md:text-[55px] lg:text-[65px] text-3xl text-white font-normalidad font-bold mb-5 md:mb-12">
-                Сотрудничество
+                {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
             </h1>
             <div data-aos="fade-up" data-aos-delay="100" class="justify-between items-center mb-[30px] xl:mb-[81px] 3xl:mb-[60px]">
                 <p class="md:text-lg text-white text-sm  max-w-[548px]">
-                    Ваше будущее жилье — в наших руках. Мы понимаем, как важны для вас шаги. Создаем уникальные
-                    проекты
-                    с
-                    вдохновением и заботой. Помещаем ваш бренд в современный мир.
+                    {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description }}
                 </p>
             </div>
 
@@ -220,3 +214,15 @@
         </div>
     </section>
 </template>
+
+<script setup>
+import { usePagesStore } from '~/stores/functions/pages';
+
+const pagesStore = usePagesStore();
+const langStore = useLangStore();
+const currentPageReqest = ref([]);
+
+watchEffect(() => {
+    currentPageReqest.value = pagesStore?.pagesList?.filter(item => item.slug === 'cooperation')[0]?.translations
+});
+</script>

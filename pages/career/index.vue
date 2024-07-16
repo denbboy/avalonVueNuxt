@@ -1,58 +1,15 @@
 <script setup>
-// const { getItems } = useDirectusItems();
-
-// const langStore = useLangStore()
-// let currentPageReqest = {};
-
-// const fetchArticles = async () => {
-//     try {
-//         const items = await getItems({
-//             collection: "Page",
-//             params: {
-//                 filter: {
-//                     slug: {
-//                         _eq: 'career',
-//                     },
-//                 },
-//                 fields: '*,translations.*'
-//             },
-//         });
-
-//         currentPageReqest = items[0].translations;
-//     } catch (e) { }
-// };
-
-// await fetchArticles()
-
-const { getItems } = useDirectusItems();
+import { usePagesStore } from './../stores/functions/pages';
+import { ref, watchEffect } from 'vue';
 
 const langStore = useLangStore();
-
+const pagesStore = usePagesStore();
 const currentPageReqest = ref([]);
 
-const fetchArticles = async () => {
-    try {
-        const items = await getItems({
-            collection: "Page",
-            params: {
-                filter: {
-                    slug: {
-                        _eq: 'career',
-                    },
-                },
-                fields: '*,translations.*'
-            },
-        });
+watchEffect(() => {
+    currentPageReqest.value = pagesStore?.pagesList?.filter(item => item.slug === 'career')[0]?.translations
+});
 
-        currentPageReqest.value = items[0]?.translations;
-    } catch (e) {
-        console.error('Error fetching items:', e);
-    }
-};
-
-console.log(currentPageReqest);
-
-onMounted(fetchArticles);
 </script>
 
 <template>
@@ -76,7 +33,8 @@ onMounted(fetchArticles);
             </h1>
             <div data-aos="fade-up" data-aos-delay="100" class="justify-between items-center mb-10 lg:mb-48">
                 <p class="md:text-lg text-white text-sm mb-7 max-w-[548px]">
-                    {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description }}
+                    {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description
+                    }}
                 </p>
 
                 <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">

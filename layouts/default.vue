@@ -15,11 +15,13 @@ import HeaderProject from '~/components/HeaderProject.vue';
 import { useToolkit } from './../stores/functions/toolkit';
 import { useProjectsStore } from './../stores/functions/projects';
 import { useBlocksStore } from './../stores/functions/blocks';
+import { usePagesStore } from '~/stores/functions/pages';
 
 const route = useRoute();
 const toolkitStore = useToolkit();
 const projectsStore = useProjectsStore();
 const blocksStore = useBlocksStore();
+const pagesStore = usePagesStore();
 const { getItems } = useDirectusItems();
 
 const fetchArticles = async () => {
@@ -53,9 +55,24 @@ const fetchProjects = async () => {
 onMounted(fetchProjects);
 
 
-const fetchBlocks = async () => {
-  // if(window.location.href.includes('/projects/')) return;
+const fetchPages = async () => {
+    try {
+        const items = await getItems({
+            collection: "Page",
+            params: {
+                fields: '*,translations.*'
+            },
+        });
 
+        pagesStore.setPages(items)
+    } catch (e) {
+        console.error('Error fetching items:', e);
+    }
+};
+onMounted(fetchPages);
+
+
+const fetchBlocks = async () => {
   try {
     const items = await getItems({
       collection: "Block",

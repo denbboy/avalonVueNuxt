@@ -3,7 +3,8 @@
         <div class="container">
 
             <div class="xl:flex xl:items-center gap-5 justify-between md:mb-24">
-                <img :src="`https://avalon-panel.sonisapps.com/assets/${toolkitStore.settings.footer_img}`" class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph">
+                <img :src="`https://avalon-panel.sonisapps.com/assets/${toolkitStore?.settings?.footer_img}`"
+                    class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph">
 
                 <!-- <div class="logo-clip-path hidden lg:block">
                     <video loop class="w-[379px] h-[392px] object-cover" muted autoplay
@@ -12,8 +13,10 @@
 
                 <div class="w-fit">
                     <div class="md:mb-[30px] md:pb-[30px] border-b border-white/10 mb-5 pb-5">
-                        <a :href="toolkitStore?.settings?.soc_link_whats" target="_blank" class="flex items-center gap-4 mb-7 md:gap-4 lg:gap-5 group">
-                            <img src="/assets/img/index/whatsap.svg" class="w-[60px] h-[60px] 3xl:w-[70px] 3xl:h-[70px]" alt="ic">
+                        <a :href="toolkitStore?.settings?.soc_link_whats" target="_blank"
+                            class="flex items-center gap-4 mb-7 md:gap-4 lg:gap-5 group">
+                            <img src="/assets/img/index/whatsap.svg" class="w-[60px] h-[60px] 3xl:w-[70px] 3xl:h-[70px]"
+                                alt="ic">
                             <div>
                                 <span class="text-white/40 text-sm md:text-base md:mb-2">
                                     WhatsApp 24/7 online
@@ -24,8 +27,10 @@
                                 </p>
                             </div>
                         </a>
-                        <a :href="`mailto:${toolkitStore?.settings?.email}`" target="_blank" class="flex items-center gap-4 md:gap-5 group">
-                            <img src="/assets/img/index/mail.svg" class="w-[60px] h-[60px] 3xl:w-[70px] 3xl:h-[70px]" alt="ic">
+                        <a :href="`mailto:${toolkitStore?.settings?.email}`" target="_blank"
+                            class="flex items-center gap-4 md:gap-5 group">
+                            <img src="/assets/img/index/mail.svg" class="w-[60px] h-[60px] 3xl:w-[70px] 3xl:h-[70px]"
+                                alt="ic">
                             <div>
                                 <span class="text-white/40 text-sm md:text-base md:mb-2">
                                     Email us
@@ -109,7 +114,8 @@
                             Ваше сообщение успешно отправлено
                         </p>
 
-                        <button type="submit" class="white-button w-full leading-[110%] lg:mt-8 h-[48px] py-2 xl:h-[64px]">
+                        <button type="submit"
+                            class="white-button w-full leading-[110%] lg:mt-8 h-[48px] py-2 xl:h-[64px]">
                             Отправить заявку
                         </button>
                     </div>
@@ -136,26 +142,26 @@
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
-                            <NuxtLink href="/docs/privacy-policy" class="hover:text-blue-400 transition-all">
-                                Privacy Policy
+                            <NuxtLink href="/docs/privacy-police" class="hover:text-blue-400 transition-all">
+                                {{ allPages?.filter(item => item.slug === 'privacy-police')[0]?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
                             </NuxtLink>
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <NuxtLink href="/docs/terms" class="hover:text-blue-400 transition-all">
-                                Terms & Conditions
+                                {{ allPages?.filter(item => item.slug === 'terms')[0]?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
                             </NuxtLink>
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <NuxtLink href="/cooperation" class="hover:text-blue-400 transition-all">
-                                Сотрудничество
+                                {{ allPages?.filter(item => item.slug === 'cooperation')[0]?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
                             </NuxtLink>
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <NuxtLink href="/career" class="hover:text-blue-400 transition-all">
-                                Карьера
+                                {{ allPages?.filter(item => item.slug === 'career')[0]?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
                             </NuxtLink>
                         </li>
                     </ul>
@@ -165,84 +171,81 @@
     </footer>
 </template>
 
-<script>
-import { ref } from 'vue';
+
+<script setup>
+import { ref, watch } from 'vue';
+import { usePagesStore } from '~/stores/functions/pages';
+import { useToolkit } from '~/stores/functions/toolkit';
 import { VueTelInput } from 'vue-tel-input';
 import 'vue-tel-input/vue-tel-input.css';
-import { useToolkit } from '~/stores/functions/toolkit';
 
-export default {
-    components: {
-        VueTelInput,
-    },
-    setup() {
-        const name = ref(null);
-        const phone = ref(null);
-        const isError = ref(null);
-        const isSending = ref(null);
-        const isSuccess = ref(null);
+const pagesStore = usePagesStore();
+const langStore = useLangStore();
+const allPages = ref([]);
 
-        const toolkitStore = useToolkit();
+watch(pagesStore, (newValue) => {
+    allPages.value = newValue?.pagesList;
+});
 
-        const resetForm = () => {
-            name.value = "";
-            phone.value = "";
-        }
+const name = ref(null);
+const phone = ref(null);
+const isError = ref(null);
+const isSending = ref(false);
+const isSuccess = ref(false);
 
-        const submitForm = async () => {
+const toolkitStore = useToolkit();
 
-            if (!name.value || !phone.value) return isError.value = true
-            else isError.value = false
-
-            isSending.value = true
-
-            await useFetch('https://crm.g-plus.app/api/actions', {
-                method: 'POST',
-                body: {
-                    action: 'partner-custom-form',
-                    token: '123',
-                    partner_id: '123',
-                    name: name.value,
-                    phone: phone.value,
-                    // email: email,
-                    building_id: '123',
-                    lang: 'ua',
-                    note: 'Запит з форми контактів',
-                    adv_id: '123123123'
-                }
-            }).then((data) => {
-                console.log('22222', data);
-                isSending.value = false
-                isSuccess.value = true
-
-                resetForm()
-            }).catch(err => {
-                console.log('11111', err);
-            })
-
-        };
-
-        const onlyCountries = [
-            'id', // Индонезия
-            'ua', // Украина
-            'ru', // Россия
-            'by', // Беларусь
-            'kz', // Казахстан
-            'us', // США
-            'gb', // Англия
-            'fr', // Франция
-            'cn', // КНР
-        ];
-        return {
-            phone,
-            name,
-            isError,
-            isSending,
-            isSuccess,
-            submitForm,
-            onlyCountries,
-            toolkitStore
-        };
-    },
+const resetForm = () => {
+    name.value = '';
+    phone.value = '';
 };
+
+console.log(allPages.value);
+
+const submitForm = async () => {
+    if (!name.value || !phone.value) {
+        isError.value = true;
+        return;
+    } else {
+        isError.value = false;
+    }
+
+    isSending.value = true;
+
+    try {
+        const { data } = await useFetch('https://crm.g-plus.app/api/actions', {
+            method: 'POST',
+            body: {
+                action: 'partner-custom-form',
+                token: '123',
+                partner_id: '123',
+                name: name.value,
+                phone: phone.value,
+                building_id: '123',
+                lang: 'ua',
+                note: 'Запит з форми контактів',
+                adv_id: '123123123'
+            }
+        });
+
+        isSending.value = false;
+        isSuccess.value = true;
+        resetForm();
+    } catch (err) {
+        console.log('11111', err);
+        isSending.value = false;
+    }
+};
+
+const onlyCountries = [
+    'id', // Индонезия
+    'ua', // Украина
+    'ru', // Россия
+    'by', // Беларусь
+    'kz', // Казахстан
+    'us', // США
+    'gb', // Англия
+    'fr', // Франция
+    'cn', // КНР
+];
 </script>

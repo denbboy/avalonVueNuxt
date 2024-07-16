@@ -80,7 +80,6 @@ const fetchArticles = async () => {
     console.error('Error fetching items:', e);
   }
 };
-
 onMounted(fetchArticles);
 
 const modules = {

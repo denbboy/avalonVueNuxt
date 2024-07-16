@@ -49,7 +49,7 @@
                         <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10 mb-5 last:mb-0">
                             <div
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
-                                1
+                                2
                             </div>
                             <div
                                 class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
@@ -60,15 +60,13 @@
 
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
-                                Оставить
-                                заявку в
-                                форме
-                                ниже или на любом сайте компании в разделе «Контакты»</p>
+                                Подписать договор для согласования условий сотрудничества    
+                            </p>
                         </li>
                         <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10  mb-5 last:mb-0">
                             <div
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
-                                1
+                                3
                             </div>
                             <div
                                 class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
@@ -79,15 +77,13 @@
 
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
-                                Оставить
-                                заявку в
-                                форме
-                                ниже или на любом сайте компании в разделе «Контакты»</p>
+                                Пройти обучение и получить аккредитацию    
+                            </p>
                         </li>
                         <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10  mb-5 last:mb-0">
                             <div
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
-                                1
+                                4
                             </div>
                             <div
                                 class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
@@ -98,10 +94,8 @@
 
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center">
-                                Оставить
-                                заявку в
-                                форме
-                                ниже или на любом сайте компании в разделе «Контакты»</p>
+                                Получить доступ к онлайн базе имеющихся квартир
+                            </p>
                         </li>
                     </ol>
                 </div>

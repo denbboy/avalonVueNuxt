@@ -72,64 +72,60 @@
     </div>
 </template>
 
-<script>
-import { ref } from 'vue';
-import { VueTelInput } from 'vue-tel-input';
-import 'vue-tel-input/vue-tel-input.css';
+<script setup>
+import { ref } from 'vue'
+import VueTelInput from 'vue-tel-input'
+import 'vue-tel-input/vue-tel-input.css'
+import { useReCaptcha } from '@nuxtjs/recaptcha'
 
-export default {
-    components: {
-        VueTelInput,
-    },
-    setup() {
-        const name = ref(null);
-        const phone = ref(null);
-        const isError = ref(null);
-        const isSending = ref(null);
-        const isSuccess = ref(null);
+const recaptchaInstance = useReCaptcha()
 
-        const resetForm = () => {
-            name.value = "";
-            phone.value = "";
-        }
+const recaptcha = async () => {
+  await recaptchaInstance?.recaptchaLoaded()
+  const token = await recaptchaInstance?.executeRecaptcha('yourActionHere')
+  console.log('Recaptcha token:', token)
+}
 
-        const submitForm = () => {
-            console.log(name.value, phone.value, isError.value);
+const name = ref(null)
+const phone = ref(null)
+const isError = ref(false)
+const isSending = ref(false)
+const isSuccess = ref(false)
 
-            if (!name.value || !phone.value) return isError.value = true
-            else isError.value = false
+const resetForm = () => {
+  name.value = ""
+  phone.value = ""
+}
 
-            isSending.value = true
+const submitForm = () => {
+  console.log(name.value, phone.value, isError.value)
 
-            setTimeout(() => {
-                isSending.value = false
-                isSuccess.value = true
+  if (!name.value || !phone.value) {
+    isError.value = true
+    return
+  } else {
+    isError.value = false
+  }
 
-                resetForm()
-            }, 1000)
+  isSending.value = true
 
-        };
+  setTimeout(() => {
+    isSending.value = false
+    isSuccess.value = true
 
-        const onlyCountries = [
-            'id', // Индонезия
-            'ua', // Украина
-            'ru', // Россия
-            'by', // Беларусь
-            'kz', // Казахстан
-            'us', // США
-            'gb', // Англия
-            'fr', // Франция
-            'cn', // КНР
-        ];
-        return {
-            phone,
-            name,
-            isError,
-            isSending,
-            isSuccess,
-            submitForm,
-            onlyCountries
-        };
-    },
-};
+    resetForm()
+  }, 1000)
+}
+
+const onlyCountries = [
+  'id', // Индонезия
+  'ua', // Украина
+  'ru', // Россия
+  'by', // Беларусь
+  'kz', // Казахстан
+  'us', // США
+  'gb', // Англия
+  'fr', // Франция
+  'cn', // КНР
+]
 </script>

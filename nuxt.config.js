@@ -58,6 +58,8 @@ export default defineNuxtConfig({
     directus: {
         url: "https://avalon-panel.sonisapps.com/"
     },
+    // 6LcQOhEqAAAAAJpHa2ZXE-4OXi0syQk7BukpaHlW
+
     calendly: {
         isEnabled: true,
         loadWidgetCSS: true,
