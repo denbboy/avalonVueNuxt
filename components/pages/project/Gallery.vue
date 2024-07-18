@@ -12,9 +12,14 @@
 
                 <client-only>
 
-                    <a v-for="image in gallery" :key="image.id" data-aos="fade-up" class="image" data-fancybox="gallery" :href="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`">
-                        <img :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`"
-                            class="rounded-2xl h-full w-full flex items-center justify-center max-h-[500px] object-cover" alt="ph">
+                    <a v-for="image in gallery" :key="image.id" data-aos="fade-up" class="image" data-fancybox="gallery"
+                        :href="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`">
+                        <!-- <img :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`"
+                            class="rounded-2xl h-full w-full flex items-center justify-center max-h-[500px] object-cover"
+                            alt="ph"> -->
+
+                        <!-- <div v-if="isLoading" class="skeleton"></div> -->
+                         <ImageLoading :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`" className="rounded-2xl h-full w-full flex items-center justify-center max-h-[500px] object-cover" />
                     </a>
 
                 </client-only>
@@ -32,6 +37,7 @@
 
 <script setup>
 
-const {gallery} = defineProps(['gallery'])
+const { gallery } = defineProps(['gallery'])
 
 </script>
+

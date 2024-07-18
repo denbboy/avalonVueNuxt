@@ -217,14 +217,14 @@ const submitForm = async () => {
             method: 'POST',
             body: {
                 action: 'partner-custom-form',
-                token: '123',
-                partner_id: '123',
+                token: 'BnYxulkF_XC5Aq7Re9oO80vbIu-ZblVbALCDNDdAJE0',
+                partner_id: '25545',
                 name: name.value,
                 phone: phone.value,
-                building_id: '123',
+                // building_id: '123',
                 lang: 'ua',
                 note: 'Запит з форми контактів',
-                adv_id: '123123123'
+                // adv_id: '123123123'
             }
         });
 

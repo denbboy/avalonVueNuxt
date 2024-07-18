@@ -26,13 +26,13 @@
             data-aos="fade-up">
             <li class="relative">
               <p
-                class="before:block before:rounded-[3px] before:w-[5px] before:h-[5px] md:before:w-[10px] md:before:h-[10px] before:border-blue-400 before:bg-transparent before:border before:absolute before:right-0 before:top-[50%] before:translate-y-[-50%] pr-6">
+                class="before:block before:rounded-[3px] before:w-[5px] before:h-[5px] md:before:w-[10px] md:before:h-[10px] before:bg-blue-400 before:border-blue-400 before:border before:absolute before:right-0 before:top-[50%] before:translate-y-[-50%] pr-6">
                 Берава
               </p>
             </li>
             <li class="relative">
               <p
-                class="before:block before:rounded-[3px] before:w-[5px] before:h-[5px] md:before:w-[10px] md:before:h-[10px] before:border-blue-400 before:bg-transparent before:border before:absolute before:right-0 before:top-[50%] before:translate-y-[-50%] pr-6">
+                class="before:block before:rounded-[3px] before:w-[5px] before:h-[5px] md:before:w-[10px] md:before:h-[10px] before:bg-blue-400 before:border-blue-400 before:border before:absolute before:right-0 before:top-[50%] before:translate-y-[-50%] pr-6">
                 Чангу
               </p>
             </li>

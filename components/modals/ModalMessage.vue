@@ -61,64 +61,120 @@
     </div>
 </template>
 
-<script>
-import { ref } from 'vue';
+<script setup>
+import { ref, watch } from 'vue';
+import { usePagesStore } from '~/stores/functions/pages';
+import { useToolkit } from '~/stores/functions/toolkit';
 import { VueTelInput } from 'vue-tel-input';
 import 'vue-tel-input/vue-tel-input.css';
+import { useReCaptcha } from 'vue-recaptcha-v3';
+import { useFormsStore } from '~/stores/functions/forms';
 
-export default {
-    components: {
-        VueTelInput,
-    },
-    setup() {
-        const name = ref(null);
-        const phone = ref(null);
-        const isError = ref(null);
-        const isSending = ref(null);
-        const isSuccess = ref(null);
+const recaptchaInstance = useReCaptcha();
 
-        const resetForm = () => {
-            name.value = "";
-            phone.value = "";
+const recaptcha = async () => {
+    await recaptchaInstance?.recaptchaLoaded();
+    const token = await recaptchaInstance?.executeRecaptcha('yourActionHere');
+    return token;
+};
+
+const pagesStore = usePagesStore();
+const langStore = useLangStore();
+const formsStore = useFormsStore();
+const allPages = ref([]);
+
+const currentForm = formsStore.forms.length && formsStore.forms?.filter(item => item.slug === "offer-form")[0]
+
+watch(pagesStore, (newValue) => {
+    allPages.value = newValue?.pagesList;
+});
+
+const phone = ref(null);
+const isError = ref(null);
+const errorText = ref('');
+const isSending = ref(false);
+const isSuccess = ref(false);
+
+const toolkitStore = useToolkit();
+
+const resetForm = () => {
+    phone.value = '';
+};
+
+const submitForm = async () => {
+    if (currentForm?.captcha) {
+        if (!recaptcha()) {
+            errorText.value = 'Recaptcha error'
+            return isError.value = true
+        }
+    }
+
+    try {
+        if (!phone.value) {
+            isError.value = true;
+            return;
+        } else {
+            isError.value = false;
         }
 
-        const submitForm = () => {
-            console.log(name.value, phone.value, isError.value);
+        const result = await formRequest();
+        isSending.value = true;
 
-            if (!name.value || !phone.value) return isError.value = true
-            else isError.value = false
+        try {
+            const { data } = await useFetch('https://crm.g-plus.app/api/actions', {
+                method: 'POST',
+                body: {
+                    action: 'partner-custom-form',
+                    token: '123',
+                    partner_id: '123',
+                    phone: phone.value,
+                    building_id: '123',
+                    lang: 'ua',
+                    note: 'Запит з форми контактів',
+                    adv_id: '123123123'
+                }
+            });
 
-            isSending.value = true
+            isSending.value = false;
+            isSuccess.value = true;
+            resetForm();
+        } catch (err) {
+            console.log('11111', err);
+            isSending.value = false;
+        }
 
-            setTimeout(() => {
-                isSending.value = false
-                isSuccess.value = true
-
-                resetForm()
-            }, 1000)
-
-        };
-
-        const onlyCountries = [
-            'id', // Индонезия
-            'ua', // Украина
-            'ru', // Россия
-            'by', // Беларусь
-            'kz', // Казахстан
-            'us', // США
-            'gb', // Англия
-            'fr', // Франция
-            'cn', // КНР
-        ];
-        return {
-            phone,
-            name,
-            isError,
-            isSending,
-            isSuccess,
-            submitForm,
-            onlyCountries
-        };
-    },
+    } catch (error) {
+        console.error('Contact form could not be sent', error)
+    }
 };
+
+const onlyCountries = [
+    'id', // Индонезия
+    'ua', // Украина
+    'ru', // Россия
+    'by', // Беларусь
+    'kz', // Казахстан
+    'us', // США
+    'gb', // Англия
+    'fr', // Франция
+    'cn', // КНР
+];
+
+import { createDirectus, rest, readFlow } from '@directus/sdk';
+
+const client = createDirectus('https://avalon-panel.sonisapps.com').with(rest());
+
+const formRequest = async () => {
+    const formData = new FormData();
+    formData.append('phone', phone.value);
+
+    const result = await client.request(
+        readFlow('78957f27-5d57-49a2-bdfe-93be73e7e487', {
+            fields: ['*'],
+            body: formData,
+            method: 'POST'
+        })
+    );
+}
+
 </script>

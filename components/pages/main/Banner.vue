@@ -2,7 +2,7 @@
   <section class="pb-12">
 
     <!-- :modules="modules" -->
-    <swiper class="swiper-banner" :slides-per-view="1" :pagination="{ clickable: true }"
+    <swiper class="swiper-banner" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
       :modules="[Pagination, A11y, Autoplay]" pagination a11y :autoplay="{ delay: 15000, disableOnInteraction: false }"
       :speed="1500">
 
@@ -78,7 +78,7 @@
               </div>
               <div class="banner__item__head md:flex">
                 <div class="flex">
-                  <h1 class="text-white text-[45px] leading-1 md:text-[70px] mr-3">
+                  <h1 class="text-white text-[45px] font-bold leading-1 md:text-[70px] mr-3">
                     {{ item?.translations?.filter(item =>
                       item.languages_code.includes(langStore.lang))[0]?.title }}
                   </h1>

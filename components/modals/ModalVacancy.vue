@@ -68,59 +68,99 @@
     </div>
 </template>
 
-<script>
-export default {
-    setup() {
+<script setup>
+import { ref } from 'vue';
+import { useFormsStore } from '~/stores/functions/forms';
+import { useReCaptcha } from 'vue-recaptcha-v3';
 
-        const file = ref(null);
-        const fullName = ref('');
-        const email = ref('');
-        const message = ref('');
-        const isError = ref(false);
-        const isSending = ref(false);
-        const isSuccess = ref(false);
+const recaptchaInstance = useReCaptcha();
 
-        const resetForm = () => {
-            fullName.value = ''
-            email.value = ''
-            message.value = ''
-            file.value = null;
-        }
+const recaptcha = async () => {
+    await recaptchaInstance?.recaptchaLoaded();
+    const token = await recaptchaInstance?.executeRecaptcha('yourActionHere');
+    return token;
+};
 
-        const validateEmail = (email) => {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        }
 
-        const handleSubmitForm = () => {
-            if (!fullName.value || !email.value || !message.value || !file.value || !validateEmail(email.value)) return isError.value = true;
-            else isError.value = false
+// Определение реактивных переменных
+const file = ref(null);
+const fullName = ref('');
+const email = ref('');
+const message = ref('');
+const isError = ref(false);
+const isSending = ref(false);
+const isSuccess = ref(false);
+const formsStore = useFormsStore();
 
-            isSending.value = true
+const currentForm = formsStore.forms.length && formsStore.forms?.filter(item => item.slug === "vacancy-form")[0]
 
-            setTimeout(() => {
-                isSending.value = false
-                isSuccess.value = true
+// Функция для сброса формы
+const resetForm = () => {
+    fullName.value = '';
+    email.value = '';
+    message.value = '';
+    file.value = null;
+};
 
-                resetForm()
-            }, 1000)
-        }
+// Функция для проверки правильности email
+const validateEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
 
-        const handleFileChange = (event) => {
-            file.value = event.target.files[0];
-            console.log(event.target.files[0]);
-        }
-
-        return {
-            handleSubmitForm,
-            handleFileChange,
-            file,
-            fullName,
-            email,
-            message,
-            isError,
-            isSending,
-            isSuccess,
+// Функция обработки отправки формы
+const handleSubmitForm = async () => {
+    if (currentForm?.captcha) {
+        if (!recaptcha()) {
+            errorText.value = 'Recaptcha error'
+            return isError.value = true
         }
     }
+
+    try {
+        if (!fullName.value || !email.value || !message.value || !file.value || !validateEmail(email.value)) {
+            isError.value = true;
+        } else {
+            isError.value = false;
+
+            const result = await formRequest();
+            isSending.value = true;
+
+            setTimeout(() => {
+                isSending.value = false;
+                isSuccess.value = true;
+
+                resetForm();
+            }, 1000);
+        }
+
+    } catch (error) {
+        console.error('Contact form could not be sent', error)
+    }
+};
+
+// Функция обработки изменения файла
+const handleFileChange = (event) => {
+    file.value = event.target.files[0];
+};
+
+import { createDirectus, rest, readFlow } from '@directus/sdk';
+
+const client = createDirectus('https://avalon-panel.sonisapps.com').with(rest());
+
+const formRequest = async () => {
+    const formData = new FormData();
+    formData.append('phone', fullName.value);
+    formData.append('email', email.value);
+    formData.append('message', message.value);
+    formData.append('file', file.value);
+
+    const result = await client.request(
+        readFlow('78957f27-5d57-49a2-bdfe-93be73e7e487', {
+            fields: ['*'],
+            body: formData, // Передаем FormData в теле запроса
+            method: 'POST' // Указываем метод запроса, если это POST-запрос
+        })
+    );
 }
+
 </script>

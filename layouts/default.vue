@@ -16,12 +16,14 @@ import { useToolkit } from './../stores/functions/toolkit';
 import { useProjectsStore } from './../stores/functions/projects';
 import { useBlocksStore } from './../stores/functions/blocks';
 import { usePagesStore } from '~/stores/functions/pages';
+import { useFormsStore } from '~/stores/functions/forms';
 
 const route = useRoute();
 const toolkitStore = useToolkit();
 const projectsStore = useProjectsStore();
 const blocksStore = useBlocksStore();
 const pagesStore = usePagesStore();
+const formsStore = useFormsStore();
 const { getItems } = useDirectusItems();
 
 const fetchArticles = async () => {
@@ -54,6 +56,22 @@ const fetchProjects = async () => {
 };
 onMounted(fetchProjects);
 
+
+const fetchForms = async () => {
+    try {
+        const items = await getItems({
+            collection: "Form",
+            params: {
+                fields: '*'
+            },
+        });
+
+        formsStore.setForms(items)
+    } catch (e) {
+        console.error('Error fetching items:', e);
+    }
+};
+onMounted(fetchForms);
 
 const fetchPages = async () => {
     try {

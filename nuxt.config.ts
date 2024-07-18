@@ -32,7 +32,14 @@ export default defineNuxtConfig({
         },
     },
     css: ['~/assets/css/main.css'],
-    modules: ['@nuxtjs/tailwindcss', "@pinia/nuxt", 'nuxt-aos', "@nuxtjs/i18n"],
+    modules: [
+        '@nuxtjs/tailwindcss',
+        "@pinia/nuxt",
+        'nuxt-aos',
+        "@nuxtjs/i18n",
+        "nuxt-mail",
+        "@nuxt/image"
+    ],
     swiper: {
         modules: ['navigation', 'pagination'],
     },

@@ -1,8 +1,9 @@
 <template>
-    <section class="md:pb-20 relative bg-blue-500 overflow-hidden">
-        <div class="bg-gradient-to-t from-blue-500 from-60% lg:from-60%  w-full h-[2000px] absolute z-10"></div>
+    <section class="md:pb-20 relative bg-blue-500">
+        <div class="bg-gradient-to-t from-blue-500 top-[calc(110vh_-_700px)] from-20% w-full h-[700px] absolute z-10"></div>
+        <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10"></div>
 
-        <img class="absolute top-0 z-0 opacity-40 w-[600vw] max-w-max md:w-full min-h-[1000px] h-screen object-cover"
+        <img class="absolute top-0 z-0 opacity-90 max-w-max md:w-full h-[calc(110vh)] object-cover"
             src="/assets/img/career/img.jpg" alt="Image">
 
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">

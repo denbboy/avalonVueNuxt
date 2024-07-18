@@ -1,19 +1,18 @@
 <template>
 
     <section class="pb-12">
-        <div class="pb-10 pt-36 lg:pt-[290px] relative overflow-hidden">
+        <div class="pb-10 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.jpg')] -->
-            <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-50">
+            <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-80">
                 <img :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
-                    class="absolute top-0 left-0 w-full h-full object-cover z-0" alt="">
+                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="">
                 <iframe v-if="itemData?.video" class="scale-125" width="100%" height="100%" src=""
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="bg-gradient-to-t from-blue-500 from-30% w-full h-52 absolute -z-10 bottom-0 left-0"></div>
-            <div class="bg-gradient-to-t from-blue-500 from-30% w-full h-52 absolute -z-10 top-0 left-0 rotate-180">
-            </div>
+            <div class="bg-gradient-to-t from-blue-500 from-0% w-full h-[500px] absolute -z-10 top-[calc(110vh_-_500px)] left-0"></div>
+            <div class="bg-gradient-to-t from-blue-500/70 from-50% w-full h-52 absolute -z-10 top-0 left-0 rotate-180"></div>
 
             <div class="container">
                 <div class="xl:flex xl:justify-between xl:gap-[20px]">

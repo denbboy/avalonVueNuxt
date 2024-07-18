@@ -13,7 +13,7 @@
                 class=" md:rounded-tr-3xl md:rounded-bl-3xl pt-14 pb-28 px-5 relative md:pb-11 md:px-[80px] lg:px-[120px] md:pt-[100px]">
 
                 <img src="/assets/img/index/buy-bg-desk.png"
-                    class="absolute top-0 left-0 w-full h-full z-0 hidden md:block backdrop-blur" alt="">
+                    class="absolute top-0 left-0 w-full h-full z-0 hidden md:block backdrop-blur-[1px]" alt="">
                 <img src="/assets/img/index/buy-list-bg.png"
                     class="absolute top-0 left-0 w-full h-full z-0 block md:hidden backdrop-blur" alt="">
 

@@ -54,11 +54,10 @@ export default defineNuxtConfig({
     css: [
         '~/assets/css/main.css',
     ],
-    modules: ['@nuxtjs/tailwindcss', "@pinia/nuxt", 'nuxt-aos', '@nuxtjs/i18n', 'nuxt-calendly', 'nuxt-directus'],
+    modules: ['@nuxtjs/tailwindcss', "@pinia/nuxt", 'nuxt-aos', '@nuxtjs/i18n', 'nuxt-calendly', 'nuxt-directus', '@nuxt/image'],
     directus: {
         url: "https://avalon-panel.sonisapps.com/"
     },
-    // 6LcQOhEqAAAAAJpHa2ZXE-4OXi0syQk7BukpaHlW
 
     calendly: {
         isEnabled: true,
@@ -68,7 +67,8 @@ export default defineNuxtConfig({
     i18n: {
         locales: [
             { code: 'ua', iso: 'ua-US', name: 'Ukraine', file: 'ua.json' },
-            { code: 'ru', iso: 'ru-RU', name: 'Русский', file: 'ru.json' }
+            { code: 'ru', iso: 'ru-RU', name: 'Русский', file: 'ru.json' },
+            { code: 'en', iso: 'en-US', name: 'English', file: 'en.json' }
         ],
         defaultLocale: 'ru',
         langDir: 'locales/',

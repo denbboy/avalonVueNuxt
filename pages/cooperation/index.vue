@@ -3,7 +3,7 @@
 
         <PagesCooperationMain />
 
-        <section id="broker" class="py-[60px] lg:py-[100px]">
+        <section id="broker" class="py-[60px] relative z-10 lg:py-[100px]">
             <div class="container">
                 <div class="xl:flex xl:flex-row-reverse xl:items-center gap-6 3xl:gap-[80px] mb-8 xl:mb-20">
                     <div data-aos="fade-left" class="">
