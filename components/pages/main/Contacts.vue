@@ -12,7 +12,7 @@
             class="bg-whiteOp-200 rounded-xl text-white text-sm px-5 py-4 outline-none lg:p-6 lg:text-base w-full">
           <div class="phone-vti">
             <!-- <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone" :only-countries="onlyCountries" /> -->
-            <VueTelInput :use-masking="true" v-model="phone" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
+            <VueTelInput :inputOptions="inputOptions" :use-masking="true" v-model="phone" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
           </div>
 
           <button type="submit" class="white-button w-full">
@@ -89,6 +89,16 @@ const toolkitStore = useToolkit();
 const resetForm = () => {
     name.value = '';
     phone.value = '';
+};
+
+const placeholderLang = {
+    'ru': 'Введите ваш номер телефона',
+    'en': 'Enter your phone number',
+    'ua': 'Введіть ваш номер телефону'
+}
+
+const inputOptions = {
+  placeholder: placeholderLang[langStore.lang]
 };
 
 const submitForm = async () => {

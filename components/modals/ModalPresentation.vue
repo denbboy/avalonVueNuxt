@@ -24,7 +24,7 @@
                 </label>
 
                 <div class="phone-vti">
-                    <VueTelInput v-model="phone" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
+                    <VueTelInput :input-options="inputOptions" v-model="phone" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
                 </div>
 
                 <label for="some" class="flex flex-col text-start mb-[10px] mt-5">
@@ -188,6 +188,16 @@ const sortedCountries = computed(() => {
 import { createDirectus, rest, readFlow } from '@directus/sdk';
 
 const client = createDirectus('https://avalon-panel.sonisapps.com').with(rest());
+
+const placeholderLang = {
+    'ru': 'Введите ваш номер телефона',
+    'en': 'Enter your phone number',
+    'ua': 'Введіть ваш номер телефону'
+}
+
+const inputOptions = {
+  placeholder: placeholderLang[langStore.lang]
+};
 
 const formRequest = async () => {
     const formData = new FormData();

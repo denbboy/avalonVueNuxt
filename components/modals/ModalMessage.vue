@@ -24,7 +24,7 @@
                     Телефон для связи в мессенджерах*
                 </label>
                 <div class="phone-vti">
-                    <VueTelInput v-model="phone" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
+                    <VueTelInput :inputOptions="inputOptions" v-model="phone" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
                 </div>
 
                 <p class="text-red-700 text-left transition-all h-full" :class="{
@@ -100,6 +100,16 @@ const toolkitStore = useToolkit();
 
 const resetForm = () => {
     phone.value = '';
+};
+
+const placeholderLang = {
+    'ru': 'Введите ваш номер телефона',
+    'en': 'Enter your phone number',
+    'ua': 'Введіть ваш номер телефону'
+}
+
+const inputOptions = {
+  placeholder: placeholderLang[langStore.lang]
 };
 
 const submitForm = async () => {

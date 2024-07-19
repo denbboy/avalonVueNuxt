@@ -94,7 +94,7 @@
                         <div class="phone-vti">
                             <!-- <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone"
                                 :only-countries="onlyCountries" /> -->
-                                <VueTelInput v-model="phone" :use-masking="true" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
+                                <VueTelInput :inputOptions="inputOptions" v-model="phone" :use-masking="true" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
                         </div>
                         <p class="text-red-700 text-left transition-all h-full" :class="{
                             'max-h-10 opacity-100 mt-2': isError,
@@ -202,7 +202,15 @@ const resetForm = () => {
     phone.value = '';
 };
 
-console.log(allPages.value);
+const placeholderLang = {
+    'ru': 'Введите ваш номер телефона',
+    'en': 'Enter your phone number',
+    'ua': 'Введіть ваш номер телефону'
+}
+
+const inputOptions = {
+  placeholder: placeholderLang[langStore.lang]
+};
 
 const submitForm = async () => {
     if (!name.value || !phone.value) {
