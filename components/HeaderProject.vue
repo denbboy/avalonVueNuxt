@@ -2,7 +2,7 @@
 
   <header class="z-30 transition-all absolute w-full">
     <div
-      class="header-wrapper w-full bg-blue-500 h-fit py-4 border-b-2 border-b-whiteOp-300 md:border-none transition-all"
+      class="header-wrapper w-full bg-blue-500 h-fit py-4 lg:py-10 border-b-2 border-b-whiteOp-300 md:border-none transition-all"
       :class="isOpenBurger ? 'bg-blue-500' : 'md:bg-transparent'">
 
 

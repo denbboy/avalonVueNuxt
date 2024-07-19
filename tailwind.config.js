@@ -33,6 +33,7 @@ export default {
       },
       animation: {
         ping: 'ping 3s ease infinite',
+        ping2: 'ping 3s .6s ease infinite',
         'fade': 'fade .6s ease-in infinite alternate-reverse',
         'fade-1s': 'fade .6s 0.4s ease-in infinite alternate-reverse',
         'fade-2s': 'fade .6s 0.8s ease-in infinite alternate-reverse',

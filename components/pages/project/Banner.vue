@@ -16,9 +16,12 @@
 
             <div class="container">
                 <div class="xl:flex xl:justify-between xl:gap-[20px]">
-                    <div class=" w-full max-w-[650px]">
+                    <div class=" w-full max-w-[950px]">
                         <div data-aos="fade-up"
                             class="banner__item__head flex flex-wrap items-center gap-[10px] md:gap-5">
+                            <div class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] -mr-1 max-w-[141px] md:py-5 py-[15px]">
+                                <img src="/assets/img/about/ribas.png" alt="">
+                            </div>
                             <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
                                 <img class="absolute top-0 left-0 -z-10 md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"

@@ -1,6 +1,11 @@
 <template>
-    <div data-aos="fade-up"
-        class="bg-blue-600 py-10 px-5 rounded-2xl relative flex flex-col-reverse h-fit xl:grid xl:grid-cols-2 xl:gap-10  xl:px-[60px] xl:py-[70px] 3xl:py-[100px] 3xl:px-[100px] mb-5 md:mb-12 last:mb-0">
+    <!-- data-aos="fade-up" -->
+    <div 
+        class="py-10 px-5 rounded-2xl relative flex flex-col-reverse h-fit xl:grid xl:grid-cols-2 xl:gap-10  xl:px-[60px] xl:py-[70px] 3xl:py-[100px] 3xl:px-[100px] mb-5 md:mb-12 last:mb-0">
+        <div class="bg-blue-600/85 absolute w-full h-full z-0 rounded-2xl backdrop-blur-sm">
+
+        </div>
+
         <div
             class="w-[60px] h-[60px] 375:w-[91px] 375:h-[91px] bg-blue-400 text-center rounded-full flex md:hidden justify-center items-center flex-col before:border  absolute top-[20px] 375:top-[0px] left-[60px] z-10  md:left-auto ">
             <div
@@ -14,7 +19,7 @@
             </span>
         </div>
 
-        <div>
+        <div class="z-10">
             <div class="mb-[21px] 3xl:mb-12">
                 <h2 class="font-bold text-white text-[24px] leading-none 375:text-[30px] mb-[10px] md:text-[40px] 3xl:text-[56px] md:mb-[21px] 3xl:mb-[31px]">
                     {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
@@ -88,10 +93,15 @@
         </div>
         <div class="relative h-fit w-full flex justify-end">
 
+            <!-- v-if="itemData?.roi" -->
             <div
-                class="hidden min-w-[91px] h-[91px] 3xl:min-w-[137px] 3xl:h-[137px] bg-blue-400 text-center rounded-full md:flex justify-center items-center flex-col before:border  absolute top-p right-0 z-10 translate-x-1/3 -translate-y-1/3">
+            
+                class="hidden min-w-[91px] h-[91px] 3xl:min-w-[137px] 3xl:h-[137px] bg-blue-400 text-center rounded-full md:flex justify-center items-center flex-col absolute top-p right-0 z-10 translate-x-1/3 -translate-y-1/3">
                 <div
                     class="block animate-ping w-[91px] h-[91px] 3xl:w-[137px] 3xl:h-[137px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]">
+                </div>
+                <div
+                    class="block animate-ping2 w-[91px] h-[91px] 3xl:w-[137px] 3xl:h-[137px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]">
                 </div>
                 <p class="text-white text-xs 3xl:text-lg md:uppercase">
                     Roi
