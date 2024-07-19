@@ -24,7 +24,7 @@
                 </label>
 
                 <div class="phone-vti">
-                    <VueTelInput v-model="phone" :only-countries="onlyCountries" />
+                    <VueTelInput v-model="phone" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
                 </div>
 
                 <label for="some" class="flex flex-col text-start mb-[10px] mt-5">
@@ -78,6 +78,7 @@ import { usePagesStore } from '~/stores/functions/pages';
 import { useToolkit } from '~/stores/functions/toolkit';
 import { VueTelInput } from 'vue-tel-input';
 import 'vue-tel-input/vue-tel-input.css';
+import iso31661 from 'iso-3166-1';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import { useFormsStore } from '~/stores/functions/forms';
 
@@ -162,17 +163,27 @@ const submitForm = async () => {
     }
 };
 
-const onlyCountries = [
-    'id', // Индонезия
-    'ua', // Украина
-    'ru', // Россия
-    'by', // Беларусь
-    'kz', // Казахстан
-    'us', // США
-    'gb', // Англия
-    'fr', // Франция
-    'cn', // КНР
+const preferredCountries = [
+  'id', // Индонезия
+  'ua', // Украина
+  'ru', // Россия
+  'by', // Беларусь
+  'kz', // Казахстан
+  'us', // США
+  'gb', // Англия
+  'fr', // Франция
+  'cn', // КНР
 ];
+
+// Получаем список всех стран
+const allCountries = iso31661.all().map(country => country.alpha2);
+
+// Создаем computed property, который включает все страны
+const sortedCountries = computed(() => {
+  const preferredSet = new Set(preferredCountries);
+  const unselectedCountries = allCountries.filter(country => !preferredSet.has(country));
+  return [...preferredCountries, ...unselectedCountries];
+});
 
 import { createDirectus, rest, readFlow } from '@directus/sdk';
 

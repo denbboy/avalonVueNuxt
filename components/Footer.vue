@@ -92,8 +92,9 @@
                         <input type="text" v-model="name" placeholder="Имя"
                             class="bg-white/10 lg:mb-[10px] rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-5 lg:p-6 md:text-base w-full">
                         <div class="phone-vti">
-                            <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone"
-                                :only-countries="onlyCountries" />
+                            <!-- <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone"
+                                :only-countries="onlyCountries" /> -->
+                                <VueTelInput v-model="phone" :use-masking="true" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
                         </div>
                         <p class="text-red-700 text-left transition-all h-full" :class="{
                             'max-h-10 opacity-100 mt-2': isError,
@@ -178,6 +179,7 @@ import { usePagesStore } from '~/stores/functions/pages';
 import { useToolkit } from '~/stores/functions/toolkit';
 import { VueTelInput } from 'vue-tel-input';
 import 'vue-tel-input/vue-tel-input.css';
+import iso31661 from 'iso-3166-1';
 
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
@@ -237,15 +239,25 @@ const submitForm = async () => {
     }
 };
 
-const onlyCountries = [
-    'id', // Индонезия
-    'ua', // Украина
-    'ru', // Россия
-    'by', // Беларусь
-    'kz', // Казахстан
-    'us', // США
-    'gb', // Англия
-    'fr', // Франция
-    'cn', // КНР
+const preferredCountries = [
+  'id', // Индонезия
+  'ua', // Украина
+  'ru', // Россия
+  'by', // Беларусь
+  'kz', // Казахстан
+  'us', // США
+  'gb', // Англия
+  'fr', // Франция
+  'cn', // КНР
 ];
+
+// Получаем список всех стран
+const allCountries = iso31661.all().map(country => country.alpha2);
+
+// Создаем computed property, который включает все страны
+const sortedCountries = computed(() => {
+  const preferredSet = new Set(preferredCountries);
+  const unselectedCountries = allCountries.filter(country => !preferredSet.has(country));
+  return [...preferredCountries, ...unselectedCountries];
+});
 </script>

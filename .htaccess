@@ -24,3 +24,13 @@
     ExpiresByType application/x-javascript "access plus 2592000 seconds"
     ExpiresByType application/xhtml+xml "access plus 600 seconds"
 </ifModule>
+
+RewriteEngine On
+RewriteBase /
+
+# Перенаправление всех запросов на index.html
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
