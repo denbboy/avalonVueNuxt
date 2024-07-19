@@ -4,9 +4,12 @@ export default defineNuxtConfig({
     build: {
         transpile: ['swiper']
     },
+    router: {
+        middleware: ['locale']
+    },
     head: {
         htmlAttrs: {
-            lang: 'ru',
+            lang: 'en',
         },
         meta: [
             {
@@ -47,6 +50,7 @@ export default defineNuxtConfig({
         { src: '~/plugins/vue-tel-input.js', ssr: false },
         { src: '~/plugins/vuelidate.js', ssr: false },
         { src: '~/plugins/i18n.config.js', ssr: false },
+        '~/plugins/router.js'
     ],
     aos: {
         once: true
@@ -70,7 +74,7 @@ export default defineNuxtConfig({
             { code: 'ru', iso: 'ru-RU', name: 'Русский', file: 'ru.json' },
             { code: 'en', iso: 'en-US', name: 'English', file: 'en.json' }
         ],
-        defaultLocale: 'ru',
+        defaultLocale: 'en',
         langDir: 'locales/',
         vueI18n: './i18n.js'
     },

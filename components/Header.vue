@@ -6,7 +6,7 @@
       :class="isOpenBurger ? 'bg-blue-500' : 'md:bg-transparent'">
 
         <div class="header__inner px-5 flex items-center justify-between gap-3 relative z-[2]">
-          <NuxtLink href="/">
+          <NuxtLink :href="'/'">
             <!-- <img src="/assets/img/index/logo-desk.svg" class="hidden md:max-w-[55px] w-full lg:max-w-[80px] xl:block" alt="logo"> -->
             <img src="/assets/img/newLogo.png" class="hidden md:max-w-[55px] w-full lg:max-w-[80px] xl:block" alt="logo">
             <img src="/assets/img/icons/logo-mob.svg" class="xl:hidden" alt="logo ic">
@@ -52,7 +52,7 @@
             ">
               {{ $t('cooperation') }}
             </NuxtLink>
-            <NuxtLink href="/career" class="text-white md:text-xs lg:text-sm relative
+            <NuxtLink to="/career" class="text-white md:text-xs lg:text-sm relative
               before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
               after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
             ">
@@ -253,68 +253,96 @@
 </template>
 
 <script setup>
-import { ref, defineProps, onMounted, watch } from 'vue';
-import { useI18n } from 'vue-i18n'
-import { useLangStore } from './../stores/functions/language';
-import { useToolkit } from './../stores/functions/toolkit';
+import { ref, defineProps, onMounted, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useLangStore } from '~/stores/functions/language';
+import { useToolkit } from '~/stores/functions/toolkit';
 import { useProjectsStore } from '~/stores/functions/projects';
+import { useRouter, useRoute } from 'vue-router';
 
-const nuxtApp = useNuxtApp();
 const loading = ref(true);
-
-setTimeout(() => {
-  loading.value = false
-}, 500)
-
-const { locale } = useI18n()
-
-const props = defineProps(['header'])
-
 const isOpenBurger = ref(false);
 const isScrolled = ref(false);
 const isOpen = ref(false);
+const isOpenSubMenu = ref(false);
 
-const projectsStore = useProjectsStore();
-const toolkitStore = useToolkit();
-const langStore = useLangStore();
+const props = defineProps(['header']);
+const router = useRouter();
 const route = useRoute();
+const { locale } = useI18n();
+const langStore = useLangStore();
+const toolkitStore = useToolkit();
+const projectsStore = useProjectsStore();
+const modalsStore = useModalsStore();
+
+const DEFAULT_LOCALE = 'en'; // Основной язык
+
+const changeLocale = async (newLocale) => {
+  loading.value = true;
+
+  // Получаем текущий путь и удаляем любой существующий префикс языка
+  const currentPath = route.fullPath;
+  let pathWithoutLocale = currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
+
+  // Добавляем новый префикс языка, если он не равен значению по умолчанию
+  if (newLocale !== DEFAULT_LOCALE) {
+    pathWithoutLocale = `/${newLocale}${pathWithoutLocale}`;
+  } else {
+    pathWithoutLocale = `/${pathWithoutLocale}`;
+  }
+
+  // Обновляем URL
+  if (router.currentRoute.value.fullPath !== pathWithoutLocale) {
+    router.push(pathWithoutLocale);
+  }
+
+  // Обновляем язык после изменения URL
+  locale.value = newLocale;
+  langStore.setLang(newLocale);
+
+  // Сохраняем выбранный язык в localStorage
+  localStorage.setItem('selectedLanguage', newLocale);
+
+  // Отключаем индикатор загрузки
+  setTimeout(() => {
+    loading.value = false;
+  }, 500);
+};
+
+
+// Load the language from localStorage on mounted
+onMounted(() => {
+  const savedLanguage = localStorage.getItem('selectedLanguage');
+  const urlLocale = route.fullPath.match(/^\/([a-z]{2})(\/|$)/)?.[1] || null;
+  const initialLocale = urlLocale || savedLanguage || DEFAULT_LOCALE;
+
+  changeLocale(initialLocale);
+});
+
+const openSubMenu = () => {
+  isOpenSubMenu.value = !isOpenSubMenu.value;
+};
 
 const handleOpenBurger = () => {
   isOpenBurger.value = !isOpenBurger.value;
-}
+};
+
 const handleCloseBurger = () => {
-  isOpenBurger.value = false
-}
-
-const changeLocale = (newLocale) => {
-  setTimeout(() => {
-    locale.value = newLocale
-    langStore.setLang(newLocale)
-  }, 100)
-
-  loading.value = true
-  setTimeout(() => {
-    loading.value = false
-  }, 500)
-}
-
-
-const isOpenSubMenu = ref(false)
-const openSubMenu = () => {
-  isOpenSubMenu.value = !isOpenSubMenu.value
-}
-
-const modalsStore = useModalsStore()
+  isOpenBurger.value = false;
+};
 
 const handleOpenModal = () => {
-  modalsStore.addModal("calendar")
-  handleCloseBurger()
-}
+  modalsStore.addModal("calendar");
+  handleCloseBurger();
+};
 
 const handleOpen = () => {
   isOpen.value = !isOpen.value;
-}
+};
 
-const { lang } = storeToRefs(langStore);
-
+const computedHref = computed(() => {
+  const currentLocale = langStore.lang || 'ru';
+  const pathWithoutLocale = route.fullPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
+  return `/${currentLocale !== 'ru' ? currentLocale : ''}${pathWithoutLocale}`;
+});
 </script>

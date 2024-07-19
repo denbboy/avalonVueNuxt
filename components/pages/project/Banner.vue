@@ -6,20 +6,24 @@
             <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-80">
                 <img :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
                     class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="">
-                <iframe v-if="itemData?.video" class="scale-125" width="100%" height="100%" src=""
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                <iframe v-if="`${itemData?.video}`" class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0"
+                    width="100%" height="100%" src="" title="YouTube video player" frameborder="0"
+                    allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="bg-gradient-to-t from-blue-500 from-0% w-full h-[500px] absolute -z-10 top-[calc(110vh_-_500px)] left-0"></div>
-            <div class="bg-gradient-to-t from-blue-500/70 from-50% w-full h-52 absolute -z-10 top-0 left-0 rotate-180"></div>
+            <div
+                class="bg-gradient-to-t from-blue-500 from-0% w-full h-[500px] absolute -z-10 top-[calc(110vh_-_500px)] left-0">
+            </div>
+            <div class="bg-gradient-to-t from-blue-500/70 from-50% w-full h-52 absolute -z-10 top-0 left-0 rotate-180">
+            </div>
 
             <div class="container">
                 <div class="xl:flex xl:justify-between xl:gap-[20px]">
                     <div class=" w-full max-w-[950px]">
                         <div data-aos="fade-up"
                             class="banner__item__head flex flex-wrap items-center gap-[10px] md:gap-5">
-                            <div class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] -mr-1 max-w-[141px] md:py-5 py-[15px]">
+                            <div
+                                class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] -mr-1 max-w-[141px] md:py-5 py-[15px]">
                                 <img src="/assets/img/about/ribas.png" alt="">
                             </div>
                             <div
@@ -108,10 +112,15 @@
                         </button>
                     </div>
                     <div class="flex flex-col xl:items-end justify-end xl:w-full">
-                        <button v-if="itemData?.video" data-aos="fade-up" @click="handlePlayVideo" type="button"
+                        <button v-if="itemData?.video" data-aos="fade-up" @click="handlePlayVideo(itemData?.video)" type="button"
                             class="flex items-center mb-10 gap-5 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
-                            <img src="/assets/img/icons/play-video-A.svg" class="max-w-[95px] xl:max-w-[165px]"
-                                alt="ic">
+                            <div class="relative flex items-center justify-center">
+                                <img src="/assets/img/about/playBorder.svg" class="max-w-[95px] xl:max-w-[165px]" alt="ic">
+                            <svg class="absolute -ml-10 animate-scaling" width="18" height="21" viewBox="0 0 18 21" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.7422 10.653L0.17076 20.7979L0.170761 0.508136L17.7422 10.653Z" fill="white"/>
+                            </svg>
+                            </div>
                             Посмотреть видео
                         </button>
                         <div data-aos="fade-up"
@@ -165,7 +174,7 @@ const handleOpenModal = () => {
     modalsStore.addModal("presentation")
 }
 
-const handlePlayVideo = () => {
-    document.querySelector('.banner iframe').setAttribute('src', itemData?.video)
+const handlePlayVideo = (url) => {
+    document.querySelector('.banner iframe').setAttribute('src', `${url}&autoplay=1`)
 }
 </script>

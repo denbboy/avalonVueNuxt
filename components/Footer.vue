@@ -138,7 +138,8 @@
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <p>
-                                © 2024 PT Avalon Group Bali
+                                <!-- © 2024 PT Avalon Group Bali -->
+                                 {{ copyright }}
                             </p>
                         </li>
                         <li
@@ -268,4 +269,8 @@ const sortedCountries = computed(() => {
   const unselectedCountries = allCountries.filter(country => !preferredSet.has(country));
   return [...preferredCountries, ...unselectedCountries];
 });
+
+
+const copyright = `© ${new Date().getFullYear()} PT Avalon Group Bali`
+
 </script>

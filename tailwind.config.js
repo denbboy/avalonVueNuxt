@@ -29,6 +29,10 @@ export default {
         skeleton: {
           "0%": {backgroundColor: '#0E88EC'},
           "100%": {backgroundColor: '#0a6cbd'},
+        },
+        scaling: {
+          "0%": {transform: 'scale(1)'},
+          "100%": {transform: 'scale(1.5)'},
         }
       },
       animation: {
@@ -37,7 +41,9 @@ export default {
         'fade': 'fade .6s ease-in infinite alternate-reverse',
         'fade-1s': 'fade .6s 0.4s ease-in infinite alternate-reverse',
         'fade-2s': 'fade .6s 0.8s ease-in infinite alternate-reverse',
-        'skeleton': 'skeleton 1s ease-in infinite alternate-reverse'
+        'skeleton': 'skeleton 1s ease-in infinite alternate-reverse',
+        spinAbout: 'spin 20s linear infinite',
+        scaling: 'scaling 1.2s ease-out infinite alternate-reverse',
       },
       grayscale: {
         100: '100%',
