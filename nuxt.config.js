@@ -5,7 +5,7 @@ export default defineNuxtConfig({
         transpile: ['swiper']
     },
     router: {
-        middleware: ['locale']
+        middleware: ['locale', 'gtm']
     },
     head: {
         htmlAttrs: {
@@ -51,7 +51,8 @@ export default defineNuxtConfig({
         { src: '~/plugins/vuelidate.js', ssr: false },
         { src: '~/plugins/i18n.config.js', ssr: false },
         '~/plugins/router.js',
-        { src: '~/plugins/gtm.js', ssr: false },
+        '~/plugins/gtm.js',
+        // { src: '~/plugins/gtm.js', ssr: false },
     ],
     aos: {
         once: true
@@ -68,6 +69,8 @@ export default defineNuxtConfig({
         'nuxt-directus',
         '@nuxt/image',
         '@dargmuesli/nuxt-cookie-control',
+        '@zadigetvoltaire/nuxt-gtm',
+        'nuxt-meta-pixel',
     ],
     directus: {
         url: "https://avalon-panel.sonisapps.com/"
@@ -119,5 +122,11 @@ export default defineNuxtConfig({
         name: 'Awesome Site',
         description: 'Welcome to my awesome site!',
         defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
-    }
+    },
+
+
+    gtm: {
+        id: 'GTM-1', // Идентификатор будет установлен динамически
+        enabled: false // Отключаем GTM до инициализации
+    },
 })

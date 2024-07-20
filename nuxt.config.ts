@@ -40,7 +40,8 @@ export default defineNuxtConfig({
         "nuxt-mail",
         "@nuxt/image",
         "@dargmuesli/nuxt-cookie-control",
-        "@nuxtjs/seo"
+        "@nuxtjs/seo",
+        "nuxt-meta-pixel"
     ],
     swiper: {
         modules: ['navigation', 'pagination'],

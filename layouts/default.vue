@@ -1,10 +1,10 @@
 <template>
   <div class="flex flex-col min-h-[100vh] justify-between">
-    <HeaderProject v-if="isProjectHeader"/>
+    <HeaderProject v-if="isProjectHeader" />
     <Header v-else />
-    <slot/>
-    <ModalsModal/>
-    <Footer/>
+    <slot />
+    <ModalsModal />
+    <Footer />
   </div>
 
   <CookieControl locale="en" />
@@ -50,7 +50,7 @@ const fetchProjects = async () => {
         fields: '*,translations.*'
       },
     });
-    
+
     projectsStore.setProjects(items);
   } catch (e) {
     console.error('Error fetching items:', e);
@@ -60,34 +60,34 @@ onMounted(fetchProjects);
 
 
 const fetchForms = async () => {
-    try {
-        const items = await getItems({
-            collection: "Form",
-            params: {
-                fields: '*'
-            },
-        });
+  try {
+    const items = await getItems({
+      collection: "Form",
+      params: {
+        fields: '*'
+      },
+    });
 
-        formsStore.setForms(items)
-    } catch (e) {
-        console.error('Error fetching items:', e);
-    }
+    formsStore.setForms(items)
+  } catch (e) {
+    console.error('Error fetching items:', e);
+  }
 };
 onMounted(fetchForms);
 
 const fetchPages = async () => {
-    try {
-        const items = await getItems({
-            collection: "Page",
-            params: {
-                fields: '*,translations.*'
-            },
-        });
+  try {
+    const items = await getItems({
+      collection: "Page",
+      params: {
+        fields: '*,translations.*'
+      },
+    });
 
-        pagesStore.setPages(items)
-    } catch (e) {
-        console.error('Error fetching items:', e);
-    }
+    pagesStore.setPages(items)
+  } catch (e) {
+    console.error('Error fetching items:', e);
+  }
 };
 onMounted(fetchPages);
 
@@ -109,7 +109,7 @@ const fetchBlocks = async () => {
         ]
       },
     });
-    
+
     blocksStore.setBlocks(items)
   } catch (e) {
     console.error('Error fetching items:', e);
@@ -124,16 +124,25 @@ watch(() => route.fullPath, (newPath) => {
   isProjectHeader.value = newPath.includes('/projects/');
 });
 
+
+const { $fbq } = useNuxtApp()
+
+onMounted(() => {
+  $fbq('track', 'CompleteRegistration')
+  $fbq('trackSingle', toolkitStore.settings.facebook_pixel, 'CompleteRegistration')
+})
 </script>
 
 <style>
 .cookieControl__ControlButton {
   opacity: 0;
 }
+
 .cookieControl__BarContainer {
   background: #0A4A7F;
   box-shadow: 0 -6px 5px 0px #012d52;
 }
+
 .grecaptcha-badge {
   opacity: 0;
 }
