@@ -50,7 +50,8 @@ export default defineNuxtConfig({
         { src: '~/plugins/vue-tel-input.js', ssr: false },
         { src: '~/plugins/vuelidate.js', ssr: false },
         { src: '~/plugins/i18n.config.js', ssr: false },
-        '~/plugins/router.js'
+        '~/plugins/router.js',
+        { src: '~/plugins/gtm.js', ssr: false },
     ],
     aos: {
         once: true
@@ -58,11 +59,19 @@ export default defineNuxtConfig({
     css: [
         '~/assets/css/main.css',
     ],
-    modules: ['@nuxtjs/tailwindcss', "@pinia/nuxt", 'nuxt-aos', '@nuxtjs/i18n', 'nuxt-calendly', 'nuxt-directus', '@nuxt/image'],
+    modules: [
+        '@nuxtjs/tailwindcss',
+        '@pinia/nuxt',
+        'nuxt-aos',
+        '@nuxtjs/i18n',
+        'nuxt-calendly',
+        'nuxt-directus',
+        '@nuxt/image',
+        '@dargmuesli/nuxt-cookie-control',
+    ],
     directus: {
         url: "https://avalon-panel.sonisapps.com/"
     },
-
     calendly: {
         isEnabled: true,
         loadWidgetCSS: true,
@@ -85,4 +94,30 @@ export default defineNuxtConfig({
         storesDirs: ['./stores/**', './custom-folder/stores/**'],
         autoImports: ["defineStore"]
     },
+
+    ogImage: {
+        enabled: false
+    },
+    sitemap: {
+        enabled: false
+    },
+    robots: {
+        enabled: false
+    },
+    seoExperiments: {
+        enabled: false
+    },
+    schemaOrg: {
+        enabled: false
+    },
+    linkChecker: {
+        enabled: false
+    },
+
+    site: {
+        url: 'https://example.com',
+        name: 'Awesome Site',
+        description: 'Welcome to my awesome site!',
+        defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
+    }
 })

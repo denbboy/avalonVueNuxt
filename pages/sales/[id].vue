@@ -1,8 +1,25 @@
 <template>
+
+    <Head>
+        <Title>
+            {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+        </Title>
+        <Meta name="description"
+            :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+    </Head>
+
     <section class="bg-blue-500 pt-32 md:pt-64 relative overflow-hidden">
-        <div class="bg-[url('./../img/news/bgd-single.jpg')] absolute top-0 left-0 w-full h-screen z-0 opacity-70">
+        <div class="absolute top-0 left-0 w-full h-screen z-0 opacity-70">
             <div class="bg-gradient-to-t from-blue-500 absolute top-0 left-0 w-full h-full"></div>
         </div>
+
+        <img :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="">
+        <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10">
+        </div>
+        <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[700px] absolute z-10">
+        </div>
+
         <div class="absolute -right-36 bottom-36 w-72 h-72 z-10">
             <img src="/assets/img/icons/vector-logo.svg" alt="vector-logo">
         </div>
@@ -23,7 +40,9 @@
 
                 <div class="md:flex justify-between w-full">
 
-                    <div class="text-content max-w-[900px] block w-full" v-html="itemData.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></div>
+                    <div class="text-content max-w-[900px] block w-full"
+                        v-html="itemData.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
+                    </div>
 
                     <div class="max-w-[508px] mt-14 md:mt-0">
                         <p class="text-base md:text-xl text-white opacity-40 mb-4 md:mb-7">Проекты участвующие в акции
@@ -130,7 +149,7 @@
 .text-content blockquote {
     padding-left: 36px;
 }
-    
+
 .text-content,
 .text-content b {
     color: #fff;
@@ -157,18 +176,18 @@ const route = useRoute();
 // GET OTHER SALES
 const itemsList = ref([]);
 const fetchArticles = async () => {
-  try {
-    const items = await getItems({
-      collection: "Sale",
-      params: {
-        fields: '*,translations.*'
-      },
-    });
-    itemsList.value = items;
-    console.log(items);
-  } catch (e) {
-    console.error('Error fetching items:', e);
-  }
+    try {
+        const items = await getItems({
+            collection: "Sale",
+            params: {
+                fields: '*,translations.*'
+            },
+        });
+        itemsList.value = items;
+        console.log(items);
+    } catch (e) {
+        console.error('Error fetching items:', e);
+    }
 };
 onMounted(fetchArticles);
 // GET OTHER SALES
@@ -176,41 +195,41 @@ onMounted(fetchArticles);
 // GET POST
 const itemData = ref([]);
 const fetchItemData = async () => {
-  try {
-    const items = await getItems({
-      collection: `Sale/${route.params.id}`,
-      params: {
-        fields: '*,translations.*'
-      },
-    });
+    try {
+        const items = await getItems({
+            collection: `Sale/${route.params.id}`,
+            params: {
+                fields: '*,translations.*'
+            },
+        });
 
-    itemData.value = items;
-    console.log('ITEM_DATA', items);
-  } catch (e) {
-    console.error('Error fetching items:', e);
-  }
+        itemData.value = items;
+        console.log('ITEM_DATA', items);
+    } catch (e) {
+        console.error('Error fetching items:', e);
+    }
 };
 onMounted(fetchItemData);
 // GET POST
 
 const navigationConfig = {
-  nextEl: '.sales-button-next',
-  prevEl: '.sales-button-prev',
+    nextEl: '.sales-button-next',
+    prevEl: '.sales-button-prev',
 };
 
 const pagination = {
-  el: '.swiper-pagination',
-  clickable: true,
+    el: '.swiper-pagination',
+    clickable: true,
 };
 
 const breakpoints = {
-  768: {
-    slidesPerView: 2,
-    pagination: false,
-  },
-  1280: {
-    slidesPerView: 3,
-    pagination: false,
-  },
+    768: {
+        slidesPerView: 2,
+        pagination: false,
+    },
+    1280: {
+        slidesPerView: 3,
+        pagination: false,
+    },
 };
 </script>

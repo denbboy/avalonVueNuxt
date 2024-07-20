@@ -1,18 +1,29 @@
 <template>
 
+    <Head>
+        <Title>
+            {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+        </Title>
+        <Meta name="description"
+            :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+    </Head>
+
     <PagesProjectBanner :itemData="itemData" />
 
     <PagesProjectGallery :gallery="itemData.gallery" />
 
-    <PagesProjectAbout :itemInfo="itemData" :itemData="itemData?.blocks?.filter(item => item?.Block_id?.title === 'OM | Club House')[0]?.Block_id?.strings" />
+    <PagesProjectAbout :itemInfo="itemData"
+        :itemData="itemData?.blocks?.filter(item => item?.Block_id?.title === 'OM | Club House')[0]?.Block_id?.strings" />
 
     <PagesProjectGoogleMap :itemData="itemData" />
 
-    <PagesProjectFeatures :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 25)[0]?.Block_id?.strings" />
+    <PagesProjectFeatures
+        :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 25)[0]?.Block_id?.strings" />
 
     <PagesProjectApartments :apartments="itemData.apartments" />
 
-    <PagesProjectInclusions :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 28)[0]?.Block_id?.strings" />
+    <PagesProjectInclusions
+        :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 28)[0]?.Block_id?.strings" />
 
     <PagesMainContacts />
 
@@ -48,6 +59,7 @@ export default {
 <script setup>
 const { getItems } = useDirectusItems();
 const router = useRoute();
+const langStore = useLangStore()
 const projectsStore = useProjectsStore();
 
 const itemData = ref({});
@@ -84,4 +96,5 @@ const fetchProjects = async () => {
     }
 };
 onMounted(fetchProjects);
+
 </script>

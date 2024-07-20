@@ -38,7 +38,9 @@ export default defineNuxtConfig({
         'nuxt-aos',
         "@nuxtjs/i18n",
         "nuxt-mail",
-        "@nuxt/image"
+        "@nuxt/image",
+        "@dargmuesli/nuxt-cookie-control",
+        "@nuxtjs/seo"
     ],
     swiper: {
         modules: ['navigation', 'pagination'],

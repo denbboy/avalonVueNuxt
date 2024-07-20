@@ -6,6 +6,8 @@
     <ModalsModal/>
     <Footer/>
   </div>
+
+  <CookieControl locale="en" />
 </template>
 
 <script setup>
@@ -124,6 +126,15 @@ watch(() => route.fullPath, (newPath) => {
 
 </script>
 
-<style scoped>
-/* .flex */
+<style>
+.cookieControl__ControlButton {
+  opacity: 0;
+}
+.cookieControl__BarContainer {
+  background: #0A4A7F;
+  box-shadow: 0 -6px 5px 0px #012d52;
+}
+.grecaptcha-badge {
+  opacity: 0;
+}
 </style>

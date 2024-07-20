@@ -1,8 +1,26 @@
 <template>
+
+  <Head>
+    <Title>
+      {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+    </Title>
+    <Meta name="description"
+      :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+  </Head>
+
   <section class="bg-blue-500 pt-32 md:pt-64">
-    <div class="bg-[url('/assets/img/news/bgd-single.jpg')] absolute top-0 left-0 w-full h-screen z-0 opacity-70">
+    <div class="absolute top-0 left-0 w-full h-screen z-0 opacity-70">
       <div class="bg-gradient-to-t from-blue-500 absolute top-0 left-0 w-full h-full"></div>
     </div>
+
+    <img :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+      class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="">
+    <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[700px] absolute z-10">
+    </div>
+    <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[700px] absolute z-10">
+
+    </div>
+
     <div class="container relative z-10">
       <div class="absolute right-0 bottom-56 w-72 h-72 z-10">
         <img src="/assets/img/icons/vector-logo.svg" alt="vector-logo">
@@ -26,8 +44,10 @@
           <img src="/assets/img/icons/socials.svg" class="md:w-6" alt="Soc">
         </a>
 
-        <div v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></div>
-        
+        <div
+          v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
+        </div>
+
       </div>
     </div>
   </section>
@@ -35,17 +55,17 @@
 
 <style scoped>
 .text-content blockquote {
-    padding-left: 36px;
+  padding-left: 36px;
 }
 
 
 
 .text-content,
 .text-content b {
-    color: #fff;
-    font-size: 20px;
-    margin-bottom: 8px;
-    display: block;
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 8px;
+  display: block;
 }
 </style>
 

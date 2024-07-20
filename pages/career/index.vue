@@ -13,6 +13,14 @@ watchEffect(() => {
 </script>
 
 <template>
+    <Head>
+        <Title>
+            {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+        </Title>
+        <Meta name="description"
+            :content="currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+    </Head>
+
     <section class="pb-24 relative bg-blue-500 overflow-hidden">
         <div class="absolute lg:-right-36 top-0 lg:top-96 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[11]">
             <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">

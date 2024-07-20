@@ -1,4 +1,12 @@
 <template>
+    <Head>
+        <Title>
+            {{ currentPageInfo?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+        </Title>
+        <Meta name="description"
+            :content="currentPageInfo?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+    </Head>
+
     <section class="pb-24 relative bg-blue-500 overflow-hidden">
         <div class="bg-gradient-to-t from-blue-500 from-60% lg:from-60%  w-full h-[2000px] absolute z-10"></div>
 

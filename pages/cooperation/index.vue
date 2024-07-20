@@ -1,13 +1,22 @@
 <template>
     <main class="overflow-hidden">
 
+        <Head>
+            <Title>
+                {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+            </Title>
+            <Meta name="description"
+                :content="currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+        </Head>
+
         <PagesCooperationMain />
 
         <section id="broker" class="py-[60px] relative z-10 lg:py-[100px]">
             <div class="container">
                 <div class="xl:flex xl:flex-row-reverse xl:items-center gap-6 3xl:gap-[80px] mb-8 xl:mb-20">
                     <div data-aos="fade-left" class="">
-                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">Для брокеров</h2>
+                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">Для
+                            брокеров</h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">Мы ценим вклад тех, кто помогает развитию
                             рынка
                             недвижимости в Украине. Поэтому мы разработали специальную программу сотрудничества с
@@ -20,25 +29,27 @@
                         <button @click="handleOpenModal" class="white-button hidden xl:block">Начать
                             сотрудничество</button>
                     </div>
-                    <img data-aos="fade-up" class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
+                    <img data-aos="fade-up"
+                        class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
                         src="/assets/img/career/img.jpg" alt="img">
                 </div>
                 <div data-aos="fade-up"
                     class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] xl:pt-20 xl:pb-24 xl:pl lg:pl-[120px] lg::pr-[120px]">
-                    <h3 class="text-xl md:text-2xl 3xl:text-3xl text-white font-bold mb-[30px] ">Этапы работы с брокерами</h3>
-                    <ol
-                        class="md:grid md:grid-cols-4  relative  justify-between ">
+                    <h3 class="text-xl md:text-2xl 3xl:text-3xl text-white font-bold mb-[30px] ">Этапы работы с
+                        брокерами</h3>
+                    <ol class="md:grid md:grid-cols-4  relative  justify-between ">
                         <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10 mb-5 last:mb-0">
                             <div
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 1
 
                             </div>
-                            <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
+                            <div class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
                                 </span>
-                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-2/4 -translate-y-[6px]"></div>
+                                <div
+                                    class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-2/4 -translate-y-[6px]">
+                                </div>
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
                                 Оставить
@@ -51,16 +62,17 @@
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 2
                             </div>
-                            <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
+                            <div class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
 
                                 </span>
-                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-0 -translate-y-[6px]"></div>
+                                <div
+                                    class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-0 -translate-y-[6px]">
+                                </div>
 
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
-                                Подписать договор для согласования условий сотрудничества    
+                                Подписать договор для согласования условий сотрудничества
                             </p>
                         </li>
                         <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10  mb-5 last:mb-0">
@@ -68,16 +80,17 @@
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 3
                             </div>
-                            <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
+                            <div class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
 
                                 </span>
-                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-0 -translate-y-[6px]"></div>
+                                <div
+                                    class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-0 -translate-y-[6px]">
+                                </div>
 
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
-                                Пройти обучение и получить аккредитацию    
+                                Пройти обучение и получить аккредитацию
                             </p>
                         </li>
                         <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10  mb-5 last:mb-0">
@@ -85,12 +98,13 @@
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 4
                             </div>
-                            <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
+                            <div class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
 
                                 </span>
-                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen right-1/2 -translate-y-[6px]"></div>
+                                <div
+                                    class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen right-1/2 -translate-y-[6px]">
+                                </div>
 
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center">
@@ -119,7 +133,8 @@
                         <button @click="handleOpenModal" class="white-button hidden xl:block">Начать
                             сотрудничество</button>
                     </div>
-                    <img data-aos="fade-left" class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
+                    <img data-aos="fade-left"
+                        class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
                         src="/assets/img/career/img.jpg" alt="img">
                 </div>
                 <div data-aos="fade-up"
@@ -168,7 +183,8 @@
             <div class="container">
                 <div class="xl:flex xl:flex-row-reverse xl:items-center gap-6 3xl:gap-[80px] mb-8 xl:mb-20">
                     <div data-aos="fade-left" class="">
-                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">Маркетингу</h2>
+                        <h2 class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] md:mb-12">Маркетингу
+                        </h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg">Знакомы с нашими проектами и у вас есть
                             крутая
                             идея для сотрудничества? Мы открыты для предложений! Если ваша компания занимается рекламной
@@ -181,13 +197,14 @@
                         <button @click="handleOpenModal" class="white-button hidden xl:block">Начать
                             сотрудничество</button>
                     </div>
-                    <img data-aos="fade-right" class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
+                    <img data-aos="fade-right"
+                        class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
                         src="/assets/img/career/img.jpg" alt="img">
                 </div>
                 <div data-aos="fade-up"
                     class="border border-white/20 px-[20px] py-[60px] md:p-[48px] pb-6 3xl:py-[80px] 3xl:px-[120px] rounded-[20px] overflow-hidden">
                     <h3
-                         class="text-xl w-fit md:text-2xl 3xl:text-3xl pr-4 text-white font-bold mb-[30px]  relative after:absolute after:top-2/4   after:w-[6px] after:h-[6px] md:after:w-[10px] md:after:h-[10px] after:bg-blue-400 before:w-screen before:left-[100%] before:h-[1px] before:bg-white/20 md:after:rounded-[4px] md:before:mt-[4px] before:mt-[2.5px] before:top-2/4  before:absolute after:left-full  after:rounded-sm">
+                        class="text-xl w-fit md:text-2xl 3xl:text-3xl pr-4 text-white font-bold mb-[30px]  relative after:absolute after:top-2/4   after:w-[6px] after:h-[6px] md:after:w-[10px] md:after:h-[10px] after:bg-blue-400 before:w-screen before:left-[100%] before:h-[1px] before:bg-white/20 md:after:rounded-[4px] md:before:mt-[4px] before:mt-[2.5px] before:top-2/4  before:absolute after:left-full  after:rounded-sm">
 
 
                         Сотрудничество с маркетологами:
@@ -241,25 +258,27 @@
                         <button @click="handleOpenModal" class="white-button hidden xl:block">Начать
                             сотрудничество</button>
                     </div>
-                    <img data-aos="fade-up" class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
+                    <img data-aos="fade-up"
+                        class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
                         src="/assets/img/career/img.jpg" alt="img">
                 </div>
                 <div data-aos="fade-up"
                     class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] xl:pt-20 xl:pb-24 xl:pl lg:pl-[120px] lg::pr-[120px]">
-                    <h3 class="text-xl md:text-2xl 3xl:text-3xl text-white font-bold mb-[30px]">Этапы работы с брокерами</h3>
-                    <ol
-                        class="md:grid md:grid-cols-4  relative  justify-between ">
+                    <h3 class="text-xl md:text-2xl 3xl:text-3xl text-white font-bold mb-[30px]">Этапы работы с брокерами
+                    </h3>
+                    <ol class="md:grid md:grid-cols-4  relative  justify-between ">
                         <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10 mb-5 last:mb-0">
                             <div
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 1
 
                             </div>
-                            <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
+                            <div class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
                                 </span>
-                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-2/4 -translate-y-[6px]"></div>
+                                <div
+                                    class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-2/4 -translate-y-[6px]">
+                                </div>
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
                                 Оставить
@@ -272,12 +291,13 @@
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 1
                             </div>
-                            <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
+                            <div class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
 
                                 </span>
-                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-0 -translate-y-[6px]"></div>
+                                <div
+                                    class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-0 -translate-y-[6px]">
+                                </div>
 
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
@@ -291,12 +311,13 @@
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 1
                             </div>
-                            <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
+                            <div class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
 
                                 </span>
-                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-0 -translate-y-[6px]"></div>
+                                <div
+                                    class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen left-0 -translate-y-[6px]">
+                                </div>
 
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
@@ -310,12 +331,13 @@
                                 class="md:mx-auto num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
                                 1
                             </div>
-                            <div
-                                class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
+                            <div class="w-full  justify-center items-center hidden md:flex  overflow-hidden relative ">
                                 <span class="bg-blue-400 rounded-[4px] w-[10px] h-[10px] md:mx-auto md:mt-5 mb-8 ">
 
                                 </span>
-                                <div class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen right-1/2 -translate-y-[6px]"></div>
+                                <div
+                                    class="hidden md:block h-[1px] absolute bg-white/20 -z-[1] top-[50%] w-screen right-1/2 -translate-y-[6px]">
+                                </div>
 
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center">
@@ -330,19 +352,23 @@
             </div>
         </section>
 
-        <section class="py-[60px] lg:py-[100px] md:py-24">
+        <PagesMainProjects/>
+
+        <!-- <section class="py-[60px] lg:py-[100px] md:py-24">
             <div class="container">
                 <h2 data-aos="fade-up"
                     class="text-white md:text-center md:mx-auto text-3xl font-bold md:text-[45px] lg:text-[56px] mb-8 md:mb-12">
                     Наши проекты
                 </h2>
 
-                <swiper :modules="modules" :navigation="navigationConfig" :space-between="20" :slides-per-view="1"
-                    :breakpoints="breakpoints" :pagination="pagination" @swiper="onSwiper" @slideChange="onSlideChange" class="relative">
+                <swiper :modules="modules" :navigation="navigationConfig" :space-between="20" :slides-per-view="3"
+                    :breakpoints="breakpoints" :pagination="pagination" @swiper="onSwiper" @slideChange="onSlideChange"
+                    class="relative">
                     <swiper-slide>
                         <div
                             class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
-                            <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover" alt="">
+                            <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover"
+                                alt="">
                             <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4">
                             </div>
 
@@ -391,7 +417,8 @@
                     <swiper-slide>
                         <div
                             class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
-                            <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover" alt="">
+                            <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover"
+                                alt="">
                             <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4">
                             </div>
 
@@ -440,7 +467,8 @@
                     <swiper-slide>
                         <div
                             class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
-                            <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover" alt="">
+                            <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover"
+                                alt="">
                             <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4">
                             </div>
 
@@ -487,15 +515,25 @@
                         </div>
                     </swiper-slide>
 
-                  <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination"></div>
 
                 </swiper>
 
             </div>
-        </section>
+        </section> -->
 
     </main>
 </template>
+
+<script setup>
+const langStore = useLangStore();
+const pagesStore = usePagesStore();
+const currentPageReqest = ref([]);
+
+watchEffect(() => {
+    currentPageReqest.value = pagesStore?.pagesList?.filter(item => item.slug === 'cooperation')[0]?.translations
+});
+</script>
 
 <script>
 import { Navigation, A11y } from 'swiper/modules';
@@ -532,7 +570,7 @@ export default {
         const handleOpenModal = () => {
             modalsStore.addModal('vacancy')
         }
-        
+
         const breakpoints = {
             768: {
                 slidesPerView: 2,

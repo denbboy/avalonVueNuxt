@@ -21,6 +21,7 @@
             </svg>
           </div>
 
+          <ModalsModal3d v-if="modals[0] === 'modal3d'" />
           <ModalsModalPresentation v-if="modals[0] === 'presentation'" />
           <ModalsModalCalendar v-if="modals[0] === 'calendar'" />
           <ModalsModalMessage v-if="modals[0] === 'message'" />
@@ -52,6 +53,7 @@
             </svg>
           </div>
 
+          <ModalsModal3d v-if="modals[1] === 'modal3d'" />
           <ModalsModalPresentation v-if="modals[1] === 'presentation'" />
           <ModalsModalCalendar v-if="modals[1] === 'calendar'" />
           <ModalsModalMessage v-if="modals[1] === 'message'" />
@@ -93,6 +95,7 @@ watch(modals, (newModals) => {
 
 // Close Modal Function
 const closeModal = () => {
+  modalsStore.removeModalData()
   modalsStore.removeModal(modals.value[modals.value.length - 1]);
 };
 </script>

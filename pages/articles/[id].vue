@@ -1,8 +1,23 @@
 <template>
-    <section class="bg-blue-500 pt-32 md:pt-64">
-        <div class="bg-[url('./../img/news/bgd-single.jpg')] absolute top-0 left-0 w-full h-screen z-0 opacity-70">
-            <div class="bg-gradient-to-t from-blue-500 absolute top-0 left-0 w-full h-full"></div>
+
+    <Head>
+        <Title>
+            {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+        </Title>
+        <Meta name="description"
+            :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+    </Head>
+
+    <section class="bg-blue-500 pt-32 md:pt-64 relative">
+
+        <img :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="">
+        <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10">
         </div>
+        <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[700px] absolute z-10">
+        </div>
+
+
         <div class="container relative z-10">
             <div class="absolute right-0 bottom-56 w-72 h-72 z-10">
                 <img src="/assets/img/icons/vector-logo.svg" alt="vector-logo">
@@ -14,21 +29,23 @@
                     <span class="text-white text-sm">
                         {{ new Date(itemData?.date_created).getDate() }} {{ $t(`month${new
                             Date(itemData?.date_created).getMonth()
-                        ?? "0" + 1}`) }} {{ new Date(itemData?.date_created).getFullYear() }}
+                            ?? "0" + 1}`) }} {{ new Date(itemData?.date_created).getFullYear() }}
                     </span>
                 </div>
                 <h1
                     class="text-white text-[30px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[1200px] md:text-[65px]">
-                    
-                    {{ itemData?.title }}
+
+                    {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
 
                 </h1>
                 <a href="#"
                     class="rounded-full border-[1px] border-white w-10 h-10 flex items-center justify-center mt-8 mb-14 md:w-14 md:h-14">
                     <img src="/assets/img/icons/socials.svg" class="md:w-6" alt="Soc">
                 </a>
-                
-                <div v-html="itemData?.description"></div>
+
+                <div
+                    v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
+                </div>
             </div>
         </div>
     </section>
@@ -82,7 +99,7 @@
 .text-content blockquote {
     padding-left: 36px;
 }
-    
+
 .text-content {
     color: #fff;
     font-size: 20px;
@@ -108,18 +125,18 @@ const route = useRoute();
 // GET OTHER SALES
 const itemsList = ref([]);
 const fetchArticles = async () => {
-  try {
-    const items = await getItems({
-      collection: "Article",
-      params: {
-        fields: '*,translations.*'
-      },
-    });
-    itemsList.value = items;
-    console.log(items);
-  } catch (e) {
-    console.error('Error fetching items:', e);
-  }
+    try {
+        const items = await getItems({
+            collection: "Article",
+            params: {
+                fields: '*,translations.*'
+            },
+        });
+        itemsList.value = items;
+        console.log(items);
+    } catch (e) {
+        console.error('Error fetching items:', e);
+    }
 };
 onMounted(fetchArticles);
 // GET OTHER SALES
@@ -127,19 +144,19 @@ onMounted(fetchArticles);
 // GET POST
 const itemData = ref([]);
 const fetchItemData = async () => {
-  try {
-    const items = await getItems({
-      collection: `Article/${route.params.id}`,
-      params: {
-        fields: '*,translations.*'
-      },
-    });
+    try {
+        const items = await getItems({
+            collection: `Article/${route.params.id}`,
+            params: {
+                fields: '*,translations.*'
+            },
+        });
 
-    itemData.value = items;
-    console.log('ITEM_DATA', items);
-  } catch (e) {
-    console.error('Error fetching items:', e);
-  }
+        itemData.value = items;
+        console.log('ITEM_DATA', items);
+    } catch (e) {
+        console.error('Error fetching items:', e);
+    }
 };
 onMounted(fetchItemData);
 // GET POST

@@ -112,7 +112,7 @@
             </div>
             <div class="relative xl:max-w-[456px] 3xl:max-w-[600px] xl:max-h-[403px] 3xl:max-h-[516px] lg:rounded-3xl rounded-2xl overflow-hidden">
 
-                <NuxtLink v-if="itemData?.video_360" :href="`#3d-object-${itemData?.id}`"
+                <NuxtLink @click="handleOpenModal3D" v-if="itemData?.video_360" :href="`#3d-object-${itemData?.id}`"
                     class="absolute top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
                     <img src="/assets/img/about/360.png" class="max-w-[95px]" alt="ph">
                 </NuxtLink>
@@ -181,9 +181,16 @@ import 'swiper/css/navigation';
 
 SwiperCore.use([Navigation, Pagination, A11y]);
 
+
 const { itemData } = defineProps(['itemData']);
 
+const modalsStore = useModalsStore()
 const langStore = useLangStore()
+
+const handleOpenModal3D = () => {
+    modalsStore.addModal('modal3d')
+    modalsStore.setModalData(itemData)
+}
 
 const modules = ref([Navigation, Pagination, A11y]);
 

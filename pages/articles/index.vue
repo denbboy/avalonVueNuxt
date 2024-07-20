@@ -14,7 +14,6 @@ const fetchArticles = async () => {
             },
         });
         itemsList.value = items;
-        console.log(items);
     } catch (e) {
         console.error('Error fetching items:', e);
     }

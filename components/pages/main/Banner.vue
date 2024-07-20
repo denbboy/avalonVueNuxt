@@ -56,9 +56,14 @@
               {{ item?.projects[0]?.item?.translations?.filter(item =>
                 item.languages_code.includes(langStore.lang))[0]?.description }}
             </p>
-            <button @click="addModal" class="white-button mt-7 lg:mt-12">
-                Скачать презентацию
-              </button>
+            <div class="flex">
+              <button @click="addModal" class="white-button mt-7 lg:mt-12">
+              Скачать презентацию
+            </button>
+            <NuxtLink :to="`/projects/${item?.projects[0]?.item?.id}`" class="white-button mt-7 lg:mt-12 ml-5">
+              Подробнее
+            </NuxtLink>
+            </div>
 
           </span>
 
@@ -107,8 +112,9 @@
                 </div>
               </div>
               <h2
-                v-html="item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description" class="text-3xl font-light text-white mt-5 md:text-[55px] lg:text-[65px] leading-[100%] md:leading-[55px] lg:leading-[65px] md:mt-12 md:max-w-[825px]">
-                
+                v-html="item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"
+                class="text-3xl font-light text-white mt-5 md:text-[55px] lg:text-[65px] leading-[100%] md:leading-[55px] lg:leading-[65px] md:mt-12 md:max-w-[825px]">
+
               </h2>
               <button @click="addModal" class="white-button mt-7 lg:mt-12">
                 Скачать презентацию
