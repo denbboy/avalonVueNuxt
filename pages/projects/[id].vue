@@ -10,7 +10,7 @@
 
     <PagesProjectBanner :itemData="itemData" />
 
-    <PagesProjectGallery :gallery="itemData.gallery" />
+    <PagesProjectGallery v-if="itemData?.gallery?.length" :gallery="itemData.gallery" />
 
     <PagesProjectAbout :itemInfo="itemData"
         :itemData="itemData?.blocks?.filter(item => item?.Block_id?.title === 'OM | Club House')[0]?.Block_id?.strings" />

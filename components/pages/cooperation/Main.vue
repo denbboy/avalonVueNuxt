@@ -28,7 +28,9 @@
                     </div>
                     <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
-                            <p class="my-4 text-white font-bold leading-none text-center">Брокерам</p>
+                            <p class="my-4 text-white font-bold leading-none text-center">
+                                {{ $t('brokeram') }}
+                            </p>
                             <svg class="mx-auto" width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_670_12563)">
                                     <path
@@ -50,11 +52,7 @@
                         </div>
 
                         <svg class="absolute group hidden xl:block 3xl:hidden w-full h-full top-0 left-0" width="261" height="172" viewBox="0 0 261 172" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- <mask id="path-1-inside-1_1360_12236" fill="white">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M89 0H15C6.71573 0 0 6.71573 0 15V157C0 165.284 6.71573 172 15 172H246C254.284 172 261 165.284 261 157V15C261 6.71573 254.284 0 246 0H173V23C173 34.0457 164.046 43 153 43H109C97.9543 43 89 34.0457 89 23V0Z"/>
-                            </mask> -->
                             <path class="opacity-0 transition-opacity duration-300 group-hover:opacity-100" fill="#0E88EC" fill-rule="evenodd" clip-rule="evenodd" d="M89 0H15C6.71573 0 0 6.71573 0 15V157C0 165.284 6.71573 172 15 172H246C254.284 172 261 165.284 261 157V15C261 6.71573 254.284 0 246 0H173V23C173 34.0457 164.046 43 153 43H109C97.9543 43 89 34.0457 89 23V0Z"/>
-
                             <path class="opacity-100 transition-opacity duration-300 group-hover:opacity-0" d="M89 0H90V-1H89V0ZM173 0V-1H172V0H173ZM15 1H89V-1H15V1ZM1 15C1 7.26801 7.26801 1 15 1V-1C6.16344 -1 -1 6.16344 -1 15H1ZM1 157V15H-1V157H1ZM15 171C7.26802 171 1 164.732 1 157H-1C-1 165.837 6.16345 173 15 173V171ZM246 171H15V173H246V171ZM260 157C260 164.732 253.732 171 246 171V173C254.837 173 262 165.837 262 157H260ZM260 15V157H262V15H260ZM246 1C253.732 1 260 7.26801 260 15H262C262 6.16344 254.837 -1 246 -1V1ZM173 1H246V-1H173V1ZM172 0V23H174V0H172ZM172 23C172 33.4934 163.493 42 153 42V44C164.598 44 174 34.598 174 23H172ZM153 42H109V44H153V42ZM109 42C98.5066 42 90 33.4934 90 23H88C88 34.598 97.402 44 109 44V42ZM90 23V0H88V23H90Z" fill="white" fill-opacity="0.5" style="fill:white;fill-opacity:0.5;" mask="url(#path-1-inside-1_1360_12236)"/>
                         </svg>
 
@@ -76,7 +74,9 @@
                     </div>
                     <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
-                            <p class="my-4 text-white leading-none font-bold text-center">Агентствам недвижимости</p>
+                            <p class="my-4 text-white leading-none font-bold text-center">
+                                {{ $t('agent_nedv') }}
+                            </p>
                             <svg class="mx-auto" width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_670_12563)">
                                     <path
@@ -90,24 +90,18 @@
                                 </g>
                                 <defs>
                                     <clipPath id="clip0_670_12563">
-                                        <rect width="30" height="30" fill="white" style="fill:white;fill-opacity:1;"
-                                            transform="translate(30.5) rotate(90)" />
+                                        <rect width="30" height="30" fill="white" transform="translate(30.5) rotate(90)" />
                                     </clipPath>
                                 </defs>
                             </svg>
                         </div>
 
                         <svg class="absolute group hidden xl:block 3xl:hidden w-full h-full top-0 left-0" width="261" height="172" viewBox="0 0 261 172" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- <mask id="path-1-inside-1_1360_12236" fill="white">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M89 0H15C6.71573 0 0 6.71573 0 15V157C0 165.284 6.71573 172 15 172H246C254.284 172 261 165.284 261 157V15C261 6.71573 254.284 0 246 0H173V23C173 34.0457 164.046 43 153 43H109C97.9543 43 89 34.0457 89 23V0Z"/>
-                            </mask> -->
                             <path class="opacity-0 transition-opacity duration-300 group-hover:opacity-100" fill="#0E88EC" fill-rule="evenodd" clip-rule="evenodd" d="M89 0H15C6.71573 0 0 6.71573 0 15V157C0 165.284 6.71573 172 15 172H246C254.284 172 261 165.284 261 157V15C261 6.71573 254.284 0 246 0H173V23C173 34.0457 164.046 43 153 43H109C97.9543 43 89 34.0457 89 23V0Z"/>
-
                             <path class="opacity-100 transition-opacity duration-300 group-hover:opacity-0" d="M89 0H90V-1H89V0ZM173 0V-1H172V0H173ZM15 1H89V-1H15V1ZM1 15C1 7.26801 7.26801 1 15 1V-1C6.16344 -1 -1 6.16344 -1 15H1ZM1 157V15H-1V157H1ZM15 171C7.26802 171 1 164.732 1 157H-1C-1 165.837 6.16345 173 15 173V171ZM246 171H15V173H246V171ZM260 157C260 164.732 253.732 171 246 171V173C254.837 173 262 165.837 262 157H260ZM260 15V157H262V15H260ZM246 1C253.732 1 260 7.26801 260 15H262C262 6.16344 254.837 -1 246 -1V1ZM173 1H246V-1H173V1ZM172 0V23H174V0H172ZM172 23C172 33.4934 163.493 42 153 42V44C164.598 44 174 34.598 174 23H172ZM153 42H109V44H153V42ZM109 42C98.5066 42 90 33.4934 90 23H88C88 34.598 97.402 44 109 44V42ZM90 23V0H88V23H90Z" fill="white" fill-opacity="0.5" style="fill:white;fill-opacity:0.5;" mask="url(#path-1-inside-1_1360_12236)"/>
                         </svg>
 
                         <svg class="absolute group hidden 3xl:block w-full h-full top-0 left-0" viewBox="0 0 375 172" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      
                             <path class="opacity-0 transition-opacity duration-300 group-hover:opacity-100" fill="#0E88EC" fill-rule="evenodd" clip-rule="evenodd" d="M146 0H15C6.71573 0 0 6.71573 0 15V157C0 165.284 6.71574 172 15 172H360C368.284 172 375 165.284 375 157V15C375 6.71573 368.284 0 360 0H230V23C230 34.0457 221.046 43 210 43H166C154.954 43 146 34.0457 146 23V0Z"/>
                             <path class="opacity-100 transition-opacity duration-300 group-hover:opacity-0" d="M146 0H147V-1H146V0ZM230 0V-1H229V0H230ZM15 1H146V-1H15V1ZM1 15C1 7.26801 7.26801 1 15 1V-1C6.16344 -1 -1 6.16344 -1 15H1ZM1 157V15H-1V157H1ZM15 171C7.26802 171 1 164.732 1 157H-1C-1 165.837 6.16345 173 15 173V171ZM360 171H15V173H360V171ZM374 157C374 164.732 367.732 171 360 171V173C368.837 173 376 165.837 376 157H374ZM374 15V157H376V15H374ZM360 1C367.732 1 374 7.26801 374 15H376C376 6.16344 368.837 -1 360 -1V1ZM230 1H360V-1H230V1ZM229 0V23H231V0H229ZM229 23C229 33.4934 220.493 42 210 42V44C221.598 44 231 34.598 231 23H229ZM210 42H166V44H210V42ZM166 42C155.507 42 147 33.4934 147 23H145C145 34.598 154.402 44 166 44V42ZM147 23V0H145V23H147Z" fill="white" fill-opacity="0.5" style="fill:white;fill-opacity:0.5;" mask="url(#path-1-inside-1_585_1119)"/>
                         </svg>
@@ -115,8 +109,7 @@
 
                     </div>
                 </NuxtLink>
-                <NuxtLink href="#marketing"
-                    class=" w-full py-[30px] px-2 xl:p-0 xl:border-none border border-white/50 rounded-[10px] xl:max-w-[375px]">
+                <NuxtLink href="#marketing" class=" w-full py-[30px] px-2 xl:p-0 xl:border-none border border-white/50 rounded-[10px] xl:max-w-[375px]">
 
                     <div
                         class="flex items-center xl:translate-y-[32px] justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
@@ -124,7 +117,9 @@
                     </div>
                     <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
-                            <p class="my-4 text-white font-bold leading-none text-center">Маркетингу</p>
+                            <p class="my-4 text-white font-bold leading-none text-center">
+                                {{ $t('marketing') }}
+                            </p>
                             <svg class="mx-auto" width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_670_12563)">
                                     <path
@@ -138,8 +133,7 @@
                                 </g>
                                 <defs>
                                     <clipPath id="clip0_670_12563">
-                                        <rect width="30" height="30" fill="white" style="fill:white;fill-opacity:1;"
-                                            transform="translate(30.5) rotate(90)" />
+                                        <rect width="30" height="30" fill="white" transform="translate(30.5) rotate(90)" />
                                     </clipPath>
                                 </defs>
                             </svg>
@@ -169,7 +163,9 @@
                     </div>
                     <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
-                            <p class="my-4 text-white font-bold leading-none text-center">Партнерство</p>
+                            <p class="my-4 text-white font-bold leading-none text-center">
+                                {{ $t('partnerstvo') }}
+                            </p>
                             <svg class="mx-auto" width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_670_12563)">
                                     <path

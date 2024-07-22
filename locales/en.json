@@ -17,5 +17,15 @@
     "month9": "September",
     "month10": "October",
     "month11": "November",
-    "month12": "December"
+    "month12": "December",
+
+    "about_compl": "About Complex",
+    "location": "Location",
+    "appatments": "Apartments",
+    "investors": "For Investors",
+    
+    "marketing": "For Marketing",
+    "agent_nedv": "For Real Estate Agencies",
+    "partnerstvo": "Partnership",
+    "brokeram": "For Brokers"
 }

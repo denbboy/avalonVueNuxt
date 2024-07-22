@@ -142,22 +142,22 @@
       :class="isOpenBurger ? 'opacity-100 visible' : 'opacity-0 invisible'">
       <div class="md:hidden flex flex-col gap-8 mb-12 pb-7 border-b border-whiteOp-300">
         <NuxtLink @click="handleCloseBurger" href="/" class="hover:text-blue-400 transition-all">
-          Главная
+          Avalon
         </NuxtLink>
         <NuxtLink @click="handleCloseBurger" href="#about" class="hover:text-blue-400 transition-all">
-          Про комплекс
+          {{ $t('about_compl') }}
         </NuxtLink>
         <NuxtLink @click="handleCloseBurger" href="#location" class="hover:text-blue-400 transition-all">
-          Локация
+          {{ $t('location') }}
         </NuxtLink>
         <NuxtLink @click="handleCloseBurger" href="#apartment" class="hover:text-blue-400 transition-all">
-          Апартаменты
+          {{ $t('appatments') }}
         </NuxtLink>
         <NuxtLink @click="handleCloseBurger" href="#investors" class=" hover:text-blue-400 transition-all">
-          Инвесторам
+          {{ $t('investors') }}
         </NuxtLink>
         <NuxtLink @click="handleCloseBurger" href="#contacts" class=" hover:text-blue-400 transition-all">
-          Контакты
+          {{ $t('contacts') }}
         </NuxtLink>
 
       </div>

@@ -349,244 +349,56 @@
             <PagesMainProjects/>
         </div>
 
-        <!-- <section class="py-[60px] lg:py-[100px] md:py-24">
-            <div class="container">
-                <h2 data-aos="fade-up"
-                    class="text-white md:text-center md:mx-auto text-3xl font-bold md:text-[45px] lg:text-[56px] mb-8 md:mb-12">
-                    Наши проекты
-                </h2>
-
-                <swiper :modules="modules" :navigation="navigationConfig" :space-between="20" :slides-per-view="3"
-                    :breakpoints="breakpoints" :pagination="pagination" @swiper="onSwiper" @slideChange="onSlideChange"
-                    class="relative">
-                    <swiper-slide>
-                        <div
-                            class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
-                            <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover"
-                                alt="">
-                            <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4">
-                            </div>
-
-                            <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
-                                <div class="block-bottom-point"></div>
-
-                                <div class="flex justify-between mb-auto">
-                                    <img class="w-[90px]" src="/assets/img/icons/icon-club.svg" alt="">
-                                    <span
-                                        class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-sm text-white">
-                                        80% Продано
-                                    </span>
-                                </div>
-                                <div class="max-w-96">
-                                    <h2 class="text-white font-bold text-2xl md:text-3xl mb-5 md:mb-7">
-                                        OM | Club House
-                                    </h2>
-                                    <p class="text-white text-xs md:text-sm mb-5 md:mb-7">
-                                        Премиум апартаменты в современном клубном доме. Погрузитесь в уникальную
-                                        атмосферу
-                                        роскоши и
-                                        уюта в центре Чангу.
-                                    </p>
-                                    <div class="flex items-center mb-5 md:mb-7">
-                                        <strong class="text-xl md:text-2xl text-white mr-[6px]">от $120
-                                            000</strong>
-                                        <span class="text-white/60 text-[12px] hidden md:block">*включая
-                                            налоги</span>
-                                    </div>
-
-                                    <div class="flex">
-                                        <NuxtLink href="/projects/123"
-                                            class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
-                                            Подробнее
-                                        </NuxtLink>
-                                        <div class="flex items-center">
-                                            <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
-                                            <span class="ml-1 text-sm text-white">Чангу</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div
-                            class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
-                            <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover"
-                                alt="">
-                            <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4">
-                            </div>
-
-                            <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
-                                <div class="block-bottom-point"></div>
-
-                                <div class="flex justify-between mb-auto">
-                                    <img class="w-[90px]" src="/assets/img/icons/icon-club.svg" alt="">
-                                    <span
-                                        class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-sm text-white">
-                                        80% Продано
-                                    </span>
-                                </div>
-                                <div class="max-w-96">
-                                    <h2 class="text-white font-bold text-2xl md:text-3xl mb-5 md:mb-7">
-                                        OM | Club House
-                                    </h2>
-                                    <p class="text-white text-xs md:text-sm mb-5 md:mb-7">
-                                        Премиум апартаменты в современном клубном доме. Погрузитесь в уникальную
-                                        атмосферу
-                                        роскоши и
-                                        уюта в центре Чангу.
-                                    </p>
-                                    <div class="flex items-center mb-5 md:mb-7">
-                                        <strong class="text-xl md:text-2xl text-white mr-[6px]">от $120
-                                            000</strong>
-                                        <span class="text-white/60 text-[12px] hidden md:block">*включая
-                                            налоги</span>
-                                    </div>
-
-                                    <div class="flex">
-                                        <NuxtLink href="/projects/123"
-                                            class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
-                                            Подробнее
-                                        </NuxtLink>
-                                        <div class="flex items-center">
-                                            <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
-                                            <span class="ml-1 text-sm text-white">Чангу</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div
-                            class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] rounded-br-none">
-                            <img src="/assets/img/discounts/image.jpg" class="opacity-50 w-full h-full object-cover"
-                                alt="">
-                            <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4">
-                            </div>
-
-                            <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
-                                <div class="block-bottom-point"></div>
-
-                                <div class="flex justify-between mb-auto">
-                                    <img class="w-[90px]" src="/assets/img/icons/icon-club.svg" alt="">
-                                    <span
-                                        class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-sm text-white">
-                                        80% Продано
-                                    </span>
-                                </div>
-                                <div class="max-w-96">
-                                    <h2 class="text-white font-bold text-2xl md:text-3xl mb-5 md:mb-7">
-                                        OM | Club House
-                                    </h2>
-                                    <p class="text-white text-xs md:text-sm mb-5 md:mb-7">
-                                        Премиум апартаменты в современном клубном доме. Погрузитесь в уникальную
-                                        атмосферу
-                                        роскоши и
-                                        уюта в центре Чангу.
-                                    </p>
-                                    <div class="flex items-center mb-5 md:mb-7">
-                                        <strong class="text-xl md:text-2xl text-white mr-[6px]">от $120
-                                            000</strong>
-                                        <span class="text-white/60 text-[12px] hidden md:block">*включая
-                                            налоги</span>
-                                    </div>
-
-                                    <div class="flex">
-                                        <NuxtLink href="/projects/123"
-                                            class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
-                                            Подробнее
-                                        </NuxtLink>
-                                        <div class="flex items-center">
-                                            <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
-                                            <span class="ml-1 text-sm text-white">Чангу</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </swiper-slide>
-
-                    <div class="swiper-pagination"></div>
-
-                </swiper>
-
-            </div>
-        </section> -->
-
     </main>
 </template>
 
 <script setup>
+import { ref, watchEffect } from 'vue';
+
+// Состояние и сторы
 const langStore = useLangStore();
 const pagesStore = usePagesStore();
+const modalsStore = useModalsStore();
 const currentPageReqest = ref([]);
 
+// Наблюдение за изменением страницы
 watchEffect(() => {
-    currentPageReqest.value = pagesStore?.pagesList?.filter(item => item.slug === 'cooperation')[0]?.translations
+  currentPageReqest.value = pagesStore?.pagesList?.filter(item => item.slug === 'cooperation')[0]?.translations;
 });
-</script>
 
-<script>
-import { Navigation, A11y } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import SwiperCore from 'swiper';
-
-import 'swiper/css';
-import 'swiper/css/navigation';
-
-SwiperCore.use([Navigation, A11y]);
-
-export default {
-    components: {
-        Swiper,
-        SwiperSlide,
-    },
-    setup() {
-        const modules = {
-            navigation: true,
-            a11y: true,
-            pagination: true,
-
-        };
-        const navigationConfig = {
-            nextEl: '.button-next',
-            prevEl: '.button-prev',
-        };
-        const pagination = {
-            el: '.swiper-pagination',
-            clickable: true,
-        };
-        const modalsStore = useModalsStore()
-
-        const handleOpenModal = () => {
-            modalsStore.addModal('vacancy')
-        }
-
-        const breakpoints = {
-            768: {
-                slidesPerView: 2,
-                pagination: false,
-            },
-            1280: {
-                slidesPerView: 3
-            },
-            1441: {
-                spaceBetween: 50,
-            },
-        }
-
-        return {
-            modules,
-            pagination,
-            navigationConfig,
-            handleOpenModal,
-            breakpoints,
-
-        };
-    },
+// Конфигурация Swiper
+const modules = {
+  navigation: true,
+  a11y: true,
+  pagination: true,
 };
+
+const navigationConfig = {
+  nextEl: '.button-next',
+  prevEl: '.button-prev',
+};
+
+const pagination = {
+  el: '.swiper-pagination',
+  clickable: true,
+};
+
+const breakpoints = {
+  768: {
+    slidesPerView: 2,
+    pagination: false,
+  },
+  1280: {
+    slidesPerView: 3,
+  },
+  1441: {
+    spaceBetween: 50,
+  },
+};
+
+// Функция открытия модального окна
+const handleOpenModal = () => {
+  modalsStore.addModal('vacancy');
+};
+
 </script>
