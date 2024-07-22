@@ -46,15 +46,12 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-x-5 gap-y-10 mt-12"
         data-aos="fade-up">
-        <NewsItem v-for="item in itemsList" :key="item.id" :item="item" bgdColor="blue-500" />
+        <NewsItem v-for="item in itemsList?.slice(0, viewCount)" :key="item.id" :item="item" bgdColor="blue-500" />
       </div>
 
-      <!-- TODO Сделать кнопку -->
-
-      <!-- <button
-        class="text-white h-[60px] rounded-[10px] border-white border-[1px] cursor-pointer px-7 mx-auto block mt-12">
+      <button v-if="viewCount < itemsList.length" @click="handelShowMore" class="white-border-button">
         Показать больше
-      </button> -->
+      </button>
     </div>
 
     <div class="absolute -right-36 bottom-40 w-72 h-72 z-10">
@@ -71,6 +68,11 @@ const { getItems } = useDirectusItems();
 const langStore = useLangStore();
 
 const itemsList = ref([]);
+const viewCount = ref(8);
+
+const handelShowMore = () => {
+    viewCount.value += 8;
+}
 
 const fetchArticles = async () => {
   try {

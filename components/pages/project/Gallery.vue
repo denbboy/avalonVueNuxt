@@ -12,25 +12,19 @@
 
                 <client-only>
 
-                    <a v-for="image in gallery" :key="image.id" data-aos="fade-up" class="image" data-fancybox="gallery"
+                    <a v-for="image in gallery?.slice(0, isShowFull ? 9999 : 7)" :key="image.id" data-aos="fade-up" class="image lg:h-[343px] overflow-hidden" data-fancybox="gallery"
                         :href="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`">
-                        <!-- <img :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`"
-                            class="rounded-2xl h-full w-full flex items-center justify-center max-h-[500px] object-cover"
-                            alt="ph"> -->
 
-                        <!-- <div v-if="isLoading" class="skeleton"></div> -->
-                         <ImageLoading :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`" className="rounded-2xl h-full w-full flex items-center justify-center max-h-[500px] object-cover" />
+                         <ImageLoading :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`" className="rounded-2xl w-full flex items-center justify-center h-full object-cover" />
                     </a>
 
                 </client-only>
             </div>
 
-            <!-- TODO Сделать кнопку "Показать альбом" -->
-
-            <!-- <button type="button"
+            <button v-if="!isShowFull" @click="handleShowFull" type="button"
                 class="font-bold text-white text-sm w-full max-w-[205px] mt-5 border border-white rounded-xl p-4 m-auto flex justify-center hover:text-blue-400 hover:bg-white transition-all md:mt-7 md:p-6 md:max-w-[286px] md:text-base">
                 Показать альбом
-            </button> -->
+            </button>
         </div>
     </section>
 </template>
@@ -38,6 +32,12 @@
 <script setup>
 
 const { gallery } = defineProps(['gallery'])
+
+const isShowFull = ref(false);
+
+const handleShowFull = () => {
+    isShowFull.value = true;
+}
 
 </script>
 

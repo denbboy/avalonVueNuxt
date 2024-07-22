@@ -7,13 +7,11 @@
       :speed="1500">
 
 
-
-
       <swiper-slide v-for="item in itemsList" class="pt-40 lg:pt-[250px] lg:min-h-[810px] relative overflow-hidden">
-        <div :class="`bg-[url('https://avalon-panel.sonisapps.com/assets/${item?.img}')]`"
-          class="brightness-[1] bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
-          <iframe v-if="item?.video" class="scale-125 w-full h-full"
-            src="https://www.youtube.com/embed/zHcr32gRRCs?si=73xg2tsfV1tnZjwg&autoplay=1&mute=1&loop=1&playlist=zHcr32gRRCs"
+        <div class="brightness-[1] bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
+          <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`" class="absolute top-0 left-0 w-full h-full" alt="">
+          <iframe v-if="item?.video" class="scale-125 pointer-events-none w-full h-full"
+            :src="`${item?.video}&autoplay=1&mute=1&loop=1`"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -56,11 +54,11 @@
               {{ item?.projects[0]?.item?.translations?.filter(item =>
                 item.languages_code.includes(langStore.lang))[0]?.description }}
             </p>
-            <div class="flex">
+            <div class="md:flex">
               <button @click="addModal" class="white-button mt-7 lg:mt-12">
               Скачать презентацию
             </button>
-            <NuxtLink :to="`/projects/${item?.projects[0]?.item?.id}`" class="white-button mt-7 lg:mt-12 ml-5">
+            <NuxtLink :to="`/projects/${item?.projects[0]?.item?.id}`" class="white-button md:mt-7 mt-3 lg:mt-12 md:ml-5">
               Подробнее
             </NuxtLink>
             </div>
@@ -69,10 +67,12 @@
 
           <div v-if="!item?.projects?.length" class="flex items-center justify-between">
             <div class="">
+              <!-- https://www.youtube.com/embed/FR_cDNCzRa8?si=yVdW8mAxA679Ej-z -->
               <div
-                class="bg-[url('./../img/index/slide-bgd-1.jpg')] brightness-[1] bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
+                class="brightness-[1] bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
+                <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`" class="absolute top-0 left-0 w-full h-full" alt="">
                 <iframe v-if="item?.video" class="scale-125" width="100%" height="100%"
-                  src="https://www.youtube.com/embed/zHcr32gRRCs?si=73xg2tsfV1tnZjwg&autoplay=1&mute=1&loop=1&playlist=zHcr32gRRCs"
+                  :src="`${item?.video}&autoplay=1&mute=1&loop=1`"
                   title="YouTube video player" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -153,7 +153,6 @@
       </swiper-slide>
 
 
-
     </swiper>
 
   </section>
@@ -199,7 +198,7 @@ const addModal = () => {
   modalsStore.addModal('presentation')
 }
 
-const handlePlayVideo = () => {
-  document.querySelector('.banner iframe').setAttribute('src', 'https://www.youtube.com/embed/zHcr32gRRCs?si=73xg2tsfV1tnZjwg&autoplay=1&mute=1&loop=1&playlist=zHcr32gRRCs')
-}
+// const handlePlayVideo = () => {
+//   document.querySelector('.banner iframe').setAttribute('src', 'https://www.youtube.com/embed/zHcr32gRRCs?si=73xg2tsfV1tnZjwg&autoplay=1&mute=1&loop=1&playlist=zHcr32gRRCs')
+// }
 </script>

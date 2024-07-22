@@ -53,18 +53,16 @@
           </ul>
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-x-5 gap-y-5 mt-12"
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-3 gap-x-5 gap-y-5 mt-12"
         data-aos="fade-up">
 
-        <SalesItem v-for="item in itemsList" :item="item" :key="item.id" bgdColor="blue-500" />
+        <SalesItem v-for="item in itemsList?.slice(0, viewCount)" :item="item" :key="item.id" bgdColor="blue-500" />
 
       </div>
 
-      <!-- TODO Сделать кнопку -->
-
-      <!-- <button class="white-border-button">
-                Показать больше
-            </button> -->
+      <button v-if="viewCount < itemsList.length" @click="handelShowMore" class="white-border-button">
+        Показать больше
+      </button>
     </div>
 
     <div class="absolute -right-36 bottom-40 w-72 h-72 z-10">
@@ -80,6 +78,11 @@ const { getItems } = useDirectusItems();
 const langStore = useLangStore();
 
 const itemsList = ref([]);
+const viewCount = ref(6);
+
+const handelShowMore = () => {
+    viewCount.value += 6;
+}
 
 const fetchArticles = async () => {
   try {
@@ -90,6 +93,7 @@ const fetchArticles = async () => {
       },
     });
     itemsList.value = items;
+    console.log(items);
   } catch (e) {
     console.error('Error fetching items:', e);
   }

@@ -1,27 +1,3 @@
-<script setup>
-const { getItems } = useDirectusItems();
-
-const langStore = useLangStore();
-
-const itemsList = ref([]);
-
-const fetchArticles = async () => {
-    try {
-        const items = await getItems({
-            collection: "Article",
-            params: {
-                fields: '*,translations.*'
-            },
-        });
-        itemsList.value = items;
-    } catch (e) {
-        console.error('Error fetching items:', e);
-    }
-};
-
-onMounted(fetchArticles);
-</script>
-
 <template>
     <section class="pb-24 relative bg-blue-500 overflow-hidden">
         <div class="bg-gradient-to-t from-blue-500 from-70% lg:from-70%  w-full h-[2000px] absolute z-10"></div>
@@ -40,15 +16,13 @@ onMounted(fetchArticles);
             <div class="grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 grid gap-x-5 gap-y-8 md:gap-y-12 mt-12"
                 data-aos="fade-up">
 
-                <ArticlesItem bgdColor="blue-500" v-for="item in itemsList" :key="item" :item="item" />
+                <ArticlesItem bgdColor="blue-500" v-for="item in itemsList?.slice(0, viewCount)" :key="item" :item="item" />
 
             </div>
 
-            <!-- TODO Сделать кнопку -->
-
-            <!-- <button class="white-border-button">
+            <button v-if="viewCount < itemsList.length" @click="handelShowMore" class="white-border-button">
                 Показать больше
-            </button> -->
+            </button>
         </div>
 
         <div class="absolute -right-36 bottom-40 w-72 h-72 z-10">
@@ -56,3 +30,32 @@ onMounted(fetchArticles);
         </div>
     </section>
 </template>
+
+
+<script setup>
+const { getItems } = useDirectusItems();
+
+const langStore = useLangStore();
+
+const itemsList = ref([]);
+const viewCount = ref(8);
+
+const handelShowMore = () => {
+    viewCount.value += 8;
+}
+
+const fetchArticles = async () => {
+    try {
+        const items = await getItems({
+            collection: "Article",
+            params: {
+                fields: '*,translations.*'
+            },
+        });
+        itemsList.value = items;
+    } catch (e) {
+        console.error('Error fetching items:', e);
+    }
+};
+onMounted(fetchArticles);
+</script>

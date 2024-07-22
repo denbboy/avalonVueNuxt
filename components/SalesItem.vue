@@ -12,18 +12,17 @@
         <div
             class="bg-gradient-to-t transition-all rounded-2xl opacity-0 group-hover:opacity-90 from-blue-400 from-20% absolute top-0 left-0 w-full h-full z-10">
         </div>
-        <div class="absolute z-20 w-full h-full top-0 left-0 p-5 flex flex-col">
-            <img src="/assets/img/icons/icon-club.svg" alt="Image" class="absolute top-5 left-5 w-14 h-14">
+        <div class="absolute z-20 w-full h-full top-0 left-0 p-3 flex flex-col">
+            <img src="/assets/img/icons/icon-club.svg" alt="Image" class="absolute w-8 h-8 top-3 left-3 md:w-14 md:h-14">
             <div
-                class="bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] px-3 py-2 bg-no-repeat bg-cover bg-right-bottom rounded-l-lg rounded-tr-lg text-xs text-white ml-auto w-fit block lg:text-sm lg:p-3">
+                class="bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] px-2 py-2 bg-no-repeat bg-cover bg-right-bottom rounded-l-lg rounded-tr-lg text-xs text-white ml-auto w-fit block lg:text-sm lg:p-3">
                 Действует до 
                 <strong>
-                    <!-- 30 марта 2024 -->
                     {{ new Date(props?.item?.expired_date).getDate() }} {{ $t(`month${new Date(props?.item?.expired_date).getMonth() ?? "0" + 1}`) }} {{ new Date(props?.item?.expired_date).getFullYear() }}
                 </strong>
             </div>
 
-            <strong class="mt-auto text-white mb-2 md:text-lg" v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></strong>
+            <strong class="mt-auto text-white mb-2 md:text-lg line-clamp-2" v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></strong>
 
             <div class="flex items-center opacity-60">
                 <img class="w-2 md:w-3" src="/assets/img/icons/point-white.svg" alt="">

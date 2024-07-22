@@ -47,7 +47,7 @@
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
-                Дмитрий Грицай
+                Мигран Каграманян
               </h3>
               <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
                 Учредитель
@@ -61,7 +61,7 @@
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
-                Дмитрий Грицай
+                Мигран Каграманян
               </h3>
               <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
                 Учредитель
@@ -75,10 +75,10 @@
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
-                Дмитрий Грицай
+                Дмитрий Топилин
               </h3>
               <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
-                Учредитель
+                Архитектор
               </p>
             </div>
           </swiper-slide>
@@ -89,10 +89,10 @@
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
-                Дмитрий Грицай
+                Ари Пурнаван
               </h3>
               <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
-                Учредитель
+                Строитель
               </p>
             </div>
           </swiper-slide>
@@ -103,10 +103,10 @@
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
-                Дмитрий Грицай
+                Анастасия Коваль
               </h3>
               <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
-                Учредитель
+                Финансист
               </p>
             </div>
           </swiper-slide>

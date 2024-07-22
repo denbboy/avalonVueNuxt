@@ -17,21 +17,25 @@
                 <img src="/assets/img/index/buy-list-bg.png"
                     class="absolute top-0 left-0 w-full h-full z-0 block md:hidden backdrop-blur" alt="">
 
-                <svg class="absolute left-1/2 -translate-x-1/2 top-0" width="10" height="45" viewBox="0 0 10 45"
+                <div class="md:flex hidden absolute w-[150px] lg:w-[240px] items-center right-0 top-[140px]">
+                    <div class="w-[10px] h-[10px] rounded-md bg-blue-400"></div>
+                    <div class="bg-white/20 w-full h-[2px]"></div>
+                </div>
+
+                <svg class="absolute left-1/2 -translate-x-1/2 top-0 md:hidden" width="10" height="45" viewBox="0 0 10 45"
                     fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line opacity="0.2" x1="5.5" y1="-2.18557e-08" x2="5.5" y2="40" stroke="#0E88EC" />
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M6 35C8.20914 35 10 36.7909 10 39L10 41C10 43.2091 8.20914 45 6 45L4 45C1.79086 45 -7.8281e-08 43.2091 -1.74846e-07 41L-2.62268e-07 39C-3.58833e-07 36.7909 1.79086 35 4 35L6 35Z"
-                        fill="#0E88EC"
-                        style="fill:#0E88EC;fill:color(display-p3 0.0553 0.5317 0.9262);fill-opacity:1;" />
+                        fill="#0E88EC"/>
                 </svg>
 
                 <div class="mb-7 md:flex md:items-center md:mb-[50px] relative z-10">
 
-                    <h2 class="font-bold text-white text-3xl mb-7 md:text-[45px] md:leading-[45px] lg:text-[56px] lg:leading-[56px] md:text-left md:m-0" data-aos="fade-up">
+                    <h2 class="font-bold text-white max-w-[580px] text-3xl mb-7 md:text-[45px] md:leading-[45px] lg:text-[56px] lg:leading-[56px] md:text-left md:m-0" data-aos="fade-up">
                         {{ itemStrings?.filter(item => item.id === 136)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                     </h2>
-                    <p class="text-white/60 opacity-50 text-sm md:text-sm lg:text-base md:text-left md:ml-auto md:max-w-[400px]" data-aos="fade-up">
+                    <p class="text-white/60 opacity-50 text-sm md:text-sm lg:text-base md:text-left md:ml-5 md:mr-24 max-w-[360px] lg:max-w-[550px]" data-aos="fade-up">
                         {{ itemStrings?.filter(item => item.id === 136)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
                     </p>
                 </div>
@@ -147,8 +151,11 @@
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[39px] h-[39px] flex items-center justify-center rounded-xl z-[3] md:w-full md:h-full md:rounded-2xl">
-                                    <span class="text-white font-bold text-xs lg:text-lg">
+                                    <span class="text-white hidden md:block font-bold text-xs lg:text-lg">
                                         10
+                                    </span>
+                                    <span class="text-white flex md:hidden font-bold text-xs lg:text-lg">
+                                        6
                                     </span>
                                 </div>
                             </div>
@@ -166,8 +173,11 @@
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[42px] h-[42px] flex items-center justify-center rounded-xl after:block z-[3] md:w-full md:h-full md:rounded-2xl">
-                                    <span class="text-white font-bold text-xs lg:text-lg">
+                                    <span class="text-white hidden md:block font-bold text-xs lg:text-lg">
                                         9
+                                    </span>
+                                    <span class="text-white flex md:hidden font-bold text-xs lg:text-lg">
+                                        7
                                     </span>
                                 </div>
                             </div>
@@ -185,7 +195,10 @@
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[45px] h-[45px] flex items-center justify-center rounded-xl z-[3] md:w-full md:h-full md:rounded-2xl">
-                                    <span class="text-white font-bold text-xs lg:text-lg">
+                                    <span class="text-white hidden md:block font-bold text-xs lg:text-lg">
+                                        8
+                                    </span>
+                                    <span class="text-white flex md:hidden font-bold text-xs lg:text-lg">
                                         8
                                     </span>
                                 </div>
@@ -204,8 +217,11 @@
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[48px] h-[48px] flex items-center justify-center rounded-xl z-[3] md:w-full md:h-full md:rounded-2xl">
-                                    <span class="text-white font-bold text-xs lg:text-lg">
+                                    <span class="text-white hidden md:block font-bold text-xs lg:text-lg">
                                         7
+                                    </span>
+                                    <span class="text-white flex md:hidden font-bold text-xs lg:text-lg">
+                                        9
                                     </span>
                                 </div>
                             </div>
@@ -221,8 +237,11 @@
                                 </div>
                                 <div
                                     class=" bg-blue-400 min-w-[50px] h-[50px] flex items-center justify-center rounded-2xl md:w-full md:h-full md:rounded-2xl z-[3]">
-                                    <span class="text-white font-bold text-xs lg:text-lg">
+                                    <span class="text-white hidden md:block font-bold text-xs lg:text-lg">
                                         6
+                                    </span>
+                                    <span class="text-white flex md:hidden font-bold text-xs lg:text-lg">
+                                        10
                                     </span>
                                 </div>
                             </div>

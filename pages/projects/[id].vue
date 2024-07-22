@@ -15,12 +15,12 @@
     <PagesProjectAbout :itemInfo="itemData"
         :itemData="itemData?.blocks?.filter(item => item?.Block_id?.title === 'OM | Club House')[0]?.Block_id?.strings" />
 
-    <PagesProjectGoogleMap :itemData="itemData" />
+    <PagesProjectGoogleMap v-if="itemData?.location?.coordinates?.length" :itemData="itemData" />
 
     <PagesProjectFeatures
         :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 25)[0]?.Block_id?.strings" />
 
-    <PagesProjectApartments :apartments="itemData.apartments" />
+    <PagesProjectApartments v-if="itemData?.apartments?.length" :apartments="itemData.apartments" />
 
     <PagesProjectInclusions
         :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 28)[0]?.Block_id?.strings" />
@@ -37,9 +37,9 @@
 
     <PagesMainProcess :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 31)[0]?.Block_id?.strings" />
 
-    <PagesProjectOtherProjects :projects="itemData?.relative_projects" />
+    <PagesProjectOtherProjects v-if="itemData?.relative_projects?.length" :projects="itemData?.relative_projects" />
 
-    <PagesMainSales :list="itemData?.sales?.map(item => item.Sale_id)" />
+    <PagesMainSales v-if="itemData?.sales?.map(item => item.Sale_id)?.length" :list="itemData?.sales?.map(item => item.Sale_id)" />
 
     <PagesMainNews />
 
@@ -91,6 +91,7 @@ const fetchProjects = async () => {
 
         projectsStore.setCurrentProject(items);
         itemData.value = items;
+        console.log(items)
     } catch (e) {
         console.error('Error fetching items:', e);
     }

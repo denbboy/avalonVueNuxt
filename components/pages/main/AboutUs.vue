@@ -1,5 +1,5 @@
 <template>
-  <section id="about-company" class="us pt-14 relative">
+  <section id="about-company" class="us pt-14 relative overflow-hidden pb-10 -mb-10">
     <!-- <div class="absolute lg:-right-36 -top-14 lg:hidden -right-14 w-28 z-[2]"></div> -->
     <div
       class="absolute lg:bottom-[5px] top-10 lg:top-auto w-28 lg:-left-36 lg:right-auto -right-14 lg:w-72 lg:h-72 z-10">
