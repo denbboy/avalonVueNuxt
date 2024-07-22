@@ -1,11 +1,12 @@
-<script setup>
-import { useToolkit } from './../stores/functions/toolkit';
-
-const toolkitStore = useToolkit();
-
-</script>
-
 <template>
+
+  <Head>
+    <Title>
+      Avalon
+    </Title>
+    <Meta name="description" content="Avalon" />
+  </Head>
+
   <PagesMainBanner />
 
   <PagesMainProjects />
@@ -42,3 +43,10 @@ const toolkitStore = useToolkit();
   </a>
 
 </template>
+
+<script setup>
+import { useToolkit } from './../stores/functions/toolkit';
+
+const toolkitStore = useToolkit();
+
+</script>

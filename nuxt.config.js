@@ -30,7 +30,8 @@ export default defineNuxtConfig({
             }
         ],
         link: [
-            { rel: 'stylesheet', href: '/assets/fonts/grandis/stylesheet.css' }
+            { rel: 'stylesheet', href: '/assets/fonts/grandis/stylesheet.css' },
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
         ],
     },
     loading: {
@@ -99,34 +100,33 @@ export default defineNuxtConfig({
     },
 
     ogImage: {
-        enabled: false
+        enabled: true
     },
     sitemap: {
-        enabled: false
+        enabled: true
     },
     robots: {
-        enabled: false
+        enabled: true
     },
     seoExperiments: {
-        enabled: false
+        enabled: true
     },
     schemaOrg: {
-        enabled: false
+        enabled: true
     },
     linkChecker: {
-        enabled: false
+        enabled: true
     },
 
     site: {
-        url: 'https://example.com',
-        name: 'Awesome Site',
-        description: 'Welcome to my awesome site!',
-        defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
+        url: 'https://avalon-vue-nuxt.vercel.app/',
+        name: 'Avalon',
+        description: 'Avalon',
     },
 
 
     gtm: {
-        id: 'GTM-1', // Идентификатор будет установлен динамически
-        enabled: false // Отключаем GTM до инициализации
+        id: 'GTM-1',
+        enabled: false
     },
 })
