@@ -8,12 +8,12 @@
         <div class="flex justify-between items-center mb-8">
           <h2 class="text-blue-600 font-bold text-[30px] md:text-[45px] lg:text-[56px] leading-[110%]"
             data-aos="fade-up">
-            Актуальные акции
+            {{ $t('actual_sales') }}
           </h2>
 
           <div class="w-fit hidden md:flex" data-aos="fade-up">
             <NuxtLink href="/sales" class="mr-12 text-blue-600 font-bold underline hover:no-underline">
-              Все акции
+              {{ $t('all_sales') }}
             </NuxtLink>
             <button type="button" class=" transition-all hover:opacity-100 sales-button-prev mr-9">
               <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,8 +32,9 @@
           </div>
         </div>
 
-        <swiper class="swiper-sales"modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
-          :breakpoints="breakpoints" :space-between="24" @swiper="onSwiper" @slideChange="onSlideChange">
+        <swiper class="swiper-sales" modules="modules" :slides-per-view="1" :pagination="pagination"
+          :navigation="navigationConfig" :breakpoints="breakpoints" :space-between="24" @swiper="onSwiper"
+          @slideChange="onSlideChange">
 
           <swiper-slide v-for="item in itemsList" :key="item.id">
             <SalesItem bgdColor="white" :item="item" />
@@ -44,9 +45,9 @@
 
         </swiper>
 
-        <button type="button" class="blue-border-button mx-auto mt-5 md:hidden">
-          Все акции
-        </button>
+        <NuxtLink href="/sales" class="blue-border-button mx-auto mt-5 md:hidden">
+          {{ $t('all_sales') }}
+        </NuxtLink>
 
       </div>
     </div>

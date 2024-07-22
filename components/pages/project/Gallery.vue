@@ -23,7 +23,7 @@
 
             <button v-if="!isShowFull" @click="handleShowFull" type="button"
                 class="font-bold text-white text-sm w-full max-w-[205px] mt-5 border border-white rounded-xl p-4 m-auto flex justify-center hover:text-blue-400 hover:bg-white transition-all md:mt-7 md:p-6 md:max-w-[286px] md:text-base">
-                Показать альбом
+                {{ $t('show_album') }}
             </button>
         </div>
     </section>

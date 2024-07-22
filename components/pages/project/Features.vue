@@ -1,7 +1,7 @@
 <template>
     <section class=" bg-no-repeat bg-cover py-14 md:py-24 relative overflow-hidden">
         <Parallaxy class="absolute top-0 left-0 z-0 h-full w-full" :speed="150"
-            :animation="(delta: number) => `transform: translate3d(0, ${delta}px, 0);`">
+            :animation="(delta) => `transform: translate3d(0, ${delta}px, 0);`">
             <!-- <img class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg"> -->
             <img class="h-full w-full object-cover scale-[1.7]" src="/assets/img/about/bgd-sec-changy.jpg">
         </Parallaxy>
@@ -22,7 +22,7 @@
                     <div class="">
                         <h2 data-aos="fade-up"
                             class="font-bold text-white text-3xl mb-7 md:text-[40px] lg:text-[56px] md:mb-[50px]">
-                            Чангу
+                            {{ $t('changu') }}
                         </h2>
                         <div data-aos="fade-up" class=" mb-5 md:mb-[30px] md:flex md:gap-2">
                             <strong class="font-bold text-white text-lg uppercase md:text-[26px] md:font-normal">

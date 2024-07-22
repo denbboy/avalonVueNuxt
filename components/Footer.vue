@@ -86,7 +86,7 @@
                     <img src="/assets/img/index/dot-decor-2.png" class="absolute right-[-1px] bottom-[-1px] w-5 md:w-8"
                         alt="decor">
                     <h2 class="font-bold text-white md:text-2xl mb-4 3xl:text-3xl md:mb-7 leading-[100%]">
-                        Хотите узнать больше?
+                        {{ $t('want_know_more') }}
                     </h2>
                     <div class="flex flex-col gap-3 lg:gap-0">
                         <input type="text" v-model="name" placeholder="Имя"
@@ -94,30 +94,30 @@
                         <div class="phone-vti">
                             <!-- <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone"
                                 :only-countries="onlyCountries" /> -->
-                                <VueTelInput :inputOptions="inputOptions" v-model="phone" :use-masking="true" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
+                                <VueTelInput :input-options="inputOptions" v-model="phone" :use-masking="true" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
                         </div>
                         <p class="text-red-700 text-left transition-all h-full" :class="{
                             'max-h-10 opacity-100 mt-2': isError,
                             'max-h-0 opacity-0': !isError
                         }">
-                            Пожалуйста, заполните все поля в форме
+                            {{ $t('fill_all_fields') }}
                         </p>
                         <p class="text-white/50 text-left transition-all h-full" :class="{
                             'max-h-10 opacity-100 mt-2': isSending,
                             'max-h-0 opacity-0': !isSending
                         }">
-                            Подождите, идет отправка
+                            {{ $t('wait_for_send') }}
                         </p>
                         <p class="text-green-500 text-left transition-all h-full" :class="{
                             'max-h-10 opacity-100 mt-2': isSuccess,
                             'max-h-0 opacity-0': !isSuccess
                         }">
-                            Ваше сообщение успешно отправлено
+                            {{ $t('message_sent_successfuly') }}
                         </p>
 
                         <button type="submit"
                             class="white-button w-full leading-[110%] lg:mt-8 h-[48px] py-2 xl:h-[64px]">
-                            Отправить заявку
+                            {{ $t('send_mail') }}
                         </button>
                     </div>
                 </form>
@@ -138,7 +138,6 @@
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <p>
-                                <!-- © 2024 PT Avalon Group Bali -->
                                  {{ copyright }}
                             </p>
                         </li>
@@ -260,10 +259,8 @@ const preferredCountries = [
   'cn', // КНР
 ];
 
-// Получаем список всех стран
 const allCountries = iso31661.all().map(country => country.alpha2);
 
-// Создаем computed property, который включает все страны
 const sortedCountries = computed(() => {
   const preferredSet = new Set(preferredCountries);
   const unselectedCountries = allCountries.filter(country => !preferredSet.has(country));

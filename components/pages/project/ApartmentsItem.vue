@@ -1,6 +1,6 @@
 <template>
     <!-- data-aos="fade-up" -->
-    <div 
+    <div
         class="py-10 px-5 rounded-2xl relative flex flex-col-reverse h-fit xl:grid xl:grid-cols-2 xl:gap-10  xl:px-[60px] xl:py-[70px] 3xl:py-[100px] 3xl:px-[100px] mb-5 md:mb-12 last:mb-0">
         <div class="bg-blue-600/85 absolute w-full h-full z-0 rounded-2xl backdrop-blur-sm">
 
@@ -21,13 +21,14 @@
 
         <div class="z-10">
             <div class="mb-[21px] 3xl:mb-12">
-                <h2 class="font-bold text-white text-[24px] leading-none 375:text-[30px] mb-[10px] md:text-[40px] 3xl:text-[56px] md:mb-[21px] 3xl:mb-[31px]">
+                <h2
+                    class="font-bold text-white text-[24px] leading-none 375:text-[30px] mb-[10px] md:text-[40px] 3xl:text-[56px] md:mb-[21px] 3xl:mb-[31px]">
                     {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
                 </h2>
                 <p class="text-blue-400 leading-none text-[18px] md:text-[20px] flex items-center">
-                    От {{ itemData?.price }}$
+                    {{ $t('from') }} {{ itemData?.price }}$
                     <span class="text-white/60 text-xs ml-2">
-                        *включая налоги
+                        {{ $t('including_taxes') }}
                     </span>
                 </p>
             </div>
@@ -38,7 +39,7 @@
                         {{ itemData?.full_size }} м²
                     </h3>
                     <p class="text-white text-sm md:text-base lg:leading-[120%]">
-                        площадь <br>земли
+                        {{ $t('square') }}
                     </p>
                 </div>
                 <div class="border border-blue-400 p-4 max-w-[208px] rounded-2xl w-full">
@@ -46,7 +47,7 @@
                         {{ itemData?.floors }}
                     </h3>
                     <p class="text-white text-sm md:text-base lg:leading-[120%]">
-                        количество <br>этажей
+                        {{ $t('floors') }}
                     </p>
                 </div>
             </div>
@@ -58,7 +59,7 @@
                         {{ itemData?.room_living_size }} м²
                     </h3>
                     <p class="text-white text-sm md:text-base leading-[19px]">
-                        площадь <br>прихожей
+                        {{ $t('living') }}
                     </p>
                 </li>
                 <li class="border-b border-whiteOp-300 max-w-[208px] pb-4">
@@ -67,7 +68,7 @@
                         {{ itemData?.room_kitchen_size }} м²
                     </h3>
                     <p class="text-white text-sm md:text-base leading-[19px]">
-                        площадь <br>кухни
+                        {{ $t('kitchen') }}
                     </p>
                 </li>
                 <li class="border-b border-whiteOp-300 max-w-[208px] pb-4">
@@ -76,7 +77,7 @@
                         {{ itemData?.room_bathroom_size }} м²
                     </h3>
                     <p class="text-white text-sm md:text-base leading-[19px]">
-                        площадь <br>санузла
+                        {{ $t('bathroom') }}
                     </p>
                 </li>
                 <li class="border-b border-whiteOp-300 max-w-[208px] pb-4">
@@ -85,7 +86,7 @@
                         {{ itemData?.room_badroom_size }} м²
                     </h3>
                     <p class="text-white text-sm md:text-base leading-[19px]">
-                        площадь спальни <br>/гостиной
+                        {{ $t('bedroom') }}
                     </p>
                 </li>
             </ul>
@@ -93,9 +94,7 @@
         </div>
         <div class="relative h-fit w-full flex justify-end">
 
-            <!-- v-if="itemData?.roi" -->
-            <div
-            
+            <div v-if="itemData?.roi"
                 class="hidden min-w-[91px] h-[91px] 3xl:min-w-[137px] 3xl:h-[137px] bg-blue-400 text-center rounded-full md:flex justify-center items-center flex-col absolute top-p right-0 z-10 translate-x-1/3 -translate-y-1/3">
                 <div
                     class="block animate-ping w-[91px] h-[91px] 3xl:w-[137px] 3xl:h-[137px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]">
@@ -110,15 +109,16 @@
                     {{ itemData?.roi }}%
                 </span>
             </div>
-            <div class="relative xl:max-w-[456px] 3xl:max-w-[600px] xl:max-h-[403px] 3xl:max-h-[516px] lg:rounded-3xl rounded-2xl overflow-hidden">
+            <div
+                class="relative xl:max-w-[456px] 3xl:max-w-[600px] xl:max-h-[403px] 3xl:max-h-[516px] lg:rounded-3xl rounded-2xl overflow-hidden">
 
                 <NuxtLink @click="handleOpenModal3D" v-if="itemData?.video_360" :href="`#3d-object-${itemData?.id}`"
                     class="absolute top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
                     <img src="/assets/img/about/360.png" class="max-w-[95px]" alt="ph">
                 </NuxtLink>
 
-                <swiper class="swiper-apartments w-full h-full" :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }"
-                    :navigation="navigationConfig" :space-between="15">
+                <swiper class="swiper-apartments w-full h-full" :modules="modules" :slides-per-view="1"
+                    :pagination="{ clickable: true }" :navigation="navigationConfig" :space-between="15">
 
                     <swiper-slide v-for="image in itemData?.gallery" :key="image?.id"
                         class="relative overflow-hidden h-full">

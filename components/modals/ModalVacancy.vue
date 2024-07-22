@@ -24,12 +24,12 @@
                             fill="white" />
                     </svg>
                     <span v-if="!file" class="text-white text-xs lg:text-base font-bold lg:ml-2">
-                        Прикрепить файл с резюме
+                        {{ $t('m_vacancy_text_1') }}
                     </span>
                     <span v-if="file" class="text-white text-xs lg:text-base font-bold lg:ml-2">{{ file.name }}</span>
                 </p>
                 <p v-if="!file" class="text-white/40 mt-2 text-xs lg:text-base">
-                    .doc, .docx, .txt, .rtf, .odt, .pdf до 5 Мб.
+                    {{ $t('m_vacancy_text_2') }}
                 </p>
             </label>
 
@@ -42,36 +42,38 @@
                 'max-h-10 opacity-100 mt-2': isError,
                 'max-h-0 opacity-0': !isError
             }">
-                Файл слишком большой
+                {{ $t('m_vacancy_text_3') }}
             </p>
 
             <p class="text-red-700 text-left transition-all h-full" :class="{
                 'max-h-10 opacity-100 mt-2': isError,
                 'max-h-0 opacity-0': !isError
             }">
-                Пожалуйста, заполните все поля в форме
+                {{ $t('fill_all_fields') }}
             </p>
             <p class="text-white/50 text-left transition-all h-full" :class="{
                 'max-h-10 opacity-100 mt-2': isSending,
                 'max-h-0 opacity-0': !isSending
             }">
-                Подождите, идет отправка
+                {{ $t('wait_for_send') }}
             </p>
             <p class="text-green-500 text-left transition-all h-full" :class="{
                 'max-h-10 opacity-100 mt-2': isSuccess,
                 'max-h-0 opacity-0': !isSuccess
             }">
-                Ваше сообщение успешно отправлено
+                {{ $t('message_sent_successfuly') }}
             </p>
 
             <button type="submit" class="white-button w-full mt-5 lg:leading-[120%] lg:py-5 leading-[90%]">
-                Отправить резюме
+                {{ $t('send_cv') }}
             </button>
 
-            <p class="text-center text-white text-xs lg:text-sm w-full mt-5">Нажимая на кнопку “Отправить резюме”, вы
-                соглашаетесь с нашей <a href="#"
-                    class="text-blue-400 font-bold underline transition-all hover:text-blue-700">Политикой
-                    конфиденциальности</a></p>
+            <p class="text-center text-white text-xs lg:text-sm w-full mt-5">
+                {{ $t('m_message_text_3') }}
+                <NuxtLink href="/docs/privacy-police" class="text-blue-400 font-bold underline transition-all hover:text-blue-700">
+                    {{ $t('policy') }}
+                </NuxtLink>
+            </p>
 
         </form>
 

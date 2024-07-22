@@ -8,14 +8,14 @@
                 data-aos="fade-up">
                 <div class="">
                     <p class="text-white mb-[10px] text-sm md:text-base md:mb-[10px] leading-[100%]">
-                        Воплоти мечту в реальность
+                        {{ $t('projects_text') }}
                     </p>
                     <h2 class="text-white text-3xl font-bold md:text-[45px] lg:text-[56px] leading-[100%]">
-                        Наши проекты
+                        {{ $t('our_projects') }}
                     </h2>
                 </div>
                 <button @click="handleOpenModal" class="white-button mt-5 mb-7 lg:my-0">
-                    Получить каталог
+                    {{ $t('get_catalog') }}
                 </button>
             </div>
 
@@ -36,7 +36,7 @@
                                     alt="">
                                 <span v-if="item?.roi_procent"
                                     class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
-                                    {{ item?.roi_procent }}% Продано
+                                    {{ item?.roi_procent }}% {{ $t('sold') }}
                                 </span>
                             </div>
                             <div class="max-w-96">
@@ -49,17 +49,22 @@
                                         item.languages_code.includes(langStore.lang))[0]?.description }}
                                 </p>
                                 <div class="flex items-center mb-5">
-                                    <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">от ${{
+                                    <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">{{ $t('from') }} ${{
                                         String(item?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}</strong>
-                                    <span class="text-white/60 text-xs hidden md:block">*включая налоги</span>
+                                    <span class="text-white/60 text-xs hidden md:block">
+                                        {{ $t('including_taxes') }}
+                                    </span>
                                 </div>
                                 <div class="flex">
                                     <NuxtLink :href="`/projects/${item?.id}`"
                                         class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-[12px] px-5 rounded-[10px] text-white font-bold text-sm md:text-xs lg:text-base mr-7">
-                                        Подробнее</NuxtLink>
+                                        {{ $t('more') }}
+                                    </NuxtLink>
                                     <div class="flex items-center">
                                         <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
-                                        <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">Чангу</span>
+                                        <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">
+                                            {{ $t('changu') }}
+                                        </span>
                                     </div>
                                 </div>
                             </div>

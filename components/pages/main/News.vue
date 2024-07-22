@@ -8,12 +8,12 @@
         <div class="flex justify-between items-center mb-8">
           <h2 class="text-blue-600 font-bold text-[30px] md:text-[45px] lg:text-[56px] leading-[110%]"
             data-aos="fade-up">
-            Последние новости
+            {{ $t('last_news') }}
           </h2>
 
           <div class="w-fit hidden md:flex" data-aos="fade-up">
             <NuxtLink href="/news" class="mr-12 text-blue-600 font-bold underline hover:no-underline">
-              Все новости
+              {{ $t('all_news') }}
             </NuxtLink>
             <button type="button" class=" transition-all  hover:opacity-100 news-button-prev mr-9">
               <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,16 +37,16 @@
           <swiper-slide v-for="item in itemsList" :key="item.id">
             <NewsItem bgdColor="white" :item="item" />
           </swiper-slide>
-        
+
 
           <div class="swiper-pagination swiper-pagination_blue"></div>
 
         </swiper>
 
         <div class="swiper-pagination swiper-pagination_blue"></div>
-        <a href="#" class="blue-border-button mx-auto mt-5 md:hidden">
-          Все новости
-        </a>
+        <NuxtLink href="/news" class="blue-border-button mx-auto mt-5 md:hidden">
+          {{ $t('all_news') }}
+        </NuxtLink>
       </div>
     </div>
   </section>

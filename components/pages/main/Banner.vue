@@ -33,13 +33,13 @@
                   <img class="absolute top-0 left-0 -z-10 hidden md:block h-[-webkit-fill-available]"
                     src="/assets/img/index/bgd-decor-2.png" alt="bgd">
                   <h2 class="text-sm text-white">
-                    Стоимость <br class="hidden md:block">
+                    {{ $t('cost') }} <br class="hidden md:block">
                     <span class="font-bold md:text-xl">
-                      от {{ item?.price }} $
+                      {{ $t('from') }} {{ item?.price }} $
                     </span>
                   </h2>
                   <p class="text-xs text-slate-50 opacity-60 text-center">
-                    *включая налоги
+                    {{ $t('including_taxes') }}
                   </p>
                 </div>
               </div>
@@ -56,10 +56,10 @@
             </p>
             <div class="md:flex">
               <button @click="addModal" class="white-button mt-7 lg:mt-12">
-              Скачать презентацию
+              {{ $t('download_presentation') }}
             </button>
             <NuxtLink :to="`/projects/${item?.projects[0]?.item?.id}`" class="white-button md:mt-7 mt-3 lg:mt-12 md:ml-5">
-              Подробнее
+              {{ $t('more') }}
             </NuxtLink>
             </div>
 
@@ -67,7 +67,6 @@
 
           <div v-if="!item?.projects?.length" class="flex items-center justify-between">
             <div class="">
-              <!-- https://www.youtube.com/embed/FR_cDNCzRa8?si=yVdW8mAxA679Ej-z -->
               <div
                 class="brightness-[1] bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
                 <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`" class="absolute top-0 left-0 w-full h-full" alt="">
@@ -88,8 +87,8 @@
                       item.languages_code.includes(langStore.lang))[0]?.title }}
                   </h1>
                   <span
-                    class="text-white bg-blue-400 h-6 text-center flex items-center px-2 rounded-md lg:rounded-[10px] text-xs lg:text-base md:h-8 md:px-3">
-                    БАЛИ
+                    class="text-white uppercase bg-blue-400 h-6 text-center flex items-center px-2 rounded-md lg:rounded-[10px] text-xs lg:text-base md:h-8 md:px-3">
+                    {{ $t('bali') }}
                   </span>
                 </div>
                 <div class="con md:ml-4 md:pl-5 md:px-7 relative">
@@ -100,13 +99,13 @@
                     <img class="absolute top-0 left-0 -z-10 hidden md:block h-full"
                       src="/assets/img/index/bgd-decor-2.png" alt="bgd">
                     <h2 class="text-sm text-white">
-                      Стоимость <br class="hidden md:block">
+                      {{ $t('cost') }} <br class="hidden md:block">
                       <span class="font-bold md:text-xl">
-                        от {{ item?.price }} $
+                        {{ $t('from') }} {{ item?.price }} $
                       </span>
                     </h2>
                     <p class="text-xs text-slate-50 opacity-60 text-center">
-                      *включая налоги
+                      {{ $t('including_taxes') }}
                     </p>
                   </div>
                 </div>
@@ -117,7 +116,7 @@
 
               </h2>
               <button @click="addModal" class="white-button mt-7 lg:mt-12">
-                Скачать презентацию
+                {{ $t('download_presentation') }}
               </button>
             </div>
 

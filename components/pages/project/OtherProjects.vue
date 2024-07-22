@@ -6,7 +6,7 @@
         <div class="container">
             <h2 data-aos="fade-up"
                 class="text-white text-3xl font-bold text-center md:text-[45px] lg:text-[56px] leading-[100%] mb-[30px] md:mb-[50px]">
-                Другие проекты
+                {{ $t('other_projects') }}
             </h2>
 
             <div
@@ -25,7 +25,7 @@
                                     alt="">
                                 <span v-if="item.related_Project_id?.roi_procent"
                                     class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
-                                    {{ item.related_Project_id?.roi_procent }}% Продано
+                                    {{ item.related_Project_id?.roi_procent }}% {{ $t('sold') }}
                                 </span>
                             </div>
                             <div class="max-w-96">
@@ -40,15 +40,20 @@
                                 <div class="flex items-center mb-5">
                                     <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">от ${{
                                         String(item.related_Project_id?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}</strong>
-                                    <span class="text-white/60 text-xs hidden md:block">*включая налоги</span>
+                                    <span class="text-white/60 text-xs hidden md:block">
+                                        {{ $t('including_taxes') }}
+                                    </span>
                                 </div>
                                 <div class="flex">
                                     <NuxtLink :href="`/projects/${item.related_Project_id?.id}`"
                                         class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-[12px] px-5 rounded-[10px] text-white font-bold text-sm md:text-xs lg:text-base mr-7">
-                                        Подробнее</NuxtLink>
+                                        {{ $t('more') }}
+                                    </NuxtLink>
                                     <div class="flex items-center">
                                         <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
-                                        <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">Чангу</span>
+                                        <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">
+                                            {{ $t('changu') }}
+                                        </span>
                                     </div>
                                 </div>
                             </div>

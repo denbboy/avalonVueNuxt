@@ -4,7 +4,7 @@
 
 
     <div
-        class="content__inner z-0 relative overflow-hidden p-5 lg:p-10 max-w-[600px] flex flex-col items-center justify-center h-full">
+        class="content__inner w-full z-0 relative overflow-hidden p-5 lg:p-10 max-w-[600px] flex flex-col items-center justify-center h-full">
 
         <div class="absolute right-[-34px] -top-5 lg:top-5 z-0">
             <img src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo">
@@ -14,46 +14,49 @@
         </div>
 
         <h2 class="text-white text-lg md:text-2xl font-bold text-center mb-5 ">
-            Оставьте контакт и получите специальное предложение до 29 февраля
+            {{ $t('m_message_text_1') }}
         </h2>
 
         <form @submit.prevent="submitForm" class="flex w-full flex-col text-center">
 
             <div class="flex flex-col">
                 <label for="phone-modal" class="flex text-white text-xs mb-[10px]">
-                    Телефон для связи в мессенджерах*
+                    {{ $t('m_message_text_2') }}
                 </label>
                 <div class="phone-vti">
-                    <VueTelInput :inputOptions="inputOptions" v-model="phone" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
+                    <VueTelInput :input-options="inputOptions" v-model="phone" :preferred-countries="preferredCountries"
+                        :only-countries="sortedCountries" />
                 </div>
 
                 <p class="text-red-700 text-left transition-all h-full" :class="{
                     'max-h-10 opacity-100 mt-2': isError,
                     'max-h-0 opacity-0': !isError
                 }">
-                    Пожалуйста, заполните все поля в форме
+                    {{ $t('fill_all_fields') }}
                 </p>
                 <p class="text-white/50 text-left transition-all h-full" :class="{
                     'max-h-10 opacity-100 mt-2': isSending,
                     'max-h-0 opacity-0': !isSending
                 }">
-                    Подождите, идет отправка
+                    {{ $t('wait_for_send') }}
                 </p>
                 <p class="text-green-500 text-left transition-all h-full" :class="{
                     'max-h-10 opacity-100 mt-2': isSuccess,
                     'max-h-0 opacity-0': !isSuccess
                 }">
-                    Ваше сообщение успешно отправлено
+                    {{ $t('message_sent_successfuly') }}
                 </p>
 
                 <button type="submit" class="white-button w-full mt-5 lg:leading-[120%] lg:py-5 leading-[90%]">
-                    Отправить
+                    {{ $t('send') }}
                 </button>
 
-                <p class="text-center text-white text-xs lg:text-sm w-full mt-5">Нажимая на кнопку “Отправить резюме”,
-                    вы соглашаетесь с нашей <a href="#"
-                        class="text-blue-400 font-bold underline transition-all hover:text-blue-700">Политикой
-                        конфиденциальности</a></p>
+                <p class="text-center text-white text-xs lg:text-sm w-full mt-5">
+                    {{ $t('m_message_text_3') }}
+                    <NuxtLink href="/docs/privacy-police" class="text-blue-400 font-bold underline transition-all hover:text-blue-700">
+                        {{ $t('policy') }}
+                    </NuxtLink>
+                </p>
 
             </div>
         </form>
@@ -109,7 +112,7 @@ const placeholderLang = {
 }
 
 const inputOptions = {
-  placeholder: placeholderLang[langStore.lang]
+    placeholder: placeholderLang[langStore.lang]
 };
 
 const submitForm = async () => {
@@ -160,15 +163,15 @@ const submitForm = async () => {
 };
 
 const preferredCountries = [
-  'id', // Индонезия
-  'ua', // Украина
-  'ru', // Россия
-  'by', // Беларусь
-  'kz', // Казахстан
-  'us', // США
-  'gb', // Англия
-  'fr', // Франция
-  'cn', // КНР
+    'id', // Индонезия
+    'ua', // Украина
+    'ru', // Россия
+    'by', // Беларусь
+    'kz', // Казахстан
+    'us', // США
+    'gb', // Англия
+    'fr', // Франция
+    'cn', // КНР
 ];
 
 // Получаем список всех стран
@@ -176,9 +179,9 @@ const allCountries = iso31661.all().map(country => country.alpha2);
 
 // Создаем computed property, который включает все страны
 const sortedCountries = computed(() => {
-  const preferredSet = new Set(preferredCountries);
-  const unselectedCountries = allCountries.filter(country => !preferredSet.has(country));
-  return [...preferredCountries, ...unselectedCountries];
+    const preferredSet = new Set(preferredCountries);
+    const unselectedCountries = allCountries.filter(country => !preferredSet.has(country));
+    return [...preferredCountries, ...unselectedCountries];
 });
 
 import { createDirectus, rest, readFlow } from '@directus/sdk';

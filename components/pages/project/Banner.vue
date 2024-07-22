@@ -31,10 +31,10 @@
                                 <img class="absolute top-0 left-0 -z-10 md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
                                     src="/assets/img/icons/about-border-white.svg" alt="bgd">
                                 <span class="text-white text-xs md:text-sm">
-                                    Срок сдачи
+                                    {{ $t('deadline') }}
                                 </span>
                                 <p class="text-white text-base font-bold md:text-xl">
-                                    лето 2025
+                                    {{ $t('summer2025') }}
                                 </p>
                             </div>
                             <div class="con order-1 md:order-none">
@@ -44,13 +44,12 @@
                                     <img class="absolute top-0 left-0 -z-10 hidden md:block h-[-webkit-fill-available]"
                                         src="/assets/img/index/bgd-decor-2.png" alt="bgd">
                                     <h2 v-if="itemData?.price" class="text-sm text-white">
-                                        Стоимость <br class="hidden md:block"> <span class="font-bold md:text-xl">
-                                            от ${{ itemData?.price }}
+                                        {{ $t('cost') }} <br class="hidden md:block"> <span class="font-bold md:text-xl">
+                                            {{ $t('from') }} ${{ itemData?.price }}
                                         </span>
                                     </h2>
                                     <p class="text-xs text-slate-50 opacity-60 text-center">
-                                        *включая налоги
-
+                                        {{ $t('including_taxes') }}
                                     </p>
                                 </div>
                             </div>
@@ -108,7 +107,7 @@
                         </p>
                         <button data-aos="fade-up" @click="handleOpenModal"
                             class="w-full max-w-56 md:max-w-72 px-5 py-4 block text-sm md:text-base bg-white rounded-xl text-center font-bold whitespace-nowrap text-blue-500 hover:text-white hover:bg-blue-400 my-10 transition-all ">
-                            Скачать презентацию
+                            {{ $t('download_presentation') }}
                         </button>
                     </div>
                     <div class="flex flex-col xl:items-end justify-end xl:w-full">
@@ -121,7 +120,7 @@
                                 <path d="M17.7422 10.653L0.17076 20.7979L0.170761 0.508136L17.7422 10.653Z" fill="white"/>
                             </svg>
                             </div>
-                            Посмотреть видео
+                            {{ $t('see_video') }}
                         </button>
                         <div data-aos="fade-up"
                             class=" w-full flex gap-[10px] xl:gap-5 xl:mt-[100px] xl:flex  xl:justify-end items-stretch">
@@ -131,7 +130,7 @@
                                     {{ itemData?.villa_count }}
                                 </h3>
                                 <p class="text-white text-sm md:text-base">
-                                    вилл
+                                    {{ $t('vill') }}
                                 </p>
                             </div>
                             <div v-if="itemData?.roi_procent"
@@ -143,7 +142,7 @@
                                         class="max-w-[20px] md:max-w-[30px]" alt="ic">
                                 </h3>
                                 <p class="text-white text-sm md:text-base">
-                                    прогнозируемый <br class="md:hidden">ROI
+                                    {{ $t('projected') }} <br class="md:hidden">ROI
                                 </p>
                             </div>
                             <div v-if="itemData?.apartments_count"
@@ -152,7 +151,7 @@
                                     {{ itemData?.apartments_count }}
                                 </h3>
                                 <p class="text-white text-sm md:text-base">
-                                    апартамента
+                                    {{ $t('apartment') }}
                                 </p>
                             </div>
                         </div>

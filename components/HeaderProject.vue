@@ -8,11 +8,8 @@
 
       <div class="header__inner px-5 flex items-center justify-between gap-3 relative">
         <NuxtLink v-if="projectsStore.currentProject?.logo" :href="`/projects/${projectsStore.currentProject?.id}`">
-          <!-- <img src="/assets/img/index/logo-desk.svg" class="hidden lg:min-w-[80px] lg:block" alt="logo"> -->
           <img :src="`https://avalon-panel.sonisapps.com/assets/${projectsStore.currentProject?.logo}`" class="max-w-20"
             alt="logo ic">
-
-
         </NuxtLink>
 
 
@@ -27,29 +24,25 @@
                             before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
                             after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
                         ">
-            <!-- {{ $t('about_company') }} -->
-            Про комплекс
+            {{ $t('about_compl') }}
           </NuxtLink>
           <NuxtLink href="#location" class="text-white text-[12px] 3xl:text-sm relative
                             before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
                             after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
                         ">
-            <!-- {{ $t('why_bali') }} -->
-            Локация
+            {{ $t('location') }}
           </NuxtLink>
           <NuxtLink href="#apartments" class="text-white text-[12px] 3xl:text-sm relative
                             before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
                             after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
                         ">
-            <!-- {{ $t('cooperation') }} -->
-            Апартаменты
+            {{ $t('appatments') }}
           </NuxtLink>
           <NuxtLink href="#investors" class="text-white text-[12px] 3xl:text-sm relative
                             before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
                             after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
                         ">
-            <!-- {{ $t('career') }} -->
-            Инвесторам
+            {{ $t('investors') }}
           </NuxtLink>
           <NuxtLink href="#contacts" class="text-white text-[12px] 3xl:text-sm relative
                             before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
@@ -162,8 +155,9 @@
 
       </div>
       <div class=" flex flex-col gap-4">
-        <a href="tel:+6281246502783" class="hover:text-blue-400 transition-all font-bold text-white text-base">
-          +62 (812) 4650-27-83
+        <a :href="`tel:${toolkitStore?.settings?.phone}`"
+          class="hover:text-blue-400 transition-all font-bold text-white text-base">
+          {{ toolkitStore?.settings?.phone }}
         </a>
 
         <button type="button" @click="handleOpenModal"
@@ -190,23 +184,23 @@
           </li>
         </ul>
         <ul class="flex items-center gap-1">
-          <li>
-            <a href="#">
+          <li v-if="toolkitStore?.settings?.soc_link_whats">
+            <a :href="`tel:${toolkitStore?.settings?.soc_link_whats}`">
               <img src="/assets/img/index/tw-burger.svg" alt="ic">
             </a>
           </li>
-          <li>
-            <a href="#">
+          <li v-if="toolkitStore?.settings?.soc_link_inst">
+            <a :href="`tel:${toolkitStore?.settings?.soc_link_inst}`">
               <img src="/assets/img/index/inst-burger.svg" alt="ic">
             </a>
           </li>
-          <li>
-            <a href="#">
+          <li v-if="toolkitStore?.settings?.soc_link_fb">
+            <a :href="`tel:${toolkitStore?.settings?.soc_link_fb}`">
               <img src="/assets/img/index/face-burger.svg" alt="ic">
             </a>
           </li>
-          <li>
-            <a href="#">
+          <li v-if="toolkitStore?.settings?.soc_link_yt">
+            <a :href="`tel:${toolkitStore?.settings?.soc_link_yt}`">
               <img src="/assets/img/index/yout-burger.svg" alt="ic">
             </a>
           </li>

@@ -3,9 +3,12 @@
         <div class="select career-select group" :class="{ 'active': isOpen }">
             <div class="select__head py-6 flex justify-between items-center cursor-pointer" @click="handleOpen">
                 <div class="mr-7">
-                    <time class="mb-2 block text-white/60 text-xs md:text-base md:mb-5">03/10/2023</time>
+                    <time class="mb-2 block text-white/60 text-xs md:text-base md:mb-5">
+                        {{ day }}/{{ month < 10 ? '0' + month : '' }}/{{ year }}
+                    </time>
                     <h2 class="text-lg text-white leading-5 font-bold md:text-2xl lg:text-3xl">
-                        {{ props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+                        {{ props?.item?.translations?.filter(item =>
+                            item.languages_code.includes(langStore.lang))[0]?.title }}
                     </h2>
                 </div>
                 <div
@@ -15,8 +18,9 @@
                 </div>
             </div>
             <div class="select__body career-select-body">
-                
-                <span v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></span>
+
+                <span
+                    v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></span>
 
             </div>
         </div>
@@ -32,6 +36,10 @@ const props = defineProps({
     }
 })
 
+const day = new Date(props?.item?.date_created).getDate()
+const month = new Date(props?.item?.date_created).getMonth() + 1
+const year = new Date(props?.item?.date_created).getFullYear()
+
 const isOpen = ref(false)
 
 const handleOpen = () => {
@@ -40,9 +48,5 @@ const handleOpen = () => {
 
 const modalsStore = useModalsStore()
 const langStore = useLangStore()
-
-const handleOpenModal = () => {
-    modalsStore.addModal("presentation")
-}
 
 </script>

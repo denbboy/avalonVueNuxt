@@ -5,37 +5,37 @@
         class="flex flex-col p-5 lg:py-12 lg:px-[130px] border border-whiteOp-300 rounded-2xl text-center md:p-12 relative">
         <img src="/assets/img/index/dot-decor.png" class="absolute right-[-1px] bottom-[-1px] w-5 md:w-8" alt="decor">
         <h2 class="font-bold text-white text-2xl mb-4 md:text-3xl md:mb-7 leading-[100%]">
-          Хотите узнать больше?
+          {{ $t('want_know_more') }}
         </h2>
         <div class="flex flex-col md:flex-row gap-2 lg:gap-5">
           <input v-model="name" type="text" placeholder="Имя"
             class="bg-whiteOp-200 rounded-xl text-white text-sm px-5 py-4 outline-none lg:p-6 lg:text-base w-full">
           <div class="phone-vti">
             <!-- <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone" :only-countries="onlyCountries" /> -->
-            <VueTelInput :inputOptions="inputOptions" :use-masking="true" v-model="phone" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
+            <VueTelInput :input-options="inputOptions" :use-masking="true" v-model="phone" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
           </div>
 
           <button type="submit" class="white-button w-full">
-            Отправить заявку
+            {{ $t('send_mail') }}
           </button>
         </div>
         <p class="text-red-700 text-left transition-all h-full" :class="{
           'max-h-10 opacity-100 mt-2': isError,
           'max-h-0 opacity-0': !isError
         }">
-          Пожалуйста, заполните все поля в форме
+          {{ $t('fill_all_fields') }}
         </p>
         <p class="text-white/50 text-left transition-all h-full" :class="{
           'max-h-10 opacity-100 mt-2': isSending,
           'max-h-0 opacity-0': !isSending
         }">
-          Подождите, идет отправка
+          {{ $t('wait_for_send') }}
         </p>
         <p class="text-green-500 text-left transition-all h-full" :class="{
           'max-h-10 opacity-100 mt-2': isSuccess,
           'max-h-0 opacity-0': !isSuccess
         }">
-          Ваше сообщение успешно отправлено
+          {{ $t('message_sent_successfuly') }}
         </p>
       </form>
     </div>

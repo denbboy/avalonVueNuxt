@@ -17,7 +17,7 @@
             <img src="/assets/img/index/comp-1.svg" class="ml-5 md:m-auto md:w-[141px] " alt="ic">
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[222px] md:mx-auto">
-            Лучшие путешествия BBC в номинации Лучший остров в мире
+            {{ $t('companies_text_1') }}
           </p>
         </div>
         <div
@@ -30,8 +30,7 @@
             <img src="/assets/img/index/comp-2.svg" class="ml-5 md:m-auto md:w-[141px]" alt="ic">
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[222px] md:mx-auto">
-            Другой влиятельный источник U.S. News ставит Бали 4-е место в мире по инвестиционной
-            привлекательности
+            {{ $t('companies_text_2') }}
           </p>
         </div>
         <div
@@ -44,8 +43,7 @@
             <img src="/assets/img/index/comp-3.svg" class="ml-5 md:m-auto md:w-[125px]" alt="ic">
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[222px] md:mx-auto">
-            Forbes, один из самых влиятельных мировых аналитиков, назвал Бали одним из пяти лучших направлений
-            для инвестиций в мире.
+            {{ $t('companies_text_3') }}
           </p>
         </div>
         <div
@@ -59,8 +57,7 @@
               alt="ic">
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[260px] md:mx-auto">
-            Даже в период ограничений и пандемия, Бали остается самым желанным местом для посещеня туристов со
-            всего мира согласно к опросу о бронировании
+            {{ $t('companies_text_4') }}
           </p>
         </div>
         <div
@@ -73,8 +70,7 @@
             <img src="/assets/img/index/comp-5.svg" class="ml-5 md:m-auto md:w-[200px]" alt="ic">
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[222px] md:mx-auto">
-            Ну и индустрия свадеб и торжеств не проходит мимо, Daily Mail и молодожены дают Бали первое место
-            для отдыха во время медового месяца
+            {{ $t('companies_text_5') }}
           </p>
         </div>
         <div
@@ -87,7 +83,7 @@
             <img src="/assets/img/index/comp-6.svg" class="ml-5 md:m-auto md:w-[160px]" alt="ic">
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[222px] md:mx-auto">
-            Вот уже 2 года Бали выходит в рейтинг как лучший турист направление от Tripadvisor
+            {{ $t('companies_text_6') }}
           </p>
         </div>
         <div
@@ -100,8 +96,7 @@
             <img src="/assets/img/index/comp-7.svg" class="ml-5 md:m-auto md:w-[140px]" alt="ic">
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[222px] md:mx-auto">
-            Travel+leasure в своем рейтинге отдает первое место сред Азиатские страны на этот великолепный
-            остров
+            {{ $t('companies_text_7') }}
           </p>
         </div>
         <div
@@ -114,8 +109,7 @@
             <img src="/assets/img/index/comp-8.svg" class="ml-5 md:m-auto md:w-[200px]" alt="ic">
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[222px] md:mx-auto">
-            Travel+leasure в своем рейтинге отдает первое место сред Азиатские страны на этот великолепный
-            остров
+            {{ $t('companies_text_8') }}
           </p>
         </div>
       </div>

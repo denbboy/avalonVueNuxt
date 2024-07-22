@@ -5,12 +5,12 @@
         <div class="flex justify-between items-center mb-8">
           <h2 class="text-blue-600 font-bold text-[30px] md:text-[45px] lg:text-[56px] leading-[110%]"
             data-aos="fade-up">
-            Статьи
+            {{ $t('articles') }}
           </h2>
 
           <div class="w-fit hidden md:flex" data-aos="fade-up">
             <NuxtLink href="/articles" class="mr-12 text-blue-600 font-bold underline hover:no-underline">
-              Все статьи
+              {{ $t('all_articles') }}
             </NuxtLink>
             <button type="button" class="articles-button-prev  hover:opacity-100 transition-all mr-9">
               <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">

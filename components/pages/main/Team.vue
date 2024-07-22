@@ -4,7 +4,7 @@
       <div class="">
         <div class="flex justify-between items-center mb-8">
           <h2 class="text-white font-bold text-[30px] md:text-[45px] lg:text-[56px]" data-aos="fade-up">
-            Наша команда
+            {{ $t('our_team') }}
           </h2>
 
           <div class="w-fit hidden md:flex">
@@ -25,8 +25,8 @@
           </div>
         </div>
 
-        <swiper class="swiper team" :modules="modules" :breakpoints="breakpoints" :navigation="navigationConfig" :space-between="20" :slides-per-view="2"
-          @swiper="onSwiper" @slideChange="onSlideChange">
+        <swiper class="swiper team" :modules="modules" :breakpoints="breakpoints" :navigation="navigationConfig"
+          :space-between="20" :slides-per-view="2" @swiper="onSwiper" @slideChange="onSlideChange">
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
@@ -34,23 +34,24 @@
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
-                Дмитрий Грицай
+                {{ $t('team_1_name') }}
               </h3>
               <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
-                Учредитель
+                {{ $t('team_position_1') }}
               </p>
             </div>
           </swiper-slide>
           <swiper-slide>
-            <div class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
+            <div
+              class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
               <img src="/assets/img/index/user-2.png" class="w-full h-full grayscale" alt="ph">
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
-                Мигран Каграманян
+                {{ $t('team_2_name') }}
               </h3>
               <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
-                Учредитель
+                {{ $t('team_position_1') }}
               </p>
             </div>
           </swiper-slide>
@@ -61,10 +62,10 @@
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
-                Мигран Каграманян
+                {{ $t('team_3_name') }}
               </h3>
               <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
-                Учредитель
+                {{ $t('team_position_1') }}
               </p>
             </div>
           </swiper-slide>
@@ -75,10 +76,10 @@
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
-                Дмитрий Топилин
+                {{ $t('team_4_name') }}
               </h3>
               <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
-                Архитектор
+                {{ $t('team_position_2') }}
               </p>
             </div>
           </swiper-slide>
@@ -88,11 +89,11 @@
               <img src="/assets/img/index/user-5.png" class="w-full h-full grayscale" alt="ph">
             </div>
             <div class="text-center mt-4">
-              <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
-                Ари Пурнаван
+              <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">                
+                {{ $t('team_5_name') }}
               </h3>
               <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
-                Строитель
+                {{ $t('team_position_3') }}
               </p>
             </div>
           </swiper-slide>
@@ -103,10 +104,10 @@
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
-                Анастасия Коваль
+                {{ $t('team_6_name') }}
               </h3>
               <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
-                Финансист
+                {{ $t('team_position_4') }}
               </p>
             </div>
           </swiper-slide>
@@ -117,10 +118,10 @@
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
-                Дмитрий Грицай
+                {{ $t('team_1_name') }}
               </h3>
               <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
-                Учредитель
+                {{ $t('team_position_1') }}
               </p>
             </div>
           </swiper-slide>

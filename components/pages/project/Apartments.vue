@@ -1,7 +1,7 @@
 <template>
     <section id="apartments" class="relative overflow-hidden bg-no-repeat bg-cover py-14 md:py-24">
         <Parallaxy class="absolute top-0 left-0 z-0 h-full w-full" :speed="150"
-            :animation="(delta: number) => `transform: translate3d(0, ${delta}px, 0);`">
+            :animation="(delta) => `transform: translate3d(0, ${delta}px, 0);`">
             <!-- <img class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg"> -->
             <img class="h-full w-full object-cover scale-[1.7]"
                 src="/assets/img/about/apartments.jpg">

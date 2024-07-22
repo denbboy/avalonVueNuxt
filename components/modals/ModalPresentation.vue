@@ -13,14 +13,14 @@
         </div>
 
         <h2 class="text-white text-lg md:text-2xl font-bold text-center mb-5 ">
-            Оставьте контакт, чтобы получить презентацию по нашим проектам
+            {{ $t('m_presentation_text_1') }}
         </h2>
 
         <form @submit.prevent="submitForm" class="flex w-full flex-col text-center">
 
             <div class="flex flex-col">
                 <label for="phone-modals" class="flex text-white text-xs mb-[10px] md:text-base">
-                    Телефон для связи в мессенджерах*
+                    {{ $t('m_message_text_2') }}
                 </label>
 
                 <div class="phone-vti">
@@ -29,10 +29,10 @@
 
                 <label for="some" class="flex flex-col text-start mb-[10px] mt-5">
                     <span class="text-white text-xs md:text-base">
-                        Альтерентивный способ связи*
+                        {{ $t('m_presentation_text_2') }}
                     </span>
                     <span class="text-white/50 text-xs">
-                        Это может быть ещё 1 номер телефона, email, имя пользователя Telegram и т.д
+                        {{ $t('m_presentation_text_3') }}
                     </span>
                 </label>
                 <input type="text" v-model="name" id="some"
@@ -43,28 +43,32 @@
                     'max-h-10 opacity-100 mt-2': isError,
                     'max-h-0 opacity-0': !isError
                 }">
-                    {{ errorText.length ? errorText : "Пожалуйста, заполните все поля в форме" }}
+                    {{ errorText.length ? errorText : $t('fill_all_fields') }}
                 </p>
                 <p class="text-white/50 text-left transition-all h-full" :class="{
                     'max-h-10 opacity-100 mt-2': isSending,
                     'max-h-0 opacity-0': !isSending
                 }">
-                    Подождите, идет отправка
+                    {{ $t('wait_for_send') }}
                 </p>
                 <p class="text-green-500 text-left transition-all h-full" :class="{
                     'max-h-10 opacity-100 mt-2': isSuccess,
                     'max-h-0 opacity-0': !isSuccess
                 }">
-                    Ваше сообщение успешно отправлено
+                    {{ $t('message_sent_successfuly') }}
                 </p>
 
                 <button type="submit" class="white-button w-full mt-5 lg:leading-[120%] lg:py-5 leading-[90%]">
-                    Получить предложение
+                    {{ $t('get_a_presentation') }}
                 </button>
 
-                <p class="text-center text-white text-xs lg:text-sm w-full mt-5">Вы также можете <a href="#"
-                        class="text-blue-400 font-bold underline transition-all hover:text-blue-700">связаться с нами в
-                        WhatsApp</a> прямо сейчас, отправив нам любой символ или эмодзи</p>
+                <p class="text-center text-white text-xs lg:text-sm w-full mt-5">
+                    {{ $t('m_calendar_text_4_1') }}
+                    <a target="_blank" :href="toolkitStore?.settings?.soc_link_whats" class="text-blue-400 font-bold underline transition-all hover:text-blue-700">
+                        {{ $t('m_calendar_text_4_2') }}
+                    </a> 
+                    {{ $t('m_calendar_text_4_3') }}
+                </p>
 
             </div>
         </form>

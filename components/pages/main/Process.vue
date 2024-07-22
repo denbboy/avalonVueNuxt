@@ -1,7 +1,7 @@
 <template>
     <section class=" bg-no-repeat bg-cover pt-14 pb-32 relative overflow-hidden">
         <Parallaxy class="absolute top-0 left-0 z-0 h-full w-full" :speed="150"
-            :animation="(delta: number) => `transform: translate3d(0, ${delta}px, 0);`">
+            :animation="(delta) => `transform: translate3d(0, ${delta}px, 0);`">
             <!-- <img class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg"> -->
             <img class="h-full w-full object-cover scale-[1.7]"
                 src="/assets/img/about/process.jpg">
@@ -35,7 +35,7 @@
                     <h2 class="font-bold text-white max-w-[580px] text-3xl mb-7 md:text-[45px] md:leading-[45px] lg:text-[56px] lg:leading-[56px] md:text-left md:m-0" data-aos="fade-up">
                         {{ itemStrings?.filter(item => item.id === 136)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                     </h2>
-                    <p class="text-white/60 opacity-50 text-sm md:text-sm lg:text-base md:text-left md:ml-5 md:mr-24 max-w-[360px] lg:max-w-[550px]" data-aos="fade-up">
+                    <p class="text-white/60 opacity-50 text-sm md:text-sm lg:text-base md:text-left md:ml-5 md:mr-24 max-w-[360px] lg:max-w-[500px]" data-aos="fade-up">
                         {{ itemStrings?.filter(item => item.id === 136)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
                     </p>
                 </div>
@@ -256,7 +256,7 @@
                     class="md:flex relative z-10 md:flex-row-reverse md:justify-between md:items-center md:pt-10 md:border-t md:border-whiteOp-300" data-aos="fade-up">
                     <button @click="handleOpenModal" type="button"
                         class="w-full bg-white p-4 font-bold text-blue-500 text-sm rounded-xl transition-all hover:bg-blue-400 hover:text-white md:mb-0 h-[48px] md:h-[70px] md:text-base mb-5 md:max-w-[300px]">
-                        Получить консультацию
+                        {{ $t('get_presentation') }}
                     </button>
 
                     <div class="flex items-center gap-10">
