@@ -1,5 +1,5 @@
 <template>
-  <section class="map py-14 md:py-24 bg-blue-600 overflow-hidden relative">
+  <section class="map py-14 md:py-24 bg-blue-600 overflow-hidden relative z-10">
     <div class="absolute -left-36 bottom-20 w-72 h-72 z-10 hidden md:block">
       <img src="/assets/img/icons/vector-logo.svg" alt="vector-logo">
     </div>

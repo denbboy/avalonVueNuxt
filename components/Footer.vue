@@ -2,6 +2,14 @@
     <footer id="contacts" class="mt-a bg-blue-600 pt-14 md:pt-24 mt-auto z-10">
         <div class="container">
 
+            <div @click="handleScrollUp" :class="isShowArrowUp ? 'opacity-100' : 'opacity-0'" class="fixed w-[70px] h-[70px] right-[45px] bottom-[100px] flex items-center justify-center cursor-pointer hover:bg-blue-400 transition-all z-50 bg-blue-500 rounded-full">
+                <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M10.1976 4.95971L1.57866 13.5787L1.18324e-06 12L11.3137 0.686292L22.6274 12L21.0488 13.5787L12.4302 4.96009L12.4302 21.6296L10.1976 21.6297L10.1976 4.95971Z"
+                        fill="white" style="fill:white;fill-opacity:1;" />
+                </svg>
+            </div>
+
             <div class="xl:flex xl:items-center gap-5 justify-between md:mb-24">
                 <img :src="`https://avalon-panel.sonisapps.com/assets/${toolkitStore?.settings?.footer_img}`"
                     class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph">
@@ -94,7 +102,8 @@
                         <div class="phone-vti">
                             <!-- <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone"
                                 :only-countries="onlyCountries" /> -->
-                                <VueTelInput :input-options="inputOptions" v-model="phone" :use-masking="true" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
+                            <VueTelInput :input-options="inputOptions" v-model="phone" :use-masking="true"
+                                :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
                         </div>
                         <p class="text-red-700 text-left transition-all h-full" :class="{
                             'max-h-10 opacity-100 mt-2': isError,
@@ -138,19 +147,22 @@
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <p>
-                                 {{ copyright }}
+                                {{ copyright }}
                             </p>
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <NuxtLink href="/docs/privacy-police" class="hover:text-blue-400 transition-all">
-                                {{ allPages?.filter(item => item.slug === 'privacy-police')[0]?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+                                {{ allPages?.filter(item => item.slug ===
+                                    'privacy-police')[0]?.translations?.filter(item =>
+                                item.languages_code.includes(langStore.lang))[0]?.title }}
                             </NuxtLink>
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <NuxtLink href="/docs/terms" class="hover:text-blue-400 transition-all">
-                                {{ allPages?.filter(item => item.slug === 'terms')[0]?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+                                {{ allPages?.filter(item => item.slug === 'terms')[0]?.translations?.filter(item =>
+                                    item.languages_code.includes(langStore.lang))[0]?.title }}
                             </NuxtLink>
                         </li>
                         <li
@@ -162,7 +174,8 @@
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <NuxtLink href="/career" class="hover:text-blue-400 transition-all">
-                                {{ allPages?.filter(item => item.slug === 'career')[0]?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+                                {{ allPages?.filter(item => item.slug === 'career')[0]?.translations?.filter(item =>
+                                    item.languages_code.includes(langStore.lang))[0]?.title }}
                             </NuxtLink>
                         </li>
                     </ul>
@@ -184,10 +197,19 @@ import iso31661 from 'iso-3166-1';
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
 const allPages = ref([]);
+const isShowArrowUp = ref(false);
 
 watch(pagesStore, (newValue) => {
     allPages.value = newValue?.pagesList;
 });
+
+const handleScroll = () => {
+    isShowArrowUp.value = window.scrollY > 800;
+};
+
+const handleScrollUp = () => {
+    window.scrollTo(0,0);
+}
 
 const name = ref(null);
 const phone = ref(null);
@@ -209,7 +231,7 @@ const placeholderLang = {
 }
 
 const inputOptions = {
-  placeholder: placeholderLang[langStore.lang]
+    placeholder: placeholderLang[langStore.lang]
 };
 
 const submitForm = async () => {
@@ -248,25 +270,32 @@ const submitForm = async () => {
 };
 
 const preferredCountries = [
-  'id', // Индонезия
-  'ua', // Украина
-  'ru', // Россия
-  'by', // Беларусь
-  'kz', // Казахстан
-  'us', // США
-  'gb', // Англия
-  'fr', // Франция
-  'cn', // КНР
+    'id', // Индонезия
+    'ua', // Украина
+    'ru', // Россия
+    'by', // Беларусь
+    'kz', // Казахстан
+    'us', // США
+    'gb', // Англия
+    'fr', // Франция
+    'cn', // КНР
 ];
 
 const allCountries = iso31661.all().map(country => country.alpha2);
 
 const sortedCountries = computed(() => {
-  const preferredSet = new Set(preferredCountries);
-  const unselectedCountries = allCountries.filter(country => !preferredSet.has(country));
-  return [...preferredCountries, ...unselectedCountries];
+    const preferredSet = new Set(preferredCountries);
+    const unselectedCountries = allCountries.filter(country => !preferredSet.has(country));
+    return [...preferredCountries, ...unselectedCountries];
 });
 
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
 
 const copyright = `© ${new Date().getFullYear()} PT Avalon Group Bali`
 
