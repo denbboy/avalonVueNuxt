@@ -11,7 +11,7 @@
             </div>
 
             <div class="xl:flex xl:items-center gap-5 justify-between md:mb-24">
-                <img :src="`https://avalon-panel.sonisapps.com/assets/${toolkitStore?.settings?.footer_img}`"
+                <img v-if="toolkitStore?.settings?.footer_img" :src="`https://avalon-panel.sonisapps.com/assets/${toolkitStore?.settings?.footer_img}`"
                     class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph">
 
                 <!-- <div class="logo-clip-path hidden lg:block">
@@ -204,7 +204,8 @@ watch(pagesStore, (newValue) => {
 });
 
 const handleScroll = () => {
-    isShowArrowUp.value = window.scrollY > 800;
+    const pointToShow = document.body.offsetHeight * 60 / 100
+    isShowArrowUp.value = window.scrollY > pointToShow;
 };
 
 const handleScrollUp = () => {

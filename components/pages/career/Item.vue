@@ -4,12 +4,11 @@
             <div class="select__head py-6 flex justify-between items-center cursor-pointer" @click="handleOpen">
                 <div class="mr-7">
                     <time class="mb-2 block text-white/60 text-xs md:text-base md:mb-5">
-                        {{ day }}/{{ month < 10 ? '0' + month : '' }}/{{ year }}
-                    </time>
-                    <h2 class="text-lg text-white leading-5 font-bold md:text-2xl lg:text-3xl">
-                        {{ props?.item?.translations?.filter(item =>
-                            item.languages_code.includes(langStore.lang))[0]?.title }}
-                    </h2>
+                        {{ day }}/{{ month < 10 ? '0' + month : '' }}/{{ year }} </time>
+                            <h2 class="text-lg text-white leading-5 font-bold md:text-2xl lg:text-3xl">
+                                {{ props?.item?.translations?.filter(item =>
+                                    item.languages_code.includes(langStore.lang))[0]?.title }}
+                            </h2>
                 </div>
                 <div
                     class="flex items-center transition-all justify-center rounded-[10px] w-11 h-11 min-w-11 group-[.active]:bg-blue-400 bg-blue-700">
@@ -21,6 +20,8 @@
 
                 <span
                     v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></span>
+
+                <button @click="handleOpenModal" class="white-button px-14">{{ $t('send_cv') }}</button>
 
             </div>
         </div>
@@ -48,5 +49,9 @@ const handleOpen = () => {
 
 const modalsStore = useModalsStore()
 const langStore = useLangStore()
+
+const handleOpenModal = () => {
+    modalsStore.addModal("vacancy")
+}
 
 </script>

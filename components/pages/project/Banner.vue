@@ -4,7 +4,7 @@
         <div class="pb-10 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.jpg')] -->
             <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-80">
-                <img :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+                <img v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
                     class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="">
                 <iframe v-if="`${itemData?.video}`" class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0"
                     width="100%" height="100%" src="" title="YouTube video player" frameborder="0"
@@ -41,11 +41,11 @@
                                 <div class="relative px-5 py-3 w-fit md:text-center md:px-7 min-w-[228px] md:min-w-0">
                                     <img class="absolute top-0 left-0 -z-10 md:hidden"
                                         src="/assets/img/index/bgd-decor.png" alt="bgd">
-                                    <img class="absolute top-0 left-0 -z-10 hidden md:block h-[-webkit-fill-available]"
+                                    <img class="absolute top-0 left-0 -z-10 hidden md:block h-[-webkit-fill-available] w-full"
                                         src="/assets/img/index/bgd-decor-2.png" alt="bgd">
                                     <h2 v-if="itemData?.price" class="text-sm text-white">
                                         {{ $t('cost') }} <br class="hidden md:block"> <span class="font-bold md:text-xl">
-                                            {{ $t('from') }} ${{ itemData?.price }}
+                                            {{ $t('from') }} ${{ String(itemData?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}
                                         </span>
                                     </h2>
                                     <p class="text-xs text-slate-50 opacity-60 text-center">

@@ -14,7 +14,7 @@
 
                 </div>
                 <div data-aos="fade-left" class="">
-                    <img class="max-w-[591px]" src="/assets/img/about/club-img.png" alt="ph">
+                    <img class="max-w-[591px] lg:max-w-[892px] lg:-mr-20" src="/assets/img/about/club-img.png" alt="ph">
                 </div>
             </div>
 

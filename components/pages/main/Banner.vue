@@ -8,8 +8,8 @@
 
 
       <swiper-slide v-for="item in itemsList" class="pt-40 lg:pt-[250px] lg:min-h-[810px] relative overflow-hidden">
-        <div class="brightness-[1] bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
-          <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`" class="absolute top-0 left-0 w-full h-full" alt="">
+        <div class="bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
+          <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`" class="absolute brightness-[0] top-0 left-0 w-full h-full" alt="">
           <iframe v-if="item?.video" class="scale-125 pointer-events-none w-full h-full"
             :src="`${item?.video}&autoplay=1&mute=1&loop=1`"
             title="YouTube video player" frameborder="0"
@@ -30,12 +30,12 @@
               <div class="con md:ml-10 ">
                 <div class="relative px-5 py-3 w-fit md:text-center md:px-7">
                   <img class="absolute top-0 left-0 -z-10 md:hidden" src="/assets/img/index/bgd-decor.png" alt="bgd">
-                  <img class="absolute top-0 left-0 -z-10 hidden md:block h-[-webkit-fill-available]"
+                  <img class="absolute top-0 left-0 -z-10 hidden md:block h-[-webkit-fill-available] w-full"
                     src="/assets/img/index/bgd-decor-2.png" alt="bgd">
                   <h2 class="text-sm text-white">
                     {{ $t('cost') }} <br class="hidden md:block">
                     <span class="font-bold md:text-xl">
-                      {{ $t('from') }} {{ item?.price }} $
+                      {{ $t('from') }} {{ String(item?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }} $
                     </span>
                   </h2>
                   <p class="text-xs text-slate-50 opacity-60 text-center">
@@ -69,7 +69,7 @@
             <div class="">
               <div
                 class="brightness-[1] bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
-                <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`" class="absolute top-0 left-0 w-full h-full" alt="">
+                <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`" class="absolute top-0 brightness-50 left-0 w-full h-full" alt="">
                 <iframe v-if="item?.video" class="scale-125" width="100%" height="100%"
                   :src="`${item?.video}&autoplay=1&mute=1&loop=1`"
                   title="YouTube video player" frameborder="0"
@@ -101,7 +101,7 @@
                     <h2 class="text-sm text-white">
                       {{ $t('cost') }} <br class="hidden md:block">
                       <span class="font-bold md:text-xl">
-                        {{ $t('from') }} {{ item?.price }} $
+                        {{ $t('from') }} {{ String(item?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }} $
                       </span>
                     </h2>
                     <p class="text-xs text-slate-50 opacity-60 text-center">

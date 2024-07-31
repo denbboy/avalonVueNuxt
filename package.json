@@ -38,6 +38,7 @@
     "nuxt-directus": "^5.6.1",
     "nuxt-facebook-pixel-module": "^1.6.0",
     "nuxt-i18n-easy": "^1.5.1",
+    "nuxt-lazy-load": "^3.0.4",
     "nuxt-mail": "^5.0.1",
     "nuxt-meta-pixel": "^2.0.2",
     "nuxt-swiper": "^1.2.2",

@@ -23,7 +23,7 @@
                 class="projects grid flex-col gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 flex-wrap items-center md:justify-between md:flex-row lg:flex-row z-10 relative">
 
                 <div :class="getGridClasses(index)"
-                    class="projects-item relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[500px] min-h-[400px]"
+                    class="projects-item relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[600px] min-h-[400px]"
                     v-for="(item, index) in projectsStore.projects" :key="item.id">
                     <div class="">
                         <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}`"

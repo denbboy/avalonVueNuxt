@@ -7,7 +7,7 @@
 
         <div class="header__inner px-5 flex items-center justify-between gap-3 relative z-[2]">
           <NuxtLink :href="'/'">
-            <img src="/assets/img/newLogo.png" class="hidden md:max-w-[55px] w-full lg:max-w-[80px] xl:block" alt="logo">
+            <img src="/assets/img/newLogo.png" class="hidden md:max-w-[55px] w-full lg:max-w-[95px] xl:block" alt="logo">
             <img src="/assets/img/icons/logo-mob.svg" class="xl:hidden" alt="logo ic">
           </NuxtLink>
 

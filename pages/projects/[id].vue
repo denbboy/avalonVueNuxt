@@ -15,7 +15,7 @@
     <PagesProjectAbout :itemInfo="itemData"
         :itemData="itemData?.blocks?.filter(item => item?.Block_id?.title === 'OM | Club House')[0]?.Block_id?.strings" />
 
-    <PagesProjectGoogleMap v-if="itemData?.location?.coordinates?.length" :itemData="itemData" />
+    <PagesProjectGoogleMap v-if="itemData?.location?.coordinates?.length > 0" :itemData="itemData" />
 
     <PagesProjectFeatures
         :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 25)[0]?.Block_id?.strings" />

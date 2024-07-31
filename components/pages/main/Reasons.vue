@@ -25,10 +25,8 @@
                 {{ itemStrings?.filter(item => item.id === 120)[0]?.String_id?.translations?.filter(item =>
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </h3>
-              <p class="text-white text-sm md:text-base hidden md:block">
-                {{ itemStrings?.filter(item => item.id === 120)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description }}
-              </p>
+              <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 120)[0]?.String_id?.translations?.filter(item =>
+                  item.languages_code.code.includes(langStore.lang))[0]?.description" ></p>
             </div>
           </li>
           <div class="h-[1px] w-[calc(100%+20px)] hidden md:block ml-auto -mr-24 my-auto bg-white/20"></div>
@@ -44,9 +42,8 @@
                 {{ itemStrings?.filter(item => item.id === 121)[0]?.String_id?.translations?.filter(item =>
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </h3>
-              <p class="text-white text-sm md:text-base hidden md:block">
-                {{ itemStrings?.filter(item => item.id === 121)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description }}
+              <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 121)[0]?.String_id?.translations?.filter(item =>
+                  item.languages_code.code.includes(langStore.lang))[0]?.description">
               </p>
             </div>
           </li>
@@ -63,9 +60,8 @@
                 {{ itemStrings?.filter(item => item.id === 122)[0]?.String_id?.translations?.filter(item =>
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </h3>
-              <p class="text-white text-sm md:text-sm lg:text-base hidden md:block">
-                {{ itemStrings?.filter(item => item.id === 122)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description }}
+              <p class="text-white text-sm md:text-sm lg:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 122)[0]?.String_id?.translations?.filter(item =>
+                  item.languages_code.code.includes(langStore.lang))[0]?.description">
               </p>
             </div>
           </li>
@@ -94,9 +90,8 @@
                 {{ itemStrings?.filter(item => item.id === 123)[0]?.String_id?.translations?.filter(item =>
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </h3>
-              <p class="text-white text-sm md:text-base hidden md:block">
-                {{ itemStrings?.filter(item => item.id === 123)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description }}
+              <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 123)[0]?.String_id?.translations?.filter(item =>
+                  item.languages_code.code.includes(langStore.lang))[0]?.description">
               </p>
             </div>
           </li>
@@ -114,9 +109,8 @@
                 {{ itemStrings?.filter(item => item.id === 124)[0]?.String_id?.translations?.filter(item =>
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </h3>
-              <p class="text-white text-sm md:text-base hidden md:block">
-                {{ itemStrings?.filter(item => item.id === 124)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description }}
+              <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 124)[0]?.String_id?.translations?.filter(item =>
+                  item.languages_code.code.includes(langStore.lang))[0]?.description">
               </p>
             </div>
           </li>
@@ -134,9 +128,8 @@
                 {{ itemStrings?.filter(item => item.id === 125)[0]?.String_id?.translations?.filter(item =>
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </h3>
-              <p class="text-white text-sm md:text-base hidden md:block">
-                {{ itemStrings?.filter(item => item.id === 125)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description }}
+              <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 125)[0]?.String_id?.translations?.filter(item =>
+                  item.languages_code.code.includes(langStore.lang))[0]?.description">
               </p>
             </div>
           </li>

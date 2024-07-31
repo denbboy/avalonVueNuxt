@@ -13,7 +13,7 @@
             <div class="bg-gradient-to-t from-blue-500 absolute top-0 left-0 w-full h-full"></div>
         </div>
 
-        <img :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+        <img v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
             class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="">
         <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10">
         </div>
@@ -135,7 +135,7 @@
                 <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
                     :breakpoints="breakpoints" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
 
-                    <swiper-slide v-for="item in itemsList" :key="item?.id">
+                    <swiper-slide style="height: auto;" v-for="item in itemsList" :key="item?.id">
                         <SalesItem bgdColor="blue-600" :item="item" />
                     </swiper-slide>
 
