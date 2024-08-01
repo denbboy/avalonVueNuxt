@@ -7,12 +7,13 @@
         <img class="absolute top-0 z-0 opacity-90 w-[600vw] max-w-max md:w-full min-h-[1000px] h-screen object-cover"
             src="/assets/img/career/img.jpg" alt="Image"> -->
 
-        <img src="`/assets/img/career/img.jpg`"
+        <img src="~assets/img/career/img.jpg"
             class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="">
         <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10">
         </div>
         <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[1000px] absolute z-10">
         </div>
+
 
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
             <h1 data-aos="fade-up"
