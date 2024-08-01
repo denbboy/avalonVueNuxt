@@ -1,5 +1,5 @@
 <template>
-    <section class="gallery py-14 relative overflow-hidden">
+    <section class="gallery lg:py-14 py-5 relative overflow-hidden">
         <div class="absolute lg:-right-36 top-0 lg:top-0 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
             <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
         </div>

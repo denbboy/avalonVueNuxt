@@ -25,7 +25,7 @@
           </div>
         </div>
 
-        <swiper class="swiper team" :modules="modules" :breakpoints="breakpoints" :navigation="navigationConfig"
+        <swiper class="swiper team team-block" :modules="modules" :breakpoints="breakpoints" :navigation="navigationConfig"
           :space-between="20" :slides-per-view="2" @swiper="onSwiper" @slideChange="onSlideChange">
           <swiper-slide>
             <div

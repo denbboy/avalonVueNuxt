@@ -1,6 +1,6 @@
 <template>
     <div
-        class="content__inner z-0 relative overflow-hidden p-5 md:p-0 w-full flex flex-col items-center justify-center h-full md:rounded-[20px]">
+        class="content__inner z-0 relative overflow-x-hidden overflow-y-scroll p-5 md:p-0 w-full flex flex-col items-center h-full md:rounded-[20px]">
 
         <div class="absolute right-[-34px] -top-5 md:top-5 z-0">
             <img src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo">
@@ -11,7 +11,7 @@
 
         <div class="md:flex">
             <div
-                class="pb-10 border-b border-whiteOp-300 mb-10 md:border-b-0 flex flex-col md:mb-0 md:bg-blue-600 md:p-10 md:pr-0 md:w-full">
+                class="pb-4 border-b border-whiteOp-300 mb-4 md:border-b-0 flex flex-col md:mb-0 md:bg-blue-600 md:p-10 md:pr-0 md:w-full">
                 <div class="hidden md:block md:mb-[65px] pb-10 border-b border-whiteOp-300 md:-ml-10">
                     <img src="/assets/img/modals/modal-logo.svg" class="mx-auto" alt="ic logo">
                 </div>

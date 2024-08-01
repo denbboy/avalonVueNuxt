@@ -3,7 +3,7 @@
         <div class="absolute lg:-right-36 top-0 lg:top-1/2 -translate-y-1/2 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
             <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
         </div>
-        <div class="container relative z-10 flex flex-col gap-[60px]">
+        <div class="container relative z-10 flex flex-col gap-5 lg:gap-[60px]">
             <div class="xl:flex xl:gap-7 justify-between xl:items-center">
                 <div data-aos="fade-right" class="md:max-w-[650px] lg:min-w-[420px] [&>p]:text-white [&>p]:text-sm [&>p]:mb-4 [&>p]:md:text-xl [&>p]:md:mb-5">
                     <h2 class="font-bold text-white text-3xl mb-7 md:text-[45px] lg:text-[56px] md:mb-12">
@@ -14,7 +14,7 @@
 
                 </div>
                 <div data-aos="fade-left" class="">
-                    <img class="max-w-[591px] lg:max-w-[892px] lg:-mr-20" src="/assets/img/about/club-img.png" alt="ph">
+                    <img class="max-w-[591px] w-full lg:max-w-[892px] lg:-mr-20" src="/assets/img/about/club-img.png" alt="ph">
                 </div>
             </div>
 

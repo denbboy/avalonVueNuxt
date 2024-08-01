@@ -1,10 +1,10 @@
 <template>
-    <img src="/assets/img/modals/modal-banner.jpg" class="mt-10 lg:-mt-10 w-full lg:rounded-t-[20px] max-w-none "
+    <img src="/assets/img/modals/modal-banner.jpg" class="lg:-mt-10 w-full lg:rounded-t-[20px] max-w-none "
         alt="ph">
 
 
     <div
-        class="content__inner w-full z-0 relative overflow-hidden p-5 lg:p-10 max-w-[600px] flex flex-col items-center justify-center h-full">
+        class="content__inner w-full z-0 relative overflow-hidden p-5 lg:p-10 max-w-[600px] flex flex-col items-center h-full">
 
         <div class="absolute right-[-34px] -top-5 lg:top-5 z-0">
             <img src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo">

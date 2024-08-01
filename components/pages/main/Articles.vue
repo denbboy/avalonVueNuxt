@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
+        <swiper class="articles-block" :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
           :breakpoints="breakpoints" :space-between="24" @swiper="onSwiper" @slideChange="onSlideChange">
 
           <swiper-slide v-for="item in itemsList" :key="item?.id">

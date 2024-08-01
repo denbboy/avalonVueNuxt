@@ -1,5 +1,5 @@
 <template>
-  <section class="pb-12">
+  <section class="lg:pb-12 pb-0">
 
     <!-- :modules="modules" -->
     <swiper class="swiper-banner" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
@@ -10,7 +10,7 @@
       <swiper-slide v-for="item in itemsList" class="pt-40 lg:pt-[250px] lg:min-h-[810px] relative overflow-hidden">
         <div class="bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
           <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`" class="absolute brightness-[0] top-0 left-0 w-full h-full" alt="">
-          <iframe v-if="item?.video" class="scale-125 pointer-events-none w-full h-full"
+          <iframe v-if="item?.video" class="lg:scale-125 scale-[3] pointer-events-none w-full h-full"
             :src="`${item?.video}&autoplay=1&mute=1&loop=1`"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -29,8 +29,8 @@
                 class="mb-7 max-w-[100px] md:mb-0" alt="logo">
               <div class="con md:ml-10 ">
                 <div class="relative px-5 py-3 w-fit md:text-center md:px-7">
-                  <img class="absolute top-0 left-0 -z-10 w-full md:hidden" src="/assets/img/index/bgd-decor.png" alt="bgd">
-                  <img class="absolute top-0 left-0 -z-10 hidden md:block h-[-webkit-fill-available] w-full"
+                  <img class="absolute top-0 left-0 -z-10 w-full h-full md:hidden" src="/assets/img/index/bgd-decor.png" alt="bgd">
+                  <img class="absolute top-0 left-0 -z-10 h-full hidden md:block w-full"
                     src="/assets/img/index/bgd-decor-2.png" alt="bgd">
                   <h2 class="text-sm text-white">
                     {{ $t('cost') }} <br class="hidden md:block">

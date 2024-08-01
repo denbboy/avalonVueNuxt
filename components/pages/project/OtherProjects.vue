@@ -21,7 +21,7 @@
                         <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
                             <div class="block-bottom-point"></div>
                             <div class="flex justify-between mb-auto">
-                                <img class="w-[90px]" :src="`https://avalon-panel.sonisapps.com/assets/${item.related_Project_id?.logo}`"
+                                <img class="w-[90px]" v-if="item.related_Project_id?.logo" :src="`https://avalon-panel.sonisapps.com/assets/${item.related_Project_id?.logo}`"
                                     alt="">
                                 <span v-if="item.related_Project_id?.roi_procent"
                                     class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">

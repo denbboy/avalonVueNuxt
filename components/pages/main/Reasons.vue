@@ -13,58 +13,20 @@
       </div>
       <div class="con_list grid gap-[30px] xl:gap-0 xl:grid-cols-[1fr_1.1fr_1fr]">
         <ul class="flex flex-col gap-4">
-          <li class="flex gap-4 md:gap-7 items-center md:items-start" data-aos="fade-right">
-            <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center md:min-w-12 md:h-12">
-              <span class="font-bold text-white text-xs md:text-lg">
-                1
-              </span>
-            </div>
-            <div class="">
-              <h3
-                class="font-bold text-white lg:text-[30px] text-base w-full decoration-dashed underline md:no-underline md:text-[22px] md:mb-2 lg:mb-5 md:border-none">
-                {{ itemStrings?.filter(item => item.id === 120)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.title }}
-              </h3>
-              <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 120)[0]?.String_id?.translations?.filter(item =>
-                item.languages_code.code.includes(langStore.lang))[0]?.description"></p>
-            </div>
-          </li>
+
+          <ReasonItem :handleOpen="handleOpen" :openedItem="openedItem" index="1" :title="itemStrings?.filter(item => item.id === 120)[0]?.String_id?.translations?.filter(item =>
+            item.languages_code.code.includes(langStore.lang))[0]?.title" :description="itemStrings?.filter(item => item.id === 120)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(langStore.lang))[0]?.description" />
           <div class="h-[1px] w-[calc(100%+20px)] hidden md:block ml-auto -mr-24 my-auto bg-white/20"></div>
-          <li class="flex gap-4 md:gap-7 items-center md:items-start" data-aos="fade-right">
-            <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center md:min-w-12 md:h-12">
-              <span class="font-bold text-white text-xs md:text-lg">
-                2
-              </span>
-            </div>
-            <div class="">
-              <h3
-                class="font-bold text-white lg:text-[30px] text-base w-full decoration-dashed underline md:no-underline md:text-[22px] md:mb-2 lg:mb-5 md:border-none">
-                {{ itemStrings?.filter(item => item.id === 121)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.title }}
-              </h3>
-              <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 121)[0]?.String_id?.translations?.filter(item =>
-                item.languages_code.code.includes(langStore.lang))[0]?.description">
-              </p>
-            </div>
-          </li>
+          <ReasonItem :handleOpen="handleOpen" :openedItem="openedItem" index="2" :title="itemStrings?.filter(item => item.id === 121)[0]?.String_id?.translations?.filter(item =>
+            item.languages_code.code.includes(langStore.lang))[0]?.title" :description="itemStrings?.filter(item => item.id === 121)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(langStore.lang))[0]?.description" />
           <div class="h-[1px] hidden md:block w-[calc(100%-76px)] ml-auto my-auto bg-white/20"></div>
-          <li class="flex gap-4 md:gap-7 items-center md:items-start" data-aos="fade-right">
-            <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center md:min-w-12 md:h-12">
-              <span class="font-bold text-white text-xs md:text-lg lg:text-[22px]">
-                3
-              </span>
-            </div>
-            <div>
-              <h3
-                class="font-bold text-white lg:text-[30px] text-base w-full decoration-dashed underline md:no-underline md:text-[22px] md:mb-2 lg:mb-5 md:border-none">
-                {{ itemStrings?.filter(item => item.id === 122)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.title }}
-              </h3>
-              <p class="text-white text-sm md:text-sm lg:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 122)[0]?.String_id?.translations?.filter(item =>
-                item.languages_code.code.includes(langStore.lang))[0]?.description">
-              </p>
-            </div>
-          </li>
+          <ReasonItem :handleOpen="handleOpen" :openedItem="openedItem" index="3" :title="itemStrings?.filter(item => item.id === 122)[0]?.String_id?.translations?.filter(item =>
+            item.languages_code.code.includes(langStore.lang))[0]?.title" :description="itemStrings?.filter(item => item.id === 122)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(langStore.lang))[0]?.description" />
+
+
         </ul>
 
         <!-- <img src="/assets/img/index/island-img.png" class="my-8 max-w-56 m-auto md:max-w-[500px] md:m-0" alt="ph" data-aos="zoom-in"> -->
@@ -80,62 +42,17 @@
         </div>
 
         <ul class="flex flex-col gap-4">
-          <li class="flex gap-4 items-center xl:items-start md:gap-7 xl:first:-ml-16 xl:flex-row-reverse xl:text-end"
-            data-aos="fade-left">
-            <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center md:min-w-12 md:h-12">
-              <span class="font-bold text-white text-xs md:text-lg">
-                4
-              </span>
-            </div>
-            <div class="">
-              <h3
-                class="font-bold text-white lg:text-[30px] text-base w-full decoration-dashed underline md:no-underline md:text-[22px] md:mb-2 lg:mb-5 md:border-none">
-                {{ itemStrings?.filter(item => item.id === 123)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.title }}
-              </h3>
-              <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 123)[0]?.String_id?.translations?.filter(item =>
-                item.languages_code.code.includes(langStore.lang))[0]?.description">
-              </p>
-            </div>
-          </li>
+          <ReasonItem :handleOpen="handleOpen" :openedItem="openedItem" index="4" :title="itemStrings?.filter(item => item.id === 123)[0]?.String_id?.translations?.filter(item =>
+            item.languages_code.code.includes(langStore.lang))[0]?.title" :description="itemStrings?.filter(item => item.id === 123)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(langStore.lang))[0]?.description" />
           <div class="h-[1px] w-[calc(100%+20px)] hidden xl:block -ml-24 my-auto bg-white/20"></div>
-          <li class="flex gap-4 items-center xl:items-start md:gap-7 xl:first:-ml-16 xl:flex-row-reverse xl:text-end"
-            data-aos="fade-left">
-            <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center md:min-w-12 md:h-12">
-              <span class="font-bold text-white text-xs md:text-lg">
-                5
-              </span>
-            </div>
-            <div class="">
-              <h3
-                class="font-bold text-white lg:text-[30px] text-base w-full decoration-dashed underline md:no-underline md:text-[22px] md:mb-2 lg:mb-5 md:border-none">
-                {{ itemStrings?.filter(item => item.id === 124)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.title }}
-              </h3>
-              <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 124)[0]?.String_id?.translations?.filter(item =>
-                item.languages_code.code.includes(langStore.lang))[0]?.description">
-              </p>
-            </div>
-          </li>
+          <ReasonItem :handleOpen="handleOpen" :openedItem="openedItem" index="5" :title="itemStrings?.filter(item => item.id === 124)[0]?.String_id?.translations?.filter(item =>
+            item.languages_code.code.includes(langStore.lang))[0]?.title" :description="itemStrings?.filter(item => item.id === 124)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(langStore.lang))[0]?.description" />
           <div class="h-[1px] hidden xl:block w-[calc(100%-76px)] my-auto bg-white/20"></div>
-          <li class="flex gap-4 md:gap-7 xl:items-start xl:first:-ml-16 xl:flex-row-reverse xl:text-end"
-            data-aos="fade-left">
-            <div class="min-w-11 h-11 rounded-xl bg-blue-400 flex items-center justify-center md:min-w-12 md:h-12">
-              <span class="font-bold text-white text-xs md:text-lg">
-                6
-              </span>
-            </div>
-            <div>
-              <h3
-                class="font-bold text-white lg:text-[30px] text-base w-full decoration-dashed underline md:no-underline md:text-[22px] md:mb-2 lg:mb-5 md:border-none">
-                {{ itemStrings?.filter(item => item.id === 125)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.title }}
-              </h3>
-              <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 125)[0]?.String_id?.translations?.filter(item =>
-                item.languages_code.code.includes(langStore.lang))[0]?.description">
-              </p>
-            </div>
-          </li>
+          <ReasonItem :handleOpen="handleOpen" :openedItem="openedItem" index="6" :title="itemStrings?.filter(item => item.id === 125)[0]?.String_id?.translations?.filter(item =>
+            item.languages_code.code.includes(langStore.lang))[0]?.title" :description="itemStrings?.filter(item => item.id === 125)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(langStore.lang))[0]?.description" />
         </ul>
       </div>
 
@@ -172,7 +89,7 @@
               item.languages_code.code.includes(langStore.lang))[0]?.description }}
           </span>
         </div>
-        <div class="py-7 lg:px-5 md:px-3 bg-blue-400 md:h-full flex flex-col md:justify-center md:w-full">
+        <div class="py-7 px-5 lg:px-5 md:px-3 bg-blue-400 md:h-full flex flex-col md:justify-center md:w-full">
           <p class="text-white text-3xl font-bold mb-2 flex md:text-[30px] lg:text-[40px] items-center">
             {{ itemStrings?.filter(item => item.id === 129)[0]?.String_id?.translations?.filter(item =>
               item.languages_code.code.includes(langStore.lang))[0]?.title }}
@@ -199,6 +116,11 @@ import { useBlocksStore } from '~/stores/functions/blocks';
 const props = defineProps(['itemStrings'])
 
 const itemStrings = ref([]);
+const openedItem = ref(false)
+
+const handleOpen = (item) => {
+  openedItem.value = openedItem.value === item ? '' : item
+}
 
 const route = useRoute();
 const langStore = useLangStore()
@@ -206,6 +128,14 @@ const blocksStore = useBlocksStore()
 
 watchEffect(() => {
   const isProjectPage = route.path.includes('/projects/');
+
+  // setTimeout(() => {
+  //   if (window?.innerWidth < 576) {
+  //     isMobile.value = true
+  //   } else {
+  //     isMobile.value = false
+  //   }
+  // }, 500)
 
   if (isProjectPage) {
     // Если это страница проекта, обновляем itemStrings из props

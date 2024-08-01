@@ -132,29 +132,29 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
-                                        class=" w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
+                                        class=" w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-2 md:py-0">
                                         <p class="font-bold text-wrap text-white text-xs md:text-[14px] md:text-end">
                                             {{ $t('forecase_text_3') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl md:leading-6">
                                             70 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
 
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             70 %
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
 
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             1 470 $
@@ -162,118 +162,118 @@
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             17 640 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             12 348 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             11 %
                                         </p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
-                                        class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
+                                        class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-2 md:py-0">
                                         <p class="font-bold text-white text-xs md:text-[14px] md:text-end">
                                             {{ $t('real_forecast') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             95 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             80 %
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             2 280 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             27 360 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             19 152 $
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             17 %
                                         </p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
-                                        class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
+                                        class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-2 md:py-0">
                                         <p class="font-bold text-white text-xs md:text-[14px] md:text-end">
                                             {{ $t('optimistic_forecast') }}
                                         </p>
                                     </div>
                                     <div
-                                        class=" whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class=" whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             100 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             90 %
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             2 700 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             32 400 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             22 680 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             21 %
                                         </p>
@@ -389,29 +389,29 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
-                                        class=" w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
+                                        class=" w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-2 md:py-0">
                                         <p class="font-bold text-wrap text-white text-xs md:text-[14px] md:text-end">
                                             {{ $t('forecase_text_3') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl md:leading-6">
                                             70 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
 
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             70 %
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
 
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             1 470 $
@@ -419,118 +419,118 @@
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             17 640 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             12 348 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[13px] px-1 md:py-[10px]">
+                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             11 %
                                         </p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
-                                        class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
+                                        class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-2 md:py-0">
                                         <p class="font-bold text-white text-xs md:text-[14px] md:text-end">
                                             {{ $t('real_forecast') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             95 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             80 %
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             2 280 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             27 360 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             19 152 $
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             17 %
                                         </p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
-                                        class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-5 md:py-0">
+                                        class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-2 md:py-0">
                                         <p class="font-bold text-white text-xs md:text-[14px] md:text-end">
                                             {{ $t('optimistic_forecast') }}
                                         </p>
                                     </div>
                                     <div
-                                        class=" whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class=" whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             100 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             90 %
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             2 700 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             32 400 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             22 680 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[13px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[10px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             21 %
                                         </p>

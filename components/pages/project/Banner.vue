@@ -1,7 +1,7 @@
 <template>
 
-    <section class="pb-12">
-        <div class="pb-10 pt-36 lg:pt-[290px] relative ">
+    <section class="lg:pb-12 pb-0">
+        <div class="lg:pb-10 pb-5 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.jpg')] -->
             <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-80">
                 <img v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
@@ -40,7 +40,7 @@
                                 <div class="relative px-5 py-3 w-fit md:text-center md:px-7 min-w-[228px] md:min-w-0">
                                     <img class="absolute top-0 left-0 -z-10 md:hidden"
                                         src="/assets/img/index/bgd-decor.png" alt="bgd">
-                                    <img class="absolute top-0 left-0 -z-10 hidden md:block h-[-webkit-fill-available] w-full"
+                                    <img class="absolute top-0 left-0 -z-10 hidden md:block h-full w-full"
                                         src="/assets/img/index/bgd-decor-2.png" alt="bgd">
                                     <h2 v-if="itemData?.price" class="text-sm text-white">
                                         {{ $t('cost') }} <br class="hidden md:block"> <span class="font-bold md:text-xl">
@@ -56,7 +56,7 @@
                                 class="w-full h-[60px] max-w-[72px] md:max-w-[98px] md:h-[86px] bg-white flex items-center justify-center rounded-[8px] md:rounded-[15px]">
                                 <!-- <img src="/assets/img/icons/live-ic.svg" class="max-w-[42px] md:max-w-[68px]" alt="ic"> -->
 
-                                <svg width="68" height="48" viewBox="0 0 68 48" fill="none"
+                                <svg width="68" height="48" viewBox="0 0 68 48" class="max-w-12 lg:max-w-full" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_840_7506)">
                                         <path
@@ -111,10 +111,10 @@
                     </div>
                     <div class="flex flex-col xl:items-end justify-end xl:w-full">
                         <button v-if="itemData?.video" data-aos="fade-up" @click="handlePlayVideo(itemData?.video)" type="button"
-                            class="flex items-center mb-10 gap-5 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
+                            class="flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
                             <div class="relative flex items-center justify-center">
                                 <img src="/assets/img/about/playBorder.svg" class="max-w-[95px] xl:max-w-[165px]" alt="ic">
-                            <svg class="absolute -ml-10 animate-scaling" width="18" height="21" viewBox="0 0 18 21" fill="none"
+                            <svg class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18" height="21" viewBox="0 0 18 21" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M17.7422 10.653L0.17076 20.7979L0.170761 0.508136L17.7422 10.653Z" fill="white"/>
                             </svg>

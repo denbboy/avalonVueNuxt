@@ -8,8 +8,8 @@
 
       <div class="header__inner px-5 flex items-center justify-between gap-3 relative">
         <NuxtLink v-if="projectsStore.currentProject?.logo" :href="`/projects/${projectsStore.currentProject?.id}`">
-          <img :src="`https://avalon-panel.sonisapps.com/assets/${projectsStore.currentProject?.logo}`" class="max-w-20"
-            alt="logo ic">
+          <img :src="`https://avalon-panel.sonisapps.com/assets/${projectsStore.currentProject?.logo}`"
+            class="max-w-10 lg:max-w-20" alt="logo ic">
         </NuxtLink>
 
 
@@ -89,7 +89,7 @@
         </div>
         <div class="gap-1 hidden xl:flex">
           <a v-if="toolkitStore?.settings?.soc_link_whats" :href="`tel:${toolkitStore?.settings?.soc_link_whats}`"
-            class="lg:min-w-[48px] lg:h-[48px] md:min-w-[42px] md:h-[42px] border border-white rounded-full hover:bg-white transition-all flex items-center justify-center group">
+            class="lg:w-[48px] lg:h-[48px] md:w-[42px] md:h-[42px] border border-white rounded-full hover:bg-white transition-all flex items-center justify-center group">
             <svg class="fill-white w-1/2 group-hover:fill-blue-600 transition-all" width="25" height="25"
               viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -97,7 +97,7 @@
             </svg>
           </a>
           <a v-if="toolkitStore?.settings?.soc_link_inst" :href="`tel:${toolkitStore?.settings?.soc_link_inst}`"
-            class="lg:min-w-[48px] lg:h-[48px] md:min-w-[42px] md:h-[42px] border border-white rounded-full hover:bg-white transition-all flex items-center justify-center group">
+            class="lg:w-[48px] lg:h-[48px] md:w-[42px] md:h-[42px] border border-white rounded-full hover:bg-white transition-all flex items-center justify-center group">
             <svg class="fill-white w-1/2 group-hover:fill-blue-600 transition-all" width="25" height="26"
               viewBox="0 0 25 26" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -107,7 +107,7 @@
             </svg>
           </a>
           <a v-if="toolkitStore?.settings?.soc_link_fb" :href="`tel:${toolkitStore?.settings?.soc_link_fb}`"
-            class="lg:min-w-[48px] lg:h-[48px] md:min-w-[42px] md:h-[42px] border border-white rounded-full hover:bg-white transition-all flex items-center justify-center group">
+            class="lg:w-[48px] lg:h-[48px] md:w-[42px] md:h-[42px] border border-white rounded-full hover:bg-white transition-all flex items-center justify-center group">
             <svg class="fill-white w-1/2 group-hover:fill-blue-600 transition-all" width="11" height="20"
               viewBox="0 0 11 20" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -115,7 +115,7 @@
             </svg>
           </a>
           <a v-if="toolkitStore?.settings?.soc_link_yt" :href="`tel:${toolkitStore?.settings?.soc_link_yt}`"
-            class="lg:min-w-[48px] lg:h-[48px] md:hidden lg:flex md:min-w-[42px] md:h-[42px] border border-white rounded-full hover:bg-white transition-all flex items-center justify-center group">
+            class="lg:w-[48px] lg:h-[48px] md:hidden lg:flex md:w-[42px] md:h-[42px] border border-white rounded-full hover:bg-white transition-all flex items-center justify-center group">
             <svg class="fill-white w-1/2 group-hover:fill-blue-600 transition-all" width="20" height="14"
               viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -217,8 +217,17 @@
     class="fixed left-0 top-0 h-full w-full z-50 bg-blue-500 transition-all duration-150 flex items-center justify-center"
     :class="loading ? 'visible opacity-100' : 'opacity-0 invisible'">
     <img class="w-[100px]" src="/assets/img/loader.gif" alt="">
+
   </div>
+
 </template>
+
+<style>
+.nuxt-loading-indicator {
+  width: 100%;
+  height: 20px;
+}
+</style>
 
 <script setup>
 import { ref, defineProps, onMounted } from 'vue';
@@ -234,10 +243,6 @@ const toolkitStore = useToolkit();
 const props = defineProps(['header'])
 const projectsStore = useProjectsStore();
 const { locale } = useI18n()
-
-setTimeout(() => {
-  loading.value = false
-}, 500)
 
 const isOpenBurger = ref(false);
 const isScrolled = ref(false);
@@ -262,8 +267,13 @@ const handleOpen = () => {
   isOpen.value = !isOpen.value;
 }
 
+onMounted(() => {
+  setTimeout(() => {
+    loading.value = false
+  }, 1000)
+})
 
-const DEFAULT_LOCALE = 'en'; // Основной язык
+const DEFAULT_LOCALE = 'en';
 
 const changeLocale = async (newLocale) => {
   loading.value = true;

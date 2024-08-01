@@ -12,7 +12,11 @@
     }
 
     .career-select-body {
-        @apply invisible pb-0 group-[.active]:pb-12 opacity-0 max-h-0 overflow-hidden group-[.active]:max-h-[3000px] group-[.active]:visible group-[.active]:opacity-100 group-[.active]:mt-8 transition-all [&_*]:text-white [&_*]:text-sm md:[&_*]:text-lg [&_*]:py-1 [&_li]:before:w-[6px] md:[&_li]:before:w-[8px] [&_li]:before:h-[6px] md:[&_li]:before:h-[8px] [&_li]:before:min-w-[6px] md:[&_li]:before:min-w-[8px] [&_li]:before:mr-2 [&_li]:before:rounded-full [&_li]:before:bg-white [&_li]:before:block [&_li]:flex [&_li]:items-center
+        @apply invisible pb-0 opacity-0 max-h-0 overflow-hidden transition-all [&_*]:text-white [&_*]:text-sm md:[&_*]:text-lg [&_*]:py-1 [&_li]:before:w-[6px] md:[&_li]:before:w-[8px] [&_li]:before:h-[6px] md:[&_li]:before:h-[8px] [&_li]:before:min-w-[6px] md:[&_li]:before:min-w-[8px] [&_li]:before:mr-2 [&_li]:before:rounded-full [&_li]:before:bg-white [&_li]:before:block [&_li]:flex [&_li]:items-center
+    }
+
+    .select__body {
+        @apply invisible transition-all max-h-0 opacity-0 h-full group-[.active]:max-h-[100px] group-[.active]:visible group-[.active]:opacity-100
     }
 
     .white-button {
@@ -188,6 +192,23 @@ body {
     #apartments .swiper-pagination {
         bottom: 30px !important;
     }
+}
+
+@media screen and (max-width: 576px) {
+    .swiper-news .swiper-wrapper,
+    .swiper-sales .swiper-wrapper,
+    /* .articles-block .swiper-wrapper, */
+    .team-block .swiper-wrapper {
+        padding-bottom: 0 !important;
+    }
+}
+
+#apartments .swiper-pagination {
+    bottom: -30px !important;
+}
+
+.app-swiper .swiper {
+    overflow: visible !important;
 }
 
 /* // radio btn ABOUT page  */

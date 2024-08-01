@@ -13,6 +13,7 @@ watchEffect(() => {
 </script>
 
 <template>
+
     <Head>
         <Title>
             {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
@@ -40,9 +41,8 @@ watchEffect(() => {
                 {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
             </h1>
             <div data-aos="fade-up" data-aos-delay="100" class="justify-between items-center mb-10 lg:mb-48">
-                <p class="md:text-lg text-white text-sm mb-7 max-w-[548px]">
-                    {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description
-                    }}
+                <p class="md:text-lg text-white text-sm mb-7 max-w-[548px]"
+                    v-html="currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
                 </p>
 
                 <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,8 +56,7 @@ watchEffect(() => {
                     </g>
                     <defs>
                         <clipPath id="clip0_670_12563">
-                            <rect width="30" height="30" fill="white" style="fill:white;fill-opacity:1;"
-                                transform="translate(30.5) rotate(90)" />
+                            <rect width="30" height="30" fill="white" transform="translate(30.5) rotate(90)" />
                         </clipPath>
                     </defs>
                 </svg>

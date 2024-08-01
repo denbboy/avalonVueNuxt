@@ -69,7 +69,7 @@ export default defineNuxtConfig({
     "nuxt-calendly",
     "nuxt-directus",
     "@nuxt/image",
-    "@dargmuesli/nuxt-cookie-control",
+    // "@dargmuesli/nuxt-cookie-control",
     "@zadigetvoltaire/nuxt-gtm",
     "nuxt-meta-pixel",
     "nuxt-lazy-load",

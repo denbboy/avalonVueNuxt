@@ -18,7 +18,7 @@
         ?? "0" + 1}`) }} {{ new Date(props?.item?.date_created).getFullYear() }}
     </span>
     <p :class="bgdColor === 'white' ? 'text-blue-600' : 'text-white'"
-      class="text-base md:text-lg transition-all group-hover:text-blue-400 font-bold"
+      class="text-base md:text-lg transition-all group-hover:text-blue-400 line-clamp-2 font-bold"
       v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title"></p>
     </div>
   </NuxtLink>
