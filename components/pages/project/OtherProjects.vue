@@ -10,9 +10,9 @@
             </h2>
 
             <div
-                class="grid flex-col gap-5 grid-cols-3 flex-wrap items-center md:justify-between md:flex-row lg:flex-row z-10 relative">
+                class="grid flex-col gap-5 md:grid-cols-3 flex-wrap items-center md:justify-between md:flex-row lg:flex-row z-10 relative">
 
-                <div class="relative md:rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[500px] md:min-h-[400px]"
+                <div class="relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] min-h-[500px] lg:min-h-[600px] md:min-h-[400px]"
                     v-for="item in props.projects" :key="item.related_Project_id?.id">
                     <div class="">
                         <img :src="`https://avalon-panel.sonisapps.com/assets/${item.related_Project_id?.preview}`"

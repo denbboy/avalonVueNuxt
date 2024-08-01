@@ -26,7 +26,7 @@
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </h3>
               <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 120)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description" ></p>
+                item.languages_code.code.includes(langStore.lang))[0]?.description"></p>
             </div>
           </li>
           <div class="h-[1px] w-[calc(100%+20px)] hidden md:block ml-auto -mr-24 my-auto bg-white/20"></div>
@@ -43,7 +43,7 @@
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </h3>
               <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 121)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description">
+                item.languages_code.code.includes(langStore.lang))[0]?.description">
               </p>
             </div>
           </li>
@@ -61,7 +61,7 @@
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </h3>
               <p class="text-white text-sm md:text-sm lg:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 122)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description">
+                item.languages_code.code.includes(langStore.lang))[0]?.description">
               </p>
             </div>
           </li>
@@ -73,7 +73,10 @@
           class="logo-clip-path max-h-[222px] max-w-[214px] md:max-w-full md:max-h-full md:min-w-[318px] md:h-[380px] lg:min-w-[553px] lg:h-[573px] mx-auto my-auto">
           <video loop
             class="md:min-w-[318px]  md:h-[380px] lg:min-w-[553px] lg:h-[573px] min-w-[214px] w-full h-[222px] object-cover"
-            muted autoplay src="/assets/video/video-logo.webm"></video>
+            muted autoplay>
+            <!-- <source src="/assets/video/video-logo.webm" type="video/webm"> -->
+            <source src="/assets/video/video-logo.mp4" type="video/mp4" />
+          </video>
         </div>
 
         <ul class="flex flex-col gap-4">
@@ -91,7 +94,7 @@
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </h3>
               <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 123)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description">
+                item.languages_code.code.includes(langStore.lang))[0]?.description">
               </p>
             </div>
           </li>
@@ -110,7 +113,7 @@
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </h3>
               <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 124)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description">
+                item.languages_code.code.includes(langStore.lang))[0]?.description">
               </p>
             </div>
           </li>
@@ -129,7 +132,7 @@
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </h3>
               <p class="text-white text-sm md:text-base hidden md:block" v-html="itemStrings?.filter(item => item.id === 125)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description">
+                item.languages_code.code.includes(langStore.lang))[0]?.description">
               </p>
             </div>
           </li>
@@ -203,7 +206,7 @@ const blocksStore = useBlocksStore()
 
 watchEffect(() => {
   const isProjectPage = route.path.includes('/projects/');
-  
+
   if (isProjectPage) {
     // Если это страница проекта, обновляем itemStrings из props
     itemStrings.value = props.itemStrings ?? (blocksStore.blocks?.filter(item => item?.id === 29)[0]?.strings || []);

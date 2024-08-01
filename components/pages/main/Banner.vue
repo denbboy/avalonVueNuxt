@@ -26,10 +26,10 @@
 
             <div class="banner__item__head md:flex items-center">
               <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.projects[0]?.item.logo}`"
-                class="mb-7 md:mb-0" alt="logo">
+                class="mb-7 max-w-[100px] md:mb-0" alt="logo">
               <div class="con md:ml-10 ">
                 <div class="relative px-5 py-3 w-fit md:text-center md:px-7">
-                  <img class="absolute top-0 left-0 -z-10 md:hidden" src="/assets/img/index/bgd-decor.png" alt="bgd">
+                  <img class="absolute top-0 left-0 -z-10 w-full md:hidden" src="/assets/img/index/bgd-decor.png" alt="bgd">
                   <img class="absolute top-0 left-0 -z-10 hidden md:block h-[-webkit-fill-available] w-full"
                     src="/assets/img/index/bgd-decor-2.png" alt="bgd">
                   <h2 class="text-sm text-white">
@@ -94,9 +94,9 @@
                 <div class="con md:ml-4 md:pl-5 md:px-7 relative">
                   <div class="absolute h-12 left-0 top-1/2 -translate-y-1/2 w-[1px] bg-white/20"></div>
                   <div v-if="item?.price" class="relative px-5 py-3 w-fit md:text-center">
-                    <img class="absolute top-0 left-0 -z-10 md:hidden h-full" src="/assets/img/index/bgd-decor.png"
+                    <img class="absolute top-0 w-full left-0 -z-10 md:hidden h-full" src="/assets/img/index/bgd-decor.png"
                       alt="bgd">
-                    <img class="absolute top-0 left-0 -z-10 hidden md:block h-full"
+                    <img class="absolute top-0 left-0 w-full -z-10 hidden md:block h-full"
                       src="/assets/img/index/bgd-decor-2.png" alt="bgd">
                     <h2 class="text-sm text-white">
                       {{ $t('cost') }} <br class="hidden md:block">

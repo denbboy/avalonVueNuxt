@@ -20,8 +20,7 @@
             <div class="container">
                 <div class="xl:flex xl:justify-between xl:gap-[20px]">
                     <div class=" w-full max-w-[950px]">
-                        <div data-aos="fade-up"
-                            class="banner__item__head flex flex-wrap items-center gap-[10px] md:gap-5">
+                        <div data-aos="fade-up" class="flex lg:-mr-20 flex-wrap items-center gap-[10px] md:gap-5">
                             <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] -mr-1 max-w-[141px] md:py-5 py-[15px]">
                                 <img src="/assets/img/about/ribas.png" alt="">
@@ -106,7 +105,7 @@
                                 item.languages_code.includes(langStore.lang))[0]?.description }}
                         </p>
                         <button data-aos="fade-up" @click="handleOpenModal"
-                            class="w-full max-w-56 md:max-w-72 px-5 py-4 block text-sm md:text-base bg-white rounded-xl text-center font-bold whitespace-nowrap text-blue-500 hover:text-white hover:bg-blue-400 my-10 transition-all ">
+                            class="w-full max-w-56 md:max-w-72 px-5 py-4 block text-sm md:text-base bg-white rounded-xl text-center font-bold whitespace-nowrap text-blue-500 hover:text-white hover:bg-blue-400 my-10 mb-0 transition-all ">
                             {{ $t('download_presentation') }}
                         </button>
                     </div>

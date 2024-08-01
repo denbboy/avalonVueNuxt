@@ -33,11 +33,11 @@
         </div>
 
         <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
-          :breakpoints="breakpoints" :space-between="24" @swiper="onSwiper" @slideChange="onSlideChange">
+          :breakpoints="breakpoints" :space-between="24" @slideChange="onSlideChange" class="!p-3 !-m-3">
+
           <swiper-slide v-for="item in itemsList" :key="item.id">
             <NewsItem bgdColor="white" :item="item" />
           </swiper-slide>
-
 
           <div class="swiper-pagination swiper-pagination_blue"></div>
 

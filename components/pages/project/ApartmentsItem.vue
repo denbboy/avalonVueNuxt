@@ -113,7 +113,7 @@
                 class="relative xl:max-w-[456px] 3xl:max-w-[600px] xl:max-h-[403px] 3xl:max-h-[516px] lg:rounded-3xl rounded-2xl overflow-hidden">
 
                 <NuxtLink @click="handleOpenModal3D" v-if="itemData?.video_360" :href="`#3d-object-${itemData?.id}`"
-                    class="absolute top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
+                    class="absolute hover:scale-105 active:scale-95 transition-all top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
                     <img src="/assets/img/about/360.png" class="max-w-[95px]" alt="ph">
                 </NuxtLink>
 
