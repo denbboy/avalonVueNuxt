@@ -127,10 +127,19 @@ watch(() => route.fullPath, (newPath) => {
 
 const { $fbq } = useNuxtApp()
 
+import AOS from 'aos';
 onMounted(() => {
   $fbq('track', 'CompleteRegistration')
   $fbq('trackSingle', toolkitStore.settings.facebook_pixel, 'CompleteRegistration')
+  
+  setTimeout(() => {
+    AOS.init({
+      once: true,
+    });
+  }, 500)
 })
+
+
 </script>
 
 <style>

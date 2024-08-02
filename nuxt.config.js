@@ -57,9 +57,9 @@ export default defineNuxtConfig({
     "~/plugins/gtm.js",
     // { src: '~/plugins/gtm.js', ssr: false },
   ],
-  aos: {
-    once: true,
-  },
+  // aos: {
+  //   once: true,
+  // },
   css: ["~/assets/css/main.css"],
   modules: [
     "@nuxtjs/tailwindcss",

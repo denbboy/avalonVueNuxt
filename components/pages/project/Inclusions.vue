@@ -1,6 +1,6 @@
 <template>
     <section class="cost py-14 md:py-24 relative overflow-hidden">
-        <div class="absolute lg:-right-36 top-10 lg:top-10 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
+        <div class="absolute hidden lg:block lg:-right-36 top-10 lg:top-10 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
             <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
         </div>
         <div class="container relative z-10">

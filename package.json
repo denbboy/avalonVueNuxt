@@ -55,6 +55,7 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "autoprefixer": "^10.4.19",
     "nuxt-aos": "^1.2.4",
     "nuxt-calendly": "^0.1.18",
