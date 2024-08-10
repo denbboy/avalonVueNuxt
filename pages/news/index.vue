@@ -46,10 +46,10 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-x-5 gap-y-10 mt-12"
         data-aos="fade-up">
-        <NewsItem v-for="item in newsData.data.value?.slice(0, viewCount)" :key="item.id" :item="item" bgdColor="blue-500" />
+        <NewsItem v-for="item in newsData?.data?.value?.slice(0, viewCount)" :key="item.id" :item="item" bgdColor="blue-500" />
       </div>
 
-      <button v-if="viewCount < newsData.data.value.length" @click="handelShowMore" class="white-border-button">
+      <button v-if="viewCount < newsData?.data?.value.length" @click="handelShowMore" class="white-border-button">
         Показать больше
       </button>
     </div>
@@ -62,7 +62,7 @@
 </template>
 
 <script setup>
-import fetchNews from '~/server/api/news';
+import fetchNews from '~/server1/api/news';
 
 const { getItems } = useDirectusItems();
 

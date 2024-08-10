@@ -38,10 +38,10 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   const tookit = useToolkit();
 
-  const gtmId = tookit.settings.google_analytics;
+  const gtmId = tookit.settings?.google_analytics;
 
   watch(
-    () => tookit.settings.google_analytics,
+    () => tookit.settings?.google_analytics,
     (newGtmId) => {
       if (newGtmId) {
         nuxtApp.vueApp.use(createGtm({

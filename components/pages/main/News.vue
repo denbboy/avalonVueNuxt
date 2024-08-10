@@ -35,7 +35,7 @@
         <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
           :breakpoints="breakpoints" :space-between="24" @slideChange="onSlideChange" class="!p-3 swiper-news !-m-3">
 
-          <swiper-slide v-for="item in newsData.data.value" :key="item.id">
+          <swiper-slide v-for="item in newsData?.data?.value" :key="item.id">
             <NewsItem bgdColor="white" :item="item" />
           </swiper-slide>
 
@@ -58,7 +58,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
-import fetchNews from '~/server/api/news';
+import fetchNews from '~/server1/api/news';
 
 const { getItems } = useDirectusItems();
 

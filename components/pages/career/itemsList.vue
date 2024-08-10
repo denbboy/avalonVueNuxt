@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import fetchCareer from '~/server/api/career';
+import fetchCareer from '~/server1/api/career';
 
 const { getItems } = useDirectusItems();
 

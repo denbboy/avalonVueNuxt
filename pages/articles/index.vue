@@ -16,11 +16,11 @@
             <div class="grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 grid gap-x-5 gap-y-8 md:gap-y-12 mt-12"
                 data-aos="fade-up">
 
-                <ArticlesItem bgdColor="blue-500" v-for="item in articlesData.data.value?.slice(0, viewCount)" :key="item" :item="item" />
+                <ArticlesItem bgdColor="blue-500" v-for="item in articlesData?.data?.value?.slice(0, viewCount)" :key="item" :item="item" />
 
             </div>
 
-            <button v-if="viewCount < articlesData.data.value.length" @click="handelShowMore" class="white-border-button">
+            <button v-if="viewCount < articlesData?.data?.value.length" @click="handelShowMore" class="white-border-button">
                 Показать больше
             </button>
         </div>
@@ -33,7 +33,7 @@
 
 
 <script setup>
-import fetchArticles from '~/server/api/articles';
+import fetchArticles from '~/server1/api/articles';
 
 const { getItems } = useDirectusItems();
 

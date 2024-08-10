@@ -82,7 +82,7 @@
                 <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
                     :breakpoints="breakpoints" :space-between="50" @slideChange="onSlideChange">
 
-                    <swiper-slide v-for="item in articlesData.data.value" :key="item?.id">
+                    <swiper-slide v-for="item in articlesData?.data?.value" :key="item?.id">
                         <ArticlesItem bgdColor="blue-600" :item="item" />
                     </swiper-slide>
 
@@ -117,7 +117,7 @@
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
-import fetchArticles from '~/server/api/articles';
+import fetchArticles from '~/server1/api/articles';
 
 const { getItems } = useDirectusItems();
 const langStore = useLangStore();

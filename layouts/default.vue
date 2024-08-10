@@ -20,11 +20,11 @@ import { useBlocksStore } from './../stores/functions/blocks';
 import { usePagesStore } from '~/stores/functions/pages';
 import { useFormsStore } from '~/stores/functions/forms';
 
-import fetchSettings from '~/server/api/settings';
-import fetchProjects from '~/server/api/projects';
-import fetchForms from '~/server/api/forms';
-import fetchNavigationPages from '~/server/api/navigationPages';
-import fetchBlocks from '~/server/api/blocks';
+import fetchSettings from '~/server1/api/settings';
+import fetchProjects from '~/server1/api/projects';
+import fetchForms from '~/server1/api/forms';
+import fetchNavigationPages from '~/server1/api/navigationPages';
+import fetchBlocks from '~/server1/api/blocks';
 
 import AOS from 'aos';
 
@@ -38,19 +38,19 @@ const formsStore = useFormsStore();
 const { getItems } = useDirectusItems();
 
 const settings = await fetchSettings(getItems);
-toolkitStore.setSettings(settings.data);
+toolkitStore.setSettings(settings?.data);
 
 const projects = await fetchProjects(getItems);
-projectsStore.setProjects(projects.data);
+projectsStore.setProjects(projects?.data);
 
 const forms = await fetchForms(getItems);
-formsStore.setForms(forms.data)
+formsStore.setForms(forms?.data)
 
 const pages = await fetchNavigationPages(getItems);
-pagesStore.setPages(pages.data);
+pagesStore.setPages(pages?.data);
 
 const blocks = await fetchBlocks(getItems);
-blocksStore.setBlocks(blocks.data);
+blocksStore.setBlocks(blocks?.data);
 
 
 const isProjectHeader = ref(route.fullPath.includes('/projects/'));
@@ -64,7 +64,7 @@ const { $fbq } = useNuxtApp()
 
 onMounted(() => {
   $fbq('track', 'CompleteRegistration')
-  $fbq('trackSingle', toolkitStore.settings.facebook_pixel, 'CompleteRegistration')
+  $fbq('trackSingle', toolkitStore?.settings?.facebook_pixel, 'CompleteRegistration')
   
   setTimeout(() => {
     AOS.init({

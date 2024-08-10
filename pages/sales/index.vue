@@ -56,11 +56,11 @@
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-3 gap-x-5 gap-y-5 mt-12"
         data-aos="fade-up">
 
-        <SalesItem v-for="item in salesData.data.value?.slice(0, viewCount)" :item="item" :key="item.id" bgdColor="blue-500" />
+        <SalesItem v-for="item in salesData?.data?.value?.slice(0, viewCount)" :item="item" :key="item.id" bgdColor="blue-500" />
 
       </div>
 
-      <button v-if="viewCount < salesData.data.value.length" @click="handelShowMore" class="white-border-button">
+      <button v-if="viewCount < salesData?.data?.value.length" @click="handelShowMore" class="white-border-button">
         Показать больше
       </button>
     </div>
@@ -72,7 +72,7 @@
 </template>
 
 <script setup>
-import fetchSales from '~/server/api/sales';
+import fetchSales from '~/server1/api/sales';
 
 const { getItems } = useDirectusItems();
 

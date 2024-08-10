@@ -135,7 +135,7 @@
                 <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
                     :breakpoints="breakpoints" :space-between="50" @slideChange="onSlideChange">
 
-                    <swiper-slide style="height: auto;" v-for="item in salesList.data.value" :key="item?.id">
+                    <swiper-slide style="height: auto;" v-for="item in salesList?.data?.value" :key="item?.id">
                         <SalesItem bgdColor="blue-600" :item="item" />
                     </swiper-slide>
 
@@ -166,7 +166,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import fetchSales from '~/server/api/sales';
+import fetchSales from '~/server1/api/sales';
 
 SwiperCore.use([Navigation, A11y]);
 
