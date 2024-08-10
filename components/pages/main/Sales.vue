@@ -36,7 +36,7 @@
           :navigation="navigationConfig" :breakpoints="breakpoints" :space-between="24" @swiper="onSwiper"
           @slideChange="onSlideChange">
 
-          <swiper-slide v-for="item in itemsList" :key="item.id">
+          <swiper-slide v-for="item in salesData.data.value" :key="item.id">
             <SalesItem bgdColor="white" :item="item" />
           </swiper-slide>
 
@@ -61,6 +61,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import fetchSales from '~/server/api/sales';
 
 SwiperCore.use([Navigation, A11y]);
 
@@ -68,25 +69,11 @@ const { getItems } = useDirectusItems();
 
 const langStore = useLangStore();
 
-const itemsList = ref([]);
-const fetchArticles = async () => {
-  try {
-    const items = await getItems({
-      collection: "Sale",
-      params: {
-        fields: '*,translations.*'
-      },
-    });
-    itemsList.value = items;
-  } catch (e) {
-    console.error('Error fetching items:', e);
-  }
-};
-onMounted(fetchArticles);
+const salesData = await fetchSales(getItems);
 
 const props = defineProps(['list'])
 watch(props, async (newValue) => {
-  itemsList.value = newValue.list;
+  // itemsList.value = newValue.list;
 })
 
 const navigationConfig = {

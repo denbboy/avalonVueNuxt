@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col min-h-[100vh] justify-between">
     <HeaderProject v-if="isProjectHeader" />
-    <Header v-else />
+    <Header v-else/>
     <slot />
     <ModalsModal />
     <Footer />
@@ -20,102 +20,37 @@ import { useBlocksStore } from './../stores/functions/blocks';
 import { usePagesStore } from '~/stores/functions/pages';
 import { useFormsStore } from '~/stores/functions/forms';
 
+import fetchSettings from '~/server/api/settings';
+import fetchProjects from '~/server/api/projects';
+import fetchForms from '~/server/api/forms';
+import fetchNavigationPages from '~/server/api/navigationPages';
+import fetchBlocks from '~/server/api/blocks';
+
+import AOS from 'aos';
+
 const route = useRoute();
 const toolkitStore = useToolkit();
 const projectsStore = useProjectsStore();
 const blocksStore = useBlocksStore();
 const pagesStore = usePagesStore();
 const formsStore = useFormsStore();
+
 const { getItems } = useDirectusItems();
 
-const fetchArticles = async () => {
-  try {
-    const items = await getItems({
-      collection: "Settings",
-    });
-    toolkitStore.setSettings(items);
-    console.log(items);
-  } catch (e) {
-    console.error('Error fetching items:', e);
-  }
-};
-onMounted(fetchArticles);
+const settings = await fetchSettings(getItems);
+toolkitStore.setSettings(settings.data);
 
+const projects = await fetchProjects(getItems);
+projectsStore.setProjects(projects.data);
 
-const fetchProjects = async () => {
-  try {
-    const items = await getItems({
-      collection: "Project",
-      params: {
-        fields: '*,translations.*'
-      },
-    });
+const forms = await fetchForms(getItems);
+formsStore.setForms(forms.data)
 
-    projectsStore.setProjects(items);
-  } catch (e) {
-    console.error('Error fetching items:', e);
-  }
-};
-onMounted(fetchProjects);
+const pages = await fetchNavigationPages(getItems);
+pagesStore.setPages(pages.data);
 
-
-const fetchForms = async () => {
-  try {
-    const items = await getItems({
-      collection: "Form",
-      params: {
-        fields: '*'
-      },
-    });
-
-    formsStore.setForms(items)
-  } catch (e) {
-    console.error('Error fetching items:', e);
-  }
-};
-onMounted(fetchForms);
-
-const fetchPages = async () => {
-  try {
-    const items = await getItems({
-      collection: "Page",
-      params: {
-        fields: '*,translations.*'
-      },
-    });
-
-    pagesStore.setPages(items)
-  } catch (e) {
-    console.error('Error fetching items:', e);
-  }
-};
-onMounted(fetchPages);
-
-
-const fetchBlocks = async () => {
-  try {
-    const items = await getItems({
-      collection: "Block",
-      params: {
-        fields: [
-          '*',
-          'id',
-          'title',
-          'strings.id',
-          'strings.String_id.translations.description',
-          'strings.String_id.translations.id',
-          'strings.String_id.translations.title',
-          'strings.String_id.translations.languages_code.*',
-        ]
-      },
-    });
-
-    blocksStore.setBlocks(items)
-  } catch (e) {
-    console.error('Error fetching items:', e);
-  }
-};
-onMounted(fetchBlocks);
+const blocks = await fetchBlocks(getItems);
+blocksStore.setBlocks(blocks.data);
 
 
 const isProjectHeader = ref(route.fullPath.includes('/projects/'));
@@ -127,7 +62,6 @@ watch(() => route.fullPath, (newPath) => {
 
 const { $fbq } = useNuxtApp()
 
-import AOS from 'aos';
 onMounted(() => {
   $fbq('track', 'CompleteRegistration')
   $fbq('trackSingle', toolkitStore.settings.facebook_pixel, 'CompleteRegistration')
@@ -154,5 +88,24 @@ onMounted(() => {
 
 .grecaptcha-badge {
   opacity: 0;
+}
+
+
+.skeleton {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  background-image: linear-gradient(90deg, #f0f0f0, #e0e0e0, #f0f0f0);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
 }
 </style>

@@ -16,7 +16,7 @@
                     <img class="group-[.active]:hidden block" src="/assets/img/icons/plus-white.svg" alt="">
                 </div>
             </div>
-            <div class="select__body career-select-body">
+            <div :class="{'pb-7': isOpen}" class="select__body career-select-body">
 
                 <span
                     v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></span>

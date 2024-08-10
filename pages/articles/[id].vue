@@ -80,9 +80,9 @@
                 </div>
 
                 <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
-                    :breakpoints="breakpoints" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
+                    :breakpoints="breakpoints" :space-between="50" @slideChange="onSlideChange">
 
-                    <swiper-slide v-for="item in itemsList" :key="item?.id">
+                    <swiper-slide v-for="item in articlesData.data.value" :key="item?.id">
                         <ArticlesItem bgdColor="blue-600" :item="item" />
                     </swiper-slide>
 
@@ -117,28 +117,14 @@
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
+import fetchArticles from '~/server/api/articles';
 
 const { getItems } = useDirectusItems();
 const langStore = useLangStore();
 const route = useRoute();
 
 // GET OTHER SALES
-const itemsList = ref([]);
-const fetchArticles = async () => {
-    try {
-        const items = await getItems({
-            collection: "Article",
-            params: {
-                fields: '*,translations.*'
-            },
-        });
-        itemsList.value = items;
-        console.log(items);
-    } catch (e) {
-        console.error('Error fetching items:', e);
-    }
-};
-onMounted(fetchArticles);
+const articlesData = await fetchArticles(getItems);
 // GET OTHER SALES
 
 // GET POST

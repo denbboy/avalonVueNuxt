@@ -1,6 +1,7 @@
 <template>
     <section class="uslugi pt-[23px] pb-12 relative overflow-hidden">
-        <div class="absolute lg:-right-36 top-0 lg:top-auto lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
+        <div
+            class="absolute lg:-right-36 top-0 lg:top-auto lg:left-auto min-h-[600px] lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
             <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
         </div>
         <div class="container">
@@ -32,25 +33,28 @@
                         <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
                             <div class="block-bottom-point"></div>
                             <div class="flex justify-between mb-auto">
-                                <img class="w-[90px]" v-if="item?.logo" :src="`https://avalon-panel.sonisapps.com/assets/${item?.logo}`"
-                                    alt="">
+                                <img class="w-[90px]" v-if="item?.logo"
+                                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.logo}`" alt="">
                                 <span v-if="item?.roi_procent"
                                     class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
                                     {{ item?.roi_procent }}% {{ $t('sold') }}
                                 </span>
                             </div>
                             <div class="max-w-96">
-                                <h2 class="text-white font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">
-                                    {{ item?.translations?.filter(item =>
-                                        item.languages_code.includes(langStore.lang))[0]?.title }}
+                                <h2 class="text-white hover:text-blue-400 transition-all font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">
+                                    <NuxtLink :href="`/projects/${item?.id}`">
+                                        {{ item?.translations?.filter(item =>
+                                            item.languages_code.includes(langStore.lang))[0]?.title }}
+                                    </NuxtLink>
                                 </h2>
                                 <p class="text-white text-xs md:text-[11px] lg:text-sm mb-5 line-clamp-3">
                                     {{ item?.translations?.filter(item =>
                                         item.languages_code.includes(langStore.lang))[0]?.description }}
                                 </p>
                                 <div class="flex items-center mb-5">
-                                    <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">{{ $t('from') }} ${{
-                                        String(item?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}</strong>
+                                    <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">{{ $t('from') }}
+                                        ${{
+                                            String(item?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}</strong>
                                     <span class="text-white/60 text-xs hidden md:block">
                                         {{ $t('including_taxes') }}
                                     </span>
@@ -104,16 +108,19 @@ const getGridClasses = (index) => {
 
 
 <style scoped>
-    .col-start-2 {
-        grid-column-start: 2;
-    }
-    .col-start-3 {
-        grid-column-start: 3;
-    }
-    .col-start-4 {
-        grid-column-start: 4;
-    }
-    .col-end-4 {
-        grid-column-end: 4;
-    }
+.col-start-2 {
+    grid-column-start: 2;
+}
+
+.col-start-3 {
+    grid-column-start: 3;
+}
+
+.col-start-4 {
+    grid-column-start: 4;
+}
+
+.col-end-4 {
+    grid-column-end: 4;
+}
 </style>

@@ -56,11 +56,11 @@
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-3 gap-x-5 gap-y-5 mt-12"
         data-aos="fade-up">
 
-        <SalesItem v-for="item in itemsList?.slice(0, viewCount)" :item="item" :key="item.id" bgdColor="blue-500" />
+        <SalesItem v-for="item in salesData.data.value?.slice(0, viewCount)" :item="item" :key="item.id" bgdColor="blue-500" />
 
       </div>
 
-      <button v-if="viewCount < itemsList.length" @click="handelShowMore" class="white-border-button">
+      <button v-if="viewCount < salesData.data.value.length" @click="handelShowMore" class="white-border-button">
         Показать больше
       </button>
     </div>
@@ -72,34 +72,19 @@
 </template>
 
 <script setup>
+import fetchSales from '~/server/api/sales';
 
 const { getItems } = useDirectusItems();
 
 const langStore = useLangStore();
 
-const itemsList = ref([]);
 const viewCount = ref(6);
 
 const handelShowMore = () => {
     viewCount.value += 6;
 }
 
-const fetchArticles = async () => {
-  try {
-    const items = await getItems({
-      collection: "Sale",
-      params: {
-        fields: '*,translations.*'
-      },
-    });
-    itemsList.value = items;
-    console.log(items);
-  } catch (e) {
-    console.error('Error fetching items:', e);
-  }
-};
-
-onMounted(fetchArticles);
+const salesData = await fetchSales(getItems);
 
 const projectsList = [
   {

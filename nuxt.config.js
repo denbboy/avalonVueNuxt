@@ -7,6 +7,14 @@ export default defineNuxtConfig({
   router: {
     middleware: ["locale", "gtm"],
   },
+  sitemap: {
+    sources: ["/api/__sitemap__/urls"],
+    sitemapName: "sitemap.xml",
+  },
+  robots: {
+    debug: false,
+    credits: false,
+  },
   head: {
     htmlAttrs: {
       lang: "en",
@@ -75,7 +83,6 @@ export default defineNuxtConfig({
     "nuxt-lazy-load",
   ],
   lazyLoad: {
-    // These are the default values
     images: true,
     videos: true,
     audios: true,
@@ -83,16 +90,15 @@ export default defineNuxtConfig({
     native: false,
     directiveOnly: false,
 
-    // Default image must be in the public folder
-    defaultImage: "https://i.pinimg.com/originals/ce/ca/e6/cecae62ec79ddc1d9d95c3131510f3e6.gif",
+    defaultImage:
+      "https://i.pinimg.com/originals/ce/ca/e6/cecae62ec79ddc1d9d95c3131510f3e6.gif",
 
-    // To remove class set value to false
-    loadingClass: "isLoading",
+    loadingClass: "skeleton", // Примените скелетон как класс загрузки
     loadedClass: "isLoaded",
     appendClass: "lazyLoad",
 
     observerConfig: {
-      // See IntersectionObserver documentation
+      // Настройка IntersectionObserver
     },
   },
   directus: {
@@ -122,12 +128,6 @@ export default defineNuxtConfig({
   },
 
   ogImage: {
-    enabled: true,
-  },
-  sitemap: {
-    enabled: true,
-  },
-  robots: {
     enabled: true,
   },
   seoExperiments: {

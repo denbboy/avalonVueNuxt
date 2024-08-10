@@ -1,5 +1,5 @@
 <template>
-  <section class="lg:pb-12 pb-0">
+  <section class="lg:pb-12 pb-0 min-h-[900px]">
 
     <!-- :modules="modules" -->
     <swiper class="swiper-banner" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
@@ -7,10 +7,10 @@
       :speed="1500">
 
 
-      <swiper-slide v-for="item in itemsList" class="pt-40 lg:pt-[250px] lg:min-h-[810px] relative overflow-hidden">
+      <swiper-slide v-for="item in slides.data.value" class="pt-40 lg:pt-[250px] lg:min-h-[810px] relative overflow-hidden">
         <div class="bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
           <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`" class="absolute brightness-[0] top-0 left-0 w-full h-full" alt="">
-          <iframe v-if="item?.video" class="lg:scale-125 scale-[3] pointer-events-none w-full h-full"
+          <iframe v-if="item?.video" class="lg:scale-150 scale-[3] pointer-events-none w-full h-full"
             :src="`${item?.video}&autoplay=1&mute=1&loop=1`"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -70,7 +70,7 @@
               <div
                 class="brightness-[1] bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
                 <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`" class="absolute top-0 brightness-50 left-0 w-full h-full" alt="">
-                <iframe v-if="item?.video" class="scale-125" width="100%" height="100%"
+                <iframe v-if="item?.video" class="scale-150" width="100%" height="100%"
                   :src="`${item?.video}&autoplay=1&mute=1&loop=1`"
                   title="YouTube video player" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -165,33 +165,13 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
+import fetchSlides from '~/server/api/slides'
 const { getItems } = useDirectusItems();
 
 const modalsStore = useModalsStore()
 const langStore = useLangStore();
-const itemsList = ref([]);
 
-const fetchArticles = async () => {
-  try {
-    const items = await getItems({
-      collection: "Slide",
-      params: {
-        fields: [
-          '*',
-          'translations.*',
-          'strings.String_id.*.*',
-          'projects.item.*',
-          'projects.item.translations.*',
-        ]
-      },
-    });
-    itemsList.value = items;
-    console.log('Slides', items);
-  } catch (e) {
-    console.error('Error fetching items:', e);
-  }
-};
-onMounted(fetchArticles);
+const slides = await fetchSlides(getItems);
 
 const addModal = () => {
   modalsStore.addModal('presentation')

@@ -133,9 +133,9 @@
                 </div>
 
                 <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
-                    :breakpoints="breakpoints" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
+                    :breakpoints="breakpoints" :space-between="50" @slideChange="onSlideChange">
 
-                    <swiper-slide style="height: auto;" v-for="item in itemsList" :key="item?.id">
+                    <swiper-slide style="height: auto;" v-for="item in salesList.data.value" :key="item?.id">
                         <SalesItem bgdColor="blue-600" :item="item" />
                     </swiper-slide>
 
@@ -166,6 +166,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import fetchSales from '~/server/api/sales';
 
 SwiperCore.use([Navigation, A11y]);
 
@@ -174,22 +175,7 @@ const langStore = useLangStore();
 const route = useRoute();
 
 // GET OTHER SALES
-const itemsList = ref([]);
-const fetchArticles = async () => {
-    try {
-        const items = await getItems({
-            collection: "Sale",
-            params: {
-                fields: '*,translations.*'
-            },
-        });
-        itemsList.value = items;
-        console.log(items);
-    } catch (e) {
-        console.error('Error fetching items:', e);
-    }
-};
-onMounted(fetchArticles);
+const salesList = await fetchSales(getItems);
 // GET OTHER SALES
 
 // GET POST

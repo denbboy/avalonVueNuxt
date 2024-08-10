@@ -7,9 +7,9 @@
 
 
       <div class="header__inner px-5 flex items-center justify-between gap-3 relative">
-        <NuxtLink v-if="projectsStore.currentProject?.logo" :href="`/projects/${projectsStore.currentProject?.id}`">
+        <NuxtLink class="max-w-16 w-full lg:max-w-30" v-if="projectsStore.currentProject?.logo" :href="`/projects/${projectsStore.currentProject?.id}`">
           <img :src="`https://avalon-panel.sonisapps.com/assets/${projectsStore.currentProject?.logo}`"
-            class="max-w-10 lg:max-w-20" alt="logo ic">
+            class="w-full" alt="logo ic">
         </NuxtLink>
 
 

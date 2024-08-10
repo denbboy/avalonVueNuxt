@@ -1,6 +1,6 @@
 <template>
 
-    <section class="lg:pb-12 pb-0">
+    <section class="lg:pb-12 pb-0 min-h-[900px]">
         <div class="lg:pb-10 pb-5 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.jpg')] -->
             <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-80">

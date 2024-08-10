@@ -21,7 +21,8 @@
                         <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
                             <div class="block-bottom-point"></div>
                             <div class="flex justify-between mb-auto">
-                                <img class="w-[90px]" v-if="item.related_Project_id?.logo" :src="`https://avalon-panel.sonisapps.com/assets/${item.related_Project_id?.logo}`"
+                                <img class="w-[90px]" v-if="item.related_Project_id?.logo"
+                                    :src="`https://avalon-panel.sonisapps.com/assets/${item.related_Project_id?.logo}`"
                                     alt="">
                                 <span v-if="item.related_Project_id?.roi_procent"
                                     class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
@@ -29,9 +30,11 @@
                                 </span>
                             </div>
                             <div class="max-w-96">
-                                <h2 class="text-white font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">
-                                    {{ item.related_Project_id?.translations?.filter(item =>
-                                        item?.languages_code?.includes(langStore.lang))[0]?.title }}
+                                <h2 class="text-white hover:text-blue-400 transition-all font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">
+                                    <NuxtLink :href="`/projects/${item.related_Project_id?.id}`">
+                                        {{ item.related_Project_id?.translations?.filter(item =>
+                                            item?.languages_code?.includes(langStore.lang))[0]?.title }}
+                                    </NuxtLink>
                                 </h2>
                                 <p class="text-white text-xs md:text-[11px] lg:text-sm mb-5">
                                     {{ item.related_Project_id?.translations?.filter(item =>
@@ -39,7 +42,8 @@
                                 </p>
                                 <div class="flex items-center mb-5">
                                     <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">от ${{
-                                        String(item.related_Project_id?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}</strong>
+                                        String(item.related_Project_id?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+                                        }}</strong>
                                     <span class="text-white/60 text-xs hidden md:block">
                                         {{ $t('including_taxes') }}
                                     </span>
@@ -71,7 +75,7 @@ const props = defineProps(['projects']);
 const langStore = useLangStore();
 
 watch(props, async (newValue) => {
-  console.log(newValue.projects);
+    console.log(newValue.projects);
 })
 
 </script>

@@ -35,7 +35,7 @@
         <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
           :breakpoints="breakpoints" :space-between="24" @slideChange="onSlideChange" class="!p-3 swiper-news !-m-3">
 
-          <swiper-slide v-for="item in itemsList" :key="item.id">
+          <swiper-slide v-for="item in newsData.data.value" :key="item.id">
             <NewsItem bgdColor="white" :item="item" />
           </swiper-slide>
 
@@ -55,32 +55,14 @@
 <script setup>
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import SwiperCore from 'swiper';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import fetchNews from '~/server/api/news';
 
 const { getItems } = useDirectusItems();
 
-const langStore = useLangStore();
-
-const itemsList = ref([]);
-
-const fetchArticles = async () => {
-  try {
-    const items = await getItems({
-      collection: "News",
-      params: {
-        fields: '*,translations.*'
-      },
-    });
-    itemsList.value = items;
-    console.log(items);
-  } catch (e) {
-    console.error('Error fetching items:', e);
-  }
-};
-onMounted(fetchArticles);
+const newsData = await fetchNews(getItems);
 
 const modules = {
   Navigation,
@@ -109,54 +91,3 @@ const breakpoints = {
 };
 
 </script>
-<!-- 
-<script>
-import { Navigation, A11y } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import SwiperCore from 'swiper';
-
-import 'swiper/css';
-import 'swiper/css/navigation';
-
-SwiperCore.use([Navigation, A11y]);
-
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    const modules = {
-      navigation: true,
-      pagination: true,
-      a11y: true,
-    };
-    const navigationConfig = {
-      nextEl: '.news-button-next',
-      prevEl: '.news-button-prev',
-    };
-    const pagination = {
-      el: '.swiper-pagination',
-      clickable: true,
-    };
-    const breakpoints = {
-      768: {
-        slidesPerView: 3,
-        pagination: false,
-      },
-      1441: {
-        slidesPerView: 3,
-        pagination: false,
-
-      },
-    }
-
-    return {
-      modules,
-      navigationConfig,
-      breakpoints,
-      pagination
-    };
-  },
-};
-</script> -->
