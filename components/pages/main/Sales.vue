@@ -33,8 +33,7 @@
         </div>
 
         <swiper class="swiper-sales" modules="modules" :slides-per-view="1" :pagination="pagination"
-          :navigation="navigationConfig" :breakpoints="breakpoints" :space-between="24" @swiper="onSwiper"
-          @slideChange="onSlideChange">
+          :navigation="navigationConfig" :breakpoints="breakpoints" :space-between="24" @slideChange="onSlideChange">
 
           <swiper-slide v-for="item in salesData?.data?.value" :key="item.id">
             <SalesItem bgdColor="white" :item="item" />
@@ -61,15 +60,10 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import fetchSales from '~/server1/api/sales';
 
 SwiperCore.use([Navigation, A11y]);
 
-const { getItems } = useDirectusItems();
-
-const langStore = useLangStore();
-
-const salesData = await fetchSales(getItems);
+const salesData = await useAsyncData('Sales', () => $fetch('/api/sales'));
 
 const props = defineProps(['list'])
 watch(props, async (newValue) => {

@@ -1,13 +1,13 @@
 <template>
 
-  <PagesCareerItem v-for="item in data" :key="item.id" :item="item" />
+  <PagesCareerItem v-for="item in careerData.data.value" :key="item.id" :item="item" />
 
 </template>
 
 <script setup>
-import fetchCareer from '~/server1/api/career';
 
-const { getItems } = useDirectusItems();
+const careerData = useAsyncData("Career", () => $fetch('/api/career'))
 
-const { data } = await fetchCareer(getItems);
+console.log(careerData);
+
 </script>

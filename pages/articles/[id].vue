@@ -116,15 +116,13 @@
 <script setup>
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import SwiperCore from 'swiper';
-import fetchArticles from '~/server1/api/articles';
 
 const { getItems } = useDirectusItems();
 const langStore = useLangStore();
 const route = useRoute();
 
 // GET OTHER SALES
-const articlesData = await fetchArticles(getItems);
+const articlesData = await useAsyncData("Articles", () => $fetch('/api/articles'))
 // GET OTHER SALES
 
 // GET POST

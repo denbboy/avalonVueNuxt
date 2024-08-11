@@ -177,29 +177,32 @@ const langStore = useLangStore();
 
 // const slides = await useAsyncData("Slides", async () => fetchSlides())
 
-// const slides = await useAsyncData('Slides', () => $fetch('/api/slides'));
-const slides = await useAsyncData('Slides', async () => {
-  try {
-    const items = await getItems({
-      collection: "Slide",
-      params: {
-        fields: [
-          "*",
-          "translations.*",
-          "strings.String_id.*.*",
-          "projects.item.*",
-          "projects.item.translations.*",
-        ],
-      },
-    });
-    return items;
-  } catch (e) {
-    console.error("Error fetching items:", e);
-    throw createError({ statusCode: 500, statusMessage: 'Internal Server Error' });
-  }
-});
+const slides = await useAsyncData('Slides', () => $fetch('/api/slides'));
 
-console.log(slides.data);
+// console.log($fetch('https://avalon-panel.sonisapps.com/items/slide'));
+
+// const slides = await useAsyncData('Slides', async () => {
+//   try {
+//     const items = await getItems({
+//       collection: "Slide",
+//       params: {
+//         fields: [
+//           "*",
+//           "translations.*",
+//           "strings.String_id.*.*",
+//           "projects.item.*",
+//           "projects.item.translations.*",
+//         ],
+//       },
+//     });
+//     return items;
+//   } catch (e) {
+//     console.error("Error fetching items:", e);
+//     throw createError({ statusCode: 500, statusMessage: 'Internal Server Error' });
+//   }
+// });
+
+// console.log(slides.data);
 
 const addModal = () => {
   modalsStore.addModal('presentation')

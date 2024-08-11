@@ -6,13 +6,16 @@ const directus = createDirectus(API_LINK).with(rest());
 export default defineEventHandler(async (event) => {
   try {
     const items = await directus.request(
-      readItems("Slide", {
+      readItems("Block", {
         fields: [
           "*",
-          "translations.*",
-          "strings.String_id.*.*",
-          "projects.item.*",
-          "projects.item.translations.*",
+          "id",
+          "title",
+          "strings.id",
+          "strings.String_id.translations.description",
+          "strings.String_id.translations.id",
+          "strings.String_id.translations.title",
+          "strings.String_id.translations.languages_code.*",
         ],
       })
     );
@@ -22,3 +25,4 @@ export default defineEventHandler(async (event) => {
     console.error("Error fetching:", e);
   }
 });
+

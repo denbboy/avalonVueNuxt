@@ -72,9 +72,6 @@
 </template>
 
 <script setup>
-import fetchSales from '~/server1/api/sales';
-
-const { getItems } = useDirectusItems();
 
 const langStore = useLangStore();
 
@@ -84,7 +81,7 @@ const handelShowMore = () => {
     viewCount.value += 6;
 }
 
-const salesData = await fetchSales(getItems);
+const salesData = await useAsyncData('Sales', () => $fetch('/api/sales'));
 
 const projectsList = [
   {

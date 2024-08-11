@@ -58,11 +58,8 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
-import fetchNews from '~/server1/api/news';
 
-const { getItems } = useDirectusItems();
-
-const newsData = await fetchNews(getItems);
+const newsData = useAsyncData("News", () => $fetch('/api/news'))
 
 const modules = {
   Navigation,

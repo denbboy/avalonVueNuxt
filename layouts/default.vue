@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col min-h-[100vh] justify-between">
     <HeaderProject v-if="isProjectHeader" />
-    <Header v-else/>
+    <Header v-else />
     <slot />
     <ModalsModal />
     <Footer />
@@ -20,12 +20,6 @@ import { useBlocksStore } from './../stores/functions/blocks';
 import { usePagesStore } from '~/stores/functions/pages';
 import { useFormsStore } from '~/stores/functions/forms';
 
-import fetchSettings from '~/server1/api/settings';
-import fetchProjects from '~/server1/api/projects';
-import fetchForms from '~/server1/api/forms';
-import fetchNavigationPages from '~/server1/api/navigationPages';
-import fetchBlocks from '~/server1/api/blocks';
-
 import AOS from 'aos';
 
 const route = useRoute();
@@ -35,21 +29,19 @@ const blocksStore = useBlocksStore();
 const pagesStore = usePagesStore();
 const formsStore = useFormsStore();
 
-const { getItems } = useDirectusItems();
-
-const settings = await fetchSettings(getItems);
+const settings = await useAsyncData("Settings", () => $fetch('/api/settings'))
 toolkitStore.setSettings(settings?.data);
 
-const projects = await fetchProjects(getItems);
+const projects = await useAsyncData("Projects", () => $fetch('/api/projects'))
 projectsStore.setProjects(projects?.data);
 
-const forms = await fetchForms(getItems);
+const forms = await useAsyncData("Forms", () => $fetch('/api/forms'))
 formsStore.setForms(forms?.data)
 
-const pages = await fetchNavigationPages(getItems);
+const pages = await useAsyncData("Pages", () => $fetch('/api/navigationPages'))
 pagesStore.setPages(pages?.data);
 
-const blocks = await fetchBlocks(getItems);
+const blocks = await useAsyncData("Blocks", () => $fetch('/api/blocks'))
 blocksStore.setBlocks(blocks?.data);
 
 
@@ -65,7 +57,7 @@ const { $fbq } = useNuxtApp()
 onMounted(() => {
   $fbq('track', 'CompleteRegistration')
   $fbq('trackSingle', toolkitStore?.settings?.facebook_pixel, 'CompleteRegistration')
-  
+
   setTimeout(() => {
     AOS.init({
       once: true,
@@ -104,6 +96,7 @@ onMounted(() => {
   from {
     background-position: 200% 0;
   }
+
   to {
     background-position: -200% 0;
   }

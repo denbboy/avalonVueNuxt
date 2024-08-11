@@ -33,9 +33,6 @@
 
 
 <script setup>
-import fetchArticles from '~/server1/api/articles';
-
-const { getItems } = useDirectusItems();
 
 const viewCount = ref(8);
 
@@ -43,6 +40,6 @@ const handelShowMore = () => {
     viewCount.value += 8;
 }
 
-const articlesData = await fetchArticles(getItems);
+const articlesData = await useAsyncData('Articles', () => $fetch('/api/articles'))
 
 </script>
