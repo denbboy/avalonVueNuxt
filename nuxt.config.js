@@ -141,9 +141,10 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: "https://avalon-vue-nuxt.vercel.app/",
+    url: "https://avalon-vue-nuxt.vercel.app",
     name: "Avalon",
     description: "Avalon",
+    trailingSlash: true,
   },
 
   gtm: {

@@ -2,10 +2,11 @@
 
     <Head>
         <Title>
-            {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+            {{ itemData?.data?.value?.translations?.filter(item =>
+                item.languages_code.includes(langStore.lang))[0]?.meta_title }}
         </Title>
         <Meta name="description"
-            :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+            :content="itemData?.data?.value?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
     </Head>
 
     <section class="bg-blue-500 pt-32 md:pt-64 relative overflow-hidden">
@@ -13,8 +14,26 @@
             <div class="bg-gradient-to-t from-blue-500 absolute top-0 left-0 w-full h-full"></div>
         </div>
 
-        <img v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+        <img v-if="itemData?.data?.value?.preview"
+            :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`"
             class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="">
+
+
+        <div class="absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen">
+            <SkeletonLoader v-if="itemData?.data?.value?.preview" class="h-full w-full">
+                <img v-show="!imageLoaded" data-not-lazy loading="lazy"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`"
+                    @load="onImageLoad"
+                    ref="image"
+                    class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
+                    alt="">
+                <img data-not-lazy v-if="imageLoaded" loading="lazy"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`"
+                    class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
+                    alt="">
+            </SkeletonLoader>
+        </div>
+
         <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10">
         </div>
         <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[1000px] absolute z-10">
@@ -35,13 +54,14 @@
                 </div>
                 <h1
                     class="btn-primary mb-14 text-white text-[30px] md:text-[55px] lg:text-[65px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[876px]">
-                    {{ itemData.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+                    {{ itemData?.data?.value.translations?.filter(item =>
+                        item.languages_code.includes(langStore.lang))[0]?.title }}
                 </h1>
 
                 <div class="md:flex justify-between w-full">
 
                     <div class="text-content max-w-[900px] block w-full"
-                        v-html="itemData.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
+                        v-html="itemData?.data?.value.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
                     </div>
 
                     <div class="max-w-[508px] mt-14 md:mt-0">
@@ -160,42 +180,32 @@
 </style>
 
 <script setup>
-import { ref, onMounted } from 'vue';
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+const imageLoaded = ref(false);
+const image = ref(null);
+
+function onImageLoad() {
+    imageLoaded.value = true;
+}
+
+onMounted(() => {
+    if (image.value?.complete) {
+        imageLoaded.value = true;
+    }
+});
+
 SwiperCore.use([Navigation, A11y]);
 
-const { getItems } = useDirectusItems();
 const langStore = useLangStore();
 const route = useRoute();
 
-// GET OTHER SALES
 const salesData = await useAsyncData('Sales', () => $fetch('/api/sales'));
-// GET OTHER SALES
-
-// GET POST
-const itemData = ref([]);
-const fetchItemData = async () => {
-    try {
-        const items = await getItems({
-            collection: `Sale/${route.params.id}`,
-            params: {
-                fields: '*,translations.*'
-            },
-        });
-
-        itemData.value = items;
-        console.log('ITEM_DATA', items);
-    } catch (e) {
-        console.error('Error fetching items:', e);
-    }
-};
-onMounted(fetchItemData);
-// GET POST
+const itemData = await useAsyncData('SalesItem', () => $fetch(`/api/sales/${route.params.id}`));
 
 const navigationConfig = {
     nextEl: '.sales-button-next',

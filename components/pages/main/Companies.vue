@@ -1,10 +1,10 @@
 <template>
   <section class="company md:bg-white md:pt-24 md:pb-16 relative overflow-hidden bg-blue-600" data-aos="fade-up">
     <div class="absolute -left-36 bottom-20 w-72 h-72 z-10">
-      <img src="/assets/img/icons/vector-logo.svg" class="invert" alt="vector-logo">
+      <img data-not-lazy src="/assets/img/icons/vector-logo.svg" class="invert" alt="vector-logo">
     </div>
     <div class="absolute -right-36 top-20 w-72 h-72 z-10">
-      <img src="/assets/img/icons/vector-logo.svg" class="invert" alt="vector-logo">
+      <img data-not-lazy src="/assets/img/icons/vector-logo.svg" class="invert" alt="vector-logo">
     </div>
     <div class="container">
       <div class="relative md:h-[450px]">

@@ -4,7 +4,7 @@
             :animation="(delta) => `transform: translate3d(0, ${delta}px, 0);`">
             <!-- <img class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg"> -->
             <img class="h-full w-full object-cover scale-[1.7]"
-                src="/assets/img/about/apartments.jpg">
+                src="/assets/img/about/apartments.jpg" alt="image">
         </Parallaxy>
         <div class="container">
 

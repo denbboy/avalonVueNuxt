@@ -188,12 +188,6 @@ body {
     width: 50%;
 }
 
-@media screen and (min-width: 768px) {
-    #apartments .swiper-pagination {
-        bottom: 30px !important;
-    }
-}
-
 @media screen and (max-width: 576px) {
     .swiper-news .swiper-wrapper,
     .swiper-sales .swiper-wrapper,
@@ -205,6 +199,12 @@ body {
 
 #apartments .swiper-pagination {
     bottom: -30px !important;
+}
+
+@media screen and (min-width: 768px) {
+    #apartments .swiper-pagination {
+        bottom: 30px !important;
+    }
 }
 
 .app-swiper .swiper {

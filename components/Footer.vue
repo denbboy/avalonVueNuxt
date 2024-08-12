@@ -55,7 +55,7 @@
                         </a>
                     </div>
                     <div class="flex gap-[5px] mb-5">
-                        <a v-if="toolkitStore?.settings?.soc_link_whats" :href="toolkitStore?.settings?.soc_link_whats"
+                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_whats" :href="toolkitStore?.settings?.soc_link_whats"
                             class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
                             <svg class="fill-white group-hover:fill-blue-600 w-[45%] transition-all" width="25"
                                 height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +63,7 @@
                                     d="M20.9118 4.14053C18.6096 1.83715 15.5481 0.567634 12.2866 0.566406C5.56551 0.566406 0.0956566 6.0338 0.093202 12.7549C0.0919747 14.9032 0.653452 17.0004 1.72036 18.8485L0.0664062 24.9799L6.45416 23.47C8.23513 24.4416 10.2395 24.953 12.2804 24.9543H12.2853C19.0052 24.9543 24.4749 19.4856 24.4786 12.7658C24.4811 9.50791 23.214 6.44515 20.9118 4.14053ZM18.2519 17.1115C17.9981 17.8231 16.7542 18.5091 16.1951 18.5591C15.6361 18.6104 15.1124 18.8119 12.5392 17.7974C9.44236 16.5768 7.4868 13.4018 7.33544 13.1991C7.18285 12.9953 6.0916 11.5476 6.0916 10.0486C6.0916 8.54961 6.8789 7.81233 7.15851 7.50837C7.43802 7.20319 7.76764 7.12751 7.97147 7.12751C8.17408 7.12751 8.37791 7.12751 8.55494 7.13487C8.77217 7.14346 9.01271 7.15441 9.24099 7.66096C9.51191 8.26396 10.104 9.77034 10.1796 9.92293C10.2553 10.0755 10.3066 10.2537 10.2053 10.4563C10.104 10.659 10.0527 10.7859 9.90136 10.9642C9.74877 11.1423 9.58155 11.3609 9.44482 11.4975C9.29222 11.6489 9.1335 11.815 9.31053 12.1189C9.48879 12.424 10.0991 13.4214 11.0048 14.2282C12.1694 15.2658 13.1495 15.5868 13.4547 15.7406C13.7599 15.8932 13.9368 15.8675 14.1151 15.6637C14.2934 15.4611 14.8768 14.7751 15.0794 14.4699C15.282 14.1647 15.486 14.216 15.7655 14.3173C16.045 14.4186 17.5428 15.1559 17.8467 15.3085C18.1519 15.4611 18.3545 15.5368 18.4302 15.6637C18.5059 15.7895 18.5059 16.3998 18.2519 17.1115Z" />
                             </svg>
                         </a>
-                        <a v-if="toolkitStore?.settings?.soc_link_inst" :href="toolkitStore?.settings?.soc_link_inst"
+                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_inst" :href="toolkitStore?.settings?.soc_link_inst"
                             class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
                             <svg class="fill-white group-hover:fill-blue-600 w-[45%] transition-all" width="25"
                                 height="26" viewBox="0 0 25 26" xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +73,7 @@
                                     d="M19.4332 2.5459H5.11506C3.42055 2.5459 2.04688 3.91957 2.04688 5.61408V19.9323C2.04688 21.6268 3.42055 23.0004 5.11506 23.0004H19.4332C21.1278 23.0004 22.5014 21.6268 22.5014 19.9323V5.61408C22.5014 3.91957 21.1278 2.5459 19.4332 2.5459ZM12.272 6.46909C8.79152 6.46909 5.96777 9.29284 5.96777 12.7733C5.96777 16.2537 8.79152 19.0775 12.272 19.0775C15.7524 19.0775 18.5762 16.2537 18.5762 12.7733C18.5762 9.29284 15.7524 6.46909 12.272 6.46909ZM12.272 16.8626C10.014 16.8626 8.18269 15.0313 8.18269 12.7733C8.18269 10.5153 10.014 8.68401 12.272 8.68401C14.5299 8.68401 16.3612 10.5153 16.3612 12.7733C16.3612 15.0313 14.5299 16.8626 12.272 16.8626ZM18.8262 7.69141C19.6364 7.69141 20.298 7.03461 20.298 6.2196C20.298 5.4095 19.6364 4.74789 18.8262 4.74789C18.016 4.74789 17.3545 5.40469 17.3545 6.2196C17.3545 7.0298 18.0112 7.69141 18.8262 7.69141Z" />
                             </svg>
                         </a>
-                        <a v-if="toolkitStore?.settings?.soc_link_fb" :href="toolkitStore?.settings?.soc_link_fb"
+                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_fb" :href="toolkitStore?.settings?.soc_link_fb"
                             class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
                             <svg class="fill-white group-hover:fill-blue-600 w-[45%] transition-all" width="11"
                                 height="20" viewBox="0 0 11 20" xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +81,7 @@
                                     d="M7.21813 20V10.8777H10.2789L10.7381 7.32156H7.21813V5.05147C7.21813 4.0222 7.50278 3.32076 8.98042 3.32076L10.862 3.31999V0.13923C10.5366 0.0969453 9.41964 0 8.11964 0C5.40505 0 3.54658 1.65697 3.54658 4.69927V7.32156H0.476562V10.8777H3.54658V20H7.21813Z" />
                             </svg>
                         </a>
-                        <a v-if="toolkitStore?.settings?.soc_link_yt" :href="toolkitStore?.settings?.soc_link_yt"
+                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_yt" :href="toolkitStore?.settings?.soc_link_yt"
                             class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
                             <svg class="fill-white group-hover:fill-blue-600 w-[45%] transition-all" width="20"
                                 height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
@@ -193,7 +193,8 @@
 
     <div class="fixed left-0 top-0 h-full w-full z-50 bg-blue-500 transition-all duration-150 flex items-center justify-center"
         :class="loading ? 'visible opacity-100' : 'opacity-0 invisible'">
-        <img class="w-[100px]" src="/assets/img/loader.gif" alt="">
+        <!-- <img class="w-[1000px]" src="/assets/img/loader.gif" alt=""> -->
+        <iframe class="w-[800px] h-[800px]" src="https://lottie.host/embed/1b26babb-a87c-48e7-9a0a-f31a06298110/CixbB89Yfp.json"></iframe>
     </div>
 </template>
 

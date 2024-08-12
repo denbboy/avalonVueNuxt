@@ -4,8 +4,22 @@
         <div class="lg:pb-10 pb-5 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.jpg')] -->
             <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-80">
-                <img v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
-                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="">
+                <!-- <img v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt=""> -->
+
+
+                <!-- <div class=""> -->
+                    <SkeletonLoader v-if="itemData?.preview" class="!absolute top-0 left-0 w-full h-[110vh] object-cover z-0">
+                        <img v-show="!imageLoaded" data-not-lazy ref="image" loading="lazy"
+                            :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`" @error="onImageLoad"
+                            @load="onImageLoad"
+                            class="opacity-0 absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="">
+                        <img data-not-lazy v-if="imageLoaded" loading="lazy"
+                            :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+                            class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="">
+                    </SkeletonLoader>
+                <!-- </div> -->
+
                 <iframe v-if="`${itemData?.video}`" class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0"
                     width="100%" height="100%" src="" title="YouTube video player" frameborder="0"
                     allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"
@@ -43,8 +57,10 @@
                                     <img class="absolute top-0 left-0 -z-10 hidden md:block h-full w-full"
                                         src="/assets/img/index/bgd-decor-2.png" alt="bgd">
                                     <h2 v-if="itemData?.price" class="text-sm text-white">
-                                        {{ $t('cost') }} <br class="hidden md:block"> <span class="font-bold md:text-xl">
-                                            {{ $t('from') }} ${{ String(itemData?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}
+                                        {{ $t('cost') }} <br class="hidden md:block"> <span
+                                            class="font-bold md:text-xl">
+                                            {{ $t('from') }} ${{
+                                                String(itemData?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}
                                         </span>
                                     </h2>
                                     <p class="text-xs text-slate-50 opacity-60 text-center">
@@ -56,8 +72,8 @@
                                 class="w-full h-[60px] max-w-[72px] md:max-w-[98px] md:h-[86px] bg-white flex items-center justify-center rounded-[8px] md:rounded-[15px]">
                                 <!-- <img src="/assets/img/icons/live-ic.svg" class="max-w-[42px] md:max-w-[68px]" alt="ic"> -->
 
-                                <svg width="68" height="48" viewBox="0 0 68 48" class="max-w-12 lg:max-w-full" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
+                                <svg width="68" height="48" viewBox="0 0 68 48" class="max-w-12 lg:max-w-full"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_840_7506)">
                                         <path
                                             d="M67.9997 17.7157L54.7936 23.4667V19.2792C54.7936 16.2904 52.3398 13.8655 49.313 13.8655H19.756C16.7303 13.8655 14.2754 16.2891 14.2754 19.2792V42.5863C14.2754 45.575 16.7292 48 19.756 48H49.313C52.3387 48 54.7936 45.5761 54.7936 42.5863V38.3988L67.9997 44.1498V17.7157Z"
@@ -110,14 +126,17 @@
                         </button>
                     </div>
                     <div class="flex flex-col xl:items-end justify-end xl:w-full">
-                        <button v-if="itemData?.video" data-aos="fade-up" @click="handlePlayVideo(itemData?.video)" type="button"
+                        <button v-if="itemData?.video" data-aos="fade-up" @click="handlePlayVideo(itemData?.video)"
+                            type="button"
                             class="flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
                             <div class="relative flex items-center justify-center">
-                                <img src="/assets/img/about/playBorder.svg" class="max-w-[95px] xl:max-w-[165px]" alt="ic">
-                            <svg class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18" height="21" viewBox="0 0 18 21" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17.7422 10.653L0.17076 20.7979L0.170761 0.508136L17.7422 10.653Z" fill="white"/>
-                            </svg>
+                                <img src="/assets/img/about/playBorder.svg" class="max-w-[95px] xl:max-w-[165px]"
+                                    alt="ic">
+                                <svg class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18" height="21"
+                                    viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.7422 10.653L0.17076 20.7979L0.170761 0.508136L17.7422 10.653Z"
+                                        fill="white" />
+                                </svg>
                             </div>
                             {{ $t('see_video') }}
                         </button>
@@ -163,6 +182,22 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+import SkeletonLoader from '~/components/SkeletonLoader.vue';
+
+const imageLoaded = ref(false);
+const image = ref(null);
+
+function onImageLoad() {
+    imageLoaded.value = true;
+}
+
+onMounted(() => {
+    if (image.value?.complete) {
+        imageLoaded.value = true;
+    }
+});
+
 const modalsStore = useModalsStore()
 
 const langStore = useLangStore()

@@ -2,7 +2,7 @@
     <section class="uslugi pt-[23px] pb-12 relative overflow-hidden">
         <div
             class="absolute lg:-right-36 top-0 lg:top-auto lg:left-auto min-h-[600px] lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
-            <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
+            <img data-not-lazy src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
         </div>
         <div class="container">
             <div class="w-full flex flex-col items-center text-center md:flex-row md:justify-between md:mb-[44px] md:text-start"

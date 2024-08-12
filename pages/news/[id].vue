@@ -2,10 +2,11 @@
 
   <Head>
     <Title>
-      {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+      {{ itemData?.data?.value?.translations?.filter(item =>
+        item.languages_code.includes(langStore.lang))[0]?.meta_title }}
     </Title>
     <Meta name="description"
-      :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+      :content="itemData?.data?.value?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
   </Head>
 
   <section class="bg-blue-500 pt-32 md:pt-64">
@@ -13,12 +14,21 @@
       <div class="bg-gradient-to-t from-blue-500 absolute top-0 left-0 w-full h-full"></div>
     </div>
 
-    <img v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
-      class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="">
+
+    <div class="absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen">
+      <SkeletonLoader v-if="itemData?.data?.value?.preview" class="h-full w-full">
+        <img v-show="!imageLoaded" data-not-lazy loading="lazy"
+          :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`" @load="onImageLoad"
+          class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="" ref="image">
+        <img data-not-lazy v-if="imageLoaded" loading="lazy"
+          :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`"
+          class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="">
+      </SkeletonLoader>
+    </div>
+
     <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[1000px] absolute z-10">
     </div>
     <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[1000px] absolute z-10">
-
     </div>
 
     <div class="container relative z-10">
@@ -30,13 +40,14 @@
         <div
           class="flex before:w-[6px] before:rounded-sm before:h-[6px] before:bg-white before:mr-[10px] opacity-60 items-center">
           <span class="text-white text-sm">
-            {{ new Date(itemData?.date_created).getDate() }} {{ $t(`month${new Date(itemData?.date_created).getMonth()
-              ?? "0" + 1}`) }} {{ new Date(itemData?.date_created).getFullYear() }}
+            {{ new Date(itemData?.data?.value?.date_created).getDate() }} {{ $t(`month${new
+              Date(itemData?.data?.value?.date_created).getMonth()
+              ?? "0" + 1}`) }} {{ new Date(itemData?.data?.value?.date_created).getFullYear() }}
           </span>
         </div>
         <h1
           class="text-white text-[30px] md:text-[55px] lg:text-[65px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[876px]"
-          v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
+          v-html="itemData?.data?.value?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
         </h1>
 
         <a href="#"
@@ -45,7 +56,7 @@
         </a>
 
         <div
-          v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
+          v-html="itemData?.data?.value?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
         </div>
 
       </div>
@@ -70,30 +81,22 @@
 </style>
 
 <script setup>
-const { getItems } = useDirectusItems();
+
+const imageLoaded = ref(false);
+const image = ref(null);
+
+function onImageLoad() {
+    imageLoaded.value = true;
+}
+
+onMounted(() => {
+    if (image.value?.complete) {
+        imageLoaded.value = true;
+    }
+});
+
 const langStore = useLangStore();
-const itemsList = ref([]);
 const route = useRoute();
 
-// GET POST
-const itemData = ref([]);
-const fetchItemData = async () => {
-  try {
-    const items = await getItems({
-      collection: `News/${route.params.id}`,
-      params: {
-        fields: '*,translations.*'
-      },
-    });
-
-    itemData.value = items;
-    console.log('ITEM_DATA', items);
-  } catch (e) {
-    console.error('Error fetching items:', e);
-  }
-};
-onMounted(fetchItemData);
-// GET POST
-
-const { id } = useRoute().params
+const itemData = await useAsyncData('NewsItem', () => $fetch(`/api/news/${route.params.id}`));
 </script>

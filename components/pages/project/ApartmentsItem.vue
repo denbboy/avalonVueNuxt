@@ -21,7 +21,7 @@
             </span>
         </div>
 
-        <div class="z-10 mt-14">
+        <div class="z-10 mt-14 lg:mt-0">
             <div class="mb-[21px] 3xl:mb-12">
                 <h2
                     class="font-bold text-white text-[24px] leading-none 375:text-[30px] mb-[10px] md:text-[40px] 3xl:text-[56px] md:mb-[21px] 3xl:mb-[31px]">
@@ -35,7 +35,7 @@
                 </p>
             </div>
 
-            <div class="flex flex-col 375:flex-row items-center gap-5 mb-[30px] 3xl:mb-[50px] max-w-[436px] w-full">
+            <div class="flex flex-col 375:flex-row gap-5 mb-[30px] 3xl:mb-[50px] max-w-[436px] w-full">
                 <div class="border border-blue-400 p-4 rounded-2xl w-full">
                     <h3 class="font-bold text-white mb-1 leading-none md:text-[20px] 3xl:mb-4">
                         {{ itemData?.full_size }} м²
@@ -94,7 +94,7 @@
             </ul>
 
         </div>
-        <div class="relative h-fit w-full flex justify-end">
+        <div class="relative w-full flex justify-end h-full aspect-[5/4]">
 
             <div v-if="itemData?.roi"
                 class="hidden min-w-[91px] h-[91px] 3xl:min-w-[137px] 3xl:h-[137px] bg-blue-400 text-center rounded-full md:flex justify-center items-center flex-col absolute top-p right-0 z-10 translate-x-1/3 -translate-y-1/3">
@@ -111,8 +111,9 @@
                     {{ itemData?.roi }}%
                 </span>
             </div>
+            <!-- max-h-60 xl:max-h-[403px] 3xl:max-h-[516px] -->
             <div
-                class="app-swiper relative xl:max-w-[456px] max-h-60 3xl:max-w-[600px] xl:max-h-[403px] 3xl:max-h-[516px] lg:rounded-3xl rounded-2xl -mb-8 pb-8 md:mb-0 md:pb-0 overflow-hidden">
+                class="app-swiper relative xl:max-w-[456px] h-full  3xl:max-w-[600px] lg:rounded-3xl rounded-2xl -mb-8 pb-8 md:mb-0 md:pb-0 overflow-hidden">
 
                 <NuxtLink @click="handleOpenModal3D" v-if="itemData?.video_360" :href="`#3d-object-${itemData?.id}`"
                     class="absolute hover:scale-105 active:scale-95 transition-all top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
@@ -125,7 +126,7 @@
                     <swiper-slide v-for="image in itemData?.gallery" :key="image?.id"
                         class="relative overflow-hidden h-full">
                         <img :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`"
-                            class="rounded-[15px] h-[516px] object-cover h-full w-full" alt="ph">
+                            class="rounded-[15px] object-cover h-full w-full" alt="ph">
                     </swiper-slide>
 
                 </swiper>
@@ -174,7 +175,6 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useRoute } from 'vue-router';
 import { Navigation, A11y, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';

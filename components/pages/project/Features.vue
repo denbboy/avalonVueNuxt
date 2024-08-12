@@ -3,7 +3,7 @@
         <Parallaxy v-if="isCanShow" class="absolute top-0 left-0 z-0 h-full w-full" :speed="150"
             :animation="(delta) => `transform: translate3d(0, ${delta}px, 0);`">
             <!-- <img class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg"> -->
-            <img class="h-full w-full object-cover scale-[1.7]" src="/assets/img/about/bgd-sec-changy.jpg">
+            <img class="h-full w-full object-cover scale-[1.7]" src="/assets/img/about/bgd-sec-changy.jpg" alt="image">
         </Parallaxy>
         <div class="container relative z-10">
             <div
@@ -27,7 +27,7 @@
                         <div data-aos="fade-up" class=" mb-5 md:mb-[30px] md:flex md:gap-2">
                             <strong class="font-bold text-white text-lg uppercase md:text-[26px] md:font-normal">
                                 <!-- Лучшее место -->
-                                {{ itemStrings?.filter(item => item.id === 154)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ props?.itemStrings?.filter(item => item.id === 154)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                             </strong>
                             <span class="block font-bold text-sm text-white md:text-[18px] md:font-normal md:mt-auto">
                                 <!-- для инвестиций на Бали -->
@@ -35,18 +35,18 @@
                         </div>
                         <p data-aos="fade-up"
                             class="text-white text-sm mb-5 max-w-[225px] md:text-[18px] md:max-w-none md:mb-[30px]">
-                            {{ itemStrings?.filter(item => item.id === 154)[0]?.String_id?.translations?.filter(item =>
+                            {{ props?.itemStrings?.filter(item => item.id === 154)[0]?.String_id?.translations?.filter(item =>
                                 item.languages_code.code.includes(langStore.lang))[0]?.description }}
                         </p>
 
                         <div data-aos="fade-up"
                             class="p-5 border border-blue-400 rounded-[20px] mb-5 md:p-[30px] md:max-w-[381px] 3xl:max-w-[505px] md:mb-[30px]">
                             <p class="text-white text-sm md:text-[18px] ">
-                                {{ itemStrings?.filter(item => item.id === 155)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ props?.itemStrings?.filter(item => item.id === 155)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
                             </p>
                         </div>
 
-                        <span class="[&_li]:before:bg-[url(/assets/img/about/galka.svg)] [&_li]:before:w-5 [&_li]:before:h-5 [&_li]:before:min-w-5" v-html="itemStrings?.filter(item => item.id === 160)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description"></span>
+                        <span class="[&_li]:before:bg-[url(/assets/img/about/galka.svg)] [&_li]:before:w-5 [&_li]:before:h-5 [&_li]:before:min-w-5" v-html="props?.itemStrings?.filter(item => item.id === 160)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description"></span>
                     </div>
                     <img data-aos="fade-left" src="/assets/img/about/tel-desk.png"
                         class="hidden xl:block aspect-[624/673]" alt="ph">
@@ -61,7 +61,6 @@ import Parallaxy from '@lucien144/vue3-parallaxy';
 
 const props = defineProps(['itemStrings'])
 
-const itemStrings = ref([]);
 const isCanShow = ref(false)
 
 watchEffect(() => {
@@ -71,9 +70,5 @@ watchEffect(() => {
 })
 
 const langStore = useLangStore()
-
-watch(props, async (newValue) => {
-    itemStrings.value = newValue.itemStrings;
-})
 
 </script>

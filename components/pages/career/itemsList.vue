@@ -6,8 +6,6 @@
 
 <script setup>
 
-const careerData = useAsyncData("Career", () => $fetch('/api/career'))
-
-console.log(careerData);
+const careerData = await useAsyncData("Career", () => $fetch('/api/career'))
 
 </script>

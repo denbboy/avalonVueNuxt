@@ -41,7 +41,8 @@ export default defineNuxtConfig({
         "@nuxt/image",
         "@dargmuesli/nuxt-cookie-control",
         "@nuxtjs/seo",
-        "nuxt-meta-pixel"
+        "nuxt-meta-pixel",
+        "@nuxtjs/sitemap"
     ],
     swiper: {
         modules: ['navigation', 'pagination'],

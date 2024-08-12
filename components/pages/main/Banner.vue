@@ -2,9 +2,9 @@
   <section class="lg:pb-12 pb-0 min-h-[900px]">
 
     <!-- :modules="modules" -->
-    <swiper class="swiper-banner" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
-      :modules="[Pagination, A11y, Autoplay]" pagination a11y :autoplay="{ delay: 15000, disableOnInteraction: false }"
-      :speed="1500">
+    <swiper v-if="!!slides?.data?.value?.length" class="swiper-banner" :loop="true" :slides-per-view="1"
+      :pagination="{ clickable: true }" :modules="[Pagination, A11y, Autoplay]" pagination a11y
+      :autoplay="{ delay: 15000, disableOnInteraction: false }" :speed="1500">
 
 
       <swiper-slide v-for="item in slides?.data?.value"
@@ -71,12 +71,22 @@
           <div v-if="!item?.projects?.length" class="flex items-center justify-between">
             <div class="">
               <div class="brightness-[1] bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
-                <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`"
-                  class="absolute top-0 brightness-50 left-0 w-full h-full" alt="">
+
+                <SkeletonLoader v-if="item?.img" class="w-full h-full">
+                  <img v-show="!imageLoaded" ref="image" data-not-lazy loading="lazy"
+                    class="opacity-1 absolute top-0 brightness-50 left-0 w-full h-full"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`" @error="onImageLoad"
+                    @load="onImageLoad" />
+                  <img v-if="imageLoaded" loading="lazy" data-not-lazy
+                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`"
+                    class="absolute top-0 brightness-50 left-0 w-full h-full" alt="">
+                </SkeletonLoader>
+
                 <iframe v-if="item?.video" class="scale-150" width="100%" height="100%"
                   :src="`${item?.video}&autoplay=1&mute=1&loop=1`" title="YouTube video player" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
               </div>
               <div class="bg-gradient-to-t from-blue-500 from-10% w-full h-52 absolute -z-10 bottom-0 left-0">
               </div>
@@ -161,54 +171,32 @@
 
 
 <script setup>
-import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules'
+import { Pagination, A11y, Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
-// import fetchSlides from '~/server/api/slides'
-const { getItems } = useDirectusItems();
 
 const modalsStore = useModalsStore()
 const langStore = useLangStore();
 
-// const slides = await fetchSlides(getItems);
+const imageLoaded = ref(false);
+const image = ref(null);
 
-// const slides = await useAsyncData("Slides", async () => fetchSlides())
+function onImageLoad() {
+  imageLoaded.value = true;
+}
+
+onMounted(() => {
+  if (image.value?.complete) {
+    imageLoaded.value = true;
+  }
+});
 
 const slides = await useAsyncData('Slides', () => $fetch('/api/slides'));
-
-// console.log($fetch('https://avalon-panel.sonisapps.com/items/slide'));
-
-// const slides = await useAsyncData('Slides', async () => {
-//   try {
-//     const items = await getItems({
-//       collection: "Slide",
-//       params: {
-//         fields: [
-//           "*",
-//           "translations.*",
-//           "strings.String_id.*.*",
-//           "projects.item.*",
-//           "projects.item.translations.*",
-//         ],
-//       },
-//     });
-//     return items;
-//   } catch (e) {
-//     console.error("Error fetching items:", e);
-//     throw createError({ statusCode: 500, statusMessage: 'Internal Server Error' });
-//   }
-// });
-
-// console.log(slides.data);
 
 const addModal = () => {
   modalsStore.addModal('presentation')
 }
-
-// const handlePlayVideo = () => {
-//   document.querySelector('.banner iframe').setAttribute('src', 'https://www.youtube.com/embed/zHcr32gRRCs?si=73xg2tsfV1tnZjwg&autoplay=1&mute=1&loop=1&playlist=zHcr32gRRCs')
-// }
 </script>

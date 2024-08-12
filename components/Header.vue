@@ -247,7 +247,8 @@
   <div
     class="fixed left-0 top-0 h-full w-full z-50 bg-blue-500 transition-all duration-150 flex items-center justify-center"
     :class="loading ? 'visible opacity-100' : 'opacity-0 invisible'">
-    <img class="w-[100px]" data-not-lazy src="/assets/img/loader.gif" alt="">
+    <!-- <img class="w-[100px]" data-not-lazy src="/assets/img/loader.gif" alt=""> -->
+    <iframe class="w-[800px] h-[800px]" src="https://lottie.host/embed/1b26babb-a87c-48e7-9a0a-f31a06298110/CixbB89Yfp.json"></iframe>
   </div>
 </template>
 
@@ -305,7 +306,7 @@ const changeLocale = async (newLocale) => {
   // Отключаем индикатор загрузки
   setTimeout(() => {
     loading.value = false;
-  }, 500);
+  }, 6000);
 };
 
 
@@ -313,7 +314,7 @@ const changeLocale = async (newLocale) => {
 onMounted(() => {
   setTimeout(() => {
     loading.value = false
-  }, 1000)
+  }, 6000)
 
   const savedLanguage = localStorage.getItem('selectedLanguage');
   const urlLocale = route.fullPath.match(/^\/([a-z]{2})(\/|$)/)?.[1] || null;

@@ -7,17 +7,22 @@
                 'border-blue-500 bg-blue-500 after:bg-white': props.bgdColor === 'blue-500',
                 'border-blue-600 bg-blue-600 after:bg-white': props.bgdColor === 'blue-600',
             }" class="block-bottom-point z-20"></div>
-            <img class="rounded-[20px] w-full h-full object-cover"
-                :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}`" alt="">
+
+            <SkeletonLoader class="w-full h-[300px] rounded-[20px]">
+                <img data-not-lazy ref="image" loading="lazy" class="opacity-0 absolute"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}`" @load="onImageLoad" />
+                <img v-if="imageLoaded" loading="lazy" data-not-lazy
+                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}`" alt="Image"
+                    class="z-0 w-full h-full object-cover relative rounded-2xl" @load="onImageLoad" />
+            </SkeletonLoader>
+
         </div>
 
         <div class="p-5">
-            <!-- v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title" -->
             <p :class="bgdColor === 'white' ? 'text-blue-600' : 'text-white'"
                 class="text-base md:text-lg transition-all line-clamp-2 group-hover:text-blue-400 font-bold">
                 {{ props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
             </p>
-            <!-- v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description.slice(0, 50)" -->
             <div :class="bgdColor === 'white' ? 'text-blue-600' : 'text-white'"
                 class="mt-3 md:mt-4 items-center text-sm opacity-60 line-clamp-2 h-[39px] overflow-hidden"
                 v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
@@ -27,6 +32,19 @@
 </template>
 
 <script setup>
+
+const imageLoaded = ref(false);
+const image = ref(null);
+
+function onImageLoad() {
+    imageLoaded.value = true;
+}
+
+onMounted(() => {
+    if (image.value?.complete) {
+        imageLoaded.value = true;
+    }
+});
 
 const props = defineProps({
     item: {

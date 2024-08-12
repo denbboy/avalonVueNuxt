@@ -1,7 +1,7 @@
 <template>
     <section class="cost py-14 md:py-24 relative overflow-hidden">
         <div class="absolute hidden lg:block lg:-right-36 top-10 lg:top-10 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
-            <img src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
+            <img data-not-lazy src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
         </div>
         <div class="container relative z-10">
             <h2 data-aos="fade-up" class="font-bold text-white text-3xl mb-8 md:mb-12 md:text-center md:text-[45px] 3xl:md:text-[56px]">

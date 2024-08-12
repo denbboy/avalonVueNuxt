@@ -69,7 +69,7 @@ const handelShowMore = () => {
     viewCount.value += 8;
 }
 
-const newsData = useAsyncData("News", () => $fetch('/api/news'))
+const newsData = await useAsyncData("News", () => $fetch('/api/news'))
 
 const projectsList = [
   {
