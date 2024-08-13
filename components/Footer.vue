@@ -1,6 +1,6 @@
 <template>
     <footer id="contacts" class="mt-a bg-blue-600 pt-12 md:pt-24 mt-auto z-10">
-        <!-- <h2 class="text-center text-white text-3xl font-bold mb-7 block lg:hidden">{{ $t('contacts') }}</h2>
+        <h2 class="text-center text-white text-3xl font-bold mb-7 block lg:hidden">{{ $t('contacts') }}</h2>
         <div class="container">
 
             <div @click="handleScrollUp" :class="isShowArrowUp ? 'opacity-100' : 'opacity-0'"
@@ -18,7 +18,10 @@
                     :src="`https://avalon-panel.sonisapps.com/assets/${toolkitStore?.settings?.footer_img}`"
                     class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph">
 
-                
+                <!-- <div class="logo-clip-path hidden lg:block">
+                    <video loop class="w-[379px] h-[392px] object-cover" muted autoplay
+                        src="/assets/video/video-logo.webm"></video>
+                </div> -->
 
                 <div class="w-fit">
                     <div class="md:mb-[30px] md:pb-[30px] border-b border-white/10 mb-5 pb-5">
@@ -101,6 +104,8 @@
                         <input type="text" v-model="name" placeholder="Имя"
                             class="bg-white/10 lg:mb-[10px] rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-5 lg:p-6 md:text-base w-full">
                         <div class="phone-vti">
+                            <!-- <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone"
+                                :only-countries="onlyCountries" /> -->
                             <VueTelInput :input-options="inputOptions" v-model="phone" :use-masking="true"
                                 :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
                         </div>
@@ -136,6 +141,13 @@
             <div class="container">
                 <div class="flex items-center justify-between gap-8">
                     <img src="/assets/img/index/a-footer.png" class="max-w-[96px] md:hidden" alt="ph">
+
+                    <!-- <div class="logo-clip-path md:hidden">
+                        <video loop class="w-[96px] h-[100px] object-cover" muted autoplay>
+                            <source src="/assets/video/video-logo.webm" type="video/webm">
+                            <source src="/assets/video/video-logo.mp4" type="video/mp4">
+                        </video>
+                    </div> -->
 
                     <ul class="md:flex md:items-center py-2 md:justify-center md:w-full">
                         <li
@@ -176,124 +188,124 @@
                     </ul>
                 </div>
             </div>
-        </div> -->
+        </div>
     </footer>
-
+    
 </template>
 
 
 <script setup>
-// import { ref, watch } from 'vue';
-// import { usePagesStore } from '~/stores/functions/pages';
-// import { useToolkit } from '~/stores/functions/toolkit';
-// import { VueTelInput } from 'vue-tel-input';
-// import 'vue-tel-input/vue-tel-input.css';
-// import iso31661 from 'iso-3166-1';
+import { ref, watch } from 'vue';
+import { usePagesStore } from '~/stores/functions/pages';
+import { useToolkit } from '~/stores/functions/toolkit';
+import { VueTelInput } from 'vue-tel-input';
+import 'vue-tel-input/vue-tel-input.css';
+import iso31661 from 'iso-3166-1';
 
-// const pagesStore = usePagesStore();
-// const langStore = useLangStore();
-// const allPages = ref([]);
-// const isShowArrowUp = ref(false);
+const pagesStore = usePagesStore();
+const langStore = useLangStore();
+const allPages = ref([]);
+const isShowArrowUp = ref(false);
 
-// watch(pagesStore, (newValue) => {
-//     allPages.value = newValue?.pagesList;
-// });
+watch(pagesStore, (newValue) => {
+    allPages.value = newValue?.pagesList;
+});
 
-// const handleScroll = () => {
-//     const pointToShow = document.body.offsetHeight * 60 / 100
-//     isShowArrowUp.value = window.scrollY > pointToShow;
-// };
+const handleScroll = () => {
+    const pointToShow = document.body.offsetHeight * 60 / 100
+    isShowArrowUp.value = window.scrollY > pointToShow;
+};
 
-// const handleScrollUp = () => {
-//     window.scrollTo(0, 0);
-// }
+const handleScrollUp = () => {
+    window.scrollTo(0, 0);
+}
 
-// const name = ref(null);
-// const phone = ref(null);
-// const isError = ref(null);
-// const isSending = ref(false);
-// const isSuccess = ref(false);
+const name = ref(null);
+const phone = ref(null);
+const isError = ref(null);
+const isSending = ref(false);
+const isSuccess = ref(false);
 
-// const toolkitStore = useToolkit();
+const toolkitStore = useToolkit();
 
-// const resetForm = () => {
-//     name.value = '';
-//     phone.value = '';
-// };
+const resetForm = () => {
+    name.value = '';
+    phone.value = '';
+};
 
-// const placeholderLang = {
-//     'ru': 'Введите ваш номер телефона',
-//     'en': 'Enter your phone number',
-//     'ua': 'Введіть ваш номер телефону'
-// }
+const placeholderLang = {
+    'ru': 'Введите ваш номер телефона',
+    'en': 'Enter your phone number',
+    'ua': 'Введіть ваш номер телефону'
+}
 
-// const inputOptions = {
-//     placeholder: placeholderLang[langStore.lang]
-// };
+const inputOptions = {
+    placeholder: placeholderLang[langStore.lang]
+};
 
-// const submitForm = async () => {
-//     if (!name.value || !phone.value) {
-//         isError.value = true;
-//         return;
-//     } else {
-//         isError.value = false;
-//     }
+const submitForm = async () => {
+    if (!name.value || !phone.value) {
+        isError.value = true;
+        return;
+    } else {
+        isError.value = false;
+    }
 
-//     isSending.value = true;
+    isSending.value = true;
 
-//     try {
-//         const { data } = await useFetch('https://crm.g-plus.app/api/actions', {
-//             method: 'POST',
-//             body: {
-//                 action: 'partner-custom-form',
-//                 token: 'BnYxulkF_XC5Aq7Re9oO80vbIu-ZblVbALCDNDdAJE0',
-//                 partner_id: '25545',
-//                 name: name.value,
-//                 phone: phone.value,
-//                 // building_id: '123',
-//                 lang: 'ua',
-//                 note: 'Запит з форми контактів',
-//                 // adv_id: '123123123'
-//             }
-//         });
+    try {
+        const { data } = await useFetch('https://crm.g-plus.app/api/actions', {
+            method: 'POST',
+            body: {
+                action: 'partner-custom-form',
+                token: 'BnYxulkF_XC5Aq7Re9oO80vbIu-ZblVbALCDNDdAJE0',
+                partner_id: '25545',
+                name: name.value,
+                phone: phone.value,
+                // building_id: '123',
+                lang: 'ua',
+                note: 'Запит з форми контактів',
+                // adv_id: '123123123'
+            }
+        });
 
-//         isSending.value = false;
-//         isSuccess.value = true;
-//         resetForm();
-//     } catch (err) {
-//         console.log('11111', err);
-//         isSending.value = false;
-//     }
-// };
+        isSending.value = false;
+        isSuccess.value = true;
+        resetForm();
+    } catch (err) {
+        console.log('11111', err);
+        isSending.value = false;
+    }
+};
 
-// const preferredCountries = [
-//     'id', // Индонезия
-//     'ua', // Украина
-//     'ru', // Россия
-//     'by', // Беларусь
-//     'kz', // Казахстан
-//     'us', // США
-//     'gb', // Англия
-//     'fr', // Франция
-//     'cn', // КНР
-// ];
+const preferredCountries = [
+    'id', // Индонезия
+    'ua', // Украина
+    'ru', // Россия
+    'by', // Беларусь
+    'kz', // Казахстан
+    'us', // США
+    'gb', // Англия
+    'fr', // Франция
+    'cn', // КНР
+];
 
-// const allCountries = iso31661.all().map(country => country.alpha2);
+const allCountries = iso31661.all().map(country => country.alpha2);
 
-// const sortedCountries = computed(() => {
-//     const preferredSet = new Set(preferredCountries);
-//     const unselectedCountries = allCountries.filter(country => !preferredSet.has(country));
-//     return [...preferredCountries, ...unselectedCountries];
-// });
+const sortedCountries = computed(() => {
+    const preferredSet = new Set(preferredCountries);
+    const unselectedCountries = allCountries.filter(country => !preferredSet.has(country));
+    return [...preferredCountries, ...unselectedCountries];
+});
 
-// onMounted(() => {
-//     window?.addEventListener('scroll', handleScroll);
-// });
+onMounted(() => {
+    window?.addEventListener('scroll', handleScroll);
+});
 
-// onUnmounted(() => {
-//     window?.removeEventListener('scroll', handleScroll);
-// });
+onUnmounted(() => {
+    window?.removeEventListener('scroll', handleScroll);
+});
 
-// const copyright = `© ${new Date().getFullYear()} PT Avalon Group Bali`
+const copyright = `© ${new Date().getFullYear()} PT Avalon Group Bali`
 
 </script>
