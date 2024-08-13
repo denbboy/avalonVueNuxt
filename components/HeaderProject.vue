@@ -8,8 +8,9 @@
 
       <div class="header__inner px-5 flex items-center justify-between gap-3 relative">
         <NuxtLink class="max-w-16 w-full lg:max-w-30" v-if="projectsStore.currentProject?.logo" :href="`/projects/${projectsStore.currentProject?.id}`">
-          <img :src="`https://avalon-panel.sonisapps.com/assets/${projectsStore.currentProject?.logo}`"
-            class="w-full" alt="logo ic">
+          <!-- <img :src="`https://avalon-panel.sonisapps.com/assets/${projectsStore.currentProject?.logo}`"
+            class="w-full" alt="logo ic"> -->
+            <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${projectsStore.currentProject?.logo}`" loading="lazy" class="w-full" alt="Vector" />
         </NuxtLink>
 
 
@@ -69,7 +70,7 @@
         <div class="hidden group xl:flex xl:flex-col relative">
           <button class="projectsButton flex items-center gap-1 text-white md:text-xs lg:text-sm uppercase">
             {{ locale }}
-            <img src="/assets/img/index/small-arrow-white.svg" alt="ic">
+            <!-- <img src="/assets/img/index/small-arrow-white.svg" alt="ic"> -->
           </button>
           <div
             class="projectsMenu flex opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-[50%] translate-x-[-50%] border border-whiteOp-300">
@@ -125,7 +126,7 @@
         </div>
 
         <button @click="handleOpenBurger" id="burgerBtn" type="button" class="xl:hidden block ">
-          <img src="/assets/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic">
+          <!-- <img src="/assets/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic"> -->
         </button>
 
       </div>
@@ -186,22 +187,22 @@
         <ul class="flex items-center gap-1">
           <li v-if="toolkitStore?.settings?.soc_link_whats">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_whats}`">
-              <img src="/assets/img/index/tw-burger.svg" alt="ic">
+              <!-- <img src="/assets/img/index/tw-burger.svg" alt="ic"> -->
             </a>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_inst">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_inst}`">
-              <img src="/assets/img/index/inst-burger.svg" alt="ic">
+              <!-- <img src="/assets/img/index/inst-burger.svg" alt="ic"> -->
             </a>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_fb">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_fb}`">
-              <img src="/assets/img/index/face-burger.svg" alt="ic">
+              <!-- <img src="/assets/img/index/face-burger.svg" alt="ic"> -->
             </a>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_yt">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_yt}`">
-              <img src="/assets/img/index/yout-burger.svg" alt="ic">
+              <!-- <img src="/assets/img/index/yout-burger.svg" alt="ic"> -->
             </a>
           </li>
         </ul>
