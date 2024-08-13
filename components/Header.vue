@@ -28,7 +28,7 @@
                   before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
                   after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
                 ">
-                {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+                <!-- {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }} -->
               </NuxtLink>
 
             </div>
@@ -86,15 +86,15 @@
           </button>
           <div
             class="projectsMenu flex opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-[50%] translate-x-[-50%] border border-whiteOp-300">
-            <button v-if="locale !== 'ua'" @click="_ => changeLocale('ua')"
+            <button v-if="locale !== 'ua'" @click="() => changeLocale('ua')"
               class="text-white md:text-xs lg:text-sm mb-4 last:mb-0 hover:text-blue-400 transition-all">
               UA
             </button>
-            <button v-if="locale !== 'ru'" @click="_ => changeLocale('ru')"
+            <button v-if="locale !== 'ru'" @click="() => changeLocale('ru')"
               class="text-white md:text-xs lg:text-sm mb-4 last:mb-0 hover:text-blue-400 transition-all">
               RU
             </button>
-            <button v-if="locale !== 'en'" @click="_ => changeLocale('en')"
+            <button v-if="locale !== 'en'" @click="() => changeLocale('en')"
               class="text-white md:text-xs lg:text-sm mb-4 last:mb-0 hover:text-blue-400 transition-all">
               EN
             </button>
@@ -144,7 +144,7 @@
       </div>
     </div>
 
-    <!-- <div id="burgerMenu"
+    <div id="burgerMenu"
       class="'burger__body absolute z-[2] top-full left-0 transition-all w-full h-fit bg-blue-500 flex-col text-center pt-12 pb-8 text-white text-lg border-t-2 border-whiteOp-300 z-10'"
       :class="isOpenBurger ? 'opacity-100 visible' : 'opacity-0 invisible'">
       <div class="group burger__proj mb-8 md:hidden block">
@@ -162,7 +162,7 @@
 
           <NuxtLink @click="handleCloseBurger" :href="`/projects/${item.id}`" v-for="item in projectsStore.projects" :key="item.id"
             class="mb-4 text-sm hover:text-blue-400 transition-all">
-            {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+            <!-- {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }} -->
           </NuxtLink>
 
         </div>
@@ -199,17 +199,17 @@
       <div class="flex xl:hidden mt-12 pt-7 border-t border-whiteOp-300 gap-11 justify-center">
         <ul class="flex items-center gap-4">
           <li>
-            <button @click="_ => changeLocale('ua')" class="hover:text-blue-400 transition-all text-white text-base">
+            <button @click="() => changeLocale('ua')" class="hover:text-blue-400 transition-all text-white text-base">
               UA
             </button>
           </li>
           <li>
-            <button @click="_ => changeLocale('ru')" class="hover:text-blue-400 transition-all text-white text-base">
+            <button @click="() => changeLocale('ru')" class="hover:text-blue-400 transition-all text-white text-base">
               RU
             </button>
           </li>
           <li>
-            <button @click="_ => changeLocale('en')" class="hover:text-blue-400 transition-all text-white text-base">
+            <button @click="() => changeLocale('en')" class="hover:text-blue-400 transition-all text-white text-base">
               EN
             </button>
           </li>
@@ -237,7 +237,7 @@
           </li>
         </ul>
       </div>
-    </div> -->
+    </div>
 
     <div @click="handleOpenBurger" class="fixed -z-[30] top-0 h-screen w-full left-0 bg-black transition-all "
       :class="isOpenBurger ? 'bg-opacity-60 visible pointer-events-auto' : 'bg-opacity-0 invisible pointer-events-none'">
