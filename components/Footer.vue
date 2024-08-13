@@ -14,7 +14,7 @@
             </div>
 
             <div class="xl:flex xl:items-center gap-5 justify-between md:mb-24">
-                <img v-if="toolkitStore?.settings?.footer_img"
+                <img loading="lazy" v-if="toolkitStore?.settings?.footer_img"
                     :src="`https://avalon-panel.sonisapps.com/assets/${toolkitStore?.settings?.footer_img}`"
                     class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph">
 
@@ -27,7 +27,7 @@
                     <div class="md:mb-[30px] md:pb-[30px] border-b border-white/10 mb-5 pb-5">
                         <a :href="toolkitStore?.settings?.soc_link_whats" target="_blank"
                             class="flex items-center gap-4 mb-7 md:gap-4 lg:gap-5 group">
-                            <img src="/assets/img/index/whatsap.svg" class="w-[60px] h-[60px] 3xl:w-[70px] 3xl:h-[70px]"
+                            <img loading="lazy" src="/assets/img/index/whatsap.svg" class="w-[60px] h-[60px] 3xl:w-[70px] 3xl:h-[70px]"
                                 alt="ic">
                             <div>
                                 <span class="text-white/40 text-sm md:text-base md:mb-2">
@@ -41,7 +41,7 @@
                         </a>
                         <a :href="`mailto:${toolkitStore?.settings?.email}`" target="_blank"
                             class="flex items-center gap-4 md:gap-5 group">
-                            <img src="/assets/img/index/mail.svg" class="w-[60px] h-[60px] 3xl:w-[70px] 3xl:h-[70px]"
+                            <img loading="lazy" src="/assets/img/index/mail.svg" class="w-[60px] h-[60px] 3xl:w-[70px] 3xl:h-[70px]"
                                 alt="ic">
                             <div>
                                 <span class="text-white/40 text-sm md:text-base md:mb-2">
@@ -95,7 +95,7 @@
 
                 <form @submit.prevent="submitForm"
                     class="flex xl:max-w-[381px] lg:max-w-full flex-col p-5 md:px-5 md:py-12 border border-whiteOp-300 rounded-2xl text-center lg:p-12 relative mb-14 md:mb-0">
-                    <img src="/assets/img/index/dot-decor-2.png" class="absolute right-[-1px] bottom-[-1px] w-5 md:w-8"
+                    <img loading="lazy" src="/assets/img/index/dot-decor-2.png" class="absolute right-[-1px] bottom-[-1px] w-5 md:w-8"
                         alt="decor">
                     <h2 class="font-bold text-white md:text-2xl mb-4 3xl:text-3xl md:mb-7 leading-[100%]">
                         {{ $t('want_know_more') }}
@@ -140,7 +140,7 @@
         <div class="bg-blue-500 py-7 md:py-2">
             <div class="container">
                 <div class="flex items-center justify-between gap-8">
-                    <img src="/assets/img/index/a-footer.png" class="max-w-[96px] md:hidden" alt="ph">
+                    <img src="/assets/img/index/a-footer.png" loading="lazy"class="max-w-[96px] md:hidden" alt="ph">
 
                     <!-- <div class="logo-clip-path md:hidden">
                         <video loop class="w-[96px] h-[100px] object-cover" muted autoplay>

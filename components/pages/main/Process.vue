@@ -12,9 +12,9 @@
             <div
                 class=" md:rounded-tr-3xl md:rounded-bl-3xl pt-14 pb-28 px-5 relative md:pb-11 md:px-[80px] lg:px-[120px] md:pt-[100px]">
 
-                <img src="/assets/img/index/buy-bg-desk.png"
+                <img loading="lazy" src="/assets/img/index/buy-bg-desk.png"
                     class="absolute top-0 left-0 w-full h-full z-0 hidden md:block backdrop-blur-[1px]" alt="">
-                <img src="/assets/img/index/buy-list-bg.png"
+                <img loading="lazy" src="/assets/img/index/buy-list-bg.png"
                     class="absolute top-0 left-0 w-full h-full z-0 block md:hidden backdrop-blur" alt="">
 
                 <div class="md:flex hidden absolute w-[150px] lg:w-[240px] items-center right-0 top-[140px]">
@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="relative z-10" data-aos="fade-up">
-                    <img src="/assets/img/index/point-line.png"
+                    <img loading="lazy" src="/assets/img/index/point-line.png"
                         class="hidden md:block absolute md:top-[71px] lg:top-[90px] md:h-[209px] lg:h-[260px] right-[-40px] w-full md:max-w-[910px] lg:max-w-[1188px]"
                         alt="line ph">
                     <ul
@@ -260,7 +260,7 @@
                     </button>
 
                     <div class="flex items-center gap-10">
-                        <img src="/assets/img/index/a-decor-op.svg" class="hidden md:block md:max-w-[112px]" alt="decor">
+                        <img loading="lazy" src="/assets/img/index/a-decor-op.svg" class="hidden md:block md:max-w-[112px]" alt="decor">
                         <div class="pt-5 border-t border-whiteOp-300 md:border-none md:pt-0 md:max-w-[526px]">
                             <p class="text-white opacity-50 text-sm mb-5 md:text-[14px] md:text-left">
                                 {{ itemStrings?.filter(item => item.id === 148)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}

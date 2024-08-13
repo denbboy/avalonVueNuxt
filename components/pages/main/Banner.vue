@@ -132,7 +132,7 @@
             </div>
 
             <div class="hidden md:block">
-              <img src="/assets/img/index/banner-logo.svg" alt="">
+              <img loading="lazy" src="/assets/img/index/banner-logo.svg" alt="">
             </div>
           </div>
 

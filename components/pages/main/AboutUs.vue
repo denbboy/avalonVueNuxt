@@ -3,13 +3,13 @@
     <!-- <div class="absolute lg:-right-36 -top-14 lg:hidden -right-14 w-28 z-[2]"></div> -->
     <div
       class="absolute lg:bottom-[5px] top-10 lg:top-auto w-28 lg:-left-36 lg:right-auto -right-14 lg:w-72 lg:h-72 z-10">
-      <img src="/assets/img/icons/vector-logo.svg" alt="vector-logo">
+      <img loading="lazy" src="/assets/img/icons/vector-logo.svg" alt="vector-logo">
     </div>
     <div class="container">
       <div class="md:flex md:items-center gap-8 justify-between">
         <div class="w-full">
           <div class="flex items-center mb-8 md:mb-10" data-aos="fade-up">
-            <img src="/assets/img/index/a-us-decor.svg" class="max-w-[60px] mr-4 md:max-w-[80px] md:mr-5" alt="ic a">
+            <img loading="lazy" src="/assets/img/index/a-us-decor.svg" class="max-w-[60px] mr-4 md:max-w-[80px] md:mr-5" alt="ic a">
             <h2 class="flex flex-col font-bold text-white text-3xl md:text-[40px]">
               AVALON
               <span class="text-right font-normal text-[8px] mt-[-10px] md:text-[10px] md:mt-[-8px]">
@@ -87,7 +87,7 @@
               d="M327.488 2.83042C458.839 17.8616 520.292 159.634 505.255 291.034C493.455 394.15 381.711 441.552 278.633 429.756C146.896 414.681 -13.4797 365.183 1.60108 233.398C19.3293 78.4784 172.625 -14.8912 327.488 2.83042Z"
               stroke="white"/>
           </svg>
-          <img src="/assets/img/index/about-photo.png" class="w-full relative z-10" alt="ph" data-aos="fade-left">
+          <img loading="lazy" src="/assets/img/index/about-photo.png" class="w-full relative z-10" alt="ph" data-aos="fade-left">
         </div>
       </div>
     </div>
