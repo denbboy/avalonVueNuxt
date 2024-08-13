@@ -1,20 +1,21 @@
 <template>
 
   <NuxtLayout>
-    <transition name="fade">
-      <NuxtPage />
-    </transition>
+    <!-- <transition name="fade"> -->
+      <!-- <NuxtPage /> -->
+       фыв
+    <!-- </transition> -->
   </NuxtLayout>
 
 </template>
 
 <script setup>
 
-  const modalsStore = useModalsStore()
+  // const modalsStore = useModalsStore()
 
-  setTimeout(() => {
-    modalsStore.addModal('message')
-  }, 10000)
+  // setTimeout(() => {
+  //   modalsStore.addModal('message')
+  // }, 10000)
 
 </script>
 
