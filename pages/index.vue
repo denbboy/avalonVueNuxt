@@ -49,6 +49,6 @@ import { useToolkit } from './../stores/functions/toolkit';
 
 const toolkitStore = useToolkit();
 
-const slides = await useAsyncData('Slides', () => $fetch('/api/slides'));
+// const slides = await useAsyncData('Slides', () => $fetch('/api/slides'));
 
 </script>

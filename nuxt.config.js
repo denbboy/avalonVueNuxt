@@ -65,9 +65,6 @@ export default defineNuxtConfig({
     "~/plugins/gtm.js",
     // { src: '~/plugins/gtm.js', ssr: false },
   ],
-  // aos: {
-  //   once: true,
-  // },
   css: ["~/assets/css/main.css"],
   modules: [
     "@nuxtjs/tailwindcss",
@@ -82,25 +79,6 @@ export default defineNuxtConfig({
     "nuxt-meta-pixel",
     // "nuxt-lazy-load",
   ],
-  lazyLoad: {
-    images: true,
-    videos: true,
-    audios: true,
-    iframes: true,
-    native: false,
-    directiveOnly: false,
-
-    defaultImage:
-      "https://i.pinimg.com/originals/ce/ca/e6/cecae62ec79ddc1d9d95c3131510f3e6.gif",
-
-    loadingClass: "skeleton", // Примените скелетон как класс загрузки
-    loadedClass: "isLoaded",
-    appendClass: "lazyLoad",
-
-    observerConfig: {
-      // Настройка IntersectionObserver
-    },
-  },
   directus: {
     url: "https://avalon-panel.sonisapps.com/",
   },

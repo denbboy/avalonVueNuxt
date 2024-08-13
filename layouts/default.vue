@@ -3,7 +3,7 @@
     <!-- <HeaderProject v-if="isProjectHeader" />
     <Header v-else /> -->
     <slot />
-    <ModalsModal />
+    <!-- <ModalsModal /> -->
     <Footer />
   </div>
 
@@ -52,18 +52,18 @@ watch(() => route.fullPath, (newPath) => {
 });
 
 
-const { $fbq } = useNuxtApp()
+// const { $fbq } = useNuxtApp()
 
-onMounted(() => {
-  $fbq('track', 'CompleteRegistration')
-  $fbq('trackSingle', toolkitStore?.settings?.facebook_pixel, 'CompleteRegistration')
+// onMounted(() => {
+//   $fbq('track', 'CompleteRegistration')
+//   $fbq('trackSingle', toolkitStore?.settings?.facebook_pixel, 'CompleteRegistration')
 
-  setTimeout(() => {
-    AOS.init({
-      once: true,
-    });
-  }, 500)
-})
+//   setTimeout(() => {
+//     AOS.init({
+//       once: true,
+//     });
+//   }, 500)
+// })
 
 
 </script>

@@ -191,11 +191,6 @@
         </div>
     </footer>
 
-    <div class="fixed left-0 top-0 h-full w-full z-50 bg-blue-500 transition-all duration-150 flex items-center justify-center"
-        :class="loading ? 'visible opacity-100' : 'opacity-0 invisible'">
-        <!-- <img class="w-[1000px]" src="/assets/img/loader.gif" alt=""> -->
-        <iframe class="w-[800px] h-[800px]" src="https://lottie.host/embed/1b26babb-a87c-48e7-9a0a-f31a06298110/CixbB89Yfp.json"></iframe>
-    </div>
 </template>
 
 
