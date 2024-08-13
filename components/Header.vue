@@ -1,7 +1,7 @@
 <template>
 
   <header class=" z-30 transition-all absolute w-full">
-    <div
+    <!-- <div
       class="header-wrapper w-full bg-blue-500 h-fit py-4 border-b-2 border-b-whiteOp-300 md:border-none transition-all"
       :class="isOpenBurger ? 'bg-blue-500' : 'md:bg-transparent'">
 
@@ -241,7 +241,7 @@
 
     <div @click="handleOpenBurger" class="fixed -z-[30] top-0 h-screen w-full left-0 bg-black transition-all "
       :class="isOpenBurger ? 'bg-opacity-60 visible pointer-events-auto' : 'bg-opacity-0 invisible pointer-events-none'">
-    </div>
+    </div> -->
   </header>
 
   <!-- <Preloader :isActive="isLoading"/> -->
