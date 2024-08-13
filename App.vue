@@ -9,12 +9,14 @@
 </template>
 
 <script setup>
+const nuxtApp = useNuxtApp();
+const modalsStore = useModalsStore();
 
-  const modalsStore = useModalsStore()
-
+nuxtApp.hook("page:finish", () => {
   setTimeout(() => {
     modalsStore.addModal('message')
   }, 10000)
+});
 
 </script>
 
@@ -23,6 +25,7 @@
 .page-leave-active {
   transition: all 0.4s;
 }
+
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
