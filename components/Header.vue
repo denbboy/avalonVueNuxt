@@ -244,7 +244,7 @@
     </div>
   </header>
 
-  <Preloader :isActive="isLoading"/>
+  <!-- <Preloader :isActive="isLoading"/> -->
 </template>
 
 <script setup>
@@ -306,13 +306,13 @@ const changeLanguage = (newLocale) => {
   }, 500)
 }
 
-onMounted(() => {
-  const savedLanguage = localStorage.getItem('selectedLanguage');
-  const urlLocale = route.fullPath.match(/^\/([a-z]{2})(\/|$)/)?.[1] || null;
-  const initialLocale = urlLocale || savedLanguage || DEFAULT_LOCALE;
+// onMounted(() => {
+//   const savedLanguage = localStorage.getItem('selectedLanguage');
+//   const urlLocale = route.fullPath.match(/^\/([a-z]{2})(\/|$)/)?.[1] || null;
+//   const initialLocale = urlLocale || savedLanguage || DEFAULT_LOCALE;
 
-  changeLocale(initialLocale);
-});
+//   changeLocale(initialLocale);
+// });
 
 const openSubMenu = () => {
   isOpenSubMenu.value = !isOpenSubMenu.value;
@@ -331,13 +331,13 @@ const handleOpenModal = () => {
   handleCloseBurger();
 };
 
-const handleOpen = () => {
-  isOpen.value = !isOpen.value;
-};
+// const handleOpen = () => {
+//   isOpen.value = !isOpen.value;
+// };
 
-const computedHref = computed(() => {
-  const currentLocale = langStore.lang || 'ru';
-  const pathWithoutLocale = route.fullPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
-  return `/${currentLocale !== 'ru' ? currentLocale : ''}${pathWithoutLocale}`;
-});
+// const computedHref = computed(() => {
+//   const currentLocale = langStore.lang || 'ru';
+//   const pathWithoutLocale = route.fullPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
+//   return `/${currentLocale !== 'ru' ? currentLocale : ''}${pathWithoutLocale}`;
+// });
 </script>
