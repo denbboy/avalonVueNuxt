@@ -7,7 +7,7 @@
     <Meta name="description" content="Avalon" />
   </Head>
 
-  <PagesMainBanner />
+  <!-- <PagesMainBanner /> -->
 
   <PagesMainProjects />
 
