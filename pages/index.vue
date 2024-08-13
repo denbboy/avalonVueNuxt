@@ -7,17 +7,17 @@
     <Meta name="description" content="Avalon" />
   </Head>
 
-  <LazyPagesMainBanner v-if="!!slides?.data?.value?.length" :slides="slides" />
+  <!-- <LazyPagesMainBanner v-if="!!slides?.data?.value?.length" :slides="slides" />
 
   <LazyPagesMainProjects />
 
   <LazyPagesMainMap />
 
-  <LazyPagesMainReasons />
+  <LazyPagesMainReasons /> -->
 
   <LazyPagesMainNumbers />
 
-  <LazyPagesMainCompanies />
+  <!-- <LazyPagesMainCompanies />
 
   <LazyPagesMainProcess />
 
@@ -40,7 +40,7 @@
     <span class="relative z-10">
       {{ $t('connect_in_whatsapp') }}
     </span>
-  </a>
+  </a> -->
 
 </template>
 
@@ -49,6 +49,6 @@ import { useToolkit } from './../stores/functions/toolkit';
 
 const toolkitStore = useToolkit();
 
-const slides = await useAsyncData('Slides', () => $fetch('/api/slides'));
+// const slides = await useAsyncData('Slides', () => $fetch('/api/slides'));
 
 </script>
