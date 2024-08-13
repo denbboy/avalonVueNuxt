@@ -1,7 +1,7 @@
 <template>
 
   <header class=" z-30 transition-all absolute w-full">
-    <!-- <div
+    <div
       class="header-wrapper w-full bg-blue-500 h-fit py-4 border-b-2 border-b-whiteOp-300 md:border-none transition-all"
       :class="isOpenBurger ? 'bg-blue-500' : 'md:bg-transparent'">
 
@@ -86,15 +86,15 @@
           </button>
           <div
             class="projectsMenu flex opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-[50%] translate-x-[-50%] border border-whiteOp-300">
-            <button v-if="locale !== 'ua'" @click="changeLocale('ua')"
+            <button v-if="locale !== 'ua'" @click="_ => changeLocale('ua')"
               class="text-white md:text-xs lg:text-sm mb-4 last:mb-0 hover:text-blue-400 transition-all">
               UA
             </button>
-            <button v-if="locale !== 'ru'" @click="changeLocale('ru')"
+            <button v-if="locale !== 'ru'" @click="_ => changeLocale('ru')"
               class="text-white md:text-xs lg:text-sm mb-4 last:mb-0 hover:text-blue-400 transition-all">
               RU
             </button>
-            <button v-if="locale !== 'en'" @click="changeLocale('en')"
+            <button v-if="locale !== 'en'" @click="_ => changeLocale('en')"
               class="text-white md:text-xs lg:text-sm mb-4 last:mb-0 hover:text-blue-400 transition-all">
               EN
             </button>
@@ -144,7 +144,7 @@
       </div>
     </div>
 
-    <div id="burgerMenu"
+    <!-- <div id="burgerMenu"
       class="'burger__body absolute z-[2] top-full left-0 transition-all w-full h-fit bg-blue-500 flex-col text-center pt-12 pb-8 text-white text-lg border-t-2 border-whiteOp-300 z-10'"
       :class="isOpenBurger ? 'opacity-100 visible' : 'opacity-0 invisible'">
       <div class="group burger__proj mb-8 md:hidden block">
@@ -237,11 +237,11 @@
           </li>
         </ul>
       </div>
-    </div>
+    </div> -->
 
     <div @click="handleOpenBurger" class="fixed -z-[30] top-0 h-screen w-full left-0 bg-black transition-all "
       :class="isOpenBurger ? 'bg-opacity-60 visible pointer-events-auto' : 'bg-opacity-0 invisible pointer-events-none'">
-    </div> -->
+    </div>
   </header>
 
   <!-- <Preloader :isActive="isLoading"/> -->
