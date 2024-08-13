@@ -7,31 +7,31 @@
     <Meta name="description" content="Avalon" />
   </Head>
 
-  <PagesMainBanner />
+  <!-- <PagesMainBanner v-if="!!slides?.data?.value?.length" :slides="slides" /> -->
 
-  <PagesMainProjects />
+  <!-- <PagesMainProjects /> -->
 
-  <PagesMainMap />
+  <!-- <PagesMainMap /> -->
 
-  <PagesMainReasons />
+  <!-- <PagesMainReasons /> -->
 
-  <PagesMainNumbers />
+  <!-- <PagesMainNumbers /> -->
 
-  <PagesMainCompanies />
+  <!-- <PagesMainCompanies /> -->
 
-  <PagesMainProcess />
+  <!-- <PagesMainProcess /> -->
 
-  <PagesMainAboutUs />
+  <!-- <PagesMainAboutUs /> -->
 
-  <PagesMainTeam />
+  <!-- <PagesMainTeam /> -->
 
-  <PagesMainContacts />
+  <!-- <PagesMainContacts /> -->
 
-  <PagesMainSales />
+  <!-- <PagesMainSales />
 
   <PagesMainNews />
 
-  <PagesMainArticles />
+  <PagesMainArticles /> -->
 
   <a :href="toolkitStore?.settings?.soc_link_whats" target="_blank" type="button"
     class="fixed group bottom-8 right-8 z-40 hidden lg:flex items-center gap-2 py-5 px-10px w-full bg-blue-400 rounded-xl max-w-[260px] text-white text-sm font-bold justify-center transition-all hover:bg-blue-600 ">
@@ -48,5 +48,7 @@
 import { useToolkit } from './../stores/functions/toolkit';
 
 const toolkitStore = useToolkit();
+
+const slides = await useAsyncData('Slides', () => $fetch('/api/slides'));
 
 </script>

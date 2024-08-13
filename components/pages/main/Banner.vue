@@ -2,9 +2,9 @@
   <section class="lg:pb-12 pb-0 min-h-[900px]">
 
     <!-- :modules="modules" -->
-    <swiper v-if="!!slides?.data?.value?.length" class="swiper-banner" :loop="true" :slides-per-view="1"
-      :pagination="{ clickable: true }" :modules="[Pagination, A11y, Autoplay]" pagination a11y
-      :autoplay="{ delay: 15000, disableOnInteraction: false }" :speed="1500">
+    <swiper class="swiper-banner" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
+      :modules="[Pagination, A11y, Autoplay]" pagination a11y :autoplay="{ delay: 15000, disableOnInteraction: false }"
+      :speed="1500">
 
 
       <swiper-slide v-for="item in slides?.data?.value"
@@ -73,12 +73,11 @@
               <div class="brightness-[1] bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
 
                 <SkeletonLoader v-if="item?.img" class="w-full h-full">
-                  <img v-show="!imageLoaded" ref="image" data-not-lazy loading="lazy"
-                    class="opacity-1 absolute top-0 brightness-50 left-0 w-full h-full"
+                  <img v-show="!imageLoaded" ref="image" loading="lazy"
+                    class="opacity-0 absolute top-0 brightness-50 left-0 w-full h-full"
                     :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`" @error="onImageLoad"
                     @load="onImageLoad" />
-                  <img v-if="imageLoaded" loading="lazy" data-not-lazy
-                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`"
+                  <img v-if="imageLoaded" loading="lazy" :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`"
                     class="absolute top-0 brightness-50 left-0 w-full h-full" alt="">
                 </SkeletonLoader>
 
@@ -136,6 +135,7 @@
               <img src="/assets/img/index/banner-logo.svg" alt="">
             </div>
           </div>
+
           <div v-if="item?.strings?.length" class="flex justify-between items-end lg:mt-28 xl:mt-36 mt-10">
             <div class="flex gap-5">
               <div v-if="item?.strings.some(item => item.String_id.id === 2)" class="pr-5 border-r border-whiteOp-300">
@@ -178,9 +178,12 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
+const { slides } = defineProps(['slides'])
+
 const modalsStore = useModalsStore()
 const langStore = useLangStore();
 
+const isActive = ref(false)
 const imageLoaded = ref(false);
 const image = ref(null);
 
@@ -193,8 +196,6 @@ onMounted(() => {
     imageLoaded.value = true;
   }
 });
-
-const slides = await useAsyncData('Slides', () => $fetch('/api/slides'));
 
 const addModal = () => {
   modalsStore.addModal('presentation')
