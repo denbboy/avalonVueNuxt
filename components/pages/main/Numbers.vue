@@ -3,6 +3,7 @@
     <div class="absolute lg:-right-36 -top-14 lg:hidden -right-14 w-28 z-[2]">
       <!-- <img loading="lazy" src="/assets/img/icons/vector-logo.svg" alt="vector-logo"> -->
     </div>
+    
 
     <div class="container">
       <div class="bali_con grid grid-cols-2 gap-x-2 gap-y-7 md:grid-cols-3 md:gap-y-12 md:gap-x-5" data-aos="fade-up">
