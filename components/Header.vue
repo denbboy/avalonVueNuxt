@@ -1,7 +1,7 @@
 <template>
 
   <header class=" z-30 transition-all absolute w-full">
-    <div
+    <!-- <div
       class="header-wrapper w-full bg-blue-500 h-fit py-4 border-b-2 border-b-whiteOp-300 md:border-none transition-all"
       :class="isOpenBurger ? 'bg-blue-500' : 'md:bg-transparent'">
 
@@ -28,7 +28,7 @@
                   before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
                   after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
                 ">
-                <!-- {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }} -->
+                {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
               </NuxtLink>
 
             </div>
@@ -162,7 +162,7 @@
 
           <NuxtLink @click="handleCloseBurger" :href="`/projects/${item.id}`" v-for="item in projectsStore.projects" :key="item.id"
             class="mb-4 text-sm hover:text-blue-400 transition-all">
-            <!-- {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }} -->
+            {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
           </NuxtLink>
 
         </div>
@@ -241,7 +241,7 @@
 
     <div @click="handleOpenBurger" class="fixed -z-[30] top-0 h-screen w-full left-0 bg-black transition-all "
       :class="isOpenBurger ? 'bg-opacity-60 visible pointer-events-auto' : 'bg-opacity-0 invisible pointer-events-none'">
-    </div>
+    </div> -->
   </header>
 
   <!-- <Preloader :isActive="isLoading"/> -->
