@@ -29,20 +29,20 @@ const blocksStore = useBlocksStore();
 const pagesStore = usePagesStore();
 const formsStore = useFormsStore();
 
-// const settings = await useAsyncData("Settings", () => $fetch('/api/settings'))
-// toolkitStore.setSettings(settings?.data);
+const settings = await useAsyncData("Settings", () => $fetch('/api/settings'))
+toolkitStore.setSettings(settings?.data);
 
-// const projects = await useAsyncData("Projects", () => $fetch('/api/projects'))
-// projectsStore.setProjects(projects?.data);
+const projects = await useAsyncData("Projects", () => $fetch('/api/projects'))
+projectsStore.setProjects(projects?.data);
 
-// const forms = await useAsyncData("Forms", () => $fetch('/api/forms'))
-// formsStore.setForms(forms?.data)
+const forms = await useAsyncData("Forms", () => $fetch('/api/forms'))
+formsStore.setForms(forms?.data)
 
-// const pages = await useAsyncData("Pages", () => $fetch('/api/navigationPages'))
-// pagesStore.setPages(pages?.data);
+const pages = await useAsyncData("Pages", () => $fetch('/api/navigationPages'))
+pagesStore.setPages(pages?.data);
 
-// const blocks = await useAsyncData("Blocks", () => $fetch('/api/blocks'))
-// blocksStore.setBlocks(blocks?.data);
+const blocks = await useAsyncData("Blocks", () => $fetch('/api/blocks'))
+blocksStore.setBlocks(blocks?.data);
 
 
 const isProjectHeader = ref(route.fullPath.includes('/projects/'));
