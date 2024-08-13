@@ -7,7 +7,7 @@
     <Meta name="description" content="Avalon" />
   </Head>
 
-  <!-- <PagesMainBanner /> -->
+  <PagesMainBanner />
 
   <PagesMainProjects />
 
@@ -27,11 +27,11 @@
 
   <PagesMainContacts />
 
-  <!-- <PagesMainSales /> -->
+  <PagesMainSales />
 
-  <!-- <PagesMainNews /> -->
+  <PagesMainNews />
 
-  <!-- <PagesMainArticles /> -->
+  <PagesMainArticles />
 
   <a :href="toolkitStore?.settings?.soc_link_whats" target="_blank" type="button"
     class="fixed group bottom-8 right-8 z-40 hidden lg:flex items-center gap-2 py-5 px-10px w-full bg-blue-400 rounded-xl max-w-[260px] text-white text-sm font-bold justify-center transition-all hover:bg-blue-600 ">

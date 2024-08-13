@@ -80,7 +80,7 @@ export default defineNuxtConfig({
     // "@dargmuesli/nuxt-cookie-control",
     "@zadigetvoltaire/nuxt-gtm",
     "nuxt-meta-pixel",
-    "nuxt-lazy-load",
+    // "nuxt-lazy-load",
   ],
   lazyLoad: {
     images: true,

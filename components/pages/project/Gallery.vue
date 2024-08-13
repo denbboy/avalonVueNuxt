@@ -11,14 +11,18 @@
                 class="grid gap-4 grid-cols-2 md:grid-cols-3 md:[&>.image:nth-child(3n+1)]:col-start-auto md:[&>.image:nth-child(3n+1)]:col-end-auto [&>.image:nth-child(3n+1)]:col-start-1 [&>.image:nth-child(3n+1)]:col-end-3 md:[&>.image:nth-child(7n+1)]:col-start-1 md:[&>.image:nth-child(7n+1)]:col-end-3 md:[&>.image:nth-child(7n+7)]:col-start-2 md:[&>.image:nth-child(7n+7)]:col-end-4">
 
                 <client-only>
-                    <a v-for="image in gallery?.slice(0, isShowFull ? 9999 : 7)" @click="handleOpenImage" :key="image?.directus_files_id"
-                        data-aos="fade-up" class="image lg:h-[343px] overflow-hidden" data-fancybox="gallery"
+                    <a v-for="image in gallery?.slice(0, isShowFull ? 9999 : 7)"
+                        :key="image?.directus_files_id" data-aos="fade-up" class="image lg:h-[343px] overflow-hidden"
+                        data-fancybox="gallery"
                         :href="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`">
 
-                        <img v-if="image?.directus_files_id"
+
+                        <PagesProjectGalleryImage :imageFile="image?.directus_files_id"/>
+
+                        <!-- <img v-if="image?.directus_files_id"
                             :class="{ 'rounded-2xl w-full flex items-center justify-center h-full object-cover': true, 'isLoaded': imageLoaded }"
                             @load="imageLoaded = true"
-                            :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`" />
+                            :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`" /> -->
                     </a>
                 </client-only>
 
@@ -40,17 +44,7 @@
 
 <script setup>
 
-const handleOpenImage = () => {
-    setTimeout(() => {
-        document.querySelectorAll('.f-thumbs__slide__img').forEach((item) => {
-        item.src = item.getAttribute('data-lazy-data-src')
-    })
-    }, 100)
-}
-
 const { gallery } = defineProps(['gallery'])
-
-console.log('gallery', gallery[0].directus_files_id);
 
 const isShowFull = ref(false);
 

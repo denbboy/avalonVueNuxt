@@ -199,17 +199,17 @@
       <div class="flex xl:hidden mt-12 pt-7 border-t border-whiteOp-300 gap-11 justify-center">
         <ul class="flex items-center gap-4">
           <li>
-            <button @click="changeLocale('ua')" class="hover:text-blue-400 transition-all text-white text-base">
+            <button @click="_ => changeLocale('ua')" class="hover:text-blue-400 transition-all text-white text-base">
               UA
             </button>
           </li>
           <li>
-            <button @click="changeLocale('ru')" class="hover:text-blue-400 transition-all text-white text-base">
+            <button @click="_ => changeLocale('ru')" class="hover:text-blue-400 transition-all text-white text-base">
               RU
             </button>
           </li>
           <li>
-            <button @click="changeLocale('en')" class="hover:text-blue-400 transition-all text-white text-base">
+            <button @click="_ => changeLocale('en')" class="hover:text-blue-400 transition-all text-white text-base">
               EN
             </button>
           </li>
@@ -244,12 +244,7 @@
     </div>
   </header>
 
-  <div
-    class="fixed left-0 top-0 h-full w-full z-50 bg-blue-500 transition-all duration-150 flex items-center justify-center"
-    :class="loading ? 'visible opacity-100' : 'opacity-0 invisible'">
-    <!-- <img class="w-[100px]" data-not-lazy src="/assets/img/loader.gif" alt=""> -->
-    <iframe class="w-[800px] h-[800px]" src="https://lottie.host/embed/1b26babb-a87c-48e7-9a0a-f31a06298110/CixbB89Yfp.json"></iframe>
-  </div>
+  <Preloader :isActive="isLoading"/>
 </template>
 
 <script setup>
@@ -258,9 +253,10 @@ import { useI18n } from 'vue-i18n';
 import { useLangStore } from '~/stores/functions/language';
 import { useToolkit } from '~/stores/functions/toolkit';
 import { useProjectsStore } from '~/stores/functions/projects';
+import { usePreloaderStore } from '~/stores/functions/preloader';
 import { useRouter, useRoute } from 'vue-router';
 
-const loading = ref(true);
+const isLoading = ref(false);
 const isOpenBurger = ref(false);
 const isScrolled = ref(false);
 const isOpen = ref(false);
@@ -273,49 +269,44 @@ const { locale } = useI18n();
 const langStore = useLangStore();
 const toolkitStore = useToolkit();
 const projectsStore = useProjectsStore();
+const preloaderStore = usePreloaderStore();
 const modalsStore = useModalsStore();
 
 const DEFAULT_LOCALE = 'en'; // Основной язык
 
-const changeLocale = async (newLocale) => {
-  loading.value = true;
+const changeLocale = (newLocale) => {
+  isLoading.value = true;
 
-  // Получаем текущий путь и удаляем любой существующий префикс языка
+  preloaderStore.start()
+  
+  setTimeout(() => changeLanguage(newLocale), 500)
+};
+
+const changeLanguage = (newLocale) => {
   const currentPath = route.fullPath;
   let pathWithoutLocale = currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
 
-  // Добавляем новый префикс языка, если он не равен значению по умолчанию
   if (newLocale !== DEFAULT_LOCALE) {
     pathWithoutLocale = `/${newLocale}${pathWithoutLocale}`;
   } else {
     pathWithoutLocale = `/${pathWithoutLocale}`;
   }
 
-  // Обновляем URL
   if (router.currentRoute.value.fullPath !== pathWithoutLocale) {
     router.push(pathWithoutLocale);
   }
 
-  // Обновляем язык после изменения URL
   locale.value = newLocale;
   langStore.setLang(newLocale);
 
-  // Сохраняем выбранный язык в localStorage
   localStorage.setItem('selectedLanguage', newLocale);
 
-  // Отключаем индикатор загрузки
   setTimeout(() => {
-    loading.value = false;
-  }, 6000);
-};
+    preloaderStore.stop()
+  }, 500)
+}
 
-
-// Load the language from localStorage on mounted
 onMounted(() => {
-  setTimeout(() => {
-    loading.value = false
-  }, 6000)
-
   const savedLanguage = localStorage.getItem('selectedLanguage');
   const urlLocale = route.fullPath.match(/^\/([a-z]{2})(\/|$)/)?.[1] || null;
   const initialLocale = urlLocale || savedLanguage || DEFAULT_LOCALE;

@@ -213,13 +213,7 @@
     </div>
   </header>
 
-  <div
-    class="fixed left-0 top-0 h-full w-full z-50 bg-blue-500 transition-all duration-150 flex items-center justify-center"
-    :class="loading ? 'visible opacity-100' : 'opacity-0 invisible'">
-    <iframe class="w-[800px] h-[800px]" src="https://lottie.host/embed/1b26babb-a87c-48e7-9a0a-f31a06298110/CixbB89Yfp.json"></iframe>
-
-  </div>
-
+  <Preloader :isActive="isLoading"/>
 </template>
 
 <style>
@@ -233,14 +227,16 @@
 import { ref, defineProps, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n'
 import { useLangStore } from './../stores/functions/language';
+import { usePreloaderStore } from '~/stores/functions/preloader';
 
 
 const nuxtApp = useNuxtApp();
-const loading = ref(true);
+const isLoading = ref(true);
 const router = useRouter();
 const route = useRoute();
 const toolkitStore = useToolkit();
 const props = defineProps(['header'])
+const preloaderStore = usePreloaderStore();
 const projectsStore = useProjectsStore();
 const { locale } = useI18n()
 
@@ -269,42 +265,42 @@ const handleOpen = () => {
 
 onMounted(() => {
   setTimeout(() => {
-    loading.value = false
+    isLoading.value = false
   }, 6000)
 })
 
 const DEFAULT_LOCALE = 'en';
 
-const changeLocale = async (newLocale) => {
-  loading.value = true;
+const changeLocale = (newLocale) => {
+  isLoading.value = true;
 
-  // Получаем текущий путь и удаляем любой существующий префикс языка
+  preloaderStore.start()
+  
+  setTimeout(() => changeLanguage(newLocale), 500)
+};
+
+const changeLanguage = (newLocale) => {
   const currentPath = route.fullPath;
   let pathWithoutLocale = currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
 
-  // Добавляем новый префикс языка, если он не равен значению по умолчанию
   if (newLocale !== DEFAULT_LOCALE) {
     pathWithoutLocale = `/${newLocale}${pathWithoutLocale}`;
   } else {
     pathWithoutLocale = `/${pathWithoutLocale}`;
   }
 
-  // Обновляем URL
   if (router.currentRoute.value.fullPath !== pathWithoutLocale) {
     router.push(pathWithoutLocale);
   }
 
-  // Обновляем язык после изменения URL
   locale.value = newLocale;
   langStore.setLang(newLocale);
 
-  // Сохраняем выбранный язык в localStorage
   localStorage.setItem('selectedLanguage', newLocale);
 
-  // Отключаем индикатор загрузки
   setTimeout(() => {
-    loading.value = false;
-  }, 500);
-};
+    preloaderStore.stop()
+  }, 500)
+}
 
 </script>

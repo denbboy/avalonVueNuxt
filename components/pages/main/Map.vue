@@ -10,7 +10,7 @@
     <div class="container relative z-20">
       <div class="md:flex">
         <div class="lg:-ml-20 mx-[-150px] md:-ml-44 md:mr-0 w-[calc(100%+400px)] md:w-full md:max-w-[1298px]">
-          <img src="/assets/img/index/map.svg" class="w-full" alt="ic">
+          <img src="/assets/img/index/map.png" class="w-full" alt="ic">
         </div>
         <div class="md:absolute bottom-0 max-w-[752px] md:right-[160px] lg:right-[180px] mt-8">
           <h2 class="text-white font-bold text-2xl md:text-[45px] lg:text-[56px] leading-[100%] mb-7 md:mb-[32px]"
