@@ -5,6 +5,7 @@
       class="header-wrapper w-full bg-blue-500 h-fit py-4 border-b-2 border-b-whiteOp-300 md:border-none transition-all"
       :class="isOpenBurger ? 'bg-blue-500' : 'md:bg-transparent'">
 
+      
       <div class="header__inner px-5 flex items-center justify-between gap-3 relative z-[2]">
         <NuxtLink :href="'/'">
           <img loading="lazy" src="/assets/img/newLogo.png" class="hidden md:max-w-[55px] w-full lg:max-w-[95px] xl:block" alt="logo">
