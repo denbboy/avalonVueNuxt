@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col min-h-[100vh] justify-between">
-    <!-- <LazyHeaderProject v-if="isProjectHeader" />
-    <LazyHeader v-else /> -->
+    <LazyHeaderProject v-if="isProjectHeader" />
+    <LazyHeader v-else />
     <slot />
     <!-- <LazyModalsModal /> -->
     <!-- <LazyFooter /> -->
