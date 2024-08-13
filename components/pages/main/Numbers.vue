@@ -1,9 +1,9 @@
 <template>
   <section class="bali py-14 md:py-24 bg-blue-600 relative overflow-hidden">
     <div class="absolute lg:-right-36 -top-14 lg:hidden -right-14 w-28 z-[2]">
-      <!-- <img loading="lazy" src="/assets/img/icons/vector-logo.svg" alt="vector-logo"> -->
+      <NuxtImg src="/img/icons/vector-logo.svg" loading="lazy" format="webp" alt="vector-logo" />
     </div>
-    
+
 
     <div class="container">
       <div class="bali_con grid grid-cols-2 gap-x-2 gap-y-7 md:grid-cols-3 md:gap-y-12 md:gap-x-5" data-aos="fade-up">
@@ -55,7 +55,7 @@
             {{ itemStrings?.filter(item => item.id === 135)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
           </p>
         </div>
-        <!-- <img loading="lazy" src="/assets/img/index/a-bali-decor.svg" class="m-auto md:hidden" alt="ic"> -->
+        <NuxtImg src="/img/index/a-bali-decor.svg" loading="lazy" class="m-auto md:hidden" format="webp" alt="vector-logo" />
         <!-- </div> -->
       </div>
     </div>
