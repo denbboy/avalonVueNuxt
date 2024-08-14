@@ -245,7 +245,7 @@
     </div>
   </header>
 
-  <!-- <Preloader :isActive="isLoading"/> -->
+  <Preloader :isActive="isLoading"/>
 </template>
 
 <script setup>

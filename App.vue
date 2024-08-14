@@ -12,9 +12,14 @@
 const nuxtApp = useNuxtApp();
 const modalsStore = useModalsStore();
 
+const isShowedModal = ref(false)
+
 nuxtApp.hook("page:finish", () => {
+  if(isShowedModal.value) return;
+
   setTimeout(() => {
     modalsStore.addModal('message')
+    isShowedModal.value = true
   }, 10000)
 });
 

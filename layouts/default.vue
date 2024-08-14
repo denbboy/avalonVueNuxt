@@ -21,6 +21,7 @@ import { usePagesStore } from '~/stores/functions/pages';
 import { useFormsStore } from '~/stores/functions/forms';
 
 import AOS from 'aos';
+import useFetchWithCache from '~/hooks/useFetchWithCache';
 
 const route = useRoute();
 const toolkitStore = useToolkit();
@@ -29,20 +30,20 @@ const blocksStore = useBlocksStore();
 const pagesStore = usePagesStore();
 const formsStore = useFormsStore();
 
-const settings = await useAsyncData("Settings", () => $fetch('/api/settings'))
-toolkitStore.setSettings(settings?.data);
+const settings = await useFetchWithCache('/api/settings')
+toolkitStore.setSettings(settings?.value);
 
-const projects = await useAsyncData("Projects", () => $fetch('/api/projects'))
-projectsStore.setProjects(projects?.data);
+const projects = await useFetchWithCache('/api/projects')
+projectsStore.setProjects(projects?.value);
 
-const forms = await useAsyncData("Forms", () => $fetch('/api/forms'))
-formsStore.setForms(forms?.data)
+const forms = await useFetchWithCache('/api/forms')
+formsStore.setForms(forms?.value)
 
-const pages = await useAsyncData("Pages", () => $fetch('/api/navigationPages'))
-pagesStore.setPages(pages?.data);
+const pages = await useFetchWithCache('/api/navigationPages')
+pagesStore.setPages(pages?.value);
 
-const blocks = await useAsyncData("Blocks", () => $fetch('/api/blocks'))
-blocksStore.setBlocks(blocks?.data);
+const blocks = await useFetchWithCache('/api/blocks')
+blocksStore.setBlocks(blocks?.value);
 
 
 const isProjectHeader = ref(route.fullPath.includes('/projects/'));

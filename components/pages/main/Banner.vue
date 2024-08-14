@@ -7,7 +7,7 @@
       :speed="1500">
 
 
-      <swiper-slide v-for="item in slides?.data?.value"
+      <swiper-slide v-for="item in slides"
         class="pt-40 lg:pt-[250px] lg:min-h-[810px] relative overflow-hidden">
         <div class="bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
           <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`"
@@ -177,8 +177,11 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
+import useFetchWithCache from '~/hooks/useFetchWithCache'
 
-const { slides } = defineProps(['slides'])
+
+
+const slides = await useFetchWithCache('/api/slides');
 
 const modalsStore = useModalsStore()
 const langStore = useLangStore();
