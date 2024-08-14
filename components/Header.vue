@@ -8,8 +8,8 @@
       
       <div class="header__inner px-5 flex items-center justify-between gap-3 relative z-[2]">
         <NuxtLink :href="'/'">
-          <img loading="lazy" src="/assets/img/newLogo.png" class="hidden md:max-w-[55px] w-full lg:max-w-[95px] xl:block" alt="logo">
-          <img loading="lazy" src="/assets/img/icons/logo-mob.svg" class="xl:hidden" alt="logo ic">
+          <NuxtImg loading="lazy" src="/img/newLogo.png" class="hidden md:max-w-[55px] w-full lg:max-w-[95px] xl:block" alt="logo" />
+          <NuxtImg loading="lazy" format="webp" src="/img/icons/logo-mob.webp" class="xl:hidden" alt="logo ic" />
         </NuxtLink>
 
 
@@ -20,7 +20,7 @@
                 after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
               ">
               {{ $t('project') }}
-              <img loading="lazy" src="/assets/img/index/small-arrow-white.svg" alt="ic">
+              <NuxtImg loading="lazy" format="svg" src="/img/index/small-arrow-white.svg" alt="ic" />
             </button>
             <div
               class="projectsMenu opacity-0 invisible group-hover:opacity-100 group-hover:visible flex transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-0 border border-whiteOp-300">
@@ -83,7 +83,7 @@
         <div class="hidden group xl:flex xl:flex-col relative">
           <button class="projectsButton flex items-center gap-1 text-white md:text-xs lg:text-sm uppercase">
             {{ locale }}
-            <img loading="lazy" src="/assets/img/index/small-arrow-white.svg" alt="ic">
+            <NuxtImg loading="lazy" src="/img/index/small-arrow-white.svg" alt="ic" />
           </button>
           <div
             class="projectsMenu flex opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-[50%] translate-x-[-50%] border border-whiteOp-300">
@@ -139,7 +139,7 @@
         </div>
 
         <button @click="handleOpenBurger" id="burgerBtn" type="button" class="xl:hidden block ">
-          <img loading="lazy" src="/assets/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic">
+          <NuxtImg loading="lazy" src="/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic" />
         </button>
 
       </div>
@@ -218,22 +218,22 @@
         <ul class="flex items-center gap-1">
           <li v-if="toolkitStore?.settings?.soc_link_whats">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_whats}`">
-              <img loading="lazy" src="/assets/img/index/tw-burger.svg" alt="ic">
+              <NuxtImg loading="lazy" src="/img/index/tw-burger.webp" alt="ic" />
             </a>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_inst">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_inst}`">
-              <img loading="lazy" src="/assets/img/index/inst-burger.svg" alt="ic">
+              <NuxtImg loading="lazy" src="/img/index/inst-burger.webp" alt="ic" />
             </a>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_fb">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_fb}`">
-              <img loading="lazy" src="/assets/img/index/face-burger.svg" alt="ic">
+              <NuxtImg loading="lazy" src="/img/index/face-burger.webp" alt="ic" />
             </a>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_yt">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_yt}`">
-              <img loading="lazy" src="/assets/img/index/yout-burger.svg" alt="ic">
+              <NuxtImg loading="lazy" src="/img/index/yout-burger.webp" alt="ic" />
             </a>
           </li>
         </ul>

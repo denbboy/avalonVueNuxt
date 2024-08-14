@@ -125,6 +125,11 @@ export default defineNuxtConfig({
     trailingSlash: true,
   },
 
+  buildModules: ['@nuxtjs/svg-sprite'],
+  svgSprite: {
+    input: '~/img/icons/'
+  },
+
   gtm: {
     id: "GTM-1",
     enabled: false,
