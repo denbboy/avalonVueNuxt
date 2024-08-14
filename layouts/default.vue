@@ -3,8 +3,8 @@
     <LazyHeaderProject v-if="isProjectHeader" />
     <LazyHeader v-else />
     <slot />
-    <!-- <LazyModalsModal /> -->
-    <!-- <LazyFooter /> -->
+    <LazyModalsModal />
+    <LazyFooter />
   </div>
 
   <CookieControl locale="en" />
