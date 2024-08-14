@@ -54,16 +54,16 @@ watch(() => route.fullPath, (newPath) => {
 
 const { $fbq } = useNuxtApp()
 
-onMounted(() => {
-  $fbq('track', 'CompleteRegistration')
-  $fbq('trackSingle', toolkitStore?.settings?.facebook_pixel, 'CompleteRegistration')
+// onMounted(() => {
+//   $fbq('track', 'CompleteRegistration')
+//   $fbq('trackSingle', toolkitStore?.settings?.facebook_pixel, 'CompleteRegistration')
 
-  setTimeout(() => {
-    AOS.init({
-      once: true,
-    });
-  }, 500)
-})
+//   setTimeout(() => {
+//     AOS.init({
+//       once: true,
+//     });
+//   }, 500)
+// })
 
 
 </script>
