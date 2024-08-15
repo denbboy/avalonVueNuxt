@@ -1,14 +1,12 @@
 <template>
     <!-- data-aos="fade-up" -->
-    <div
-    :class="itemData?.roi ? 'pt-24' : 'pt-5'"
+    <div :class="itemData?.roi ? 'pt-24' : 'pt-5'"
         class="py-10 px-5 rounded-2xl relative flex flex-col-reverse h-fit xl:grid xl:grid-cols-2 xl:gap-10 xl:px-[60px] xl:py-[70px] 3xl:py-[100px] 3xl:px-[100px] mb-5 md:mb-12 last:mb-0">
         <div class="bg-blue-600/85 w-full h-full z-0 rounded-2xl backdrop-blur-sm absolute left-0 top-0">
 
         </div>
 
-        <div
-        v-if="itemData?.roi"
+        <div v-if="itemData?.roi"
             class="w-[60px] h-[60px] 375:w-[91px] 375:h-[91px] bg-blue-400 text-center rounded-full flex md:hidden justify-center items-center flex-col absolute top-12 left-[60px] z-10  md:left-auto ">
             <div
                 class="block w-[60px] h-[60px] animate-ping 375:w-[91px] 375:h-[91px] 3xl:w-[137px] 3xl:h-[137px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]">
@@ -117,7 +115,7 @@
 
                 <NuxtLink @click="handleOpenModal3D" v-if="itemData?.video_360" :href="`#3d-object-${itemData?.id}`"
                     class="absolute hover:scale-105 active:scale-95 transition-all top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
-                    <img src="/assets/img/about/360.png" class="max-w-[95px]" alt="ph">
+                    <NuxtImg src="/assets/img/about/360.png" class="max-w-[95px]" alt="ph" loading="lazy" />
                 </NuxtLink>
 
                 <swiper class="swiper-apartments w-full h-full" :modules="modules" :slides-per-view="1"
@@ -125,8 +123,8 @@
 
                     <swiper-slide v-for="image in itemData?.gallery" :key="image?.id"
                         class="relative overflow-hidden h-full">
-                        <img :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`"
-                            class="rounded-[15px] object-cover h-full w-full" alt="ph">
+                        <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`"
+                            class="rounded-[15px] object-cover h-full w-full" alt="ph" loading="lazy" />
                     </swiper-slide>
 
                 </swiper>

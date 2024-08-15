@@ -25,12 +25,13 @@
           </div>
         </div>
 
-        <swiper class="swiper team team-block" :modules="modules" :breakpoints="breakpoints" :navigation="navigationConfig"
-          :space-between="20" :slides-per-view="2" @swiper="onSwiper" @slideChange="onSlideChange">
+        <swiper class="swiper team team-block" :modules="modules" :breakpoints="breakpoints"
+          :navigation="navigationConfig" :space-between="20" :slides-per-view="2" @swiper="onSwiper"
+          @slideChange="onSlideChange">
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <img loading="lazy" src="/assets/img/index/user-1.png" class="w-full h-full grayscale" alt="ph">
+              <NuxtImg loading="lazy" src="/assets/img/index/user-1.png" class="w-full h-full grayscale" alt="ph" />
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
@@ -44,7 +45,7 @@
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <img loading="lazy" src="/assets/img/index/user-2.png" class="w-full h-full grayscale" alt="ph">
+              <NuxtImg loading="lazy" src="/assets/img/index/user-2.png" class="w-full h-full grayscale" alt="ph" />
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
@@ -58,7 +59,7 @@
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <img loading="lazy" src="/assets/img/index/user-3.png" class="w-full h-full grayscale" alt="ph">
+              <NuxtImg loading="lazy" src="/assets/img/index/user-3.png" class="w-full h-full grayscale" alt="ph" />
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
@@ -72,7 +73,7 @@
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <img loading="lazy" src="/assets/img/index/user-4.png" class="w-full h-full grayscale" alt="ph">
+              <NuxtImg loading="lazy" src="/assets/img/index/user-4.png" class="w-full h-full grayscale" alt="ph" />
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
@@ -86,10 +87,10 @@
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <img loading="lazy" src="/assets/img/index/user-5.png" class="w-full h-full grayscale" alt="ph">
+              <NuxtImg loading="lazy" src="/assets/img/index/user-5.png" class="w-full h-full grayscale" alt="ph" />
             </div>
             <div class="text-center mt-4">
-              <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">                
+              <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
                 {{ $t('team_5_name') }}
               </h3>
               <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
@@ -100,7 +101,7 @@
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <img loading="lazy" src="/assets/img/index/user-6.png" class="w-full h-full grayscale" alt="ph">
+              <NuxtImg loading="lazy" src="/assets/img/index/user-6.png" class="w-full h-full grayscale" alt="ph" />
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
@@ -114,7 +115,7 @@
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <img loading="lazy" src="/assets/img/index/user-1.png" class="w-full h-full grayscale" alt="ph">
+              <NuxtImg loading="lazy" src="/assets/img/index/user-1.png" class="w-full h-full grayscale" alt="ph" />
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">

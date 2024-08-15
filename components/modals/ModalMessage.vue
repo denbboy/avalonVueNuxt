@@ -1,16 +1,16 @@
 <template>
-    <img src="/assets/img/modals/modal-banner.jpg" class="lg:-mt-10 w-full lg:rounded-t-[20px] max-w-none "
-        alt="ph">
+    <NuxtImg src="/assets/img/modals/modal-banner.jpg" class="lg:-mt-10 w-full lg:rounded-t-[20px] max-w-none"
+        alt="ph" />
 
 
     <div
         class="content__inner w-full z-0 relative overflow-hidden p-5 lg:p-10 max-w-[600px] flex flex-col items-center h-full">
 
         <div class="absolute right-[-34px] -top-5 lg:top-5 z-0">
-            <img src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo">
+            <NuxtImg src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
         </div>
         <div class="absolute left-[-34px] bottom-0 lg:bottom-[154px] z-0">
-            <img src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo">
+            <NuxtImg src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
         </div>
 
         <h2 class="text-white text-lg md:text-2xl font-bold text-center mb-5 ">
@@ -53,7 +53,8 @@
 
                 <p class="text-center text-white text-xs lg:text-sm w-full mt-5">
                     {{ $t('m_message_text_3') }}
-                    <NuxtLink href="/docs/privacy-police" class="text-blue-400 font-bold underline transition-all hover:text-blue-700">
+                    <NuxtLink href="/docs/privacy-police"
+                        class="text-blue-400 font-bold underline transition-all hover:text-blue-700">
                         {{ $t('policy') }}
                     </NuxtLink>
                 </p>

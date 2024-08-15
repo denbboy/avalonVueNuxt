@@ -9,9 +9,9 @@
             }" class="block-bottom-point z-20"></div>
 
             <SkeletonLoader class="w-full h-[300px] rounded-[20px]">
-                <img data-not-lazy ref="image" loading="lazy" class="opacity-0 absolute"
+                <NuxtImg data-not-lazy ref="image" loading="lazy" class="opacity-0 absolute"
                     :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}`" @load="onImageLoad" />
-                <img v-if="imageLoaded" loading="lazy" data-not-lazy
+                <NuxtImg v-if="imageLoaded" loading="lazy" data-not-lazy
                     :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}`" alt="Image"
                     class="z-0 w-full h-full object-cover relative rounded-2xl" @load="onImageLoad" />
             </SkeletonLoader>

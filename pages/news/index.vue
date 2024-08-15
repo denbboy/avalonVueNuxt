@@ -3,8 +3,8 @@
   <section class="pb-24 relative bg-blue-500 overflow-hidden">
     <div class="bg-gradient-to-t from-blue-500 from-80% lg:from-80%  w-full h-full absolute z-10"></div>
 
-    <img class="absolute top-0 z-0 opacity-40 w-[600vw] max-w-max md:w-full" src="/assets/img/news/news-bgd.jpg"
-      alt="Image">
+    <NuxtImg loading="lazy" class="absolute top-0 z-0 opacity-40 w-[600vw] max-w-max md:w-full"
+      src="/assets/img/news/news-bgd.jpg" alt="Image" />
 
     <div class="container mx-auto relative z-20 pt-32 md:pt-64">
       <h1 class="text-[30px] md:text-[55px] lg:text-[65px] text-white font-bold mb-5" data-aos="fade-up">
@@ -19,8 +19,8 @@
             <span class="text-sm text-white font-bold">
               {{ activeProject.label }}
             </span>
-            <img src="/assets/img/icons/arrow-white-down.svg" alt="Arrow"
-              class="w-4 transition-all group-[.active]:-scale-y-100 scale-y-100">
+            <NuxtImg loading="lazy" src="/assets/img/icons/arrow-white-down.svg" alt="Arrow"
+              class="w-4 transition-all group-[.active]:-scale-y-100 scale-y-100" />
           </button>
           <div
             class="select__body transition-all group-[.active]:visible group-[.active]:opacity-100 group-[.active]:mt-2 invisible opacity-0 absolute top-full mt-0 px-4 border-white/40 border-[1px] rounded-[10px] w-full bg-blue-500">
@@ -46,7 +46,8 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-x-5 gap-y-10 mt-12"
         data-aos="fade-up">
-        <NewsItem v-for="item in newsData?.data?.value?.slice(0, viewCount)" :key="item.id" :item="item" bgdColor="blue-500" />
+        <NewsItem v-for="item in newsData?.data?.value?.slice(0, viewCount)" :key="item.id" :item="item"
+          bgdColor="blue-500" />
       </div>
 
       <button v-if="viewCount < newsData?.data?.value.length" @click="handelShowMore" class="white-border-button">
@@ -55,7 +56,7 @@
     </div>
 
     <div class="absolute -right-36 bottom-40 w-72 h-72 z-10">
-      <img src="/assets/img/icons/vector-logo.svg" alt="vector-logo">
+      <NuxtImg loading="lazy" src="/assets/img/icons/vector-logo.svg" alt="vector-logo" />
     </div>
   </section>
 
@@ -66,7 +67,7 @@
 const viewCount = ref(8);
 
 const handelShowMore = () => {
-    viewCount.value += 8;
+  viewCount.value += 8;
 }
 
 const newsData = await useAsyncData("News", () => $fetch('/api/news'))

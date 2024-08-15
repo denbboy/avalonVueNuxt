@@ -2,7 +2,7 @@
     <section class="uslugi pt-[23px] pb-12 relative overflow-hidden">
         <div
             class="absolute lg:-right-36 top-0 lg:top-auto lg:left-auto min-h-[600px] lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
-            <img data-not-lazy src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
+            <NuxtImg loading="lazy" src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo" />
         </div>
         <div class="container">
             <div class="w-full flex flex-col items-center text-center md:flex-row md:justify-between md:mb-[44px] md:text-start"
@@ -27,14 +27,14 @@
                     class="projects-item relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[600px] min-h-[400px]"
                     v-for="(item, index) in projectsStore.projects" :key="item.id">
                     <div class="">
-                        <img :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}`"
-                            class="opacity-50 w-full absolute object-cover h-full" alt="">
+                        <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}`"
+                            class="opacity-50 w-full absolute object-cover h-full" alt="" loading="lazy" />
                         <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
                         <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
                             <div class="block-bottom-point"></div>
                             <div class="flex justify-between mb-auto">
-                                <img class="w-[90px]" v-if="item?.logo"
-                                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.logo}`" alt="">
+                                <NuxtImg class="w-[90px]" v-if="item?.logo"
+                                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.logo}`" alt="" loading="lazy" />
                                 <span v-if="item?.roi_procent"
                                     class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
                                     {{ item?.roi_procent }}% {{ $t('sold') }}
@@ -65,7 +65,7 @@
                                         {{ $t('more') }}
                                     </NuxtLink>
                                     <div class="flex items-center">
-                                        <img class="w-3" src="/assets/img/icons/point-white.svg" alt="">
+                                        <NuxtImg class="w-3" src="/assets/img/icons/point-white.svg" alt="" loading="lazy" />
                                         <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">
                                             {{ $t('changu') }}
                                         </span>

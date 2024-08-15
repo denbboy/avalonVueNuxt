@@ -17,12 +17,12 @@
 
     <div class="absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen">
       <SkeletonLoader v-if="itemData?.data?.value?.preview" class="h-full w-full">
-        <img v-show="!imageLoaded" data-not-lazy loading="lazy"
+        <NuxtImg v-show="!imageLoaded" loading="lazy"
           :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`" @load="onImageLoad"
-          class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="" ref="image">
-        <img data-not-lazy v-if="imageLoaded" loading="lazy"
+          class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="" ref="image" />
+        <NuxtImg v-if="imageLoaded" loading="lazy"
           :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`"
-          class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="">
+          class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="" />
       </SkeletonLoader>
     </div>
 
@@ -33,7 +33,7 @@
 
     <div class="container relative z-10">
       <div class="absolute right-0 bottom-56 w-72 h-72 z-10">
-        <img src="/assets/img/icons/vector-logo.svg" alt="vector-logo">
+        <NuxtImg src="/assets/img/icons/vector-logo.svg" alt="vector-logo" loading="lazy" />
       </div>
 
       <div class="pb-14 text-content">
@@ -52,7 +52,7 @@
 
         <a href="#"
           class="rounded-full border-[1px] border-white w-10 h-10 flex items-center justify-center mt-8 mb-14 md:w-14 md:h-14">
-          <img src="/assets/img/icons/socials.svg" class="md:w-6" alt="Soc">
+          <NuxtImg src="/assets/img/icons/socials.svg" class="md:w-6" alt="Soc" loading="lazy" />
         </a>
 
         <div

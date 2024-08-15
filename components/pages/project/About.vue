@@ -1,7 +1,7 @@
 <template>
     <section id="about" class="club py-14 bg-blue-600 lg:py-0 lg:pb-24 relative overflow-hidden">
         <div class="absolute lg:-right-36 top-0 lg:top-1/2 hidden lg:block -translate-y-1/2 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
-            <img data-not-lazy src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
+            <NuxtImg src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo" />
         </div>
         <div class="container relative z-10 flex flex-col gap-5 lg:gap-[60px]">
             <div class="xl:flex xl:gap-7 justify-between xl:items-center">
@@ -14,7 +14,7 @@
 
                 </div>
                 <div data-aos="fade-left" class="">
-                    <img class="max-w-[591px] w-full lg:max-w-[892px] lg:-mr-20" src="/assets/img/about/club-img.png" alt="ph">
+                    <NuxtImg class="max-w-[591px] w-full lg:max-w-[892px] lg:-mr-20" src="/assets/img/about/club-img.png" alt="ph" />
                 </div>
             </div>
 
@@ -37,12 +37,12 @@
                 </li>
                 <li
                     class="py-8 px-5 w-full border-b border-blue-400 lg:border-blue-500 lg:py-12 lg:px-8 md:border-b-0 md:border-r">
-                    <img src="/assets/img/about/camera.svg" class="max-w-[25px] mb-2 md:mb-4 md:max-w-[40px]" alt="ic">
+                    <NuxtImg src="/assets/img/about/camera.svg" class="max-w-[25px] mb-2 md:mb-4 md:max-w-[40px]" alt="ic" />
                     <p class="text-white text-sm md:text-base" v-html="props.itemData?.filter(item => item.String_id.id === 117)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
                     </p>
                 </li>
                 <li class="py-8 px-5 w-full lg:py-12 lg:px-8">
-                    <img src="/assets/img/about/whater.svg" class="max-w-[25px] mb-2 md:mb-4 md:max-w-[40px]" alt="ic">
+                    <NuxtImg src="/assets/img/about/whater.svg" class="max-w-[25px] mb-2 md:mb-4 md:max-w-[40px]" alt="ic" />
                     <p class="text-white text-sm md:text-base" v-html="props.itemData?.filter(item => item.String_id.id === 118)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
                         
                     </p>

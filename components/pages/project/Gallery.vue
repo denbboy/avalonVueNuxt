@@ -1,10 +1,10 @@
 <template>
     <section class="gallery lg:py-14 py-5 relative overflow-hidden">
         <div class="absolute lg:-right-36 top-0 lg:top-0 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
-            <img data-not-lazy src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
+            <NuxtImg src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo" loading="lazy" />
         </div>
         <div class="absolute lg:-left-36 top-0 lg:top-auto lg:right-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
-            <img data-not-lazy src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
+            <NuxtImg src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo" loading="lazy" />
         </div>
         <div class="container relative z-10">
             <div
@@ -19,7 +19,7 @@
 
                         <PagesProjectGalleryImage :imageFile="image?.directus_files_id"/>
 
-                        <!-- <img v-if="image?.directus_files_id"
+                        <!-- <NuxtImg v-if="image?.directus_files_id"
                             :class="{ 'rounded-2xl w-full flex items-center justify-center h-full object-cover': true, 'isLoaded': imageLoaded }"
                             @load="imageLoaded = true"
                             :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`" /> -->

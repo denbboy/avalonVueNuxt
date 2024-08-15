@@ -1,7 +1,7 @@
 <template>
   <section class="bg-white pt-14 relative overflow-hidden">
     <div class="absolute -right-14 lg:-right-36 bottom-0 lg:bottom-40 w-28 lg:w-72 lg:h-72 z-10">
-      <img data-not-lazy src="/assets/img/icons/vector-logo.svg" class="invert" alt="vector-logo">
+      <NuxtImg src="/assets/img/icons/vector-logo.svg" class="invert" alt="vector-logo" />
     </div>
     <div class="container relative z-10">
       <div class="">

@@ -2,9 +2,9 @@
     <section class=" bg-no-repeat bg-cover pt-14 pb-32 relative overflow-hidden">
         <Parallaxy class="absolute top-0 left-0 z-0 h-full w-full" :speed="150"
             :animation="(delta) => `transform: translate3d(0, ${delta}px, 0);`">
-            <!-- <img class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg"> -->
-            <img class="h-full w-full object-cover scale-[1.7]"
-                src="/assets/img/about/process.jpg" alt="image">
+            <!-- <NuxtImg class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg" /> -->
+            <NuxtImg class="h-full w-full object-cover scale-[1.7]"
+                src="/assets/img/about/process.jpg" alt="image" />
         </Parallaxy>
         <div class="container relative z-10">
 
@@ -12,10 +12,10 @@
             <div
                 class=" md:rounded-tr-3xl md:rounded-bl-3xl pt-14 pb-28 px-5 relative md:pb-11 md:px-[80px] lg:px-[120px] md:pt-[100px]">
 
-                <img loading="lazy" src="/assets/img/index/buy-bg-desk.png"
-                    class="absolute top-0 left-0 w-full h-full z-0 hidden md:block backdrop-blur-[1px]" alt="">
-                <img loading="lazy" src="/assets/img/index/buy-list-bg.png"
-                    class="absolute top-0 left-0 w-full h-full z-0 block md:hidden backdrop-blur" alt="">
+                <NuxtImg loading="lazy" src="/assets/img/index/buy-bg-desk.png"
+                    class="absolute top-0 left-0 w-full h-full z-0 hidden md:block backdrop-blur-[1px]" alt="" />
+                <NuxtImg loading="lazy" src="/assets/img/index/buy-list-bg.png"
+                    class="absolute top-0 left-0 w-full h-full z-0 block md:hidden backdrop-blur" alt="" />
 
                 <div class="md:flex hidden absolute w-[150px] lg:w-[240px] items-center right-0 top-[140px]">
                     <div class="w-[10px] h-[10px] rounded-md bg-blue-400"></div>
@@ -41,9 +41,9 @@
                 </div>
 
                 <div class="relative z-10" data-aos="fade-up">
-                    <img loading="lazy" src="/assets/img/index/point-line.png"
+                    <NuxtImg loading="lazy" src="/assets/img/index/point-line.png"
                         class="hidden md:block absolute md:top-[71px] lg:top-[90px] md:h-[209px] lg:h-[260px] right-[-40px] w-full md:max-w-[910px] lg:max-w-[1188px]"
-                        alt="line ph">
+                        alt="line ph" />
                     <ul
                         class="mb-7 md:mb-12 md:grid md:grid-cols-5 md:gap-5 md:after:hidden after:w-[1px] after:h-[calc(100%-30px)] after:bg-white/40 after:absolute after:bottom-0 after:left-[24.5px]">
                         <li class="mb-5 flex items-center md:flex-col">
@@ -260,7 +260,7 @@
                     </button>
 
                     <div class="flex items-center gap-10">
-                        <img loading="lazy" src="/assets/img/index/a-decor-op.svg" class="hidden md:block md:max-w-[112px]" alt="decor">
+                        <NuxtImg loading="lazy" src="/assets/img/index/a-decor-op.svg" class="hidden md:block md:max-w-[112px]" alt="decor" />
                         <div class="pt-5 border-t border-whiteOp-300 md:border-none md:pt-0 md:max-w-[526px]">
                             <p class="text-white opacity-50 text-sm mb-5 md:text-[14px] md:text-left">
                                 {{ itemStrings?.filter(item => item.id === 148)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}

@@ -2,19 +2,19 @@
     <section class=" bg-no-repeat bg-cover py-14 md:py-24 relative overflow-hidden">
         <Parallaxy v-if="isCanShow" class="absolute top-0 left-0 z-0 h-full w-full" :speed="150"
             :animation="(delta) => `transform: translate3d(0, ${delta}px, 0);`">
-            <!-- <img class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg"> -->
-            <img class="h-full w-full object-cover scale-[1.7]" src="/assets/img/about/bgd-sec-changy.jpg" alt="image">
+            <!-- <NuxtImg class="h-full w-full object-cover scale-125" src="/assets/img/index/buy-bgd.jpg" /> -->
+            <NuxtImg class="h-full w-full object-cover scale-[1.7]" src="/assets/img/about/bgd-sec-changy.jpg" alt="image" />
         </Parallaxy>
         <div class="container relative z-10">
             <div
                 class="bg-no-repeat bg-cover pt-[60px] pb-9 px-5 md:px-[70px] xl:px-[0px] relative  xl:py-24 3xl:pr-[82px] 3xl:pl-[125px]">
-                <img src="/assets/img/about/phone-mob.png" class="absolute z-10 top-[-40px] right-[-30px] xl:hidden"
-                    alt="ph">
+                <NuxtImg src="/assets/img/about/phone-mob.png" class="absolute z-10 top-[-40px] right-[-30px] xl:hidden"
+                    alt="ph" loading="lazy"/>
 
-                    <img src="/assets/img/index/buy-bg-desk.png"
-                    class="absolute top-0 left-0 w-full h-full z-0 hidden md:block backdrop-blur-[1px]" alt="">
-                <img src="/assets/img/index/buy-list-bg.png"
-                    class="absolute top-0 left-0 w-full h-full z-0 block md:hidden backdrop-blur" alt="">
+                    <NuxtImg src="/assets/img/index/buy-bg-desk.png"
+                    class="absolute top-0 left-0 w-full h-full z-0 hidden md:block backdrop-blur-[1px]" alt="" loading="lazy" />
+                <NuxtImg src="/assets/img/index/buy-list-bg.png"
+                    class="absolute top-0 left-0 w-full h-full z-0 block md:hidden backdrop-blur" alt="" loading="lazy" />
 
                 <div
                     class="xl:grid xl:grid-cols-2 w-full h-full xl:translate-x-[70px] 3xl:translate-x-0 z-10 relative xl:items-center xl:gap-7">
@@ -48,8 +48,8 @@
 
                         <span class="[&_li]:before:bg-[url(/assets/img/about/galka.svg)] [&_li]:before:w-5 [&_li]:before:h-5 [&_li]:before:min-w-5" v-html="props?.itemStrings?.filter(item => item.id === 160)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description"></span>
                     </div>
-                    <img data-aos="fade-left" src="/assets/img/about/tel-desk.png"
-                        class="hidden xl:block aspect-[624/673]" alt="ph">
+                    <NuxtImg data-aos="fade-left" src="/assets/img/about/tel-desk.png"
+                        class="hidden xl:block aspect-[624/673]" alt="ph" loading="lazy"/>
                 </div>
             </div>
         </div>

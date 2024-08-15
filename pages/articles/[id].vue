@@ -10,8 +10,8 @@
 
     <section class="bg-blue-500 pt-32 md:pt-64 relative">
 
-        <img v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
-            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="">
+        <NuxtImg v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="" loading="lazy" />
         <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10">
         </div>
         <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[1000px] absolute z-10">
@@ -20,7 +20,7 @@
 
         <div class="container relative z-10">
             <div class="absolute right-0 bottom-56 w-72 h-72 z-10">
-                <img src="/assets/img/icons/vector-logo.svg" alt="vector-logo">
+                <NuxtImg src="/assets/img/icons/vector-logo.svg" alt="vector-logo" loading="lazy" />
             </div>
 
             <div class="pb-14 text-content">
@@ -40,7 +40,7 @@
                 </h1>
                 <a href="#"
                     class="rounded-full border-[1px] border-white w-10 h-10 flex items-center justify-center mt-8 mb-14 md:w-14 md:h-14">
-                    <img src="/assets/img/icons/socials.svg" class="md:w-6" alt="Soc">
+                    <NuxtImg src="/assets/img/icons/socials.svg" class="md:w-6" alt="Soc" loading="lazy" />
                 </a>
 
                 <div

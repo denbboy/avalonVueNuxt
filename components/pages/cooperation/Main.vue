@@ -4,11 +4,11 @@
         <!-- <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[700px] absolute z-10"></div>
         <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10"></div>
 
-        <img class="absolute top-0 z-0 opacity-90 w-[600vw] max-w-max md:w-full min-h-[1000px] h-screen object-cover"
+        <NuxtImg class="absolute top-0 z-0 opacity-90 w-[600vw] max-w-max md:w-full min-h-[1000px] h-screen object-cover"
             src="/assets/img/career/img.jpg" alt="Image"> -->
 
-        <img src="~assets/img/career/img.jpg"
-            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="">
+        <NuxtImg src="~assets/img/career/img.jpg"
+            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="" />
         <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10">
         </div>
         <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[1000px] absolute z-10">
@@ -34,7 +34,7 @@
 
                     <div
                         class="flex items-center xl:translate-y-[32px] justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
-                        <img class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-1.svg" alt="img">
+                        <NuxtImg class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-1.svg" alt="img" />
                     </div>
                     <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
@@ -91,7 +91,7 @@
 
                     <div
                         class="flex items-center xl:translate-y-[32px] justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
-                        <img class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-2.svg" alt="img">
+                        <NuxtImg class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-2.svg" alt="img" />
                     </div>
                     <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
@@ -147,7 +147,7 @@
 
                     <div
                         class="flex items-center xl:translate-y-[32px] justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
-                        <img class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-3.svg" alt="img">
+                        <NuxtImg class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-3.svg" alt="img" />
                     </div>
                     <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
@@ -205,7 +205,7 @@
 
                     <div
                         class="flex items-center xl:translate-y-[32px] justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
-                        <img class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-4.svg" alt="img">
+                        <NuxtImg class="w-9 h-9" src="/assets/img/cooperation/banner-block-icon-4.svg" alt="img" />
                     </div>
                     <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
@@ -265,7 +265,7 @@
         </div>
 
         <div class="absolute -right-[72px] top-[250px] w-36 z-10">
-            <img src="/assets/img/icons/vector-logo.svg" alt="vector-logo">
+            <NuxtImg src="/assets/img/icons/vector-logo.svg" alt="vector-logo" />
         </div>
     </section>
 </template>

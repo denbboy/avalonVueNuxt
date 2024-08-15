@@ -24,16 +24,16 @@ watchEffect(() => {
 
     <section class="pb-24 relative bg-blue-500 overflow-hidden">
         <div class="absolute lg:-right-36 top-0 lg:top-96 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[11]">
-            <img data-not-lazy src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
+            <NuxtImg src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo" loading="lazy" />
         </div>
         <div class="absolute lg:-left-36 top-0 lg:top-52 lg:right-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[11]">
-            <img data-not-lazy src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo">
+            <NuxtImg src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo" loading="lazy" />
         </div>
 
         <div class="bg-gradient-to-t from-blue-500 from-60% lg:from-60%  w-full h-[2000px] absolute z-10"></div>
 
-        <img class="absolute top-0 z-0 opacity-40 w-[600vw] max-w-max md:w-full min-h-[1000px] h-screen object-cover"
-            src="/assets/img/career/img.jpg" alt="Image">
+        <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] max-w-max md:w-full min-h-[1000px] h-screen object-cover"
+            src="/assets/img/career/img.jpg" alt="Image" loading="lazy" />
 
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
             <h1 data-aos="fade-up"

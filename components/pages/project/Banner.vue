@@ -4,19 +4,19 @@
         <div class="lg:pb-10 pb-5 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.jpg')] -->
             <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-80">
-                <!-- <img v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
-                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt=""> -->
+                <!-- <NuxtImg v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="" /> -->
 
 
                 <!-- <div class=""> -->
                     <SkeletonLoader v-if="itemData?.preview" class="!absolute top-0 left-0 w-full h-[110vh] object-cover z-0">
-                        <img v-show="!imageLoaded" data-not-lazy ref="image" loading="lazy"
+                        <NuxtImg v-show="!imageLoaded" ref="image" loading="lazy"
                             :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`" @error="onImageLoad"
                             @load="onImageLoad"
-                            class="opacity-0 absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="">
-                        <img data-not-lazy v-if="imageLoaded" loading="lazy"
+                            class="opacity-0 absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="" />
+                        <NuxtImg v-if="imageLoaded" loading="lazy"
                             :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
-                            class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="">
+                            class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="" />
                     </SkeletonLoader>
                 <!-- </div> -->
 
@@ -37,12 +37,12 @@
                         <div data-aos="fade-up" class="flex lg:-mr-20 flex-wrap items-center gap-[10px] md:gap-5">
                             <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] -mr-1 max-w-[141px] md:py-5 py-[15px]">
-                                <img src="/assets/img/about/ribas.png" alt="">
+                                <NuxtImg src="/assets/img/about/ribas.png" alt="" loading="lazy" />
                             </div>
                             <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
-                                <img class="absolute top-0 left-0 -z-10 md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
-                                    src="/assets/img/icons/about-border-white.svg" alt="bgd">
+                                <NuxtImg class="absolute top-0 left-0 -z-10 md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
+                                    src="/assets/img/icons/about-border-white.svg" alt="bgd" loading="lazy" />
                                 <span class="text-white text-xs md:text-sm">
                                     {{ $t('deadline') }}
                                 </span>
@@ -52,10 +52,10 @@
                             </div>
                             <div class="con order-1 md:order-none">
                                 <div class="relative px-5 py-3 w-fit md:text-center md:px-7 min-w-[228px] md:min-w-0">
-                                    <img class="absolute top-0 left-0 -z-10 md:hidden"
-                                        src="/assets/img/index/bgd-decor.png" alt="bgd">
-                                    <img class="absolute top-0 left-0 -z-10 hidden md:block h-full w-full"
-                                        src="/assets/img/index/bgd-decor-2.png" alt="bgd">
+                                    <NuxtImg class="absolute top-0 left-0 -z-10 md:hidden"
+                                        src="/assets/img/index/bgd-decor.png" alt="bgd" loading="lazy" />
+                                    <NuxtImg class="absolute top-0 left-0 -z-10 hidden md:block h-full w-full"
+                                        src="/assets/img/index/bgd-decor-2.png" alt="bgd" loading="lazy" />
                                     <h2 v-if="itemData?.price" class="text-sm text-white">
                                         {{ $t('cost') }} <br class="hidden md:block"> <span
                                             class="font-bold md:text-xl">
@@ -70,7 +70,7 @@
                             </div>
                             <div
                                 class="w-full h-[60px] max-w-[72px] md:max-w-[98px] md:h-[86px] bg-white flex items-center justify-center rounded-[8px] md:rounded-[15px]">
-                                <!-- <img src="/assets/img/icons/live-ic.svg" class="max-w-[42px] md:max-w-[68px]" alt="ic"> -->
+                                <!-- <NuxtImg src="/assets/img/icons/live-ic.svg" class="max-w-[42px] md:max-w-[68px]" alt="ic"> -->
 
                                 <svg width="68" height="48" viewBox="0 0 68 48" class="max-w-12 lg:max-w-full"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -130,8 +130,8 @@
                             type="button"
                             class="flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
                             <div class="relative flex items-center justify-center">
-                                <img src="/assets/img/about/playBorder.svg" class="max-w-[95px] xl:max-w-[165px]"
-                                    alt="ic">
+                                <NuxtImg src="/assets/img/about/playBorder.svg" class="max-w-[95px] xl:max-w-[165px]"
+                                    alt="ic" loading="lazy" />
                                 <svg class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18" height="21"
                                     viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.7422 10.653L0.17076 20.7979L0.170761 0.508136L17.7422 10.653Z"
@@ -156,8 +156,8 @@
                                 <h3
                                     class="flex items-center gap-2 md:gap-[10px] text-blue-400 text-2xl font-bold mb-[10px] md:mb-[15px] md:text-[40px]">
                                     {{ itemData?.roi_procent }}%
-                                    <img src="/assets/img/icons/about-banner-A-ic.svg"
-                                        class="max-w-[20px] md:max-w-[30px]" alt="ic">
+                                    <NuxtImg src="/assets/img/icons/about-banner-A-ic.svg"
+                                        class="max-w-[20px] md:max-w-[30px]" alt="ic" loading="lazy" />
                                 </h3>
                                 <p class="text-white text-sm md:text-base">
                                     {{ $t('projected') }} <br class="md:hidden">ROI
