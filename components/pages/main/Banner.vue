@@ -132,7 +132,7 @@
             </div>
 
             <div class="hidden md:block">
-              <NuxtImg loading="lazy" src="/img/index/banner-logo.svg" alt="" />
+              <NuxtImg width="156" height="156" loading="lazy" src="/img/index/banner-logo.svg" alt="" />
             </div>
           </div>
 
