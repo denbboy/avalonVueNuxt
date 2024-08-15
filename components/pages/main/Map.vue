@@ -1,16 +1,16 @@
 <template>
   <section class="map py-14 md:py-24 bg-blue-600 overflow-hidden relative z-10">
     <div class="absolute -left-36 bottom-20 w-72 h-72 z-10 hidden md:block">
-      <NuxtImg loading="lazy" src="/assets/img/icons/vector-logo.svg" alt="vector-logo" />
+      <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" alt="vector-logo" />
     </div>
     <div class="absolute lg:-right-36 bottom-1/2 lg:top-1/3 left-auto -right-14 w-28 lg:w-72 z-[2]">
-      <NuxtImg loading="lazy" src="/assets/img/icons/vector-logo.svg" alt="vector-logo" />
+      <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" alt="vector-logo" />
     </div>
 
     <div class="container relative z-20">
       <div class="md:flex">
         <div class="lg:-ml-20 mx-[-150px] md:-ml-44 md:mr-0 w-[calc(100%+400px)] md:w-full md:max-w-[1298px]">
-          <NuxtImg loading="lazy" src="/assets/img/index/map.png" class="w-full" alt="ic" />
+          <NuxtImg loading="lazy" src="/img/index/map.png" class="w-full" alt="ic" />
         </div>
         <div class="md:absolute bottom-0 max-w-[752px] md:right-[160px] lg:right-[180px] mt-8">
           <h2 class="text-white font-bold text-2xl md:text-[45px] lg:text-[56px] leading-[100%] mb-7 md:mb-[32px]"

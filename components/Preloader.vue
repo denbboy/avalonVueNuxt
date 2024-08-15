@@ -4,7 +4,7 @@
         <!-- <iframe v-if="isLoading" class="w-[800px] h-[800px]"
             src="https://lottie.host/embed/1b26babb-a87c-48e7-9a0a-f31a06298110/CixbB89Yfp.json"></iframe> -->
 
-            <!-- <img src="/assets/img/loader.gif" class="w-[800px] h-[500px]" alt=""> -->
+            <!-- <img src="/img/loader.gif" class="w-[800px] h-[500px]" alt=""> -->
             <NuxtImg src="/img/loader.gif" loading="lazy" class="w-[800px] h-[500px]" alt="Preloader" />
     </div>
 </template>

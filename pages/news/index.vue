@@ -4,7 +4,7 @@
     <div class="bg-gradient-to-t from-blue-500 from-80% lg:from-80%  w-full h-full absolute z-10"></div>
 
     <NuxtImg loading="lazy" class="absolute top-0 z-0 opacity-40 w-[600vw] max-w-max md:w-full"
-      src="/assets/img/news/news-bgd.jpg" alt="Image" />
+      src="/img/news/news-bgd.webp" alt="Image" />
 
     <div class="container mx-auto relative z-20 pt-32 md:pt-64">
       <h1 class="text-[30px] md:text-[55px] lg:text-[65px] text-white font-bold mb-5" data-aos="fade-up">
@@ -19,7 +19,7 @@
             <span class="text-sm text-white font-bold">
               {{ activeProject.label }}
             </span>
-            <NuxtImg loading="lazy" src="/assets/img/icons/arrow-white-down.svg" alt="Arrow"
+            <NuxtImg loading="lazy" src="/img/icons/arrow-white-down.svg" alt="Arrow"
               class="w-4 transition-all group-[.active]:-scale-y-100 scale-y-100" />
           </button>
           <div
@@ -56,7 +56,7 @@
     </div>
 
     <div class="absolute -right-36 bottom-40 w-72 h-72 z-10">
-      <NuxtImg loading="lazy" src="/assets/img/icons/vector-logo.svg" alt="vector-logo" />
+      <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" alt="vector-logo" />
     </div>
   </section>
 

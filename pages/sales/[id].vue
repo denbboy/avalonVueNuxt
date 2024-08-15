@@ -40,7 +40,7 @@
         </div>
 
         <div class="absolute -right-36 bottom-36 w-72 h-72 z-10">
-            <NuxtImg loading="lazy" src="/assets/img/icons/vector-logo.svg" alt="vector-logo" />
+            <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" alt="vector-logo" />
         </div>
         <div class="container relative z-10">
 
@@ -70,14 +70,14 @@
 
                         <div
                             class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] hover:bg-[#333] transition-all rounded-br-none">
-                            <NuxtImg loading="lazy" src="/assets/img/discounts/image.jpg" class="opacity-50" alt="" />
+                            <NuxtImg loading="lazy" src="/img/discounts/image.webp" class="opacity-50" alt="" />
                             <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
 
                             <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
                                 <div class="block-bottom-point"></div>
 
                                 <div class="flex justify-between mb-auto">
-                                    <NuxtImg loading="lazy" class="w-[90px]" src="/assets/img/icons/icon-club.svg" alt="" />
+                                    <NuxtImg loading="lazy" class="w-[90px]" src="/img/icons/icon-club.svg" alt="" />
                                     <span
                                         class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-sm text-white">
                                         80% Продано
@@ -104,7 +104,7 @@
                                             Подробнее
                                         </NuxtLink>
                                         <div class="flex items-center">
-                                            <NuxtImg loading="lazy" class="w-3" src="/assets/img/icons/point-white.svg" alt="" />
+                                            <NuxtImg loading="lazy" class="w-3" src="/img/icons/point-white.svg" alt="" />
                                             <span class="ml-1 text-sm text-white">Чангу</span>
                                         </div>
                                     </div>

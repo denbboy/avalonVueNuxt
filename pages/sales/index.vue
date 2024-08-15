@@ -11,7 +11,7 @@
   <section class="pb-24 relative bg-blue-500 overflow-hidden">
     <div class="bg-gradient-to-t from-blue-500 from-80% lg:from-80%  w-full h-full absolute z-10"></div>
 
-    <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] max-w-max md:w-full" src="/assets/img/news/news-bgd.jpg"
+    <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] max-w-max md:w-full" src="/img/news/news-bgd.webp"
       alt="Image" loading="lazy" />
 
     <div class="container mx-auto relative z-20 pt-32 md:pt-64">
@@ -28,7 +28,7 @@
             <span class="text-sm text-white font-bold">
               {{ activeProject.label }}
             </span>
-            <NuxtImg src="/assets/img/icons/arrow-white-down.svg" alt="Arrow"
+            <NuxtImg src="/img/icons/arrow-white-down.svg" alt="Arrow"
               class="w-4 transition-all group-[.active]:-scale-y-100 scale-y-100" loading="lazy" />
           </button>
           <div
@@ -66,7 +66,7 @@
     </div>
 
     <div class="absolute -right-36 bottom-40 w-72 h-72 z-10">
-      <NuxtImg src="/assets/img/icons/vector-logo.svg" alt="vector-logo" loading="lazy" />
+      <NuxtImg src="/img/icons/vector-logo.svg" alt="vector-logo" loading="lazy" />
     </div>
   </section>
 </template>

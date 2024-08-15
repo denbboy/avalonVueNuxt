@@ -115,7 +115,7 @@
 
                 <NuxtLink @click="handleOpenModal3D" v-if="itemData?.video_360" :href="`#3d-object-${itemData?.id}`"
                     class="absolute hover:scale-105 active:scale-95 transition-all top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
-                    <NuxtImg src="/assets/img/about/360.png" class="max-w-[95px]" alt="ph" loading="lazy" />
+                    <NuxtImg src="/img/about/360.png" class="max-w-[95px]" alt="ph" loading="lazy" />
                 </NuxtLink>
 
                 <swiper class="swiper-apartments w-full h-full" :modules="modules" :slides-per-view="1"

@@ -33,7 +33,7 @@
 
     <div class="container relative z-10">
       <div class="absolute right-0 bottom-56 w-72 h-72 z-10">
-        <NuxtImg src="/assets/img/icons/vector-logo.svg" alt="vector-logo" loading="lazy" />
+        <NuxtImg src="/img/icons/vector-logo.svg" alt="vector-logo" loading="lazy" />
       </div>
 
       <div class="pb-14 text-content">
@@ -52,7 +52,7 @@
 
         <a href="#"
           class="rounded-full border-[1px] border-white w-10 h-10 flex items-center justify-center mt-8 mb-14 md:w-14 md:h-14">
-          <NuxtImg src="/assets/img/icons/socials.svg" class="md:w-6" alt="Soc" loading="lazy" />
+          <NuxtImg src="/img/icons/socials.svg" class="md:w-6" alt="Soc" loading="lazy" />
         </a>
 
         <div

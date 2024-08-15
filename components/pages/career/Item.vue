@@ -12,8 +12,8 @@
                 </div>
                 <div
                     class="flex items-center transition-all justify-center rounded-[10px] w-11 h-11 min-w-11 group-[.active]:bg-blue-400 bg-blue-700">
-                    <NuxtImg class="group-[.active]:block hidden" src="/assets/img/icons/minus-white.svg" alt="" />
-                    <NuxtImg class="group-[.active]:hidden block" src="/assets/img/icons/plus-white.svg" alt="" />
+                    <NuxtImg class="group-[.active]:block hidden" src="/img/icons/minus-white.svg" alt="" />
+                    <NuxtImg class="group-[.active]:hidden block" src="/img/icons/plus-white.svg" alt="" />
                 </div>
             </div>
             <div :class="{'pb-7': isOpen}" class="select__body career-select-body">

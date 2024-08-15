@@ -1,10 +1,10 @@
 <template>
   <section class="company md:bg-white md:pt-24 md:pb-16 relative overflow-hidden bg-blue-600" data-aos="fade-up">
     <div class="absolute -left-36 bottom-20 w-72 h-72 z-10">
-      <NuxtImg src="/assets/img/icons/vector-logo.svg" class="invert" alt="vector-logo" />
+      <NuxtImg src="/img/icons/vector-logo.svg" class="invert" alt="vector-logo" />
     </div>
     <div class="absolute -right-36 top-20 w-72 h-72 z-10">
-      <NuxtImg src="/assets/img/icons/vector-logo.svg" class="invert" alt="vector-logo" />
+      <NuxtImg src="/img/icons/vector-logo.svg" class="invert" alt="vector-logo" />
     </div>
     <div class="container">
       <div class="relative md:h-[450px]">
@@ -14,7 +14,7 @@
             class="bg-blue-400 min-w-2 h-2 rounded-[3px] before:block before:w-[50px] before:h-[1px] before:bg-blue-400/20 before:absolute before:right-[0] before:top-1 absolute top-[50%] left-5 translate-y-[-50%] md:left-[50%] md:top-[-20px] md:translate-x-[-50%] md:before:w-[1px] md:before:h-[400px] md:before:bottom-0 md:before:top-auto md:before:right-1">
           </div>
           <div class="w-full">
-            <NuxtImg loading="lazy" src="/assets/img/index/comp-1.svg" class="ml-5 md:m-auto md:w-[141px] " alt="ic" />
+            <NuxtImg loading="lazy" src="/img/index/comp-1.svg" class="ml-5 md:m-auto md:w-[141px] " alt="ic" />
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[222px] md:mx-auto">
             {{ $t('companies_text_1') }}
@@ -27,7 +27,7 @@
           </div>
 
           <div class="w-full">
-            <NuxtImg loading="lazy" src="/assets/img/index/comp-2.svg" class="ml-5 md:m-auto md:w-[141px]" alt="ic" />
+            <NuxtImg loading="lazy" src="/img/index/comp-2.svg" class="ml-5 md:m-auto md:w-[141px]" alt="ic" />
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[222px] md:mx-auto">
             {{ $t('companies_text_2') }}
@@ -40,7 +40,7 @@
           </div>
 
           <div class="w-full">
-            <NuxtImg loading="lazy" src="/assets/img/index/comp-3.svg" class="ml-5 md:m-auto md:w-[125px]" alt="ic" />
+            <NuxtImg loading="lazy" src="/img/index/comp-3.svg" class="ml-5 md:m-auto md:w-[125px]" alt="ic" />
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[222px] md:mx-auto">
             {{ $t('companies_text_3') }}
@@ -53,7 +53,7 @@
           </div>
 
           <div class="w-full">
-            <NuxtImg loading="lazy" src="/assets/img/index/comp-4.svg"
+            <NuxtImg loading="lazy" src="/img/index/comp-4.svg"
               class="ml-5 md:m-auto md:w-[200px] md:-mt-5 md:pt-5 md:bg-white" alt="ic" />
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[260px] md:mx-auto">
@@ -67,7 +67,7 @@
           </div>
 
           <div class="w-full">
-            <NuxtImg loading="lazy" src="/assets/img/index/comp-5.svg" class="ml-5 md:m-auto md:w-[200px]" alt="ic" />
+            <NuxtImg loading="lazy" src="/img/index/comp-5.svg" class="ml-5 md:m-auto md:w-[200px]" alt="ic" />
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[222px] md:mx-auto">
             {{ $t('companies_text_5') }}
@@ -80,7 +80,7 @@
           </div>
 
           <div class="w-full">
-            <NuxtImg loading="lazy" src="/assets/img/index/comp-6.svg" class="ml-5 md:m-auto md:w-[160px]" alt="ic" />
+            <NuxtImg loading="lazy" src="/img/index/comp-6.svg" class="ml-5 md:m-auto md:w-[160px]" alt="ic" />
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[222px] md:mx-auto">
             {{ $t('companies_text_6') }}
@@ -93,7 +93,7 @@
           </div>
 
           <div class="w-full">
-            <NuxtImg loading="lazy" src="/assets/img/index/comp-7.svg" class="ml-5 md:m-auto md:w-[140px]" alt="ic" />
+            <NuxtImg loading="lazy" src="/img/index/comp-7.svg" class="ml-5 md:m-auto md:w-[140px]" alt="ic" />
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[222px] md:mx-auto">
             {{ $t('companies_text_7') }}
@@ -106,7 +106,7 @@
           </div>
 
           <div class="w-full">
-            <NuxtImg loading="lazy" src="/assets/img/index/comp-8.svg" class="ml-5 md:m-auto md:w-[200px]" alt="ic" />
+            <NuxtImg loading="lazy" src="/img/index/comp-8.svg" class="ml-5 md:m-auto md:w-[200px]" alt="ic" />
           </div>
           <p class="text-blue-600 text-xs md:text-center md:max-w-[222px] md:mx-auto">
             {{ $t('companies_text_8') }}

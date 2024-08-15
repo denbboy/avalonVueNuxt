@@ -1,15 +1,15 @@
 <template>
-    <NuxtImg src="/assets/img/modals/modal-banner-2.jpg" class="mt-10 lg:-mt-10 w-full lg:rounded-t-[20px] max-w-none "
+    <NuxtImg src="/img/modals/modal-banner-2.webp" class="mt-10 lg:-mt-10 w-full lg:rounded-t-[20px] max-w-none "
         alt="ph"/>
 
     <div
         class="content__inner z-0 relative overflow-hidden p-5 lg:p-10 max-w-[600px] flex flex-col items-center justify-center h-full">
 
         <div class="absolute right-[-34px] -top-5 lg:top-5 z-0">
-            <NuxtImg src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo"/>
+            <NuxtImg src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo"/>
         </div>
         <div class="absolute left-[-34px] bottom-0 lg:bottom-[154px] z-0">
-            <NuxtImg src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo"/>
+            <NuxtImg src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo"/>
         </div>
 
         <h2 class="text-white text-lg md:text-2xl font-bold text-center mb-5 ">

@@ -2,7 +2,7 @@
     <section class="uslugi pt-[23px] pb-12 relative overflow-hidden">
         <div
             class="absolute lg:-right-36 top-0 lg:top-auto lg:left-auto min-h-[600px] lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
-            <NuxtImg loading="lazy" src="/assets/img/icons/vector-logo.svg" class="" alt="vector-logo" />
+            <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="" alt="vector-logo" />
         </div>
         <div class="container">
             <div class="w-full flex flex-col items-center text-center md:flex-row md:justify-between md:mb-[44px] md:text-start"
@@ -65,7 +65,7 @@
                                         {{ $t('more') }}
                                     </NuxtLink>
                                     <div class="flex items-center">
-                                        <NuxtImg class="w-3" src="/assets/img/icons/point-white.svg" alt="" loading="lazy" />
+                                        <NuxtImg class="w-3" src="/img/icons/point-white.svg" alt="" loading="lazy" />
                                         <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">
                                             {{ $t('changu') }}
                                         </span>

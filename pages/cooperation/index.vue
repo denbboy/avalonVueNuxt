@@ -28,7 +28,7 @@
                     </div>
                     <NuxtImg loading="lazy" data-aos="fade-up"
                         class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
-                        src="/assets/img/cooperation/photo-1.jpg" alt="img" />
+                        src="/img/cooperation/photo-1.webp" alt="img" />
                 </div>
                 <div data-aos="fade-up"
                     class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] xl:pt-20 xl:pb-24 xl:pl lg:pl-[120px] lg::pr-[120px]">
@@ -131,7 +131,7 @@
                     </div>
                     <NuxtImg loading="lazy" data-aos="fade-left"
                         class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
-                        src="/assets/img/cooperation/photo-2.jpg" alt="img" />
+                        src="/img/cooperation/photo-2.webp" alt="img" />
                 </div>
                 <div data-aos="fade-up"
                     class="border border-white/20 px-[20px] py-[60px] md:p-[48px] pb-6 3xl:py-[80px] 3xl:px-[120px] rounded-[20px] overflow-hidden">
@@ -143,7 +143,7 @@
                         <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
                                 class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
-                                <NuxtImg loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="" />
+                                <NuxtImg loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/img/icons/white-check.svg" alt="" />
                             </div>
                             <p class="text-sm md:text-lg text-white ">
                                 {{ $t('agency_text_3') }}
@@ -152,7 +152,7 @@
                         <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
                                 class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
-                                <NuxtImg loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="" />
+                                <NuxtImg loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/img/icons/white-check.svg" alt="" />
                             </div>
                             <p class="text-sm md:text-lg text-white ">
                                 {{ $t('agency_text_4') }}
@@ -161,7 +161,7 @@
                         <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
                                 class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
-                                <NuxtImg loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="" />
+                                <NuxtImg loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/img/icons/white-check.svg" alt="" />
                             </div>
                             <p class="text-sm md:text-lg text-white ">
                                 {{ $t('agency_text_5') }}
@@ -195,7 +195,7 @@
                     </div>
                     <NuxtImg loading="lazy" data-aos="fade-right"
                         class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
-                        src="/assets/img/cooperation/photo-3.jpg" alt="img" />
+                        src="/img/cooperation/photo-3.webp" alt="img" />
                 </div>
                 <div data-aos="fade-up"
                     class="border border-white/20 px-[20px] py-[60px] md:p-[48px] pb-6 3xl:py-[80px] 3xl:px-[120px] rounded-[20px] overflow-hidden">
@@ -207,7 +207,7 @@
                         <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
                                 class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
-                                <NuxtImg loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="" />
+                                <NuxtImg loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/img/icons/white-check.svg" alt="" />
                             </div>
                             <p class="text-sm md:text-lg text-white ">
                                 {{ $t('marketing_coop_1') }}
@@ -216,7 +216,7 @@
                         <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
                                 class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
-                                <NuxtImg loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="" />
+                                <NuxtImg loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/img/icons/white-check.svg" alt="" />
                             </div>
                             <p class="text-sm md:text-lg text-white ">
                                 {{ $t('marketing_coop_2') }}
@@ -225,7 +225,7 @@
                         <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
                                 class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
-                                <NuxtImg loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/assets/img/icons/white-check.svg" alt="" />
+                                <NuxtImg loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/img/icons/white-check.svg" alt="" />
                             </div>
                             <p class="text-sm md:text-lg text-white ">
                                 {{ $t('marketing_coop_3') }}
@@ -256,7 +256,7 @@
                     </div>
                     <NuxtImg loading="lazy" data-aos="fade-up"
                         class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
-                        src="/assets/img/cooperation/photo-4.jpg" alt="img" />
+                        src="/img/cooperation/photo-4.webp" alt="img" />
                 </div>
                 <div data-aos="fade-up"
                     class="border border-white/20 py-[60px] pl-5 pr-3 rounded-[20px] xl:pt-20 xl:pb-24 xl:pl lg:pl-[120px] lg::pr-[120px]">

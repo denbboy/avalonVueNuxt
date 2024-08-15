@@ -3,10 +3,10 @@
         class="content__inner z-0 relative overflow-x-hidden overflow-y-auto p-5 lg:p-10 max-w-[600px] lg:max-h-[90vh]">
 
         <div class="absolute right-[-34px] -top-5 lg:top-5 z-0">
-            <NuxtImg src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
+            <NuxtImg src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
         </div>
         <div class="absolute left-[-34px] bottom-0 lg:bottom-[154px] z-0">
-            <NuxtImg src="/assets/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
+            <NuxtImg src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
         </div>
 
         <h2 class="text-white text-lg lg:text-2xl font-bold text-center mb-5">Отклик на вакансию</h2>
