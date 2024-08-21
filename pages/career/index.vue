@@ -24,10 +24,10 @@ watchEffect(() => {
 
     <section class="pb-24 relative bg-blue-500 overflow-hidden">
         <div class="absolute lg:-right-36 top-0 lg:top-96 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[11]">
-            <NuxtImg src="/img/icons/vector-logo.svg" class="" alt="vector-logo" loading="lazy" />
+            <NuxtImg src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
         </div>
         <div class="absolute lg:-left-36 top-0 lg:top-52 lg:right-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[11]">
-            <NuxtImg src="/img/icons/vector-logo.svg" class="" alt="vector-logo" loading="lazy" />
+            <NuxtImg src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
         </div>
 
         <div class="bg-gradient-to-t from-blue-500 from-60% lg:from-60%  w-full h-[2000px] absolute z-10"></div>

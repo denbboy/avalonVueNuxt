@@ -109,14 +109,14 @@
 
                             </div>
                         </div>
-                        <h2 class="text-3xl text-white mt-5 md:text-[55px] lg:text-[65px] md:mt-12 md:max-w-[825px]">
+                        <h2 class="text-3xl text-white mt-5 md:text-[55px] lg:text-[65px] md:mt-6 md:max-w-[825px]">
                             <span class="font-bold leading-[120%]">
                                 {{ itemData?.translations?.filter(item =>
                                     item.languages_code.includes(langStore.lang))[0]?.title }}
                             </span>
                         </h2>
                         <p data-aos="fade-up"
-                            class="text-white text-sm max-w-64 md:max-w-[501px] md:text-base mt-3 md:mt-12">
+                            class="text-white text-sm max-w-64 md:max-w-[501px] md:text-base mt-3 md:mt-6">
                             {{ itemData?.translations?.filter(item =>
                                 item.languages_code.includes(langStore.lang))[0]?.description }}
                         </p>
@@ -129,8 +129,8 @@
                         <button v-if="itemData?.video" data-aos="fade-up" @click="handlePlayVideo(itemData?.video)"
                             type="button"
                             class="flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
-                            <div class="relative flex items-center justify-center">
-                                <NuxtImg src="/img/about/playBorder.svg" class="max-w-[95px] xl:max-w-[165px]"
+                            <div class="relative flex items-center justify-center max-w-[95px] w-full h-full xl:max-w-[165px]">
+                                <NuxtImg src="/img/about/playBorder.svg" class="w-full h-full"
                                     alt="ic" loading="lazy" />
                                 <svg class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18" height="21"
                                     viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">

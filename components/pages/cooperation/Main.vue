@@ -7,7 +7,7 @@
         <NuxtImg class="absolute top-0 z-0 opacity-90 w-[600vw] max-w-max md:w-full min-h-[1000px] h-screen object-cover"
             src="/img/career/img.webp" alt="Image"> -->
 
-        <NuxtImg src="~assets/img/career/img.webp"
+        <NuxtImg src="/img/career/img.webp"
             class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="" />
         <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10">
         </div>
@@ -265,7 +265,7 @@
         </div>
 
         <div class="absolute -right-[72px] top-[250px] w-36 z-10">
-            <NuxtImg src="/img/icons/vector-logo.svg" alt="vector-logo" />
+            <NuxtImg src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
         </div>
     </section>
 </template>

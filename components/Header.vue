@@ -5,10 +5,11 @@
       class="header-wrapper w-full bg-blue-500 h-fit py-4 border-b-2 border-b-whiteOp-300 md:border-none transition-all"
       :class="isOpenBurger ? 'bg-blue-500' : 'md:bg-transparent'">
 
-      
+
       <div class="header__inner px-5 flex items-center justify-between gap-3 relative z-[2]">
-        <NuxtLink :href="'/'">
-          <NuxtImg loading="lazy" src="/img/newLogo.png" class="hidden md:max-w-[55px] w-full lg:max-w-[95px] xl:block" alt="logo" />
+        <NuxtLink :href="mainPageLink">
+          <NuxtImg loading="lazy" src="/img/newLogo.png" class="hidden md:max-w-[55px] w-full lg:max-w-[95px] xl:block"
+            alt="logo" />
           <NuxtImg loading="lazy" format="webp" src="/img/icons/logo-mob.webp" class="xl:hidden" alt="logo ic" />
         </NuxtLink>
 
@@ -20,11 +21,18 @@
                 after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
               ">
               {{ $t('project') }}
-              <NuxtImg loading="lazy" format="svg" src="/img/index/small-arrow-white.svg" alt="ic" />
+
+              <svg width="6" height="5" viewBox="0 0 6 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.63428 3.93725L5.98828 0.25L0.00303125 0.25L2.36528 3.93575C2.43272 4.04304 2.52625 4.13149 2.63713 4.19285C2.74802 4.2542 2.87264 4.28646 2.99937 4.28661C3.12609 4.28676 3.25079 4.2548 3.36182 4.19371C3.47285 4.13261 3.56659 4.04438 3.63428 3.93725Z"
+                  fill="white" />
+              </svg>
+
             </button>
             <div
               class="projectsMenu opacity-0 invisible group-hover:opacity-100 group-hover:visible flex transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-0 border border-whiteOp-300">
 
+              <!-- <NuxtLink :href="`/projects/${item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`" v-for="item in projectsStore.projects" :key="item.id" class="text-white md:text-xs lg:text-sm last:mb-0 mb-4 whitespace-nowrap relative -->
               <NuxtLink :href="`/projects/${item.id}`" v-for="item in projectsStore.projects" :key="item.id" class="text-white md:text-xs lg:text-sm last:mb-0 mb-4 whitespace-nowrap relative
                   before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
                   after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
@@ -34,13 +42,13 @@
 
             </div>
           </div>
-          <NuxtLink href="#about-company" class="text-white md:text-xs lg:text-sm relative transition-all
+          <NuxtLink :href="mainPageLink + '/#about-company'" class="text-white md:text-xs lg:text-sm relative transition-all
               before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
               after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
             ">
             {{ $t('about_company') }}
           </NuxtLink>
-          <NuxtLink href="#island" class="text-white md:text-xs lg:text-sm relative
+          <NuxtLink :href="mainPageLink + '/#island'" class="text-white md:text-xs lg:text-sm relative
               before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
               after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
             ">
@@ -58,6 +66,32 @@
             ">
             {{ $t('career') }}
           </NuxtLink>
+          <div class="relative group">
+            <button type="button" class="projectsButton flex items-center gap-1 text-white md:text-xs lg:text-sm
+                before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
+                after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
+              ">
+              {{ $t('else_projects') }}
+
+              <svg width="6" height="5" viewBox="0 0 6 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.63428 3.93725L5.98828 0.25L0.00303125 0.25L2.36528 3.93575C2.43272 4.04304 2.52625 4.13149 2.63713 4.19285C2.74802 4.2542 2.87264 4.28646 2.99937 4.28661C3.12609 4.28676 3.25079 4.2548 3.36182 4.19371C3.47285 4.13261 3.56659 4.04438 3.63428 3.93725Z"
+                  fill="white" />
+              </svg>
+
+            </button>
+            <div
+              class="projectsMenu opacity-0 invisible group-hover:opacity-100 group-hover:visible flex transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-0 border border-whiteOp-300">
+
+              <NuxtLink :href="`/projects/${item.id}`" v-for="item in projectsStore.projects" :key="item.id" class="text-white md:text-xs lg:text-sm last:mb-0 mb-4 whitespace-nowrap relative
+                  before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
+                  after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
+                ">
+                {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+              </NuxtLink>
+
+            </div>
+          </div>
           <NuxtLink href="#contacts" class="text-white md:text-xs lg:text-sm relative
               before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
               after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
@@ -83,7 +117,11 @@
         <div class="hidden group xl:flex xl:flex-col relative">
           <button class="projectsButton flex items-center gap-1 text-white md:text-xs lg:text-sm uppercase">
             {{ locale }}
-            <NuxtImg loading="lazy" src="/img/index/small-arrow-white.svg" alt="ic" />
+            <svg width="6" height="5" viewBox="0 0 6 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M3.63428 3.93725L5.98828 0.25L0.00303125 0.25L2.36528 3.93575C2.43272 4.04304 2.52625 4.13149 2.63713 4.19285C2.74802 4.2542 2.87264 4.28646 2.99937 4.28661C3.12609 4.28676 3.25079 4.2548 3.36182 4.19371C3.47285 4.13261 3.56659 4.04438 3.63428 3.93725Z"
+                fill="white" />
+            </svg>
           </button>
           <div
             class="projectsMenu flex opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-[50%] translate-x-[-50%] border border-whiteOp-300">
@@ -161,8 +199,8 @@
         <div id="projectsBody" :class="isOpenSubMenu ? 'max-h-96 mt-8' : 'max-h-0 mt-0'"
           class="burger__proj_body h-full overflow-hidden flex transition-all flex-col">
 
-          <NuxtLink @click="handleCloseBurger" :href="`/projects/${item.id}`" v-for="item in projectsStore.projects" :key="item.id"
-            class="mb-4 text-sm hover:text-blue-400 transition-all">
+          <NuxtLink @click="handleCloseBurger" :href="`/projects/${item.id}`" v-for="item in projectsStore.projects"
+            :key="item.id" class="mb-4 text-sm hover:text-blue-400 transition-all">
             {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
           </NuxtLink>
 
@@ -245,7 +283,7 @@
     </div>
   </header>
 
-  <Preloader :isActive="isLoading"/>
+  <Preloader :isActive="isLoading" />
 </template>
 
 <script setup>
@@ -262,6 +300,7 @@ const isOpenBurger = ref(false);
 const isScrolled = ref(false);
 const isOpen = ref(false);
 const isOpenSubMenu = ref(false);
+const mainPageLink = ref('/')
 
 const props = defineProps(['header']);
 const router = useRouter();
@@ -279,7 +318,7 @@ const changeLocale = (newLocale) => {
   isLoading.value = true;
 
   preloaderStore.start()
-  
+
   setTimeout(() => changeLanguage(newLocale), 500)
 };
 
@@ -292,6 +331,8 @@ const changeLanguage = (newLocale) => {
   } else {
     pathWithoutLocale = `/${pathWithoutLocale}`;
   }
+
+  mainPageLink.value = `/${newLocale}`
 
   if (router.currentRoute.value.fullPath !== pathWithoutLocale) {
     router.push(pathWithoutLocale);
@@ -307,13 +348,13 @@ const changeLanguage = (newLocale) => {
   }, 500)
 }
 
-// onMounted(() => {
-//   const savedLanguage = localStorage.getItem('selectedLanguage');
-//   const urlLocale = route.fullPath.match(/^\/([a-z]{2})(\/|$)/)?.[1] || null;
-//   const initialLocale = urlLocale || savedLanguage || DEFAULT_LOCALE;
+onMounted(() => {
+  const savedLanguage = localStorage.getItem('selectedLanguage');
+  const urlLocale = route.fullPath.match(/^\/([a-z]{2})(\/|$)/)?.[1] || null;
+  const initialLocale = urlLocale || savedLanguage || DEFAULT_LOCALE;
 
-//   changeLocale(initialLocale);
-// });
+  changeLocale(initialLocale);
+});
 
 const openSubMenu = () => {
   isOpenSubMenu.value = !isOpenSubMenu.value;
@@ -331,6 +372,9 @@ const handleOpenModal = () => {
   modalsStore.addModal("calendar");
   handleCloseBurger();
 };
+
+console.log(projectsStore.projects);
+
 
 // const handleOpen = () => {
 //   isOpen.value = !isOpen.value;

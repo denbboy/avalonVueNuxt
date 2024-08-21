@@ -1,15 +1,15 @@
 <template>
     <NuxtImg src="/img/modals/modal-banner-2.webp" class="mt-10 lg:-mt-10 w-full lg:rounded-t-[20px] max-w-none "
-        alt="ph"/>
+        alt="ph" />
 
     <div
         class="content__inner z-0 relative overflow-hidden p-5 lg:p-10 max-w-[600px] flex flex-col items-center justify-center h-full">
 
         <div class="absolute right-[-34px] -top-5 lg:top-5 z-0">
-            <NuxtImg src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo"/>
+            <NuxtImg src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
         </div>
         <div class="absolute left-[-34px] bottom-0 lg:bottom-[154px] z-0">
-            <NuxtImg src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo"/>
+            <NuxtImg src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
         </div>
 
         <h2 class="text-white text-lg md:text-2xl font-bold text-center mb-5 ">
@@ -24,7 +24,8 @@
                 </label>
 
                 <div class="phone-vti">
-                    <VueTelInput :input-options="inputOptions" v-model="phone" :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
+                    <VueTelInput :input-options="inputOptions" v-model="phone" :preferred-countries="preferredCountries"
+                        :only-countries="sortedCountries" />
                 </div>
 
                 <label for="some" class="flex flex-col text-start mb-[10px] mt-5">
@@ -64,9 +65,10 @@
 
                 <p class="text-center text-white text-xs lg:text-sm w-full mt-5">
                     {{ $t('m_calendar_text_4_1') }}
-                    <a target="_blank" :href="toolkitStore?.settings?.soc_link_whats" class="text-blue-400 font-bold underline transition-all hover:text-blue-700">
+                    <a target="_blank" :href="toolkitStore?.settings?.soc_link_whats"
+                        class="text-blue-400 font-bold underline transition-all hover:text-blue-700">
                         {{ $t('m_calendar_text_4_2') }}
-                    </a> 
+                    </a>
                     {{ $t('m_calendar_text_4_3') }}
                 </p>
 
@@ -168,15 +170,15 @@ const submitForm = async () => {
 };
 
 const preferredCountries = [
-  'id', // Индонезия
-  'ua', // Украина
-  'ru', // Россия
-  'by', // Беларусь
-  'kz', // Казахстан
-  'us', // США
-  'gb', // Англия
-  'fr', // Франция
-  'cn', // КНР
+    'id', // Индонезия
+    'ua', // Украина
+    'ru', // Россия
+    'by', // Беларусь
+    'kz', // Казахстан
+    'us', // США
+    'gb', // Англия
+    'fr', // Франция
+    'cn', // КНР
 ];
 
 // Получаем список всех стран
@@ -184,9 +186,9 @@ const allCountries = iso31661.all().map(country => country.alpha2);
 
 // Создаем computed property, который включает все страны
 const sortedCountries = computed(() => {
-  const preferredSet = new Set(preferredCountries);
-  const unselectedCountries = allCountries.filter(country => !preferredSet.has(country));
-  return [...preferredCountries, ...unselectedCountries];
+    const preferredSet = new Set(preferredCountries);
+    const unselectedCountries = allCountries.filter(country => !preferredSet.has(country));
+    return [...preferredCountries, ...unselectedCountries];
 });
 
 import { createDirectus, rest, readFlow } from '@directus/sdk';
@@ -200,7 +202,9 @@ const placeholderLang = {
 }
 
 const inputOptions = {
-  placeholder: placeholderLang[langStore.lang]
+    showDialCode: true,
+    autoFormat: false,
+    placeholder: placeholderLang[langStore.lang]
 };
 
 const formRequest = async () => {

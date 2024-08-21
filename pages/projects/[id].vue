@@ -61,11 +61,14 @@ export default {
 </script>
 
 <script setup>
+
 const router = useRoute();
 const langStore = useLangStore()
 const projectsStore = useProjectsStore();
 
 const itemData = await useAsyncData('ProjectItem', () => $fetch(`/api/projects/${router.params.id}`))
 projectsStore.setCurrentProject(itemData.data);
+
+console.log(itemData?.data?.value?.blocks);
 
 </script>

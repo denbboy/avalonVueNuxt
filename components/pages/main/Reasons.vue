@@ -105,7 +105,7 @@
     </div>
 
     <div class="absolute md:-right-36 -bottom-14 md:hidden mt-[1px] translate-y-1 -right-14 w-28 z-[2]">
-      <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" alt="vector-logo" />
+      <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
     </div>
   </section>
 </template>

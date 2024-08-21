@@ -28,8 +28,17 @@
                     <div class="md:mb-[30px] md:pb-[30px] border-b border-white/10 mb-5 pb-5">
                         <a :href="toolkitStore?.settings?.soc_link_whats" target="_blank"
                             class="flex items-center gap-4 mb-7 md:gap-4 lg:gap-5 group">
-                            <NuxtImg loading="lazy" src="/img/index/whatsap.webp"
-                                class="w-[60px] rounded-full h-[60px] 3xl:w-[70px] 3xl:h-[70px]" alt="ic" />
+
+                            <div
+                                class="w-[45px] h-[45px] 3xl:w-[70px] 3xl:h-[70px] bg-blue-500 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 3xl:w-8 3xl:h-8" width="33" height="32" viewBox="0 0 33 32"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M27.7622 4.74554C24.7607 1.74261 20.7695 0.0875375 16.5174 0.0859375C7.75514 0.0859375 0.624071 7.2138 0.620871 15.9761C0.619271 18.7769 1.35127 21.511 2.7422 23.9203L0.585938 31.9139L8.91367 29.9454C11.2355 31.2121 13.8486 31.8789 16.5094 31.8805H16.5158C25.2765 31.8805 32.4074 24.751 32.4122 15.9903C32.4154 11.743 30.7635 7.75007 27.7622 4.74554ZM24.2945 21.6558C23.9635 22.5835 22.3419 23.4779 21.613 23.5431C20.8842 23.6099 20.2014 23.8726 16.8467 22.5501C12.8094 20.9587 10.2599 16.8195 10.0626 16.5553C9.86367 16.2895 8.44101 14.4022 8.44101 12.4479C8.44101 10.4937 9.46741 9.53247 9.83194 9.1362C10.1963 8.73834 10.6261 8.63967 10.8918 8.63967C11.1559 8.63967 11.4217 8.63967 11.6525 8.64927C11.9357 8.66047 12.2493 8.67474 12.5469 9.33514C12.9001 10.1213 13.6719 12.0851 13.7706 12.2841C13.8693 12.483 13.9361 12.7153 13.8041 12.9794C13.6719 13.2437 13.6051 13.4091 13.4078 13.6415C13.2089 13.8738 12.9909 14.1587 12.8126 14.3369C12.6137 14.5342 12.4067 14.7507 12.6375 15.147C12.8699 15.5447 13.6655 16.845 14.8463 17.8969C16.3646 19.2495 17.6425 19.6681 18.0403 19.8686C18.4382 20.0675 18.6689 20.0341 18.9013 19.7683C19.1337 19.5042 19.8943 18.6098 20.1585 18.2119C20.4226 17.8141 20.6885 17.881 21.0529 18.013C21.4173 18.1451 23.3699 19.1063 23.7662 19.3053C24.1641 19.5042 24.4282 19.6029 24.5269 19.7683C24.6255 19.9323 24.6255 20.7279 24.2945 21.6558Z"
+                                        fill="white" style="fill:white;fill-opacity:1;" />
+                                </svg>
+                            </div>
+
                             <div>
                                 <span class="text-white/40 text-sm md:text-base md:mb-2">
                                     WhatsApp 24/7 online
@@ -42,8 +51,17 @@
                         </a>
                         <a :href="`mailto:${toolkitStore?.settings?.email}`" target="_blank"
                             class="flex items-center gap-4 md:gap-5 group">
-                            <NuxtImg loading="lazy" src="/img/index/mail.webp"
-                                class="w-[60px] h-[60px] rounded-full 3xl:w-[70px] 3xl:h-[70px]" alt="ic" />
+
+                            <div
+                                class="w-[45px] h-[45px] 3xl:w-[70px] 3xl:h-[70px] bg-blue-500 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-5 3xl:w-9 3xl:h-8" viewBox="0 0 38 31" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M33.54 0.959961H4.30303C2.29302 0.959961 0.648438 2.60454 0.648438 4.61464V26.5423C0.648438 28.5524 2.29302 30.1969 4.30303 30.1969H33.54C35.55 30.1969 37.1946 28.5524 37.1946 26.5423V4.61464C37.1946 2.60454 35.55 0.959961 33.54 0.959961ZM32.8091 8.72608L20.8584 16.1997C19.6707 16.949 18.1723 16.949 16.9846 16.1997L5.03398 8.72608C4.85072 8.62319 4.69031 8.4842 4.56237 8.31755C4.43434 8.1509 4.34157 7.95996 4.28945 7.75646C4.23741 7.55287 4.22721 7.34084 4.25951 7.1332C4.29173 6.92556 4.36578 6.72661 4.47719 6.54841C4.58851 6.37029 4.73492 6.21654 4.90739 6.09653C5.07986 5.9766 5.27493 5.89285 5.48071 5.85043C5.68658 5.80801 5.89878 5.80776 6.10473 5.84976C6.31059 5.89176 6.50583 5.97508 6.67856 6.09476L18.9216 13.7512L31.1645 6.09476C31.3373 5.97508 31.5324 5.89176 31.7384 5.84976C31.9443 5.80776 32.1565 5.80801 32.3623 5.85043C32.5681 5.89285 32.7632 5.9766 32.9356 6.09653C33.1082 6.21654 33.2545 6.37029 33.3658 6.54841C33.4773 6.72661 33.5513 6.92556 33.5836 7.1332C33.6158 7.34084 33.6056 7.55287 33.5536 7.75646C33.5015 7.95996 33.4087 8.1509 33.2808 8.31755C33.1527 8.4842 32.9923 8.62319 32.8091 8.72608Z"
+                                        fill="white" style="fill:white;fill-opacity:1;" />
+                                </svg>
+                            </div>
+
                             <div>
                                 <span class="text-white/40 text-sm md:text-base md:mb-2">
                                     Email us
@@ -145,7 +163,8 @@
         <div class="bg-blue-500 py-7 md:py-2">
             <div class="container">
                 <div class="flex items-center justify-between gap-8">
-                    <NuxtImg src="/img/index/a-footer.webp" format="webp" loading="lazy" class="max-w-[96px] md:hidden" alt="ph" />
+                    <NuxtImg src="/img/index/a-footer.webp" format="webp" loading="lazy" class="max-w-[96px] md:hidden"
+                        alt="ph" />
 
                     <!-- <div class="logo-clip-path md:hidden">
                         <video loop class="w-[96px] h-[100px] object-cover" muted autoplay>
@@ -158,21 +177,21 @@
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <NuxtLink href="/cooperation" class="hover:text-blue-400 transition-all">
-                                {{ allPages?.filter(item => item.slug === 'cooperation')[0]?.translations
+                                {{ pagesStore.pagesList?.filter(item => item.slug === 'cooperation')[0]?.translations
                                     ?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
                             </NuxtLink>
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <NuxtLink href="/career" class="hover:text-blue-400 transition-all">
-                                {{ allPages?.filter(item => item.slug === 'career')[0]?.translations
+                                {{ pagesStore.pagesList?.filter(item => item.slug === 'career')[0]?.translations
                                     ?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
                             </NuxtLink>
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <NuxtLink href="/docs/privacy-police" class="hover:text-blue-400 transition-all">
-                                {{ allPages?.filter(item => item.slug ===
+                                {{ pagesStore.pagesList?.filter(item => item.slug ===
                                     'privacy-police')[0]?.translations?.filter(item =>
                                         item.languages_code.includes(langStore.lang))[0]?.title }}
                             </NuxtLink>
@@ -180,8 +199,9 @@
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <NuxtLink href="/docs/terms" class="hover:text-blue-400 transition-all">
-                                {{ allPages?.filter(item => item.slug === 'terms')[0]?.translations?.filter(item =>
-                                    item.languages_code.includes(langStore.lang))[0]?.title }}
+                                {{ pagesStore.pagesList?.filter(item => item.slug ===
+                                    'terms')[0]?.translations?.filter(item =>
+                                        item.languages_code.includes(langStore.lang))[0]?.title }}
                             </NuxtLink>
                         </li>
                         <li
@@ -209,12 +229,13 @@ import iso31661 from 'iso-3166-1';
 
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
-const allPages = ref([]);
+// const allPages = ref([]);
 const isShowArrowUp = ref(false);
 
-watch(pagesStore, (newValue) => {
-    allPages.value = newValue?.pagesList;
-});
+// watch(pagesStore, (newValue) => {
+//     allPages.value = newValue?.pagesList;
+// });
+
 
 const handleScroll = () => {
     const pointToShow = document.body.offsetHeight * 60 / 100
@@ -245,6 +266,8 @@ const placeholderLang = {
 }
 
 const inputOptions = {
+    showDialCode: true,
+    autoFormat: false,
     placeholder: placeholderLang[langStore.lang]
 };
 

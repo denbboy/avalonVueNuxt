@@ -1,7 +1,7 @@
 <template>
     <section id="about" class="club py-14 bg-blue-600 lg:py-0 lg:pb-24 relative overflow-hidden">
         <div class="absolute lg:-right-36 top-0 lg:top-1/2 hidden lg:block -translate-y-1/2 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
-            <NuxtImg src="/img/icons/vector-logo.svg" class="" alt="vector-logo" />
+            <NuxtImg src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
         </div>
         <div class="container relative z-10 flex flex-col gap-5 lg:gap-[60px]">
             <div class="xl:flex xl:gap-7 justify-between xl:items-center">

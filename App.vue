@@ -20,7 +20,7 @@ nuxtApp.hook("page:finish", () => {
   setTimeout(() => {
     modalsStore.addModal('message')
     isShowedModal.value = true
-  }, 10000)
+  }, 15000)
 });
 
 </script>

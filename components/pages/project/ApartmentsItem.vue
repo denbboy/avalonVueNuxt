@@ -114,20 +114,27 @@
                 class="app-swiper relative xl:max-w-[456px] h-full  3xl:max-w-[600px] lg:rounded-3xl rounded-2xl -mb-8 pb-8 md:mb-0 md:pb-0 overflow-hidden">
 
                 <NuxtLink @click="handleOpenModal3D" v-if="itemData?.video_360" :href="`#3d-object-${itemData?.id}`"
-                    class="absolute hover:scale-105 active:scale-95 transition-all top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
-                    <NuxtImg src="/img/about/360.png" class="max-w-[95px]" alt="ph" loading="lazy" />
+                    class="absolute hover:scale-105 w-full active:scale-95 transition-all top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
+                    <NuxtImg src="/img/about/360.png" class="max-w-[95px] xl:max-w-[108px] w-full" alt="ph"
+                        loading="lazy" />
                 </NuxtLink>
 
-                <swiper class="swiper-apartments w-full h-full" :modules="modules" :slides-per-view="1"
-                    :pagination="{ clickable: true }" :navigation="navigationConfig" :space-between="15">
+                <client-only>
+                    <swiper class="swiper-apartments w-full h-full" :modules="modules" :slides-per-view="1"
+                        :pagination="{ clickable: true }" :navigation="navigationConfig" :space-between="15">
 
-                    <swiper-slide v-for="image in itemData?.gallery" :key="image?.id"
-                        class="relative overflow-hidden h-full">
-                        <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`"
-                            class="rounded-[15px] object-cover h-full w-full" alt="ph" loading="lazy" />
-                    </swiper-slide>
+                        <swiper-slide v-for="image in itemData?.gallery" :key="image?.id"
+                            class="relative overflow-hidden h-full">
 
-                </swiper>
+                            <a :href="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`" :data-fancybox="itemData?.id">
+                                <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`"
+                                    class="rounded-[15px] object-cover h-full w-full" alt="ph" loading="lazy" />
+                            </a>
+
+                        </swiper-slide>
+
+                    </swiper>
+                </client-only>
 
                 <div :class="'swiper-button-next after:hidden next-btn-' + itemData?.id">
                     <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">

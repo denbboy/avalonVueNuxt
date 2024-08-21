@@ -40,7 +40,7 @@
         </div>
 
         <div class="absolute -right-36 bottom-36 w-72 h-72 z-10">
-            <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" alt="vector-logo" />
+            <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
         </div>
         <div class="container relative z-10">
 

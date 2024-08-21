@@ -8,7 +8,7 @@
         <div class="container relative z-10">
             <div
                 class="bg-no-repeat bg-cover pt-[60px] pb-9 px-5 md:px-[70px] xl:px-[0px] relative  xl:py-24 3xl:pr-[82px] 3xl:pl-[125px]">
-                <NuxtImg src="/img/about/phone-mob.png" class="absolute z-10 top-[-40px] right-[-30px] xl:hidden"
+                <NuxtImg src="/img/about/phone-mob.png" class="absolute z-10 w-[120px] top-[-40px] right-[-30px] xl:hidden"
                     alt="ph" loading="lazy"/>
 
                     <NuxtImg src="/img/index/buy-bg-desk.png"
@@ -49,7 +49,7 @@
                         <span class="[&_li]:before:bg-[url(/img/about/galka.svg)] [&_li]:before:w-5 [&_li]:before:h-5 [&_li]:before:min-w-5" v-html="props?.itemStrings?.filter(item => item.id === 160)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description"></span>
                     </div>
                     <NuxtImg data-aos="fade-left" src="/img/about/tel-desk.png"
-                        class="hidden xl:block aspect-[624/673]" alt="ph" loading="lazy"/>
+                        class="hidden xl:block w-full aspect-[624/673]" alt="ph" loading="lazy"/>
                 </div>
             </div>
         </div>

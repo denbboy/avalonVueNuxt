@@ -19,10 +19,10 @@ const error = useError();
       </NuxtLink>
 
       <div class="absolute -right-[38px] top-[200px] w-[76px] z-10 md:w-[280px] md:-right-[140px]">
-        <NuxtImg src="/img/icons/vector-logo.svg" loading="lazy" class="mx-auto" format="svg" alt="Vector" width="960" />
+        <NuxtImg src="/img/icons/vector-logo.svg" loading="lazy" class="mx-auto w-full" format="svg" alt="Vector" width="960" />
       </div>
       <div class="absolute -left-[38px] bottom-[200px] w-[76px] z-10 md:w-[280px] md:-left-[140px]">
-        <NuxtImg src="/img/icons/vector-logo.svg" loading="lazy" class="mx-auto" format="svg" alt="Vector" width="960" />
+        <NuxtImg src="/img/icons/vector-logo.svg" loading="lazy" class="mx-auto w-full" format="svg" alt="Vector" width="960" />
       </div>
 
     </div>

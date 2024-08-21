@@ -26,7 +26,7 @@
         </div>
 
         <div class="absolute -right-[72px] top-[250px] w-36 z-10">
-            <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" alt="vector-logo" />
+            <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
         </div>
 
     </section>
