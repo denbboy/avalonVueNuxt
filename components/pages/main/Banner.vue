@@ -2,15 +2,14 @@
   <section class="lg:pb-12 pb-0 min-h-[900px]">
 
     <!-- :modules="modules" -->
-    <swiper class="swiper-banner" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
-      :modules="[Pagination, A11y, Autoplay]" pagination a11y :autoplay="{ delay: 15000, disableOnInteraction: false }"
-      :speed="1500">
+    <swiper class="swiper-banner" :autoplay="{ delay: 15000, disableOnInteraction: false }" :loop="true" :slides-per-view="1" :pagination="{ clickable: true }"
+      :modules="[Pagination, A11y, Autoplay]" pagination a11y :speed="1500">
 
 
       <swiper-slide v-for="item in slides" class="pt-40 lg:pt-[250px] lg:min-h-[810px] relative overflow-hidden">
         <div class="bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
-          <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`"
-            class="absolute brightness-[0] top-0 left-0 w-full h-full" alt="" />
+          <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=1920&height=900`"
+            class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="" />
           <iframe v-if="item?.video" class="lg:scale-150 scale-[3] pointer-events-none w-full h-full"
             :src="`${item?.video}&autoplay=1&mute=1&loop=1`" title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -42,10 +41,10 @@
                   </p>
                 </div>
                 <div class="relative px-5 py-3 w-fit md:text-center md:px-7">
-                  <NuxtImg class="absolute top-0 left-0 -z-10 w-full h-full md:hidden" src="/img/index/bgd-decor.png"
-                    alt="bgd" />
+                  <!-- <NuxtImg class="absolute top-0 left-0 -z-10 w-full h-full md:hidden" src="/img/index/bgd-decor.png"
+                    alt="bgd" /> -->
                   <NuxtImg class="absolute top-0 left-0 -z-10 h-full hidden md:block w-full"
-                    src="/img/index/bgd-decor-2.png" alt="bgd" />
+                    src="/img/index/bgd-decor-2.png" loading="lazy" alt="bgd" />
                   <h2 class="text-sm text-white">
                     {{ $t('cost') }} <br class="hidden md:block">
                     <span class="font-bold md:text-xl">
@@ -69,9 +68,6 @@
                 item.languages_code.includes(langStore.lang))[0]?.description }}
             </p>
             <div class="md:flex">
-              <!-- <button @click="addModal" class="white-button mt-7 lg:mt-12">
-                {{ $t('download_presentation') }}
-              </button> -->
               <NuxtLink :to="`/projects/${item?.projects[0]?.item?.id}`"
                 class="white-button md:mt-7 mt-3 lg:mt-12 md:ml-5">
                 {{ $t('more') }}
@@ -82,32 +78,6 @@
 
           <div v-if="!item?.projects?.length" class="flex items-center justify-between">
             <div class="">
-              <div class="brightness-[1] bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
-
-                <!-- <SkeletonLoader v-if="item?.img" class="w-full h-full">
-                  <NuxtImg v-show="!imageLoaded" ref="image" loading="lazy"
-                    class="opacity-0 absolute top-0 brightness-50 left-0 w-full h-full"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`" @error="onImageLoad"
-                    @load="onImageLoad" />
-                  <NuxtImg v-if="imageLoaded" loading="lazy"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`"
-                    class="absolute top-0 brightness-50 left-0 w-full h-full" alt="" />
-                </SkeletonLoader> -->
-
-                <NuxtImg v-if="item?.img" loading="lazy"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=1920&height=900`"
-                    class="absolute top-0 brightness-50 left-0 w-full h-full" alt="" />
-
-                <iframe v-if="item?.video" class="scale-150" width="100%" height="100%"
-                  :src="`${item?.video}&autoplay=1&mute=1&loop=1`" title="YouTube video player" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-              </div>
-              <div class="bg-gradient-to-t from-blue-500 from-10% w-full h-52 absolute -z-10 bottom-0 left-0">
-              </div>
-              <div class="bg-gradient-to-t from-blue-500 from-30% w-full h-52 absolute -z-10 top-0 left-0 rotate-180">
-              </div>
               <div class="banner__item__head md:flex">
                 <div class="flex">
                   <h1 class="text-white text-[45px] font-bold leading-1 md:text-[70px] mr-3">
@@ -122,8 +92,8 @@
                 <div class="con md:ml-4 md:pl-5 md:px-7 relative">
                   <div class="absolute h-12 left-0 top-1/2 -translate-y-1/2 w-[1px] bg-white/20"></div>
                   <div v-if="item?.price" class="relative px-5 py-3 w-fit md:text-center">
-                    <NuxtImg class="absolute top-0 w-full left-0 -z-10 md:hidden h-full" src="/img/index/bgd-decor.png"
-                      alt="bgd" />
+                    <!-- <NuxtImg class="absolute top-0 w-full left-0 -z-10 md:hidden h-full" src="/img/index/bgd-decor.png"
+                      alt="bgd" /> -->
                     <NuxtImg class="absolute top-0 left-0 w-full -z-10 hidden md:block h-full"
                       src="/img/index/bgd-decor-2.png" alt="bgd" />
                     <h2 class="text-sm text-white">
@@ -141,7 +111,6 @@
               <h2
                 v-html="item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"
                 class="text-3xl font-light text-white mt-5 md:text-[55px] lg:text-[65px] leading-[100%] md:leading-[55px] lg:leading-[65px] md:mt-12 md:max-w-[825px]">
-
               </h2>
               <button @click="addModal" class="white-button mt-7 lg:mt-12">
                 {{ $t('download_presentation') }}
