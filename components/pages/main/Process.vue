@@ -4,7 +4,7 @@
             :animation="(delta) => `transform: translate3d(0, ${delta}px, 0);`">
             <!-- <NuxtImg class="h-full w-full object-cover scale-125" src="/img/index/buy-bgd.webp" /> -->
             <NuxtImg class="h-full w-full object-cover scale-[1.7]"
-                src="/img/about/process.webp" alt="image" />
+                src="/img/about/process.webp" width="1920" height="1200" alt="image" />
         </Parallaxy>
         <div class="container relative z-10">
 

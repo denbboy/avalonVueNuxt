@@ -10,7 +10,7 @@
         <NuxtLink :href="mainPageLink">
           <NuxtImg loading="lazy" src="/img/newLogo.png" class="hidden md:max-w-[55px] w-full lg:max-w-[95px] xl:block"
             alt="logo" />
-          <NuxtImg loading="lazy" format="webp" src="/img/icons/logo-mob.webp" class="xl:hidden" alt="logo ic" />
+          <NuxtImg loading="lazy" format="webp" width="145" height="30" src="/img/icons/logo-mob.svg" class="xl:hidden" alt="logo ic" />
         </NuxtLink>
 
 
