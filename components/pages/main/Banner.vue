@@ -12,7 +12,7 @@
 
           <div v-if="!item?.video">
             <NuxtImg v-if="$viewport.isLessThan('tablet')"
-              :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=375&height=650`"
+              :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=320&height=600`"
               class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="" />
             <NuxtImg v-else :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=1920&height=900`"
               class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="" />
@@ -50,10 +50,12 @@
                   </p>
                 </div>
                 <div class="relative px-5 py-3 w-fit md:text-center md:px-7">
-                  <!-- <NuxtImg class="absolute top-0 left-0 -z-10 w-full h-full md:hidden" src="/img/index/bgd-decor.png"
-                    alt="bgd" /> -->
-                  <NuxtImg class="absolute top-0 left-0 -z-10 h-full hidden md:block w-full"
-                    src="/img/index/bgd-decor-2.png" loading="lazy" alt="bgd" />
+                  <NuxtImg v-if="$viewport.isLessThan('tablet')"
+                    class="absolute top-0 w-full left-0 -z-10 md:hidden h-full" src="/img/index/bgd-decor.png"
+                    alt="bgd" />
+                  <NuxtImg v-else class="absolute top-0 left-0 w-full -z-10 hidden md:block h-full"
+                    src="/img/index/bgd-decor-2.png" alt="bgd" />
+
                   <h2 class="text-sm text-white">
                     {{ $t('cost') }} <br class="hidden md:block">
                     <span class="font-bold md:text-xl">
@@ -101,10 +103,12 @@
                 <div class="con md:ml-4 md:pl-5 md:px-7 relative">
                   <div class="absolute h-12 left-0 top-1/2 -translate-y-1/2 w-[1px] bg-white/20"></div>
                   <div v-if="item?.price" class="relative px-5 py-3 w-fit md:text-center">
-                    <!-- <NuxtImg class="absolute top-0 w-full left-0 -z-10 md:hidden h-full" src="/img/index/bgd-decor.png"
-                      alt="bgd" /> -->
-                    <NuxtImg class="absolute top-0 left-0 w-full -z-10 hidden md:block h-full"
+                    <NuxtImg v-if="$viewport.isLessThan('tablet')"
+                      class="absolute top-0 w-full left-0 -z-10 md:hidden h-full" src="/img/index/bgd-decor.png"
+                      alt="bgd" />
+                    <NuxtImg v-else class="absolute top-0 left-0 w-full -z-10 hidden md:block h-full"
                       src="/img/index/bgd-decor-2.png" alt="bgd" />
+
                     <h2 class="text-sm text-white">
                       {{ $t('cost') }} <br class="hidden md:block">
                       <span class="font-bold md:text-xl">

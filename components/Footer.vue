@@ -15,7 +15,8 @@
 
             <div class="xl:flex xl:items-center gap-5 justify-between md:mb-24">
 
-                <NuxtImg v-if="toolkitStore?.settings?.footer_img"
+                <!-- v-if="$viewport.isLessThan('tablet')" -->
+                <NuxtImg v-if="toolkitStore?.settings?.footer_img && !$viewport.isLessThan('tablet')"
                     :src="`https://avalon-panel.sonisapps.com/assets/${toolkitStore?.settings?.footer_img}?width=380&height=392`"
                     class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph" />
 
@@ -163,7 +164,7 @@
         <div class="bg-blue-500 py-7 md:py-2">
             <div class="container">
                 <div class="flex items-center justify-between gap-8">
-                    <NuxtImg src="/img/index/a-footer.webp" format="webp" loading="lazy" class="max-w-[96px] md:hidden"
+                    <NuxtImg v-if="$viewport.isLessThan('tablet')"src="/img/index/a-footer.webp" format="webp" loading="lazy" class="max-w-[96px] md:hidden"
                         alt="ph" />
 
                     <!-- <div class="logo-clip-path md:hidden">
@@ -229,12 +230,10 @@ import iso31661 from 'iso-3166-1';
 
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
-// const allPages = ref([]);
 const isShowArrowUp = ref(false);
 
-// watch(pagesStore, (newValue) => {
-//     allPages.value = newValue?.pagesList;
-// });
+import { useNuxtApp } from '#app'
+const { $viewport } = useNuxtApp()
 
 
 const handleScroll = () => {
