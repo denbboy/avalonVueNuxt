@@ -42,6 +42,8 @@ export default defineNuxtConfig({
     link: [
       { rel: "stylesheet", href: "/assets/fonts/grandis/stylesheet.css" },
       { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
+      { rel: "preconnect", href: "https://www.youtube.com" },
+      { rel: "preconnect", href: "https://www.google.com" },
     ],
   },
   loading: {
@@ -125,9 +127,9 @@ export default defineNuxtConfig({
     trailingSlash: true,
   },
 
-  buildModules: ['@nuxtjs/svg-sprite'],
+  buildModules: ["@nuxtjs/svg-sprite"],
   svgSprite: {
-    input: '~/img/icons/'
+    input: "~/img/icons/",
   },
 
   gtm: {
