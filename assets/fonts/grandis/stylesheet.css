@@ -34,7 +34,7 @@
     font-style: normal;
 }
 
-/* @font-face {
+@font-face {
     font-family: 'Grandis Extended';
     src: url('GrandisExtended-Light.eot');
     src: local('Grandis Extended Light'), local('GrandisExtended-Light'),
@@ -44,7 +44,7 @@
         url('GrandisExtended-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
-} */
+}
 
 @font-face {
     font-family: 'Grandis Extended';

@@ -21,7 +21,7 @@ const isLoading = ref(true);
 nuxtApp.hook("page:finish", () => {
     setTimeout(() => {
         isLoading.value = false;
-    }, 1000)
+    }, 200)
 });
 
 watch(preloaderStore, (newValue) => {

@@ -10,24 +10,23 @@
       <swiper-slide v-for="item in slides" class="pt-40 lg:pt-[250px] lg:min-h-[810px] relative overflow-hidden">
         <div class="bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
 
-          <!-- <div v-if="!item?.video">
+          <div v-if="!item?.video">
             <NuxtImg v-if="$viewport.isLessThan('tablet')"
               :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=320&height=600`"
               class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="" />
             <NuxtImg v-else :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=1920&height=900`"
               class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="" />
-          </div> -->
+          </div>
 
 
-          <!-- <iframe v-if="item?.video" loading="lazy" class="lg:scale-150 scale-[3] pointer-events-none w-full h-full"
+          <iframe v-if="item?.video" loading="lazy" class="lg:scale-150 scale-[3] pointer-events-none w-full h-full"
             :src="`${item?.video}&autoplay=1&mute=1&loop=1`" title="Avalon" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; loop; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <div class="bg-gradient-to-t from-blue-500 from-30% w-full h-52 absolute -z-10 bottom-0 left-0"></div>
         <div class="bg-gradient-to-t from-blue-500 from-30% w-full h-52 absolute -z-10 top-0 left-0 rotate-180">
         </div>
-
 
         <div class="container">
           <span v-if="item?.projects?.length">
@@ -57,7 +56,8 @@
                     src="/img/index/bgd-decor-2.png" alt="bgd" />
 
                   <h2 class="text-sm text-white">
-                    {{ $t('cost') }} <br v-if="!$viewport.isLessThan('tablet')" class="hidden md:block">
+                    {{ $t('cost') }} 
+                    <br v-if="!$viewport.isLessThan('tablet')" class="hidden md:block">
                     <span class="font-bold md:text-xl">
                       {{ $t('from') }} {{ String(item?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }} $
                     </span>
