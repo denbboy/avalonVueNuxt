@@ -10,9 +10,9 @@
 
       <SkeletonLoader class="w-full h-[300px] rounded-2xl">
         <NuxtImg v-show="!imageLoaded" ref="image" data-not-lazy loading="lazy" class="absolute opacity-0 w-full h-full"
-          :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}`" @load="onImageLoad" />
+          :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=470&height=300`" @load="onImageLoad" />
         <NuxtImg v-if="imageLoaded" data-not-lazy loading="lazy"
-          :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}`" alt="Image"
+          :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=470&height=300`" alt="Image"
           class="z-0 w-full h-full object-cover relative rounded-2xl" @load="onImageLoad" />
       </SkeletonLoader>
 

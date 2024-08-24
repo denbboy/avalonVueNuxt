@@ -7,8 +7,7 @@
       :speed="1500">
 
 
-      <swiper-slide v-for="item in slides"
-        class="pt-40 lg:pt-[250px] lg:min-h-[810px] relative overflow-hidden">
+      <swiper-slide v-for="item in slides" class="pt-40 lg:pt-[250px] lg:min-h-[810px] relative overflow-hidden">
         <div class="bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
           <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`"
             class="absolute brightness-[0] top-0 left-0 w-full h-full" alt="" />
@@ -26,9 +25,22 @@
           <span v-if="item?.projects?.length">
 
             <div class="banner__item__head md:flex items-center">
-              <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${item?.projects[0]?.item.logo}`"
-                class="mb-7 max-w-[100px] md:mb-0" alt="logo" />
-              <div class="con md:ml-10 ">
+              <NuxtImg v-if="item?.projects[0]?.item.logo" width="100" height="100"
+                :src="`https://avalon-panel.sonisapps.com/assets/${item?.projects[0]?.item.logo}`"
+                class="mb-7 max-w-[100px] md:mb-0 md:mr-10" alt="logo" />
+              <div class="flex items-center w-full gap-5">
+                <div
+                  class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
+                  <NuxtImg
+                    class="absolute top-0 left-0 -z-10 md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
+                    src="/img/icons/about-border-white.svg" alt="bgd" loading="lazy" />
+                  <span class="text-white text-xs md:text-sm">
+                    {{ $t('deadline') }}
+                  </span>
+                  <p class="text-white text-base font-bold md:text-xl">
+                    {{ $t('summer2025') }}
+                  </p>
+                </div>
                 <div class="relative px-5 py-3 w-fit md:text-center md:px-7">
                   <NuxtImg class="absolute top-0 left-0 -z-10 w-full h-full md:hidden" src="/img/index/bgd-decor.png"
                     alt="bgd" />
@@ -57,9 +69,9 @@
                 item.languages_code.includes(langStore.lang))[0]?.description }}
             </p>
             <div class="md:flex">
-              <button @click="addModal" class="white-button mt-7 lg:mt-12">
+              <!-- <button @click="addModal" class="white-button mt-7 lg:mt-12">
                 {{ $t('download_presentation') }}
-              </button>
+              </button> -->
               <NuxtLink :to="`/projects/${item?.projects[0]?.item?.id}`"
                 class="white-button md:mt-7 mt-3 lg:mt-12 md:ml-5">
                 {{ $t('more') }}
@@ -72,14 +84,19 @@
             <div class="">
               <div class="brightness-[1] bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
 
-                <SkeletonLoader v-if="item?.img" class="w-full h-full">
+                <!-- <SkeletonLoader v-if="item?.img" class="w-full h-full">
                   <NuxtImg v-show="!imageLoaded" ref="image" loading="lazy"
                     class="opacity-0 absolute top-0 brightness-50 left-0 w-full h-full"
                     :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`" @error="onImageLoad"
                     @load="onImageLoad" />
-                  <NuxtImg v-if="imageLoaded" loading="lazy" :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`"
+                  <NuxtImg v-if="imageLoaded" loading="lazy"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}`"
                     class="absolute top-0 brightness-50 left-0 w-full h-full" alt="" />
-                </SkeletonLoader>
+                </SkeletonLoader> -->
+
+                <NuxtImg v-if="item?.img" loading="lazy"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=1920&height=900`"
+                    class="absolute top-0 brightness-50 left-0 w-full h-full" alt="" />
 
                 <iframe v-if="item?.video" class="scale-150" width="100%" height="100%"
                   :src="`${item?.video}&autoplay=1&mute=1&loop=1`" title="YouTube video player" frameborder="0"
@@ -105,8 +122,8 @@
                 <div class="con md:ml-4 md:pl-5 md:px-7 relative">
                   <div class="absolute h-12 left-0 top-1/2 -translate-y-1/2 w-[1px] bg-white/20"></div>
                   <div v-if="item?.price" class="relative px-5 py-3 w-fit md:text-center">
-                    <NuxtImg class="absolute top-0 w-full left-0 -z-10 md:hidden h-full"
-                      src="/img/index/bgd-decor.png" alt="bgd" />
+                    <NuxtImg class="absolute top-0 w-full left-0 -z-10 md:hidden h-full" src="/img/index/bgd-decor.png"
+                      alt="bgd" />
                     <NuxtImg class="absolute top-0 left-0 w-full -z-10 hidden md:block h-full"
                       src="/img/index/bgd-decor-2.png" alt="bgd" />
                     <h2 class="text-sm text-white">

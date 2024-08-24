@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
     // console.log("SLUG", id);
 
     const items = await directus.request(
-      readItem("Project", slug, {
+      readItem("Project", {
         fields: [
           "*",
           "translations.*",
@@ -27,6 +27,11 @@ export default defineEventHandler(async (event) => {
           "sales.Sale_id.preview",
           "sales.Sale_id.id",
         ],
+        filter: {
+          slug: {
+            _eq: slug,
+          },
+        },
       })
     );
 

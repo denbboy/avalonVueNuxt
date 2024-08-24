@@ -27,7 +27,7 @@
                     class="projects-item relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[600px] min-h-[400px]"
                     v-for="(item, index) in projectsStore.projects" :key="item.id">
                     <div class="">
-                        <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}`"
+                        <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=470&height=600`"
                             class="opacity-50 w-full absolute object-cover h-full" alt="" loading="lazy" />
                         <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
                         <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">

@@ -7,6 +7,7 @@ export default defineEventHandler(async (event) => {
   try {
     const items = await directus.request(
       readItems("Slide", {
+        sort: ['sort'],
         fields: [
           "*",
           "translations.*",

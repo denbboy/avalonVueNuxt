@@ -10,9 +10,9 @@
 
             <SkeletonLoader class="w-full h-[300px] rounded-[20px]">
                 <NuxtImg data-not-lazy ref="image" loading="lazy" class="opacity-0 absolute"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}`" @load="onImageLoad" />
+                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=350&height=300`" @load="onImageLoad" />
                 <NuxtImg v-if="imageLoaded" loading="lazy" data-not-lazy
-                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}`" alt="Image"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=350&height=300`" alt="Image"
                     class="z-0 w-full h-full object-cover relative rounded-2xl" @load="onImageLoad" />
             </SkeletonLoader>
 
@@ -32,19 +32,11 @@
 </template>
 
 <script setup>
+import { useUrlSearchParams } from '@vueuse/core';
+
 
 const imageLoaded = ref(false);
 const image = ref(null);
-
-function onImageLoad() {
-    imageLoaded.value = true;
-}
-
-onMounted(() => {
-    if (image.value?.complete) {
-        imageLoaded.value = true;
-    }
-});
 
 const props = defineProps({
     item: {
@@ -55,6 +47,31 @@ const props = defineProps({
         type: String
     }
 })
+
+function onImageLoad() {
+    imageLoaded.value = true;
+}
+
+onMounted(async () => {
+    if (image.value?.complete) {
+        imageLoaded.value = true;
+    }
+
+    // try {
+    //     const params = new URLSearchParams({
+    //         image: encodeURIComponent(props.item?.preview),
+    //         width: 350,
+    //         height: 300,
+    //     }).toString();
+
+    //     const imageFetch = await fetch(`/api/images?${params}`);
+    //     const data = await imageFetch.json();
+
+    //     console.log(data);
+    // } catch (err) {
+    //     console.error("Failed to fetch image:", err);
+    // }
+});
 
 const langStore = useLangStore()
 

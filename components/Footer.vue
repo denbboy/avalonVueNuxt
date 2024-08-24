@@ -16,7 +16,7 @@
             <div class="xl:flex xl:items-center gap-5 justify-between md:mb-24">
 
                 <NuxtImg v-if="toolkitStore?.settings?.footer_img"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${toolkitStore?.settings?.footer_img}`"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${toolkitStore?.settings?.footer_img}?width=380&height=392`"
                     loading="lazy" class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph" />
 
                 <!-- <div class="logo-clip-path hidden lg:block">

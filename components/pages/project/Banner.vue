@@ -4,12 +4,12 @@
         <div class="lg:pb-10 pb-5 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.webp')] -->
             <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-80">
-                <!-- <NuxtImg v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
-                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="" /> -->
+                <NuxtImg v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="" />
 
 
                 <!-- <div class=""> -->
-                    <SkeletonLoader v-if="itemData?.preview" class="!absolute top-0 left-0 w-full h-[110vh] object-cover z-0">
+                    <!-- <SkeletonLoader v-if="itemData?.preview" class="!absolute top-0 left-0 w-full h-[110vh] object-cover z-0">
                         <NuxtImg v-show="!imageLoaded" ref="image" loading="lazy"
                             :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`" @error="onImageLoad"
                             @load="onImageLoad"
@@ -17,7 +17,7 @@
                         <NuxtImg v-if="imageLoaded" loading="lazy"
                             :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
                             class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="" />
-                    </SkeletonLoader>
+                    </SkeletonLoader> -->
                 <!-- </div> -->
 
                 <iframe v-if="`${itemData?.video}`" class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0"
