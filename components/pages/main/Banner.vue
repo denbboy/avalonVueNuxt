@@ -19,10 +19,10 @@
           </div>
 
 
-          <iframe v-if="item?.video" loading="lazy" class="lg:scale-150 scale-[3] pointer-events-none w-full h-full"
+          <!-- <iframe v-if="item?.video" loading="lazy" class="lg:scale-150 scale-[3] pointer-events-none w-full h-full"
             :src="`${item?.video}&autoplay=1&mute=1&loop=1`" title="Avalon" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; loop; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
         </div>
         <div class="bg-gradient-to-t from-blue-500 from-30% w-full h-52 absolute -z-10 bottom-0 left-0"></div>
         <div class="bg-gradient-to-t from-blue-500 from-30% w-full h-52 absolute -z-10 top-0 left-0 rotate-180">
