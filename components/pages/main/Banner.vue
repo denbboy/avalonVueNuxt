@@ -32,8 +32,8 @@
           <span v-if="item?.projects?.length">
 
             <div class="banner__item__head md:flex items-center">
-              <NuxtImg v-if="item?.projects[0]?.item.logo" width="100" height="100"
-                :src="`https://avalon-panel.sonisapps.com/assets/${item?.projects[0]?.item.logo}`"
+              <NuxtImg v-if="item?.projects[0]?.item.logo" width="100" height="95"
+                :src="`https://avalon-panel.sonisapps.com/assets/${item?.projects[0]?.item.logo}?width=100&height=95`"
                 class="mb-7 max-w-[100px] md:mb-0 md:mr-10" alt="logo" />
               <div class="flex items-center w-full gap-5">
                 <div
