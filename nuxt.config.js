@@ -80,6 +80,7 @@ export default defineNuxtConfig({
     "@zadigetvoltaire/nuxt-gtm",
     "nuxt-meta-pixel",
     // "nuxt-lazy-load",
+    'nuxt-viewport',
   ],
   directus: {
     url: "https://avalon-panel.sonisapps.com/",

@@ -25,7 +25,7 @@
             </p>
             <div :class="bgdColor === 'white' ? 'text-blue-600' : 'text-white'"
                 class="mt-3 md:mt-4 items-center text-sm opacity-60 line-clamp-2 h-[39px] overflow-hidden"
-                v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
+                v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description">
             </div>
         </div>
     </NuxtLink>
@@ -33,7 +33,6 @@
 
 <script setup>
 import { useUrlSearchParams } from '@vueuse/core';
-
 
 const imageLoaded = ref(false);
 const image = ref(null);
@@ -56,21 +55,6 @@ onMounted(async () => {
     if (image.value?.complete) {
         imageLoaded.value = true;
     }
-
-    // try {
-    //     const params = new URLSearchParams({
-    //         image: encodeURIComponent(props.item?.preview),
-    //         width: 350,
-    //         height: 300,
-    //     }).toString();
-
-    //     const imageFetch = await fetch(`/api/images?${params}`);
-    //     const data = await imageFetch.json();
-
-    //     console.log(data);
-    // } catch (err) {
-    //     console.error("Failed to fetch image:", err);
-    // }
 });
 
 const langStore = useLangStore()

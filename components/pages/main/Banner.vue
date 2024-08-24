@@ -9,10 +9,12 @@
 
       <swiper-slide v-for="item in slides" class="pt-40 lg:pt-[250px] lg:min-h-[810px] relative overflow-hidden">
         <div class="bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
-          <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=1920&height=900`"
-            class="absolute brightness-[.5] top-0 left-0 w-full h-full hidden xl:block" alt="" />
-          <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=375&height=650`"
-            class="absolute brightness-[.5] top-0 left-0 w-full h-full block xl:hidden" alt="" />
+          <NuxtImg v-if="$viewport.isLessThan('tablet')"
+            :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=375&height=650`"
+            class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="" />
+          <NuxtImg v-else :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=1920&height=900`"
+            class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="" />
+
 
           <iframe v-if="item?.video" loading="lazy" class="lg:scale-150 scale-[3] pointer-events-none w-full h-full"
             :src="`${item?.video}&autoplay=1&mute=1&loop=1`" title="Avalon" frameborder="0"
@@ -169,6 +171,8 @@ import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 import useFetchWithCache from '~/hooks/useFetchWithCache'
 
+import { useNuxtApp } from '#app'
+const { $viewport } = useNuxtApp()
 
 
 const slides = await useFetchWithCache('/api/slides');

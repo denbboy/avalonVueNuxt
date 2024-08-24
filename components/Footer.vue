@@ -17,7 +17,7 @@
 
                 <NuxtImg v-if="toolkitStore?.settings?.footer_img"
                     :src="`https://avalon-panel.sonisapps.com/assets/${toolkitStore?.settings?.footer_img}?width=380&height=392`"
-                    loading="lazy" class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph" />
+                    class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph" />
 
                 <!-- <div class="logo-clip-path hidden lg:block">
                     <video loop class="w-[379px] h-[392px] object-cover" muted autoplay
