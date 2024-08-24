@@ -122,6 +122,7 @@
                 </div>
               </div>
               <h2
+                v-if="item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"
                 v-html="item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"
                 class="text-3xl font-light text-white mt-5 md:text-[55px] lg:text-[65px] leading-[100%] md:leading-[55px] lg:leading-[65px] md:mt-12 md:max-w-[825px]">
               </h2>
