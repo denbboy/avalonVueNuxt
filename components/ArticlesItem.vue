@@ -9,9 +9,9 @@
             }" class="block-bottom-point z-20"></div>
 
             <SkeletonLoader class="w-full h-[300px] rounded-[20px]">
-                <NuxtImg data-not-lazy ref="image" loading="lazy" class="opacity-0 absolute"
+                <NuxtImg ref="image" loading="lazy" class="opacity-0 absolute"
                     :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=350&height=300`" @load="onImageLoad" />
-                <NuxtImg v-if="imageLoaded" loading="lazy" data-not-lazy
+                <NuxtImg v-if="imageLoaded" loading="lazy"
                     :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=350&height=300`" alt="Image"
                     class="z-0 w-full h-full object-cover relative rounded-2xl" @load="onImageLoad" />
             </SkeletonLoader>
@@ -32,7 +32,6 @@
 </template>
 
 <script setup>
-import { useUrlSearchParams } from '@vueuse/core';
 
 const imageLoaded = ref(false);
 const image = ref(null);

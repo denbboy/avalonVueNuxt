@@ -57,7 +57,7 @@
                                     <NuxtImg class="absolute top-0 left-0 -z-10 hidden md:block h-full w-full"
                                         src="/img/index/bgd-decor-2.png" alt="bgd" loading="lazy" />
                                     <h2 v-if="itemData?.price" class="text-sm text-white">
-                                        {{ $t('cost') }} <br class="hidden md:block"> <span
+                                        {{ $t('cost') }} <br v-if="!$viewport.isLessThan('tablet')" class="hidden md:block"> <span
                                             class="font-bold md:text-xl">
                                             {{ $t('from') }} ${{
                                                 String(itemData?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}
@@ -142,7 +142,7 @@
                         </button>
                         <div data-aos="fade-up"
                             class=" w-full flex gap-[10px] xl:gap-5 xl:mt-[100px] xl:flex  xl:justify-end items-stretch">
-                            <div v-if="itemData?.villa_count"
+                            <div v-if="itemData?.villa_count && !$viewport.isLessThan('tablet')"
                                 class="pb-[15px] flex-1 max-w-[240px] border-b border-whiteOp-300 md:pb-[30px] hidden md:block w-full">
                                 <h3 class="text-white text-2xl font-bold mb-[10px] md:mb-[15px] md:text-[40px]">
                                     {{ itemData?.villa_count }}
