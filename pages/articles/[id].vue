@@ -126,23 +126,8 @@ const articlesData = await useAsyncData("Articles", () => $fetch('/api/articles'
 // GET OTHER SALES
 
 // GET POST
-const itemData = ref([]);
-const fetchItemData = async () => {
-    try {
-        const items = await getItems({
-            collection: `Article/${route.params.id}`,
-            params: {
-                fields: '*,translations.*'
-            },
-        });
-
-        itemData.value = items;
-        console.log('ITEM_DATA', items);
-    } catch (e) {
-        console.error('Error fetching items:', e);
-    }
-};
-onMounted(fetchItemData);
+const res = await useAsyncData('ArticlesItem', () => $fetch(`/api/articles/${route.params.id}`));
+const itemData = res?.data?.value[0]
 // GET POST
 
 const modules = {

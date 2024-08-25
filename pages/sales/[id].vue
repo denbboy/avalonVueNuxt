@@ -2,11 +2,11 @@
 
     <Head>
         <Title>
-            {{ itemData?.data?.value?.translations?.filter(item =>
+            {{ itemData?.translations?.filter(item =>
                 item.languages_code.includes(langStore.lang))[0]?.meta_title }}
         </Title>
         <Meta name="description"
-            :content="itemData?.data?.value?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+            :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
     </Head>
 
     <section class="bg-blue-500 pt-32 md:pt-64 relative overflow-hidden">
@@ -14,21 +14,21 @@
             <div class="bg-gradient-to-t from-blue-500 absolute top-0 left-0 w-full h-full"></div>
         </div>
 
-        <NuxtImg loading="lazy" v-if="itemData?.data?.value?.preview"
-            :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`"
+        <NuxtImg loading="lazy" v-if="itemData?.preview"
+            :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
             class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" />
 
 
         <div class="absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen">
-            <SkeletonLoader v-if="itemData?.data?.value?.preview" class="h-full w-full">
+            <SkeletonLoader v-if="itemData?.preview" class="h-full w-full">
                 <NuxtImg loading="lazy" v-show="!imageLoaded"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
                     @load="onImageLoad"
                     ref="image"
                     class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
                     alt="Image" />
                 <NuxtImg loading="lazy" v-if="imageLoaded"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
                     class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
                     alt="Image" />
             </SkeletonLoader>
@@ -54,14 +54,14 @@
                 </div>
                 <h1
                     class="btn-primary mb-14 text-white text-[30px] md:text-[55px] lg:text-[65px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[876px]">
-                    {{ itemData?.data?.value.translations?.filter(item =>
+                    {{ itemData.translations?.filter(item =>
                         item.languages_code.includes(langStore.lang))[0]?.title }}
                 </h1>
 
                 <div class="md:flex justify-between w-full">
 
                     <div class="text-content max-w-[900px] block w-full"
-                        v-html="itemData?.data?.value.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
+                        v-html="itemData.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
                     </div>
 
                     <div class="max-w-[508px] mt-14 md:mt-0">
@@ -205,7 +205,8 @@ const langStore = useLangStore();
 const route = useRoute();
 
 const salesData = await useAsyncData('Sales', () => $fetch('/api/sales'));
-const itemData = await useAsyncData('SalesItem', () => $fetch(`/api/sales/${route.params.id}`));
+const res = await useAsyncData('SalesItem', () => $fetch(`/api/sales/${route.params.id}`));
+const itemData = res?.data?.value[0]
 
 const navigationConfig = {
     nextEl: '.sales-button-next',

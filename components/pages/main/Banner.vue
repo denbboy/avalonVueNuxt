@@ -94,7 +94,7 @@
 
             <button v-if="item?.video && !isVideoPlayed" data-aos="fade-up" @click="handlePlayVideo(item?.video)"
               type="button"
-              class="flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
+              class="flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base max-w-[95px] w-full xl:max-w-[165px] xl:flex-col xl:ml-auto">
               <div class="relative flex items-center justify-center max-w-[95px] w-full xl:max-w-[165px]">
                 <NuxtImg src="/img/about/playBorder.svg" class="w-full" alt="ic" loading="lazy" />
                 <svg class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18" height="21" viewBox="0 0 18 21"

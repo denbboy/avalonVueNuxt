@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="`/news/${props?.item?.id}`"
+  <NuxtLink :to="`/news/${props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
     class="w-full rounded-[20px] overflow-hidden h-full group transition-all hover:shadow-[0px_10px_10px_0px_rgba(0,0,0,.1)] block">
     <div class="relative w-full">
       <div :class="{

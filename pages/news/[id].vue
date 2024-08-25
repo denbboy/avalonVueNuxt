@@ -2,11 +2,11 @@
 
   <Head>
     <Title>
-      {{ itemData?.data?.value?.translations?.filter(item =>
+      {{ itemData?.translations?.filter(item =>
         item.languages_code.includes(langStore.lang))[0]?.meta_title }}
     </Title>
     <Meta name="description"
-      :content="itemData?.data?.value?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+      :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
   </Head>
 
   <section class="bg-blue-500 pt-32 md:pt-64">
@@ -16,12 +16,12 @@
 
 
     <div class="absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen">
-      <SkeletonLoader v-if="itemData?.data?.value?.preview" class="h-full w-full">
+      <SkeletonLoader v-if="itemData?.preview" class="h-full w-full">
         <NuxtImg v-show="!imageLoaded" loading="lazy"
-          :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`" @load="onImageLoad"
+          :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`" @load="onImageLoad"
           class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" ref="image" />
         <NuxtImg v-if="imageLoaded" loading="lazy"
-          :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`"
+          :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
           class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" />
       </SkeletonLoader>
     </div>
@@ -40,14 +40,14 @@
         <div
           class="flex before:w-[6px] before:rounded-sm before:h-[6px] before:bg-white before:mr-[10px] opacity-60 items-center">
           <span class="text-white text-sm">
-            {{ new Date(itemData?.data?.value?.date_created).getDate() }} {{ $t(`month${new
-              Date(itemData?.data?.value?.date_created).getMonth()
-              ?? "0" + 1}`) }} {{ new Date(itemData?.data?.value?.date_created).getFullYear() }}
+            {{ new Date(itemData?.date_created).getDate() }} {{ $t(`month${new
+              Date(itemData?.date_created).getMonth()
+              ?? "0" + 1}`) }} {{ new Date(itemData?.date_created).getFullYear() }}
           </span>
         </div>
         <h1
           class="text-white text-[30px] md:text-[55px] lg:text-[65px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[876px]"
-          v-html="itemData?.data?.value?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
+          v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
         </h1>
 
         <a href="#"
@@ -56,7 +56,7 @@
         </a>
 
         <div
-          v-html="itemData?.data?.value?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
+          v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
         </div>
 
       </div>
@@ -98,5 +98,6 @@ onMounted(() => {
 const langStore = useLangStore();
 const route = useRoute();
 
-const itemData = await useAsyncData('NewsItem', () => $fetch(`/api/news/${route.params.id}`));
+const res = await useAsyncData('NewsItem', () => $fetch(`/api/news/${route.params.id}`));
+const itemData = res?.data?.value[0]
 </script>
