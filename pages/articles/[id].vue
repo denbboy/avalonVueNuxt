@@ -11,7 +11,7 @@
     <section class="bg-blue-500 pt-32 md:pt-64 relative">
 
         <NuxtImg v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
-            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="" loading="lazy" />
+            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" loading="lazy" />
         <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10">
         </div>
         <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[1000px] absolute z-10">

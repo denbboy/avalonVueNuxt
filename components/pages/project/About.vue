@@ -13,8 +13,8 @@
                     <div class="text-white text-sm mb-4 md:text-xl md:mb-5" v-html="props.itemInfo?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></div>
 
                 </div>
-                <div data-aos="fade-left" class="">
-                    <NuxtImg class="max-w-[591px] w-full lg:max-w-[892px] lg:-mr-20" src="/img/about/club-img.png" alt="ph" />
+                <div data-aos="fade-left" class="w-full">
+                    <NuxtImg width="591" height="488" class="max-w-[591px] w-full lg:max-w-[892px] lg:-mr-20" src="/img/about/club-img.png" alt="ph" />
                 </div>
             </div>
 

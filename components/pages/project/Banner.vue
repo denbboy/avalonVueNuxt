@@ -5,7 +5,7 @@
             <!-- bg-[url('./../img/about/about-banner.webp')] -->
             <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-80">
                 <NuxtImg v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
-                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="" />
+                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="Image" />
 
 
                 <!-- <div class=""> -->
@@ -37,7 +37,7 @@
                         <div data-aos="fade-up" class="flex lg:-mr-20 flex-wrap items-center gap-[10px] md:gap-5">
                             <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] -mr-1 max-w-[141px] md:py-5 py-[15px]">
-                                <NuxtImg src="/img/about/ribas.png" alt="" loading="lazy" />
+                                <NuxtImg src="/img/about/ribas.png" alt="Image" loading="lazy" />
                             </div>
                             <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">

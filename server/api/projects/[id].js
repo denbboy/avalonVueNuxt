@@ -1,4 +1,4 @@
-import { createDirectus, rest, readItem } from "@directus/sdk";
+import { createDirectus, rest, readItem, readItems } from "@directus/sdk";
 import { API_LINK } from "~/utils/constants";
 
 const directus = createDirectus(API_LINK).with(rest());
@@ -6,10 +6,9 @@ const directus = createDirectus(API_LINK).with(rest());
 export default defineEventHandler(async (event) => {
   const slug = event.context.params.id;
   try {
-    // console.log("SLUG", id);
 
     const items = await directus.request(
-      readItem("Project", {
+      readItems("Project", {
         fields: [
           "*",
           "translations.*",
@@ -28,8 +27,10 @@ export default defineEventHandler(async (event) => {
           "sales.Sale_id.id",
         ],
         filter: {
-          slug: {
-            _eq: slug,
+          translations: {
+            slug: {
+              _eq: slug,
+            },
           },
         },
       })

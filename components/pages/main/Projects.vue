@@ -28,13 +28,13 @@
                     v-for="(item, index) in projectsStore.projects" :key="item.id">
                     <div class="">
                         <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=470&height=600`"
-                            class="opacity-50 w-full absolute object-cover h-full" alt="" loading="lazy" />
+                            class="opacity-50 w-full absolute object-cover h-full" alt="Image" loading="lazy" />
                         <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
                         <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
                             <div class="block-bottom-point"></div>
                             <div class="flex justify-between mb-auto">
                                 <NuxtImg class="w-[90px]" v-if="item?.logo"
-                                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.logo}`" alt="" loading="lazy" />
+                                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.logo}`" alt="Image" loading="lazy" />
                                 <span v-if="item?.roi_procent"
                                     class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
                                     {{ item?.roi_procent }}% {{ $t('sold') }}
@@ -65,7 +65,7 @@
                                         {{ $t('more') }}
                                     </NuxtLink>
                                     <div class="flex items-center">
-                                        <NuxtImg class="w-3" src="/img/icons/point-white.svg" alt="" loading="lazy" />
+                                        <NuxtImg class="w-3" src="/img/icons/point-white.svg" alt="Image" loading="lazy" />
                                         <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">
                                             {{ $t('changu') }}
                                         </span>

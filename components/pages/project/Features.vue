@@ -12,9 +12,9 @@
                     alt="ph" loading="lazy"/>
 
                     <NuxtImg src="/img/index/buy-bg-desk.png"
-                    class="absolute top-0 left-0 w-full h-full z-0 hidden md:block backdrop-blur-[1px]" alt="" loading="lazy" />
+                    class="absolute top-0 left-0 w-full h-full z-0 hidden md:block backdrop-blur-[1px]" alt="Image" loading="lazy" />
                 <NuxtImg src="/img/index/buy-list-bg.png"
-                    class="absolute top-0 left-0 w-full h-full z-0 block md:hidden backdrop-blur" alt="" loading="lazy" />
+                    class="absolute top-0 left-0 w-full h-full z-0 block md:hidden backdrop-blur" alt="Image" loading="lazy" />
 
                 <div
                     class="xl:grid xl:grid-cols-2 w-full h-full xl:translate-x-[70px] 3xl:translate-x-0 z-10 relative xl:items-center xl:gap-7">

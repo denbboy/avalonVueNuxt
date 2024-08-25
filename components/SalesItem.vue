@@ -8,7 +8,7 @@
 
         <SkeletonLoader class="w-full h-[300px] rounded-2xl">
             <NuxtImg v-show="!imageLoaded" data-not-lazy loading="lazy" ref="image" class="absolute opacity-0 w-full h-full"
-                :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=470&height=300`" @load="onImageLoad" />
+                :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=470&height=300`" alt="Image" @load="onImageLoad" />
             <NuxtImg data-not-lazy loading="lazy" v-if="imageLoaded"
                 :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=470&height=300`" alt="Image"
                 class="z-0 w-full h-full object-cover relative rounded-2xl" />
@@ -37,7 +37,7 @@
                 v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></strong>
 
             <div class="flex items-center opacity-60">
-                <NuxtImg class="w-2 md:w-3" src="/img/icons/point-white.svg" alt="" />
+                <NuxtImg class="w-2 md:w-3" src="/img/icons/point-white.svg" alt="Image" />
                 <span class="text-white ml-1 text-xs md:text-sm">Bukit</span>
             </div>
         </div>

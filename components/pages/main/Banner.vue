@@ -13,9 +13,9 @@
           <div v-if="!item?.video">
             <NuxtImg v-if="$viewport.isLessThan('tablet')"
               :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=320&height=600`"
-              class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="" />
+              class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
             <NuxtImg v-else :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=1920&height=900`"
-              class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="" />
+              class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
           </div>
 
 
@@ -132,7 +132,7 @@
             </div>
 
             <div class="hidden md:block" v-if="!$viewport.isLessThan('tablet')">
-              <NuxtImg width="156" height="156" loading="lazy" src="/img/index/banner-logo.svg" alt="" />
+              <NuxtImg width="156" height="156" loading="lazy" src="/img/index/banner-logo.svg" alt="Image" />
             </div>
           </div>
 

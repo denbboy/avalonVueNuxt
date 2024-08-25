@@ -19,10 +19,10 @@
       <SkeletonLoader v-if="itemData?.data?.value?.preview" class="h-full w-full">
         <NuxtImg v-show="!imageLoaded" loading="lazy"
           :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`" @load="onImageLoad"
-          class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="" ref="image" />
+          class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" ref="image" />
         <NuxtImg v-if="imageLoaded" loading="lazy"
           :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`"
-          class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="" />
+          class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" />
       </SkeletonLoader>
     </div>
 

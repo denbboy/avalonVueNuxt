@@ -2,44 +2,45 @@
 
     <Head>
         <Title>
-            {{ itemData?.data?.value?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+            {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
         </Title>
         <Meta name="description"
-            :content="itemData?.data?.value?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+            :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
     </Head>
 
-    <PagesProjectBanner :itemData="itemData?.data?.value" />
+    <PagesProjectBanner :itemData="itemData" />
 
-    <PagesProjectGallery v-if="itemData?.data?.value?.gallery?.length" :gallery="itemData?.data?.value?.gallery" />
+    <PagesProjectGallery v-if="itemData?.gallery?.length" :gallery="itemData?.gallery" />
 
-    <PagesProjectAbout :itemInfo="itemData?.data?.value"
-        :itemData="itemData?.data?.value?.blocks?.filter(item => item?.Block_id.id === 32)[0]?.Block_id?.strings" />
+    <PagesProjectAbout :itemInfo="itemData"
+        :itemData="itemData?.blocks?.filter(item => item?.Block_id.id === 32)[0]?.Block_id?.strings" />
 
-    <PagesProjectGoogleMap v-if="itemData?.data?.value?.location?.coordinates?.length > 0" :itemData="itemData?.data?.value" />
+    <PagesProjectGoogleMap v-if="itemData?.location?.coordinates?.length > 0" :itemData="itemData" />
 
     <PagesProjectFeatures
-        :itemStrings="itemData?.data?.value?.blocks?.filter(item => item?.Block_id.id === 25)[0]?.Block_id?.strings" />
+        :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 25)[0]?.Block_id?.strings" />
 
-    <PagesProjectApartments v-if="itemData?.data?.value?.apartments?.length" :apartments="itemData?.data?.value?.apartments" />
+    <PagesProjectApartments v-if="itemData?.apartments?.length" :apartments="itemData?.apartments" />
 
     <PagesProjectInclusions
-        :itemStrings="itemData?.data?.value?.blocks?.filter(item => item?.Block_id.id === 28)[0]?.Block_id?.strings" />
+        :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 28)[0]?.Block_id?.strings" />
 
     <PagesMainContacts />
 
-    <PagesProject3D :apartments="itemData?.data?.value?.apartments" />
+    <PagesProject3D :apartments="itemData?.apartments" />
 
     <PagesProjectForecast />
 
-    <PagesMainReasons :itemStrings="itemData?.data?.value?.blocks?.filter(item => item?.Block_id.id === 29)[0]?.Block_id?.strings" />
+    <PagesMainReasons :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 29)[0]?.Block_id?.strings" />
 
-    <PagesMainNumbers :itemStrings="itemData?.data?.value?.blocks?.filter(item => item?.Block_id.id === 30)[0]?.Block_id?.strings" />
+    <PagesMainNumbers :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 30)[0]?.Block_id?.strings" />
 
-    <PagesMainProcess :itemStrings="itemData?.data?.value?.blocks?.filter(item => item?.Block_id.id === 31)[0]?.Block_id?.strings" />
+    <PagesMainProcess :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 31)[0]?.Block_id?.strings" />
 
-    <PagesProjectOtherProjects v-if="itemData?.data?.value?.relative_projects?.length" :projects="itemData?.data?.value?.relative_projects" />
+    <PagesProjectOtherProjects v-if="itemData?.relative_projects?.length" :projects="itemData?.relative_projects" />
 
-    <PagesMainSales v-if="itemData?.data?.value?.sales?.map(item => item.Sale_id)?.length" :list="itemData?.data?.value?.sales?.map(item => item.Sale_id)" />
+    <PagesMainSales v-if="itemData?.sales?.map(item => item.Sale_id)?.length"
+        :list="itemData?.sales?.map(item => item.Sale_id)" />
 
     <PagesMainNews />
 
@@ -50,8 +51,6 @@
 
 
 <script>
-
-// TODO Проверить все компоненты
 
 export default {
     mounted() {
@@ -66,9 +65,10 @@ const router = useRoute();
 const langStore = useLangStore()
 const projectsStore = useProjectsStore();
 
-const itemData = await useAsyncData('ProjectItem', () => $fetch(`/api/projects/${router.params.id}`))
-projectsStore.setCurrentProject(itemData.data);
+const res = await useAsyncData('ProjectItem', () => $fetch(`/api/projects/${router.params.id}`))
+const itemData = await res?.data?.value[0]
+projectsStore.setCurrentProject(itemData);
 
-console.log(itemData?.data?.value?.blocks);
+
 
 </script>

@@ -16,7 +16,7 @@
 
         <NuxtImg loading="lazy" v-if="itemData?.data?.value?.preview"
             :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`"
-            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="" />
+            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" />
 
 
         <div class="absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen">
@@ -26,11 +26,11 @@
                     @load="onImageLoad"
                     ref="image"
                     class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
-                    alt="" />
+                    alt="Image" />
                 <NuxtImg loading="lazy" v-if="imageLoaded"
                     :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.data?.value?.preview}`"
                     class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
-                    alt="" />
+                    alt="Image" />
             </SkeletonLoader>
         </div>
 
@@ -70,14 +70,14 @@
 
                         <div
                             class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] hover:bg-[#333] transition-all rounded-br-none">
-                            <NuxtImg loading="lazy" src="/img/discounts/image.webp" class="opacity-50" alt="" />
+                            <NuxtImg loading="lazy" src="/img/discounts/image.webp" class="opacity-50" alt="Image" />
                             <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
 
                             <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
                                 <div class="block-bottom-point"></div>
 
                                 <div class="flex justify-between mb-auto">
-                                    <NuxtImg loading="lazy" class="w-[90px]" src="/img/icons/icon-club.svg" alt="" />
+                                    <NuxtImg loading="lazy" class="w-[90px]" src="/img/icons/icon-club.svg" alt="Image" />
                                     <span
                                         class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-sm text-white">
                                         80% Продано
@@ -104,7 +104,7 @@
                                             Подробнее
                                         </NuxtLink>
                                         <div class="flex items-center">
-                                            <NuxtImg loading="lazy" class="w-3" src="/img/icons/point-white.svg" alt="" />
+                                            <NuxtImg loading="lazy" class="w-3" src="/img/icons/point-white.svg" alt="Image" />
                                             <span class="ml-1 text-sm text-white">Чангу</span>
                                         </div>
                                     </div>
