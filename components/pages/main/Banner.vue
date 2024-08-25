@@ -19,73 +19,93 @@
           </div>
 
 
-          <!-- <iframe v-if="item?.video" loading="lazy" class="lg:scale-150 scale-[3] pointer-events-none w-full h-full"
-            :src="`${item?.video}&autoplay=1&mute=1&loop=1`" title="Avalon" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; loop; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+          <div v-if="item?.video" class="h-full w-full">
+            {{ getYoutubePreview().thumb(item?.video ?? '') }}
+            <NuxtImg v-if="!isVideoPlayed" :src="getYoutubePreview().thumb(item?.video ?? '') ?? ''" width="1920"
+              height="800" class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
+            <iframe v-if="isVideoPlayed" loading="lazy" class="lg:scale-150 scale-[3] pointer-events-none w-full h-full"
+              :src="`${item?.video}&autoplay=1&mute=1&loop=1`" title="Avalon" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; loop; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
         <div class="bg-gradient-to-t from-blue-500 from-30% w-full h-52 absolute -z-10 bottom-0 left-0"></div>
         <div class="bg-gradient-to-t from-blue-500 from-30% w-full h-52 absolute -z-10 top-0 left-0 rotate-180">
         </div>
 
         <div class="container">
-          <span v-if="item?.projects?.length">
+          <div class="flex items-center" v-if="item?.projects?.length">
 
-            <div class="banner__item__head md:flex items-center">
-              <NuxtImg v-if="item?.projects[0]?.item.logo" width="100" height="95"
-                :src="`https://avalon-panel.sonisapps.com/assets/${item?.projects[0]?.item.logo}?width=100&height=95`"
-                class="mb-7 max-w-[100px] md:mb-0 md:mr-10" alt="logo" />
-              <div class="flex items-center w-full gap-5">
-                <div
-                  class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
-                  <NuxtImg
-                    class="absolute top-0 left-0 -z-10 md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
-                    src="/img/icons/about-border-white.svg" alt="bgd" loading="lazy" />
-                  <span class="text-white text-xs md:text-sm">
-                    {{ $t('deadline') }}
-                  </span>
-                  <p class="text-white text-base font-bold md:text-xl">
-                    {{ $t('summer2025') }}
-                  </p>
-                </div>
-                <div class="relative px-5 py-3 w-fit md:text-center md:px-7">
-                  <NuxtImg v-if="$viewport.isLessThan('tablet')"
-                    class="absolute top-0 w-full left-0 -z-10 md:hidden h-full" src="/img/index/bgd-decor.png"
-                    alt="bgd" />
-                  <NuxtImg v-else class="absolute top-0 left-0 w-full -z-10 hidden md:block h-full"
-                    src="/img/index/bgd-decor-2.png" alt="bgd" />
-
-                  <h2 class="text-sm text-white">
-                    {{ $t('cost') }} 
-                    <br v-if="!$viewport.isLessThan('tablet')" class="hidden md:block">
-                    <span class="font-bold md:text-xl">
-                      {{ $t('from') }} {{ String(item?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }} $
+            <div class="">
+              <div class="banner__item__head md:flex items-center">
+                <NuxtImg v-if="item?.projects[0]?.item.logo" width="100" height="95"
+                  :src="`https://avalon-panel.sonisapps.com/assets/${item?.projects[0]?.item.logo}?width=100&height=95`"
+                  class="mb-7 max-w-[100px] md:mb-0 md:mr-10" alt="logo" />
+                <div class="flex items-center w-full gap-5">
+                  <div
+                    class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
+                    <NuxtImg
+                      class="absolute top-0 left-0 -z-10 md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
+                      src="/img/icons/about-border-white.svg" alt="bgd" loading="lazy" />
+                    <span class="text-white text-xs md:text-sm">
+                      {{ $t('deadline') }}
                     </span>
-                  </h2>
-                  <p class="text-xs text-slate-50 opacity-60 text-center">
-                    {{ $t('including_taxes') }}
-                  </p>
+                    <p class="text-white text-base font-bold md:text-xl">
+                      {{ $t('summer2025') }}
+                    </p>
+                  </div>
+                  <div class="relative px-5 py-3 w-fit md:text-center md:px-7">
+                    <NuxtImg v-if="$viewport.isLessThan('tablet')"
+                      class="absolute top-0 w-full left-0 -z-10 md:hidden h-full" src="/img/index/bgd-decor.png"
+                      alt="bgd" />
+                    <NuxtImg v-else class="absolute top-0 left-0 w-full -z-10 hidden md:block h-full"
+                      src="/img/index/bgd-decor-2.png" alt="bgd" />
+
+                    <h2 class="text-sm text-white">
+                      {{ $t('cost') }}
+                      <br v-if="!$viewport.isLessThan('tablet')" class="hidden md:block">
+                      <span class="font-bold md:text-xl">
+                        {{ $t('from') }} {{ String(item?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }} $
+                      </span>
+                    </h2>
+                    <p class="text-xs text-slate-50 opacity-60 text-center">
+                      {{ $t('including_taxes') }}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <h2 class="text-3xl text-white mt-5 md:text-[65px] md:leading-[65px] md:mt-[40px] md:max-w-[900px]">
-              <span class="font-bold">
+              <h2 class="text-3xl text-white mt-5 md:text-[65px] md:leading-[65px] md:mt-[40px] md:max-w-[900px]">
+                <span class="font-bold">
+                  {{ item?.projects[0]?.item?.translations?.filter(item =>
+                    item.languages_code.includes(langStore.lang))[0]?.title }}
+                </span>
+              </h2>
+              <p class="text-white text-sm max-w-64 md:max-w-[416px] md:text-base mt-3 md:mt-12">
                 {{ item?.projects[0]?.item?.translations?.filter(item =>
-                  item.languages_code.includes(langStore.lang))[0]?.title }}
-              </span>
-            </h2>
-            <p class="text-white text-sm max-w-64 md:max-w-[416px] md:text-base mt-3 md:mt-12">
-              {{ item?.projects[0]?.item?.translations?.filter(item =>
-                item.languages_code.includes(langStore.lang))[0]?.description }}
-            </p>
-            <div class="md:flex">
-              <NuxtLink :to="`/projects/${item?.projects[0]?.item?.id}`"
-                class="white-button md:mt-7 mt-3 lg:mt-12 md:ml-5">
-                {{ $t('more') }}
-              </NuxtLink>
+                  item.languages_code.includes(langStore.lang))[0]?.description }}
+              </p>
+              <div class="md:flex">
+                <NuxtLink :to="`/projects/${item?.projects[0]?.item?.id}`"
+                  class="white-button md:mt-7 mt-3 lg:mt-12 md:ml-5">
+                  {{ $t('more') }}
+                </NuxtLink>
+              </div>
             </div>
 
-          </span>
+            <button v-if="item?.video && !isVideoPlayed" data-aos="fade-up" @click="handlePlayVideo(item?.video)"
+              type="button"
+              class="flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
+              <div class="relative flex items-center justify-center max-w-[95px] w-full xl:max-w-[165px]">
+                <NuxtImg src="/img/about/playBorder.svg" class="w-full" alt="ic" loading="lazy" />
+                <svg class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18" height="21" viewBox="0 0 18 21"
+                  fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.7422 10.653L0.17076 20.7979L0.170761 0.508136L17.7422 10.653Z" fill="white" />
+                </svg>
+              </div>
+              {{ $t('see_video') }}
+            </button>
+
+          </div>
 
           <div v-if="!item?.projects?.length" class="flex items-center justify-between">
             <div class="">
@@ -134,6 +154,7 @@
             <div class="hidden md:block" v-if="!$viewport.isLessThan('tablet')">
               <NuxtImg width="156" height="156" loading="lazy" src="/img/index/banner-logo.svg" alt="Image" />
             </div>
+
           </div>
 
           <div v-if="item?.strings?.length" class="flex justify-between items-end lg:mt-28 xl:mt-36 mt-10">
@@ -178,6 +199,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 import useFetchWithCache from '~/hooks/useFetchWithCache'
+import { getYoutubePreview } from '~/functions/getYoutubePreview'
 
 import { useNuxtApp } from '#app'
 const { $viewport } = useNuxtApp()
@@ -191,6 +213,7 @@ const langStore = useLangStore();
 const isActive = ref(false)
 const imageLoaded = ref(false);
 const image = ref(null);
+const isVideoPlayed = ref(false);
 
 function onImageLoad() {
   imageLoaded.value = true;
@@ -205,4 +228,11 @@ onMounted(() => {
 const addModal = () => {
   modalsStore.addModal('presentation')
 }
+
+
+const handlePlayVideo = (videoUrl) => {
+  isVideoPlayed.value = true;
+  document.querySelector('.banner iframe').setAttribute('src', `${url}&autoplay=1`)
+}
+
 </script>
