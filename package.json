@@ -65,6 +65,7 @@
     "nuxt-aos": "^1.2.4",
     "nuxt-calendly": "^0.1.18",
     "nuxt-parallax": "^1.0.8",
+    "nuxt-simple-sitemap": "^4.4.1",
     "nuxt-svg-sprite": "^0.0.14",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",

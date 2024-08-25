@@ -81,6 +81,7 @@ export default defineNuxtConfig({
     "nuxt-meta-pixel",
     // "nuxt-lazy-load",
     'nuxt-viewport',
+    'nuxt-simple-sitemap'
   ],
   directus: {
     url: "https://avalon-panel.sonisapps.com/",
