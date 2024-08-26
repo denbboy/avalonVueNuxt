@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   //   sitemapName: "sitemap.xml",
   // },
   sitemap: {
-    sources: ["/server/api/__sitemap__/index"],
+    sources: ["/api/__sitemap__/index"],
     sitemapName: "sitemap.xml",
   },
   robots: {

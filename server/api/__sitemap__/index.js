@@ -18,10 +18,6 @@ export default defineEventHandler(async (event) => {
     hostname: process.env.BASE_URL || "http://localhost:3000", // Убедитесь, что это правильный базовый URL
   });
 
-  console.log('process.env.BASE_URL', process.env.BASE_URL);
-  console.log('urls', urls);
-  
-
   for (const item of urls) {
     sitemap.write({
       url: item.url,

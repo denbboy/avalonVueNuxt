@@ -23,8 +23,8 @@
             {{ getYoutubePreview().thumb(item?.video ?? '') }}
             <NuxtImg v-if="!isVideoPlayed" :src="getYoutubePreview().thumb(item?.video ?? '') ?? ''" width="1920"
               height="800" class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
-            <iframe v-if="isVideoPlayed" loading="lazy" class="lg:scale-150 scale-[3] pointer-events-none w-full h-full"
-              :src="`${item?.video}&autoplay=1&mute=1&loop=1`" title="Avalon" frameborder="0"
+            <iframe loading="lazy" class="lg:scale-150 scale-[3] pointer-events-none w-full h-full"
+              title="Avalon" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; loop; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
@@ -200,6 +200,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 import useFetchWithCache from '~/hooks/useFetchWithCache'
 import { getYoutubePreview } from '~/functions/getYoutubePreview'
+import url from 'url'
 
 import { useNuxtApp } from '#app'
 const { $viewport } = useNuxtApp()
@@ -232,7 +233,11 @@ const addModal = () => {
 
 const handlePlayVideo = (videoUrl) => {
   isVideoPlayed.value = true;
-  document.querySelector('.banner iframe').setAttribute('src', `${url}&autoplay=1`)
+  
+  const params = url.parse(videoUrl, true);
+  const urlLink = `https://www.youtube.com/embed/${params.query.v}?autoplay=1&mute=1&loop=1`
+  document.querySelector('.swiper-banner iframe').setAttribute('src', urlLink)
 }
+
 
 </script>
