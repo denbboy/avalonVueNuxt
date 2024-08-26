@@ -14,6 +14,9 @@ const modalsStore = useModalsStore();
 
 const isShowedModal = ref(false)
 
+const sitemap = await useAsyncData("Sitemap", () => $fetch('/api/__sitemap__'))
+
+
 nuxtApp.hook("page:finish", () => {
   if(isShowedModal.value) return;
 

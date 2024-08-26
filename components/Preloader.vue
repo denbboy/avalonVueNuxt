@@ -25,7 +25,6 @@ nuxtApp.hook("page:finish", () => {
 });
 
 watch(preloaderStore, (newValue) => {
-    console.log('newValue', newValue.isPreloaderOn);
     isLoading.value = true;
 
     setTimeout(() => {

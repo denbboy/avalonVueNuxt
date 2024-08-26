@@ -373,8 +373,6 @@ const handleOpenModal = () => {
   handleCloseBurger();
 };
 
-console.log(projectsStore.projects);
-
 
 // const handleOpen = () => {
 //   isOpen.value = !isOpen.value;

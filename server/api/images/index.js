@@ -9,8 +9,6 @@ export default defineEventHandler(async (event) => {
     }
 
     try {
-        console.log(`${process.env.DIRECTUS_LINK}/assets/${image}?width=${width}&height=${height}`);
-        
         const res = await fetch(`${process.env.DIRECTUS_LINK}/assets/${image}?width=${width}&height=${height}`);
         const data = await res.json();
 

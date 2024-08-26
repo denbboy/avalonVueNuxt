@@ -60,7 +60,6 @@ const strings = ref(null);
 
 
 watch(props, async (newValue) => {
-    console.log(props.itemData?.filter(item => item.String_id.id === 115)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title);
     strings.value = newValue.itemData
 })
 </script>

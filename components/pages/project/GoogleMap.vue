@@ -100,8 +100,6 @@ async function initMap(cood1, cood2) {
 watch(
   () => props.itemData,
   (newValue) => {
-    console.log('MAP');
-    console.log(newValue);
     if (newValue && newValue.location && newValue.location.coordinates) {
       setTimeout(() => {
         initMap(newValue.location.coordinates[1], newValue.location.coordinates[0]);

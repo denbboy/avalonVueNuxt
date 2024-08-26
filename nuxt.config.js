@@ -7,8 +7,12 @@ export default defineNuxtConfig({
   router: {
     middleware: ["locale", "gtm"],
   },
+  // sitemap: {
+  //   sources: ["/api/__sitemap__/urls"],
+  //   sitemapName: "sitemap.xml",
+  // },
   sitemap: {
-    sources: ["/api/__sitemap__/urls"],
+    sources: ["/server/api/__sitemap__/index"],
     sitemapName: "sitemap.xml",
   },
   robots: {
@@ -80,8 +84,8 @@ export default defineNuxtConfig({
     "@zadigetvoltaire/nuxt-gtm",
     "nuxt-meta-pixel",
     // "nuxt-lazy-load",
-    'nuxt-viewport',
-    'nuxt-simple-sitemap'
+    "nuxt-viewport",
+    "nuxt-simple-sitemap",
   ],
   directus: {
     url: "https://avalon-panel.sonisapps.com/",
