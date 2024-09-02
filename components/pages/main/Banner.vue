@@ -39,7 +39,7 @@
             <div class="">
               <div class="banner__item__head md:flex items-center">
                 <NuxtImg v-if="item?.projects[0]?.item.logo" width="100" height="95"
-                  :src="`https://avalon-panel.sonisapps.com/assets/${item?.projects[0]?.item.logo}?width=100&height=95`"
+                  :src="`https://avalon-panel.sonisapps.com/assets/${item?.projects[0]?.item.logo}`"
                   class="mb-7 max-w-[100px] md:mb-0 md:mr-10" alt="logo" />
                 <div class="flex items-center w-full gap-5">
                   <div
@@ -80,13 +80,13 @@
                     item.languages_code.includes(langStore.lang))[0]?.title }}
                 </span>
               </h2>
-              <p class="text-white text-sm max-w-64 md:max-w-[416px] md:text-base mt-3 md:mt-12">
+              <p class="text-white text-sm max-w-64 md:max-w-[416px] md:text-base mt-3 md:mt-12 md:mr-5">
                 {{ item?.projects[0]?.item?.translations?.filter(item =>
                   item.languages_code.includes(langStore.lang))[0]?.description }}
               </p>
               <div class="md:flex">
                 <NuxtLink :to="`/projects/${item?.projects[0]?.item?.id}`"
-                  class="white-button md:mt-7 mt-3 lg:mt-12 md:ml-5">
+                  class="white-button md:mt-7 mt-3 lg:mt-12">
                   {{ $t('more') }}
                 </NuxtLink>
               </div>

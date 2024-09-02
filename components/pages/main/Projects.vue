@@ -60,7 +60,7 @@
                                     </span>
                                 </div>
                                 <div class="flex">
-                                    <NuxtLink :href="`/projects/${item?.id}`"
+                                    <NuxtLink :href="`/projects/${item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
                                         class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-[12px] px-5 rounded-[10px] text-white font-bold text-sm md:text-xs lg:text-base mr-7">
                                         {{ $t('more') }}
                                     </NuxtLink>

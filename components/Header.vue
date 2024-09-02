@@ -66,32 +66,6 @@
             ">
             {{ $t('career') }}
           </NuxtLink>
-          <div class="relative group">
-            <button type="button" class="projectsButton flex items-center gap-1 text-white md:text-xs lg:text-sm
-                before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
-                after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
-              ">
-              {{ $t('else_projects') }}
-
-              <svg width="6" height="5" viewBox="0 0 6 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.63428 3.93725L5.98828 0.25L0.00303125 0.25L2.36528 3.93575C2.43272 4.04304 2.52625 4.13149 2.63713 4.19285C2.74802 4.2542 2.87264 4.28646 2.99937 4.28661C3.12609 4.28676 3.25079 4.2548 3.36182 4.19371C3.47285 4.13261 3.56659 4.04438 3.63428 3.93725Z"
-                  fill="white" />
-              </svg>
-
-            </button>
-            <div
-              class="projectsMenu opacity-0 invisible group-hover:opacity-100 group-hover:visible flex transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-0 border border-whiteOp-300">
-
-              <NuxtLink :href="`/projects/${item.id}`" v-for="item in projectsStore.projects" :key="item.id" class="text-white md:text-xs lg:text-sm last:mb-0 mb-4 whitespace-nowrap relative
-                  before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
-                  after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
-                ">
-                {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
-              </NuxtLink>
-
-            </div>
-          </div>
           <NuxtLink href="#contacts" class="text-white md:text-xs lg:text-sm relative
               before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
               after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300

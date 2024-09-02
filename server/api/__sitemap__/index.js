@@ -1,7 +1,7 @@
 import { SitemapStream, streamToPromise } from "sitemap";
 import { createDirectus, readItems, rest } from "@directus/sdk";
 
-const directus = createDirectus(process.env.DIRECTUS_LINK).with(rest());
+const directus = createDirectus('https://avalon-panel.sonisapps.com/').with(rest());
 
 export default defineEventHandler(async (event) => {
   const Projects = await directus.request(
@@ -15,7 +15,7 @@ export default defineEventHandler(async (event) => {
   getUrls(Projects, "/projects", urls);
 
   const sitemap = new SitemapStream({
-    hostname: process.env.BASE_URL || "http://localhost:3000", // Убедитесь, что это правильный базовый URL
+    hostname: process.env.BASE_URL || "http://localhost:3000",
   });
 
   for (const item of urls) {
@@ -32,10 +32,16 @@ export default defineEventHandler(async (event) => {
 function getUrls(items, urlCode, urls) {
   for (const item of items) {
     const translations = item.translations || [];
-    
-    const EN_SLUG = translations.find(tr => tr.languages_code.code === "en-US")?.slug;
-    const UA_SLUG = translations.find(tr => tr.languages_code.code === "ua-UA")?.slug;
-    const RU_SLUG = translations.find(tr => tr.languages_code.code === "ru-RU")?.slug;
+
+    const EN_SLUG = translations.find(
+      (tr) => tr.languages_code.code === "en-US"
+    )?.slug;
+    const UA_SLUG = translations.find(
+      (tr) => tr.languages_code.code === "ua-UA"
+    )?.slug;
+    const RU_SLUG = translations.find(
+      (tr) => tr.languages_code.code === "ru-RU"
+    )?.slug;
 
     if (EN_SLUG) {
       urls.push({ url: `${urlCode}/${EN_SLUG}` });

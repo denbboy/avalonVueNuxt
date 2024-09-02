@@ -4,7 +4,7 @@
         <div class="lg:pb-10 pb-5 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.webp')] -->
             <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-80">
-                <NuxtImg v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+                <NuxtImg v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}?width=1920&height=800`"
                     class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="Image" />
 
 
@@ -157,7 +157,7 @@
                                     class="flex items-center gap-2 md:gap-[10px] text-blue-400 text-2xl font-bold mb-[10px] md:mb-[15px] md:text-[40px]">
                                     {{ itemData?.roi_procent }}%
                                     <NuxtImg src="/img/icons/about-banner-A-ic.svg"
-                                        class="max-w-[20px] md:max-w-[30px]" alt="ic" loading="lazy" />
+                                        class="max-w-[20px] md:max-w-[30px] w-full" alt="ic" loading="lazy" />
                                 </h3>
                                 <p class="text-white text-sm md:text-base">
                                     {{ $t('projected') }} <br class="md:hidden">ROI

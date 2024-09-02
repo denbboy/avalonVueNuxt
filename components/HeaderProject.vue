@@ -7,11 +7,11 @@
 
 
       <div class="header__inner px-5 flex items-center justify-between gap-3 relative">
-        <NuxtLink class="max-w-16 w-full lg:max-w-30" v-if="projectsStore.currentProject?.logo" :href="`/projects/${projectsStore.currentProject?.id}`">
-          <!-- <img :src="`https://avalon-panel.sonisapps.com/assets/${projectsStore.currentProject?.logo}`"
-            class="w-full" alt="logo ic"> -->
-            <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${projectsStore.currentProject?.logo}`" loading="lazy" class="w-full" alt="Vector" />
-        </NuxtLink>
+        <!-- :href="`/projects/${projectsStore.currentProject?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`" -->
+        <button class="max-w-16 w-full lg:max-w-30" v-if="projectsStore.currentProject?.logo">
+          <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${projectsStore.currentProject?.logo}`"
+            loading="lazy" class="w-full" alt="Vector" />
+        </button>
 
 
         <div class="items-center gap-[26px] 3xl:gap-10 hidden md:flex">
@@ -45,6 +45,34 @@
                         ">
             {{ $t('investors') }}
           </NuxtLink>
+          <div class="relative group">
+            <button type="button" class="projectsButton flex items-center gap-1 text-white md:text-xs lg:text-sm
+                before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
+                after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
+              ">
+              {{ $t('else_projects') }}
+
+              <svg width="6" height="5" viewBox="0 0 6 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.63428 3.93725L5.98828 0.25L0.00303125 0.25L2.36528 3.93575C2.43272 4.04304 2.52625 4.13149 2.63713 4.19285C2.74802 4.2542 2.87264 4.28646 2.99937 4.28661C3.12609 4.28676 3.25079 4.2548 3.36182 4.19371C3.47285 4.13261 3.56659 4.04438 3.63428 3.93725Z"
+                  fill="white" />
+              </svg>
+
+            </button>
+            <div
+              class="projectsMenu opacity-0 invisible group-hover:opacity-100 group-hover:visible flex transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-0 border border-whiteOp-300">
+
+              <NuxtLink
+                :href="`/${mainPageLink.replace('/', '')}/projects/${item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
+                v-for="item in projectsStore.projects" :key="item.id" class="text-white md:text-xs lg:text-sm last:mb-0 mb-4 whitespace-nowrap relative
+                  before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
+                  after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
+                ">
+                {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+              </NuxtLink>
+
+            </div>
+          </div>
           <NuxtLink href="#contacts" class="text-white text-[12px] 3xl:text-sm relative
                             before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
                             after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
@@ -55,7 +83,7 @@
 
 
         <button type="button" @click="handleOpenModal"
-          class="xl:flex hidden border border-whiteOp-400 rounded-xl p-4 text-white md:text-xs lg:text-sm font-bold hover:bg-white hover:text-blue-400 hover:border-white transition-all xl:justify-center">
+          class="xl:flex xl:ml-auto hidden border border-whiteOp-400 rounded-xl p-4 text-white md:text-xs lg:text-sm font-bold hover:bg-white hover:text-blue-400 hover:border-white transition-all xl:justify-center">
           {{ $t('make_a_meeting') }}
         </button>
         <a :href="`https://wa.me/${toolkitStore?.settings?.phone?.replace(/[^\d+]/g, '')}`"
@@ -70,7 +98,11 @@
         <div class="hidden group xl:flex xl:flex-col relative">
           <button class="projectsButton flex items-center gap-1 text-white md:text-xs lg:text-sm uppercase">
             {{ locale }}
-            <!-- <img src="/img/index/small-arrow-white.svg" alt="ic"> -->
+            <svg width="6" height="5" viewBox="0 0 6 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M3.63428 3.93725L5.98828 0.25L0.00303125 0.25L2.36528 3.93575C2.43272 4.04304 2.52625 4.13149 2.63713 4.19285C2.74802 4.2542 2.87264 4.28646 2.99937 4.28661C3.12609 4.28676 3.25079 4.2548 3.36182 4.19371C3.47285 4.13261 3.56659 4.04438 3.63428 3.93725Z"
+                fill="white" />
+            </svg>
           </button>
           <div
             class="projectsMenu flex opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-[50%] translate-x-[-50%] border border-whiteOp-300">
@@ -126,7 +158,7 @@
         </div>
 
         <button @click="handleOpenBurger" id="burgerBtn" type="button" class="xl:hidden block ">
-          <!-- <img src="/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic"> -->
+          <NuxtImg loading="lazy" src="/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic" />
         </button>
 
       </div>
@@ -187,22 +219,22 @@
         <ul class="flex items-center gap-1">
           <li v-if="toolkitStore?.settings?.soc_link_whats">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_whats}`">
-              <!-- <img src="/img/index/tw-burger.svg" alt="ic"> -->
+              <NuxtLink src="/img/index/tw-burger.svg" alt="ic" />
             </a>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_inst">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_inst}`">
-              <!-- <img src="/img/index/inst-burger.svg" alt="ic"> -->
+              <NuxtLink src="/img/index/inst-burger.svg" alt="ic" />
             </a>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_fb">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_fb}`">
-              <!-- <img src="/img/index/face-burger.svg" alt="ic"> -->
+              <NuxtLink src="/img/index/face-burger.svg" alt="ic" />
             </a>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_yt">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_yt}`">
-              <!-- <img src="/img/index/yout-burger.svg" alt="ic"> -->
+              <NuxtLink src="/img/index/yout-burger.svg" alt="ic" />
             </a>
           </li>
         </ul>
@@ -214,7 +246,7 @@
     </div>
   </header>
 
-  <Preloader :isActive="isLoading"/>
+  <Preloader :isActive="isLoading" />
 </template>
 
 <style>
@@ -244,6 +276,7 @@ const { locale } = useI18n()
 const isOpenBurger = ref(false);
 const isScrolled = ref(false);
 const isOpen = ref(false);
+const mainPageLink = ref('/')
 
 const langStore = useLangStore()
 
@@ -276,9 +309,17 @@ const changeLocale = (newLocale) => {
   isLoading.value = true;
 
   preloaderStore.start()
-  
+
   setTimeout(() => changeLanguage(newLocale), 500)
 };
+
+watchEffect(() => {
+  if (typeof window !== 'undefined') {
+    onMounted(() => {
+      mainPageLink.value = `/${localStorage.getItem('selectedLanguage').replace('/', '')}`;
+    });
+  }
+});
 
 const changeLanguage = (newLocale) => {
   const currentPath = route.fullPath;
@@ -289,6 +330,8 @@ const changeLanguage = (newLocale) => {
   } else {
     pathWithoutLocale = `/${pathWithoutLocale}`;
   }
+
+  mainPageLink.value = `/${newLocale}`
 
   if (router.currentRoute.value.fullPath !== pathWithoutLocale) {
     router.push(pathWithoutLocale);

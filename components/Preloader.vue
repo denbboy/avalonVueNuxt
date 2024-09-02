@@ -4,32 +4,46 @@
         <!-- <iframe v-if="isLoading" class="w-[800px] h-[800px]"
             src="https://lottie.host/embed/1b26babb-a87c-48e7-9a0a-f31a06298110/CixbB89Yfp.json"></iframe> -->
 
-            <!-- <img src="/img/loader.gif" class="w-[800px] h-[500px]" alt=""> -->
-            <NuxtImg src="/img/loader.gif" loading="lazy" class="w-[800px] h-[500px]" alt="Preloader" />
+        <!-- <img src="/img/loader.gif" class="w-[800px] h-[500px]" alt=""> -->
+        <!-- <NuxtImg src="/img/loader.gif" loading="lazy" class="w-[800px] h-[500px]" alt="Preloader" /> -->
+        <video src="/assets/img/loader1080.webm" v-if="!$viewport.isLessThan('tablet')" class="w-[500px]" autoplay loop muted></video>
+        <video src="/assets/img/loader100.webm" v-else class="w-[100px]" autoplay loop muted></video>
     </div>
 </template>
 
 <script setup>
 import { usePreloaderStore } from '~/stores/functions/preloader';
 
-const {isActive} = defineProps(['isActive'])
+const { isActive } = defineProps(['isActive'])
 const preloaderStore = usePreloaderStore();
+
+const { $viewport } = useNuxtApp()
 
 const nuxtApp = useNuxtApp();
 const isLoading = ref(true);
 
 nuxtApp.hook("page:finish", () => {
+    console.log(123);
+    
     setTimeout(() => {
         isLoading.value = false;
-    }, 200)
+    }, 500)
 });
 
-watch(preloaderStore, (newValue) => {
-    isLoading.value = true;
-
+watchEffect(() => {
     setTimeout(() => {
         isLoading.value = false;
-    }, 2000)
+    }, 1500)
 })
+
+// watch(preloaderStore, (newValue) => {
+//     console.log(123);
+    
+//     setTimeout(() => {
+
+//         console.log(555);
+//         isLoading.value = false;
+//     }, 2000)
+// })
 
 </script>
