@@ -51,6 +51,8 @@ const imageLoaded = ref(false);
 const image = ref(null);
 
 function onImageLoad() {
+    console.log(111);
+    
     imageLoaded.value = true;
 }
 
@@ -58,6 +60,10 @@ onMounted(() => {
     if (image.value?.complete) {
         imageLoaded.value = true;
     }
+
+    setTimeout(() => {
+        imageLoaded.value = true;
+    }, 500)
 });
 
 const props = defineProps({

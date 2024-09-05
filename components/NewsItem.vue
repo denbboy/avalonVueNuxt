@@ -45,6 +45,10 @@ onMounted(() => {
     if (image.value?.complete) {
         imageLoaded.value = true;
     }
+
+    setTimeout(() => {
+        imageLoaded.value = true;
+    }, 500)
 });
 
 const props = defineProps({

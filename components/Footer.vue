@@ -267,7 +267,8 @@ const placeholderLang = {
 const inputOptions = {
     showDialCode: true,
     autoFormat: false,
-    placeholder: placeholderLang[langStore.lang]
+    placeholder: placeholderLang[langStore.lang],
+    maxlength: 15
 };
 
 const submitForm = async () => {

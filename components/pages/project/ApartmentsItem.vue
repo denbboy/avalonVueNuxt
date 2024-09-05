@@ -114,8 +114,8 @@
                 class="app-swiper relative xl:max-w-[456px] h-full  3xl:max-w-[600px] lg:rounded-3xl rounded-2xl -mb-8 pb-8 md:mb-0 md:pb-0 overflow-hidden">
 
                 <NuxtLink @click="handleOpenModal3D" v-if="itemData?.video_360" :href="`#3d-object-${itemData?.id}`"
-                    class="absolute hover:scale-105 w-full active:scale-95 transition-all top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
-                    <NuxtImg src="/img/about/360.png" class="max-w-[95px] xl:max-w-[108px] w-full" alt="ph"
+                    class="absolute w-full top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
+                    <NuxtImg src="/img/about/360.png" class="max-w-[95px] active:scale-95 hover:scale-105 transition-all xl:max-w-[108px] w-full" alt="ph"
                         loading="lazy" />
                 </NuxtLink>
 

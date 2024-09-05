@@ -20,6 +20,8 @@
     <PagesProjectFeatures
         :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 25)[0]?.Block_id?.strings" />
 
+    <PagesProjectInteractive />
+
     <PagesProjectApartments v-if="itemData?.apartments?.length" :apartments="itemData?.apartments" />
 
     <PagesProjectInclusions

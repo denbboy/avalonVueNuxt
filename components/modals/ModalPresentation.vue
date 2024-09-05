@@ -25,7 +25,7 @@
 
                 <div class="phone-vti">
                     <VueTelInput :input-options="inputOptions" v-model="phone" :preferred-countries="preferredCountries"
-                        :only-countries="sortedCountries" />
+                        :only-countries="sortedCountries" @input="e => /^[0-9+ -]*$/.test(event.target.value)" />
                 </div>
 
                 <label for="some" class="flex flex-col text-start mb-[10px] mt-5">
@@ -204,7 +204,8 @@ const placeholderLang = {
 const inputOptions = {
     showDialCode: true,
     autoFormat: false,
-    placeholder: placeholderLang[langStore.lang]
+    placeholder: placeholderLang[langStore.lang],
+    maxlength: 15
 };
 
 const formRequest = async () => {

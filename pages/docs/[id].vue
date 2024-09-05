@@ -19,9 +19,7 @@
                 {{ currentPageInfo?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
             </h1>
             <div data-aos="fade-up" data-aos-delay="100" class="justify-between items-center mb-10 lg:mb-48">
-                <p class="md:text-lg text-white text-sm mb-7 max-w-[548px]">
-                    {{ currentPageInfo?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description }}
-                </p>
+                <p class="md:text-lg text-white text-sm mb-7" v-html="currentPageInfo?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description" />
             </div>
         </div>
 
