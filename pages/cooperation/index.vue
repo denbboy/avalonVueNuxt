@@ -342,7 +342,7 @@
             </div>
         </section>
 
-        <div class="mt-20">
+        <div class="mt-4">
             <PagesMainProjects />
         </div>
 

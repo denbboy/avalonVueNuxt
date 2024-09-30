@@ -3,7 +3,7 @@
   <section class="pb-24 relative bg-blue-500 overflow-hidden">
     <div class="bg-gradient-to-t from-blue-500 from-80% lg:from-80%  w-full h-full absolute z-10"></div>
 
-    <NuxtImg loading="lazy" class="absolute top-0 z-0 opacity-40 w-[600vw] h-[600px] object-cover max-w-max md:w-full"
+    <NuxtImg loading="lazy" class="absolute top-0 z-0 opacity-40 w-[600vw] h-[600px] object-cover md:w-full"
       src="/img/news/news-bgd.webp" alt="Image" />
 
     <div class="container mx-auto relative z-20 pt-32 md:pt-64">

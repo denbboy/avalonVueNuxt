@@ -10,7 +10,7 @@
         <NuxtLink :href="mainPageLink">
           <NuxtImg loading="lazy" src="/img/newLogo.png" class="hidden md:max-w-[55px] w-full lg:max-w-[95px] xl:block"
             alt="logo" />
-          <NuxtImg loading="lazy" format="webp" width="145" height="30" src="/img/icons/logo-mob.svg" class="xl:hidden" alt="logo ic" />
+          <NuxtImg loading="lazy" format="png" width="145" height="30" src="/img/logo-mob.png" class="xl:hidden" alt="logo" />
         </NuxtLink>
 
 
@@ -173,7 +173,7 @@
         <div id="projectsBody" :class="isOpenSubMenu ? 'max-h-96 mt-8' : 'max-h-0 mt-0'"
           class="burger__proj_body h-full overflow-hidden flex transition-all flex-col">
 
-          <NuxtLink @click="handleCloseBurger" :href="`/projects/${item.id}`" v-for="item in projectsStore.projects"
+          <NuxtLink @click="handleCloseBurger" :href="`/projects/${item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`" v-for="item in projectsStore.projects"
             :key="item.id" class="mb-4 text-sm hover:text-blue-400 transition-all">
             {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
           </NuxtLink>
@@ -181,10 +181,10 @@
         </div>
       </div>
       <div class="md:hidden flex flex-col gap-8 mb-12 pb-7 border-b border-whiteOp-300">
-        <NuxtLink @click="handleCloseBurger" href="/about" class="hover:text-blue-400 transition-all">
+        <NuxtLink @click="handleCloseBurger" :href="mainPageLink + '/#about-company'" class="hover:text-blue-400 transition-all">
           {{ $t('about_company') }}
         </NuxtLink>
-        <NuxtLink @click="handleCloseBurger" href="/reason" class="hover:text-blue-400 transition-all">
+        <NuxtLink @click="handleCloseBurger" :href="mainPageLink + '/#island'" class="hover:text-blue-400 transition-all">
           {{ $t('why_bali') }}
         </NuxtLink>
         <NuxtLink @click="handleCloseBurger" href="/cooperation" class="hover:text-blue-400 transition-all">
@@ -230,22 +230,22 @@
         <ul class="flex items-center gap-1">
           <li v-if="toolkitStore?.settings?.soc_link_whats">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_whats}`">
-              <NuxtImg loading="lazy" src="/img/index/tw-burger.webp" alt="ic" />
+              <NuxtImg loading="lazy" width="40" src="/img/index/tw-burger.svg" alt="ic" />
             </a>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_inst">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_inst}`">
-              <NuxtImg loading="lazy" src="/img/index/inst-burger.webp" alt="ic" />
+              <NuxtImg loading="lazy" width="40" src="/img/index/inst-burger.svg" alt="ic" />
             </a>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_fb">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_fb}`">
-              <NuxtImg loading="lazy" src="/img/index/face-burger.webp" alt="ic" />
+              <NuxtImg loading="lazy" width="40" src="/img/index/face-burger.svg" alt="ic" />
             </a>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_yt">
             <a :href="`tel:${toolkitStore?.settings?.soc_link_yt}`">
-              <NuxtImg loading="lazy" src="/img/index/yout-burger.webp" alt="ic" />
+              <NuxtImg loading="lazy" width="40" src="/img/index/yout-burger.svg" alt="ic" />
             </a>
           </li>
         </ul>

@@ -1,9 +1,9 @@
 <template>
 
-    <section class="lg:pb-12 pb-0 min-h-[900px]">
+    <section class="lg:pb-12 pb-0 min-h-[200px]">
         <div class="lg:pb-10 pb-5 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.webp')] -->
-            <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen -z-10 opacity-80">
+            <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen overflow-hidden -z-10 opacity-80">
                 <NuxtImg v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}?width=1920&height=800`"
                     class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="Image" />
 
@@ -20,7 +20,7 @@
                     </SkeletonLoader> -->
                 <!-- </div> -->
 
-                <iframe v-if="`${itemData?.video}`" class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0"
+                <iframe v-if="`${itemData?.video}`" class="absolute scale-125 top-0 left-0 w-full h-[110vh] object-cover z-0"
                     width="100%" height="100%" src="" title="YouTube video player" frameborder="0"
                     allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -36,12 +36,12 @@
                     <div class=" w-full max-w-[950px]">
                         <div data-aos="fade-up" class="flex lg:-mr-20 flex-wrap items-center gap-[10px] md:gap-5">
                             <div
-                                class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] -mr-1 max-w-[141px] md:py-5 py-[15px]">
-                                <NuxtImg src="/img/about/ribas.png" alt="Image" loading="lazy" />
+                                class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
+                                <NuxtImg src="/img/about/ribas.png" class="w-full h-full" alt="Image" loading="lazy" />
                             </div>
                             <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
-                                <NuxtImg class="absolute top-0 left-0 -z-10 md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
+                                <NuxtImg class="absolute top-0 left-0 -z-10 w-full h-full md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
                                     src="/img/icons/about-border-white.svg" alt="bgd" loading="lazy" />
                                 <span class="text-white text-xs md:text-sm">
                                     {{ $t('deadline') }}
@@ -52,7 +52,7 @@
                             </div>
                             <div class="con order-1 md:order-none">
                                 <div class="relative px-5 py-3 w-fit md:text-center md:px-7 min-w-[228px] md:min-w-0">
-                                    <NuxtImg class="absolute top-0 left-0 -z-10 md:hidden"
+                                    <NuxtImg class="absolute w-full h-full top-0 left-0 -z-10 md:hidden"
                                         src="/img/index/bgd-decor.png" alt="bgd" loading="lazy" />
                                     <NuxtImg class="absolute top-0 left-0 -z-10 hidden md:block h-full w-full"
                                         src="/img/index/bgd-decor-2.png" alt="bgd" loading="lazy" />
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-full h-[60px] max-w-[72px] md:max-w-[98px] md:h-[86px] bg-white flex items-center justify-center rounded-[8px] md:rounded-[15px]">
+                                class="w-full h-[60px] max-w-[62px] md:max-w-[98px] md:h-[86px] bg-white flex items-center justify-center rounded-[8px] md:rounded-[15px]">
                                 <!-- <NuxtImg src="/img/icons/live-ic.svg" class="max-w-[42px] md:max-w-[68px]" alt="ic"> -->
 
                                 <svg width="68" height="48" viewBox="0 0 68 48" class="max-w-12 lg:max-w-full"

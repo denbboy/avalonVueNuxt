@@ -182,6 +182,28 @@
         <NuxtLink @click="handleCloseBurger" href="#investors" class=" hover:text-blue-400 transition-all">
           {{ $t('investors') }}
         </NuxtLink>
+        <div class="group burger__proj md:hidden block">
+          <p @click="openSubMenu" id="toggleProjects"
+            class="flex items-center gap-1 justify-center hover:text-blue-400 transition-all cursor-pointer">
+            {{ $t('else_projects') }}
+            <svg class="group-hover:-scale-y-100 transition-all" width="6" height="5" viewBox="0 0 6 5" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path class="fill-white group-hover:fill-blue-400 transition-all"
+                d="M3.63428 3.93725L5.98828 0.25L0.00303125 0.25L2.36528 3.93575C2.43272 4.04304 2.52625 4.13149 2.63713 4.19285C2.74802 4.2542 2.87264 4.28646 2.99937 4.28661C3.12609 4.28676 3.25079 4.2548 3.36182 4.19371C3.47285 4.13261 3.56659 4.04438 3.63428 3.93725Z" />
+            </svg>
+          </p>
+          <div id="projectsBody" :class="isOpenSubMenu ? 'max-h-96 mt-8' : 'max-h-0 mt-0'"
+            class="burger__proj_body h-full overflow-hidden flex transition-all flex-col">
+
+            <NuxtLink @click="handleCloseBurger"
+              :href="`/projects/${item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
+              v-for="item in projectsStore.projects" :key="item.id"
+              class="mb-4 text-sm hover:text-blue-400 transition-all">
+              {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+            </NuxtLink>
+
+          </div>
+        </div>
         <NuxtLink @click="handleCloseBurger" href="#contacts" class=" hover:text-blue-400 transition-all">
           {{ $t('contacts') }}
         </NuxtLink>
@@ -272,6 +294,7 @@ const props = defineProps(['header'])
 const preloaderStore = usePreloaderStore();
 const projectsStore = useProjectsStore();
 const { locale } = useI18n()
+const isOpenSubMenu = ref(false);
 
 const isOpenBurger = ref(false);
 const isScrolled = ref(false);
@@ -286,6 +309,10 @@ const handleOpenBurger = () => {
 const handleCloseBurger = () => {
   isOpenBurger.value = false
 }
+
+const openSubMenu = () => {
+  isOpenSubMenu.value = !isOpenSubMenu.value;
+};
 
 const modalsStore = useModalsStore()
 

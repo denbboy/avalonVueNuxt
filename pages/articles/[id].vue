@@ -33,7 +33,7 @@
                     </span>
                 </div>
                 <h1
-                    class="text-white text-[30px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[1200px] md:text-[65px]">
+                    class="text-white text-[30px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[1400px] md:text-[65px]">
 
                     {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
 

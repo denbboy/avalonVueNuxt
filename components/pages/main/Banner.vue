@@ -1,5 +1,5 @@
 <template>
-  <section class="lg:pb-12 pb-0 min-h-[900px]">
+  <section class="lg:pb-12 pb-0 min-h-[200px]">
 
     <!-- :modules="modules" -->
     <swiper class="swiper-banner" :autoplay="{ delay: 15000, disableOnInteraction: false }" :loop="true"
@@ -34,7 +34,7 @@
         </div>
 
         <div class="container">
-          <div class="flex items-center" v-if="item?.projects?.length">
+          <div class="flex lg:flex-row flex-col items-center" v-if="item?.projects?.length">
 
             <div class="">
               <div class="banner__item__head md:flex items-center">

@@ -55,7 +55,7 @@
             {{ itemStrings?.filter(item => item.id === 135)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
           </p>
         </div>
-        <NuxtImg src="/img/index/a-bali-decor.webp" loading="lazy" class="m-auto md:hidden" format="webp" alt="vector-logo" />
+        <NuxtImg src="/img/index/a-bali-decor.svg" loading="lazy" width="110" class="m-auto md:hidden" format="webp" alt="vector-logo" />
         <!-- </div> -->
       </div>
     </div>

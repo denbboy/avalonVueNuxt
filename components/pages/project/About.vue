@@ -37,12 +37,12 @@
                 </li>
                 <li
                     class="py-8 px-5 w-full border-b border-blue-400 lg:border-blue-500 lg:py-12 lg:px-8 md:border-b-0 md:border-r">
-                    <NuxtImg src="/img/about/camera.svg" class="max-w-[25px] mb-2 md:mb-4 md:max-w-[40px]" alt="ic" />
+                    <NuxtImg src="/img/about/camera.svg" class="max-w-[25px] w-full mb-2 md:mb-4 md:max-w-[40px]" alt="ic" />
                     <p class="text-white text-sm md:text-base" v-html="props.itemData?.filter(item => item.String_id.id === 117)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
                     </p>
                 </li>
                 <li class="py-8 px-5 w-full lg:py-12 lg:px-8">
-                    <NuxtImg src="/img/about/whater.svg" class="max-w-[25px] mb-2 md:mb-4 md:max-w-[40px]" alt="ic" />
+                    <NuxtImg src="/img/about/whater.svg" class="max-w-[25px] w-full mb-2 md:mb-4 md:max-w-[40px]" alt="ic" />
                     <p class="text-white text-sm md:text-base" v-html="props.itemData?.filter(item => item.String_id.id === 118)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
                         
                     </p>
