@@ -276,8 +276,14 @@
 
                 <div
                     class="w-[170px] h-[170px] lg:w-[244px] lg:h-[244px] text-center rounded-full bg-blue-400 transition-all flex flex-col items-center justify-center gap-1 absolute bottom-[-85px] left-[50%] 3xl:left-0 3xl:top-[50%] md:translate-y-[-50%] translate-x-[-50%] md:top-[50%] md:left-2">
+                    <!-- <div
+                        class="block animate-ping w-[170px] h-[170px] md:w-[244px] md:h-[244px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]">
+                    </div> -->
                     <div
                         class="block animate-ping w-[170px] h-[170px] md:w-[244px] md:h-[244px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]">
+                    </div>
+                    <div
+                        class="block animate-ping2 w-[170px] h-[170px] md:w-[244px] md:h-[244px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]">
                     </div>
                     <b class="block font-bold text-white md:text-[45px] lg:text-[60px] leading-[100%] text-[40px] md:mb-3">
                         {{ itemStrings?.filter(item => item.id === 137)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
