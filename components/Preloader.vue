@@ -6,8 +6,15 @@
 
         <!-- <img src="/img/loader.gif" class="w-[800px] h-[500px]" alt=""> -->
         <!-- <NuxtImg src="/img/loader.gif" loading="lazy" class="w-[800px] h-[500px]" alt="Preloader" /> -->
-        <video src="/assets/img/loader1080.webm" v-if="!$viewport.isLessThan('tablet')" class="w-[500px]" autoplay loop muted></video>
-        <video src="/assets/img/loader100.webm" v-else class="w-[100px]" autoplay loop muted></video>
+        <!-- <video src="/assets/img/loader1080.webm" v-if="!$viewport.isLessThan('tablet')" class="w-[500px]" autoplay loop muted></video>
+        <video src="/assets/img/loader100.webm" v-else class="w-[100px]" autoplay loop muted></video> -->
+        
+        <video v-if="!$viewport.isLessThan('tablet')" width="500" preload="auto" no-controls autoplay loop playsinline muted>
+            <source src="/assets/img/loader1080.webm" type="video/webm">
+        </video>
+        <video v-else src="/assets/img/loader100.webm" preload="auto" no-controls autoplay loop playsinline muted  width="100"></video>
+
+
     </div>
 </template>
 

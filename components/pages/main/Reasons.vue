@@ -35,7 +35,7 @@
           class="logo-clip-path max-h-[222px] max-w-[214px] md:max-w-full md:max-h-full md:min-w-[318px] md:h-[380px] lg:min-w-[553px] lg:h-[573px] mx-auto my-auto">
           <video loop
             class="md:min-w-[318px]  md:h-[380px] lg:min-w-[553px] lg:h-[573px] min-w-[214px] w-full h-[222px] object-cover"
-            muted autoplay>
+            muted autoplay playsinline>
             <!-- <source src="/assets/video/video-logo.webm" type="video/webm"> -->
             <source src="/assets/video/video-logo.webm" type="video/webm" />
           </video>
