@@ -25,7 +25,7 @@
 
                 <div class="phone-vti">
                     <VueTelInput :input-options="inputOptions" v-model="phone" :preferred-countries="preferredCountries"
-                        :only-countries="sortedCountries" @input="e => /^[0-9+ -]*$/.test(event.target.value)" />
+                        :only-countries="sortedCountries" @input="inputPhoneNumber" />
                 </div>
 
                 <label for="some" class="flex flex-col text-start mb-[10px] mt-5">
@@ -113,6 +113,10 @@ const isError = ref(null);
 const errorText = ref('');
 const isSending = ref(false);
 const isSuccess = ref(false);
+
+const inputPhoneNumber = () => {
+    phone.value = phone.value.replace(/(?!^\+)[^\d]/g, '');
+}
 
 const toolkitStore = useToolkit();
 

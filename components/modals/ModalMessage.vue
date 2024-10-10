@@ -24,7 +24,7 @@
                 </label>
                 <div class="phone-vti">
                     <VueTelInput :input-options="inputOptions" v-model="phone" :preferred-countries="preferredCountries"
-                        :only-countries="sortedCountries" />
+                        :only-countries="sortedCountries" @input="inputPhoneNumber" />
                 </div>
 
                 <p class="text-red-700 text-left transition-all h-full" :class="{
@@ -98,6 +98,10 @@ const isError = ref(null);
 const errorText = ref('');
 const isSending = ref(false);
 const isSuccess = ref(false);
+
+const inputPhoneNumber = () => {
+    phone.value = phone.value.replace(/(?!^\+)[^\d]/g, '');
+}
 
 const toolkitStore = useToolkit();
 

@@ -13,7 +13,7 @@
             class="bg-whiteOp-200 rounded-xl text-white text-sm px-5 py-4 outline-none lg:p-6 lg:text-base w-full">
           <div class="phone-vti">
             <!-- <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone" :only-countries="onlyCountries" /> -->
-            <VueTelInput :input-options="inputOptions" :use-masking="true" v-model="phone"
+            <VueTelInput @input="inputPhoneNumber" :input-options="inputOptions" :use-masking="true" v-model="phone"
               :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
           </div>
 
@@ -85,6 +85,10 @@ const isError = ref(null);
 const errorText = ref('');
 const isSending = ref(false);
 const isSuccess = ref(false);
+
+const inputPhoneNumber = () => {
+    phone.value = phone.value.replace(/(?!^\+)[^\d]/g, '');
+}
 
 const toolkitStore = useToolkit();
 

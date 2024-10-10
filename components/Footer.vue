@@ -128,10 +128,10 @@
                         <input type="text" v-model="name" placeholder="Имя"
                             class="bg-white/10 lg:mb-[10px] rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-5 lg:p-6 md:text-base w-full">
                         <div class="phone-vti">
-                            <!-- <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone"
-                                :only-countries="onlyCountries" /> -->
-                            <VueTelInput :input-options="inputOptions" v-model="phone" :use-masking="true"
-                                :preferred-countries="preferredCountries" :only-countries="sortedCountries" />
+                            <VueTelInput :input-options="inputOptions" :value="phone" :autocomplete="false"
+                                :disabledFormatting="true" :use-masking="false" ref="maskedInput" v-model="phone"
+                                :preferred-countries="preferredCountries" @input="inputPhoneNumber"
+                                :only-countries="sortedCountries" />
                         </div>
                         <p class="text-red-700 text-left transition-all h-full" :class="{
                             'max-h-10 opacity-100 mt-2': isError,
@@ -164,8 +164,8 @@
         <div class="bg-blue-500 py-7 md:py-2">
             <div class="container">
                 <div class="flex items-center justify-between gap-8">
-                    <NuxtImg v-if="$viewport.isLessThan('tablet')"src="/img/index/a-footer.webp" format="webp" loading="lazy" class="max-w-[96px] md:hidden"
-                        alt="ph" />
+                    <NuxtImg v-if="$viewport.isLessThan('tablet')" src="/img/index/a-footer.webp" format="webp"
+                        loading="lazy" class="max-w-[96px] md:hidden" alt="ph" />
 
                     <!-- <div class="logo-clip-path md:hidden">
                         <video loop class="w-[96px] h-[100px] object-cover" muted autoplay>
@@ -227,6 +227,7 @@ import { useToolkit } from '~/stores/functions/toolkit';
 import { VueTelInput } from 'vue-tel-input';
 import 'vue-tel-input/vue-tel-input.css';
 import iso31661 from 'iso-3166-1';
+import IMask from 'imask';
 
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
@@ -235,6 +236,7 @@ const isShowArrowUp = ref(false);
 import { useNuxtApp } from '#app'
 const { $viewport } = useNuxtApp()
 
+const regExp = /^\d{8,12}$/;
 
 const handleScroll = () => {
     const pointToShow = document.body.offsetHeight * 60 / 100
@@ -245,11 +247,16 @@ const handleScrollUp = () => {
     window.scrollTo(0, 0);
 }
 
+const inputPhoneNumber = () => {
+    phone.value = phone.value.replace(/(?!^\+)[^\d]/g, '');
+}
+
 const name = ref(null);
 const phone = ref(null);
 const isError = ref(null);
 const isSending = ref(false);
 const isSuccess = ref(false);
+const maskedInput = ref(null);
 
 const toolkitStore = useToolkit();
 
@@ -271,11 +278,20 @@ const inputOptions = {
     maxlength: 15
 };
 
+
+const countryChanged = (newCountry) => {
+    // Обрабатываем изменение страны
+    console.log('Выбранная страна:', newCountry);
+}
+
 const submitForm = async () => {
     if (!name.value || !phone.value) {
-        isError.value = true;
-        return;
-    } else {
+        return isError.value = true;
+    }
+    // else if (!regExp.test(phone.value)) {
+    //     return isError.value = true;
+    // }
+    else {
         isError.value = false;
     }
 
@@ -301,7 +317,6 @@ const submitForm = async () => {
         isSuccess.value = true;
         resetForm();
     } catch (err) {
-        console.log('11111', err);
         isSending.value = false;
     }
 };
@@ -327,6 +342,15 @@ const sortedCountries = computed(() => {
 });
 
 onMounted(() => {
+    //   setTimeout(() => {
+    //     console.log(maskedInput);
+
+    //     IMask(maskedInput.value, {
+    //       mask: '+{7}(000)000-00-00' // Пример маски для телефона
+    //     });
+    //   }, 2000)
+
+    // Добавляем обработчик событий прокрутки
     window?.addEventListener('scroll', handleScroll);
 });
 
