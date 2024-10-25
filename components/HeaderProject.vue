@@ -6,7 +6,7 @@
       :class="isOpenBurger ? 'bg-blue-500' : 'md:bg-transparent'">
 
 
-      <div class="header__inner px-5 flex items-center justify-between gap-8 relative">
+      <div class="header__inner px-5 flex items-center justify-between gap-4 relative">
         <!-- :href="`/projects/${projectsStore.currentProject?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`" -->
         <button class="max-w-16 w-full lg:max-w-30" v-if="projectsStore.currentProject?.logo">
           <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${projectsStore.currentProject?.logo}`"
