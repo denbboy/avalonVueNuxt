@@ -25,43 +25,39 @@
   <script>
   export default {
     mounted() {
-      (function (token) {
+      (function (a) {
         function init() {
           window.embed_layout = true;
-  
-          // Выполняем AJAX-запрос с помощью fetch API
-          fetch('https://crm.g-plus.app/api/actions', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams({
+          jQuery.ajax({
+            url: 'https://crm.g-plus.app/api/actions',
+            method: 'post',
+            data: {
               action: 'get-layout-widget',
-              token: token,
+              token: a,
               building_id: 25545,
               lang: 'ru',
-            }),
-          })
-            .then(response => response.json())
-            .then(data => {
-              // Вставляем полученный HTML в контейнер
-              const container = document.getElementById('smart-catalog-container');
-              if (container && data.html) {
-                container.innerHTML = data.html;
-              }
-            })
-            .catch(error => {
-              console.error('Error:', error);
-            });
+            },
+          }).done(function (data) {
+            jQuery(data.html).appendTo('#smart-catalog-container');
+          });
         }
-  
-        // Инициализация без проверки наличия jQuery
-        init();
+        if (typeof jQuery === 'undefined') {
+          var script = document.createElement('SCRIPT');
+          script.src = 'https://code.jquery.com/jquery-1.12.4.min.js';
+          script.type = 'text/javascript';
+          script.onload = function () {
+            window.jQuery = window.$ = jQuery;
+            init();
+          };
+          document.getElementsByTagName('head')[0].appendChild(script);
+        } else {
+          window.jQuery = window.$ = jQuery;
+          init();
+        }
       })('72d6ffdf687644aaa8bc9b4f31b56eb0');
     },
   };
   </script>
-  
   
 
 <style scoped>
