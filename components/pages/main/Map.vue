@@ -12,7 +12,7 @@
         <div class="lg:-ml-20 mx-[-150px] md:-ml-64 md:mr-0 w-[calc(100%+400px)] md:w-full md:max-w-[1298px]">
           <NuxtImg loading="lazy" src="/img/index/map.png" class="w-full" alt="ic" />
         </div>
-        <div class="md:absolute bottom-0 max-w-[752px] md:right-[100px] lg:right-[180px] mt-8">
+        <div class="md:absolute bottom-0 md:max-w-[40vw] md:right-[100px] lg:right-[180px] mt-8">
           <h2 class="text-white font-bold text-2xl md:text-[45px] lg:text-[56px] leading-[100%] mb-7 md:mb-[32px]"
             data-aos="fade-up">
             {{ itemStrings?.filter(item => item.id === 2)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}

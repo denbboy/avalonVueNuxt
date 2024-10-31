@@ -34,7 +34,7 @@
         </div>
 
         <div class="container">
-          <div class="flex lg:flex-row flex-col items-center" v-if="item?.projects?.length">
+          <div class="flex md:flex-row flex-col items-center" v-if="item?.projects?.length">
 
             <div class="">
               <div class="banner__item__head md:flex items-center">
