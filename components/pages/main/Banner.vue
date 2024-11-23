@@ -23,8 +23,8 @@
             {{ getYoutubePreview().thumb(item?.video ?? '') }}
             <NuxtImg v-if="!isVideoPlayed" :src="getYoutubePreview().thumb(item?.video ?? '') ?? ''" width="1920"
               height="800" class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
-            <iframe loading="lazy" class="lg:scale-150 scale-[3] pointer-events-none w-full h-full"
-              title="Avalon" frameborder="0"
+            <iframe loading="lazy" class="lg:scale-150 scale-[3] pointer-events-none w-full h-full" title="Avalon"
+              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; loop; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
@@ -43,6 +43,7 @@
                   class="mb-7 max-w-[100px] md:mb-0 md:mr-10" alt="logo" />
                 <div class="flex items-center w-full gap-5">
                   <div
+                  v-if="item?.projects[0]?.item?.due_date"
                     class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
                     <NuxtImg
                       class="absolute top-0 left-0 -z-10 md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
@@ -51,7 +52,8 @@
                       {{ $t('deadline') }}
                     </span>
                     <p class="text-white text-base font-bold md:text-xl">
-                      {{ $t('summer2025') }}
+                      <!-- {{ $t('summer2025') }} -->
+                      {{ item?.projects[0]?.item?.due_date }}
                     </p>
                   </div>
                   <div class="relative px-5 py-3 w-fit md:text-center md:px-7">
@@ -85,8 +87,8 @@
                   item.languages_code.includes(langStore.lang))[0]?.description }}
               </p>
               <div class="md:flex">
-                <NuxtLink :to="`/projects/${item?.projects[0]?.item?.id}`"
-                  class="white-button md:mt-7 mt-3 lg:mt-12">
+                <!-- <NuxtLink :to="`/projects/${item?.projects[0]?.item?.slug}`" class="white-button md:mt-7 mt-3 lg:mt-12"> -->
+                <NuxtLink :to="`/projects/${item?.projects[0]?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`" class="white-button md:mt-7 mt-3 lg:mt-12">
                   {{ $t('more') }}
                 </NuxtLink>
               </div>
@@ -205,7 +207,6 @@ import url from 'url'
 import { useNuxtApp } from '#app'
 const { $viewport } = useNuxtApp()
 
-
 const slides = await useFetchWithCache('/api/slides');
 
 const modalsStore = useModalsStore()
@@ -215,6 +216,7 @@ const isActive = ref(false)
 const imageLoaded = ref(false);
 const image = ref(null);
 const isVideoPlayed = ref(false);
+
 
 function onImageLoad() {
   imageLoaded.value = true;
@@ -233,7 +235,7 @@ const addModal = () => {
 
 const handlePlayVideo = (videoUrl) => {
   isVideoPlayed.value = true;
-  
+
   const params = url.parse(videoUrl, true);
   const urlLink = `https://www.youtube.com/embed/${params.query.v}?autoplay=1&mute=1&loop=1`
   document.querySelector('.swiper-banner iframe').setAttribute('src', urlLink)

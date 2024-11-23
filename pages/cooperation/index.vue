@@ -398,4 +398,18 @@ const handleOpenModal = () => {
     modalsStore.addModal('vacancy');
 };
 
+
+const pageDataFetch = await useAsyncData("Pages", () => $fetch('/api/pages'))
+
+const pageData = pageDataFetch.data.value.filter(item => item.slug === 'cooperation')[0].translations?.filter(item => item?.languages_code?.includes(langStore?.lang))[0]
+const pageMetaTitle = pageData?.meta_title ?? ""
+const pageMetaDescription = pageData?.meta_description ?? ""
+
+useHead({
+  title: pageMetaTitle,
+  meta: [
+    { name: 'description', content: pageMetaDescription }
+  ],
+})
+
 </script>
