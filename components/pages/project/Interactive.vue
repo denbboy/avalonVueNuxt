@@ -1,7 +1,7 @@
 <template>
   <div id="smart-catalog-container">
     <!-- <iframe :src="catalogUrl" frameborder="0" width="100%" height="600px" @load="onLoad"></iframe> -->
-     asdasda
+     <!-- asdasda -->
   </div>
 </template>
 
@@ -63,5 +63,11 @@
 <style scoped>
 .smart-catalog-container {
   /* Добавьте свои стили для контейнера каталога */
+}
+#layout-iframe {
+  z-index: 10;
+}
+.btn-close-iframe {
+  z-index: 11;
 }
 </style>

@@ -86,7 +86,7 @@
     "companies_text_4": "Even during restrictions and the pandemic, Bali remains the most desired place to visit for tourists from around the world according to a booking survey",
     "companies_text_5": "And the wedding and celebration industry does not pass by, Daily Mail and newlyweds give Bali the first place for a honeymoon vacation",
     "companies_text_6": "For 2 years now, Bali has been rated as the best tourist destination by Tripadvisor",
-    "companies_text_7": "Travel+Leisure in its rating gives the first place among Asian countries to this magnificent island",
+    "companies_text_7": "Bali is one of the most popular destinations for Instagram photos worldwide. The hashtag #Bali has gathered millions of posts showcasing the island's beauty.",
     "companies_text_8": "Travel+Leisure in its rating gives the first place among Asian countries to this magnificent island",
 
     "download_presentation": "Download Presentation",
@@ -109,6 +109,7 @@
 
     "actual_sales": "Current Offers",
     "all_sales": "All Offers",
+    "sales_page_subtitle": "Exclusive offers for advantageous property purchases in Bali.",
 
     "berava": "Berava",
     "changu": "Canggu",
@@ -175,5 +176,8 @@
     "living": "living area",
     "kitchen": "kitchen area",
     "bathroom": "bathroom area",
-    "bedroom": "bedroom/living room area"
+    "bedroom": "bedroom/living room area",
+
+    "404_text": "It seems something went wrong! The page you are requesting does not exist. It may be outdated, or the address was entered incorrectly in the address bar.",
+    "404_button": "Go to the homepage"
 }

@@ -16,12 +16,12 @@
 
 
     <div class="absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen">
-      <SkeletonLoader v-if="itemData?.preview" class="h-full w-full">
+      <SkeletonLoader v-if="itemData?.background" class="h-full w-full">
         <NuxtImg v-show="!imageLoaded" loading="lazy"
-          :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`" @load="onImageLoad"
+          :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`" @load="onImageLoad"
           class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" ref="image" />
         <NuxtImg v-if="imageLoaded" loading="lazy"
-          :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+          :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`"
           class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" />
       </SkeletonLoader>
     </div>
@@ -50,10 +50,10 @@
           v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
         </h1>
 
-        <a href="#"
+        <!-- <a href="#"
           class="rounded-full border-[1px] border-white w-10 h-10 flex items-center justify-center mt-8 mb-14 md:w-14 md:h-14">
           <NuxtImg src="/img/icons/socials.svg" class="md:w-6" alt="Soc" loading="lazy" />
-        </a>
+        </a> -->
 
         <div
           v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">

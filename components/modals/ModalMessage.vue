@@ -131,7 +131,7 @@ const submitForm = async () => {
     }
 
     try {
-        if (!phone.value) {
+        if (!phone.value || phone.value.length < 10) {
             isError.value = true;
             return;
         } else {

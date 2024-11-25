@@ -23,9 +23,9 @@
               {{ itemStrings?.filter(item => item.id === 37)[0]?.String_id?.translations?.filter(item =>
                 item.languages_code.code.includes(langStore.lang))[0]?.title }}
             </h3>
-            <p class="text-white md:text-sm lg:text-lg md:leading-[20px]">
-              {{ itemStrings?.filter(item => item.id === 37)[0]?.String_id?.translations?.filter(item =>
-                item.languages_code.code.includes(langStore.lang))[0]?.description }}
+            <p v-html="itemStrings?.filter(item => item.id === 37)[0]?.String_id?.translations?.filter(item =>
+                item.languages_code.code.includes(langStore.lang))[0]?.description" class="text-white md:text-sm lg:text-lg md:leading-[20px]">
+              
             </p>
           </div>
 
@@ -35,9 +35,9 @@
                 {{ itemStrings?.filter(item => item.id === 38)[0]?.String_id?.translations?.filter(item =>
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </b>
-              <p class="text-white text-sm lg:text-base">
-                {{ itemStrings?.filter(item => item.id === 38)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description }}
+              <p v-html="itemStrings?.filter(item => item.id === 38)[0]?.String_id?.translations?.filter(item =>
+                  item.languages_code.code.includes(langStore.lang))[0]?.description" class="text-white text-sm lg:text-base">
+                
               </p>
             </li>
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
@@ -45,9 +45,9 @@
                 {{ itemStrings?.filter(item => item.id === 39)[0]?.String_id?.translations?.filter(item =>
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </b>
-              <p class="text-white text-sm lg:text-base">
-                {{ itemStrings?.filter(item => item.id === 39)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description }}
+              <p v-html="itemStrings?.filter(item => item.id === 39)[0]?.String_id?.translations?.filter(item =>
+                  item.languages_code.code.includes(langStore.lang))[0]?.description" class="text-white text-sm lg:text-base">
+                
               </p>
             </li>
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
@@ -55,9 +55,9 @@
                 {{ itemStrings?.filter(item => item.id === 40)[0]?.String_id?.translations?.filter(item =>
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </b>
-              <p class="text-white text-sm lg:text-base">
-                {{ itemStrings?.filter(item => item.id === 40)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description }}
+              <p v-html="itemStrings?.filter(item => item.id === 40)[0]?.String_id?.translations?.filter(item =>
+                  item.languages_code.code.includes(langStore.lang))[0]?.description" class="text-white text-sm lg:text-base">
+                
               </p>
             </li>
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
@@ -72,9 +72,9 @@
                 </svg>
 
               </b>
-              <p class="text-white text-sm lg:text-base">
-                {{ itemStrings?.filter(item => item.id === 41)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description }}
+              <p v-html="itemStrings?.filter(item => item.id === 41)[0]?.String_id?.translations?.filter(item =>
+                  item.languages_code.code.includes(langStore.lang))[0]?.description"class="text-white text-sm lg:text-base">
+                
               </p>
             </li>
           </ul>

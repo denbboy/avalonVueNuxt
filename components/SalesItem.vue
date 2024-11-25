@@ -28,12 +28,12 @@
                 {{ $t('actual_to') }}
                 <strong>
                     {{ new Date(props?.item?.expired_date).getDate() }} {{ $t(`month${new
-                        Date(props?.item?.expired_date).getMonth() ?? "0" + 1}`) }} {{ new
+                        Date(props?.item?.expired_date).getMonth() + 1 ?? "0"}`) }} {{ new
                         Date(props?.item?.expired_date).getFullYear() }}
                 </strong>
             </div>
 
-            <strong class="mt-auto text-white mb-2 md:text-lg overflow-hidden h-12 line-clamp-2"
+            <strong class="mt-auto text-white mb-2 md:text-lg overflow-hidden h-14 line-clamp-2"
                 v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></strong>
 
             <div class="flex items-center opacity-60">

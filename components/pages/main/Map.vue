@@ -17,9 +17,9 @@
             data-aos="fade-up">
             {{ itemStrings?.filter(item => item.id === 2)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
           </h2>
-          <p class="text-white text-sm mb-5 md:text-xl leading-[140%] md:leading-[28px] md:mb-[16px] md:max-w-[600px]"
+          <p v-html="itemStrings?.filter(item => item.id === 2)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description" class="text-white text-sm mb-5 md:text-xl leading-[140%] md:leading-[28px] md:mb-[16px] md:max-w-[600px]"
             data-aos="fade-up">
-            {{ itemStrings?.filter(item => item.id === 2)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
+            
           </p>
           <ul
             class="text-white flex gap-4 items-center text-base font-semibold justify-center md:text-xl md:justify-start"

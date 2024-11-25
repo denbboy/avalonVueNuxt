@@ -18,10 +18,9 @@
       <h1 class="text-[30px] md:text-[55px] lg:text-[65px] text-white font-normalidad font-bold mb-5"
         data-aos="fade-up">Акции</h1>
       <div class="md:flex justify-between items-center" data-aos="fade-up">
-        <p class="md:text-lg md:max-w-[355px] 3xl:max-w-fit text-white text-sm">Ваше будущее жилье — в наших руках. Мы
-          понимаем, как важны для
-          вас
-          шаги.</p>
+        <p class="md:text-lg md:max-w-[355px] 3xl:max-w-fit text-white text-sm">
+          {{ $t('sales_page_subtitle') }}
+        </p>
         <div :class="isOpenPopup ? 'active' : ''"
           class="select group relative z-40 flex md:hidden border-white/40 border-[1px] rounded-[10px] mt-7">
           <button @click="handleOpenPopup" class="select__head flex items-center justify-between w-full h-12 px-4">

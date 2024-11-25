@@ -10,7 +10,7 @@
 
     <section class="bg-blue-500 pt-32 md:pt-64 relative">
 
-        <NuxtImg v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+        <NuxtImg v-if="itemData?.background" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`"
             class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" loading="lazy" />
         <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10">
         </div>
@@ -38,10 +38,10 @@
                     {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
 
                 </h1>
-                <a href="#"
+                <!-- <a href="#"
                     class="rounded-full border-[1px] border-white w-10 h-10 flex items-center justify-center mt-8 mb-14 md:w-14 md:h-14">
                     <NuxtImg src="/img/icons/socials.svg" class="md:w-6" alt="Soc" loading="lazy" />
-                </a>
+                </a> -->
 
                 <div
                     v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
@@ -95,9 +95,35 @@
 
 
 
-<style>
+<style scale>
+.text-content blockquote:after {
+    content: "";
+    position: absolute;
+    color: #0E88EC;
+    background-image: url('/img/icons/blockquote-icon.svg');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-color: #0A4A7F;
+    background-position: center;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 4px;
+    width: 20px;
+    height: 25px;
+}
+.text-content blockquote:before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 1px;
+    background: #0E88EC;
+    top: 0;
+    left: 14px;
+}
 .text-content blockquote {
     padding-left: 36px;
+    position: relative;
 }
 
 .text-content {

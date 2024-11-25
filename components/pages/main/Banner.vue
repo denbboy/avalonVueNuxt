@@ -36,7 +36,7 @@
         <div class="container">
           <div class="flex md:flex-row flex-col items-center" v-if="item?.projects?.length">
 
-            <div class="">
+            <div class="w-full">
               <div class="banner__item__head md:flex items-center">
                 <NuxtImg v-if="item?.projects[0]?.item.logo" width="100" height="95"
                   :src="`https://avalon-panel.sonisapps.com/assets/${item?.projects[0]?.item.logo}`"

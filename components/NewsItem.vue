@@ -22,8 +22,8 @@
         class="mb-3 md:mb-4 flex items-center text-sm opacity-60">
         <div :class="bgdColor === 'white' ? 'bg-blue-600' : 'bg-white'" class="block w-[6px] h-[6px] rounded-sm mr-2">
         </div>
-        {{ new Date(props?.item?.date_created).getDate() }} {{ $t(`month${new Date(props?.item?.date_created).getMonth()
-          ?? "0" + 1}`) }} {{ new Date(props?.item?.date_created).getFullYear() }}
+        {{ new Date(props?.item?.date_created).getDate() }} {{ $t(`month${new Date(props?.item?.date_created).getMonth() + 1
+          ?? "0"}`) }} {{ new Date(props?.item?.date_created).getFullYear() }}
       </span>
       <p :class="bgdColor === 'white' ? 'text-blue-600' : 'text-white'"
         class="text-base md:text-lg transition-all group-hover:text-blue-400 line-clamp-2 font-bold"

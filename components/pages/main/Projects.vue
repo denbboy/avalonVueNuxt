@@ -9,7 +9,8 @@
                 data-aos="fade-up">
                 <div class="">
                     <p class="text-white mb-[10px] text-sm md:text-base md:mb-[10px] leading-[100%]">
-                        {{ $t('projects_text') }}
+                        <!-- {{ $t('projects_text') }} -->
+                        FUTURE VALUE
                     </p>
                     <h2 class="text-white text-3xl font-bold md:text-[45px] lg:text-[56px] leading-[100%]">
                         {{ $t('our_projects') }}
@@ -37,9 +38,9 @@
                                 <NuxtImg class="w-[90px]" v-if="item?.logo"
                                     :src="`https://avalon-panel.sonisapps.com/assets/${item?.logo}`" alt="Image"
                                     loading="lazy" />
-                                <span v-if="item?.roi_procent"
+                                <span v-if="item?.sale_alias"
                                     class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
-                                    {{ item?.roi_procent }}% {{ $t('sold') }}
+                                    {{ item?.sale_alias }}% {{ $t('sold') }}
                                 </span>
                             </div>
                             <div class="max-w-96">

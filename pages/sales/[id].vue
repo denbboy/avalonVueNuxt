@@ -14,21 +14,21 @@
             <div class="bg-gradient-to-t from-blue-500 absolute top-0 left-0 w-full h-full"></div>
         </div>
 
-        <NuxtImg loading="lazy" v-if="itemData?.preview"
-            :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+        <NuxtImg loading="lazy" v-if="itemData?.background"
+            :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`"
             class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" />
 
 
         <div class="absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen">
-            <SkeletonLoader v-if="itemData?.preview" class="h-full w-full">
+            <SkeletonLoader v-if="itemData?.background" class="h-full w-full">
                 <NuxtImg loading="lazy" v-show="!imageLoaded"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`"
                     @load="onImageLoad"
                     ref="image"
                     class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
                     alt="Image" />
                 <NuxtImg loading="lazy" v-if="imageLoaded"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`"
                     class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
                     alt="Image" />
             </SkeletonLoader>
@@ -70,7 +70,7 @@
 
                         <div
                             class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] hover:bg-[#333] transition-all rounded-br-none">
-                            <NuxtImg loading="lazy" src="/img/discounts/image.webp" class="opacity-50" alt="Image" />
+                            <NuxtImg loading="lazy" src="/img/discounts/image.webp" class="opacity-50 w-full h-full" alt="Image" />
                             <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
 
                             <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
@@ -99,7 +99,7 @@
                                     </div>
 
                                     <div class="flex">
-                                        <NuxtLink href="/projects/123"
+                                        <NuxtLink href="/projects/om-club-house"
                                             class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-4 px-7 rounded-[10px] text-white font-bold text-sm md:text-base mr-7">
                                             Подробнее
                                         </NuxtLink>

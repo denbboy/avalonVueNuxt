@@ -76,7 +76,7 @@
                     </div>
                     <div class="flex gap-[5px] mb-5">
                         <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_whats"
-                            :href="toolkitStore?.settings?.soc_link_whats"
+                            target="_blank" :href="toolkitStore?.settings?.soc_link_whats"
                             class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
                             <svg class="fill-white group-hover:fill-blue-600 w-[45%] transition-all" width="25"
                                 height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +85,7 @@
                             </svg>
                         </a>
                         <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_inst"
-                            :href="toolkitStore?.settings?.soc_link_inst"
+                            target="_blank" :href="toolkitStore?.settings?.soc_link_inst"
                             class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
                             <svg class="fill-white group-hover:fill-blue-600 w-[45%] transition-all" width="25"
                                 height="26" viewBox="0 0 25 26" xmlns="http://www.w3.org/2000/svg">
@@ -96,7 +96,7 @@
                             </svg>
                         </a>
                         <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_fb"
-                            :href="toolkitStore?.settings?.soc_link_fb"
+                            target="_blank" :href="toolkitStore?.settings?.soc_link_fb"
                             class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
                             <svg class="fill-white group-hover:fill-blue-600 w-[45%] transition-all" width="11"
                                 height="20" viewBox="0 0 11 20" xmlns="http://www.w3.org/2000/svg">
@@ -105,7 +105,7 @@
                             </svg>
                         </a>
                         <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_yt"
-                            :href="toolkitStore?.settings?.soc_link_yt"
+                            target="_blank" :href="toolkitStore?.settings?.soc_link_yt"
                             class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
                             <svg class="fill-white group-hover:fill-blue-600 w-[45%] transition-all" width="20"
                                 height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
@@ -285,7 +285,7 @@ const countryChanged = (newCountry) => {
 }
 
 const submitForm = async () => {
-    if (!name.value || !phone.value) {
+    if (!name.value || !phone.value || phone.value.length < 10) {
         return isError.value = true;
     }
     // else if (!regExp.test(phone.value)) {
