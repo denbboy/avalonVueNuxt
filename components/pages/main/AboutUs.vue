@@ -9,13 +9,15 @@
       <div class="md:flex md:items-center gap-8 justify-between">
         <div class="w-full">
           <div class="flex items-center mb-8 md:mb-10" data-aos="fade-up">
-            <NuxtImg loading="lazy" src="/img/index/a-us-decor.svg" class="max-w-[60px] mr-4 md:max-w-[80px] md:mr-5" alt="ic a" />
+            <!-- <NuxtImg loading="lazy" src="/img/index/a-us-decor.svg" class="max-w-[60px] mr-4 md:max-w-[80px] md:mr-5" alt="ic a" />
             <h2 class="flex flex-col font-bold text-white text-3xl md:text-[40px]">
               AVALON
               <span class="text-right font-normal text-[8px] mt-[-10px] md:text-[10px] md:mt-[-8px]">
                 DEVELOPMENTS
               </span>
-            </h2>
+            </h2> -->
+
+            <NuxtImg loading="lazy" src="/img/new-avalon-logo.png" class="-ml-6" alt="ic a" />
           </div>
 
           <div class="mb-8 md:mb-9" data-aos="fade-up">

@@ -7,7 +7,7 @@
 
 
       <div class="header__inner px-5 flex items-center justify-between gap-3 relative z-[2]">
-        <div class="flex gap-12 items-center">
+        <div class="flex lg:gap-12 gap-4 items-center">
           <NuxtLink :href="mainPageLink">
             <NuxtImg loading="lazy" src="/img/newLogo.png"
               class="hidden md:max-w-[55px] w-full lg:max-w-[95px] xl:block" alt="logo" />
@@ -78,7 +78,7 @@
         </div>
 
 
-        <div class="flex gap-7 items-center">
+        <div class="flex lg:gap-7 gap-4 items-center">
           <button type="button" @click="handleOpenModal"
             class="xl:flex hidden border border-whiteOp-400 rounded-xl p-4 text-white md:text-xs lg:text-sm font-bold hover:bg-white hover:text-blue-400 hover:border-white transition-all xl:justify-center">
             {{ $t('make_a_meeting') }}

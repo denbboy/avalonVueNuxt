@@ -4,7 +4,7 @@
         <div class="lg:pb-10 pb-5 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.webp')] -->
             <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen overflow-hidden -z-10 opacity-80">
-                <NuxtImg v-if="itemData?.preview" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}?width=1920&height=800`"
+                <NuxtImg v-if="itemData?.background" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}?width=1920&height=800`"
                     class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="Image" />
 
 

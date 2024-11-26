@@ -29,7 +29,7 @@
                     v-for="(item, index) in projectsStore.projects" :key="item.id">
                     <div class="">
                         <NuxtImg
-                            :src="`https://avalon-panel.sonisapps.com/assets/${item?.background}?width=470&height=600`"
+                            :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=470&height=600`"
                             class="opacity-50 w-full absolute object-cover h-full" alt="Image" loading="lazy" />
                         <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
                         <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
@@ -46,7 +46,7 @@
                             <div class="max-w-96">
                                 <h2
                                     class="text-white hover:text-blue-400 transition-all font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">
-                                    <NuxtLink :href="`/projects/${item?.id}`">
+                                    <NuxtLink :href="`/projects/${item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`">
                                         {{ item?.translations?.filter(item =>
                                             item.languages_code.includes(langStore.lang))[0]?.title }}
                                     </NuxtLink>
