@@ -60,7 +60,7 @@
   </script>
   
 
-<style scoped>
+<style>
 .smart-catalog-container {
   /* Добавьте свои стили для контейнера каталога */
 }
