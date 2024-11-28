@@ -65,9 +65,9 @@
   /* Добавьте свои стили для контейнера каталога */
 }
 #layout-iframe {
-  z-index: 10 !important;
+  z-index: 31 !important;
 }
 .btn-close-iframe {
-  z-index: 11 !important;
+  z-index: 32 !important;
 }
 </style>
