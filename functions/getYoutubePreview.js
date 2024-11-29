@@ -1,20 +1,24 @@
+import url from 'url'
+
 export const getYoutubePreview = () => {
   "use strict";
 
   var video, results;
 
-  var getThumb = function (url, size) {
-    if (url === null) {
+  var getThumb = function (urlVideo, size) {
+    if (urlVideo === null) {
       return "";
     }
     size = size === null ? "big" : size;
-    results = url.match("[\\?&]v=([^&#]*)");
-    video = results === null ? url : results[1];
+    const params = url.parse(urlVideo, true);
+    console.log(params);
+    
+    results = params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')
 
     if (size === "small") {
-      return "https://img.youtube.com/vi/" + video + "/2.jpg";
+      return "https://img.youtube.com/vi/" + results + "/2.jpg";
     }
-    return "https://img.youtube.com/vi/" + video + "/0.jpg";
+    return "https://img.youtube.com/vi/" + results + "/0.jpg";
   };  
 
   return {

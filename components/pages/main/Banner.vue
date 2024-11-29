@@ -96,9 +96,9 @@
               </div>
             </div>
 
-            <button v-if="item?.video && !isVideoPlayed" data-aos="fade-up" @click="handlePlayVideo(item?.video)"
+            <button v-if="item?.video && !isVideoPlayed" data-aos="fade-up" @click="e => handlePlayVideo(e, item?.video)"
               type="button"
-              class="flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base max-w-[95px] w-full xl:max-w-[165px] xl:flex-col xl:ml-auto">
+              class="play-button flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base max-w-[95px] w-full xl:max-w-[165px] xl:flex-col xl:ml-auto">
               <div class="relative flex items-center justify-center max-w-[95px] w-full xl:max-w-[165px]">
                 <NuxtImg src="/img/about/playBorder.svg" class="w-full" alt="ic" loading="lazy" />
                 <svg class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18" height="21" viewBox="0 0 18 21"
@@ -235,12 +235,17 @@ const addModal = () => {
 }
 
 
-const handlePlayVideo = (videoUrl) => {
-  isVideoPlayed.value = true;
+const handlePlayVideo = (e, videoUrl) => {
+  const iframeBlock = e.target.closest('.swiper-slide').querySelector('iframe')
+  const thisButton = e.target.closest('.play-button')
+  
+  // isVideoPlayed.value = true;
+  thisButton.classList.add('hidden')
 
   const params = url.parse(videoUrl, true);
-  const urlLink = `https://www.youtube.com/embed/${params.query.v}?autoplay=1&mute=1&loop=1`
-  document.querySelector('.swiper-banner iframe').setAttribute('src', urlLink)
+  
+  const urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&loop=1`
+  iframeBlock.setAttribute('src', urlLink)
 }
 
 

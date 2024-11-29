@@ -6,6 +6,8 @@
             <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen overflow-hidden -z-10 opacity-80">
                 <NuxtImg v-if="itemData?.background" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}?width=1920&height=800`"
                     class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="Image" />
+                <NuxtImg v-else :src="getYoutubePreview().thumb(itemData?.video ?? '') ?? ''"
+                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="Image" />
 
 
                 <!-- <div class=""> -->
@@ -183,7 +185,8 @@
 
 <script setup>
 import { ref } from 'vue';
-import SkeletonLoader from '~/components/SkeletonLoader.vue';
+import url from 'url'
+import { getYoutubePreview } from '~/functions/getYoutubePreview';
 
 const imageLoaded = ref(false);
 const image = ref(null);
@@ -207,7 +210,10 @@ const handleOpenModal = () => {
     modalsStore.addModal("presentation")
 }
 
-const handlePlayVideo = (url) => {
-    document.querySelector('.banner iframe').setAttribute('src', `${url}&autoplay=1`)
+const handlePlayVideo = (videoUrl) => {
+  const params = url.parse(videoUrl, true);
+  
+  const urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&loop=1`
+  document.querySelector('iframe').setAttribute('src', urlLink)
 }
 </script>
