@@ -112,7 +112,7 @@
               </p>
             </div>
           </swiper-slide>
-          <swiper-slide>
+          <!-- <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
               <NuxtImg loading="lazy" src="/img/index/user-1.png" class="w-full h-full grayscale" alt="ph" />
@@ -125,7 +125,7 @@
                 {{ $t('team_position_1') }}
               </p>
             </div>
-          </swiper-slide>
+          </swiper-slide> -->
           <div class="swiper-pagination"></div>
         </swiper>
       </div>
