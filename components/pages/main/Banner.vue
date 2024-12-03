@@ -19,7 +19,7 @@
               class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
           </div>
 
-111
+          111
           {{ item?.video }}
           <div v-if="item?.video" class="h-full w-full">
             {{ getYoutubePreview().thumb(item?.video ?? '') }}
@@ -44,8 +44,7 @@
                   :src="`https://avalon-panel.sonisapps.com/assets/${item?.projects[0]?.item.logo}`"
                   class="mb-7 max-w-[100px] md:mb-0 md:mr-10" alt="logo" />
                 <div class="flex items-center w-full gap-5">
-                  <div
-                  v-if="item?.projects[0]?.item?.due_date"
+                  <div v-if="item?.projects[0]?.item?.due_date"
                     class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
                     <NuxtImg
                       class="absolute top-0 left-0 -z-10 md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
@@ -90,14 +89,16 @@
               </p>
               <div class="md:flex">
                 <!-- <NuxtLink :to="`/projects/${item?.projects[0]?.item?.slug}`" class="white-button md:mt-7 mt-3 lg:mt-12"> -->
-                <NuxtLink :to="`/projects/${item?.projects[0]?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`" class="white-button md:mt-7 mt-3 lg:mt-12">
+                <NuxtLink
+                  :to="`/projects/${item?.projects[0]?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
+                  class="white-button md:mt-7 mt-3 lg:mt-12">
                   {{ $t('more') }}
                 </NuxtLink>
               </div>
             </div>
 
-            <button v-if="item?.video && !isVideoPlayed" data-aos="fade-up" @click="e => handlePlayVideo(e, item?.video)"
-              type="button"
+            <button v-if="item?.video && !isVideoPlayed" data-aos="fade-up"
+              @click="e => handlePlayVideo(e, item?.video)" type="button"
               class="play-button flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base max-w-[95px] w-full xl:max-w-[165px] xl:flex-col xl:ml-auto">
               <div class="relative flex items-center justify-center max-w-[95px] w-full xl:max-w-[165px]">
                 <NuxtImg src="/img/about/playBorder.svg" class="w-full" alt="ic" loading="lazy" />
@@ -238,15 +239,20 @@ const addModal = () => {
 const handlePlayVideo = (e, videoUrl) => {
   const iframeBlock = e.target.closest('.swiper-slide').querySelector('iframe')
   const thisButton = e.target.closest('.play-button')
-  
+
   // isVideoPlayed.value = true;
   thisButton.classList.add('hidden')
 
   const params = url.parse(videoUrl, true);
-  
-  const urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&loop=1`
+
+  const urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}`
   iframeBlock.setAttribute('src', urlLink)
+
+  iframeBlock.addEventListener('ended', function () {
+    alert('конец видео')
+  })
 }
+
 
 
 </script>
