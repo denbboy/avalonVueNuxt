@@ -288,7 +288,7 @@
                         <div
                             class="xl:flex xl:items-center xl:justify-between xl:gap-[52px] pb-5 xl:pb-[50px] border-b border-whiteOp-300">
                             <h2 class="text-white font-bold text-2xl mb-5 md:text-2xl 3xl:text-3xl lg:mb-0">
-                                {{ $t('single_appartments') }}
+                                {{ $t('vills') }}
                             </h2>
 
                             <div class="xl:flex items-stretch xl:gap-5">
