@@ -123,12 +123,12 @@
                                 item.languages_code.includes(langStore.lang))[0]?.description }}
                         </p>
                         <button data-aos="fade-up" @click="handleOpenModal"
-                            class="w-full max-w-56 md:max-w-72 px-5 py-4 block text-sm md:text-base bg-white rounded-xl text-center font-bold whitespace-nowrap text-blue-500 hover:text-white hover:bg-blue-400 my-10 mb-0 transition-all ">
+                            class="w-fit px-5 py-4 block text-sm md:text-base bg-white rounded-xl text-center font-bold whitespace-nowrap text-blue-500 hover:text-white hover:bg-blue-400 my-10 mb-0 transition-all ">
                             {{ $t('download_presentation') }}
                         </button>
                     </div>
                     <div class="flex flex-col xl:items-end justify-end xl:w-full">
-                        <button v-if="itemData?.video" data-aos="fade-up" @click="handlePlayVideo(itemData?.video)"
+                        <button v-if="itemData?.video" data-aos="fade-up" @click="e => handlePlayVideo(itemData?.video, e)"
                             type="button"
                             class="flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
                             <div class="relative flex items-center justify-center max-w-[95px] w-full h-full xl:max-w-[165px]">
@@ -210,9 +210,11 @@ const handleOpenModal = () => {
     modalsStore.addModal("presentation")
 }
 
-const handlePlayVideo = (videoUrl) => {
+const handlePlayVideo = (videoUrl, e) => {
   const params = url.parse(videoUrl, true);
   
+    e.target.closest('button').classList.add('hidden')
+
   const urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}`
   document.querySelector('iframe').setAttribute('src', urlLink)
 }
