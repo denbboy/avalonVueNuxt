@@ -1,7 +1,7 @@
 <template>
     <section class="uslugi pt-[23px] pb-12 relative overflow-hidden">
         <div
-            class="absolute lg:-right-36 top-0 lg:top-auto lg:left-auto min-h-[600px] lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
+            class="absolute hidden 2xl:block 2xl:-right-36 top-0 2xl:top-auto 2xl:left-auto min-h-[600px] 2xl:bottom-40 -left-14 w-28 2xl:w-72 z-[2]">
             <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
         </div>
         <div class="container">
@@ -22,10 +22,10 @@
             </div>
 
             <div
-                class="projects grid flex-col gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 flex-wrap items-center md:justify-between md:flex-row lg:flex-row z-10 relative">
+                class="projects grid flex-col gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 flex-wrap items-center md:justify-between md:flex-row lg:flex-row z-10 relative">
 
                 <div :class="getGridClasses(index)"
-                    class="projects-item relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[600px] min-h-[400px]"
+                    class="projects-item relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[600px] min-h-[450px]"
                     v-for="(item, index) in projectsStore.projects" :key="item.id">
                     <div class="">
                         <NuxtImg v-if="item?.preview"

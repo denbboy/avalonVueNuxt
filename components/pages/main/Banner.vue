@@ -1,6 +1,10 @@
 <template>
   <section class="lg:pb-12 pb-0 min-h-[200px]">
 
+    <div class="absolute -left-36 bottom-0 w-72 h-72 z-10 hidden md:block">
+      <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
+    </div>
+
     <!-- :modules="modules" -->
     <swiper class="swiper-banner" :autoplay="{ delay: 15000, disableOnInteraction: false }" :loop="true"
       :slides-per-view="1" :pagination="{ clickable: true }" :modules="[Pagination, A11y, Autoplay]" pagination a11y
