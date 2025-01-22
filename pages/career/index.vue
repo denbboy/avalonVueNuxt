@@ -54,7 +54,7 @@ useHead({
                 class="md:text-[55px] lg:text-[65px] text-3xl text-white font-normalidad font-bold mb-5 md:mb-12">
                 {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
             </h1>
-            <div data-aos="fade-up" data-aos-delay="100" class="justify-between items-center mb-10 lg:mb-48">
+            <div data-aos="fade-up" data-aos-delay="100" class="*:text-white justify-between items-center mb-10 lg:mb-48">
                 <p class="md:text-lg text-white text-sm mb-7 max-w-[548px]"
                     v-html="currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
                 </p>

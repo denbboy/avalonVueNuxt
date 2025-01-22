@@ -14,7 +14,6 @@
       <swiper-slide v-for="item in slides" class="pt-40 lg:pt-[250px] lg:min-h-[810px] relative overflow-hidden">
         <div class="bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
 
-          {{ item?.video }}
           <div v-if="!item?.video">
             <NuxtImg v-if="$viewport.isLessThan('tablet')"
               :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=320&height=600`"
@@ -23,11 +22,10 @@
               class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
           </div>
 
-          111
-          {{ item?.video }}
           <div v-if="item?.video" class="h-full w-full">
             {{ getYoutubePreview().thumb(item?.video ?? '') }}
-            <NuxtImg v-if="!isVideoPlayed" :src="getYoutubePreview().thumb(item?.video ?? '') ?? ''" width="1920"
+            <!-- getYoutubePreview().thumb(item?.video ?? '') ?? '' -->
+            <NuxtImg v-if="!isVideoPlayed" :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=1920&height=900`" width="1920"
               height="800" class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
             <iframe loading="lazy" class="lg:scale-150 scale-[3] pointer-events-none w-full h-full" title="Avalon"
               frameborder="0"

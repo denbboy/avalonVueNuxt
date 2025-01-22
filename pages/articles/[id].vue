@@ -18,10 +18,10 @@
         </div>
 
 
+        <div class="absolute right-0 bottom-56 w-72 h-72 z-10">
+            <NuxtImg src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
+        </div>
         <div class="container relative z-10">
-            <div class="absolute right-0 bottom-56 w-72 h-72 z-10">
-                <NuxtImg src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
-            </div>
 
             <div class="pb-14 text-content">
                 <div
@@ -44,6 +44,7 @@
                 </a> -->
 
                 <div
+                class="article-description max-w-[1047px]"
                     v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
                 </div>
             </div>
@@ -111,6 +112,25 @@
     width: 20px;
     height: 25px;
 }
+.article-description ol li {
+    padding-left: 20px;
+    position: relative;
+}
+.article-description ol li:before {
+    content: "";
+    background: #0E88EC;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+.article-description h2 {
+    font-weight: bold;
+    font-size: 28px;
+}
 .text-content blockquote:before {
     content: "";
     height: 100%;
@@ -142,6 +162,9 @@
 <script setup>
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import SwiperCore from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const { getItems } = useDirectusItems();
 const langStore = useLangStore();
@@ -156,14 +179,16 @@ const res = await useAsyncData('ArticlesItem', () => $fetch(`/api/articles/${rou
 const itemData = res?.data?.value[0]
 // GET POST
 
+SwiperCore.use([Navigation, A11y]);
+
 const modules = {
     Navigation,
     A11y,
 };
 
 const navigationConfig = {
-    nextEl: '.news-button-next',
-    prevEl: '.news-button-prev',
+    nextEl: '.articles-button-next',
+    prevEl: '.articles-button-prev',
 };
 
 const pagination = {
@@ -181,5 +206,6 @@ const breakpoints = {
         pagination: false,
     },
 };
+
 
 </script>

@@ -424,13 +424,11 @@ input[type="radio"]:checked~label {
 
 @media screen and (min-width: 1025px) {
     .container {
-        padding-left: 160px !important;
-        padding-right: 160px !important;
+        max-width: 1116px;
     }
 }
 @media screen and (min-width: 1441px) {
     .container {
-        padding-left: 180px !important;
-        padding-right: 180px !important;
+        max-width: 1560px;
     }
 }

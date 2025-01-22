@@ -28,7 +28,7 @@
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div
-                class="bg-gradient-to-t from-blue-500 from-0% w-full h-[500px] absolute -z-10 top-[calc(110vh_-_500px)] left-0">
+                class="bg-gradient-to-t from-blue-500 from-35% w-full h-[500px] absolute -z-10 top-[calc(110vh_-_500px)] left-0">
             </div>
             <div class="bg-gradient-to-t from-blue-500/70 from-50% w-full h-52 absolute -z-10 top-0 left-0 rotate-180">
             </div>

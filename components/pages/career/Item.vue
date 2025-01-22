@@ -4,7 +4,7 @@
             <div class="select__head py-6 flex justify-between items-center cursor-pointer" @click="handleOpen">
                 <div class="mr-7">
                     <time class="mb-2 block text-white/60 text-xs md:text-base md:mb-5">
-                        {{ day }}/{{ month < 10 ? '0' + month : '' }}/{{ year }} </time>
+                        {{ day }}/{{ month < 10 ? '0' + month : month }}/{{ year }} </time>
                             <h2 class="text-lg text-white leading-5 font-bold md:text-2xl lg:text-3xl">
                                 {{ props?.item?.translations?.filter(item =>
                                     item.languages_code.includes(langStore.lang))[0]?.title }}

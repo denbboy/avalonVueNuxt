@@ -31,10 +31,10 @@
     <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[1000px] absolute z-10">
     </div>
 
+    <div class="absolute right-0 bottom-56 w-72 h-72 z-10">
+      <NuxtImg src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
+    </div>
     <div class="container relative z-10">
-      <div class="absolute right-0 bottom-56 w-72 h-72 z-10">
-        <NuxtImg src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
-      </div>
 
       <div class="pb-14 text-content">
         <div
@@ -46,7 +46,7 @@
           </span>
         </div>
         <h1
-          class="text-white text-[30px] md:text-[55px] lg:text-[65px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[876px]"
+          class="text-white text-[30px] md:text-[55px] lg:text-[65px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[1400px] mb-20"
           v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
         </h1>
 
