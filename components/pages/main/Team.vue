@@ -141,6 +141,9 @@ import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+const salesData = await useAsyncData('Team', () => $fetch('/api/team'));
+
+
 SwiperCore.use([Navigation, A11y]);
 
 export default {

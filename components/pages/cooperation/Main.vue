@@ -273,6 +273,8 @@
 <script setup>
 import { usePagesStore } from '~/stores/functions/pages';
 
+const cooperationData = await useAsyncData("Cooperation", () => $fetch('/api/cooperation'))
+
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
 const currentPageReqest = ref([]);

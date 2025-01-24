@@ -160,7 +160,6 @@ const submitForm = async () => {
             isSuccess.value = true;
             resetForm();
         } catch (err) {
-            console.log('11111', err);
             isSending.value = false;
         }
 

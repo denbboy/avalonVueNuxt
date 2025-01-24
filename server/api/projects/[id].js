@@ -38,6 +38,6 @@ export default defineEventHandler(async (event) => {
 
     return items;
   } catch (e) {
-    console.error("Error fetching:", e);
+    console.error("PROJECT Error fetching:", e);
   }
 });

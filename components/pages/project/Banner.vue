@@ -1,17 +1,23 @@
 <template>
 
+
+    <!-- <iframe width="640" height="480" src="https://rtsp.me/embed/KPbwo57M/" frameborder="0" allowfullscreen></iframe> -->
+
+
     <section class="lg:pb-12 pb-0 min-h-[200px]">
         <div class="lg:pb-10 pb-5 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.webp')] -->
-            <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen overflow-hidden -z-10 opacity-80">
-                <NuxtImg v-if="itemData?.background" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}?width=1920&height=800`"
+            <div
+                class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen overflow-hidden -z-10 opacity-80">
+                <NuxtImg v-if="itemData?.background"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}?width=1920&height=800`"
                     class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="Image" />
                 <NuxtImg v-else :src="getYoutubePreview().thumb(itemData?.video ?? '') ?? ''"
                     class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="Image" />
 
 
                 <!-- <div class=""> -->
-                    <!-- <SkeletonLoader v-if="itemData?.preview" class="!absolute top-0 left-0 w-full h-[110vh] object-cover z-0">
+                <!-- <SkeletonLoader v-if="itemData?.preview" class="!absolute top-0 left-0 w-full h-[110vh] object-cover z-0">
                         <NuxtImg v-show="!imageLoaded" ref="image" loading="lazy"
                             :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`" @error="onImageLoad"
                             @load="onImageLoad"
@@ -22,8 +28,9 @@
                     </SkeletonLoader> -->
                 <!-- </div> -->
 
-                <iframe v-if="`${itemData?.video}`" class="absolute scale-125 top-0 left-0 w-full h-[110vh] object-cover z-0"
-                    width="100%" height="100%" src="" title="YouTube video player" frameborder="0"
+                <iframe v-if="`${itemData?.video}`"
+                    class="absolute scale-125 top-0 left-0 w-full h-[110vh] object-cover z-0" width="100%" height="100%"
+                    src="" title="YouTube video player" frameborder="0"
                     allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
@@ -33,17 +40,19 @@
             <div class="bg-gradient-to-t from-blue-500/70 from-50% w-full h-52 absolute -z-10 top-0 left-0 rotate-180">
             </div>
 
-            <div class="container">
+            <div class="container lg:min-h-[45vh] min-h-[60vh] max-h-[200px]">
                 <div class="xl:flex xl:justify-between xl:gap-[20px]">
                     <div class=" w-full max-w-[950px]">
-                        <div data-aos="fade-up" class="flex lg:-mr-20 flex-wrap items-center gap-[10px] md:gap-5">
+                        <div v-if="!isPlay" data-aos="fade-up"
+                            class="flex lg:-mr-20 flex-wrap items-center gap-[10px] md:gap-5">
                             <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
                                 <NuxtImg src="/img/about/ribas.png" class="w-full h-full" alt="Image" loading="lazy" />
                             </div>
                             <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
-                                <NuxtImg class="absolute top-0 left-0 -z-10 w-full h-full md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
+                                <NuxtImg
+                                    class="absolute top-0 left-0 -z-10 w-full h-full md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
                                     src="/img/icons/about-border-white.svg" alt="bgd" loading="lazy" />
                                 <span class="text-white text-xs md:text-sm">
                                     {{ $t('deadline') }}
@@ -59,8 +68,8 @@
                                     <NuxtImg class="absolute top-0 left-0 -z-10 hidden md:block h-full w-full"
                                         src="/img/index/bgd-decor-2.png" alt="bgd" loading="lazy" />
                                     <h2 v-if="itemData?.price" class="text-sm text-white">
-                                        {{ $t('cost') }} <br v-if="!$viewport.isLessThan('tablet')" class="hidden md:block"> <span
-                                            class="font-bold md:text-xl">
+                                        {{ $t('cost') }} <br v-if="!$viewport.isLessThan('tablet')"
+                                            class="hidden md:block"> <span class="font-bold md:text-xl">
                                             {{ $t('from') }} ${{
                                                 String(itemData?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}
                                         </span>
@@ -111,29 +120,29 @@
 
                             </div>
                         </div>
-                        <h2 class="text-3xl text-white mt-5 md:text-[55px] lg:text-[65px] md:mt-6 md:-mr-40">
+                        <h2 v-if="!isPlay"
+                            class="text-3xl text-white mt-5 md:text-[55px] lg:text-[65px] md:mt-6 md:-mr-40">
                             <span class="font-bold leading-[120%]">
                                 {{ itemData?.translations?.filter(item =>
                                     item.languages_code.includes(langStore.lang))[0]?.title }}
                             </span>
                         </h2>
-                        <p data-aos="fade-up"
-                            class="text-white text-sm max-w-64 md:max-w-[501px] md:text-base mt-3 md:mt-6">
-                            {{ itemData?.translations?.filter(item =>
-                                item.languages_code.includes(langStore.lang))[0]?.description }}
+                        <p v-if="!isPlay" data-aos="fade-up"
+                            class="text-white text-sm max-w-64 md:max-w-[501px] md:text-base mt-3 md:mt-6" v-html="itemData?.translations?.filter(item =>
+                                item.languages_code.includes(langStore.lang))[0]?.description">
                         </p>
-                        <button data-aos="fade-up" @click="handleOpenModal"
+                        <button v-if="!isPlay" data-aos="fade-up" @click="handleOpenModal"
                             class="w-fit px-5 py-4 block text-sm md:text-base bg-white rounded-xl text-center font-bold whitespace-nowrap text-blue-500 hover:text-white hover:bg-blue-400 my-10 mb-0 transition-all ">
                             {{ $t('download_presentation') }}
                         </button>
                     </div>
                     <div class="flex flex-col xl:items-end justify-end xl:w-full">
-                        <button v-if="itemData?.video" data-aos="fade-up" @click="e => handlePlayVideo(itemData?.video, e)"
-                            type="button"
+                        <button data-aos="fade-up" @click="e => handlePlayVideo(itemData?.video, e)" type="button"
                             class="flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
-                            <div class="relative flex items-center justify-center max-w-[95px] w-full h-full xl:max-w-[165px]">
-                                <NuxtImg src="/img/about/playBorder.svg" class="w-full h-full"
-                                    alt="ic" loading="lazy" />
+                            <div
+                                class="relative flex items-center justify-center max-w-[95px] w-full h-full xl:max-w-[165px]">
+                                <NuxtImg src="/img/about/playBorder.svg" class="w-full h-full" alt="ic"
+                                    loading="lazy" />
                                 <svg class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18" height="21"
                                     viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.7422 10.653L0.17076 20.7979L0.170761 0.508136L17.7422 10.653Z"
@@ -142,7 +151,7 @@
                             </div>
                             {{ $t('see_video') }}
                         </button>
-                        <div data-aos="fade-up"
+                        <div data-aos="fade-up" v-if="!isPlay"
                             class=" w-full flex gap-[10px] xl:gap-5 xl:mt-[100px] xl:flex  xl:justify-end items-stretch">
                             <div v-if="itemData?.villa_count && !$viewport.isLessThan('tablet')"
                                 class="pb-[15px] flex-1 max-w-[240px] border-b border-whiteOp-300 md:pb-[30px] hidden md:block w-full">
@@ -190,6 +199,7 @@ import { getYoutubePreview } from '~/functions/getYoutubePreview';
 
 const imageLoaded = ref(false);
 const image = ref(null);
+const isPlay = ref(false);
 
 function onImageLoad() {
     imageLoaded.value = true;
@@ -211,11 +221,11 @@ const handleOpenModal = () => {
 }
 
 const handlePlayVideo = (videoUrl, e) => {
-  const params = url.parse(videoUrl, true);
-  
-    e.target.closest('button').classList.add('hidden')
+    const params = url.parse(videoUrl, true);
 
-  const urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}`
-  document.querySelector('iframe').setAttribute('src', urlLink)
+    isPlay.value = !isPlay.value;
+
+    const urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}`
+    document.querySelector('iframe').setAttribute('src', !isPlay.value ? "" : urlLink)
 }
 </script>

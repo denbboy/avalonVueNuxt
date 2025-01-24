@@ -109,4 +109,8 @@ watch(
   { immediate: true } // Можно добавить эту опцию для немедленного выполнения
 );
 
+onMounted(() => {
+  initMap(props.itemData.location.coordinates[1], props.itemData.location.coordinates[0]);
+});
+
 </script>

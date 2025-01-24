@@ -34,7 +34,7 @@
             </div>
 
             <strong class="mt-auto text-white mb-2 md:text-lg overflow-hidden h-14 line-clamp-2"
-                v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"></strong>
+                v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.subtitle"></strong>
 
             <div class="flex items-center opacity-60">
                 <NuxtImg class="w-2 md:w-3" src="/img/icons/point-white.svg" alt="Image" />
@@ -51,8 +51,6 @@ const imageLoaded = ref(false);
 const image = ref(null);
 
 function onImageLoad() {
-    console.log(111);
-    
     imageLoaded.value = true;
 }
 

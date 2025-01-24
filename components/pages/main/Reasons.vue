@@ -149,8 +149,6 @@ watchEffect(() => {
 
 watch(props, async (newValue) => {
 
-  console.log('cccc', newValue.itemStrings);
-
   if (window.location.href.includes('/projects/')) {
     itemStrings.value = newValue.itemStrings ?? newValue.blocks?.filter(item => item?.id === 29)[0];
   }

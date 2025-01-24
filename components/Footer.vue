@@ -16,14 +16,18 @@
             <div class="xl:flex xl:items-center gap-5 justify-between md:mb-24">
 
                 <!-- v-if="$viewport.isLessThan('tablet')" -->
-                <NuxtImg v-if="toolkitStore?.settings?.footer_img && !$viewport.isLessThan('tablet')"
+                <!-- <NuxtImg v-if="toolkitStore?.settings?.footer_img && !$viewport.isLessThan('tablet')"
                     :src="`https://avalon-panel.sonisapps.com/assets/${toolkitStore?.settings?.footer_img}?width=380&height=392`"
-                    class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph" />
+                    class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph" /> -->
 
                 <!-- <div class="logo-clip-path hidden lg:block">
                     <video loop class="w-[379px] h-[392px] object-cover" muted autoplay
                         src="/assets/video/video-logo.webm"></video>
                 </div> -->
+                <div class="hidden lg:block">
+                    <video loop class="w-[379px] h-[392px] object-cover" muted autoplay
+                        src="/assets/video/video-logo-footer.webm"></video>
+                </div>
 
                 <div class="w-fit">
                     <div class="md:mb-[30px] md:pb-[30px] border-b border-white/10 mb-5 pb-5">
@@ -281,7 +285,6 @@ const inputOptions = {
 
 const countryChanged = (newCountry) => {
     // Обрабатываем изменение страны
-    console.log('Выбранная страна:', newCountry);
 }
 
 const submitForm = async () => {
@@ -343,7 +346,6 @@ const sortedCountries = computed(() => {
 
 onMounted(() => {
     //   setTimeout(() => {
-    //     console.log(maskedInput);
 
     //     IMask(maskedInput.value, {
     //       mask: '+{7}(000)000-00-00' // Пример маски для телефона

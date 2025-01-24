@@ -66,9 +66,6 @@ const props = defineProps(['itemStrings'])
 
 
 const langStore = useLangStore()
-// console.log(props.itemStrings);
-
-// console.log(props.itemStrings?.filter(item => item.id === 112)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title);
 
 // watch(props, async (newValue) => {
 //     itemStrings.value = newValue.itemStrings;

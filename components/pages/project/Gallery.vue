@@ -11,13 +11,16 @@
                 class="grid gap-4 grid-cols-2 md:grid-cols-3 md:[&>.image:nth-child(3n+1)]:col-start-auto md:[&>.image:nth-child(3n+1)]:col-end-auto [&>.image:nth-child(3n+1)]:col-start-1 [&>.image:nth-child(3n+1)]:col-end-3 md:[&>.image:nth-child(7n+1)]:col-start-1 md:[&>.image:nth-child(7n+1)]:col-end-3 md:[&>.image:nth-child(7n+7)]:col-start-2 md:[&>.image:nth-child(7n+7)]:col-end-4">
 
                 <client-only>
-                    <a v-for="image in gallery?.slice(0, isShowFull ? 9999 : 7)" :key="image?.directus_files_id"
-                        data-aos="fade-up" class="image lg:h-[343px] overflow-hidden" data-fancybox="gallery"
-                        :href="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}?width=950&height=950`">
+                    <div class="image lg:h-[343px]" data-aos="fade-up" v-for="image in gallery?.slice(0, isShowFull ? 9999 : 7)"
+                        :key="image?.directus_files_id">
+                        <a class=" hover:shadow-[0px_10px_10px_0px_rgba(0,0,0,.3)] rounded-2xl block h-full !transition-shadow overflow-hidden"
+                            data-fancybox="gallery"
+                            :href="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}?width=950&height=950`">
 
 
-                        <PagesProjectGalleryImage :imageFile="image?.directus_files_id" />
-                    </a>
+                            <PagesProjectGalleryImage :imageFile="image?.directus_files_id" />
+                        </a>
+                    </div>
                 </client-only>
 
             </div>

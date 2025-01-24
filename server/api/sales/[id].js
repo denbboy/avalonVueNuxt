@@ -21,6 +21,6 @@ export default defineEventHandler(async (event) => {
 
     return items;
   } catch (e) {
-    console.error("Error fetching:", e);
+    console.error("SALE Error fetching:", e);
   }
 });

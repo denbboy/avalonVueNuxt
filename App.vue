@@ -9,6 +9,8 @@
 </template>
 
 <script setup>
+import { useCookie } from "#app";
+
 const nuxtApp = useNuxtApp();
 const modalsStore = useModalsStore();
 
@@ -17,13 +19,30 @@ const isShowedModal = ref(false)
 const sitemap = await useAsyncData("Sitemap", () => $fetch('/api/__sitemap__'))
 
 
-nuxtApp.hook("page:finish", () => {
-  if(isShowedModal.value) return;
+let timeoutId;
 
-  setTimeout(() => {
-    modalsStore.addModal('message')
-    isShowedModal.value = true
-  }, 15000)
+nuxtApp.hook("page:finish", () => {
+  // Создаём cookie для отслеживания состояния
+  const isModalShownCookie = useCookie("isModalShown", { maxAge: 60 * 60 * 24 * 30 }); // срок действия: 30 дней
+
+  // Если модалка уже была показана, ничего не делаем
+  if (isModalShownCookie.value || isShowedModal.value) {
+    return;
+  }
+
+  // Очищаем предыдущий таймер, если он существует
+  if (timeoutId) {
+    clearTimeout(timeoutId);
+  }
+
+  // Устанавливаем новый таймер
+  timeoutId = setTimeout(() => {
+    modalsStore.addModal('message');
+    isShowedModal.value = true;
+
+    // Сохраняем информацию в куках
+    isModalShownCookie.value = true;
+  }, 15000);
 });
 
 </script>

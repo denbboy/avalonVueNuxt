@@ -99,9 +99,6 @@ const handleOpenModal = () => {
     modalsStore.addModal("presentation")
 }
 
-console.log(projectsStore.projects);
-
-
 const getGridClasses = (index) => {
     const projectCount = projectsStore.projects.length;
     const lastItemIndex = projectCount - 1;

@@ -30,8 +30,6 @@ const nuxtApp = useNuxtApp();
 const isLoading = ref(true);
 
 nuxtApp.hook("page:finish", () => {
-    console.log(123);
-    
     setTimeout(() => {
         isLoading.value = false;
     }, 500)
@@ -42,15 +40,5 @@ watchEffect(() => {
         isLoading.value = false;
     }, 1500)
 })
-
-// watch(preloaderStore, (newValue) => {
-//     console.log(123);
-    
-//     setTimeout(() => {
-
-//         console.log(555);
-//         isLoading.value = false;
-//     }, 2000)
-// })
 
 </script>

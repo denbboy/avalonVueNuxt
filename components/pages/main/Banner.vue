@@ -11,7 +11,7 @@
       :speed="1500">
 
 
-      <swiper-slide v-for="item in slides" class="pt-40 lg:pt-[250px] lg:min-h-[810px] relative overflow-hidden">
+      <swiper-slide v-for="item in slides" class="pt-40 lg:pt-[220px] lg:min-h-[810px] relative overflow-hidden">
         <div class="bg-center absolute top-0 left-0 w-full h-[100%] -z-10 opacity-50">
 
           <div v-if="!item?.video">
@@ -151,7 +151,7 @@
               <h2
                 v-if="item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"
                 v-html="item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"
-                class="text-3xl font-light text-white mt-5 md:text-[55px] lg:text-[65px] leading-[100%] md:leading-[55px] lg:leading-[65px] md:mt-12 md:max-w-[825px]">
+                class="text-3xl font-light text-white mt-5 md:text-[55px] lg:text-[65px] leading-[100%] md:leading-[55px] lg:leading-[65px] md:mt-8 md:max-w-[825px]">
               </h2>
 
               <button @click="addModal" class="white-button mt-7 lg:mt-12">
@@ -165,7 +165,7 @@
 
           </div>
 
-          <div v-if="item?.strings?.length" class="flex justify-between items-end lg:mt-28 xl:mt-36 mt-10">
+          <div v-if="item?.strings?.length" class="flex justify-between items-end lg:mt-10 xl:mt-10 mt-10">
             <div class="flex gap-5">
               <div v-if="item?.strings.some(item => item.String_id.id === 2)" class="pr-5 border-r border-whiteOp-300">
                 <p class="font-bold text-white text-2xl mb-2 md:text-4xl md:mb-3">

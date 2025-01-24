@@ -6,13 +6,16 @@ const directus = createDirectus(API_LINK).with(rest());
 export default defineEventHandler(async (event) => {
   try {
     const items = await directus.request(
-      readItems("Sale", {
-        fields: ["*", "translations.*"],
+      readItems("Team", {
+        sort: ['sort'],
+        fields: [
+          "*",
+        ],
       })
     );
-    
+
     return items;
   } catch (e) {
-    console.error("SALES Error fetching:", e);
+    console.error("TEAM Error fetching:", e);
   }
 });

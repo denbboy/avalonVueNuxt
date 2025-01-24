@@ -11,7 +11,6 @@ export const getYoutubePreview = () => {
     }
     size = size === null ? "big" : size;
     const params = url.parse(urlVideo, true);
-    console.log(params);
     
     results = params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')
 

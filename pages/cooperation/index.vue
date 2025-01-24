@@ -377,15 +377,11 @@ import { useBlocksStore } from '~/stores/functions/blocks';
 
 const blocks = await useFetchWithCache('/api/blocks')
 
-console.log(blocks);
-
-
 const block1 = await blocks.value.find(i => i.id === 15)
 const block2 = await blocks.value.find(i => i.id === 16)
 const block3 = await blocks.value.find(i => i.id === 17)
 const block4 = await blocks.value.find(i => i.id === 19)
 const block5 = await blocks.value.find(i => i.id === 21)
-// console.log(blocks.value?.map(i => i.id === 15)[0]);
 
 
 // Состояние и сторы
