@@ -153,6 +153,7 @@
                 v-html="item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description"
                 class="text-3xl font-light text-white mt-5 md:text-[55px] lg:text-[65px] leading-[100%] md:leading-[55px] lg:leading-[65px] md:mt-12 md:max-w-[825px]">
               </h2>
+
               <button @click="addModal" class="white-button mt-7 lg:mt-12">
                 {{ $t('download_presentation') }}
               </button>
@@ -197,6 +198,11 @@
   </section>
 </template>
 
+<style>
+  strong {
+    font-weight: 500 !important;
+  }
+</style>
 
 <script setup>
 import { Pagination, A11y, Autoplay } from 'swiper/modules'
