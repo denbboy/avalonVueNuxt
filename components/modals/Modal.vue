@@ -26,6 +26,7 @@
           <ModalsModalCalendar v-if="modals[0] === 'calendar'" />
           <ModalsModalMessage v-if="modals[0] === 'message'" />
           <ModalsModalVacancy v-if="modals[0] === 'vacancy'" />
+          <ModalsModalRtsp v-if="modals[0] === 'rtsp'" />
 
         </div>
       </div>
@@ -58,6 +59,7 @@
           <ModalsModalCalendar v-if="modals[1] === 'calendar'" />
           <ModalsModalMessage v-if="modals[1] === 'message'" />
           <ModalsModalVacancy v-if="modals[1] === 'vacancy'" />
+          <ModalsModalRtsp v-if="modals[1] === 'rtsp'" />
 
         </div>
       </div>

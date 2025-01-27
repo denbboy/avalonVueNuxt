@@ -1,9 +1,6 @@
 <template>
 
 
-    <!-- <iframe width="640" height="480" src="https://rtsp.me/embed/KPbwo57M/" frameborder="0" allowfullscreen></iframe> -->
-
-
     <section class="lg:pb-12 pb-0 min-h-[200px]">
         <div class="lg:pb-10 pb-5 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.webp')] -->
@@ -80,6 +77,8 @@
                                 </div>
                             </div>
                             <div
+                                v-if="itemData?.rtsp_code"
+                                @click="handleOpenRtsp"
                                 class="w-full h-[60px] max-w-[62px] md:max-w-[98px] md:h-[86px] bg-white flex items-center justify-center rounded-[8px] md:rounded-[15px]">
                                 <!-- <NuxtImg src="/img/icons/live-ic.svg" class="max-w-[42px] md:max-w-[68px]" alt="ic"> -->
 
@@ -218,6 +217,11 @@ const { itemData } = defineProps(['itemData'])
 
 const handleOpenModal = () => {
     modalsStore.addModal("presentation")
+}
+
+const handleOpenRtsp = () => {
+    modalsStore.addModal("rtsp")
+    modalsStore.setModalData(itemData)
 }
 
 const handlePlayVideo = (videoUrl, e) => {

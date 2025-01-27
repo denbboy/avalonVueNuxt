@@ -28,20 +28,25 @@
         <swiper class="swiper team team-block" loop :modules="modules" :breakpoints="breakpoints"
           :navigation="navigationConfig" :space-between="20" :slides-per-view="2" @swiper="onSwiper"
           @slideChange="onSlideChange">
-          <swiper-slide>
+
+          <swiper-slide v-for="item in team?.value">
             <div
-              class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <NuxtImg loading="lazy" src="/img/index/user-1.png" class="w-full h-full grayscale" alt="ph" />
+              class="after:bg-blue-600/40 aspect-square relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
+              <NuxtImg loading="lazy" :src="'https://avalon-panel.sonisapps.com/assets/'+item?.avatar" class="w-full h-full object-cover rounded-full grayscale" alt="ph" />
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">
-                {{ $t('team_1_name') }}
+                {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
               </h3>
               <p class="text-whiteOp-300 text-sm md:text-base leading-[100%]">
-                {{ $t('team_position_1') }}
+                {{ item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.role }}
               </p>
             </div>
           </swiper-slide>
+
+
+
+
           <swiper-slide>
             <div
               class="after:bg-blue-600/40 relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
@@ -133,7 +138,9 @@
   </section>
 </template>
 
-<script>
+
+<script setup>
+import { ref } from 'vue'
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
@@ -141,39 +148,37 @@ import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-const salesData = await useAsyncData('Team', () => $fetch('/api/team'));
+const langStore = useLangStore();
 
+// Инициализация переменной team
+const team = ref([]);
 
+// Получаем данные через useAsyncData
+const { data: teamFetch } = await useAsyncData('Team', () => $fetch('/api/team'));
+
+// Присваиваем данные в team
+team.value = teamFetch;
+
+// Конфигурация для Swiper
 SwiperCore.use([Navigation, A11y]);
 
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    const modules = {
-      navigation: true,
-      a11y: true,
-    };
-    const navigationConfig = {
-      nextEl: '.button-next',
-      prevEl: '.button-prev',
-    };
-    const breakpoints = {
-      1024: {
-        slidesPerView: 4
-      },
-      1441: {
-        slidesPerView: 6
-      }
-    };
+const modules = {
+  navigation: true,
+  a11y: true,
+};
 
-    return {
-      modules,
-      navigationConfig,
-      breakpoints
-    };
+const navigationConfig = {
+  nextEl: '.button-next',
+  prevEl: '.button-prev',
+};
+
+const breakpoints = {
+  1024: {
+    slidesPerView: 4,
+  },
+  1441: {
+    slidesPerView: 6,
   },
 };
+
 </script>

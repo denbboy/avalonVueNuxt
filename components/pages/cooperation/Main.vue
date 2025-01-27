@@ -29,17 +29,22 @@
             </div>
 
             <div data-aos="fade-up" class="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
-                <NuxtLink href="#broker"
+
+                <NuxtLink v-for="item in props?.cooperationFetch?.data.value" :href="'#' + item.id"
                     class=" w-full py-[30px] px-2 xl:p-0 xl:border-none border border-white/50 rounded-[10px] xl:max-w-[375px]">
+
+                    <pre>
+                        <!-- {{ item }} -->
+                    </pre>
 
                     <div
                         class="flex items-center xl:translate-y-[32px] justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
-                        <NuxtImg class="w-9 h-9" src="/img/cooperation/banner-block-icon-1.svg" alt="img" />
+                        <!-- <NuxtImg class="w-9 h-9" src="/img/cooperation/banner-block-icon-1.svg" alt="img" /> -->
                     </div>
                     <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
                             <p class="my-4 text-white font-bold leading-none text-center">
-                                {{ $t('brokeram') }}
+                                {{ item?.translations?.find(i => i.languages_code.includes(langStore.lang)).title }}
                             </p>
                             <svg class="mx-auto" width="31" height="30" viewBox="0 0 31 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +91,9 @@
 
                     </div>
                 </NuxtLink>
-                <NuxtLink href="#agency"
+
+
+                <!-- <NuxtLink href="#agency"
                     class=" w-full py-[30px] px-2 xl:p-0 xl:border-none border border-white/50 rounded-[10px] xl:max-w-[375px]">
 
                     <div
@@ -258,7 +265,7 @@
 
 
                     </div>
-                </NuxtLink>
+                </NuxtLink> -->
             </div>
 
 
@@ -273,11 +280,16 @@
 <script setup>
 import { usePagesStore } from '~/stores/functions/pages';
 
-const cooperationData = await useAsyncData("Cooperation", () => $fetch('/api/cooperation'))
-
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
 const currentPageReqest = ref([]);
+
+const props = defineProps({
+  cooperationFetch: {
+    required: true
+  }
+})
+
 
 watchEffect(() => {
     currentPageReqest.value = pagesStore?.pagesList?.filter(item => item.slug === 'cooperation')[0]?.translations

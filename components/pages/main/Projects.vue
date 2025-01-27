@@ -64,6 +64,7 @@
                                         {{ $t('including_taxes') }}
                                     </span>
                                 </div>
+
                                 <div class="flex">
                                     <NuxtLink
                                         :href="`/projects/${item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
@@ -74,8 +75,6 @@
                                         <NuxtImg class="w-3" src="/img/icons/point-white.svg" alt="Image"
                                             loading="lazy" />
                                         <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">
-                                            <!-- {{ $t('changu') }} -->
-
                                             {{ item?.location_name }}
                                         </span>
                                     </div>
@@ -98,6 +97,9 @@ const langStore = useLangStore();
 const handleOpenModal = () => {
     modalsStore.addModal("presentation")
 }
+
+console.log(projectsStore);
+
 
 const getGridClasses = (index) => {
     const projectCount = projectsStore.projects.length;

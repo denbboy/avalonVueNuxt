@@ -2,8 +2,8 @@
     <section class="pb-24 relative bg-blue-500 overflow-hidden">
         <div class="bg-gradient-to-t from-blue-500 from-70% lg:from-70%  w-full h-[2000px] absolute z-10"></div>
 
-        <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] max-w-max md:w-full min-h-[1000px] h-screen object-cover"
-            src="/img/news/news-bgd.webp" alt="Image" loading="lazy" />
+        <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] h-screen min-w-[100vw] max-w-max md:w-full" :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore.settings.header_img"
+      alt="Image" loading="lazy" />
 
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
             <h1 class="text-[30px] md:text-[55px] lg:text-[65px] text-white font-normalidad font-bold mb-5"
@@ -35,6 +35,7 @@
 <script setup>
 
 const viewCount = ref(8);
+const toolkitStore = useToolkit();
 
 const handelShowMore = () => {
     viewCount.value += 8;

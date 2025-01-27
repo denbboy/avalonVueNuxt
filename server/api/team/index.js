@@ -7,13 +7,13 @@ export default defineEventHandler(async (event) => {
   try {
     const items = await directus.request(
       readItems("Team", {
-        sort: ['sort'],
         fields: [
           "*",
+          "translations.*"
         ],
       })
     );
-
+    
     return items;
   } catch (e) {
     console.error("TEAM Error fetching:", e);

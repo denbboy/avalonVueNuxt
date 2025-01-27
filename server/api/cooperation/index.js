@@ -7,12 +7,15 @@ export default defineEventHandler(async (event) => {
   try {
     const items = await directus.request(
       readItems("Cooperation", {
-        sort: ['sort'],
         fields: [
           "*",
+          "translations.*"
         ],
       })
     );
+
+    console.log('COOPERATION', items);
+    
     
     return items;
   } catch (e) {
