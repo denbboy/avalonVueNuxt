@@ -38,9 +38,13 @@
                                 <NuxtImg class="w-[90px]" v-if="item?.logo"
                                     :src="`https://avalon-panel.sonisapps.com/assets/${item?.logo}`" alt="Image"
                                     loading="lazy" />
-                                <span v-if="item?.sale_alias"
+
+                                <span v-if="item?.main_translations?.filter(item =>
+                                            item.languages_code.includes(langStore.lang))[0]?.sale_alias"
                                     class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
-                                    {{ item?.sale_alias }}% {{ $t('sold') }}
+                                    <!-- {{ item?.sale_alias }}% {{ $t('sold') }} -->
+                                      {{ item?.main_translations?.filter(item =>
+                                            item.languages_code.includes(langStore.lang))[0]?.sale_alias }}
                                 </span>
                             </div>
                             <div class="max-w-96">
@@ -52,10 +56,9 @@
                                             item.languages_code.includes(langStore.lang))[0]?.title }}
                                     </NuxtLink>
                                 </h2>
-                                <p class="text-white text-xs md:text-[11px] lg:text-sm mb-5 line-clamp-3">
-                                    {{ item?.translations?.filter(item =>
-                                        item.languages_code.includes(langStore.lang))[0]?.description }}
-                                </p>
+                                <div class="text-white text-xs md:text-[11px] lg:text-sm mb-5 line-clamp-3" v-html="item?.translations?.filter(item =>
+                                        item.languages_code.includes(langStore.lang))[0]?.description">
+                                </div>
                                 <div class="flex items-center mb-5">
                                     <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">{{ $t('from') }}
                                         ${{
@@ -97,9 +100,6 @@ const langStore = useLangStore();
 const handleOpenModal = () => {
     modalsStore.addModal("presentation")
 }
-
-console.log(projectsStore);
-
 
 const getGridClasses = (index) => {
     const projectCount = projectsStore.projects.length;

@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
   try {
     const items = await directus.request(
       readItems("Project", {
-        fields: ["*", "translations.*"],
+        fields: ["*", "translations.*", "main_translations.*",],
       })
     );
 
@@ -16,4 +16,3 @@ export default defineEventHandler(async (event) => {
     console.error("Error fetching:", e);
   }
 });
-

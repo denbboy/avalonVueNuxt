@@ -12,6 +12,7 @@ export default defineEventHandler(async (event) => {
         fields: [
           "*",
           "translations.*",
+          "main_translations.*",
           "gallery.*",
           "apartments.*.*",
           "blocks.Block_id.*.*.*.*.*",

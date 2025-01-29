@@ -55,7 +55,8 @@
                                     {{ $t('deadline') }}
                                 </span>
                                 <p class="text-white text-base font-bold md:text-xl">
-                                    {{ $t('summer2025') }}
+                                    {{ itemData?.main_translations?.filter(item =>
+                                            item.languages_code.includes(langStore.lang))[0]?.due_date }}
                                 </p>
                             </div>
                             <div class="con order-1 md:order-none">

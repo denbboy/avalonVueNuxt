@@ -71,6 +71,4 @@ const res = await useAsyncData('ProjectItem', () => $fetch(`/api/projects/${rout
 const itemData = await res?.data?.value[0]
 projectsStore.setCurrentProject(itemData);
 
-
-
 </script>

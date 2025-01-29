@@ -39,12 +39,12 @@
 
                     <div
                         class="flex items-center xl:translate-y-[32px] justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
-                        <!-- <NuxtImg class="w-9 h-9" src="/img/cooperation/banner-block-icon-1.svg" alt="img" /> -->
+                        <NuxtImg class="w-9 h-9" :src="'https://avalon-panel.sonisapps.com/assets/' + item?.icon" alt="img" />
                     </div>
                     <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
                             <p class="my-4 text-white font-bold leading-none text-center">
-                                {{ item?.translations?.find(i => i.languages_code.includes(langStore.lang)).title }}
+                                {{ item?.translations?.find(i => i.languages_code.includes(langStore.lang)).icon_title }}
                             </p>
                             <svg class="mx-auto" width="31" height="30" viewBox="0 0 31 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">

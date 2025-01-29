@@ -40,7 +40,7 @@
         <div class="container">
           <div class="flex md:flex-row flex-col items-center" v-if="item?.projects?.length">
 
-            <div class="w-full">
+            <div  class="is-will-hidden w-full min-h-[500px]">
               <div class="banner__item__head md:flex items-center">
                 <NuxtImg v-if="item?.projects[0]?.item.logo" width="100" height="95"
                   :src="`https://avalon-panel.sonisapps.com/assets/${item?.projects[0]?.item.logo}`"
@@ -80,14 +80,10 @@
                 </div>
               </div>
               <h2 class="text-3xl text-white mt-5 md:text-[65px] md:leading-[65px] md:mt-[40px] md:max-w-[900px]">
-                <span class="font-bold">
-                  {{ item?.projects[0]?.item?.translations?.filter(item =>
-                    item.languages_code.includes(langStore.lang))[0]?.title }}
+                <span class="font-bold" v-html="item?.projects[0]?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
                 </span>
               </h2>
-              <p class="text-white text-sm max-w-64 md:max-w-[416px] md:text-base mt-3 md:mt-12 md:mr-5">
-                {{ item?.projects[0]?.item?.translations?.filter(item =>
-                  item.languages_code.includes(langStore.lang))[0]?.description }}
+              <p class="text-white text-sm max-w-64 md:max-w-[416px] md:text-base mt-3 md:mt-12 md:mr-5" v-html="item?.projects[0]?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
               </p>
               <div class="md:flex">
                 <!-- <NuxtLink :to="`/projects/${item?.projects[0]?.item?.slug}`" class="white-button md:mt-7 mt-3 lg:mt-12"> -->
@@ -99,7 +95,7 @@
               </div>
             </div>
 
-            <button v-if="item?.video && !isVideoPlayed" data-aos="fade-up"
+            <button data-aos="fade-up"
               @click="e => handlePlayVideo(e, item?.video)" type="button"
               class="play-button flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base max-w-[95px] w-full xl:max-w-[165px] xl:flex-col xl:ml-auto">
               <div class="relative flex items-center justify-center max-w-[95px] w-full xl:max-w-[165px]">
@@ -246,14 +242,23 @@ const addModal = () => {
 
 const handlePlayVideo = (e, videoUrl) => {
   const iframeBlock = e.target.closest('.swiper-slide').querySelector('iframe')
-  const thisButton = e.target.closest('.play-button')
+  const hiddenBlock = e.target.closest('.swiper-slide').querySelector('.is-will-hidden')
 
-  // isVideoPlayed.value = true;
-  thisButton.classList.add('hidden')
-
+  
+  
+  let urlLink;
   const params = url.parse(videoUrl, true);
+  
+  if(isVideoPlayed.value) {
+    urlLink = ''
+    hiddenBlock.classList.remove('hidden')
+  } else {
+    urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}`
+    hiddenBlock.classList.add('hidden')
+  }
 
-  const urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}`
+  isVideoPlayed.value = !isVideoPlayed.value;
+
   iframeBlock.setAttribute('src', urlLink)
 
   iframeBlock.addEventListener('ended', function () {
