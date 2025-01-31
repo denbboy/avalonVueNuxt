@@ -33,7 +33,7 @@
 
           <ul class="grid grid-cols-2 gap-y-8 gap-x-3 md:gap-x-5 md:gap-y-[32px]" data-aos="fade-up">
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
-              <b class="font-bold text-white text-2xl mb-3 md:text-[32px] lg:text-[40px] md:mb-4 block">
+              <b class="font-bold text-white text-2xl mb-3 lg:text-[32px] xl:text-[40px] md:mb-4 block">
                 {{ itemStrings?.filter(item => item.id === 38)[0]?.String_id?.translations?.filter(item =>
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </b>
@@ -43,7 +43,7 @@
               </p>
             </li>
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
-              <b class="font-bold text-white text-2xl mb-3 md:text-[32px] lg:text-[40px] md:mb-4 block">
+              <b class="font-bold text-white text-2xl mb-3 lg:text-[32px] xl:text-[40px] md:mb-4 block">
                 {{ itemStrings?.filter(item => item.id === 39)[0]?.String_id?.translations?.filter(item =>
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </b>
@@ -53,7 +53,7 @@
               </p>
             </li>
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
-              <b class="font-bold text-white text-2xl mb-3 md:text-[32px] lg:text-[40px] md:mb-4 block">
+              <b class="font-bold text-white text-2xl mb-3 lg:text-[32px] xl:text-[40px] md:mb-4 block">
                 {{ itemStrings?.filter(item => item.id === 40)[0]?.String_id?.translations?.filter(item =>
                   item.languages_code.code.includes(langStore.lang))[0]?.title }}
               </b>

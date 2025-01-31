@@ -121,7 +121,7 @@
                             </div>
                         </div>
                         <h2 v-if="!isPlay"
-                            class="text-3xl text-white mt-5 md:text-[55px] lg:text-[65px] md:mt-6 md:-mr-40">
+                            class="text-3xl text-white mt-5 md:text-[55px] lg:text-[65px] md:mt-6 lg:-mr-40">
                             <span class="font-bold leading-[120%]">
                                 {{ itemData?.translations?.filter(item =>
                                     item.languages_code.includes(langStore.lang))[0]?.title }}

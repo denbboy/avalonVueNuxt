@@ -179,5 +179,7 @@
     "bedroom": "bedroom/living room area",
 
     "404_text": "It seems something went wrong! The page you are requesting does not exist. It may be outdated, or the address was entered incorrectly in the address bar.",
-    "404_button": "Go to the homepage"
+    "404_button": "Go to the homepage",
+
+    "show_all": "Show all"
 }

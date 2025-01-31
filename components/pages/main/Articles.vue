@@ -65,7 +65,11 @@ const pagination = {
 };
 
 const breakpoints = {
-  768: {
+  576: {
+    slidesPerView: 2,
+    pagination: false,
+  },
+  992: {
     slidesPerView: 3,
     pagination: false,
   },

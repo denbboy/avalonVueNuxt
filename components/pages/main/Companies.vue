@@ -7,7 +7,7 @@
       <NuxtImg src="/img/icons/vector-logo.svg" class="invert w-full" alt="vector-logo" />
     </div>
     <div class="container">
-      <div class="relative md:h-[450px]">
+      <div class="relative md:h-[450px] list">
         <div
           class="rounded-tr-2xl rounded-tl-2xl md:rounded-none bg-[#E7EDF2] w-[calc(100%_+_60px)] ml-[-30px] px-[30px] py-[30px] grid grid-cols-2 items-center md:flex relative md:bg-white md:max-w-64 md:flex-col md:p-0 md:gap-4 md:absolute z-10 md:top-[13%] md:left-[-7%] lg:left-[0%]">
           <div
@@ -46,8 +46,11 @@
             {{ $t('companies_text_3') }}
           </p>
         </div>
+
+
+
         <div
-          class="bg-white w-[calc(100%_+_60px)] ml-[-30px] px-[30px] py-[30px] grid grid-cols-2 items-center md:flex relative md:max-w-64 md:flex-col md:p-0 md:gap-4 md:absolute z-[11] md:top-[0%] md:left-2/4 md:-translate-x-2/4">
+          class="bg-white mob-item-hidden hidden w-[calc(100%_+_60px)] ml-[-30px] px-[30px] py-[30px] grid-cols-2 items-center md:flex relative md:max-w-64 md:flex-col md:p-0 md:gap-4 md:absolute z-[11] md:top-[0%] md:left-2/4 md:-translate-x-2/4">
           <div
             class="bg-blue-400 min-w-2 h-2 rounded-[3px] before:block before:w-[50px] before:h-[1px] before:bg-blue-400/20 before:absolute before:right-[0] before:top-1 absolute top-[50%] left-5 translate-y-[-50%] md:left-[50%] md:top-[-20px] md:translate-x-[-50%] md:before:w-[1px] md:before:h-[400px] md:before:bottom-0 md:before:top-auto md:before:right-1">
           </div>
@@ -61,7 +64,7 @@
           </p>
         </div>
         <div
-          class="bg-[#E7EDF2] w-[calc(100%_+_60px)] ml-[-30px] px-[30px] py-[30px] grid grid-cols-2 items-center md:flex relative md:bg-white md:max-w-64 md:flex-col md:p-0 md:gap-4 md:absolute z-10 md:top-[60%] md:left-2/4 md:-translate-x-2/4">
+          class="bg-[#E7EDF2] mob-item-hidden hidden w-[calc(100%_+_60px)] ml-[-30px] px-[30px] py-[30px] grid-cols-2 items-center md:flex relative md:bg-white md:max-w-64 md:flex-col md:p-0 md:gap-4 md:absolute z-10 md:top-[60%] md:left-2/4 md:-translate-x-2/4">
           <div
             class="bg-blue-400 min-w-2 h-2 rounded-[3px] before:block before:w-[50px] before:h-[1px] before:bg-blue-400/20 before:absolute before:right-[0] before:top-1 absolute top-[50%] left-5 translate-y-[-50%] md:left-[50%] md:top-[-20px] md:translate-x-[-50%] md:before:w-[1px] md:before:h-[400px] md:before:bottom-0 md:before:top-auto md:before:right-1">
           </div>
@@ -74,7 +77,7 @@
           </p>
         </div>
         <div
-          class="bg-white w-[calc(100%_+_60px)] ml-[-30px] px-[30px] py-[30px] grid grid-cols-2 items-center md:flex relative md:max-w-64 md:flex-col md:p-0 md:gap-4 md:absolute z-10 md:top-[20%] md:right-[20%] lg:right-[27%]">
+          class="bg-white mob-item-hidden hidden w-[calc(100%_+_60px)] ml-[-30px] px-[30px] py-[30px] grid-cols-2 items-center md:flex relative md:max-w-64 md:flex-col md:p-0 md:gap-4 md:absolute z-10 md:top-[20%] md:right-[20%] lg:right-[27%]">
           <div
             class="bg-blue-400 min-w-2 h-2 rounded-[3px] before:block before:w-[50px] before:h-[1px] before:bg-blue-400/20 before:absolute before:right-[0] before:top-1 absolute top-[50%] left-5 translate-y-[-50%] md:left-[50%] md:top-[-20px] md:translate-x-[-50%] md:before:w-[1px] md:before:h-[400px] md:before:bottom-0 md:before:top-auto md:before:right-1">
           </div>
@@ -87,7 +90,7 @@
           </p>
         </div>
         <div
-          class="bg-[#E7EDF2] w-[calc(100%_+_60px)] ml-[-30px] px-[30px] py-[30px] grid grid-cols-2 items-center md:flex relative md:bg-white md:max-w-64 md:flex-col md:p-0 md:gap-4 md:absolute z-10 md:top-[55%] md:right-[6%] lg:right-[12%]">
+          class="bg-[#E7EDF2] mob-item-hidden hidden w-[calc(100%_+_60px)] ml-[-30px] px-[30px] py-[30px] grid-cols-2 items-center md:flex relative md:bg-white md:max-w-64 md:flex-col md:p-0 md:gap-4 md:absolute z-10 md:top-[55%] md:right-[6%] lg:right-[12%]">
           <div
             class="bg-blue-400 min-w-2 h-2 rounded-[3px] before:block before:w-[50px] before:h-[1px] before:bg-blue-400/20 before:absolute before:right-[0] before:top-1 absolute top-[50%] left-5 translate-y-[-50%] md:left-[50%] md:top-[-20px] md:translate-x-[-50%] md:before:w-[1px] md:before:h-[400px] md:before:bottom-0 md:before:top-auto md:before:right-1">
           </div>
@@ -100,7 +103,7 @@
           </p>
         </div>
         <div
-          class="bg-white w-[calc(100%_+_60px)] ml-[-30px] px-[30px] py-[30px] grid grid-cols-2 items-center md:flex relative md:max-w-64 md:flex-col md:p-0 md:gap-4 md:absolute z-10 md:top-[13%] md:right-[-7%] lg:right-[0%]">
+          class="bg-white mob-item-hidden hidden w-[calc(100%_+_60px)] ml-[-30px] px-[30px] py-[30px] grid-cols-2 items-center md:flex relative md:max-w-64 md:flex-col md:p-0 md:gap-4 md:absolute z-10 md:top-[13%] md:right-[-7%] lg:right-[0%]">
           <div
             class="bg-blue-400 min-w-2 h-2 rounded-[3px] before:block before:w-[50px] before:h-[1px] before:bg-blue-400/20 before:absolute before:right-[0] before:top-1 absolute top-[50%] left-5 translate-y-[-50%] md:left-[50%] md:top-[-20px] md:translate-x-[-50%] md:before:w-[1px] md:before:h-[400px] md:before:bottom-0 md:before:top-auto md:before:right-1">
           </div>
@@ -112,7 +115,23 @@
             {{ $t('companies_text_8') }}
           </p>
         </div>
+
+        <button v-if="!isShow" @click="handleOpenAll" class="blue-border-button bg-white mx-auto my-5 md:hidden">
+          {{ $t('show_all') }}
+        </button>
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+  const isShow = ref();
+  const handleOpenAll = () => {
+    document.querySelectorAll('.list .mob-item-hidden').forEach((item) => {
+      item.classList.toggle('hidden')
+      item.classList.toggle('grid')
+
+      isShow.value = true;
+    })
+  }
+</script>

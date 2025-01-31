@@ -22,7 +22,7 @@
             </div>
 
             <div
-                class="projects grid flex-col gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 flex-wrap items-center md:justify-between md:flex-row lg:flex-row z-10 relative">
+                class="projects grid flex-col gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 flex-wrap items-center md:justify-between md:flex-row lg:flex-row z-10 relative">
 
                 <div :class="getGridClasses(index)"
                     class="projects-item relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[600px] min-h-[450px]"

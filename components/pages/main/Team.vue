@@ -87,8 +87,14 @@ const navigationConfig = {
 };
 
 const breakpoints = {
-  1024: {
+  576: {
+    slidesPerView: 3,
+  },
+  768: {
     slidesPerView: 4,
+  },
+  1024: {
+    slidesPerView: 5,
   },
   1441: {
     slidesPerView: 6,

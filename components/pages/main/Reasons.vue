@@ -32,7 +32,7 @@
         <!-- <NuxtImg loading="lazy" src="/img/index/island-img.png" class="my-8 max-w-56 m-auto md:max-w-[500px] md:m-0" alt="ph" data-aos="zoom-in"> -->
 
         <div
-          class="logo-clip-path max-h-[222px] max-w-[214px] md:max-w-full md:max-h-full md:min-w-[318px] md:h-[380px] lg:min-w-[553px] lg:h-[573px] mx-auto my-auto">
+          class="logo-clip-path max-h-[222px] max-w-[214px] lg:max-w-full md:max-h-full md:min-w-[318px] md:h-[380px] lg:min-w-[553px] lg:h-[573px] mx-auto my-auto">
           <video loop
             class="md:min-w-[318px]  md:h-[380px] lg:min-w-[553px] lg:h-[573px] min-w-[214px] w-full h-[222px] object-cover"
             muted autoplay playsinline>

@@ -10,7 +10,7 @@
 
             <!-- bg-[url('./../img/index/buy-list-bg.png')] md:bg-[url('./../img/index/buy-bg-desk.png')] bg-no-repeat bg-cover -->
             <div
-                class=" md:rounded-tr-3xl md:rounded-bl-3xl pt-14 pb-28 px-5 relative md:pb-11 md:px-[80px] lg:px-[120px] md:pt-[100px]">
+                class=" md:rounded-tr-3xl md:rounded-bl-3xl pt-14 pb-28 px-5 relative md:pb-11 md:px-[60px] lg:px-[120px] md:pt-[100px]">
 
                 <NuxtImg loading="lazy" src="/img/index/buy-bg-desk.png"
                     class="absolute top-0 left-0 w-full h-full z-0 hidden md:block backdrop-blur-[1px]" alt="Image" />
@@ -259,7 +259,7 @@
                         {{ $t('get_presentation') }}
                     </button>
 
-                    <div class="flex items-center gap-10">
+                    <div class="flex items-center gap-4 lg:gap-10">
                         <NuxtImg loading="lazy" src="/img/index/a-decor-op.svg" class="hidden md:block md:max-w-[112px]" alt="decor" />
                         <div class="pt-5 border-t border-whiteOp-300 md:border-none md:pt-0 md:max-w-[526px]">
                             <p class="text-white opacity-50 text-sm mb-5 md:text-[14px] md:text-left">
