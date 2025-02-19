@@ -11,6 +11,7 @@ export default defineEventHandler(async (event) => {
           "*",
           "translations.*"
         ],
+        sort: ["sort"]
       })
     );
     
@@ -19,3 +20,4 @@ export default defineEventHandler(async (event) => {
     console.error("TEAM Error fetching:", e);
   }
 });
+

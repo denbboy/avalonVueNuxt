@@ -11,8 +11,9 @@
 
         <div class="bg-gradient-to-t from-blue-500 from-60% lg:from-60%  w-full h-[2000px] absolute z-10"></div>
 
-        <NuxtImg loading="lazy" class="absolute top-0 z-0 opacity-40 w-[600vw] max-w-max md:w-full min-h-[1000px] h-screen object-cover"
-            src="/img/career/img.webp" alt="Image" />
+        <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] h-screen min-w-[100vw] object-cover max-w-max md:w-full"
+            :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore.settings.header_img" alt="Image"
+            loading="lazy" />
 
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
             <h1 data-aos="fade-up"
@@ -48,6 +49,7 @@ const { id } = useRoute().params;
 // const currentPageInfo = ref({});
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
+const toolkitStore = useToolkit();
 
 const pageDataFetch = await useAsyncData("Pages", () => $fetch('/api/pages'))
 
@@ -57,7 +59,7 @@ const currentPageInfo = await pageDataFetch.data.value?.filter(item => item.slug
 const description = await currentPageInfo?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description
 
 
-const pageData = pageDataFetch.data.value.filter(item => item.slug === id)[0].translations?.filter(item => item?.languages_code?.includes(langStore?.lang))[0]
+const pageData = pageDataFetch.data.value?.filter(item => item.slug === id)[0].translations?.filter(item => item?.languages_code?.includes(langStore?.lang))[0]
 const pageMetaTitle = pageData?.meta_title ?? ""
 const pageMetaDescription = pageData?.meta_description ?? ""
 

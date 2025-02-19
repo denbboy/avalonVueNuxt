@@ -343,14 +343,14 @@ const changeLocale = (newLocale) => {
 watchEffect(() => {
   if (typeof window !== 'undefined') {
     onMounted(() => {
-      mainPageLink.value = `/${localStorage.getItem('selectedLanguage').replace('/', '')}`;
+      mainPageLink.value = `/${localStorage.getItem('selectedLanguage')?.replace('/', '')}`;
     });
   }
 });
 
 const changeLanguage = (newLocale) => {
   const currentPath = route.fullPath;
-  let pathWithoutLocale = currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
+  let pathWithoutLocale = currentPath?.replace(/^\/[a-z]{2}(\/|$)/, '/');
 
   if (newLocale !== DEFAULT_LOCALE) {
     pathWithoutLocale = `/${newLocale}${pathWithoutLocale}`;

@@ -7,8 +7,10 @@
         <NuxtImg class="absolute top-0 z-0 opacity-90 w-[600vw] max-w-max md:w-full min-h-[1000px] h-screen object-cover"
             src="/img/career/img.webp" alt="Image"> -->
 
-        <NuxtImg src="/img/career/img.webp"
-            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" />
+        <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] h-screen min-w-[100vw] object-cover max-w-max md:w-full"
+            :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore.settings.header_img" alt="Image"
+            loading="lazy" />
+
         <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10">
         </div>
         <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[1000px] absolute z-10">
@@ -18,12 +20,12 @@
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
             <h1 data-aos="fade-up"
                 class="text-[24px] 375:text-[30px] md:text-[55px] lg:text-[65px] text-3xl text-white font-normalidad font-bold mb-5 md:mb-12">
-                {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+                {{currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title}}
             </h1>
             <div data-aos="fade-up" data-aos-delay="100"
                 class="justify-between items-center mb-[30px] xl:mb-[81px] 3xl:mb-[60px]">
                 <p class="md:text-lg text-white text-sm  max-w-[548px]">
-                    {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description
+                    {{currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description
                     }}
                 </p>
             </div>
@@ -39,12 +41,14 @@
 
                     <div
                         class="flex items-center xl:translate-y-[32px] justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
-                        <NuxtImg class="w-9 h-9" :src="'https://avalon-panel.sonisapps.com/assets/' + item?.icon" alt="img" />
+                        <NuxtImg class="w-9 h-9" :src="'https://avalon-panel.sonisapps.com/assets/' + item?.icon"
+                            alt="img" />
                     </div>
                     <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">
                         <div class="relative z-[2] w-full h-fit pointer-events-none">
                             <p class="my-4 text-white font-bold leading-none text-center">
-                                {{ item?.translations?.find(i => i.languages_code.includes(langStore.lang)).icon_title }}
+                                {{item?.translations?.find(i => i.languages_code.includes(langStore.lang)).icon_title
+                                }}
                             </p>
                             <svg class="mx-auto" width="31" height="30" viewBox="0 0 31 30" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -283,11 +287,12 @@ import { usePagesStore } from '~/stores/functions/pages';
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
 const currentPageReqest = ref([]);
+const toolkitStore = useToolkit();
 
 const props = defineProps({
-  cooperationFetch: {
-    required: true
-  }
+    cooperationFetch: {
+        required: true
+    }
 })
 
 

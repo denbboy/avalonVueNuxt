@@ -12,7 +12,7 @@
                         <!-- {{ $t('projects_text') }} -->
                         FUTURE VALUE
                     </p>
-                    <h2 class="text-white text-3xl font-bold md:text-[45px] lg:text-[56px] leading-[100%]">
+                    <h2 class="text-white text-3xl font-bold md:text-[45px] lg:ml-[-2.3px] lg:text-[56px] leading-[100%]">
                         {{ $t('our_projects') }}
                     </h2>
                 </div>
@@ -40,11 +40,11 @@
                                     loading="lazy" />
 
                                 <span v-if="item?.main_translations?.filter(item =>
-                                            item.languages_code.includes(langStore.lang))[0]?.sale_alias"
+                                            item.languages_code?.includes(langStore.lang))[0]?.sale_alias"
                                     class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
                                     <!-- {{ item?.sale_alias }}% {{ $t('sold') }} -->
                                       {{ item?.main_translations?.filter(item =>
-                                            item.languages_code.includes(langStore.lang))[0]?.sale_alias }}
+                                            item.languages_code?.includes(langStore.lang))[0]?.sale_alias }}
                                 </span>
                             </div>
                             <div class="max-w-96">

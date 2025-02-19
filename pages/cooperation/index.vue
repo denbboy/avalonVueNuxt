@@ -169,6 +169,7 @@ import useFetchWithCache from '~/hooks/useFetchWithCache';
 import { useBlocksStore } from '~/stores/functions/blocks';
 
 const blocks = await useFetchWithCache('/api/blocks')
+const toolkitStore = useToolkit();
 
 const block1 = await blocks.value.find(i => i.id === 15)
 const block2 = await blocks.value.find(i => i.id === 16)

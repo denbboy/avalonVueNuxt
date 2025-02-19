@@ -3,6 +3,7 @@ import { usePagesStore } from './../stores/functions/pages';
 import { ref, watchEffect } from 'vue';
 
 const langStore = useLangStore();
+const toolkitStore = useToolkit();
 const pagesStore = usePagesStore();
 const currentPageReqest = ref([]);
 
@@ -13,15 +14,15 @@ watchEffect(() => {
 
 const pageDataFetch = await useAsyncData("Pages", () => $fetch('/api/pages'))
 
-const pageData = pageDataFetch.data.value.filter(item => item.slug === 'career')[0].translations?.filter(item => item.languages_code?.includes(langStore?.lang))[0]
+const pageData = pageDataFetch.data?.value?.filter(item => item.slug === 'career')[0].translations?.filter(item => item.languages_code?.includes(langStore?.lang))[0]
 const pageMetaTitle = pageData?.meta_title ?? ""
 const pageMetaDescription = pageData?.meta_description ?? ""
 
 useHead({
-  title: pageMetaTitle,
-  meta: [
-    { name: 'description', content: pageMetaDescription }
-  ],
+    title: pageMetaTitle,
+    meta: [
+        { name: 'description', content: pageMetaDescription }
+    ],
 })
 
 </script>
@@ -30,7 +31,7 @@ useHead({
 
     <Head>
         <Title>
-            {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+            {{currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title}}
         </Title>
         <Meta name="description"
             :content="currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
@@ -46,15 +47,17 @@ useHead({
 
         <div class="bg-gradient-to-t from-blue-500 from-60% lg:from-60%  w-full h-[2000px] absolute z-10"></div>
 
-        <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] max-w-max md:w-full min-h-[1000px] h-screen object-cover"
-            src="/img/career/img.webp" alt="Image" loading="lazy" />
+        <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] h-screen min-w-[100vw] object-cover max-w-max md:w-full"
+            :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore.settings.header_img" alt="Image"
+            loading="lazy" />
 
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
             <h1 data-aos="fade-up"
                 class="md:text-[55px] lg:text-[65px] text-3xl text-white font-normalidad font-bold mb-5 md:mb-12">
-                {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+                {{currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title}}
             </h1>
-            <div data-aos="fade-up" data-aos-delay="100" class="*:text-white justify-between items-center mb-10 lg:mb-48">
+            <div data-aos="fade-up" data-aos-delay="100"
+                class="*:text-white justify-between items-center mb-10 lg:mb-48">
                 <p class="md:text-lg text-white text-sm mb-7 max-w-[548px]"
                     v-html="currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
                 </p>

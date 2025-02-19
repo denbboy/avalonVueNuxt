@@ -13,7 +13,7 @@
             <div
                 class="pb-4 border-b border-whiteOp-300 mb-4 md:border-b-0 flex flex-col md:mb-0 md:bg-blue-600 md:p-10 md:pr-0 md:w-full">
                 <div class="hidden md:block md:mb-[65px] pb-10 border-b border-whiteOp-300 md:-ml-10">
-                    <NuxtImg src="/img/modals/modal-logo.svg" class="mx-auto" alt="ic logo" />
+                    <NuxtImg src="/img/newLogo.png" width="100" class="mx-auto" alt="ic logo" />
                 </div>
                 <h2 class="text-white text-lg md:text-[30px] md:leading-[30px] font-bold mb-5">
                     {{ $t('m_calendar_text_1') }}

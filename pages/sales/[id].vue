@@ -2,8 +2,8 @@
 
     <Head>
         <Title>
-            {{ itemData?.translations?.filter(item =>
-                item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+            {{itemData?.translations?.filter(item =>
+                item.languages_code.includes(langStore.lang))[0]?.meta_title}}
         </Title>
         <Meta name="description"
             :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
@@ -16,14 +16,14 @@
 
         <NuxtImg loading="lazy" v-if="itemData?.background"
             :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`"
-            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" />
+            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
+            alt="Image" />
 
 
         <div class="absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen">
             <SkeletonLoader v-if="itemData?.background" class="h-full w-full">
                 <NuxtImg loading="lazy" v-show="!imageLoaded"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`"
-                    @load="onImageLoad"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`" @load="onImageLoad"
                     ref="image"
                     class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
                     alt="Image" />
@@ -54,8 +54,8 @@
                 </div>
                 <h1
                     class="btn-primary mb-14 text-white text-[30px] md:text-[55px] lg:text-[65px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[876px]">
-                    {{ itemData.translations?.filter(item =>
-                        item.languages_code.includes(langStore.lang))[0]?.title }}
+                    {{itemData.translations?.filter(item =>
+                        item.languages_code.includes(langStore.lang))[0]?.title}}
                 </h1>
 
                 <div class="md:flex justify-between w-full">
@@ -68,7 +68,73 @@
                         <p class="text-base md:text-xl text-white opacity-40 mb-4 md:mb-7">Проекты участвующие в акции
                         </p>
 
-                        <div
+
+                        <!-- <div :class="getGridClasses(index)"
+                            class="projects-item relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[600px] min-h-[450px]">
+                            <div class="">
+                                <NuxtImg v-if="item?.preview"
+                                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=470&height=600`"
+                                    class="opacity-50 w-full absolute object-cover h-full" alt="Image" loading="lazy" />
+                                <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
+                                <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
+                                    <div class="block-bottom-point"></div>
+                                    <div class="flex justify-between mb-auto">
+                                        <NuxtImg class="w-[90px]" v-if="item?.logo"
+                                            :src="`https://avalon-panel.sonisapps.com/assets/${item?.logo}`" alt="Image"
+                                            loading="lazy" />
+
+                                        <span v-if="item?.main_translations?.filter(item =>
+                                            item.languages_code.includes(langStore.lang))[0]?.sale_alias"
+                                            class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
+                                            {{item?.main_translations?.filter(item =>
+                                                item.languages_code.includes(langStore.lang))[0]?.sale_alias}}
+                                        </span>
+                                    </div>
+                                    <div class="max-w-96">
+                                        <h2
+                                            class="text-white hover:text-blue-400 transition-all font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">
+                                            <NuxtLink
+                                                :href="`/projects/${item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`">
+                                                {{item?.translations?.filter(item =>
+                                                    item.languages_code.includes(langStore.lang))[0]?.title}}
+                                            </NuxtLink>
+                                        </h2>
+                                        <div class="text-white text-xs md:text-[11px] lg:text-sm mb-5 line-clamp-3"
+                                            v-html="item?.translations?.filter(item =>
+                                                item.languages_code.includes(langStore.lang))[0]?.description">
+                                        </div>
+                                        <div class="flex items-center mb-5">
+                                            <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">{{
+                                                $t('from') }}
+                                                ${{
+                                                    String(item?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}</strong>
+                                            <span class="text-white/60 text-xs hidden md:block">
+                                                {{ $t('including_taxes') }}
+                                            </span>
+                                        </div>
+
+                                        <div class="flex">
+                                            <NuxtLink
+                                                :href="`/projects/${item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
+                                                class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-[12px] px-5 rounded-[10px] text-white font-bold text-sm md:text-xs lg:text-base mr-7">
+                                                {{ $t('more') }}
+                                            </NuxtLink>
+                                            <div v-if="item?.location_name" class="flex items-center">
+                                                <NuxtImg class="w-3" src="/img/icons/point-white.svg" alt="Image"
+                                                    loading="lazy" />
+                                                <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">
+                                                    {{ item?.location_name }}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+
+
+                        <!-- <div
                             class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] hover:bg-[#333] transition-all rounded-br-none">
                             <NuxtImg loading="lazy" src="/img/discounts/image.webp" class="opacity-50 w-full h-full" alt="Image" />
                             <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
@@ -111,7 +177,7 @@
                                 </div>
 
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
 
@@ -128,7 +194,7 @@
             <div class="">
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-white font-bold text-[30px]">
-                        Другие акции
+                        {{ $t('else_sales') }}
                     </h2>
 
                     <div class="w-fit hidden md:flex">
@@ -207,6 +273,9 @@ const route = useRoute();
 const salesData = await useAsyncData('Sales', () => $fetch('/api/sales'));
 const res = await useAsyncData('SalesItem', () => $fetch(`/api/sales/${route.params.id}`));
 const itemData = res?.data?.value[0]
+
+console.log(itemData);
+
 
 const navigationConfig = {
     nextEl: '.sales-button-next',

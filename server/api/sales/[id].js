@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
   try {
     const items = await directus.request(
       readItems("Sale", {
-        fields: ["*", "translations.*"],
+        fields: ["*", "*.*", "*.Sale_id.*"],
         filter: {
           translations: {
             slug: {

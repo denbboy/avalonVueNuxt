@@ -9,7 +9,9 @@
             <NuxtImg src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
         </div>
 
-        <h2 class="text-white text-lg lg:text-2xl font-bold text-center mb-5">Отклик на вакансию</h2>
+        <h2 class="text-white text-lg lg:text-2xl font-bold text-center mb-5">
+            {{ $t("button_vac") }}
+        </h2>
 
         <form @submit.prevent="handleSubmitForm" class="relative z-[1]">
 
@@ -33,10 +35,10 @@
                 </p>
             </label>
 
-            <input v-model="fullName" class="custom-input mb-[10px]" type="text" placeholder="Имя и фамилия">
+            <input v-model="fullName" class="custom-input mb-[10px]" type="text" :placeholder="$t('input_name')">
             <input v-model="email" class="custom-input mb-[10px]" type="email" placeholder="Email">
             <textarea v-model="message" class="custom-input resize-none h-[94px] lg:h-[120px]" name="" id=""
-                placeholder="Введите текст сопроводительного письма"></textarea>
+                :placeholder="$t('input_textarea')"></textarea>
 
             <p v-if="isErrorFile" class="text-red-700 text-left transition-all h-full" :class="{
                 'max-h-10 opacity-100 mt-2': isError,

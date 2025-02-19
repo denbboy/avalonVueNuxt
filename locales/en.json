@@ -181,5 +181,10 @@
     "404_text": "It seems something went wrong! The page you are requesting does not exist. It may be outdated, or the address was entered incorrectly in the address bar.",
     "404_button": "Go to the homepage",
 
-    "show_all": "Show all"
+    "show_all": "Show all",
+
+    "else_sales": "Other promotions",
+    "button_vac": "Apply for a job",
+    "input_name": "First and last name",
+    "input_textarea": "Enter the text of the cover letter"
 }

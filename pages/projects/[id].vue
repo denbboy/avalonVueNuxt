@@ -51,24 +51,41 @@
 </template>
 
 
-
-<script>
-
-// export default {
-//     mounted() {
-//         (function (a) { function init() { window.embed_layout = true; jQuery.ajax({ url: 'https://crm.g-plus.app/api/actions', method: 'post', data: { action: 'get-layout-widget', token: a, building_id: 25545, lang: 'ru' } }).done(function (data) { jQuery(data.html).appendTo('body'); }); } if (typeof jQuery === 'undefined') { var script = document.createElement("SCRIPT"); script.src = 'https://code.jquery.com/jquery-1.12.4.min.js'; script.type = 'text/javascript'; script.onload = function () { $ = window.jQuery; init(); }; document.getElementsByTagName("head")[0].appendChild(script); } else { $ = window.jQuery; init(); } })('72d6ffdf687644aaa8bc9b4f31b56eb0');
-//     }
-// }
-</script>
-
 <script setup>
+import { computed, watch } from 'vue';
+import { useRoute } from 'vue-router';
+import { useAsyncData } from '#imports';
+import { useLangStore } from '@/stores/functions/language';
+import { useProjectsStore } from '@/stores/functions/projects';
 
-const router = useRoute();
-const langStore = useLangStore()
+const route = useRoute();
+const langStore = useLangStore();
 const projectsStore = useProjectsStore();
 
-const res = await useAsyncData('ProjectItem', () => $fetch(`/api/projects/${router.params.id}`))
-const itemData = await res?.data?.value[0]
-projectsStore.setCurrentProject(itemData);
+// Устанавливаем язык из URL в хранилище
+langStore.lang = route.params.lang || 'ru';
 
+// Загружаем данные проекта
+const { data } = await useAsyncData('ProjectItem', () => 
+  $fetch(`/api/projects/${route.params.id}`)
+);
+
+console.log('sss');
+
+console.log(route.params.id);
+console.log(data);
+
+
+// Реактивное хранение данных проекта
+const itemData = computed(() => data.value?.[0] ?? null);
+
+// Обновляем текущий проект в сторе
+projectsStore.setCurrentProject(itemData.value);
+
+// Следим за изменением языка в URL и обновляем store
+watch(() => route.params.lang, (newLang) => {
+  langStore.lang = newLang || 'ru';
+});
 </script>
+
+
