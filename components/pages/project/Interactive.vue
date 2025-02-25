@@ -1,27 +1,26 @@
 <template>
   <div id="smart-catalog-container">
     <!-- <iframe :src="catalogUrl" frameborder="0" width="100%" height="600px" @load="onLoad"></iframe> -->
-     <!-- asdasda -->
+
+    <div class="iframe *:h-[900px] *:w-full" v-html="itemData?.visual_block_facade"></div>
   </div>
 </template>
 
-<!-- <script>
-  export default {
-    name: 'SmartCatalog',
-    data() {
-      return {
-        catalogUrl: 'https://crm.g-plus.app/partner—id25545', // Замените на реальный URL каталога
-      };
-    },
-    methods: {
-      onLoad() {
-        // Здесь можно добавить дополнительную инициализацию после загрузки iframe
-      },
-    },
-  };
-  </script> -->
 
-  <script>
+<style scoped>
+.iframe,
+iframe {
+  width: 100%;
+  height: 900px;
+}
+</style>
+
+<script setup>
+  import { defineProps } from 'vue';
+  const { itemData } = defineProps(['itemData'])
+</script>
+
+  <!-- <script>
   export default {
     mounted() {
       (function (a) {
@@ -69,4 +68,4 @@
 .btn-close-iframe {
   z-index: 32 !important;
 }
-</style>
+</style> -->
