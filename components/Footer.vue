@@ -1,6 +1,17 @@
 <template>
     <footer id="contacts" class="mt-a bg-blue-600 pt-12 md:pt-24 mt-auto z-10">
         <h2 class="text-center text-white text-3xl font-bold mb-7 block lg:hidden">{{ $t('contacts') }}</h2>
+
+        <a :href="toolkitStore?.settings?.soc_link_whats" target="_blank"
+            class="flex lg:hidden fixed w-full z-10 h-12 bg-blue-400 justify-center items-center transition-all duration-300"
+            :class="isVisible ? 'bottom-0' : '-bottom-12 pointer-events-none'">
+            <NuxtImg src="/img/index/head-whatss.svg" class="max-w-5 w-full relative z-10" alt="ic" loading="lazy" />
+            <span class="text-white ml-3">
+                {{ $t('connect_in_whatsapp') }}
+            </span>
+        </a>
+
+
         <div class="container">
 
             <div @click="handleScrollUp" :class="isShowArrowUp ? 'opacity-100' : 'opacity-0'"
@@ -26,7 +37,7 @@
                 </div> -->
                 <div class="hidden lg:block">
                     <video loop class="w-[379px] h-[392px] object-cover" muted autoplay
-                        src="/assets/video/video-logo-footer.webm"></video>
+                        :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore?.settings?.footer_video"></video>
                 </div>
 
                 <div class="w-fit">
@@ -55,7 +66,7 @@
                             </div>
                         </a>
                         <a :href="`mailto:${toolkitStore?.settings?.email}`" target="_blank"
-                            class="flex items-center gap-4 md:gap-5 group">
+                            class="flex items-center gap-4 mb-7 md:gap-4 lg:gap-5 group">
 
                             <div
                                 class="w-[45px] h-[45px] 3xl:w-[70px] 3xl:h-[70px] bg-blue-500 rounded-full flex items-center justify-center">
@@ -77,10 +88,28 @@
                                 </p>
                             </div>
                         </a>
+                        <a :href="toolkitStore?.settings?.soc_link_location" target="_blank"
+                            class="flex items-center gap-4 md:gap-4 lg:gap-5 group">
+
+                            <div
+                                class="w-[45px] h-[45px] 3xl:w-[70px] 3xl:h-[70px] bg-blue-500 rounded-full flex items-center justify-center">
+                                <NuxtImg loading="lazy" class="w-2/3" format="png" src="/img/icons/location.png" />
+                            </div>
+
+                            <div>
+                                <span class="text-white/40 text-sm md:text-base md:mb-2">
+                                    {{ $t('address') }}
+                                </span>
+                                <p
+                                    class="text-white font-bold text-sm md:text-[16px] text-ellipsis w-[300px] overflow-hidden 3xl:text-xl group-hover:text-blue-400 transition-all">
+                                    {{ toolkitStore?.settings?.soc_link_location }}
+                                </p>
+                            </div>
+                        </a>
                     </div>
                     <div class="flex gap-[5px] mb-5">
-                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_whats"
-                            target="_blank" :href="toolkitStore?.settings?.soc_link_whats"
+                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_whats" target="_blank"
+                            :href="toolkitStore?.settings?.soc_link_whats"
                             class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
                             <svg class="fill-white group-hover:fill-blue-600 w-[45%] transition-all" width="25"
                                 height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
@@ -88,8 +117,8 @@
                                     d="M20.9118 4.14053C18.6096 1.83715 15.5481 0.567634 12.2866 0.566406C5.56551 0.566406 0.0956566 6.0338 0.093202 12.7549C0.0919747 14.9032 0.653452 17.0004 1.72036 18.8485L0.0664062 24.9799L6.45416 23.47C8.23513 24.4416 10.2395 24.953 12.2804 24.9543H12.2853C19.0052 24.9543 24.4749 19.4856 24.4786 12.7658C24.4811 9.50791 23.214 6.44515 20.9118 4.14053ZM18.2519 17.1115C17.9981 17.8231 16.7542 18.5091 16.1951 18.5591C15.6361 18.6104 15.1124 18.8119 12.5392 17.7974C9.44236 16.5768 7.4868 13.4018 7.33544 13.1991C7.18285 12.9953 6.0916 11.5476 6.0916 10.0486C6.0916 8.54961 6.8789 7.81233 7.15851 7.50837C7.43802 7.20319 7.76764 7.12751 7.97147 7.12751C8.17408 7.12751 8.37791 7.12751 8.55494 7.13487C8.77217 7.14346 9.01271 7.15441 9.24099 7.66096C9.51191 8.26396 10.104 9.77034 10.1796 9.92293C10.2553 10.0755 10.3066 10.2537 10.2053 10.4563C10.104 10.659 10.0527 10.7859 9.90136 10.9642C9.74877 11.1423 9.58155 11.3609 9.44482 11.4975C9.29222 11.6489 9.1335 11.815 9.31053 12.1189C9.48879 12.424 10.0991 13.4214 11.0048 14.2282C12.1694 15.2658 13.1495 15.5868 13.4547 15.7406C13.7599 15.8932 13.9368 15.8675 14.1151 15.6637C14.2934 15.4611 14.8768 14.7751 15.0794 14.4699C15.282 14.1647 15.486 14.216 15.7655 14.3173C16.045 14.4186 17.5428 15.1559 17.8467 15.3085C18.1519 15.4611 18.3545 15.5368 18.4302 15.6637C18.5059 15.7895 18.5059 16.3998 18.2519 17.1115Z" />
                             </svg>
                         </a>
-                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_inst"
-                            target="_blank" :href="toolkitStore?.settings?.soc_link_inst"
+                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_inst" target="_blank"
+                            :href="toolkitStore?.settings?.soc_link_inst"
                             class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
                             <svg class="fill-white group-hover:fill-blue-600 w-[45%] transition-all" width="25"
                                 height="26" viewBox="0 0 25 26" xmlns="http://www.w3.org/2000/svg">
@@ -99,8 +128,8 @@
                                     d="M19.4332 2.5459H5.11506C3.42055 2.5459 2.04688 3.91957 2.04688 5.61408V19.9323C2.04688 21.6268 3.42055 23.0004 5.11506 23.0004H19.4332C21.1278 23.0004 22.5014 21.6268 22.5014 19.9323V5.61408C22.5014 3.91957 21.1278 2.5459 19.4332 2.5459ZM12.272 6.46909C8.79152 6.46909 5.96777 9.29284 5.96777 12.7733C5.96777 16.2537 8.79152 19.0775 12.272 19.0775C15.7524 19.0775 18.5762 16.2537 18.5762 12.7733C18.5762 9.29284 15.7524 6.46909 12.272 6.46909ZM12.272 16.8626C10.014 16.8626 8.18269 15.0313 8.18269 12.7733C8.18269 10.5153 10.014 8.68401 12.272 8.68401C14.5299 8.68401 16.3612 10.5153 16.3612 12.7733C16.3612 15.0313 14.5299 16.8626 12.272 16.8626ZM18.8262 7.69141C19.6364 7.69141 20.298 7.03461 20.298 6.2196C20.298 5.4095 19.6364 4.74789 18.8262 4.74789C18.016 4.74789 17.3545 5.40469 17.3545 6.2196C17.3545 7.0298 18.0112 7.69141 18.8262 7.69141Z" />
                             </svg>
                         </a>
-                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_fb"
-                            target="_blank" :href="toolkitStore?.settings?.soc_link_fb"
+                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_fb" target="_blank"
+                            :href="toolkitStore?.settings?.soc_link_fb"
                             class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
                             <svg class="fill-white group-hover:fill-blue-600 w-[45%] transition-all" width="11"
                                 height="20" viewBox="0 0 11 20" xmlns="http://www.w3.org/2000/svg">
@@ -108,14 +137,19 @@
                                     d="M7.21813 20V10.8777H10.2789L10.7381 7.32156H7.21813V5.05147C7.21813 4.0222 7.50278 3.32076 8.98042 3.32076L10.862 3.31999V0.13923C10.5366 0.0969453 9.41964 0 8.11964 0C5.40505 0 3.54658 1.65697 3.54658 4.69927V7.32156H0.476562V10.8777H3.54658V20H7.21813Z" />
                             </svg>
                         </a>
-                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_yt"
-                            target="_blank" :href="toolkitStore?.settings?.soc_link_yt"
+                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_yt" target="_blank"
+                            :href="toolkitStore?.settings?.soc_link_yt"
                             class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
                             <svg class="fill-white group-hover:fill-blue-600 w-[45%] transition-all" width="20"
                                 height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M18.6488 2.31398C18.4327 1.51072 17.7994 0.877518 16.9963 0.661224C15.529 0.259766 9.65993 0.259766 9.65993 0.259766C9.65993 0.259766 3.79105 0.259766 2.32381 0.646004C1.53611 0.862068 0.887344 1.51083 0.67128 2.31398C0.285156 3.78111 0.285156 6.82375 0.285156 6.82375C0.285156 6.82375 0.285156 9.88173 0.67128 11.3335C0.887573 12.1367 1.52066 12.7699 2.32392 12.9862C3.8065 13.3877 9.66016 13.3877 9.66016 13.3877C9.66016 13.3877 15.529 13.3877 16.9963 13.0015C17.7995 12.7853 18.4327 12.1521 18.649 11.349C19.035 9.88173 19.035 6.8392 19.035 6.8392C19.035 6.8392 19.0505 3.78111 18.6488 2.31398ZM7.79134 9.63465V4.01286L12.6718 6.82375L7.79134 9.63465Z" />
                             </svg>
+                        </a>
+                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_location" target="_blank"
+                            :href="toolkitStore?.settings?.soc_link_location"
+                            class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
+                            <NuxtImg loading="lazy" class="w-2/3" src="/img/icons/location.png" />
                         </a>
                     </div>
 
@@ -168,8 +202,10 @@
         <div class="bg-blue-500 py-7 md:py-2">
             <div class="container">
                 <div class="flex items-center justify-between gap-8">
-                    <NuxtImg v-if="$viewport.isLessThan('tablet')" src="/img/index/a-footer.webp" format="webp"
-                        loading="lazy" class="max-w-[96px] md:hidden" alt="ph" />
+                    <!-- <NuxtImg v-if="$viewport.isLessThan('tablet')" src="/img/index/a-footer.webp" format="webp"
+                        loading="lazy" class="max-w-[96px] md:hidden" alt="ph" /> -->
+                    <video loop class="max-w-[96px] md:hidden" muted autoplay
+                        :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore?.settings?.footer_video"></video>
 
                     <!-- <div class="logo-clip-path md:hidden">
                         <video loop class="w-[96px] h-[100px] object-cover" muted autoplay>
@@ -182,37 +218,38 @@
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <NuxtLink href="/cooperation" class="hover:text-blue-400 transition-all">
-                                {{ pagesStore.pagesList?.filter(item => item.slug === 'cooperation')[0]?.translations
-                                    ?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+                                {{pagesStore.pagesList?.filter(item => item.slug === 'cooperation')[0]?.translations
+                                    ?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title}}
                             </NuxtLink>
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <NuxtLink href="/career" class="hover:text-blue-400 transition-all">
-                                {{ pagesStore.pagesList?.filter(item => item.slug === 'career')[0]?.translations
-                                    ?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+                                {{pagesStore.pagesList?.filter(item => item.slug === 'career')[0]?.translations
+                                    ?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title}}
                             </NuxtLink>
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <NuxtLink href="/docs/privacy-police" class="hover:text-blue-400 transition-all">
-                                {{ pagesStore.pagesList?.filter(item => item.slug ===
+                                {{pagesStore.pagesList?.filter(item => item.slug ===
                                     'privacy-police')[0]?.translations?.filter(item =>
-                                        item.languages_code.includes(langStore.lang))[0]?.title }}
+                                        item.languages_code.includes(langStore.lang))[0]?.title}}
                             </NuxtLink>
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <NuxtLink href="/docs/terms" class="hover:text-blue-400 transition-all">
-                                {{ pagesStore.pagesList?.filter(item => item.slug ===
+                                {{pagesStore.pagesList?.filter(item => item.slug ===
                                     'terms')[0]?.translations?.filter(item =>
-                                        item.languages_code.includes(langStore.lang))[0]?.title }}
+                                        item.languages_code.includes(langStore.lang))[0]?.title}}
                             </NuxtLink>
                         </li>
                         <li
                             class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none">
                             <p>
-                                {{ copyright }}
+                                {{ toolkitStore?.settings.copyright }}
+                                <!-- {{ copyright }} -->
                             </p>
                         </li>
                     </ul>
@@ -224,14 +261,54 @@
 </template>
 
 
+
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { usePagesStore } from '~/stores/functions/pages';
 import { useToolkit } from '~/stores/functions/toolkit';
 import { VueTelInput } from 'vue-tel-input';
 import 'vue-tel-input/vue-tel-input.css';
 import iso31661 from 'iso-3166-1';
 import IMask from 'imask';
+
+
+
+
+
+
+
+const isVisible = ref(false);
+let lastScrollY = 0;
+
+const handleScrollWS = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY) {
+        // Прокручиваем вниз — показываем элемент
+        isVisible.value = true;
+    } else {
+        // Прокручиваем вверх — скрываем элемент
+        isVisible.value = false;
+    }
+
+    lastScrollY = currentScrollY;
+};
+
+onMounted(() => {
+    window.addEventListener("scroll", handleScrollWS);
+});
+
+onUnmounted(() => {
+    window.removeEventListener("scroll", handleScrollWS);
+});
+
+
+
+
+
+
+
+
 
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
@@ -360,6 +437,6 @@ onUnmounted(() => {
     window?.removeEventListener('scroll', handleScroll);
 });
 
-const copyright = `© ${new Date().getFullYear()} PT Avalon Group Bali`
+// const copyright = `© ${new Date().getFullYear()} PT Avalon Group Bali`
 
 </script>

@@ -19,14 +19,11 @@
 
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
             <h1 data-aos="fade-up"
-                class="text-[24px] 375:text-[30px] md:text-[55px] lg:text-[65px] text-3xl text-white font-normalidad font-bold mb-5 md:mb-12">
-                {{currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title}}
+                class="text-[24px] 375:text-[30px] md:text-[55px] lg:text-[65px] text-3xl text-white font-normalidad font-bold mb-5 md:mb-12" v-html="currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
             </h1>
             <div data-aos="fade-up" data-aos-delay="100"
                 class="justify-between items-center mb-[30px] xl:mb-[81px] 3xl:mb-[60px]">
-                <p class="md:text-lg text-white text-sm  max-w-[548px]">
-                    {{currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description
-                    }}
+                <p class="md:text-lg text-white text-sm  max-w-[548px]" v-html="currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
                 </p>
             </div>
 

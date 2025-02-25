@@ -27,7 +27,7 @@
                         <div data-aos="fade-up" class=" mb-5 md:mb-[30px] md:flex md:gap-2">
                             <strong class="font-bold text-white text-lg uppercase md:text-[26px] md:font-normal">
                                 <!-- Лучшее место -->
-                                {{ props?.itemStrings?.filter(item => item.id === 154)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ props?.itemStrings?.filter(item => item.id === 154)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                             </strong>
                             <span class="block font-bold text-sm text-white md:text-[18px] md:font-normal md:mt-auto">
                                 <!-- для инвестиций на Бали -->
@@ -36,17 +36,17 @@
                         <p data-aos="fade-up"
                             class="text-white text-sm mb-5 max-w-[225px] md:text-[18px] md:max-w-none md:mb-[30px]">
                             {{ props?.itemStrings?.filter(item => item.id === 154)[0]?.String_id?.translations?.filter(item =>
-                                item.languages_code.code.includes(langStore.lang))[0]?.description }}
+                                item.languages_code.code.includes(locale))[0]?.description }}
                         </p>
 
                         <div data-aos="fade-up"
                             class="p-5 border border-blue-400 rounded-[20px] mb-5 md:p-[30px] md:max-w-[381px] 3xl:max-w-[505px] md:mb-[30px]">
                             <p class="text-white text-sm md:text-[18px] ">
-                                {{ props?.itemStrings?.filter(item => item.id === 155)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ props?.itemStrings?.filter(item => item.id === 155)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                             </p>
                         </div>
 
-                        <span class="[&_li]:before:bg-[url(/assets/img/about/galka.svg)] [&_li]:before:w-5 [&_li]:before:h-5 [&_li]:before:min-w-5" v-html="props?.itemStrings?.filter(item => item.id === 160)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description"></span>
+                        <span class="[&_li]:before:bg-[url(/assets/img/about/galka.svg)] [&_li]:before:w-5 [&_li]:before:h-5 [&_li]:before:min-w-5" v-html="props?.itemStrings?.filter(item => item.id === 160)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.description"></span>
                     </div>
                     <NuxtImg data-aos="fade-left" src="/img/about/tel-desk.png"
                         class="hidden xl:block w-full aspect-[624/673]" alt="ph" loading="lazy"/>
@@ -69,6 +69,6 @@ watchEffect(() => {
     }, 500)
 })
 
-const langStore = useLangStore()
+const { t, locale } = useI18n()
 
 </script>

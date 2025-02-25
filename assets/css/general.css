@@ -16,7 +16,7 @@
     }
 
     .select__body {
-        @apply invisible transition-all max-h-0 opacity-0 h-full group-[.active]:max-h-[100%] group-[.active]:visible group-[.active]:opacity-100
+        @apply invisible transition-all max-h-0 opacity-0 group-[.active]:transition-all group-[.active]:max-h-fit group-[.active]:visible group-[.active]:opacity-100
     }
 
     .white-button {

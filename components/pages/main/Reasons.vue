@@ -3,12 +3,12 @@
     <div class="container">
       <div class="mb-8 text-center md:mb-12">
         <p class="text-white mb-2 text-sm md:text-base" data-aos="fade-up">
-          {{ itemStrings?.filter(item => item.id === 119)[0]?.String_id?.translations?.filter(item =>
-            item.languages_code.code.includes(langStore.lang))[0]?.description }}
+          {{itemStrings?.filter(item => item.id === 119)[0]?.String_id?.translations?.filter(item =>
+            item.languages_code.code.includes(langStore.lang))[0]?.description}}
         </p>
         <h2 class="text-white font-bold text-2xl md:text-[45px] 3xl:text-[56px] leading-[100%]" data-aos="fade-up">
-          {{ itemStrings?.filter(item => item.id === 119)[0]?.String_id?.translations?.filter(item =>
-            item.languages_code.code.includes(langStore.lang))[0]?.title }}
+          {{itemStrings?.filter(item => item.id === 119)[0]?.String_id?.translations?.filter(item =>
+            item.languages_code.code.includes(langStore.lang))[0]?.title}}
         </h2>
       </div>
       <div class="con_list grid gap-[30px] xl:gap-0 xl:grid-cols-[1fr_1.1fr_1fr]">
@@ -63,41 +63,42 @@
           class="flex items-center gap-4 py-7 px-5 border-b border-blue-400 md:border-r md:border-b-0 md:h-full md:px-8 md:w-full">
           <NuxtImg loading="lazy" src="/img/index/cool.svg" class="w-16" alt="svg" />
           <span class="text-base text-white md:max-w-56 md:text-[14px] 3xl:text-[16px]">
-            {{ itemStrings?.filter(item => item.id === 126)[0]?.String_id?.translations?.filter(item =>
-              item.languages_code.code.includes(langStore.lang))[0]?.title }}
+            {{itemStrings?.filter(item => item.id === 126)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(langStore.lang))[0]?.title}}
           </span>
         </div>
         <div
           class="py-7 px-5 border-b border-blue-400 md:border-r md:border-b-0 md:h-full flex flex-col md:justify-center md:w-full">
           <p class="text-white text-3xl font-bold mb-2 md:text-[30px] 3xl:text-[40px]">
-            {{ itemStrings?.filter(item => item.id === 127)[0]?.String_id?.translations?.filter(item =>
-              item.languages_code.code.includes(langStore.lang))[0]?.title }}
+            {{itemStrings?.filter(item => item.id === 127)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(langStore.lang))[0]?.title}}
           </p>
           <span class="text-base text-white md:text-[14px]">
-            {{ itemStrings?.filter(item => item.id === 127)[0]?.String_id?.translations?.filter(item =>
-              item.languages_code.code.includes(langStore.lang))[0]?.description }}
+            {{itemStrings?.filter(item => item.id === 127)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(langStore.lang))[0]?.description}}
           </span>
         </div>
         <div
           class="py-7 px-5 border-b border-blue-400 md:border-r md:border-b-0 md:h-full flex flex-col md:justify-center md:w-full">
           <p class="text-white text-3xl font-bold mb-2 md:text-[30px] 3xl:text-[40px]">
-            {{ itemStrings?.filter(item => item.id === 128)[0]?.String_id?.translations?.filter(item =>
-              item.languages_code.code.includes(langStore.lang))[0]?.title }}
+            {{itemStrings?.filter(item => item.id === 128)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(langStore.lang))[0]?.title}}
           </p>
           <span class=" text-white text-[13px] 3xl:text-base">
-            {{ itemStrings?.filter(item => item.id === 128)[0]?.String_id?.translations?.filter(item =>
-              item.languages_code.code.includes(langStore.lang))[0]?.description }}
+            {{itemStrings?.filter(item => item.id === 128)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(langStore.lang))[0]?.description}}
           </span>
         </div>
         <div class="py-7 px-5 lg:px-5 md:px-3 bg-blue-400 md:h-full flex flex-col md:justify-center md:w-full">
           <p class="text-white text-3xl font-bold mb-2 flex md:text-[30px] lg:text-[40px] items-center">
-            {{ itemStrings?.filter(item => item.id === 129)[0]?.String_id?.translations?.filter(item =>
-              item.languages_code.code.includes(langStore.lang))[0]?.title }}
-            <NuxtImg loading="lazy" src="/img/index/A-decor.svg" class="ml-1 max-w-5 md:max-w-5 md:-mt-1 lg:max-w-7" alt="ic" />
+            {{itemStrings?.filter(item => item.id === 129)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(langStore.lang))[0]?.title}}
+            <NuxtImg loading="lazy" src="/img/index/A-decor.svg" class="ml-1 max-w-5 md:max-w-5 md:-mt-1 lg:max-w-7"
+              alt="ic" />
           </p>
           <span class=" text-white text-[13px] 3xl:text-base">
-            {{ itemStrings?.filter(item => item.id === 129)[0]?.String_id?.translations?.filter(item =>
-              item.languages_code.code.includes(langStore.lang))[0]?.description }}
+            {{itemStrings?.filter(item => item.id === 129)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(langStore.lang))[0]?.description}}
           </span>
         </div>
       </div>
@@ -118,6 +119,8 @@ const props = defineProps(['itemStrings'])
 const itemStrings = ref([]);
 const openedItem = ref(false)
 
+
+
 const handleOpen = (item) => {
   openedItem.value = openedItem.value === item ? '' : item
 }
@@ -129,14 +132,6 @@ const blocksStore = useBlocksStore()
 watchEffect(() => {
   const isProjectPage = route.path.includes('/projects/');
 
-  // setTimeout(() => {
-  //   if (window?.innerWidth < 576) {
-  //     isMobile.value = true
-  //   } else {
-  //     isMobile.value = false
-  //   }
-  // }, 500)
-
   if (isProjectPage) {
     // Если это страница проекта, обновляем itemStrings из props
     itemStrings.value = props.itemStrings ?? (blocksStore.blocks?.filter(item => item?.id === 29)[0]?.strings || []);
@@ -144,6 +139,10 @@ watchEffect(() => {
     // Если это не страница проекта, обновляем itemStrings из blocksStore
     const block = blocksStore.blocks?.find(item => item?.id === 29);
     itemStrings.value = block?.strings || [];
+  }  
+
+  if (itemStrings.value.length) {
+
   }
 });
 

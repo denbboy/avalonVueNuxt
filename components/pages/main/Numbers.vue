@@ -19,32 +19,32 @@
             </svg>
           
           </span>
-          <p class="text-white text-sm mt-2 md:text-sm lg:text-base md:mt-4" v-html="itemStrings?.filter(item => item.id === 132)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
-          </p>
+          <div class="text-white text-sm mt-2 md:text-sm lg:text-base md:mt-4" v-html="itemStrings?.filter(item => item.id === 132)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
+          </div>
         </div>
         <div class="border-b border-whiteOp-300 pb-5 md:pb-8">
           <span class="font-bold text-white text-3xl md:text-[32px] lg:text-[40px]" v-html="itemStrings?.filter(item => item.id === 133)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title">
           </span>
-          <p class="text-white text-sm mt-2 md:text-sm lg:text-base md:mt-4" v-html="itemStrings?.filter(item => item.id === 133)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
-          </p>
+          <div class="text-white text-sm mt-2 md:text-sm lg:text-base md:mt-4" v-html="itemStrings?.filter(item => item.id === 133)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
+          </div>
         </div>
         <div class="border-b border-whiteOp-300 pb-5 md:pb-8">
           <span class="font-bold text-white text-3xl md:text-[32px] lg:text-[40px]" v-html="itemStrings?.filter(item => item.id === 131)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title">
           </span>
-          <p class="text-white text-sm mt-2 md:text-sm lg:text-base md:mt-4" v-html="itemStrings?.filter(item => item.id === 131)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
-          </p>
+          <div class="text-white text-sm mt-2 md:text-sm lg:text-base md:mt-4" v-html="itemStrings?.filter(item => item.id === 131)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
+          </div>
         </div>
         <div class="border-b border-whiteOp-300 pb-5 md:pb-8">
           <span class="font-bold text-white text-3xl md:text-[32px] lg:text-[40px]" v-html="itemStrings?.filter(item => item.id === 134)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title">
           </span>
-          <p class="text-white text-sm mt-2 md:text-sm lg:text-base md:mt-4" v-html="itemStrings?.filter(item => item.id === 134)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
-          </p>
+          <div class="text-white text-sm mt-2 md:text-sm lg:text-base md:mt-4" v-html="itemStrings?.filter(item => item.id === 134)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
+          </div>
         </div>
         <div class="border-b border-whiteOp-300 pb-5 md:pb-8">
           <span class="font-bold text-white text-3xl md:text-[32px] lg:text-[40px]" v-html="itemStrings?.filter(item => item.id === 135)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title">
           </span>
-          <p class="text-white text-sm mt-2 md:text-sm lg:text-base md:mt-4" v-html="itemStrings?.filter(item => item.id === 135)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
-          </p>
+          <div class="text-white text-sm mt-2 md:text-sm lg:text-base md:mt-4" v-html="itemStrings?.filter(item => item.id === 135)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description">
+          </div>
         </div>
         <NuxtImg src="/img/index/a-bali-decor.svg" loading="lazy" width="110" class="m-auto md:hidden" format="webp" alt="vector-logo" />
         <!-- </div> -->

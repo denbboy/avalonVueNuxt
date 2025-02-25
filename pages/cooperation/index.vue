@@ -11,8 +11,6 @@
 
         <PagesCooperationMain :cooperationFetch="cooperationFetch" />
 
-
-
         <section v-for="item in cooperationFetch.data.value" :id="item.id"
             class="[&:nth-child(odd)]:bg-blue-600 [&:nth-child(even)_.text-photo]:flex-row-reverse [&:nth-child(even)]:bg-blue-500 [&:nth-child(2)]:!bg-transparent py-[60px] relative z-10 lg:py-[100px]">
             <div class="container">
@@ -227,9 +225,6 @@ const handleOpenModal = () => {
 
 const cooperationFetch = await useAsyncData("Cooperation", () => $fetch('/api/cooperation'))
 const pageDataFetch = await useAsyncData("Pages", () => $fetch('/api/pages'))
-
-console.log('cooperationFetch', cooperationFetch.data);
-
 
 const pageData = pageDataFetch.data.value.filter(item => item.slug === 'cooperation')[0].translations?.filter(item => item?.languages_code?.includes(langStore?.lang))[0]
 const pageMetaTitle = pageData?.meta_title ?? ""

@@ -20,52 +20,67 @@
             <NuxtImg loading="lazy" src="/img/new-avalon-logo.png" class="-ml-6" alt="ic a" />
           </div>
 
+          <div class="relative block md:hidden mt-7 mb-10 w-full md:max-w-[567px] lg:max-w-[760px] ">
+            <svg class="absolute animate-spinAbout w-full top-0 left-0" width="100%" height="100%" viewBox="0 0 508 433"
+              fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.2" fill-rule="evenodd" clip-rule="evenodd"
+                d="M327.488 2.83042C458.839 17.8616 520.292 159.634 505.255 291.034C493.455 394.15 381.711 441.552 278.633 429.756C146.896 414.681 -13.4797 365.183 1.60108 233.398C19.3293 78.4784 172.625 -14.8912 327.488 2.83042Z"
+                stroke="white" />
+            </svg>
+            <NuxtImg loading="lazy" src="/img/index/about-photo.png" class="w-full relative z-10" alt="ph"
+              data-aos="fade-left" />
+          </div>
+
           <div class="mb-8 md:mb-9" data-aos="fade-up">
             <h3 class="font-bold text-white text-base mb-4 md:text-[20px] lg:text-[26px] md:mb-6 md:leading-[28px]">
-              {{ itemStrings?.filter(item => item.id === 37)[0]?.String_id?.translations?.filter(item =>
-                item.languages_code.code.includes(langStore.lang))[0]?.title }}
+              {{itemStrings?.filter(item => item.id === 37)[0]?.String_id?.translations?.filter(item =>
+                item.languages_code.code.includes(langStore.lang))[0]?.title}}
             </h3>
-            <p v-html="itemStrings?.filter(item => item.id === 37)[0]?.String_id?.translations?.filter(item =>
-                item.languages_code.code.includes(langStore.lang))[0]?.description" class="text-white md:text-sm lg:text-lg md:leading-[20px]">
-              
-            </p>
+            <div v-html="itemStrings?.filter(item => item.id === 37)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(langStore.lang))[0]?.description"
+              class="text-white md:text-sm lg:text-lg md:leading-[20px]">
+
+            </div>
           </div>
 
           <ul class="grid grid-cols-2 gap-y-8 gap-x-3 md:gap-x-5 md:gap-y-[32px]" data-aos="fade-up">
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
               <b class="font-bold text-white text-2xl mb-3 lg:text-[32px] xl:text-[40px] md:mb-4 block">
-                {{ itemStrings?.filter(item => item.id === 38)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                {{itemStrings?.filter(item => item.id === 38)[0]?.String_id?.translations?.filter(item =>
+                  item.languages_code.code.includes(langStore.lang))[0]?.title}}
               </b>
-              <p v-html="itemStrings?.filter(item => item.id === 38)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description" class="text-white text-sm lg:text-base">
-                
-              </p>
+              <div v-html="itemStrings?.filter(item => item.id === 38)[0]?.String_id?.translations?.filter(item =>
+                item.languages_code.code.includes(langStore.lang))[0]?.description"
+                class="text-white text-sm lg:text-base">
+
+              </div>
             </li>
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
               <b class="font-bold text-white text-2xl mb-3 lg:text-[32px] xl:text-[40px] md:mb-4 block">
-                {{ itemStrings?.filter(item => item.id === 39)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                {{itemStrings?.filter(item => item.id === 39)[0]?.String_id?.translations?.filter(item =>
+                  item.languages_code.code.includes(langStore.lang))[0]?.title}}
               </b>
-              <p v-html="itemStrings?.filter(item => item.id === 39)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description" class="text-white text-sm lg:text-base">
-                
-              </p>
+              <div v-html="itemStrings?.filter(item => item.id === 39)[0]?.String_id?.translations?.filter(item =>
+                item.languages_code.code.includes(langStore.lang))[0]?.description"
+                class="text-white text-sm lg:text-base">
+
+              </div>
             </li>
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
               <b class="font-bold text-white text-2xl mb-3 lg:text-[32px] xl:text-[40px] md:mb-4 block">
-                {{ itemStrings?.filter(item => item.id === 40)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                {{itemStrings?.filter(item => item.id === 40)[0]?.String_id?.translations?.filter(item =>
+                  item.languages_code.code.includes(langStore.lang))[0]?.title}}
               </b>
-              <p v-html="itemStrings?.filter(item => item.id === 40)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description" class="text-white text-sm lg:text-base">
-                
-              </p>
+              <div v-html="itemStrings?.filter(item => item.id === 40)[0]?.String_id?.translations?.filter(item =>
+                item.languages_code.code.includes(langStore.lang))[0]?.description"
+                class="text-white text-sm lg:text-base">
+
+              </div>
             </li>
             <li class="pb-5 border-b border-whiteOp-300 md:pb-[25px]">
-              <b class="font-bold text-2xl mb-3 text-blue-400 md:text-[32px] lg:text-[40px] md:mb-4 flex items-center">
-                {{ itemStrings?.filter(item => item.id === 41)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.title }}
+              <b class="font-bold mb-3 text-blue-400 md:text-[32px] text-2xl lg:text-[40px] md:mb-4 flex items-center">
+                {{itemStrings?.filter(item => item.id === 41)[0]?.String_id?.translations?.filter(item =>
+                  item.languages_code.code.includes(langStore.lang))[0]?.title}}
                 <svg width="30" height="31" viewBox="0 0 30 31" fill="none" class="ml-3 hidden md:block"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -74,22 +89,24 @@
                 </svg>
 
               </b>
-              <p v-html="itemStrings?.filter(item => item.id === 41)[0]?.String_id?.translations?.filter(item =>
-                  item.languages_code.code.includes(langStore.lang))[0]?.description"class="text-white text-sm lg:text-base">
-                
-              </p>
+              <div v-html="itemStrings?.filter(item => item.id === 41)[0]?.String_id?.translations?.filter(item =>
+                item.languages_code.code.includes(langStore.lang))[0]?.description"
+                class="text-white text-sm lg:text-base">
+
+              </div>
             </li>
           </ul>
         </div>
 
-        <div class="relative mt-7 w-full md:max-w-[567px] lg:max-w-[760px] ">
+        <div class="relative mt-7 w-full hidden md:block md:max-w-[567px] lg:max-w-[760px] ">
           <svg class="absolute animate-spinAbout w-full top-0 left-0" width="100%" height="100%" viewBox="0 0 508 433"
             fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.2" fill-rule="evenodd" clip-rule="evenodd"
               d="M327.488 2.83042C458.839 17.8616 520.292 159.634 505.255 291.034C493.455 394.15 381.711 441.552 278.633 429.756C146.896 414.681 -13.4797 365.183 1.60108 233.398C19.3293 78.4784 172.625 -14.8912 327.488 2.83042Z"
-              stroke="white"/>
+              stroke="white" />
           </svg>
-          <NuxtImg loading="lazy" src="/img/index/about-photo.png" class="w-full relative z-10" alt="ph" data-aos="fade-left" />
+          <NuxtImg loading="lazy" src="/img/index/about-photo.png" class="w-full relative z-10" alt="ph"
+            data-aos="fade-left" />
         </div>
       </div>
     </div>

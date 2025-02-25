@@ -22,7 +22,7 @@
 
     <PagesProjectInteractive />
 
-    <PagesProjectApartments v-if="itemData?.apartments?.length" :apartments="itemData?.apartments" />
+    <PagesProjectApartments v-if="itemData?.apartments?.length" :itemData="itemData" />
 
     <PagesProjectInclusions
         :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 28)[0]?.Block_id?.strings" />
@@ -62,6 +62,7 @@ const route = useRoute();
 const langStore = useLangStore();
 const projectsStore = useProjectsStore();
 
+
 // Устанавливаем язык из URL в хранилище
 langStore.lang = route.params.lang || 'ru';
 
@@ -70,17 +71,15 @@ const { data } = await useAsyncData('ProjectItem', () =>
   $fetch(`/api/projects/${route.params.id}`)
 );
 
-console.log('sss');
-
-console.log(route.params.id);
-console.log(data);
-
 
 // Реактивное хранение данных проекта
 const itemData = computed(() => data.value?.[0] ?? null);
 
 // Обновляем текущий проект в сторе
 projectsStore.setCurrentProject(itemData.value);
+
+console.log('mmm', itemData.value);
+
 
 // Следим за изменением языка в URL и обновляем store
 watch(() => route.params.lang, (newLang) => {

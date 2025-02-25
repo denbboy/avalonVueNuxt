@@ -24,37 +24,55 @@
                                 <NuxtImg class="w-[90px]" v-if="item.related_Project_id?.logo"
                                     :src="`https://avalon-panel.sonisapps.com/assets/${item.related_Project_id?.logo}`"
                                     alt="Image" loading="lazy" />
-                                <span v-if="item.related_Project_id?.roi_procent"
-                                    class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
-                                    {{ item.related_Project_id?.roi_procent }}% {{ $t('sold') }}
+                                    <span v-if="item?.related_Project_id?.main_translations?.filter(item =>
+                                    item.languages_code?.includes(locale))[0]?.sale_alias"
+                                    class="md:px-5 py-2 px-4 bg-no-repeat relative bg-right-bottom h-[45px] w-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
+
+                                    <svg class="absolute w-full h-full top-0 left-0 right-0"
+                                        viewBox="0 0 101 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M100.893 7.14226C100.893 3.25662 97.7435 0.106689 93.8578 0.106689H8.02385C4.13821 0.106689 0.988281 3.25663 0.988281 7.14227V21.2134C0.988281 25.099 4.13822 28.249 8.02386 28.249L89.6364 28.249C91.5792 28.249 93.1542 26.674 93.1542 24.7312C93.1542 22.7884 94.7291 21.2134 96.6719 21.2134H97.7617C99.4912 21.2134 100.893 22.6155 100.893 24.3451V28.2489C100.893 28.249 100.893 28.249 100.893 28.249C100.893 28.249 100.893 28.249 100.893 28.2489V7.14226Z"
+                                            :fill="item?.related_Project_id?.status ?? '#000'" />
+                                        <rect x="95.9688" y="24.0276" width="4.22134" height="4.22134" rx="2.11067"
+                                            :fill="item?.related_Project_id?.status ?? '#000'" />
+                                    </svg>
+                                    
+                                    <span class="relative z-20 -bottom-1">
+                                        {{item?.related_Project_id?.main_translations?.filter(item =>
+                                            item.languages_code?.includes(locale))[0]?.sale_alias}}
+                                    </span>
                                 </span>
                             </div>
                             <div class="max-w-96">
-                                <h2 class="text-white hover:text-blue-400 transition-all font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">
-                                    <NuxtLink :href="`/projects/${item?.related_Project_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`">
-                                        {{ item.related_Project_id?.translations?.filter(item =>
-                                            item?.languages_code?.includes(langStore.lang))[0]?.title }}
+                                <h2
+                                    class="text-white hover:text-blue-400 transition-all font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">
+                                    <NuxtLink
+                                        :href="`/${mainPageLink.replace('/', '')}/projects/${item?.related_Project_id?.translations?.filter(item => item.languages_code.includes(locale))[0]?.slug}`">
+                                        {{item.related_Project_id?.translations?.filter(item =>
+                                            item?.languages_code?.includes(locale))[0]?.title}}
                                     </NuxtLink>
                                 </h2>
                                 <p class="text-white text-xs md:text-[11px] lg:text-sm mb-5">
-                                    {{ item.related_Project_id?.translations?.filter(item =>
-                                        item?.languages_code?.includes(langStore.lang))[0]?.description }}
+                                    {{item.related_Project_id?.translations?.filter(item =>
+                                        item?.languages_code?.includes(locale))[0]?.description}}
                                 </p>
                                 <div class="flex items-center mb-5">
                                     <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">от ${{
                                         String(item.related_Project_id?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-                                        }}</strong>
+                                    }}</strong>
                                     <span class="text-white/60 text-xs hidden md:block">
                                         {{ $t('including_taxes') }}
                                     </span>
                                 </div>
                                 <div class="flex">
-                                    <NuxtLink :href="`/projects/${item?.related_Project_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
+                                    <NuxtLink
+                                        :href="`/${mainPageLink.replace('/', '')}/projects/${item?.related_Project_id?.translations?.filter(item => item.languages_code.includes(locale))[0]?.slug}`"
                                         class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-[12px] px-5 rounded-[10px] text-white font-bold text-sm md:text-xs lg:text-base mr-7">
                                         {{ $t('more') }}
                                     </NuxtLink>
                                     <div class="flex items-center">
-                                        <NuxtImg class="w-3" src="/img/icons/point-white.svg" alt="Image" loading="lazy" />
+                                        <NuxtImg class="w-3" src="/img/icons/point-white.svg" alt="Image"
+                                            loading="lazy" />
                                         <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">
                                             {{ $t('changu') }}
                                         </span>
@@ -71,6 +89,25 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+
 const props = defineProps(['projects']);
-const langStore = useLangStore();
+const { t, locale } = useI18n()
+const projectsData = ref(null);
+
+const mainPageLink = ref('/')
+
+onMounted(async () => {
+  projectsData.value = await props.projects; 
+});
+
+watchEffect(() => {
+  if (typeof window !== 'undefined') {
+    onMounted(() => {
+      mainPageLink.value = `/${localStorage.getItem('selectedLanguage')?.replace('/', '')}`;
+    });
+  }
+});
+
 </script>
+

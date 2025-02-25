@@ -41,7 +41,6 @@
 
           <div class="swiper-pagination swiper-pagination_blue"></div>
 
-
         </swiper>
 
         <NuxtLink href="/sales" class="blue-border-button mx-auto mt-5 md:hidden">
@@ -53,22 +52,31 @@
   </section>
 </template>
 
+<style scoped>
+.swiper-pagination {
+  position: static;
+  margin-top: 15px;
+}
+.swiper {
+  padding-bottom: 15px;
+  margin-bottom: -15px;
+}
+</style>
+
 <script setup>
 import { ref, onMounted } from 'vue';
-import { Navigation, A11y } from 'swiper/modules';
+import { Navigation, A11y, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-SwiperCore.use([Navigation, A11y]);
+SwiperCore.use([Navigation, A11y, Pagination]);
 
 const salesData = await useAsyncData('Sales', () => $fetch('/api/sales'));
 
 const props = defineProps(['list'])
-watch(props, async (newValue) => {
-  // itemsList.value = newValue.list;
-})
 
 const navigationConfig = {
   nextEl: '.sales-button-next',

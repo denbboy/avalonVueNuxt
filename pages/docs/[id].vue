@@ -20,12 +20,15 @@
                 class="md:text-5xl lg:text-6xl text-3xl text-white font-normalidad font-bold mb-5 md:mb-12">
                 {{ currentPageInfo?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
             </h1>
-            <div data-aos="fade-up" data-aos-delay="100" class="text-content justify-between items-center mb-10 lg:mb-48" v-html="description" />
+            <div data-aos="fade-up" data-aos-delay="100" class="text-content justify-between items-center mb-10 max-w-[1000px] lg:mb-48" v-html="description" ></div>
                 <!-- <p class="md:text-lg text-white text-sm mb-7"  /> -->
             <!-- </div> -->
         </div>
 
         <div class="absolute -right-[72px] top-[250px] w-36 z-10">
+            <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
+        </div>
+        <div class="absolute -right-[22px] hidden md:block bottom-[300px] w-72 z-10">
             <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
         </div>
 

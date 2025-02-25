@@ -12,7 +12,8 @@
                         <!-- {{ $t('projects_text') }} -->
                         FUTURE VALUE
                     </p>
-                    <h2 class="text-white text-3xl font-bold md:text-[45px] lg:ml-[-2.3px] lg:text-[56px] leading-[100%]">
+                    <h2
+                        class="text-white text-3xl font-bold md:text-[45px] lg:ml-[-2.3px] lg:text-[56px] leading-[100%]">
                         {{ $t('our_projects') }}
                     </h2>
                 </div>
@@ -25,7 +26,7 @@
                 class="projects grid flex-col gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 flex-wrap items-center md:justify-between md:flex-row lg:flex-row z-10 relative">
 
                 <div :class="getGridClasses(index)"
-                    class="projects-item relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[600px] min-h-[450px]"
+                    class="projects-item relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] hover:bg-[#666] transition-all lg:min-h-[600px] min-h-[450px]"
                     v-for="(item, index) in projectsStore.projects" :key="item.id">
                     <div class="">
                         <NuxtImg v-if="item?.preview"
@@ -40,24 +41,36 @@
                                     loading="lazy" />
 
                                 <span v-if="item?.main_translations?.filter(item =>
-                                            item.languages_code?.includes(langStore.lang))[0]?.sale_alias"
-                                    class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
-                                    <!-- {{ item?.sale_alias }}% {{ $t('sold') }} -->
-                                      {{ item?.main_translations?.filter(item =>
-                                            item.languages_code?.includes(langStore.lang))[0]?.sale_alias }}
+                                    item.languages_code?.includes(langStore.lang))[0]?.sale_alias"
+                                    class="md:px-5 py-2 px-4 bg-no-repeat relative bg-right-bottom h-[45px] w-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
+
+                                    <svg class="absolute w-full h-full top-0 left-0 right-0"
+                                        viewBox="0 0 101 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M100.893 7.14226C100.893 3.25662 97.7435 0.106689 93.8578 0.106689H8.02385C4.13821 0.106689 0.988281 3.25663 0.988281 7.14227V21.2134C0.988281 25.099 4.13822 28.249 8.02386 28.249L89.6364 28.249C91.5792 28.249 93.1542 26.674 93.1542 24.7312C93.1542 22.7884 94.7291 21.2134 96.6719 21.2134H97.7617C99.4912 21.2134 100.893 22.6155 100.893 24.3451V28.2489C100.893 28.249 100.893 28.249 100.893 28.249C100.893 28.249 100.893 28.249 100.893 28.2489V7.14226Z"
+                                            :fill="item?.status" />
+                                        <rect x="95.9688" y="24.0276" width="4.22134" height="4.22134" rx="2.11067"
+                                            :fill="item?.status" />
+                                    </svg>
+
+                                    <span class="relative z-20 -bottom-1">
+                                        {{item?.main_translations?.filter(item =>
+                                            item.languages_code?.includes(langStore.lang))[0]?.sale_alias}}
+                                    </span>
                                 </span>
+
                             </div>
                             <div class="max-w-96">
                                 <h2
                                     class="text-white hover:text-blue-400 transition-all font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">
                                     <NuxtLink
                                         :href="`/projects/${item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`">
-                                        {{ item?.translations?.filter(item =>
-                                            item.languages_code.includes(langStore.lang))[0]?.title }}
+                                        {{item?.translations?.filter(item =>
+                                            item.languages_code.includes(langStore.lang))[0]?.title}}
                                     </NuxtLink>
                                 </h2>
                                 <div class="text-white text-xs md:text-[11px] lg:text-sm mb-5 line-clamp-3" v-html="item?.translations?.filter(item =>
-                                        item.languages_code.includes(langStore.lang))[0]?.description">
+                                    item.languages_code.includes(langStore.lang))[0]?.description">
                                 </div>
                                 <div class="flex items-center mb-5">
                                     <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">{{ $t('from') }}
@@ -100,6 +113,7 @@ const langStore = useLangStore();
 const handleOpenModal = () => {
     modalsStore.addModal("presentation")
 }
+
 
 const getGridClasses = (index) => {
     const projectCount = projectsStore.projects.length;

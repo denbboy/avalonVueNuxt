@@ -563,8 +563,6 @@
 <script setup>
 import { ref } from 'vue'
 
-// const option1 = ref('option1')
-// const option2 = ref('option2')
 const type = ref('option1')
 
 const handleChange = (newType) => {

@@ -2,8 +2,8 @@
 
   <Head>
     <Title>
-      {{ itemData?.translations?.filter(item =>
-        item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+      {{itemData?.translations?.filter(item =>
+        item.languages_code.includes(langStore.lang))[0]?.meta_title}}
     </Title>
     <Meta name="description"
       :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
@@ -19,17 +19,18 @@
       <SkeletonLoader v-if="itemData?.background" class="h-full w-full">
         <NuxtImg v-show="!imageLoaded" loading="lazy"
           :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`" @load="onImageLoad"
-          class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" ref="image" />
+          class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image"
+          ref="image" />
         <NuxtImg v-if="imageLoaded" loading="lazy"
           :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`"
           class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" />
       </SkeletonLoader>
     </div>
 
-    <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[1000px] absolute z-10">
+    <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_800px)] from-60% w-full h-[1000px] absolute z-10">
     </div>
-    <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[1000px] absolute z-10">
-    </div>
+    <div class="bg-gradient-to-t from-transparent to-blue-500 w-full h-[400px] to-80% absolute top-0 z-10"></div>
+
 
     <div class="absolute right-0 bottom-56 w-72 h-72 z-10">
       <NuxtImg src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
@@ -55,7 +56,7 @@
           <NuxtImg src="/img/icons/socials.svg" class="md:w-6" alt="Soc" loading="lazy" />
         </a> -->
 
-        <div
+        <div class="max-w-[1000px]"
           v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
         </div>
 
@@ -86,13 +87,13 @@ const imageLoaded = ref(false);
 const image = ref(null);
 
 function onImageLoad() {
-    imageLoaded.value = true;
+  imageLoaded.value = true;
 }
 
 onMounted(() => {
-    if (image.value?.complete) {
-        imageLoaded.value = true;
-    }
+  if (image.value?.complete) {
+    imageLoaded.value = true;
+  }
 });
 
 const langStore = useLangStore();

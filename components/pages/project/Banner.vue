@@ -1,14 +1,14 @@
 <template>
 
 
-    <section class="lg:pb-12 pb-0 min-h-[200px]">
+    <section class="relative" :class="isPlay && isPlayMobile ? 'z-[100]' : ''">
         <div class="lg:pb-10 pb-5 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.webp')] -->
             <div
-                class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen overflow-hidden -z-10 opacity-80">
+                class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen overflow-hidden" :class="isPlay && isPlayMobile ? 'opacity-100 z-20' : 'opacity-80 -z-10'">
                 <NuxtImg v-if="itemData?.background"
                     :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}?width=1920&height=800`"
-                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="Image" />
+                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0 opacity-40" alt="Image" />
                 <NuxtImg v-else :src="getYoutubePreview().thumb(itemData?.video ?? '') ?? ''"
                     class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="Image" />
 
@@ -26,26 +26,28 @@
                 <!-- </div> -->
 
                 <iframe v-if="`${itemData?.video}`"
-                    class="absolute scale-125 top-0 left-0 w-full h-[110vh] object-cover z-0" width="100%" height="100%"
+                    :class="isPlay && isPlayMobile ? 'full-image' : ''"
+                    class="absolute scale-125 top-0 left-0 pointer-events-none w-full h-[110vh] object-cover z-0" width="100%" height="100%"
                     src="" title="YouTube video player" frameborder="0"
                     allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div
+            v-if="isPlayMobile ? !isPlay : true"
                 class="bg-gradient-to-t from-blue-500 from-35% w-full h-[500px] absolute -z-10 top-[calc(110vh_-_500px)] left-0">
             </div>
-            <div class="bg-gradient-to-t from-blue-500/70 from-50% w-full h-52 absolute -z-10 top-0 left-0 rotate-180">
+            <div v-if="isPlayMobile ? !isPlay : true" class="bg-gradient-to-t from-blue-500/70 from-50% w-full h-52 absolute -z-10 top-0 left-0 rotate-180">
             </div>
 
-            <div class="container lg:min-h-[45vh] min-h-[60vh] max-h-[200px]">
+            <div class="container ">
                 <div class="xl:flex xl:justify-between xl:gap-[20px]">
                     <div class=" w-full max-w-[950px]">
-                        <div v-if="!isPlay" data-aos="fade-up"
+                        <div :class="isPlay ? 'opacity-0' : 'opacity-100'"
                             class="flex lg:-mr-20 flex-wrap items-center gap-[10px] md:gap-5">
-                            <div
+                            <!-- <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
                                 <NuxtImg src="/img/about/ribas.png" class="w-full h-full" alt="Image" loading="lazy" />
-                            </div>
+                            </div> -->
                             <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
                                 <NuxtImg
@@ -55,8 +57,8 @@
                                     {{ $t('deadline') }}
                                 </span>
                                 <p class="text-white text-base font-bold md:text-xl">
-                                    {{ itemData?.main_translations?.filter(item =>
-                                            item.languages_code.includes(langStore.lang))[0]?.due_date }}
+                                    {{itemData?.main_translations?.filter(item =>
+                                        item.languages_code.includes(locale))[0]?.due_date}}
                                 </p>
                             </div>
                             <div class="con order-1 md:order-none">
@@ -77,10 +79,8 @@
                                     </p>
                                 </div>
                             </div>
-                            <div
-                                v-if="itemData?.rtsp_code"
-                                @click="handleOpenRtsp"
-                                class="w-full h-[60px] max-w-[62px] md:max-w-[98px] md:h-[86px] bg-white flex items-center justify-center rounded-[8px] md:rounded-[15px]">
+                            <div v-if="itemData?.rtsp_code" @click="handleOpenRtsp"
+                                class="w-full h-[60px] max-w-[62px] md:max-w-[98px] cursor-pointer md:h-[86px] bg-white flex items-center justify-center rounded-[8px] md:rounded-[15px]">
                                 <!-- <NuxtImg src="/img/icons/live-ic.svg" class="max-w-[42px] md:max-w-[68px]" alt="ic"> -->
 
                                 <svg width="68" height="48" viewBox="0 0 68 48" class="max-w-12 lg:max-w-full"
@@ -120,38 +120,58 @@
 
                             </div>
                         </div>
-                        <h2 v-if="!isPlay"
+                        <h2 :class="isPlay ? 'opacity-0' : 'opacity-100'"
                             class="text-3xl text-white mt-5 md:text-[55px] lg:text-[65px] md:mt-6 lg:-mr-40">
                             <span class="font-bold leading-[120%]">
-                                {{ itemData?.translations?.filter(item =>
-                                    item.languages_code.includes(langStore.lang))[0]?.title }}
+                                {{itemData?.translations?.filter(item =>
+                                    item.languages_code.includes(locale))[0]?.title}}
                             </span>
                         </h2>
-                        <p v-if="!isPlay" data-aos="fade-up"
+                        <p :class="isPlay ? 'opacity-0' : 'opacity-100'"
                             class="text-white text-sm max-w-64 md:max-w-[501px] md:text-base mt-3 md:mt-6" v-html="itemData?.translations?.filter(item =>
-                                item.languages_code.includes(langStore.lang))[0]?.description">
+                                item.languages_code.includes(locale))[0]?.description">
                         </p>
-                        <button v-if="!isPlay" data-aos="fade-up" @click="handleOpenModal"
+                        <button :class="isPlay ? 'opacity-0' : 'opacity-100'" @click="handleOpenModal"
                             class="w-fit px-5 py-4 block text-sm md:text-base bg-white rounded-xl text-center font-bold whitespace-nowrap text-blue-500 hover:text-white hover:bg-blue-400 my-10 mb-0 transition-all ">
                             {{ $t('download_presentation') }}
                         </button>
                     </div>
                     <div class="flex flex-col xl:items-end justify-end xl:w-full">
-                        <button data-aos="fade-up" @click="e => handlePlayVideo(itemData?.video, e)" type="button"
+                        <button @click="e => handlePlayVideo(itemData?.video, e)" type="button"
+                            :class="isPlay && isPlayMobile ? 'fixed bottom-0 z-[21]' : ''"
                             class="flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
                             <div
                                 class="relative flex items-center justify-center max-w-[95px] w-full h-full xl:max-w-[165px]">
                                 <NuxtImg src="/img/about/playBorder.svg" class="w-full h-full" alt="ic"
                                     loading="lazy" />
-                                <svg class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18" height="21"
+                                    <svg v-if="!isPlay" class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18" height="21"
                                     viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M17.7422 10.653L0.17076 20.7979L0.170761 0.508136L17.7422 10.653Z"
-                                        fill="white" />
+                                    <path d="M17.7422 10.653L0.17076 20.7979L0.170761 0.508136L17.7422 10.653Z" fill="white" />
+                                </svg>
+                                <svg v-else id="blue_copy" class="absolute -ml-5 w-1/4 lg:-ml-10 animate-scaling" version="1.1"
+                                    viewBox="0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g id="Layer_7_copy">
+                                        <path
+                                            d="M39.806,72.858h-8.915c-2.176,0-3.94-1.764-3.94-3.94V31.119c0-2.176,1.764-3.94,3.94-3.94h8.915   c2.176,0,3.94,1.764,3.94,3.94v37.799C43.746,71.094,41.982,72.858,39.806,72.858z" />
+                                        <path
+                                            d="M68.109,72.821h-8.915c-2.176,0-3.94-1.764-3.94-3.94V31.082c0-2.176,1.764-3.94,3.94-3.94h8.915   c2.176,0,3.94,1.764,3.94,3.94v37.799C72.049,71.057,70.285,72.821,68.109,72.821z" />
+                                        <path
+                                            d="M40.489,27.248c0.769,0.719,1.257,1.735,1.257,2.871v37.799c0,2.176-1.764,3.94-3.94,3.94h-8.915   c-0.234,0-0.46-0.03-0.683-0.069c0.704,0.658,1.643,1.069,2.683,1.069h8.915c2.176,0,3.94-1.764,3.94-3.94V31.119   C43.746,29.177,42.338,27.573,40.489,27.248z" />
+                                        <path
+                                            d="M68.792,27.211c0.769,0.719,1.257,1.735,1.257,2.871v37.799c0,2.176-1.764,3.94-3.94,3.94h-8.915   c-0.234,0-0.46-0.03-0.683-0.069c0.704,0.658,1.643,1.069,2.683,1.069h8.915c2.176,0,3.94-1.764,3.94-3.94V31.082   C72.049,29.14,70.641,27.535,68.792,27.211z" />
+                                        <path
+                                            d="M39.806,72.858h-8.915c-2.176,0-3.94-1.764-3.94-3.94V31.119   c0-2.176,1.764-3.94,3.94-3.94h8.915c2.176,0,3.94,1.764,3.94,3.94v37.799C43.746,71.094,41.982,72.858,39.806,72.858z"
+                                            style="fill:#fff;stroke:#fff;stroke-miterlimit:10;" />
+                                        <path
+                                            d="M68.109,72.821h-8.915c-2.176,0-3.94-1.764-3.94-3.94V31.082   c0-2.176,1.764-3.94,3.94-3.94h8.915c2.176,0,3.94,1.764,3.94,3.94v37.799C72.049,71.057,70.285,72.821,68.109,72.821z"
+                                            style="fill:#fff;stroke:#fff;stroke-miterlimit:10;" />
+                                    </g>
                                 </svg>
                             </div>
                             {{ $t('see_video') }}
                         </button>
-                        <div data-aos="fade-up" v-if="!isPlay"
+                        <div :class="isPlay ? 'opacity-0' : 'opacity-100'"
                             class=" w-full flex gap-[10px] xl:gap-5 xl:mt-[100px] xl:flex  xl:justify-end items-stretch">
                             <div v-if="itemData?.villa_count && !$viewport.isLessThan('tablet')"
                                 class="pb-[15px] flex-1 max-w-[240px] border-b border-whiteOp-300 md:pb-[30px] hidden md:block w-full">
@@ -159,7 +179,7 @@
                                     {{ itemData?.villa_count }}
                                 </h3>
                                 <p class="text-white text-sm md:text-base">
-                                    {{ $t('vill') }}
+                                    {{ getVillaDeclension(itemData?.villa_count) }}
                                 </p>
                             </div>
                             <div v-if="itemData?.roi_procent"
@@ -192,6 +212,19 @@
 
 </template>
 
+<style scoped>
+@media screen and (max-width: 768px) {
+    .full-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999999 !important;
+    }
+}
+</style>
+
 <script setup>
 import { ref } from 'vue';
 import url from 'url'
@@ -200,10 +233,39 @@ import { getYoutubePreview } from '~/functions/getYoutubePreview';
 const imageLoaded = ref(false);
 const image = ref(null);
 const isPlay = ref(false);
+const isPlayMobile = ref(false);
 
 function onImageLoad() {
     imageLoaded.value = true;
 }
+
+import { useI18n } from 'vue-i18n'
+
+const { t, locale } = useI18n()
+
+const getVillaDeclension = (count) => {
+    const lang = locale.value // Получаем текущий язык
+
+    if (lang === 'ru') {
+        if (count % 10 === 1 && count % 100 !== 11) return 'вилла'
+        if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'виллы'
+        return 'вилл'
+    }
+
+    if (lang === 'ua') {
+        if (count % 10 === 1 && count % 100 !== 11) return 'вілла'
+        if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'вілли'
+        return 'вілл'
+    }
+
+    return count === 1 ? 'villa' : 'villas' // Английский язык
+}
+
+
+
+
+
+
 
 onMounted(() => {
     if (image.value?.complete) {
@@ -229,6 +291,10 @@ const handlePlayVideo = (videoUrl, e) => {
     const params = url.parse(videoUrl, true);
 
     isPlay.value = !isPlay.value;
+
+    if(window.innerWidth < 768) {
+        isPlayMobile.value = true
+    }
 
     const urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}`
     document.querySelector('iframe').setAttribute('src', !isPlay.value ? "" : urlLink)

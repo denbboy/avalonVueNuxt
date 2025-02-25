@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="`/news/${props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
+  <NuxtLink :to="`/news/${props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.slug}`"
     class="w-full rounded-[20px] overflow-hidden h-full group transition-all hover:shadow-[0px_10px_10px_0px_rgba(0,0,0,.1)] block">
     <div class="relative w-full">
       <div :class="{
@@ -27,7 +27,7 @@
       </span>
       <p :class="bgdColor === 'white' ? 'text-blue-600' : 'text-white'"
         class="text-base md:text-lg transition-all group-hover:text-blue-400 line-clamp-2 font-bold"
-        v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title"></p>
+        v-html="props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.title"></p>
     </div>
   </NuxtLink>
 </template>
@@ -61,6 +61,6 @@ const props = defineProps({
   }
 })
 
-const langStore = useLangStore()
+const { t, locale } = useI18n()
 
 </script>

@@ -135,7 +135,7 @@
 
 
                         <!-- <div
-                            class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] hover:bg-[#333] transition-all rounded-br-none">
+                            class="h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden bg-[#111111] hover:bg-[#666] transition-all rounded-br-none">
                             <NuxtImg loading="lazy" src="/img/discounts/image.webp" class="opacity-50 w-full h-full" alt="Image" />
                             <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
 

@@ -24,6 +24,7 @@
             <NuxtImg src="/img/icons/icon-club.svg" alt="Image"
                 class="absolute w-8 h-8 top-3 left-3 md:w-14 md:h-14" />
             <div
+            v-if="props?.item?.is_active"
                 class="bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] px-2 py-2 bg-no-repeat bg-cover bg-right-bottom rounded-l-lg rounded-tr-lg text-xs text-white ml-auto w-fit block lg:text-sm lg:p-3">
                 {{ $t('actual_to') }}
                 <strong>
@@ -32,14 +33,16 @@
                         Date(props?.item?.expired_date).getFullYear() }}
                 </strong>
             </div>
+            <div v-else class="min-h-[44px]"></div>
 
             <strong class="mt-auto text-white mb-2 md:text-lg overflow-hidden h-14 line-clamp-2"
                 v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.subtitle"></strong>
 
-            <div class="flex items-center opacity-60">
+            <div v-if="props?.item?.location" class="flex items-center opacity-60">
                 <NuxtImg class="w-2 md:w-3" src="/img/icons/point-white.svg" alt="Image" />
-                <span class="text-white ml-1 text-xs md:text-sm">Bukit</span>
+                <div class="text-white ml-1 text-xs md:text-sm" v-html="props?.item?.location"></div>
             </div>
+            <div v-else class="min-h-5"></div>
         </div>
     </NuxtLink>
 </template>

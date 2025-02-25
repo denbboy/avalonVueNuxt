@@ -89,7 +89,7 @@
     "companies_text_7": "Bali is one of the most popular destinations for Instagram photos worldwide. The hashtag #Bali has gathered millions of posts showcasing the island's beauty.",
     "companies_text_8": "Travel+Leisure in its rating gives the first place among Asian countries to this magnificent island",
 
-    "download_presentation": "Download Presentation",
+    "download_presentation": "Download Сatalog",
     "cost": "Cost",
     "bali": "Bali",
     "see_video": "Watch Video",
@@ -186,5 +186,7 @@
     "else_sales": "Other promotions",
     "button_vac": "Apply for a job",
     "input_name": "First and last name",
-    "input_textarea": "Enter the text of the cover letter"
+    "input_textarea": "Enter the text of the cover letter",
+
+    "address": "Address"
 }

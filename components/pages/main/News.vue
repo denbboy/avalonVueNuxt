@@ -43,7 +43,6 @@
 
         </swiper>
 
-        <div class="swiper-pagination swiper-pagination_blue"></div>
         <NuxtLink href="/news" class="blue-border-button mx-auto mt-5 md:hidden">
           {{ $t('all_news') }}
         </NuxtLink>
@@ -52,19 +51,36 @@
   </section>
 </template>
 
+<style scoped>
+.swiper-pagination {
+  position: static;
+  margin-top: 15px;
+}
+.swiper {
+  padding-bottom: 15px;
+  margin-bottom: -15px;
+}
+</style>
+
 <script setup>
-import { Navigation, A11y } from 'swiper/modules';
+import { Navigation, A11y, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import { ref, onMounted } from 'vue';
+
+const paginationRef = ref(null);
+
+onMounted(() => {
+  console.log('Pagination element:', paginationRef.value);
+});
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const newsData = await useAsyncData("News", () => $fetch('/api/news'))
 
-const modules = {
-  Navigation,
-  A11y,
-};
+const modules = [Navigation, A11y, Pagination];
+
 
 const navigationConfig = {
   nextEl: '.news-button-next',
@@ -79,16 +95,27 @@ const pagination = {
 const breakpoints = {
   576: {
     slidesPerView: 2,
-    pagination: false,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
   },
   992: {
     slidesPerView: 3,
-    pagination: false,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
   },
   1441: {
     slidesPerView: 4,
-    pagination: false,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
   },
 };
+
+
 
 </script>

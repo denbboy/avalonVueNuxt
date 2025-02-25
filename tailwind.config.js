@@ -43,6 +43,7 @@ export default {
         'fade-2s': 'fade .6s 0.8s ease-in infinite alternate-reverse',
         'skeleton': 'skeleton 1s ease-in infinite alternate-reverse',
         spinAbout: 'spin 20s linear infinite',
+        spinAbout2: 'spin 15s 3s linear infinite alternate-reverse',
         scaling: 'scaling 1.2s ease-out infinite alternate-reverse',
       },
       grayscale: {
@@ -57,7 +58,8 @@ export default {
       screens: {
         '375':'375px',
         'lg': '1441px',
-        '3xl': '1770px',
+        '2xl': '1600px',
+        '3xl': '1870px',
       },
       container: {
         center: true,
@@ -65,16 +67,16 @@ export default {
         screens: {
           'sm': 'none',
           'md': 'none',
-          'lg': 'none',
-          'xl': 'none',
-          '2xl': 'none',
+          'lg': '1400px',
+          'xl': '1750px',
+          '2xl': 'auto',
         },
         maxWidth: {
-          'none': 'none',
-          'sm': 'none',
-          'md': '1440px',
-          'lg': 'none',
-          'xl': 'none',
+          'none': '1200px',
+          'sm': '1200px',
+          'md': '1200px',
+          'lg': '1200px',
+          'xl': '1400px',
           '2xl': 'none',
         }
       },

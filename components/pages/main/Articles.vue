@@ -38,13 +38,17 @@
 
           <div class="swiper-pagination swiper-pagination_blue"></div>
         </swiper>
+
+        <NuxtLink href="/articles" class="blue-border-button mx-auto mt-5 md:hidden mb-5">
+          {{ $t('all_articles') }}
+        </NuxtLink>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { Navigation, A11y } from 'swiper/modules';
+import { Navigation, A11y, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 const articlesData = await useAsyncData("Articles", () => $fetch('/api/articles'))
@@ -52,6 +56,7 @@ const articlesData = await useAsyncData("Articles", () => $fetch('/api/articles'
 const modules = {
   Navigation,
   A11y,
+  Pagination
 };
 
 const navigationConfig = {

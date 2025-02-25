@@ -16,6 +16,7 @@ const {imageFile} = defineProps(['imageFile']);
 const imageLoaded = ref(false);
 const image = ref(null);
 
+
 function onImageLoad() {
     imageLoaded.value = true;
 }
