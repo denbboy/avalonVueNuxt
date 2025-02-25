@@ -274,9 +274,6 @@ const salesData = await useAsyncData('Sales', () => $fetch('/api/sales'));
 const res = await useAsyncData('SalesItem', () => $fetch(`/api/sales/${route.params.id}`));
 const itemData = res?.data?.value[0]
 
-console.log(itemData);
-
-
 const navigationConfig = {
     nextEl: '.sales-button-next',
     prevEl: '.sales-button-prev',

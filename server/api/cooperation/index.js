@@ -13,9 +13,6 @@ export default defineEventHandler(async (event) => {
         ],
       })
     );
-
-    console.log('COOPERATION', items);
-    
     
     return items;
   } catch (e) {

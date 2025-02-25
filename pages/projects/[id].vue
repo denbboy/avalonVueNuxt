@@ -78,9 +78,6 @@ const itemData = computed(() => data.value?.[0] ?? null);
 // Обновляем текущий проект в сторе
 projectsStore.setCurrentProject(itemData.value);
 
-console.log('mmm', itemData.value);
-
-
 // Следим за изменением языка в URL и обновляем store
 watch(() => route.params.lang, (newLang) => {
   langStore.lang = newLang || 'ru';

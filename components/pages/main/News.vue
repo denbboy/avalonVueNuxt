@@ -69,10 +69,6 @@ import { ref, onMounted } from 'vue';
 
 const paginationRef = ref(null);
 
-onMounted(() => {
-  console.log('Pagination element:', paginationRef.value);
-});
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
