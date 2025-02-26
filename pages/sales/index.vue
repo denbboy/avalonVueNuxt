@@ -26,15 +26,15 @@
           class="select group relative z-40 flex md:hidden border-white/40 border-[1px] rounded-[10px] mt-7">
           <button @click="handleOpenPopup" class="select__head flex items-center justify-between w-full h-12 px-4">
             <span class="text-sm text-white font-bold">
-              {{ projectTitleData.data.value.find(item => item.id === activeProject)?.translations?.[0]?.title ?? "All" }}
+              {{projectTitleData.data.value.find(item => item.id === activeProject)?.translations?.[0]?.title ?? "All"
+              }}
             </span>
             <NuxtImg src="/img/icons/arrow-white-down.svg" alt="Arrow"
               class="w-4 transition-all group-[.active]:-scale-y-100 scale-y-100" loading="lazy" />
           </button>
           <div
             class="select__body transition-all group-[.active]:visible group-[.active]:opacity-100 group-[.active]:mt-2 invisible opacity-0 absolute top-full mt-0 px-4 border-white/40 border-[1px] rounded-[10px] w-full bg-blue-500">
-            <button @click="_ => handleChooseProject(-1)"
-              class="select__item block text-white py-2">
+            <button @click="_ => handleChooseProject(-1)" class="select__item block text-white py-2">
               All
             </button>
             <button @click="_ => handleChooseProject(item.id)" v-for="item in projectTitleData.data.value"
@@ -65,7 +65,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-3 gap-x-5 gap-y-5 mt-12"
         data-aos="fade-up">
 
-        <SalesItem v-for="item in sales?.slice(0, viewCount)" :item="item" :key="item.id" bgdColor="blue-500" />
+        <SalesItem v-for="item in sales?.slice(0, viewCount)" :projects="projectTitleData.data.value" :item="item" :key="item.id" bgdColor="blue-500" />
 
       </div>
 
@@ -94,20 +94,8 @@ const handelShowMore = () => {
 const salesData = await useAsyncData('Sales', () => $fetch('/api/sales'));
 const projectTitleData = await useAsyncData('ProjectTitle', () => $fetch('/api/projectsTitle'));
 
-const projectsList = [
-  {
-    label: "All",
-    slug: "all"
-  },
-  {
-    label: "OM Club House",
-    slug: "om_club_house"
-  },
-  {
-    label: "JUST Club House",
-    slug: "just_club_house"
-  },
-]
+console.log(projectTitleData);
+
 
 const activeProject = ref(-1)
 const isOpenPopup = ref(false)
@@ -125,8 +113,6 @@ watch(activeProject, (newId) => {
     }
     sales.value = salesData?.data?.value?.filter(item => selectedSales.value.some(item2 => item2 == item.id))
   }
-
-
 })
 
 const handleOpenPopup = () => {

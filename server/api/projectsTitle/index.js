@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
   try {
     const items = await directus.request(
       readItems("Project", {
-        fields: ["main_translations.*", "translations.*", "sales.*", "id"],
+        fields: ["main_translations.*", "translations.*", "sales.*", "id", "logo"],
       })
     );
 

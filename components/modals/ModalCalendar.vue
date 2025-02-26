@@ -55,12 +55,13 @@
             </div>
         </div>
 
-
     </div>
 </template>
 
 <script setup>
+const toolkitStore = useToolkit();
+
 const options = {
-    url: 'https://calendly.com/vz-web-dev/30min',
+    url: toolkitStore?.settings?.schedule_meeting_link,
 }
 </script>
