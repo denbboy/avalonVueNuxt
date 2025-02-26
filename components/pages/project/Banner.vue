@@ -4,8 +4,8 @@
     <section class="relative" :class="isPlay && isPlayMobile ? 'z-[100]' : ''">
         <div class="lg:pb-10 pb-5 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.webp')] -->
-            <div
-                class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen overflow-hidden" :class="isPlay && isPlayMobile ? 'opacity-100 z-20' : 'opacity-80 -z-10'">
+            <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen overflow-hidden"
+                :class="isPlay && isPlayMobile ? 'opacity-100 z-20' : 'opacity-80 -z-10'">
                 <NuxtImg v-if="itemData?.background"
                     :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}?width=1920&height=800`"
                     class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0 opacity-40" alt="Image" />
@@ -25,18 +25,17 @@
                     </SkeletonLoader> -->
                 <!-- </div> -->
 
-                <iframe v-if="`${itemData?.video}`"
-                    :class="isPlay && isPlayMobile ? 'full-image' : ''"
-                    class="absolute scale-125 top-0 left-0 pointer-events-none w-full h-[110vh] object-cover z-0" width="100%" height="100%"
-                    src="" title="YouTube video player" frameborder="0"
+                <iframe v-if="`${itemData?.video}`" :class="isPlay && isPlayMobile ? 'full-image' : ''"
+                    class="absolute scale-125 top-0 left-0 pointer-events-none w-full h-[110vh] object-cover z-0"
+                    width="100%" height="100%" src="" title="YouTube video player" frameborder="0"
                     allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div
-            v-if="isPlayMobile ? !isPlay : true"
+            <div v-if="isPlayMobile ? !isPlay : true"
                 class="bg-gradient-to-t from-blue-500 from-35% w-full h-[500px] absolute -z-10 top-[calc(110vh_-_500px)] left-0">
             </div>
-            <div v-if="isPlayMobile ? !isPlay : true" class="bg-gradient-to-t from-blue-500/70 from-50% w-full h-52 absolute -z-10 top-0 left-0 rotate-180">
+            <div v-if="isPlayMobile ? !isPlay : true"
+                class="bg-gradient-to-t from-blue-500/70 from-50% w-full h-52 absolute -z-10 top-0 left-0 rotate-180">
             </div>
 
             <div class="container ">
@@ -144,13 +143,14 @@
                                 class="relative flex items-center justify-center max-w-[95px] w-full h-full xl:max-w-[165px]">
                                 <NuxtImg src="/img/about/playBorder.svg" class="w-full h-full" alt="ic"
                                     loading="lazy" />
-                                    <svg v-if="!isPlay" class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18" height="21"
-                                    viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M17.7422 10.653L0.17076 20.7979L0.170761 0.508136L17.7422 10.653Z" fill="white" />
+                                <svg v-if="!isPlay" class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18"
+                                    height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.7422 10.653L0.17076 20.7979L0.170761 0.508136L17.7422 10.653Z"
+                                        fill="white" />
                                 </svg>
-                                <svg v-else id="blue_copy" class="absolute -ml-5 w-1/4 lg:-ml-10 animate-scaling" version="1.1"
-                                    viewBox="0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <svg v-else id="blue_copy" class="absolute -ml-5 w-1/4 lg:-ml-10 animate-scaling"
+                                    version="1.1" viewBox="0 0 100 100" xml:space="preserve"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g id="Layer_7_copy">
                                         <path
                                             d="M39.806,72.858h-8.915c-2.176,0-3.94-1.764-3.94-3.94V31.119c0-2.176,1.764-3.94,3.94-3.94h8.915   c2.176,0,3.94,1.764,3.94,3.94v37.799C43.746,71.094,41.982,72.858,39.806,72.858z" />
@@ -179,7 +179,10 @@
                                     {{ itemData?.villa_count }}
                                 </h3>
                                 <p class="text-white text-sm md:text-base">
-                                    {{ getVillaDeclension(itemData?.villa_count) }}
+                                    <!-- {{ getVillaDeclension(itemData?.villa_count) }} -->
+                                    {{itemData?.translations?.filter(item =>
+                                        item.languages_code.includes(locale))[0]?.first_counter ??
+                                    getVillaDeclension(itemData?.villa_count) }}
                                 </p>
                             </div>
                             <div v-if="itemData?.roi_procent"
@@ -200,7 +203,9 @@
                                     {{ itemData?.apartments_count }}
                                 </h3>
                                 <p class="text-white text-sm md:text-base">
-                                    {{ $t('apartment') }}
+                                    <!-- $t('apartment') -->
+                                    {{ itemData?.translations?.filter(item =>
+                                        item.languages_code.includes(locale))[0]?.second_counter ?? getAppartmentDeclension(itemData?.apartments_count) }}
                                 </p>
                             </div>
                         </div>
@@ -260,6 +265,24 @@ const getVillaDeclension = (count) => {
 
     return count === 1 ? 'villa' : 'villas' // Английский язык
 }
+const getAppartmentDeclension = (count) => {
+    const lang = locale.value; // Получаем текущий язык
+
+    if (lang === 'ru') {
+        if (count % 10 === 1 && count % 100 !== 11) return 'апартамент';
+        if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'апартамента';
+        return 'апартаментов';
+    }
+
+    if (lang === 'ua') {
+        if (count % 10 === 1 && count % 100 !== 11) return 'апартаменти';
+        if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'апартаменти';
+        return 'апартаментів';
+    }
+
+    return count === 1 ? 'apartment' : 'apartments'; // Английский язык
+};
+
 
 
 
@@ -282,6 +305,9 @@ const handleOpenModal = () => {
     modalsStore.addModal("presentation")
 }
 
+console.log(itemData);
+
+
 const handleOpenRtsp = () => {
     modalsStore.addModal("rtsp")
     modalsStore.setModalData(itemData)
@@ -292,7 +318,7 @@ const handlePlayVideo = (videoUrl, e) => {
 
     isPlay.value = !isPlay.value;
 
-    if(window.innerWidth < 768) {
+    if (window.innerWidth < 768) {
         isPlayMobile.value = true
     }
 
