@@ -78,7 +78,7 @@
         </div>
 
 
-        <div class="flex 3xl:gap-6 gap-6 items-center">
+        <div class="flex ml-auto 3xl:gap-6 gap-6 items-center">
           <button type="button" @click="handleOpenModal"
             class="2xl:flex hidden border border-whiteOp-400 rounded-xl 2xl:p-4 py-3 px-4 text-white md:text-xs 3xl:text-base font-bold hover:bg-white hover:text-blue-400 hover:border-white transition-all xl:justify-center">
             {{ $t('make_a_meeting') }}

@@ -9,7 +9,7 @@
 
     <div class="container relative z-20">
       <div class="md:flex">
-        <div class="lg:-ml-20 mx-[-150px] md:-ml-64 md:mr-0 w-[calc(100%+400px)] md:w-full md:max-w-[1298px]">
+        <div class=" mx-[-150px] md:-ml-64 md:mr-0 w-[calc(100%+400px)] md:w-full md:max-w-[1298px]">
           <NuxtImg loading="lazy" src="/img/index/map.png" class="w-full" alt="ic" />
         </div>
         <div class="md:absolute bottom-0 md:max-w-[40vw] md:right-[100px] lg:right-[180px] mt-8">

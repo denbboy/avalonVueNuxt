@@ -13,9 +13,9 @@
             <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${projectsStore.currentProject?.logo}`"
               loading="lazy" class="w-full" alt="Vector" />
           </button>
-          <div class="relative mr-auto max-w-[60px] lg:absolute lg:-bottom-10 lg:ml-5">
+          <!-- <div class="relative mr-auto max-w-[60px] lg:absolute lg:-bottom-10 lg:ml-5">
             <NuxtImg src="/img/about/ribas.png" class="w-full h-full" alt="Image" loading="lazy" />
-          </div>
+          </div> -->
 
 
           <div class="items-center gap-[26px] 3xl:gap-9 hidden md:flex">

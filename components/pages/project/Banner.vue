@@ -43,10 +43,6 @@
                     <div class=" w-full max-w-[950px]">
                         <div :class="isPlay ? 'opacity-0' : 'opacity-100'"
                             class="flex lg:-mr-20 flex-wrap items-center gap-[10px] md:gap-5">
-                            <!-- <div
-                                class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
-                                <NuxtImg src="/img/about/ribas.png" class="w-full h-full" alt="Image" loading="lazy" />
-                            </div> -->
                             <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
                                 <NuxtImg
@@ -119,13 +115,20 @@
 
                             </div>
                         </div>
-                        <h2 :class="isPlay ? 'opacity-0' : 'opacity-100'"
-                            class="text-3xl text-white mt-5 md:text-[55px] lg:text-[65px] md:mt-6 lg:-mr-40">
-                            <span class="font-bold leading-[120%]">
-                                {{itemData?.translations?.filter(item =>
-                                    item.languages_code.includes(locale))[0]?.title}}
-                            </span>
-                        </h2>
+                        <div class="flex lg:gap-12 gap-6 items-center lg:mt-6 mt-5">
+                            <h2 :class="isPlay ? 'opacity-0' : 'opacity-100'"
+                                class="text-3xl text-white md:text-[55px] lg:text-[65px]">
+                                <span class="font-bold leading-[120%]">
+                                    {{itemData?.translations?.filter(item =>
+                                        item.languages_code.includes(locale))[0]?.title}}
+                                </span>
+                            </h2>
+                            <span class="text-white lg:text-[50px] text-[24px]">х</span>
+                            <div
+                                class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px]">
+                                <NuxtImg src="/img/about/ribas.png" class="w-full h-full" alt="Image" loading="lazy" />
+                            </div>
+                        </div>
                         <p :class="isPlay ? 'opacity-0' : 'opacity-100'"
                             class="text-white text-sm max-w-64 md:max-w-[501px] md:text-base mt-3 md:mt-6" v-html="itemData?.translations?.filter(item =>
                                 item.languages_code.includes(locale))[0]?.description">
@@ -182,7 +185,7 @@
                                     <!-- {{ getVillaDeclension(itemData?.villa_count) }} -->
                                     {{itemData?.translations?.filter(item =>
                                         item.languages_code.includes(locale))[0]?.first_counter ??
-                                    getVillaDeclension(itemData?.villa_count) }}
+                                        getVillaDeclension(itemData?.villa_count)}}
                                 </p>
                             </div>
                             <div v-if="itemData?.roi_procent"
@@ -204,8 +207,9 @@
                                 </h3>
                                 <p class="text-white text-sm md:text-base">
                                     <!-- $t('apartment') -->
-                                    {{ itemData?.translations?.filter(item =>
-                                        item.languages_code.includes(locale))[0]?.second_counter ?? getAppartmentDeclension(itemData?.apartments_count) }}
+                                    {{itemData?.translations?.filter(item =>
+                                        item.languages_code.includes(locale))[0]?.second_counter ??
+                                        getAppartmentDeclension(itemData?.apartments_count) }}
                                 </p>
                             </div>
                         </div>

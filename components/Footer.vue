@@ -93,7 +93,11 @@
 
                             <div
                                 class="w-[45px] h-[45px] 3xl:w-[70px] 3xl:h-[70px] bg-blue-500 rounded-full flex items-center justify-center">
-                                <NuxtImg loading="lazy" class="w-2/3" format="png" src="/img/icons/location.png" />
+                                <!-- <NuxtImg loading="lazy" class="w-2/3" format="png" src="/img/icons/location.png" /> -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                                    <path fill="white"
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7m0 9.5a2.5 2.5 0 0 1 0-5a2.5 2.5 0 0 1 0 5" />
+                                </svg>
                             </div>
 
                             <div>
@@ -146,10 +150,11 @@
                                     d="M18.6488 2.31398C18.4327 1.51072 17.7994 0.877518 16.9963 0.661224C15.529 0.259766 9.65993 0.259766 9.65993 0.259766C9.65993 0.259766 3.79105 0.259766 2.32381 0.646004C1.53611 0.862068 0.887344 1.51083 0.67128 2.31398C0.285156 3.78111 0.285156 6.82375 0.285156 6.82375C0.285156 6.82375 0.285156 9.88173 0.67128 11.3335C0.887573 12.1367 1.52066 12.7699 2.32392 12.9862C3.8065 13.3877 9.66016 13.3877 9.66016 13.3877C9.66016 13.3877 15.529 13.3877 16.9963 13.0015C17.7995 12.7853 18.4327 12.1521 18.649 11.349C19.035 9.88173 19.035 6.8392 19.035 6.8392C19.035 6.8392 19.0505 3.78111 18.6488 2.31398ZM7.79134 9.63465V4.01286L12.6718 6.82375L7.79134 9.63465Z" />
                             </svg>
                         </a>
-                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_location" target="_blank"
-                            :href="toolkitStore?.settings?.soc_link_location"
+                        <a aria-label="link" v-if="toolkitStore?.settings?.soc_link_tg" target="_blank"
+                            :href="toolkitStore?.settings?.soc_link_tg"
                             class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
-                            <NuxtImg loading="lazy" class="w-2/3" src="/img/icons/location.png" />
+                            <!-- <NuxtImg loading="lazy" class="w-2/3" src="/img/icons/location.png" /> -->
+                            <svg class="fill-white group-hover:fill-blue-600 transition-all" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19c-.14.75-.42 1-.68 1.03c-.58.05-1.02-.38-1.58-.75c-.88-.58-1.38-.94-2.23-1.5c-.99-.65-.35-1.01.22-1.59c.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02c-.09.02-1.49.95-4.22 2.79c-.4.27-.76.41-1.08.4c-.36-.01-1.04-.2-1.55-.37c-.63-.2-1.12-.31-1.08-.66c.02-.18.27-.36.74-.55c2.92-1.27 4.86-2.11 5.83-2.51c2.78-1.16 3.35-1.36 3.73-1.36c.08 0 .27.02.39.12c.1.08.13.19.14.27c-.01.06.01.24 0 .38"/></svg>
                         </a>
                     </div>
 
@@ -270,8 +275,6 @@ import { VueTelInput } from 'vue-tel-input';
 import 'vue-tel-input/vue-tel-input.css';
 import iso31661 from 'iso-3166-1';
 import IMask from 'imask';
-
-
 
 
 
@@ -440,5 +443,7 @@ onUnmounted(() => {
 });
 
 // const copyright = `© ${new Date().getFullYear()} PT Avalon Group Bali`
+
+console.log(toolkitStore?.settings);
 
 </script>
