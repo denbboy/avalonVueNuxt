@@ -1,19 +1,20 @@
 <template>
 
   <section class="pb-24 relative bg-blue-500 overflow-hidden">
-    <div class="bg-gradient-to-t from-blue-500 from-80% lg:from-80%  w-full h-full absolute z-10"></div>
+    <div class="bg-gradient-to-t from-blue-500 from-70% lg:from-70%  w-full h-[2000px] absolute z-10"></div>
 
     <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] h-screen min-w-[100vw] object-cover max-w-max md:w-full" :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore.settings.header_img"
       alt="Image" loading="lazy" />
 
     <div class="container mx-auto relative z-20 pt-32 md:pt-64">
       <h1 class="text-[30px] md:text-[55px] lg:text-[65px] text-white font-bold mb-5" data-aos="fade-up">
-        Новости</h1>
+        {{ $t('news_title') }}
+      </h1>
       <div class="md:flex justify-between items-center" data-aos="fade-up">
-        <p class="md:text-lg md:max-w-[355px] 3xl:max-w-fit text-white text-sm">Ваше будущее жилье — в наших руках. Мы
-          понимаем, как важны для вас
-          шаги.</p>
-        <div :class="isOpenPopup ? 'active' : ''"
+        <p class="md:text-lg md:max-w-[355px] 3xl:max-w-fit text-white text-sm">
+          {{ $t('new_subtitle') }}
+        </p>
+        <!-- <div :class="isOpenPopup ? 'active' : ''"
           class="select group relative z-40 flex md:hidden border-white/40 border-[1px] rounded-[10px] mt-7">
           <button @click="handleOpenPopup" class="select__head flex items-center justify-between w-full h-12 px-4">
             <span class="text-sm text-white font-bold">
@@ -42,7 +43,7 @@
             </li>
 
           </ul>
-        </div>
+        </div> -->
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-x-5 gap-y-10 mt-12"
         data-aos="fade-up">
@@ -51,7 +52,7 @@
       </div>
 
       <button v-if="viewCount < newsData?.data?.value.length" @click="handelShowMore" class="white-border-button">
-        Показать больше
+        {{ $t('show_more') }}
       </button>
     </div>
 

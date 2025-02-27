@@ -56,7 +56,7 @@
             <div class="">
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-white font-bold text-[30px]">
-                        Другие статьи
+                        {{ $t('else_articles') }}
                     </h2>
 
                     <div class="w-fit hidden md:flex">

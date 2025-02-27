@@ -16,27 +16,12 @@
 
         <NuxtImg loading="lazy" v-if="itemData?.background"
             :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`"
-            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
+            class="absolute top-0 z-0 opacity-40 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
             alt="Image" />
 
-
-        <div class="absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen">
-            <SkeletonLoader v-if="itemData?.background" class="h-full w-full">
-                <NuxtImg loading="lazy" v-show="!imageLoaded"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`" @load="onImageLoad"
-                    ref="image"
-                    class="opacity-0 absolute top-0 z-0 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
-                    alt="Image" />
-                <NuxtImg loading="lazy" v-if="imageLoaded"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`"
-                    class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
-                    alt="Image" />
-            </SkeletonLoader>
+        <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-40% w-full h-[300px] opacity-70 absolute z-10">
         </div>
-
-        <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10">
-        </div>
-        <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[1000px] absolute z-10">
+        <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-70% w-full h-[1000px] absolute z-10">
         </div>
 
         <div class="absolute -right-36 bottom-36 w-72 h-72 z-10">
@@ -46,12 +31,12 @@
 
             <div class="pb-14">
 
-                <div class="flex before:rounded-sm items-center">
+                <!-- <div class="flex before:rounded-sm items-center">
                     <span
                         class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-sm text-white">
                         Действует до 30 марта 2024
                     </span>
-                </div>
+                </div> -->
                 <h1
                     class="btn-primary mb-14 text-white text-[30px] md:text-[55px] lg:text-[65px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[876px]">
                     {{itemData.translations?.filter(item =>
@@ -64,50 +49,64 @@
                         v-html="itemData.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
                     </div>
 
-                    <div class="max-w-[508px] mt-14 md:mt-0">
-                        <p class="text-base md:text-xl text-white opacity-40 mb-4 md:mb-7">Проекты участвующие в акции
+                    <div class="max-w-[508px] mt-14 md:mt-0 w-full" v-if="projectInclude?.id">
+                        <p class="text-base md:text-xl text-white opacity-40 mb-4 md:mb-7">
+                            {{ $t('sales_proj_title') }}
                         </p>
 
 
-                        <!-- <div :class="getGridClasses(index)"
+                        <div
                             class="projects-item relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[600px] min-h-[450px]">
                             <div class="">
-                                <NuxtImg v-if="item?.preview"
-                                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=470&height=600`"
+                                <NuxtImg v-if="projectInclude?.preview"
+                                    :src="`https://avalon-panel.sonisapps.com/assets/${projectInclude?.preview}?width=470&height=600`"
                                     class="opacity-50 w-full absolute object-cover h-full" alt="Image" loading="lazy" />
                                 <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
                                 <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
                                     <div class="block-bottom-point"></div>
                                     <div class="flex justify-between mb-auto">
-                                        <NuxtImg class="w-[90px]" v-if="item?.logo"
-                                            :src="`https://avalon-panel.sonisapps.com/assets/${item?.logo}`" alt="Image"
-                                            loading="lazy" />
+                                        <NuxtImg class="w-[90px]" v-if="projectInclude?.logo"
+                                            :src="`https://avalon-panel.sonisapps.com/assets/${projectInclude?.logo}`"
+                                            alt="Image" loading="lazy" />
 
-                                        <span v-if="item?.main_translations?.filter(item =>
-                                            item.languages_code.includes(langStore.lang))[0]?.sale_alias"
-                                            class="md:px-5 py-2 px-4 bg-[url('./../img/icons/bgd-blue-dor-rd.svg')] bg-no-repeat bg-right-bottom h-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
-                                            {{item?.main_translations?.filter(item =>
-                                                item.languages_code.includes(langStore.lang))[0]?.sale_alias}}
+                                        <span v-if="projectInclude?.main_translations?.filter(item =>
+                                            item.languages_code?.includes(langStore.lang))[0]?.sale_alias"
+                                            class="md:px-5 py-2 px-4 bg-no-repeat relative bg-right-bottom h-[45px] w-fit rounded-tl-xl rounded-bl-xl rounded-tr-xl overflow-hidden text-xs md:text-[11px] lg:text-sm text-white">
+
+                                            <svg class="absolute w-full h-full top-0 left-0 right-0"
+                                                viewBox="0 0 101 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M100.893 7.14226C100.893 3.25662 97.7435 0.106689 93.8578 0.106689H8.02385C4.13821 0.106689 0.988281 3.25663 0.988281 7.14227V21.2134C0.988281 25.099 4.13822 28.249 8.02386 28.249L89.6364 28.249C91.5792 28.249 93.1542 26.674 93.1542 24.7312C93.1542 22.7884 94.7291 21.2134 96.6719 21.2134H97.7617C99.4912 21.2134 100.893 22.6155 100.893 24.3451V28.2489C100.893 28.249 100.893 28.249 100.893 28.249C100.893 28.249 100.893 28.249 100.893 28.2489V7.14226Z"
+                                                    :fill="projectInclude?.status" />
+                                                <rect x="95.9688" y="24.0276" width="4.22134" height="4.22134"
+                                                    rx="2.11067" :fill="projectInclude?.status" />
+                                            </svg>
+
+                                            <span class="relative z-20 -bottom-1">
+                                                {{projectInclude?.main_translations?.filter(item =>
+                                                    item.languages_code?.includes(langStore.lang))[0]?.sale_alias}}
+                                            </span>
                                         </span>
                                     </div>
                                     <div class="max-w-96">
                                         <h2
                                             class="text-white hover:text-blue-400 transition-all font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">
                                             <NuxtLink
-                                                :href="`/projects/${item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`">
-                                                {{item?.translations?.filter(item =>
+                                                :href="`/projects/${projectInclude?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`">
+                                                {{projectInclude?.translations?.filter(item =>
                                                     item.languages_code.includes(langStore.lang))[0]?.title}}
                                             </NuxtLink>
                                         </h2>
                                         <div class="text-white text-xs md:text-[11px] lg:text-sm mb-5 line-clamp-3"
-                                            v-html="item?.translations?.filter(item =>
+                                            v-html="projectInclude?.translations?.filter(item =>
                                                 item.languages_code.includes(langStore.lang))[0]?.description">
                                         </div>
                                         <div class="flex items-center mb-5">
                                             <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">{{
                                                 $t('from') }}
                                                 ${{
-                                                    String(item?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}</strong>
+                                                    String(projectInclude?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+                                                }}</strong>
                                             <span class="text-white/60 text-xs hidden md:block">
                                                 {{ $t('including_taxes') }}
                                             </span>
@@ -115,22 +114,22 @@
 
                                         <div class="flex">
                                             <NuxtLink
-                                                :href="`/projects/${item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
+                                                :href="`/projects/${projectInclude?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
                                                 class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-[12px] px-5 rounded-[10px] text-white font-bold text-sm md:text-xs lg:text-base mr-7">
                                                 {{ $t('more') }}
                                             </NuxtLink>
-                                            <div v-if="item?.location_name" class="flex items-center">
+                                            <div v-if="projectInclude?.location_name" class="flex items-center">
                                                 <NuxtImg class="w-3" src="/img/icons/point-white.svg" alt="Image"
                                                     loading="lazy" />
                                                 <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">
-                                                    {{ item?.location_name }}
+                                                    {{ projectInclude?.location_name }}
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
 
 
 
@@ -272,7 +271,25 @@ const route = useRoute();
 
 const salesData = await useAsyncData('Sales', () => $fetch('/api/sales'));
 const res = await useAsyncData('SalesItem', () => $fetch(`/api/sales/${route.params.id}`));
+const projectTitleData = await useAsyncData('ProjectTitle', () => $fetch('/api/projectsTitle'));
 const itemData = res?.data?.value[0]
+const itemProjects = projectTitleData.data.value
+const projectInclude = ref({});
+
+console.log(itemData);
+console.log(itemProjects);
+
+watchEffect(() => {
+    for (let i = 0; i < itemProjects.length; i++) {
+        for (let j = 0; j < itemProjects[i].sales.length; j++) {
+            if (itemProjects[i].sales[j].Sale_id === itemData.id) {
+                projectInclude.value = itemProjects[i]
+            }
+        }
+    }
+})
+
+
 
 const navigationConfig = {
     nextEl: '.sales-button-next',
@@ -294,4 +311,5 @@ const breakpoints = {
         pagination: false,
     },
 };
+
 </script>

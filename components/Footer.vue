@@ -36,7 +36,7 @@
                         src="/assets/video/video-logo.webm"></video>
                 </div> -->
                 <div class="hidden lg:block">
-                    <video loop class="w-[379px] h-[392px] object-cover" muted autoplay
+                    <video loop class="w-full h-[392px] object-cover" muted autoplay
                         :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore?.settings?.footer_video"></video>
                 </div>
 
@@ -102,7 +102,7 @@
                                 </span>
                                 <p
                                     class="text-white font-bold text-sm md:text-[16px] text-ellipsis w-[300px] overflow-hidden 3xl:text-xl group-hover:text-blue-400 transition-all">
-                                    {{ toolkitStore?.settings?.soc_link_location }}
+                                    {{ toolkitStore?.settings?.address }}
                                 </p>
                             </div>
                         </a>
@@ -400,6 +400,8 @@ const submitForm = async () => {
         isSending.value = false;
     }
 };
+
+console.log(toolkitStore?.settings);
 
 const preferredCountries = [
     'id', // Индонезия

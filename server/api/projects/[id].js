@@ -17,6 +17,7 @@ export default defineEventHandler(async (event) => {
           "apartments.*.*",
           "blocks.Block_id.*.*.*.*.*",
           "relative_projects.related_Project_id.translations.*",
+          "relative_projects.related_Project_id.status",
           "relative_projects.related_Project_id.id",
           "relative_projects.related_Project_id.main_translations.*",
           "relative_projects.related_Project_id.logo",

@@ -18,23 +18,28 @@
                     </div>
 
                 </div>
-                <div data-aos="fade-left" class="w-full flex items-center justify-center">
-                    <svg class="absolute animate-spinAbout w-full top-0 left-0" width="100%" height="100%"
-                        viewBox="0 0 508 433" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path opacity="0.2" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M327.488 2.83042C458.839 17.8616 520.292 159.634 505.255 291.034C493.455 394.15 381.711 441.552 278.633 429.756C146.896 414.681 -13.4797 365.183 1.60108 233.398C19.3293 78.4784 172.625 -14.8912 327.488 2.83042Z"
+
+
+                <div data-aos="fade-left" class="ooo w-full flex items-center justify-center">
+                    <svg class="absolute animate-spinAbout w-full top-0 lg:-right-28" width="772" height="540" viewBox="0 0 772 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M770.646 238.549C780.284 403.585 582.471 479.281 422.716 521.494C286.634 557.453 133.516 543.381 52.314 428.361C-29.7132 312.172 -10.3944 148.846 85.461 43.7831C162.478 -40.6316 285.436 21.1699 395.322 52.4054C543.822 94.617 761.642 84.3536 770.646 238.549Z"
                             stroke="white" />
                     </svg>
-                    <svg class="absolute animate-spinAbout2 w-full top-0 left-0" width="100%" height="100%"
-                        viewBox="0 0 508 433" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path opacity="0.2" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M327.488 2.83042C458.839 17.8616 520.292 159.634 505.255 291.034C493.455 394.15 381.711 441.552 278.633 429.756C146.896 414.681 -13.4797 365.183 1.60108 233.398C19.3293 78.4784 172.625 -14.8912 327.488 2.83042Z"
+                    <svg class="absolute animate-spinAbout2 w-full top-0 lg:-right-28" width="772" height="540" viewBox="0 0 772 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M770.646 238.549C780.284 403.585 582.471 479.281 422.716 521.494C286.634 557.453 133.516 543.381 52.314 428.361C-29.7132 312.172 -10.3944 148.846 85.461 43.7831C162.478 -40.6316 285.436 21.1699 395.322 52.4054C543.822 94.617 761.642 84.3536 770.646 238.549Z"
                             stroke="white" />
                     </svg>
 
-                    <NuxtImg width="591" height="488" class="max-w-[400px] h-[350px] w-full lg:max-w-[500px] relative z-10 rounded-[200px] lg:-mr-20"
-                        :src="'https://avalon-panel.sonisapps.com/assets/' + props.itemInfo?.main_translations?.filter(item =>
-                            item.languages_code?.includes(locale))[0]?.image + '?width=500&height=500'" alt="ph" />
+
+                    <!-- <NuxtImg width="591" height="488"
+                        class="ooo max-w-[400px] h-[350px] w-full lg:max-w-[500px] relative z-10 lg:-mr-20" :src="'https://avalon-panel.sonisapps.com/assets/' + props.itemInfo?.main_translations?.filter(item =>
+                            item.languages_code?.includes(locale))[0]?.image + '?width=500&height=500'" alt="ph" /> -->
+
+
+                    <AboutImageSvg :itemInfo="itemInfo" :locale="locale" />
+
                 </div>
             </div>
 

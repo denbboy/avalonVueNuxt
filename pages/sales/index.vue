@@ -9,7 +9,7 @@
   </Head>
 
   <section class="pb-24 relative bg-blue-500 overflow-hidden">
-    <div class="bg-gradient-to-t from-blue-500 from-80% lg:from-80%  w-full h-full absolute z-10"></div>
+    <div class="bg-gradient-to-t from-blue-500 from-70% lg:from-70%  w-full h-[2000px] absolute z-10"></div>
 
     <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] h-screen min-w-[100vw] object-cover max-w-max md:w-full"
       :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore.settings.header_img" alt="Image"
@@ -93,9 +93,6 @@ const handelShowMore = () => {
 
 const salesData = await useAsyncData('Sales', () => $fetch('/api/sales'));
 const projectTitleData = await useAsyncData('ProjectTitle', () => $fetch('/api/projectsTitle'));
-
-console.log(projectTitleData);
-
 
 const activeProject = ref(-1)
 const isOpenPopup = ref(false)

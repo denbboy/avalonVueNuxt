@@ -57,9 +57,10 @@ export default {
       },
       screens: {
         '375':'375px',
+        'md':'992px',
         'lg': '1441px',
         '2xl': '1600px',
-        '3xl': '1870px',
+        '3xl': '1900px',
       },
       container: {
         center: true,

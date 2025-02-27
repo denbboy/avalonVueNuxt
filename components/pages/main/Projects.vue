@@ -26,12 +26,12 @@
                 class="projects grid flex-col gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 flex-wrap items-center md:justify-between md:flex-row lg:flex-row z-10 relative">
 
                 <div :class="getGridClasses(index)"
-                    class="projects-item relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] hover:bg-[#666] transition-all lg:min-h-[600px] min-h-[450px]"
+                    class="projects-item group relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] transition-all lg:min-h-[600px] min-h-[450px] hover:bg-transparent"
                     v-for="(item, index) in projectsStore.projects" :key="item.id">
                     <div class="">
                         <NuxtImg v-if="item?.preview"
                             :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=470&height=600`"
-                            class="opacity-50 w-full absolute object-cover h-full" alt="Image" loading="lazy" />
+                            class="prev-img w-full h-full absolute object-cover opacity-50 transition-opacity duration-300 group-hover:opacity-100" alt="Image" loading="lazy" />
                         <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
                         <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
                             <div class="block-bottom-point"></div>

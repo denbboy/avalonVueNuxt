@@ -188,5 +188,13 @@
     "input_name": "First and last name",
     "input_textarea": "Enter the text of the cover letter",
 
-    "address": "Address"
+    "address": "Address",
+
+    "sales_proj_title":"Projects participating in the promotion",
+
+    "news_title": "Новости",
+    "new_subtitle": "Ваше будущее жилье — в наших руках. Мы понимаем, как важны для вас шаги.",
+    "show_more": "Показать больше",
+
+    "else_articles": "Другие статьи"
 }

@@ -18,7 +18,7 @@
           </div>
 
 
-          <div class="items-center gap-[26px] 3xl:gap-10 hidden md:flex">
+          <div class="items-center gap-[26px] 3xl:gap-9 hidden md:flex">
             <NuxtLink href="/" class="text-white text-[12px] 3xl:text-base relative transition-all
                             before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
                             after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
@@ -87,9 +87,9 @@
         </div>
 
 
-        <div class="flex items-center gap-4 lg:gap-8">
+        <div class="flex items-center gap-4 lg:gap-7">
           <button type="button" @click="handleOpenModal"
-            class="2xl:flex hidden border border-whiteOp-400 rounded-xl 2xl:p-4 py-3 px-4 text-white md:text-xs 3xl:text-base font-bold hover:bg-white hover:text-blue-400 hover:border-white transition-all xl:justify-center">
+            class="2xl:flex hidden border border-whiteOp-400 rounded-xl 2xl:p-4 py-3 px-4 text-white md:text-xs 3xl:text-sm font-bold hover:bg-white hover:text-blue-400 hover:border-white transition-all xl:justify-center">
             {{ $t('make_a_meeting') }}
           </button>
 
@@ -127,7 +127,7 @@
               </button>
             </div>
           </div>
-          <div class="gap-1 hidden xl:flex">
+          <div class="gap-1 hidden 3xl:flex">
             <a v-if="toolkitStore?.settings?.soc_link_whats" :href="`${toolkitStore?.settings?.soc_link_whats}`"
               class="lg:w-[48px] lg:h-[48px] md:w-[42px] md:h-[42px] border border-white rounded-full hover:bg-white transition-all flex items-center justify-center group">
               <svg class="fill-white w-1/2 group-hover:fill-blue-600 transition-all" width="25" height="25"
@@ -228,7 +228,7 @@
           {{ $t('make_a_meeting') }}
         </button>
       </div>
-      <div class="flex xl:hidden mt-12 pt-7 border-t border-whiteOp-300 gap-11 justify-center">
+      <div class="flex 3xl:hidden mt-12 pt-7 border-t border-whiteOp-300 gap-11 justify-center">
         <ul class="flex items-center gap-4">
           <li>
             <button @click="changeLocale('ua')" class="hover:text-blue-400 transition-all text-white text-base">
@@ -246,26 +246,26 @@
             </button>
           </li>
         </ul>
-        <ul class="flex items-center gap-1">
-          <li v-if="toolkitStore?.settings?.soc_link_whats">
-            <a :href="`${toolkitStore?.settings?.soc_link_whats}`">
-              <NuxtLink src="/img/index/tw-burger.svg" alt="ic" />
-            </a>
+        <ul class="flex items-center gap-1 ">
+          <li v-if="toolkitStore?.settings?.soc_link_whats" class="w-10 h-10">
+            <NuxtLink class="w-full h-full" :href="`${toolkitStore?.settings?.soc_link_whats}`">
+              <NuxtImg class="w-full" src="/img/index/tw-burger.svg" alt="ic" />
+            </NuxtLink>
           </li>
-          <li v-if="toolkitStore?.settings?.soc_link_inst">
-            <a :href="`${toolkitStore?.settings?.soc_link_inst}`">
-              <NuxtLink src="/img/index/inst-burger.svg" alt="ic" />
-            </a>
+          <li v-if="toolkitStore?.settings?.soc_link_inst" class="w-10 h-10">
+            <NuxtLink class="w-full h-full" :href="`${toolkitStore?.settings?.soc_link_inst}`">
+              <NuxtImg class="w-full" src="/img/index/inst-burger.svg" alt="ic" />
+            </NuxtLink>
           </li>
-          <li v-if="toolkitStore?.settings?.soc_link_fb">
-            <a :href="`${toolkitStore?.settings?.soc_link_fb}`">
-              <NuxtLink src="/img/index/face-burger.svg" alt="ic" />
-            </a>
+          <li v-if="toolkitStore?.settings?.soc_link_fb" class="w-10 h-10">
+            <NuxtLink class="w-full h-full" :href="`${toolkitStore?.settings?.soc_link_fb}`">
+              <NuxtImg class="w-full" src="/img/index/face-burger.svg" alt="ic" />
+            </NuxtLink>
           </li>
-          <li v-if="toolkitStore?.settings?.soc_link_yt">
-            <a :href="`${toolkitStore?.settings?.soc_link_yt}`">
-              <NuxtLink src="/img/index/yout-burger.svg" alt="ic" />
-            </a>
+          <li v-if="toolkitStore?.settings?.soc_link_yt" class="w-10 h-10">
+            <NuxtLink class="w-full h-full" :href="`${toolkitStore?.settings?.soc_link_yt}`">
+              <NuxtImg class="w-full" src="/img/index/yout-burger.svg" alt="ic" />
+            </NuxtLink>
           </li>
         </ul>
       </div>

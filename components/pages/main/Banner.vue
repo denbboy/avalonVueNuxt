@@ -6,13 +6,13 @@
     </div>
 
     <!-- :modules="modules" -->
-    <swiper class="swiper-banner" :autoplay="{ delay: 15000, disableOnInteraction: false }" :loop="true"
+    <swiper ref="swiperRef" class="swiper-banner" :autoplay="{ delay: 15000, disableOnInteraction: false }" :loop="true"
       :slides-per-view="1" :pagination="{ clickable: true }" :modules="[Pagination, A11y, Autoplay]" pagination a11y
       :speed="1500">
 
 
       <swiper-slide v-for="item in slides" class="pt-20 lg:pt-[180px] lg:min-h-[810px] relative overflow-hidden">
-        <VideoPlayer :item="item" />
+        <VideoPlayer :item="item" :handleVideoPlay="handleVideoPlay" :handleVideoPause="handleVideoPause" />
       </swiper-slide>
 
 
@@ -36,12 +36,24 @@ import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 import useFetchWithCache from '~/hooks/useFetchWithCache'
 
-
-
 const slides = await useFetchWithCache('/api/slides');
 
+const swiperRef = ref(null);
 
+onMounted(() => {
+  swiperRef.value = document.querySelector(".swiper-banner")?.swiper;
+});
 
+const handleVideoPlay = () => {
+  if (swiperRef.value) {
+    swiperRef.value.autoplay.stop();
+  }
+};
 
+const handleVideoPause = () => {
+  if (swiperRef.value) {
+    swiperRef.value.autoplay.start();
+  }
+};
 
 </script>
