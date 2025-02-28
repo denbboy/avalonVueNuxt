@@ -40,7 +40,7 @@
                         :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore?.settings?.footer_video"></video>
                 </div>
 
-                <div class="w-fit">
+                <div class="w-full xl:w-fit sm:flex justify-between xl:block">
                     <div class="md:mb-[30px] md:pb-[30px] border-b border-white/10 mb-5 pb-5">
                         <a :href="toolkitStore?.settings?.soc_link_whats" target="_blank"
                             class="flex items-center gap-4 mb-7 md:gap-4 lg:gap-5 group">

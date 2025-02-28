@@ -105,6 +105,23 @@
     </section>
 </template>
 
+<style>
+/* Если 2 карточки в ряду */
+@media (min-width: 640px) and (max-width: 1440px) { /* sm и md */
+  .projects > *:nth-child(3n) {
+    grid-column: span 2; /* Растягиваем 3-й элемент на 2 колонки */
+  }
+}
+
+/* Если 3 карточки в ряду */
+@media (min-width: 1441px) { /* lg и выше */
+  .projects > *:nth-child(4n) {
+    grid-column: span 3; /* Растягиваем 4-й элемент на 3 колонки */
+  }
+}
+
+</style>
+
 <script setup>
 const modalsStore = useModalsStore()
 const projectsStore = useProjectsStore();

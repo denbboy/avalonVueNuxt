@@ -8,7 +8,7 @@
             </h2>
 
             <div class="">
-                <div data-aos="fade-up" class="flex w-full">
+                <!-- <div data-aos="fade-up" class="flex w-full">
                     <div class="w-full mb-[15px] md:mb-[30px]">
                         <input @change="handleChange" type="radio" name="data1" value="option1" id="option1"
                             class="sr-only" checked>
@@ -23,7 +23,7 @@
                             {{ $t('vills') }}
                         </label>
                     </div>
-                </div>
+                </div> -->
 
                 <Transition>
                     <div v-if="type === 'option1'"

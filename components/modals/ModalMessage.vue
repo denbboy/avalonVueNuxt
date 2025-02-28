@@ -1,5 +1,5 @@
 <template>
-    <NuxtImg src="/img/modals/modal-banner.webp" class="lg:-mt-10 w-full lg:rounded-t-[20px] max-w-none" alt="ph" />
+    <NuxtImg src="/img/modals/modal-banner.webp" class="lg:-mt-10 w-full sm:rounded-t-[20px] max-w-none" alt="ph" />
 
 
     <div
