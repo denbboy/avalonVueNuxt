@@ -4,9 +4,11 @@ export default defineNuxtConfig({
   build: {
     transpile: ["swiper"],
   },
+
   router: {
     middleware: ["locale", "gtm"],
   },
+
   // sitemap: {
   //   sources: ["/api/__sitemap__/urls"],
   //   sitemapName: "sitemap.xml",
@@ -15,10 +17,12 @@ export default defineNuxtConfig({
     sources: ["/api/__sitemap__/index"],
     sitemapName: "sitemap.xml",
   },
+
   robots: {
     debug: false,
     credits: false,
   },
+
   head: {
     htmlAttrs: {
       lang: "en",
@@ -50,19 +54,24 @@ export default defineNuxtConfig({
       { rel: "preconnect", href: "https://www.google.com" },
     ],
   },
+
   loading: {
     color: "#0f0",
   },
+
   experimental: {
     viewTransition: true,
   },
+
   devtools: { enabled: true },
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   plugins: [
     { src: "~/plugins/vue-tel-input.js", ssr: false },
     { src: "~/plugins/vuelidate.js", ssr: false },
@@ -71,7 +80,9 @@ export default defineNuxtConfig({
     "~/plugins/gtm.js",
     // { src: '~/plugins/gtm.js', ssr: false },
   ],
+
   css: ["~/assets/css/main.css"],
+
   modules: [
     "@nuxtjs/tailwindcss",
     "@pinia/nuxt",
@@ -87,14 +98,17 @@ export default defineNuxtConfig({
     "nuxt-viewport",
     "nuxt-simple-sitemap",
   ],
+
   directus: {
     url: "https://avalon-panel.sonisapps.com/",
   },
+
   calendly: {
     isEnabled: true,
     loadWidgetCSS: true,
     loadWidgetCloseIconSvg: true,
   },
+
   i18n: {
     locales: [
       { code: "ua", iso: "ua-US", name: "Ukraine", file: "ua.json" },
@@ -105,9 +119,11 @@ export default defineNuxtConfig({
     langDir: "locales/",
     vueI18n: "./i18n.js",
   },
+
   swiper: {
     modules: ["navigation", "pagination"],
   },
+
   pinia: {
     storesDirs: ["./stores/**", "./custom-folder/stores/**"],
     autoImports: ["defineStore"],
@@ -116,12 +132,15 @@ export default defineNuxtConfig({
   ogImage: {
     enabled: true,
   },
+
   seoExperiments: {
     enabled: true,
   },
+
   schemaOrg: {
     enabled: true,
   },
+
   linkChecker: {
     enabled: true,
   },
@@ -134,6 +153,7 @@ export default defineNuxtConfig({
   },
 
   buildModules: ["@nuxtjs/svg-sprite"],
+
   svgSprite: {
     input: "~/img/icons/",
   },
@@ -142,4 +162,6 @@ export default defineNuxtConfig({
     id: "GTM-1",
     enabled: false,
   },
+
+  compatibilityDate: "2025-02-28",
 });

@@ -56,13 +56,13 @@
             ">
               {{ $t('why_bali') }}
             </NuxtLink>
-            <NuxtLink href="/cooperation" class="text-white md:text-xs 3xl:text-base relative
+            <NuxtLink :href="'/' + mainPageLink.replace('/', '') + '/cooperation'" class="text-white md:text-xs 3xl:text-base relative
               before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
               after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
             ">
               {{ $t('cooperation') }}
             </NuxtLink>
-            <NuxtLink to="/career" class="text-white md:text-xs 3xl:text-base relative
+            <NuxtLink :href="'/' + mainPageLink.replace('/', '') + '/career'" class="text-white md:text-xs 3xl:text-base relative
               before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300
               after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300
             ">
@@ -363,6 +363,13 @@ const handleOpenModal = () => {
   handleCloseBurger();
 };
 
+watchEffect(() => {
+  if (typeof window !== 'undefined') {
+    onMounted(() => {
+      mainPageLink.value = `/${localStorage.getItem('selectedLanguage')?.replace('/', '')}`;
+    });
+  }
+});
 
 // const handleOpen = () => {
 //   isOpen.value = !isOpen.value;

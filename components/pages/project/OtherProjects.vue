@@ -95,11 +95,11 @@ const props = defineProps(['projects']);
 const { t, locale } = useI18n()
 const projectsData = ref(null);
 
-const mainPageLink = ref('/')
-
 onMounted(async () => {
   projectsData.value = await props.projects; 
 });
+
+const mainPageLink = ref('/')
 
 watchEffect(() => {
   if (typeof window !== 'undefined') {
