@@ -404,8 +404,6 @@ const submitForm = async () => {
     }
 };
 
-console.log(toolkitStore?.settings);
-
 const preferredCountries = [
     'id', // Индонезия
     'ua', // Украина
@@ -443,7 +441,5 @@ onUnmounted(() => {
 });
 
 // const copyright = `© ${new Date().getFullYear()} PT Avalon Group Bali`
-
-console.log(toolkitStore?.settings);
 
 </script>

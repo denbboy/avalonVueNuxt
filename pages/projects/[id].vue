@@ -82,6 +82,7 @@ projectsStore.setCurrentProject(itemData.value);
 watch(() => route.params.lang, (newLang) => {
   langStore.lang = newLang || 'ru';
 });
+
 </script>
 
 

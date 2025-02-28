@@ -27,7 +27,7 @@
         <div class="absolute z-20 w-full h-full top-0 left-0 p-3 flex flex-col">
             <!-- salesIds.value -->
             <div class="absolute top-3 left-3 flex gap-2">
-                <NuxtImg v-for="item in salesIds" :src="'https://avalon-panel.sonisapps.com/assets/'+item" alt="Image" class="w-10 h-10 object-contain md:w-14 md:h-14" />
+                <NuxtImg v-if="item?.projects?.logo" :src="'https://avalon-panel.sonisapps.com/assets/'+item?.projects?.logo" alt="Image" class="w-10 h-10 object-contain md:w-14 md:h-14" />
             </div>
             <!-- <NuxtImg src="/img/icons/icon-club.svg" alt="Image"
                 class="absolute w-8 h-8 top-3 left-3 md:w-14 md:h-14" />
@@ -61,7 +61,6 @@ import { ref } from 'vue';
 
 const imageLoaded = ref(false);
 const image = ref(null);
-
 
 function onImageLoad() {
     imageLoaded.value = true;

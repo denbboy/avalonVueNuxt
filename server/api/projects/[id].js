@@ -25,9 +25,10 @@ export default defineEventHandler(async (event) => {
           "relative_projects.related_Project_id.price",
           "relative_projects.related_Project_id.roi_procent",
           "sales.Sale_id.translations.*",
-          "sales.Sale_id.expired_date",
-          "sales.Sale_id.preview",
-          "sales.Sale_id.id",
+          "sales.*.*",
+          "sales.*.projects.logo",
+          // "sales.Sale_id.preview",
+          // "sales.Sale_id.id",
         ],
         filter: {
           translations: {

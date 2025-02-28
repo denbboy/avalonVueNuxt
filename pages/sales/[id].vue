@@ -276,9 +276,6 @@ const itemData = res?.data?.value[0]
 const itemProjects = projectTitleData.data.value
 const projectInclude = ref({});
 
-console.log(itemData);
-console.log(itemProjects);
-
 watchEffect(() => {
     for (let i = 0; i < itemProjects.length; i++) {
         for (let j = 0; j < itemProjects[i].sales.length; j++) {

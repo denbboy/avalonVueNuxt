@@ -123,8 +123,9 @@
                                         item.languages_code.includes(locale))[0]?.title}}
                                 </span>
                             </h2>
-                            <span class="text-white lg:text-[50px] text-[24px]">х</span>
+                            <span class="text-white lg:text-[50px] text-[24px]" :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'">х</span>
                             <div
+                                :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'"
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px]">
                                 <NuxtImg src="/img/about/ribas.png" class="w-full h-full" alt="Image" loading="lazy" />
                             </div>
@@ -144,7 +145,7 @@
                             class="flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
                             <div
                                 class="relative flex items-center justify-center max-w-[95px] w-full h-full xl:max-w-[165px]">
-                                <NuxtImg src="/img/about/playBorder.svg" class="w-full h-full" alt="ic"
+                                <NuxtImg :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'" src="/img/about/playBorder.svg" class="w-full h-full" alt="ic"
                                     loading="lazy" />
                                 <svg v-if="!isPlay" class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18"
                                     height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -172,7 +173,10 @@
                                     </g>
                                 </svg>
                             </div>
-                            {{ $t('see_video') }}
+                            <span :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'">
+
+                                {{ $t('see_video') }}
+                            </span>
                         </button>
                         <div :class="isPlay ? 'opacity-0' : 'opacity-100'"
                             class=" w-full flex gap-[10px] xl:gap-5 xl:mt-[100px] xl:flex  xl:justify-end items-stretch">
@@ -308,9 +312,6 @@ const { itemData } = defineProps(['itemData'])
 const handleOpenModal = () => {
     modalsStore.addModal("presentation")
 }
-
-console.log(itemData);
-
 
 const handleOpenRtsp = () => {
     modalsStore.addModal("rtsp")
