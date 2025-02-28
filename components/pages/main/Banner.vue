@@ -11,7 +11,7 @@
       :speed="1500">
 
 
-      <swiper-slide v-for="item in slides" class="pt-20 lg:pt-[180px] lg:min-h-[810px] relative overflow-hidden">
+      <swiper-slide v-for="item in slides" class="pt-24 lg:pt-[180px] lg:min-h-[810px] relative overflow-hidden">
         <VideoPlayer :item="item" :handleVideoPlay="handleVideoPlay" :handleVideoPause="handleVideoPause" />
       </swiper-slide>
 
