@@ -287,7 +287,6 @@ watchEffect(() => {
 })
 
 
-
 const navigationConfig = {
     nextEl: '.sales-button-next',
     prevEl: '.sales-button-prev',
