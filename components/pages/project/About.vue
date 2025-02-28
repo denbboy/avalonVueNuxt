@@ -75,7 +75,7 @@
                     </p>
                 </li>
                 <li
-                    class="py-8 px-5 w-full border-b border-blue-400 lg:border-blue-500 lg:py-12 lg:px-8 md:border-b-0 md:border-r">
+                    class="py-8 px-5 w-full border-blue-400 lg:border-blue-500 lg:py-12 lg:px-8 md:border-b-0">
                     <span class="block font-bold text-white text-2xl mb-2 md:text-[40px] md:mb-4">
                         {{props.itemInfo?.main_translations?.filter(item =>
                             item.languages_code?.includes(locale))[0]?.fourth_block_title}}

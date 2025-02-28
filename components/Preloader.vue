@@ -10,9 +10,9 @@
         <video src="/assets/img/loader100.webm" v-else class="w-[100px]" autoplay loop muted></video> -->
         
         <video v-if="!$viewport.isLessThan('tablet')" width="500" preload="auto" no-controls autoplay loop playsinline muted>
-            <source src="/assets/img/logo-pre.mov" type="video/webm">
+            <source src="/assets/img/logo-pre.mov" type="video/mov">
         </video>
-        <video v-else src="/assets/img/logo-pre.mov" preload="auto" no-controls autoplay loop playsinline muted  width="100"></video>
+        <video v-else src="/assets/img/logo-pre.mov" preload="auto" no-controls autoplay loop playsinline muted width="250"></video>
 
 
     </div>
@@ -29,6 +29,7 @@ const { $viewport } = useNuxtApp()
 const nuxtApp = useNuxtApp();
 const isLoading = ref(true);
 
+nuxtApp.hook("page:start", () => { isLoading.value = true })
 nuxtApp.hook("page:finish", () => {
     setTimeout(() => {
         isLoading.value = false;
