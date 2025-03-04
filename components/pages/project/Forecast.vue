@@ -40,7 +40,7 @@
                                     <div
                                         class="flex gap-3 items-center mb-[10px] md:flex-col md:items-start md:gap-0 md:mb-[15px]">
                                         <h3
-                                            class="font-bold text-white text-xl before:block before:h-[6px] before:w-[6px] before:bg-blue-400 before:rounded flex items-center before:mr-[15px] md:text-2xl 3xl:text-3xl md:before:h-[10px] md:before:w-[10px]">
+                                            class="font-bold text-white text-md before:block before:h-[6px] before:w-[6px] before:bg-blue-400 before:rounded flex items-center before:mr-[15px] md:text-2xl 3xl:text-3xl md:before:h-[10px] md:before:w-[10px]">
                                             110 000 $
                                         </h3>
                                         <span class="text-sm text-[#FFFFFF99] leading-3 md:text-xs">
@@ -56,7 +56,7 @@
                                     <div
                                         class="flex gap-3 items-center mb-[10px] md:flex-col md:items-start md:gap-0 md:mb-[15px]">
                                         <h3
-                                            class="font-bold text-white text-xl before:block before:h-[6px] before:w-[6px] before:bg-blue-400 before:rounded flex items-center before:mr-[15px] md:text-2xl 3xl:text-3xl md:before:h-[10px] md:before:w-[10px]">
+                                            class="font-bold text-white text-md before:block before:h-[6px] before:w-[6px] before:bg-blue-400 before:rounded flex items-center before:mr-[15px] md:text-2xl 3xl:text-3xl md:before:h-[10px] md:before:w-[10px]">
                                             20%
                                         </h3>
                                         <span class="text-sm text-[#FFFFFF99] leading-3 md:text-xs">
@@ -72,7 +72,7 @@
                                     <div
                                         class="flex gap-3 items-center mb-[10px] md:flex-col md:items-start md:gap-0 md:mb-[15px]">
                                         <h3
-                                            class="font-bold text-white text-xl before:block before:h-[6px] before:w-[6px] before:bg-blue-400 before:rounded flex items-center before:mr-[15px] md:text-2xl 3xl:text-3xl md:before:h-[10px] md:before:w-[10px]">
+                                            class="font-bold text-white text-md before:block before:h-[6px] before:w-[6px] before:bg-blue-400 before:rounded flex items-center before:mr-[15px] md:text-2xl 3xl:text-3xl md:before:h-[10px] md:before:w-[10px]">
                                             180 000 $
                                         </h3>
                                         <span class="text-sm text-[#FFFFFF99] leading-3 3xl:text-xs">
@@ -90,49 +90,49 @@
                             <div class="text-white w-full flex flex-col gap-y-[15px]">
                                 <!-- Headers -->
                                 <div
-                                    class="font-bold justify-between w-full grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch  gap-x-[10px] md:gap-x-[20px] md:mb-[10px]">
+                                    class="font-bold justify-between w-full grid grid-cols-[repeat(7,_160px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch  gap-x-[10px] md:gap-x-[20px] md:mb-[10px]">
                                     <div class="w-full md:w-[189px] lg:w-full shrink-0  py-5 md:py-0">
 
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>
                                             {{ $t('forecase_header_1') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>
                                             {{ $t('forecase_header_2') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>
                                             {{ $t('forecase_header_3') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>
                                             {{ $t('forecase_header_4') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>
                                             {{ $t('forecase_header_5') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>
                                             {{ $t('forecase_header_6') }}
                                         </p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_160px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
                                         class=" w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-2 md:py-0">
                                         <p class="font-bold text-wrap text-white text-xs md:text-[14px] md:text-end">
@@ -140,21 +140,21 @@
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl md:leading-6">
                                             70 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
 
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             70 %
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
 
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             1 470 $
@@ -162,28 +162,28 @@
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             17 640 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             12 348 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             11 %
                                         </p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_160px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
                                         class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-2 md:py-0">
                                         <p class="font-bold text-white text-xs md:text-[14px] md:text-end">
@@ -191,47 +191,47 @@
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             95 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             80 %
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             2 280 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             27 360 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             19 152 $
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             17 %
                                         </p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_160px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
                                         class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-2 md:py-0">
                                         <p class="font-bold text-white text-xs md:text-[14px] md:text-end">
@@ -239,41 +239,41 @@
                                         </p>
                                     </div>
                                     <div
-                                        class=" whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class=" whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             100 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             90 %
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             2 700 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             32 400 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             22 680 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             21 %
                                         </p>
@@ -297,7 +297,7 @@
                                     <div
                                         class="flex gap-3 items-center mb-[10px] md:flex-col md:items-start md:gap-0 md:mb-[15px]">
                                         <h3
-                                            class="font-bold text-white text-xl before:block before:h-[6px] before:w-[6px] before:bg-blue-400 before:rounded flex items-center before:mr-[15px] md:text-2xl 3xl:text-3xl md:before:h-[10px] md:before:w-[10px]">
+                                            class="font-bold text-white text-md before:block before:h-[6px] before:w-[6px] before:bg-blue-400 before:rounded flex items-center before:mr-[15px] md:text-2xl 3xl:text-3xl md:before:h-[10px] md:before:w-[10px]">
                                             110 000 $
                                         </h3>
                                         <span class="text-sm text-[#FFFFFF99] leading-3 md:text-xs">
@@ -313,7 +313,7 @@
                                     <div
                                         class="flex gap-3 items-center mb-[10px] md:flex-col md:items-start md:gap-0 md:mb-[15px]">
                                         <h3
-                                            class="font-bold text-white text-xl before:block before:h-[6px] before:w-[6px] before:bg-blue-400 before:rounded flex items-center before:mr-[15px] md:text-2xl 3xl:text-3xl md:before:h-[10px] md:before:w-[10px]">
+                                            class="font-bold text-white text-md before:block before:h-[6px] before:w-[6px] before:bg-blue-400 before:rounded flex items-center before:mr-[15px] md:text-2xl 3xl:text-3xl md:before:h-[10px] md:before:w-[10px]">
                                             20%
                                         </h3>
                                         <span class="text-sm text-[#FFFFFF99] leading-3 md:text-xs">
@@ -329,7 +329,7 @@
                                     <div
                                         class="flex gap-3 items-center mb-[10px] md:flex-col md:items-start md:gap-0 md:mb-[15px]">
                                         <h3
-                                            class="font-bold text-white text-xl before:block before:h-[6px] before:w-[6px] before:bg-blue-400 before:rounded flex items-center before:mr-[15px] md:text-2xl 3xl:text-3xl md:before:h-[10px] md:before:w-[10px]">
+                                            class="font-bold text-white text-md before:block before:h-[6px] before:w-[6px] before:bg-blue-400 before:rounded flex items-center before:mr-[15px] md:text-2xl 3xl:text-3xl md:before:h-[10px] md:before:w-[10px]">
                                             180 000 $
                                         </h3>
                                         <span class="text-sm text-[#FFFFFF99] leading-3 3xl:text-xs">
@@ -347,49 +347,49 @@
                             <div class="text-white w-full flex flex-col gap-y-[15px]">
                                 <!-- Headers -->
                                 <div
-                                    class="font-bold justify-between w-full grid grid-cols-[repeat(7,_140px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch  gap-x-[10px] md:gap-x-[20px] md:mb-[10px]">
+                                    class="font-bold justify-between w-full grid grid-cols-[repeat(7,_160px)] lg:grid lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch  gap-x-[10px] md:gap-x-[20px] md:mb-[10px]">
                                     <div class="w-full md:w-[189px] lg:w-full shrink-0  py-5 md:py-0">
 
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>
                                             {{ $t('forecase_header_1') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>
                                             {{ $t('forecase_header_2') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>
                                             {{ $t('forecase_header_3') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>
                                             {{ $t('forecase_header_4') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>
                                             {{ $t('forecase_header_5') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
                                         <p>
                                             {{ $t('forecase_header_6') }}
                                         </p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_160px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
                                         class=" w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-2 md:py-0">
                                         <p class="font-bold text-wrap text-white text-xs md:text-[14px] md:text-end">
@@ -397,21 +397,21 @@
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl md:leading-6">
                                             70 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
 
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             70 %
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
 
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             1 470 $
@@ -419,28 +419,28 @@
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             17 640 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             12 348 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="w-full md:w-[124px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0  whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-blue-400 py-[6px] px-1 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             11 %
                                         </p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_160px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
                                         class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-2 md:py-0">
                                         <p class="font-bold text-white text-xs md:text-[14px] md:text-end">
@@ -448,47 +448,47 @@
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             95 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             80 %
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             2 280 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             27 360 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             19 152 $
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#DBA51B99] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             17 %
                                         </p>
                                     </div>
                                 </div>
                                 <div
-                                    class="w-full justify-between grid grid-cols-[repeat(7,_140px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
+                                    class="w-full justify-between grid grid-cols-[repeat(7,_160px)] lg:grid max-h-[56px] h-[56px] lg:grid-cols-[repeat(7,_minmax(180px,_183px))] md:flex items-stretch gap-x-[10px] md:gap-x-[20px]">
                                     <div
                                         class="w-full md:w-[189px] lg:w-full shrink-0 border-t border-b border-whiteOp-300 md:border-none py-2 md:py-0">
                                         <p class="font-bold text-white text-xs md:text-[14px] md:text-end">
@@ -496,41 +496,41 @@
                                         </p>
                                     </div>
                                     <div
-                                        class=" whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class=" whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             100 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             90 %
                                         </p>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             2 700 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             32 400 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             22 680 $
                                         </p>
                                         <span class="text-xs text-[#FFFFFF99]">{{ $t('including_taxes') }}</span>
                                     </div>
                                     <div
-                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[124px] lg:w-full shrink-0 md:py-[5px]">
+                                        class="whitespace-nowrap flex flex-col items-center justify-center  min-h-[-webkit-fill-available] rounded-[8px] bg-[#9B4CD999] py-[6px] px-1 w-full md:w-[160px] lg:w-full shrink-0 md:py-[5px]">
                                         <p class="font-bold text-base 3xl:text-2xl 3xl:leading-6">
                                             21 %
                                         </p>

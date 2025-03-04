@@ -58,9 +58,9 @@ useHead({
             </h1>
             <div data-aos="fade-up" data-aos-delay="100"
                 class="*:text-white justify-between items-center mb-10 lg:mb-48">
-                <p class="md:text-lg text-white text-sm mb-7 max-w-[548px]"
+                <div class="md:text-lg text-white text-sm mb-7 max-w-[548px]"
                     v-html="currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
-                </p>
+                </div>
 
                 <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_670_12563)">

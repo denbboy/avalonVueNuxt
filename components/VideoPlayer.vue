@@ -160,7 +160,7 @@
         <div v-if="!item?.projects?.length" class="flex items-center justify-between">
             <div class="">
                 <div class="banner__item__head md:flex">
-                    <div class="flex">
+                    <div class="flex mb-5 lg:mb-0">
                         <h1 class="text-white text-[45px] font-bold leading-1 md:text-[70px] mr-3">
                             {{item?.translations?.filter(item =>
                                 item.languages_code.includes(langStore.lang))[0]?.title}}
@@ -172,7 +172,7 @@
                     </div>
                     <div class="con md:ml-4 md:pl-5 md:px-7 relative">
                         <div class="absolute h-12 left-0 top-1/2 -translate-y-1/2 w-[1px] bg-white/20"></div>
-                        <div v-if="item?.price" class="relative px-5 py-3 w-fit md:text-center">
+                        <div v-if="item?.price" class="relative px-5 py-3 w-fit md:text-center mb-8 lg:mb-0">
                             <NuxtImg v-if="$viewport.isLessThan('tablet')"
                                 class="absolute top-0 w-full left-0 -z-10 md:hidden h-full"
                                 src="/img/index/bgd-decor.png" alt="bgd" />
@@ -275,28 +275,51 @@ onMounted(() => {
     swiperInstance.value = document.querySelector('.swiper-banner');
 });
 
+import { onMounted } from "vue";
+
+let player;
 
 const handlePlayVideo = (e, videoUrl) => {
-    const iframeBlock = e.target.closest('.swiper-slide').querySelector('iframe')
+    const iframeBlock = e.target.closest(".swiper-slide")?.querySelector("iframe");
+    if (!iframeBlock) return;
 
     let urlLink;
-    const params = url.parse(videoUrl, true);
+    const params = new URL(videoUrl);
+    const videoId = params.searchParams.get("v") || params.pathname.replace("/embed", "").replace("/", "");
 
     if (isVideoPlayed.value) {
-        urlLink = ''
-        handleVideoPause()
+        urlLink = "";
+        handleVideoPause();
     } else {
-        urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}`
-        handleVideoPlay()
+        urlLink = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${videoId}&enablejsapi=1`;
+        handleVideoPlay();
     }
 
     isVideoPlayed.value = !isVideoPlayed.value;
 
-    iframeBlock.setAttribute('src', urlLink)
+    iframeBlock.setAttribute("src", urlLink);
 
-    iframeBlock.addEventListener('ended', function () {
-        alert('конец видео')
-    })
-}
+    // Ждем загрузки видео и устанавливаем 720p через API
+    iframeBlock.onload = () => {
+        player = new YT.Player(iframeBlock, {
+            events: {
+                onReady: (event) => event.target.setPlaybackQuality("hd720"),
+                onStateChange: (event) => {
+                    if (event.data === YT.PlayerState.ENDED) {
+                        alert("конец видео");
+                    }
+                },
+            },
+        });
+    };
+};
+
+// Загружаем YouTube API при монтировании компонента
+onMounted(() => {
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
+});
+
 
 </script>

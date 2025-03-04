@@ -25,7 +25,9 @@
         </svg>
 
 
-        <p class=" text-xs md:text-[15px] font-bold">Посмотреть локацию в Google Maps</p>
+        <p class=" text-xs md:text-[15px] font-bold">
+          {{ $t('see_google_map') }}
+        </p>
       </a>
 
       <div

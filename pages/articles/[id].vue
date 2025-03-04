@@ -2,7 +2,7 @@
 
     <Head>
         <Title>
-            {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+            {{itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title}}
         </Title>
         <Meta name="description"
             :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
@@ -11,11 +11,12 @@
     <section class="bg-blue-500 pt-32 md:pt-64 relative">
 
         <NuxtImg v-if="itemData?.background" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`"
-            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image" loading="lazy" />
-        <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10">
-        </div>
-        <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_700px)] from-20% w-full h-[1000px] absolute z-10">
-        </div>
+            class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image"
+            loading="lazy" />
+
+            <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_800px)] from-60% w-full h-[1000px] absolute z-10">
+    </div>
+    <div class="bg-gradient-to-t from-transparent to-blue-500 w-full h-[400px] to-80% absolute top-0 z-10"></div>
 
 
         <div class="absolute right-0 bottom-56 w-72 h-72 z-10">
@@ -33,9 +34,9 @@
                     </span>
                 </div>
                 <h1
-                    class="text-white text-[30px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[1400px] md:text-[65px]">
+                    class="text-white text-[30px] md:text-[55px] lg:text-[65px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[1400px] mb-20">
 
-                    {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+                    {{itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title}}
 
                 </h1>
                 <!-- <a href="#"
@@ -43,8 +44,7 @@
                     <NuxtImg src="/img/icons/socials.svg" class="md:w-6" alt="Soc" loading="lazy" />
                 </a> -->
 
-                <div
-                class="article-description max-w-[1047px]"
+                <div class="article-description max-w-[1047px]"
                     v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
                 </div>
             </div>
@@ -112,10 +112,12 @@
     width: 20px;
     height: 25px;
 }
+
 .article-description ol li {
     padding-left: 20px;
     position: relative;
 }
+
 .article-description ol li:before {
     content: "";
     background: #0E88EC;
@@ -127,10 +129,12 @@
     left: 0;
     top: 8px;
 }
+
 .article-description h2 {
     font-weight: bold;
     font-size: 28px;
 }
+
 .text-content blockquote:before {
     content: "";
     height: 100%;
@@ -141,6 +145,7 @@
     top: 0;
     left: 14px;
 }
+
 .text-content blockquote {
     padding-left: 36px;
     position: relative;

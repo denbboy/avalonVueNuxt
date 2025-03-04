@@ -5,6 +5,7 @@
             <!-- <NuxtImg class="h-full w-full object-cover scale-125" src="/img/index/buy-bgd.webp" /> -->
             <NuxtImg class="h-full w-full object-cover scale-[1.7]" src="/img/about/bgd-sec-changy.webp" alt="image" />
         </Parallaxy>
+
         <div class="container relative z-10">
             <div
                 class="bg-no-repeat bg-cover pt-[60px] pb-9 px-5 md:px-[70px] xl:px-[0px] relative  xl:py-24 3xl:pr-[82px] 3xl:pl-[125px]">
