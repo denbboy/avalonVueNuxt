@@ -212,19 +212,15 @@
             <div class="flex gap-5">
                 <div v-if="item?.strings.some(item => item.String_id.id === 2)"
                     class="pr-5 border-r border-whiteOp-300">
-                    <p class="font-bold text-white text-2xl mb-2 md:text-4xl md:mb-3">
-                        {{item?.strings.filter(item => item.String_id.id === 2)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title}}
-                    </p>
-                    <span class="text-white text-sm md:text-base">
-                        {{item?.strings.filter(item => item.String_id.id === 2)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description}}
+                    <div class="font-bold text-white text-2xl mb-2 md:text-4xl md:mb-3" v-html="item?.strings.filter(item => item.String_id.id === 2)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
+                    </div>
+                    <span class="text-white text-sm md:text-base" v-html="item?.strings.filter(item => item.String_id.id === 2)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
                     </span>
                 </div>
                 <div v-if="item?.strings.some(item => item.String_id.id === 3)">
-                    <p class="font-bold text-white text-2xl mb-2 md:text-4xl md:mb-3">
-                        {{item?.strings.filter(item => item.String_id.id === 3)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title}}
-                    </p>
-                    <span class="text-white text-sm md:text-base">
-                        {{item?.strings.filter(item => item.String_id.id === 3)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description}}
+                    <div class="font-bold text-white text-2xl mb-2 md:text-4xl md:mb-3" v-html="item?.strings.filter(item => item.String_id.id === 3)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
+                    </div>
+                    <span class="text-white text-sm md:text-base" v-html="item?.strings.filter(item => item.String_id.id === 3)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
                     </span>
                 </div>
             </div>
