@@ -14,9 +14,9 @@
             class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image"
             loading="lazy" />
 
-            <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_800px)] from-60% w-full h-[1000px] absolute z-10">
-    </div>
-    <div class="bg-gradient-to-t from-transparent to-blue-500 w-full h-[400px] to-80% absolute top-0 z-10"></div>
+        <div class="bg-gradient-to-t from-blue-500 top-[calc(1000px_-_800px)] from-60% w-full h-[1000px] absolute z-10">
+        </div>
+        <div class="bg-gradient-to-t from-transparent to-blue-500 w-full h-[400px] to-80% absolute top-0 z-10"></div>
 
 
         <div class="absolute right-0 bottom-56 w-72 h-72 z-10">
@@ -111,6 +111,15 @@
     left: 4px;
     width: 20px;
     height: 25px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
 }
 
 .article-description ol li {

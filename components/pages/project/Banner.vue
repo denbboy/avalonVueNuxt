@@ -1,6 +1,5 @@
 <template>
 
-
     <section class="relative" :class="isPlay && isPlayMobile ? 'z-[100]' : ''">
         <div class="lg:pb-10 pb-5 pt-36 lg:pt-[290px] relative ">
             <!-- bg-[url('./../img/about/about-banner.webp')] -->
@@ -8,22 +7,17 @@
                 :class="isPlay && isPlayMobile ? 'opacity-100 z-20' : 'opacity-80 -z-10'">
                 <NuxtImg v-if="itemData?.background"
                     :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}?width=1920&height=800`"
-                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0 opacity-40" alt="Image" />
+                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0 opacity-40 hidden md:block" alt="Image" />
                 <NuxtImg v-else :src="getYoutubePreview().thumb(itemData?.video ?? '') ?? ''"
-                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="Image" />
+                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0 hidden md:block" alt="Image" />
 
 
-                <!-- <div class=""> -->
-                <!-- <SkeletonLoader v-if="itemData?.preview" class="!absolute top-0 left-0 w-full h-[110vh] object-cover z-0">
-                        <NuxtImg v-show="!imageLoaded" ref="image" loading="lazy"
-                            :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`" @error="onImageLoad"
-                            @load="onImageLoad"
-                            class="opacity-0 absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="" />
-                        <NuxtImg v-if="imageLoaded" loading="lazy"
-                            :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.preview}`"
-                            class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0" alt="" />
-                    </SkeletonLoader> -->
-                <!-- </div> -->
+                <NuxtImg :class="isPlay && isPlayMobile ? 'opacity-100 z-20' : 'opacity-80 -z-10'"
+                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.mobile_preview}?width=600&height=700`"
+                    width="1920" height="800"
+                    class="absolute block md:hidden object-cover brightness-[.5] top-0 left-0 w-full h-full"
+                    alt="Image" />
+
 
                 <iframe v-if="`${itemData?.video}`" :class="isPlay && isPlayMobile ? 'full-image' : ''"
                     class="absolute scale-125 top-0 left-0 pointer-events-none w-full h-[110vh] object-cover z-0"
@@ -123,9 +117,9 @@
                                         item.languages_code.includes(locale))[0]?.title}}
                                 </span>
                             </h2>
-                            <span class="text-white lg:text-[50px] text-[24px]" :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'">х</span>
-                            <div
-                                :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'"
+                            <span class="text-white lg:text-[50px] text-[24px]"
+                                :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'">х</span>
+                            <div :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'"
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px]">
                                 <NuxtImg src="/img/about/ribas.png" class="w-full h-full" alt="Image" loading="lazy" />
                             </div>
@@ -140,13 +134,13 @@
                         </button>
                     </div>
                     <div class="flex flex-col xl:items-end justify-end xl:w-full">
-                        <button @click="e => handlePlayVideo(itemData?.video, e)" type="button"
+                        <button v-if="itemData?.video" @click="e => handlePlayVideo(itemData?.video, e)" type="button"
                             :class="isPlay && isPlayMobile ? 'fixed bottom-0 z-[21]' : ''"
-                            class="flex items-center mb-10 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
+                            class="flex items-center mb-5 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
                             <div
                                 class="relative flex items-center justify-center max-w-[95px] w-full h-full xl:max-w-[165px]">
-                                <NuxtImg :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'" src="/img/about/playBorder.svg" class="w-full h-full" alt="ic"
-                                    loading="lazy" />
+                                <NuxtImg :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'"
+                                    src="/img/about/playBorder.svg" class="w-full h-full" alt="ic" loading="lazy" />
                                 <svg v-if="!isPlay" class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18"
                                     height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.7422 10.653L0.17076 20.7979L0.170761 0.508136L17.7422 10.653Z"
@@ -179,7 +173,7 @@
                             </span>
                         </button>
                         <div :class="isPlay ? 'opacity-0' : 'opacity-100'"
-                            class=" w-full flex gap-[10px] xl:gap-5 xl:mt-[100px] xl:flex  xl:justify-end items-stretch">
+                            class=" w-full flex gap-[10px] xl:gap-5 xl:mt-[100px] mt-[50px] xl:flex  xl:justify-end items-stretch">
                             <div v-if="itemData?.villa_count && !$viewport.isLessThan('tablet')"
                                 class="pb-[15px] flex-1 max-w-[240px] border-b border-whiteOp-300 md:pb-[30px] hidden md:block w-full">
                                 <h3 class="text-white text-2xl font-bold mb-[10px] md:mb-[15px] md:text-[40px]">
@@ -213,7 +207,7 @@
                                     <!-- $t('apartment') -->
                                     {{itemData?.translations?.filter(item =>
                                         item.languages_code.includes(locale))[0]?.second_counter ??
-                                        getAppartmentDeclension(itemData?.apartments_count) }}
+                                        getAppartmentDeclension(itemData?.apartments_count)}}
                                 </p>
                             </div>
                         </div>

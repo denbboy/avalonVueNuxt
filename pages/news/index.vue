@@ -1,10 +1,20 @@
 <template>
 
+  <Head>
+    <Title>
+      {{pagesStore?.pagesList.find(item => item.id === 7).translations?.filter(item =>
+        item.languages_code.includes(locale))[0]?.title}}
+    </Title>
+    <Meta name="description"
+      :content="pagesStore?.pagesList.find(item => item.id === 7).translations?.filter(item => item.languages_code.includes(locale))[0]?.description" />
+  </Head>
+
   <section class="pb-24 relative bg-blue-500 overflow-hidden">
     <div class="bg-gradient-to-t from-blue-500 from-70% lg:from-70%  w-full h-[2000px] absolute z-10"></div>
 
-    <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] h-screen min-w-[100vw] object-cover max-w-max md:w-full" :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore.settings.header_img"
-      alt="Image" loading="lazy" />
+    <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] h-screen min-w-[100vw] object-cover max-w-max md:w-full"
+      :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore.settings.header_img" alt="Image"
+      loading="lazy" />
 
     <div class="container mx-auto relative z-20 pt-32 md:pt-64">
       <h1 class="text-[30px] md:text-[55px] lg:text-[65px] text-white font-bold mb-5" data-aos="fade-up">
@@ -100,4 +110,9 @@ const handleChooseProject = (project) => {
   activeProject.value = project
   isOpenPopup.value = false
 }
+
+const pagesStore = usePagesStore();
+
+const { t, locale } = useI18n()
+
 </script>

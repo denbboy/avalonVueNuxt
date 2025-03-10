@@ -2,10 +2,11 @@
 
   <Head>
     <Title>
-      Sales
+      {{pagesStore?.pagesList.find(item => item.id === 8).translations?.filter(item =>
+        item.languages_code.includes(locale))[0]?.title}}
     </Title>
     <Meta name="description"
-      :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+      :content="pagesStore?.pagesList.find(item => item.id === 8).translations?.filter(item => item.languages_code.includes(locale))[0]?.description" />
   </Head>
 
   <section class="pb-24 relative bg-blue-500 overflow-hidden">
@@ -65,7 +66,8 @@
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-3 gap-x-5 gap-y-5 mt-12"
         data-aos="fade-up">
 
-        <SalesItem v-for="item in sales?.slice(0, viewCount)" :projects="projectTitleData.data.value" :item="item" :key="item.id" bgdColor="blue-500" />
+        <SalesItem v-for="item in sales?.slice(0, viewCount)" :projects="projectTitleData.data.value" :item="item"
+          :key="item.id" bgdColor="blue-500" />
 
       </div>
 
@@ -120,4 +122,8 @@ const handleChooseProject = (projectId) => {
   activeProject.value = projectId
   isOpenPopup.value = false
 }
+
+const pagesStore = usePagesStore();
+
+const { t, locale } = useI18n()
 </script>

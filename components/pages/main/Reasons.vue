@@ -36,8 +36,8 @@
           <video loop
             class="md:min-w-[318px]  md:h-[380px] lg:min-w-[553px] lg:h-[573px] min-w-[214px] w-full h-[222px] object-cover"
             muted autoplay playsinline>
-            <!-- <source src="/assets/video/video-logo.webm" type="video/webm"> -->
             <source src="/assets/video/video-logo.webm" type="video/webm" />
+            <source src="/assets/video/video-logo.mp4" type="video/mp4" />
           </video>
         </div>
 

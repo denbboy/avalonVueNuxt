@@ -14,7 +14,7 @@
         {{ $t('top_location') }}
       </h2>
 
-      <div class="overflow-hidden rounded-t-2xl mb-7 md:mb-0 lg:rounded-none lg:rounded-t-2xl">
+      <div class="overflow-hidden rounded-t-2xl lg:rounded-none lg:rounded-t-2xl">
 
         <div id="map"></div>
       </div>

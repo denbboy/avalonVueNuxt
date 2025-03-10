@@ -7,7 +7,7 @@
 
     <div class="container">
       <div class="bali_con grid grid-cols-2 gap-x-2 gap-y-7 md:grid-cols-3 md:gap-y-12 md:gap-x-5" data-aos="fade-up">
-        <h2 class="font-bold text-white text-3xl md:text-[45px] lg:text-[56px] md:leading-[100%] col-start-1 col-end-3 md:col-end-1" v-html="itemStrings?.filter(item => item.id === 130)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title">
+        <h2 class="font-bold text-white text-[40px] md:text-[45px] lg:text-[56px] md:leading-[100%] col-start-1 col-end-3 md:col-end-1" v-html="itemStrings?.filter(item => item.id === 130)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title">
         </h2>
         <!-- <div class="grid grid-cols-2 gap-x-2 gap-y-7"> -->
         <div class="border-b border-whiteOp-300 pb-5 md:pb-8">

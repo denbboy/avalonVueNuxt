@@ -1,27 +1,42 @@
 <template>
+
+    <Head>
+        <Title>
+            {{pagesStore?.pagesList.find(item => item.id === 6).translations?.filter(item =>
+                item.languages_code.includes(locale))[0]?.title}}
+        </Title>
+        <Meta name="description"
+            :content="pagesStore?.pagesList.find(item => item.id === 6).translations?.filter(item => item.languages_code.includes(locale))[0]?.description" />
+    </Head>
+
     <section class="pb-24 relative bg-blue-500 overflow-hidden">
         <div class="bg-gradient-to-t from-blue-500 from-70% lg:from-70%  w-full h-[2000px] absolute z-10"></div>
 
-        <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] h-screen min-w-[100vw] object-cover max-w-max md:w-full" :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore.settings.header_img"
-      alt="Image" loading="lazy" />
+        <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] h-screen min-w-[100vw] object-cover max-w-max md:w-full"
+            :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore.settings.header_img" alt="Image"
+            loading="lazy" />
 
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">
             <h1 class="text-[30px] md:text-[55px] lg:text-[65px] text-white font-normalidad font-bold mb-5"
-                data-aos="fade-up">Статьи</h1>
+                data-aos="fade-up">
+                {{ $t('articles_title') }}
+            </h1>
             <div class="md:flex justify-between items-center">
-                <p class="md:text-lg md:max-w-[355px] 3xl:max-w-fit text-white text-sm" data-aos="fade-up">Ваше будущее
-                    жилье — в наших руках. Мы понимаем, как важны для
-                    вас шаги.</p>
+                <p class="md:text-lg md:max-w-[355px] 3xl:max-w-fit text-white text-sm" data-aos="fade-up">
+                    {{ $t('articles_subtitle') }}
+                </p>
             </div>
             <div class="grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 grid gap-x-5 gap-y-8 md:gap-y-12 mt-12"
                 data-aos="fade-up">
 
-                <ArticlesItem bgdColor="blue-500" v-for="item in articlesData?.data?.value?.slice(0, viewCount)" :key="item" :item="item" />
+                <ArticlesItem bgdColor="blue-500" v-for="item in articlesData?.data?.value?.slice(0, viewCount)"
+                    :key="item" :item="item" />
 
             </div>
 
-            <button v-if="viewCount < articlesData?.data?.value.length" @click="handelShowMore" class="white-border-button">
-                Показать больше
+            <button v-if="viewCount < articlesData?.data?.value.length" @click="handelShowMore"
+                class="white-border-button">
+                {{ $t('show_more') }}
             </button>
         </div>
 
@@ -42,5 +57,10 @@ const handelShowMore = () => {
 }
 
 const articlesData = await useAsyncData('Articles', () => $fetch('/api/articles'))
+
+const pagesStore = usePagesStore();
+
+const { t, locale } = useI18n()
+
 
 </script>

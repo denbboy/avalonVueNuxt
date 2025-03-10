@@ -36,8 +36,12 @@
                         src="/assets/video/video-logo.webm"></video>
                 </div> -->
                 <div class="hidden lg:block">
-                    <video loop class="w-full h-[392px] object-cover" muted autoplay
+                    <video v-if="isVideoLoaded" loop class="w-full h-[392px] object-cover" muted autoplay
+                        @error="handleError"
                         :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore?.settings?.footer_video"></video>
+                    <NuxtImg v-else
+                        :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore?.settings?.footer_img"
+                        loading="lazy" class="w-full h-[392px]" alt="ph" />
                 </div>
 
                 <div class="w-full xl:w-fit sm:flex justify-between xl:block">
@@ -154,7 +158,11 @@
                             :href="toolkitStore?.settings?.soc_link_tg"
                             class="w-[45px] h-[45px] md:w-[60px] md:h-[60px] border border-whiteOp-300 rounded-full hover:bg-white transition-all flex items-center justify-center group">
                             <!-- <NuxtImg loading="lazy" class="w-2/3" src="/img/icons/location.png" /> -->
-                            <svg class="fill-white group-hover:fill-blue-600 transition-all" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19c-.14.75-.42 1-.68 1.03c-.58.05-1.02-.38-1.58-.75c-.88-.58-1.38-.94-2.23-1.5c-.99-.65-.35-1.01.22-1.59c.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02c-.09.02-1.49.95-4.22 2.79c-.4.27-.76.41-1.08.4c-.36-.01-1.04-.2-1.55-.37c-.63-.2-1.12-.31-1.08-.66c.02-.18.27-.36.74-.55c2.92-1.27 4.86-2.11 5.83-2.51c2.78-1.16 3.35-1.36 3.73-1.36c.08 0 .27.02.39.12c.1.08.13.19.14.27c-.01.06.01.24 0 .38"/></svg>
+                            <svg class="fill-white group-hover:fill-blue-600 transition-all"
+                                xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19c-.14.75-.42 1-.68 1.03c-.58.05-1.02-.38-1.58-.75c-.88-.58-1.38-.94-2.23-1.5c-.99-.65-.35-1.01.22-1.59c.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02c-.09.02-1.49.95-4.22 2.79c-.4.27-.76.41-1.08.4c-.36-.01-1.04-.2-1.55-.37c-.63-.2-1.12-.31-1.08-.66c.02-.18.27-.36.74-.55c2.92-1.27 4.86-2.11 5.83-2.51c2.78-1.16 3.35-1.36 3.73-1.36c.08 0 .27.02.39.12c.1.08.13.19.14.27c-.01.06.01.24 0 .38" />
+                            </svg>
                         </a>
                     </div>
 
@@ -207,10 +215,13 @@
         <div class="bg-blue-500 py-7 md:py-2">
             <div class="container">
                 <div class="flex items-center justify-between gap-8">
-                    <!-- <NuxtImg v-if="$viewport.isLessThan('tablet')" src="/img/index/a-footer.webp" format="webp"
-                        loading="lazy" class="max-w-[96px] md:hidden" alt="ph" /> -->
-                    <video loop class="max-w-[96px] md:hidden" muted autoplay
-                        :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore?.settings?.footer_video"></video>
+
+                    <video v-if="isVideoLoaded" loop class="max-w-[96px] md:hidden" muted autoplay
+                        :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore?.settings?.footer_video"
+                        @error="handleError"></video>
+                    <NuxtImg v-else
+                        :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore?.settings?.footer_img"
+                        format="webp" loading="lazy" class="max-w-[96px] md:hidden" alt="ph" />
 
                     <!-- <div class="logo-clip-path md:hidden">
                         <video loop class="w-[96px] h-[100px] object-cover" muted autoplay>
@@ -277,7 +288,11 @@ import iso31661 from 'iso-3166-1';
 import IMask from 'imask';
 
 
+const isVideoLoaded = ref(true)
 
+const handleError = (e) => {
+    isVideoLoaded.value = false
+}
 
 
 const isVisible = ref(false);

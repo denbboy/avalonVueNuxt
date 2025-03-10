@@ -102,7 +102,7 @@
                         <swiper-slide v-for="image in props.itemData?.gallery" :key="image?.id"
                             class="relative overflow-hidden h-full">
 
-                            <a :href="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}?width=600&height=500`"
+                            <a :href="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`"
                                 :data-fancybox="props.itemData?.id">
                                 <NuxtImg
                                     :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}?width=600&height=500`"
@@ -199,8 +199,6 @@ translations.value = props.itemData?.translations?.find(item => item.languages_c
 
 // Данные для блоков
 const blockData = [
-    { title: 'first_block_title', subtitle: 'first_block_subtitle' },
-    { title: 'second_block_title', subtitle: 'second_block_subtitle' },
     { title: 'third_block_title', subtitle: 'third_block_subtitle' },
     { title: 'fourth_block_title', subtitle: 'fourth_block_subtitle' },
     { title: 'fifth_block_title', subtitle: 'fifth_block_subtitle' },

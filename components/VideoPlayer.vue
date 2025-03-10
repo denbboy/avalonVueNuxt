@@ -77,10 +77,11 @@
                         v-html="item?.projects[0]?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
                     </span>
                 </h2> -->
-                <p :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'"
+                <div :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'"
                     class="text-white text-sm max-w-64 md:max-w-[600px] md:text-base mt-3 md:mt-12 md:mr-5"
                     v-html="item?.projects[0]?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
-                </p>
+                </div>
+
                 <div class="flex items-center justify-between md:block md:mt-7 mt-3 lg:mt-12">
                     <!-- <NuxtLink :to="`/projects/${item?.projects[0]?.item?.slug}`" class="white-button md:mt-7 mt-3 lg:mt-12"> -->
                     <NuxtLink :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'"
@@ -119,7 +120,8 @@
                                 </g>
                             </svg>
                         </div>
-                        <span :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'">{{ $t('see_video') }}</span>
+                        <span :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'">{{ $t('see_video')
+                            }}</span>
                     </button>
                 </div>
             </div>
@@ -127,7 +129,8 @@
             <button data-aos="fade-up" v-if="item?.video" @click="e => handlePlayVideo(e, item?.video)" type="button"
                 class="play-button hidden md:flex items-center gap-5 md:mr-14 text-white text-sm xl:text-base w-full xl:max-w-[165px] xl:flex-col xl:ml-auto">
                 <div class="relative flex items-center justify-center max-w-[95px] w-full xl:max-w-[165px]">
-                    <NuxtImg :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'" src="/img/about/playBorder.svg" class="w-full hidden md:block" alt="ic" loading="lazy" />
+                    <NuxtImg :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'"
+                        src="/img/about/playBorder.svg" class="w-full hidden md:block" alt="ic" loading="lazy" />
                     <svg v-if="!isVideoPlayed" class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18" height="21"
                         viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.7422 10.653L0.17076 20.7979L0.170761 0.508136L17.7422 10.653Z" fill="white" />
@@ -153,7 +156,8 @@
                         </g>
                     </svg>
                 </div>
-                <span :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'">{{ $t('see_video') }}</span>
+                <span :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'">{{ $t('see_video')
+                    }}</span>
             </button>
         </div>
 
@@ -212,15 +216,19 @@
             <div class="flex gap-5">
                 <div v-if="item?.strings.some(item => item.String_id.id === 2)"
                     class="pr-5 border-r border-whiteOp-300">
-                    <div class="font-bold text-white text-2xl mb-2 md:text-4xl md:mb-3" v-html="item?.strings.filter(item => item.String_id.id === 2)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
+                    <div class="font-bold text-white text-2xl mb-2 md:text-4xl md:mb-3"
+                        v-html="item?.strings.filter(item => item.String_id.id === 2)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
                     </div>
-                    <span class="text-white text-sm md:text-base" v-html="item?.strings.filter(item => item.String_id.id === 2)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
+                    <span class="text-white text-sm md:text-base"
+                        v-html="item?.strings.filter(item => item.String_id.id === 2)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
                     </span>
                 </div>
                 <div v-if="item?.strings.some(item => item.String_id.id === 3)">
-                    <div class="font-bold text-white text-2xl mb-2 md:text-4xl md:mb-3" v-html="item?.strings.filter(item => item.String_id.id === 3)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
+                    <div class="font-bold text-white text-2xl mb-2 md:text-4xl md:mb-3"
+                        v-html="item?.strings.filter(item => item.String_id.id === 3)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
                     </div>
-                    <span class="text-white text-sm md:text-base" v-html="item?.strings.filter(item => item.String_id.id === 3)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
+                    <span class="text-white text-sm md:text-base"
+                        v-html="item?.strings.filter(item => item.String_id.id === 3)[0].String_id?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
                     </span>
                 </div>
             </div>

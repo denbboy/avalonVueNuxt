@@ -1,5 +1,5 @@
 <template>
-  <svg class="relative z-10 ml-auto" width="770" height="536" viewBox="0 0 770 536" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="relative z-10 ml-auto" width="770" height="" viewBox="0 0 770 536" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <!-- Определяем маску -->
       <mask id="mask0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="770" height="536">

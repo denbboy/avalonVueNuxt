@@ -21,7 +21,7 @@
 
     "else_projects": "Projects",
 
-    "about_compl": "About the Complex",
+    "about_compl": "About",
     "location": "Location",
     "top_location": "Prime Location",
     "appatments": "Apartments",
@@ -89,7 +89,7 @@
     "companies_text_7": "Bali is one of the most popular destinations for Instagram photos worldwide. The hashtag #Bali has gathered millions of posts showcasing the island's beauty.",
     "companies_text_8": "Travel+Leisure in its rating gives the first place among Asian countries to this magnificent island",
 
-    "download_presentation": "Download Сatalog",
+    "download_presentation": "Get the Presentation",
     "cost": "Cost",
     "bali": "Bali",
     "see_video": "Watch Video",
@@ -101,17 +101,17 @@
 
     "single_appartments": "One-Room Apartments",
 
-    "articles": "Articles",
+    "articles": "Investments in Bali",
     "all_articles": "All Articles",
 
-    "last_news": "Latest News",
+    "last_news": "Company News",
     "all_news": "All News",
 
     "actual_sales": "Current Offers",
     "all_sales": "All Offers",
     "sales_page_subtitle": "Exclusive offers for advantageous property purchases in Bali.",
 
-    "berava": "Berava",
+    "berava": "Berawa",
     "changu": "Canggu",
     "pererenan": "Pererenan",
 
@@ -136,11 +136,11 @@
     "fill_all_fields": "Please fill in all fields in the form",
     "wait_for_send": "Please wait, sending in progress",
     "message_sent_successfuly": "Your message has been sent successfully",
-    "send_mail": "Submit Application",
+    "send_mail": "Send Request",
     "send": "Send",
     "get_a_presentation": "Get Offer",
 
-    "m_calendar_text_1": "Live Meeting with the Sales Team",
+    "m_calendar_text_1": "Meeting with the Sales Team",
     "m_calendar_text_2": "Online Meeting with the Sales Team",
     "m_calendar_text_3": "Choose Date and Time",
     "m_calendar_text_4_1": "You can also ",
@@ -192,10 +192,13 @@
 
     "sales_proj_title":"Projects participating in the promotion",
 
-    "news_title": "Новости",
-    "new_subtitle": "Ваше будущее жилье — в наших руках. Мы понимаем, как важны для вас шаги.",
-    "show_more": "Показать больше",
+    "articles_subtitle": "Your future home is in safe hands. We carefully oversee every step to ensure your confidence and comfort.",
 
-    "else_articles": "Другие статьи",
-    "see_google_map": "See location on Google Maps"
+    "news_title": "News",
+    "new_subtitle": "Your future home is in safe hands. We carefully oversee every step to ensure your confidence and comfort.",
+    "show_more": "Show more",
+
+    "else_articles": "Other Articles",
+
+    "articles_title": "Статьи"
 }
