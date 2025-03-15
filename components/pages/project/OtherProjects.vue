@@ -95,19 +95,19 @@ const props = defineProps(['projects']);
 const { t, locale } = useI18n()
 const projectsData = ref(null);
 
-onMounted(async () => {
+// onMounted(async () => {
   projectsData.value = await props.projects; 
-});
+// });
 
 const mainPageLink = ref('/')
 
-watchEffect(() => {
+// watchEffect(() => {
   if (typeof window !== 'undefined') {
-    onMounted(() => {
-      mainPageLink.value = `/${localStorage.getItem('selectedLanguage')?.replace('/', '')}`;
-    });
+    // onMounted(() => {
+    //   mainPageLink.value = `/${localStorage?.getItem('selectedLanguage')?.replace('/', '')}`;
+    // });
   }
-});
+// });
 
 </script>
 

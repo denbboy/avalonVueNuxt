@@ -12,8 +12,8 @@ const modalsStore = useModalsStore()
 
 const itemData = ref({});
 
-watchEffect(() => {
+// watchEffect(() => {
     itemData.value = modalsStore.modalData
-})
+// })
 
 </script>

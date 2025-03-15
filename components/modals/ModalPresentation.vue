@@ -103,9 +103,9 @@ const allPages = ref([]);
 
 const currentForm = formsStore?.forms?.filter(item => item.slug === "showcase-form")[0]
 
-watch(pagesStore, (newValue) => {
-    allPages.value = newValue?.pagesList;
-});
+// watch(pagesStore, (newValue) => {
+    // allPages.value = newValue?.pagesList;
+// });
 
 const name = ref(null);
 const phone = ref(null);

@@ -52,7 +52,7 @@ function onImageLoad() {
     imageLoaded.value = true;
 }
 
-onMounted(async () => {
+// onMounted(async () => {
     if (image.value?.complete) {
         imageLoaded.value = true;
     }
@@ -60,7 +60,7 @@ onMounted(async () => {
     setTimeout(() => {
         imageLoaded.value = true;
     }, 500)
-});
+// });
 
 const langStore = useLangStore()
 

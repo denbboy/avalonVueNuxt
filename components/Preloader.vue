@@ -1,11 +1,9 @@
 <template>
-    <div v-if="!isHide"
-        class="fixed left-0 top-0 h-full w-full z-50 bg-blue-500 transition-all duration-150 flex items-center justify-center"
-        :class="visibilityClass">
+    <div
+        class="fixed left-0 top-0 h-full visible opacity-100 w-full z-50 bg-blue-500 transition-all duration-150 flex items-center justify-center">
 
         <!-- v-if="!$viewport.isLessThan('tablet')" -->
-        <video  width="500" preload="auto" no-controls autoplay loop playsinline
-            muted>
+        <video width="500" preload="auto" no-controls autoplay loop playsinline muted>
             <source src="/img/logo-pre.mov" type="video/quicktime">
             <source src="/img/logo-pre.webm" type="video/webm">
             <!-- <source src="/img/logo-pre.mp4" type="video/mp4"> -->
@@ -33,24 +31,24 @@ const isLoading = ref(true);
 const isHide = ref(false);
 
 // Вычисляемый класс для видимости
-const visibilityClass = computed(() =>
-    isLoading.value ? 'visible opacity-100' : 'opacity-0 invisible'
-);
+// const visibilityClass = computed(() =>
+//     isLoading.value ? 'visible opacity-100' : 'opacity-0 invisible'
+// );
 
-hook("page:start", () => {
-    isHide.value = false;
-    setTimeout(() => (isLoading.value = true), 50);
-});
+// hook("page:start", () => {
+//     isHide.value = false;
+//     setTimeout(() => (isLoading.value = true), 50);
+// });
 
-hook("page:finish", () => {
-    setTimeout(() => {
-        isLoading.value = false;
-        setTimeout(() => (isHide.value = true), 200);
-    }, 500);
-});
+// hook("page:finish", () => {
+//     setTimeout(() => {
+//         isLoading.value = false;
+//         setTimeout(() => (isHide.value = true), 200);
+//     }, 500);
+// });
 
 // Убираем прелоадер через 1.5 сек после монтирования
-onMounted(() => {
-    setTimeout(() => (isLoading.value = false), 1500);
-});
+// onMounted(() => {
+// setTimeout(() => (isLoading.value = false), 1500);
+// });
 </script>

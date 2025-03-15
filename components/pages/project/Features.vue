@@ -64,11 +64,11 @@ const props = defineProps(['itemStrings'])
 
 const isCanShow = ref(false)
 
-watchEffect(() => {
+// watchEffect(() => {
     setTimeout(() => {
         isCanShow.value = true;
     }, 500)
-})
+// })
 
 const { t, locale } = useI18n()
 

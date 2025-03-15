@@ -18,7 +18,6 @@ const isShowedModal = ref(false)
 
 const sitemap = await useAsyncData("Sitemap", () => $fetch('/api/__sitemap__'))
 
-
 let timeoutId;
 
 nuxtApp.hook("page:finish", () => {
@@ -62,30 +61,30 @@ const route = useRoute();
 const langStore = useLangStore();
 const langCookie = useCookie('lang'); // Создаём cookie для хранения языка
 
-onMounted(() => {
+// onMounted(() => {
   // 1. Проверяем куки
   if (langCookie.value) {
     langStore.lang = langCookie.value;
   } else {
     // 2. Определяем язык системы
-    const systemLang = navigator.language?.split('-')[0] || 'ru';
+    // const systemLang = navigator.language?.split('-')[0] || 'ru';
 
     // 3. Если язык системы поддерживается, устанавливаем его
     const supportedLangs = ['ru', 'ua', 'en']; // Список поддерживаемых языков
-    langStore.lang = supportedLangs.includes(systemLang) ? systemLang : 'ru';
+    langStore.lang = 'ru';
 
     // 4. Сохраняем в куки
     langCookie.value = langStore.lang;
   }
-});
+// });
 
 // 5. Следим за изменением языка в URL и обновляем `langStore.lang`
-watchEffect(() => {
+// watchEffect(() => {
   if (route.params.lang) {
     langStore.lang = route.params.lang;
     langCookie.value = route.params.lang; // Обновляем куки при изменении языка в URL
   }
-});
+// });
 
 </script>
 

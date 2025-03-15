@@ -183,9 +183,9 @@ const modalsStore = useModalsStore();
 const currentPageReqest = ref([]);
 
 // Наблюдение за изменением страницы
-watchEffect(() => {
+// watchEffect(() => {
     currentPageReqest.value = pagesStore?.pagesList?.filter(item => item.slug === 'cooperation')[0]?.translations;
-});
+// });
 
 // Конфигурация Swiper
 const modules = {

@@ -91,9 +91,9 @@ const { modals } = storeToRefs(modalsStore);
 const showModal = ref(false);
 
 // Watcher for modals
-watch(modals, (newModals) => {
-  showModal.value = newModals.length > 0;
-});
+// watch(modals, (newModals) => {
+  // showModal.value = newModals.length > 0;
+// });
 
 // Close Modal Function
 const closeModal = () => {

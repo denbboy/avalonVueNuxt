@@ -40,9 +40,9 @@ const slides = await useFetchWithCache('/api/slides');
 
 const swiperRef = ref(null);
 
-onMounted(() => {
-  swiperRef.value = document.querySelector(".swiper-banner")?.swiper;
-});
+// onMounted(() => {
+  // swiperRef.value = document.querySelector(".swiper-banner")?.swiper;
+// });
 
 const handleVideoPlay = () => {
   if (swiperRef.value) {

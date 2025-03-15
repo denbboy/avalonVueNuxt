@@ -314,7 +314,7 @@ const props = defineProps(['itemStrings'])
 const route = useRoute();
 const itemStrings = ref([]);
 
-watchEffect(() => {
+// watchEffect(() => {
   const isProjectPage = route.path.includes('/projects/');
   
   if (isProjectPage) {
@@ -323,19 +323,19 @@ watchEffect(() => {
     const block = blocksStore.blocks?.find(item => item?.id === 31);
     itemStrings.value = block?.strings || [];
   }
-});
+// });
 
-watch(props, async (newValue) => {
+// watch(props, async (newValue) => {
 
-    if (window.location.href.includes('/projects/')) {
-        itemStrings.value = newValue.itemStrings ?? newValue.blocks?.filter(item => item?.id === 31)[0];
-    }
-});
-watch(blocksStore, async (newValue) => {
+    // if (window.location.href.includes('/projects/')) {
+    //     itemStrings.value = newValue.itemStrings ?? newValue.blocks?.filter(item => item?.id === 31)[0];
+    // }
+// });
+// watch(blocksStore, async (newValue) => {
 
-    if (!window.location.href.includes('/projects/')) {
-        const block = newValue.blocks?.filter(item => item?.id === 31)[0];
-        itemStrings.value = block?.strings || [];
-    }
-});
+    // if (!window.location.href.includes('/projects/')) {
+    //     const block = newValue.blocks?.filter(item => item?.id === 31)[0];
+    //     itemStrings.value = block?.strings || [];
+    // }
+// });
 </script>

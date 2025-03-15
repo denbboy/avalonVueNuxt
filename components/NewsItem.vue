@@ -41,7 +41,7 @@ function onImageLoad() {
     imageLoaded.value = true;
 }
 
-onMounted(() => {
+// onMounted(() => {
     if (image.value?.complete) {
         imageLoaded.value = true;
     }
@@ -49,7 +49,7 @@ onMounted(() => {
     setTimeout(() => {
         imageLoaded.value = true;
     }, 500)
-});
+// });
 
 const props = defineProps({
   item: {

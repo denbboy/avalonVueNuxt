@@ -312,13 +312,13 @@ const handleScrollWS = () => {
     lastScrollY = currentScrollY;
 };
 
-onMounted(() => {
-    window.addEventListener("scroll", handleScrollWS);
-});
+// onMounted(() => {
+    // window.addEventListener("scroll", handleScrollWS);
+// });
 
-onUnmounted(() => {
-    window.removeEventListener("scroll", handleScrollWS);
-});
+// onUnmounted(() => {
+    // window.removeEventListener("scroll", handleScrollWS);
+// });
 
 
 
@@ -439,7 +439,7 @@ const sortedCountries = computed(() => {
     return [...preferredCountries, ...unselectedCountries];
 });
 
-onMounted(() => {
+// onMounted(() => {
     //   setTimeout(() => {
 
     //     IMask(maskedInput.value, {
@@ -448,12 +448,12 @@ onMounted(() => {
     //   }, 2000)
 
     // Добавляем обработчик событий прокрутки
-    window?.addEventListener('scroll', handleScroll);
-});
+    // window?.addEventListener('scroll', handleScroll);
+// });
 
-onUnmounted(() => {
-    window?.removeEventListener('scroll', handleScroll);
-});
+// onUnmounted(() => {
+//     window?.removeEventListener('scroll', handleScroll);
+// });
 
 // const copyright = `© ${new Date().getFullYear()} PT Avalon Group Bali`
 

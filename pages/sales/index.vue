@@ -101,7 +101,7 @@ const isOpenPopup = ref(false)
 const selectedSales = ref([])
 const sales = ref(salesData?.data?.value)
 
-watch(activeProject, (newId) => {
+// watch(activeProject, (newId) => {
   selectedSales.value = []
 
   if (!projectTitleData?.data?.value?.find(item => item.id == newId)?.id) {
@@ -112,7 +112,7 @@ watch(activeProject, (newId) => {
     }
     sales.value = salesData?.data?.value?.filter(item => selectedSales.value.some(item2 => item2 == item.id))
   }
-})
+// })
 
 const handleOpenPopup = () => {
   isOpenPopup.value = !isOpenPopup.value

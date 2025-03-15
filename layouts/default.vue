@@ -48,9 +48,9 @@ blocksStore.setBlocks(blocks?.value);
 
 const isProjectHeader = ref(route.fullPath.includes('/projects/'));
 
-watch(() => route.fullPath, (newPath) => {
-  isProjectHeader.value = newPath.includes('/projects/');
-});
+// watch(() => route.fullPath, (newPath) => {
+  // isProjectHeader.value = newPath.includes('/projects/');
+// });
 
 
 const { $fbq } = useNuxtApp()

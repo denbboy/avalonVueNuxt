@@ -263,11 +263,11 @@ function onImageLoad() {
     imageLoaded.value = true;
 }
 
-onMounted(() => {
+// onMounted(() => {
     if (image.value?.complete) {
         imageLoaded.value = true;
     }
-});
+// });
 
 const addModal = () => {
     modalsStore.addModal('presentation')
@@ -275,55 +275,55 @@ const addModal = () => {
 
 const swiperInstance = ref(null);
 
-onMounted(() => {
-    swiperInstance.value = document.querySelector('.swiper-banner');
-});
+// onMounted(() => {
+    // swiperInstance.value = document.querySelector('.swiper-banner');
+// });
 
 import { onMounted } from "vue";
 
 let player;
 
 const handlePlayVideo = (e, videoUrl) => {
-    const iframeBlock = e.target.closest(".swiper-slide")?.querySelector("iframe");
-    if (!iframeBlock) return;
+    // const iframeBlock = e.target.closest(".swiper-slide")?.querySelector("iframe");
+    // if (!iframeBlock) return;
 
-    let urlLink;
-    const params = new URL(videoUrl);
-    const videoId = params.searchParams.get("v") || params.pathname.replace("/embed", "").replace("/", "");
+    // let urlLink;
+    // const params = new URL(videoUrl);
+    // const videoId = params.searchParams.get("v") || params.pathname.replace("/embed", "").replace("/", "");
 
-    if (isVideoPlayed.value) {
-        urlLink = "";
-        handleVideoPause();
-    } else {
-        urlLink = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${videoId}&enablejsapi=1`;
-        handleVideoPlay();
-    }
+    // if (isVideoPlayed.value) {
+    //     urlLink = "";
+    //     handleVideoPause();
+    // } else {
+    //     urlLink = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${videoId}&enablejsapi=1`;
+    //     handleVideoPlay();
+    // }
 
-    isVideoPlayed.value = !isVideoPlayed.value;
+    // isVideoPlayed.value = !isVideoPlayed.value;
 
-    iframeBlock.setAttribute("src", urlLink);
+    // iframeBlock.setAttribute("src", urlLink);
 
-    // Ждем загрузки видео и устанавливаем 720p через API
-    iframeBlock.onload = () => {
-        player = new YT.Player(iframeBlock, {
-            events: {
-                onReady: (event) => event.target.setPlaybackQuality("hd720"),
-                onStateChange: (event) => {
-                    if (event.data === YT.PlayerState.ENDED) {
-                        alert("конец видео");
-                    }
-                },
-            },
-        });
-    };
+    // // Ждем загрузки видео и устанавливаем 720p через API
+    // iframeBlock.onload = () => {
+    //     player = new YT.Player(iframeBlock, {
+    //         events: {
+    //             onReady: (event) => event.target.setPlaybackQuality("hd720"),
+    //             onStateChange: (event) => {
+    //                 if (event.data === YT.PlayerState.ENDED) {
+    //                     alert("конец видео");
+    //                 }
+    //             },
+    //         },
+    //     });
+    // };
 };
 
 // Загружаем YouTube API при монтировании компонента
-onMounted(() => {
-    const tag = document.createElement("script");
-    tag.src = "https://www.youtube.com/iframe_api";
-    document.body.appendChild(tag);
-});
+// onMounted(() => {
+    // const tag = document.createElement("script");
+    // tag.src = "https://www.youtube.com/iframe_api";
+    // document.body.appendChild(tag);
+// });
 
 
 </script>

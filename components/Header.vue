@@ -272,11 +272,61 @@
     </div>
   </header>
 
-  <Preloader :isActive="isLoading" />
+  <div v-if="loading">
+    asdasdsad
+  </div>
+
+  {{ loading }}
+
+  <!-- <Preloader v-if="isLoading" :isActive="isLoading" /> -->
 </template>
 
 <script setup>
-import { ref, defineProps, onMounted, computed } from 'vue';
+import { ref, nextTick } from 'vue';
+import { useNuxtApp } from '#app';
+
+const isLoading = ref(false); // ✅ Делаем переменную реактивной
+const { hook } = useNuxtApp();
+
+
+const nuxtApp = useNuxtApp()
+const loading = ref(false)
+
+nuxtApp.hook("page:start", () => { loading.value = true })
+nuxtApp.hook("page:finish", () => { loading.value = false })
+
+console.log(loading.value);
+
+// hook("page:start", async () => {
+//     console.log('start');
+//     isLoading.value = true;
+
+//     await nextTick(); // ✅ Гарантируем обновление DOM
+//     console.log("isLoading после старта:", isLoading.value);
+// });
+
+// hook("page:finish", async () => {
+//     console.log('finish');
+//     isLoading.value = false;
+
+//     await nextTick(); // ✅ Ждём обновления
+//     console.log("isLoading после финиша:", isLoading.value);
+// });
+
+onMounted(() => {
+    console.log("isLoading в onMounted:", isLoading.value);
+    isLoading.value = false;
+
+});
+
+
+
+
+
+
+
+
+import { defineProps, onMounted, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useLangStore } from '~/stores/functions/language';
 import { useToolkit } from '~/stores/functions/toolkit';
@@ -284,7 +334,6 @@ import { useProjectsStore } from '~/stores/functions/projects';
 import { usePreloaderStore } from '~/stores/functions/preloader';
 import { useRouter, useRoute } from 'vue-router';
 
-const isLoading = ref(false);
 const isOpenBurger = ref(false);
 const isScrolled = ref(false);
 const isOpen = ref(false);
@@ -330,20 +379,20 @@ const changeLanguage = (newLocale) => {
   locale.value = newLocale;
   langStore.setLang(newLocale);
 
-  localStorage.setItem('selectedLanguage', newLocale);
+  // localStorage?.setItem('selectedLanguage', newLocale);
 
   setTimeout(() => {
     preloaderStore.stop()
   }, 500)
 }
 
-onMounted(() => {
-  const savedLanguage = localStorage.getItem('selectedLanguage');
+// onMounted(() => {
+  // const savedLanguage = localStorage?.getItem('selectedLanguage');
   const urlLocale = route.fullPath.match(/^\/([a-z]{2})(\/|$)/)?.[1] || null;
   const initialLocale = urlLocale || savedLanguage || DEFAULT_LOCALE;
 
   changeLocale(initialLocale);
-});
+// });
 
 
 const openSubMenu = () => {
@@ -363,13 +412,13 @@ const handleOpenModal = () => {
   handleCloseBurger();
 };
 
-watchEffect(() => {
+// watchEffect(() => {
   if (typeof window !== 'undefined') {
-    onMounted(() => {
-      mainPageLink.value = `/${localStorage.getItem('selectedLanguage')?.replace('/', '')}`;
-    });
+    // onMounted(() => {
+      // mainPageLink.value = `/${localStorage?.getItem('selectedLanguage')?.replace('/', '')}`;
+    // });
   }
-});
+// });
 
 // const handleOpen = () => {
 //   isOpen.value = !isOpen.value;
@@ -380,4 +429,5 @@ watchEffect(() => {
 //   const pathWithoutLocale = route.fullPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
 //   return `/${currentLocale !== 'ru' ? currentLocale : ''}${pathWithoutLocale}`;
 // });
+
 </script>

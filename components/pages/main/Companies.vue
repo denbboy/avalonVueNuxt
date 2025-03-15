@@ -127,11 +127,11 @@
 <script setup>
   const isShow = ref();
   const handleOpenAll = () => {
-    document.querySelectorAll('.list .mob-item-hidden').forEach((item) => {
-      item.classList.toggle('hidden')
-      item.classList.toggle('grid')
+    // document.querySelectorAll('.list .mob-item-hidden').forEach((item) => {
+    //   item.classList.toggle('hidden')
+    //   item.classList.toggle('grid')
 
-      isShow.value = true;
-    })
+    //   isShow.value = true;
+    // })
   }
 </script>

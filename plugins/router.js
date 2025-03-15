@@ -2,7 +2,7 @@ export default defineNuxtPlugin(({ $i18n, $router }) => {
   if (process.client) {
     $router.beforeEach((to, from, next) => {
       const langStore = useLangStore();
-      const savedLanguage = localStorage.getItem('selectedLanguage');
+      const savedLanguage = localStorage?.getItem('selectedLanguage');
       const currentLocale = savedLanguage || langStore.lang || 'en';
       const localePrefix = currentLocale !== 'en' ? `/${currentLocale}` : '';
 

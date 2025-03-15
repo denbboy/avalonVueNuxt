@@ -33,16 +33,16 @@ const itemData = computed(() => ({
 }));
 
 // Следим за изменениями props и обновляем itemData
-watch(() => props, (newProps) => {
-    Object.assign(itemData, newProps);
-}, { deep: true, immediate: true });
+// watch(() => props, (newProps) => {
+    // Object.assign(itemData, newProps);
+// }, { deep: true, immediate: true });
 
 const isMobile = ref(false);
 
-watchEffect(() => {
+// watchEffect(() => {
     setTimeout(() => {
         isMobile.value = window?.innerWidth < 576;
     }, 500);
-});
+// });
 </script>
 

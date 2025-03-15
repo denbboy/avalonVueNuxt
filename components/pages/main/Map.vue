@@ -55,11 +55,11 @@ const itemStrings = ref([]);
 const route = useRoute();
 const langStore = useLangStore();
 
-watch(blocksStore, async (newValue) => {
-  itemStrings.value = newValue.blocks?.filter(item => item?.id === 4)[0]?.strings
-})
+// watch(blocksStore, async (newValue) => {
+  // itemStrings.value = newValue.blocks?.filter(item => item?.id === 4)[0]?.strings
+// })
 
-watchEffect(() => {
+// watchEffect(() => {
   const isProjectPage = route.path.includes('/projects/');
   
   if (isProjectPage) {
@@ -68,6 +68,6 @@ watchEffect(() => {
     const block = blocksStore.blocks?.find(item => item?.id === 4);
     itemStrings.value = block?.strings || [];
   }
-});
+// });
 
 </script>

@@ -21,9 +21,9 @@ function onImageLoad() {
     imageLoaded.value = true;
 }
 
-onMounted(() => {
+// onMounted(() => {
     if (image.value?.complete) {
         imageLoaded.value = true;
     }
-});
+// });
 </script>

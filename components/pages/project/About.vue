@@ -96,7 +96,7 @@ const { t, locale } = useI18n()
 
 const strings = ref(null);
 
-watch(props, async (newValue) => {
-    strings.value = newValue.itemData
-})
+// watch(props, async (newValue) => {
+    // strings.value = newValue.itemData
+// })
 </script>

@@ -332,11 +332,11 @@ const handleOpen = () => {
   isOpen.value = !isOpen.value;
 }
 
-onMounted(() => {
+// onMounted(() => {
   setTimeout(() => {
     isLoading.value = false
   }, 6000)
-})
+// })
 
 const DEFAULT_LOCALE = 'en';
 
@@ -348,13 +348,13 @@ const changeLocale = (newLocale) => {
   setTimeout(() => changeLanguage(newLocale), 500)
 };
 
-watchEffect(() => {
+// watchEffect(() => {
   if (typeof window !== 'undefined') {
-    onMounted(() => {
+    // onMounted(() => {
       mainPageLink.value = `/${localStorage.getItem('selectedLanguage')?.replace('/', '')}`;
-    });
+    // });
   }
-});
+// });
 
 const changeLanguage = (newLocale) => {
   const currentPath = route.fullPath;
@@ -375,7 +375,7 @@ const changeLanguage = (newLocale) => {
   locale.value = newLocale;
   langStore.setLang(newLocale);
 
-  localStorage.setItem('selectedLanguage', newLocale);
+  // localStorage.setItem('selectedLanguage', newLocale);
 
   setTimeout(() => {
     preloaderStore.stop()

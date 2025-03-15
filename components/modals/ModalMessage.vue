@@ -89,9 +89,9 @@ const allPages = ref([]);
 
 const currentForm = formsStore.forms.length && formsStore.forms?.filter(item => item.slug === "offer-form")[0]
 
-watch(pagesStore, (newValue) => {
-    allPages.value = newValue?.pagesList;
-});
+// watch(pagesStore, (newValue) => {
+    // allPages.value = newValue?.pagesList;
+// });
 
 const phone = ref(null);
 const isError = ref(null);

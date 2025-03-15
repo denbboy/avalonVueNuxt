@@ -292,11 +292,11 @@ const getAppartmentDeclension = (count) => {
 
 
 
-onMounted(() => {
+// onMounted(() => {
     if (image.value?.complete) {
         imageLoaded.value = true;
     }
-});
+// });
 
 const modalsStore = useModalsStore()
 
@@ -313,15 +313,15 @@ const handleOpenRtsp = () => {
 }
 
 const handlePlayVideo = (videoUrl, e) => {
-    const params = url.parse(videoUrl, true);
+    // const params = url.parse(videoUrl, true);
 
-    isPlay.value = !isPlay.value;
+    // isPlay.value = !isPlay.value;
 
-    if (window.innerWidth < 768) {
-        isPlayMobile.value = true
-    }
+    // if (window.innerWidth < 768) {
+    //     isPlayMobile.value = true
+    // }
 
-    const urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}`
-    document.querySelector('iframe').setAttribute('src', !isPlay.value ? "" : urlLink)
+    // const urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}`
+    // document.querySelector('iframe').setAttribute('src', !isPlay.value ? "" : urlLink)
 }
 </script>

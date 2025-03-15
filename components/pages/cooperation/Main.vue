@@ -293,7 +293,7 @@ const props = defineProps({
 })
 
 
-watchEffect(() => {
+// watchEffect(() => {
     currentPageReqest.value = pagesStore?.pagesList?.filter(item => item.slug === 'cooperation')[0]?.translations
-});
+// });
 </script>

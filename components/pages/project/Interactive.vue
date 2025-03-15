@@ -2,7 +2,7 @@
   <div id="smart-catalog-container">
     <!-- <iframe :src="catalogUrl" frameborder="0" width="100%" height="600px" @load="onLoad"></iframe> -->
 
-    <div class="iframe *:h-[900px] *:w-full" v-html="itemData?.visual_block_facade"></div>
+    <!-- <div class="iframe *:h-[900px] *:w-full" v-html="itemData?.visual_block_facade"></div> -->
   </div>
 </template>
 

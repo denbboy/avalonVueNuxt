@@ -258,11 +258,11 @@ function onImageLoad() {
     imageLoaded.value = true;
 }
 
-onMounted(() => {
+// onMounted(() => {
     if (image.value?.complete) {
         imageLoaded.value = true;
     }
-});
+// });
 
 SwiperCore.use([Navigation, A11y]);
 
@@ -276,7 +276,7 @@ const itemData = res?.data?.value[0]
 const itemProjects = projectTitleData.data.value
 const projectInclude = ref({});
 
-watchEffect(() => {
+// watchEffect(() => {
     for (let i = 0; i < itemProjects.length; i++) {
         for (let j = 0; j < itemProjects[i].sales.length; j++) {
             if (itemProjects[i].sales[j].Sale_id === itemData.id) {
@@ -284,7 +284,7 @@ watchEffect(() => {
             }
         }
     }
-})
+// })
 
 
 const navigationConfig = {

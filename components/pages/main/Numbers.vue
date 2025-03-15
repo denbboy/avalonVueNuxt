@@ -63,16 +63,16 @@ const route = useRoute();
 const langStore = useLangStore();
 const blocksStore = useBlocksStore();
 
-watch([props, blocksStore], async ([newProps, newBlocksStore]) => {
-    if (window.location.href.includes('/projects/')) {
-        itemStrings.value = newProps.itemStrings;
-    } else {
-        const block = newBlocksStore.blocks?.find(item => item?.id === 30);
-        itemStrings.value = block?.strings || [];
-    }
-});
+// watch([props, blocksStore], async ([newProps, newBlocksStore]) => {
+    // if (window.location.href.includes('/projects/')) {
+    //     itemStrings.value = newProps.itemStrings;
+    // } else {
+    //     const block = newBlocksStore.blocks?.find(item => item?.id === 30);
+    //     itemStrings.value = block?.strings || [];
+    // }
+// });
 
-watchEffect(() => {
+// watchEffect(() => {
   const isProjectPage = route.path.includes('/projects/');
   
   if (isProjectPage) {
@@ -81,6 +81,6 @@ watchEffect(() => {
     const block = blocksStore.blocks?.find(item => item?.id === 30);
     itemStrings.value = block?.strings || [];
   }
-});
+// });
 
 </script>
