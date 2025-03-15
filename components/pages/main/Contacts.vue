@@ -181,7 +181,7 @@ const sortedCountries = computed(() => {
 
 import { createDirectus, rest, readFlow } from '@directus/sdk';
 
-const client = createDirectus('https://avalon-panel.sonisapps.com').with(rest());
+const client = createDirectus('https://api.avalonbali.com').with(rest());
 
 const formRequest = async () => {
   // const formData = new FormData();

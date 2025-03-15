@@ -12,7 +12,7 @@
   <section class="bg-blue-500 pt-32 md:pt-64 overflow-hidden">
 
 
-    <NuxtImg v-if="itemData?.background" :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`"
+    <NuxtImg v-if="itemData?.background" :src="`https://api.avalonbali.com/assets/${itemData?.background}`"
       class="absolute top-0 z-0 opacity-90 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover" alt="Image"
       loading="lazy" />
 

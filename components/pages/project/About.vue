@@ -34,7 +34,7 @@
 
 
                     <!-- <NuxtImg width="591" height="488"
-                        class="ooo max-w-[400px] h-[350px] w-full lg:max-w-[500px] relative z-10 lg:-mr-20" :src="'https://avalon-panel.sonisapps.com/assets/' + props.itemInfo?.main_translations?.filter(item =>
+                        class="ooo max-w-[400px] h-[350px] w-full lg:max-w-[500px] relative z-10 lg:-mr-20" :src="'https://api.avalonbali.com/assets/' + props.itemInfo?.main_translations?.filter(item =>
                             item.languages_code?.includes(locale))[0]?.image + '?width=500&height=500'" alt="ph" /> -->
 
 

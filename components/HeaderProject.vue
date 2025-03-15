@@ -10,7 +10,7 @@
         <!-- :href="`/projects/${projectsStore.currentProject?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`" -->
         <div class="flex items-center gap-4 lg:gap-8">
           <button class="max-w-10 w-full md:max-w-20 lg:mr-2" v-if="projectsStore.currentProject?.logo">
-            <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${projectsStore.currentProject?.logo}`"
+            <NuxtImg :src="`https://api.avalonbali.com/assets/${projectsStore.currentProject?.logo}`"
               loading="lazy" class="w-full" alt="Vector" />
           </button>
           <!-- <div class="relative mr-auto max-w-[60px] lg:absolute lg:-bottom-10 lg:ml-5">

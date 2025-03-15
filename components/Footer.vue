@@ -28,7 +28,7 @@
 
                 <!-- v-if="$viewport.isLessThan('tablet')" -->
                 <!-- <NuxtImg v-if="toolkitStore?.settings?.footer_img && !$viewport.isLessThan('tablet')"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${toolkitStore?.settings?.footer_img}?width=380&height=392`"
+                    :src="`https://api.avalonbali.com/assets/${toolkitStore?.settings?.footer_img}?width=380&height=392`"
                     class="lg:max-w-[379px] md:max-w-[338px] w-full hidden xl:block" alt="ph" /> -->
 
                 <!-- <div class="logo-clip-path hidden lg:block">
@@ -38,9 +38,9 @@
                 <div class="hidden lg:block">
                     <video v-if="isVideoLoaded" loop class="w-full h-[392px] object-cover" muted autoplay
                         @error="handleError"
-                        :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore?.settings?.footer_video"></video>
+                        :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_video"></video>
                     <NuxtImg v-else
-                        :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore?.settings?.footer_img"
+                        :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_img"
                         loading="lazy" class="w-full h-[392px]" alt="ph" />
                 </div>
 
@@ -217,10 +217,10 @@
                 <div class="flex items-center justify-between gap-8">
 
                     <video v-if="isVideoLoaded" loop class="max-w-[96px] md:hidden" muted autoplay
-                        :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore?.settings?.footer_video"
+                        :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_video"
                         @error="handleError"></video>
                     <NuxtImg v-else
-                        :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore?.settings?.footer_img"
+                        :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_img"
                         format="webp" loading="lazy" class="max-w-[96px] md:hidden" alt="ph" />
 
                     <!-- <div class="logo-clip-path md:hidden">

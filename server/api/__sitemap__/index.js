@@ -1,7 +1,7 @@
 import { SitemapStream, streamToPromise } from "sitemap";
 import { createDirectus, readItems, rest } from "@directus/sdk";
 
-const directus = createDirectus('https://avalon-panel.sonisapps.com/').with(rest());
+const directus = createDirectus('https://api.avalonbali.com/').with(rest());
 
 export default defineEventHandler(async (event) => {
   const Projects = await directus.request(

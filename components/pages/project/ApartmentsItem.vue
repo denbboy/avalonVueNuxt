@@ -102,10 +102,10 @@
                         <swiper-slide v-for="image in props.itemData?.gallery" :key="image?.id"
                             class="relative overflow-hidden h-full">
 
-                            <a :href="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`"
+                            <a :href="`https://api.avalonbali.com/assets/${image?.directus_files_id}`"
                                 :data-fancybox="props.itemData?.id">
                                 <NuxtImg
-                                    :src="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}?width=600&height=500`"
+                                    :src="`https://api.avalonbali.com/assets/${image?.directus_files_id}?width=600&height=500`"
                                     class="rounded-[15px] object-cover h-full w-full" alt="ph" loading="lazy" />
                             </a>
 

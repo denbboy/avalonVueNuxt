@@ -8,7 +8,7 @@
             src="/img/career/img.webp" alt="Image"> -->
 
         <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] h-screen min-w-[100vw] object-cover max-w-max md:w-full"
-            :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore.settings.header_img" alt="Image"
+            :src="'https://api.avalonbali.com/assets/' + toolkitStore.settings.header_img" alt="Image"
             loading="lazy" />
 
         <div class="bg-gradient-to-t from-blue-500 rotate-180 top-0 from-0% w-full h-[300px] opacity-70 absolute z-10">
@@ -38,7 +38,7 @@
 
                     <div
                         class="flex items-center xl:translate-y-[32px] justify-center xl:p-4 xl:bg-blue-400 xl:w-fit xl:rounded-[20px] xl:mx-auto xl:mt-[-60px]">
-                        <NuxtImg class="w-9 h-9" :src="'https://avalon-panel.sonisapps.com/assets/' + item?.icon"
+                        <NuxtImg class="w-9 h-9" :src="'https://api.avalonbali.com/assets/' + item?.icon"
                             alt="img" />
                     </div>
                     <div class="relative flex xl:items-end z-10 xl:pb-[30px] xl:px-4 xl:h-[172px] ">

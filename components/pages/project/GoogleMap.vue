@@ -107,7 +107,7 @@ async function initMap(cood1, cood2) {
 
       <foreignObject x="21" y="15" width="60" height="80">
         <img xmlns="http://www.w3.org/1999/xhtml" class="mb-3 w-14 h-18 object-contain" 
-             src="https://avalon-panel.sonisapps.com/assets/${props.itemData.logo}" 
+             src="https://api.avalonbali.com/assets/${props.itemData.logo}" 
              alt="Marker Icon"/>
       </foreignObject>
       

@@ -6,14 +6,14 @@
             <div class="banner max-w-none bg-center absolute top-0 left-0 w-full h-screen overflow-hidden"
                 :class="isPlay && isPlayMobile ? 'opacity-100 z-20' : 'opacity-80 -z-10'">
                 <NuxtImg v-if="itemData?.background"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}?width=1920&height=800`"
+                    :src="`https://api.avalonbali.com/assets/${itemData?.background}?width=1920&height=800`"
                     class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0 opacity-40 hidden md:block" alt="Image" />
                 <NuxtImg v-else :src="getYoutubePreview().thumb(itemData?.video ?? '') ?? ''"
                     class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0 hidden md:block" alt="Image" />
 
 
                 <NuxtImg :class="isPlay && isPlayMobile ? 'opacity-100 z-20' : 'opacity-80 -z-10'"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.mobile_preview}?width=600&height=700`"
+                    :src="`https://api.avalonbali.com/assets/${itemData?.mobile_preview}?width=600&height=700`"
                     width="1920" height="800"
                     class="absolute block md:hidden object-cover brightness-[.5] top-0 left-0 w-full h-full"
                     alt="Image" />

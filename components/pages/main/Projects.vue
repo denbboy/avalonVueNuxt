@@ -30,14 +30,14 @@
                     v-for="(item, index) in projectsStore.projects" :key="item.id">
                     <div class="">
                         <NuxtImg v-if="item?.preview"
-                            :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=470&height=600`"
+                            :src="`https://api.avalonbali.com/assets/${item?.preview}?width=470&height=600`"
                             class="prev-img w-full h-full absolute object-cover opacity-50 transition-opacity duration-300 group-hover:opacity-100" alt="Image" loading="lazy" />
                         <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
                         <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
                             <div class="block-bottom-point"></div>
                             <div class="flex justify-between mb-auto">
                                 <NuxtImg class="w-[90px]" v-if="item?.logo"
-                                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.logo}`" alt="Image"
+                                    :src="`https://api.avalonbali.com/assets/${item?.logo}`" alt="Image"
                                     loading="lazy" />
 
                                 <span v-if="item?.main_translations?.filter(item =>

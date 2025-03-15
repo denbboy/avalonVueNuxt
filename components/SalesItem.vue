@@ -11,10 +11,10 @@
         <SkeletonLoader class="w-full h-[300px] rounded-2xl">
             <NuxtImg v-show="!imageLoaded" data-not-lazy loading="lazy" ref="image"
                 class="absolute opacity-0 w-full h-full"
-                :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=470&height=300`" alt="Image"
+                :src="`https://api.avalonbali.com/assets/${item?.preview}?width=470&height=300`" alt="Image"
                 @load="onImageLoad" />
             <NuxtImg data-not-lazy loading="lazy" v-if="imageLoaded"
-                :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=470&height=300`" alt="Image"
+                :src="`https://api.avalonbali.com/assets/${item?.preview}?width=470&height=300`" alt="Image"
                 class="z-0 w-full h-full object-cover relative rounded-2xl" />
         </SkeletonLoader>
 
@@ -27,7 +27,7 @@
         <div class="absolute z-20 w-full h-full top-0 left-0 p-3 flex flex-col">
             <!-- salesIds.value -->
             <div class="absolute top-3 left-3 flex gap-2">
-                <NuxtImg v-if="item?.projects?.logo" :src="'https://avalon-panel.sonisapps.com/assets/'+item?.projects?.logo" alt="Image" class="w-10 h-10 object-contain md:w-14 md:h-14" />
+                <NuxtImg v-if="item?.projects?.logo" :src="'https://api.avalonbali.com/assets/'+item?.projects?.logo" alt="Image" class="w-10 h-10 object-contain md:w-14 md:h-14" />
             </div>
             <!-- <NuxtImg src="/img/icons/icon-club.svg" alt="Image"
                 class="absolute w-8 h-8 top-3 left-3 md:w-14 md:h-14" />

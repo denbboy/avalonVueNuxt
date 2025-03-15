@@ -11,10 +11,10 @@
 
             <SkeletonLoader class="w-full h-[300px] rounded-[20px]">
                 <NuxtImg ref="image" loading="lazy" class="opacity-0 absolute"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=350&height=300`" alt="Image"
+                    :src="`https://api.avalonbali.com/assets/${item?.preview}?width=350&height=300`" alt="Image"
                     @load="onImageLoad" />
                 <NuxtImg v-if="imageLoaded" loading="lazy"
-                    :src="`https://avalon-panel.sonisapps.com/assets/${item?.preview}?width=350&height=300`" alt="Image"
+                    :src="`https://api.avalonbali.com/assets/${item?.preview}?width=350&height=300`" alt="Image"
                     class="z-0 w-full h-full object-cover relative rounded-2xl" @load="onImageLoad" />
             </SkeletonLoader>
 

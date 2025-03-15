@@ -12,7 +12,7 @@
         <div class="bg-gradient-to-t from-blue-500 from-60% lg:from-60%  w-full h-[2000px] absolute z-10"></div>
 
         <NuxtImg class="absolute top-0 z-0 opacity-40 w-[600vw] h-screen min-w-[100vw] object-cover max-w-max md:w-full"
-            :src="'https://avalon-panel.sonisapps.com/assets/' + toolkitStore.settings.header_img" alt="Image"
+            :src="'https://api.avalonbali.com/assets/' + toolkitStore.settings.header_img" alt="Image"
             loading="lazy" />
 
         <div class="container mx-auto relative z-20 pt-32 md:pt-64">

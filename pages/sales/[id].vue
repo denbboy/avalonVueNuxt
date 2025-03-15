@@ -15,7 +15,7 @@
         </div>
 
         <NuxtImg loading="lazy" v-if="itemData?.background"
-            :src="`https://avalon-panel.sonisapps.com/assets/${itemData?.background}`"
+            :src="`https://api.avalonbali.com/assets/${itemData?.background}`"
             class="absolute top-0 z-0 opacity-40 w-[600vw] md:w-full min-h-[1000px] h-screen object-cover"
             alt="Image" />
 
@@ -59,14 +59,14 @@
                             class="projects-item relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] lg:min-h-[600px] min-h-[450px]">
                             <div class="">
                                 <NuxtImg v-if="projectInclude?.preview"
-                                    :src="`https://avalon-panel.sonisapps.com/assets/${projectInclude?.preview}?width=470&height=600`"
+                                    :src="`https://api.avalonbali.com/assets/${projectInclude?.preview}?width=470&height=600`"
                                     class="opacity-50 w-full absolute object-cover h-full" alt="Image" loading="lazy" />
                                 <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
                                 <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
                                     <div class="block-bottom-point"></div>
                                     <div class="flex justify-between mb-auto">
                                         <NuxtImg class="w-[90px]" v-if="projectInclude?.logo"
-                                            :src="`https://avalon-panel.sonisapps.com/assets/${projectInclude?.logo}`"
+                                            :src="`https://api.avalonbali.com/assets/${projectInclude?.logo}`"
                                             alt="Image" loading="lazy" />
 
                                         <span v-if="projectInclude?.main_translations?.filter(item =>

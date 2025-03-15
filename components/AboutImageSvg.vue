@@ -31,6 +31,6 @@ const imageUrl = computed(() => {
     item.languages_code?.includes(props.locale)
   )?.image;
 
-  return imagePath ? `https://avalon-panel.sonisapps.com/assets/${imagePath}?width=770&height=536` : "";
+  return imagePath ? `https://api.avalonbali.com/assets/${imagePath}?width=770&height=536` : "";
 });
 </script>

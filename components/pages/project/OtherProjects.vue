@@ -15,14 +15,14 @@
                 <div class="relative rounded-[14px] !rounded-br-none lg:rounded-3xl overflow-hidden bg-[#111111] min-h-[500px] lg:min-h-[600px] md:min-h-[400px]"
                     v-for="item in props.projects" :key="item.related_Project_id?.id">
                     <div class="">
-                        <NuxtImg :src="`https://avalon-panel.sonisapps.com/assets/${item.related_Project_id?.preview}`"
+                        <NuxtImg :src="`https://api.avalonbali.com/assets/${item.related_Project_id?.preview}`"
                             class="opacity-50 w-full absolute object-cover h-full" alt="Image" loading="lazy" />
                         <div class="bg-gradient-to-t from-blue-600 absolute bottom-0 left-0 w-full h-3/4"></div>
                         <div class="absolute top-0 left-0 w-full h-full p-5 md:p-7 flex flex-col">
                             <div class="block-bottom-point"></div>
                             <div class="flex justify-between mb-auto">
                                 <NuxtImg class="w-[90px]" v-if="item.related_Project_id?.logo"
-                                    :src="`https://avalon-panel.sonisapps.com/assets/${item.related_Project_id?.logo}`"
+                                    :src="`https://api.avalonbali.com/assets/${item.related_Project_id?.logo}`"
                                     alt="Image" loading="lazy" />
                                     <span v-if="item?.related_Project_id?.main_translations?.filter(item =>
                                     item.languages_code?.includes(locale))[0]?.sale_alias"

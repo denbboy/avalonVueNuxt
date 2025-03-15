@@ -15,7 +15,7 @@
                         :key="image?.directus_files_id" v-show="index < 7">
                         <a class="hover:shadow-[0px_10px_10px_0px_rgba(0,0,0,.3)] rounded-2xl block h-full !transition-shadow overflow-hidden"
                             data-fancybox="gallery"
-                            :href="`https://avalon-panel.sonisapps.com/assets/${image?.directus_files_id}`">
+                            :href="`https://api.avalonbali.com/assets/${image?.directus_files_id}`">
                             <PagesProjectGalleryImage :imageFile="image?.directus_files_id" />
                         </a>
                     </div>
@@ -24,7 +24,7 @@
             </div>
 
             <a data-fancybox="gallery"
-                :href="`https://avalon-panel.sonisapps.com/assets/${gallery[0].directus_files_id}`"
+                :href="`https://api.avalonbali.com/assets/${gallery[0].directus_files_id}`"
                 type="button"
                 class="font-bold text-white text-sm w-full max-w-[205px] mt-5 border border-white rounded-xl p-4 m-auto flex justify-center hover:text-blue-400 hover:bg-white transition-all md:mt-7 md:p-6 md:max-w-[286px] md:text-base">
                 {{ $t('show_album') }}

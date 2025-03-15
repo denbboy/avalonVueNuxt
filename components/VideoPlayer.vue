@@ -3,20 +3,20 @@
 
         <div v-if="!item?.video">
             <NuxtImg v-if="$viewport.isLessThan('tablet')"
-                :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=320&height=600`"
+                :src="`https://api.avalonbali.com/assets/${item?.img}?width=320&height=600`"
                 class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
-            <NuxtImg v-else :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=1920&height=900`"
+            <NuxtImg v-else :src="`https://api.avalonbali.com/assets/${item?.img}?width=1920&height=900`"
                 class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
         </div>
 
         <div v-if="item?.video" class="h-full w-full">
             <NuxtImg :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'"
-                :src="`https://avalon-panel.sonisapps.com/assets/${item?.img}?width=1920&height=900`" width="1920"
+                :src="`https://api.avalonbali.com/assets/${item?.img}?width=1920&height=900`" width="1920"
                 height="800" class="absolute hidden md:block object-cover brightness-[.5] top-0 left-0 w-full h-full"
                 alt="Image" />
 
             <NuxtImg :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'"
-                :src="`https://avalon-panel.sonisapps.com/assets/${item?.projects[0]?.item?.mobile_preview}?width=600&height=700`"
+                :src="`https://api.avalonbali.com/assets/${item?.projects[0]?.item?.mobile_preview}?width=600&height=700`"
                 width="1920" height="800"
                 class="absolute block md:hidden object-cover brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
             <iframe loading="lazy" :class="isVideoPlayed ? 'full-video' : ''"
@@ -36,7 +36,7 @@
                 <div :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'"
                     class="banner__item__head md:flex items-center">
                     <NuxtImg v-if="item?.projects[0]?.item.logo" width="100" height="95"
-                        :src="`https://avalon-panel.sonisapps.com/assets/${item?.projects[0]?.item.logo}`"
+                        :src="`https://api.avalonbali.com/assets/${item?.projects[0]?.item.logo}`"
                         class="mb-3 max-w-[100px] md:mb-0 md:mr-10" alt="logo" />
                     <div class="flex items-center w-full gap-5">
                         <div v-if="item?.projects[0]?.item?.due_date"

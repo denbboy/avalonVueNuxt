@@ -1,1 +1,1 @@
-export const API_LINK = "https://avalon-panel.sonisapps.com";
+export const API_LINK = "https://api.avalonbali.com";

@@ -32,7 +32,7 @@
           <swiper-slide v-for="item in team?.value">
             <div
               class="after:bg-blue-600/40 aspect-square relative after:absolute brightness-125 after:top-0 after:left-0 after:w-full after:h-full after:rounded-full">
-              <NuxtImg loading="lazy" :src="'https://avalon-panel.sonisapps.com/assets/'+item?.avatar" class="w-full h-full object-cover rounded-full grayscale" alt="ph" />
+              <NuxtImg loading="lazy" :src="'https://api.avalonbali.com/assets/'+item?.avatar" class="w-full h-full object-cover rounded-full grayscale" alt="ph" />
             </div>
             <div class="text-center mt-4">
               <h3 class="font-bold text-white text-base mb-2 md:text-lg leading-[140%]">

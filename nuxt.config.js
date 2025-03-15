@@ -100,7 +100,7 @@ export default defineNuxtConfig({
   ],
 
   directus: {
-    url: "https://avalon-panel.sonisapps.com/",
+    url: "https://api.avalonbali.com/",
   },
 
   calendly: {

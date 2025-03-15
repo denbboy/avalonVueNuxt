@@ -30,7 +30,7 @@
                     </div>
                     <NuxtImg loading="lazy" data-aos="fade-left"
                         class="xl:max-w-[546px] lg:max-w-[740px] object-cover w-full h-[180px] md:h-[412px] rounded-[20px]"
-                        :src="'https://avalon-panel.sonisapps.com/assets/' + item.photo" alt="img" />
+                        :src="'https://api.avalonbali.com/assets/' + item.photo" alt="img" />
                 </div>
                 <div data-aos="fade-up"
                     class="border border-white/20 px-[20px] py-[60px] md:p-[48px] pb-6 3xl:py-[80px] 3xl:px-[120px] rounded-[20px] overflow-hidden">
