@@ -5,6 +5,12 @@ export default defineNuxtConfig({
     transpile: ["swiper"],
   },
 
+  // buildModules: ['@nuxt/image'],
+  image: {
+    // Включите поддержку статических файлов
+    dir: 'static'
+  },
+
   router: {
     middleware: ["locale", "gtm"],
   },
@@ -82,6 +88,7 @@ export default defineNuxtConfig({
   ],
 
   css: ["~/assets/css/main.css"],
+    
 
   modules: [
     "@nuxtjs/tailwindcss",
@@ -152,7 +159,7 @@ export default defineNuxtConfig({
     trailingSlash: true,
   },
 
-  buildModules: ["@nuxtjs/svg-sprite"],
+  buildModules: ["@nuxtjs/svg-sprite", '@nuxt/image'],
 
   svgSprite: {
     input: "~/img/icons/",

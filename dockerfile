@@ -1,32 +1,27 @@
-# Используем официальный Node.js образ
-FROM node:18 AS builder
+# Используем Node.js образ на базе Alpine
+FROM node:16-alpine
 
-# Устанавливаем рабочую директорию
+# Устанавливаем рабочую директорию внутри контейнера
 WORKDIR /app
 
-# Копируем package.json и package-lock.json (если есть)
+# Копируем package.json и package-lock.json
 COPY package*.json ./
 
 # Устанавливаем зависимости
-RUN npm install --frozen-lockfile
+RUN npm install
 
-# Копируем весь проект
+# Копируем все файлы проекта в контейнер
 COPY . .
 
-# Собираем Nuxt-приложение
+# Строим проект
 RUN npm run build
 
-# Указываем финальный минимальный образ
-FROM node:18-alpine AS runner
+# Устанавливаем переменные окружения
+ENV HOST 0.0.0.0
+ENV PORT 3000
 
-# Устанавливаем рабочую директорию
-WORKDIR /app
-
-# Копируем собранный проект из builder
-COPY --from=builder /app ./
-
-# Открываем порт (если нужно)
+# Открываем порт 3000
 EXPOSE 3000
 
-# Запускаем Nuxt в продакшен-режиме
+# Запускаем приложение
 CMD ["npm", "run", "preview"]
