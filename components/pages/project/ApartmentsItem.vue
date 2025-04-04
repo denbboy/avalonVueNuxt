@@ -26,7 +26,7 @@
                     {{ translations?.title }}
                 </h2>
                 <p class="text-blue-400 leading-none text-[18px] md:text-[20px] flex items-center">
-                    {{ $t('from') }} {{ itemData?.price }}$
+                    {{ $t('from') }} <span>&nbsp;{{ itemData?.price?.toLocaleString('uk-UA') }}$</span>
                     <span class="text-white/60 text-xs ml-2">
                         {{ $t('including_taxes') }}
                     </span>

@@ -31,7 +31,7 @@
           class="flex before:w-[6px] before:rounded-sm before:h-[6px] before:bg-white before:mr-[10px] opacity-60 items-center">
           <span class="text-white text-sm">
             {{ new Date(itemData?.date_created).getDate() }} {{ $t(`month${new
-              Date(itemData?.date_created).getMonth()
+              Date(itemData?.date_created).getMonth() + 1
               ?? "0" + 1}`) }} {{ new Date(itemData?.date_created).getFullYear() }}
           </span>
         </div>
@@ -54,47 +54,44 @@
   </section>
 
   <section class="bg-blue-600 pt-14 pb-24 border-b border-b-white/20">
-        <div class="container">
-            <div class="">
-                <div class="flex justify-between items-center mb-8">
-                    <h2 class="text-white font-bold text-[30px]">
-                        {{ $t('else_sales') }}
-                    </h2>
+    <div class="container">
+      <div class="">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-white font-bold text-[30px]">
+            {{ $t('else_news') }}
+          </h2>
 
-                    <div class="w-fit hidden md:flex">
-                        <button type="button"
-                            class="transition-all opacity-20 hover:opacity-100 sales-button-prev mr-9">
-                            <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M4.95971 10.8841L13.5787 2.26518L12 0.686525L0.686291 12.0002L12 23.3139L13.5787 21.7353L4.96009 13.1167L21.6296 13.1167L21.6297 10.8841L4.95971 10.8841Z"
-                                    fill="white" />
-                            </svg>
-                        </button>
-                        <button type="button" class="transition-all opacity-20 hover:opacity-100 sales-button-next">
-                            <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M17.0403 10.8841L8.42134 2.26518L10 0.686525L21.3137 12.0002L10 23.3139L8.42133 21.7353L17.0399 13.1167L0.370369 13.1167L0.370346 10.8841L17.0403 10.8841Z"
-                                    fill="white" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
-                <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
-                    :breakpoints="breakpoints" :space-between="50" @slideChange="onSlideChange">
-
-                    <swiper-slide style="height: auto;" v-for="item in itemDataAll" :key="item?.id">
-                        <NewsItem bgdColor="blue-600" :item="item" />
-                    </swiper-slide>
-                    
-
-                </swiper>
-
-            </div>
+          <div class="w-fit hidden md:flex">
+            <button type="button" class="transition-all opacity-20 hover:opacity-100 sales-button-prev mr-9">
+              <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M4.95971 10.8841L13.5787 2.26518L12 0.686525L0.686291 12.0002L12 23.3139L13.5787 21.7353L4.96009 13.1167L21.6296 13.1167L21.6297 10.8841L4.95971 10.8841Z"
+                  fill="white" />
+              </svg>
+            </button>
+            <button type="button" class="transition-all opacity-20 hover:opacity-100 sales-button-next">
+              <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M17.0403 10.8841L8.42134 2.26518L10 0.686525L21.3137 12.0002L10 23.3139L8.42133 21.7353L17.0399 13.1167L0.370369 13.1167L0.370346 10.8841L17.0403 10.8841Z"
+                  fill="white" />
+              </svg>
+            </button>
+          </div>
         </div>
-    </section>
+
+        <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
+          :breakpoints="breakpoints" :space-between="50" @slideChange="onSlideChange">
+
+          <swiper-slide style="height: auto;" v-for="item in itemDataAll" :key="item?.id">
+            <NewsItem bgdColor="blue-600" :item="item" />
+          </swiper-slide>
+
+
+        </swiper>
+
+      </div>
+    </div>
+  </section>
 </template>
 
 <style scoped>
@@ -129,9 +126,9 @@ const resAll = await useAsyncData('News', () => $fetch(`/api/news`));
 const itemDataAll = resAll?.data.value
 
 onMounted(() => {
-    if (image.value?.complete) {
-        imageLoaded.value = true;
-    }
+  if (image.value?.complete) {
+    imageLoaded.value = true;
+  }
 });
 
 SwiperCore.use([Navigation, A11y]);
@@ -142,35 +139,35 @@ const itemProjects = projectTitleData.data.value
 const projectInclude = ref({});
 
 watchEffect(() => {
-    for (let i = 0; i < itemProjects.length; i++) {
-        for (let j = 0; j < itemProjects[i].sales.length; j++) {
-            if (itemProjects[i].sales[j].Sale_id === itemData.id) {
-                projectInclude.value = itemProjects[i]
-            }
-        }
+  for (let i = 0; i < itemProjects.length; i++) {
+    for (let j = 0; j < itemProjects[i].sales.length; j++) {
+      if (itemProjects[i].sales[j].Sale_id === itemData.id) {
+        projectInclude.value = itemProjects[i]
+      }
     }
+  }
 })
 
 
 const navigationConfig = {
-    nextEl: '.sales-button-next',
-    prevEl: '.sales-button-prev',
+  nextEl: '.sales-button-next',
+  prevEl: '.sales-button-prev',
 };
 
 const pagination = {
-    el: '.swiper-pagination',
-    clickable: true,
+  el: '.swiper-pagination',
+  clickable: true,
 };
 
 const breakpoints = {
-    768: {
-        slidesPerView: 2,
-        pagination: false,
-    },
-    1280: {
-        slidesPerView: 3,
-        pagination: false,
-    },
+  768: {
+    slidesPerView: 2,
+    pagination: false,
+  },
+  1280: {
+    slidesPerView: 3,
+    pagination: false,
+  },
 };
 
 const imageLoaded = ref(false);

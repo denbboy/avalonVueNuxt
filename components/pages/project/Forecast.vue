@@ -95,37 +95,37 @@
 
                                     </div>
                                     <div
-                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center">
                                         <p>
                                             {{ $t('forecase_header_1') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center">
                                         <p>
                                             {{ $t('forecase_header_2') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center">
                                         <p>
                                             {{ $t('forecase_header_3') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center">
                                         <p>
                                             {{ $t('forecase_header_4') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center">
                                         <p>
                                             {{ $t('forecase_header_5') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center">
                                         <p>
                                             {{ $t('forecase_header_6') }}
                                         </p>
@@ -352,37 +352,37 @@
 
                                     </div>
                                     <div
-                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center">
                                         <p>
                                             {{ $t('forecase_header_1') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center">
                                         <p>
                                             {{ $t('forecase_header_2') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center">
                                         <p>
                                             {{ $t('forecase_header_3') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center">
                                         <p>
                                             {{ $t('forecase_header_4') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center">
                                         <p>
                                             {{ $t('forecase_header_5') }}
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center md:text-start">
+                                        class="w-full md:w-[160px] lg:w-full shrink-0 text-xs md:text-[13px] font-normal text-center">
                                         <p>
                                             {{ $t('forecase_header_6') }}
                                         </p>

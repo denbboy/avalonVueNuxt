@@ -21,12 +21,12 @@
 
 
                 <div data-aos="fade-left" class="ooo w-full flex items-center justify-center my-5">
-                    <svg class="absolute rotate-12 w-full top-0 lg:-right-28" width="772" height="" viewBox="0 0 772 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="absolute opacity-20 rotate-12 w-full top-0 lg:-right-28" width="772" height="" viewBox="0 0 772 540" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd"
                             d="M770.646 238.549C780.284 403.585 582.471 479.281 422.716 521.494C286.634 557.453 133.516 543.381 52.314 428.361C-29.7132 312.172 -10.3944 148.846 85.461 43.7831C162.478 -40.6316 285.436 21.1699 395.322 52.4054C543.822 94.617 761.642 84.3536 770.646 238.549Z"
                             stroke="white" />
                     </svg>
-                    <svg class="absolute -ml-10 rotate-[-20deg] w-full top-0 lg:-right-28" width="772" height="" viewBox="0 0 772 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="absolute opacity-20 -ml-10 rotate-[-20deg] w-full top-0 lg:-right-28" width="772" height="" viewBox="0 0 772 540" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd"
                             d="M770.646 238.549C780.284 403.585 582.471 479.281 422.716 521.494C286.634 557.453 133.516 543.381 52.314 428.361C-29.7132 312.172 -10.3944 148.846 85.461 43.7831C162.478 -40.6316 285.436 21.1699 395.322 52.4054C543.822 94.617 761.642 84.3536 770.646 238.549Z"
                             stroke="white" />

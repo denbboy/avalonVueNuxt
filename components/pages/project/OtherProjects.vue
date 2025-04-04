@@ -52,10 +52,10 @@
                                             item?.languages_code?.includes(locale))[0]?.title}}
                                     </NuxtLink>
                                 </h2>
-                                <p class="text-white text-xs md:text-[11px] lg:text-sm mb-5">
-                                    {{item.related_Project_id?.translations?.filter(item =>
-                                        item?.languages_code?.includes(locale))[0]?.description}}
-                                </p>
+                                <div v-html="item.related_Project_id?.translations?.filter(item =>
+                                        item?.languages_code?.includes(locale))[0]?.description" class="text-white text-xs md:text-[11px] lg:text-sm mb-5">
+                                    
+                                </div>
                                 <div class="flex items-center mb-5">
                                     <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]">от ${{
                                         String(item.related_Project_id?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, " ")

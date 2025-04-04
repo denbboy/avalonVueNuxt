@@ -38,7 +38,7 @@
                 </label>
                 <input type="text" v-model="name" id="some"
                     class="bg-whiteOp-200 rounded-xl text-white text-sm px-5 py-4 outline-none lg:p-6 lg:text-base w-full"
-                    placeholder="Альтерентивный способ связи*">
+                    :placeholder="$t('m_presentation_text_2')">
 
                 <p class="text-red-700 text-left transition-all h-full" :class="{
                     'max-h-10 opacity-100 mt-2': isError,

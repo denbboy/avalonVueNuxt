@@ -1,6 +1,6 @@
 <template>
     <NuxtLink
-        :href="`/articles/${props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
+        :href="`/articles/${props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.slug}`"
         class="w-full rounded-[20px] overflow-hidden h-full block group transition-all hover:shadow-[0px_10px_10px_0px_rgba(0,0,0,.1)] lg:max-w-[375px]">
         <div class="relative w-full h-[300px]">
             <div :class="{
@@ -23,11 +23,11 @@
         <div class="p-5">
             <p :class="bgdColor === 'white' ? 'text-blue-600' : 'text-white'"
                 class="text-base md:text-lg transition-all line-clamp-2 group-hover:text-blue-400 font-bold">
-                {{ props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title }}
+                {{ props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.title }}
             </p>
             <div :class="bgdColor === 'white' ? 'text-blue-600' : 'text-white'"
                 class="mt-3 md:mt-4 items-center text-sm opacity-60 line-clamp-2 h-[39px] overflow-hidden"
-                v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description">
+                v-html="props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.meta_description">
             </div>
         </div>
     </NuxtLink>
@@ -62,6 +62,7 @@ onMounted(async () => {
     }, 500)
 });
 
-const langStore = useLangStore()
+const { t, locale } = useI18n()
+// const langStore = useLangStore()
 
 </script>

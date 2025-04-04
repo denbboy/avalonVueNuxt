@@ -33,10 +33,10 @@
                 <div class="mb-7 md:flex md:items-center md:mb-[50px] relative z-10">
 
                     <h2 class="font-bold text-white max-w-[580px] text-3xl mb-7 md:text-[45px] md:leading-[45px] lg:text-[56px] lg:leading-[56px] md:text-left md:m-0" data-aos="fade-up">
-                        {{ itemStrings?.filter(item => item.id === 136)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                        {{ itemStrings?.filter(item => item.id === 136)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                     </h2>
                     <p class="text-white/60 opacity-50 text-sm md:text-sm lg:text-base md:text-left md:ml-5 md:mr-24 max-w-[360px] lg:max-w-[500px]" data-aos="fade-up">
-                        {{ itemStrings?.filter(item => item.id === 136)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
+                        {{ itemStrings?.filter(item => item.id === 136)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.description }}
                     </p>
                 </div>
 
@@ -62,7 +62,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                {{ itemStrings?.filter(item => item.id === 138)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ itemStrings?.filter(item => item.id === 138)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                {{ itemStrings?.filter(item => item.id === 139)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ itemStrings?.filter(item => item.id === 139)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -100,7 +100,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                {{ itemStrings?.filter(item => item.id === 140)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ itemStrings?.filter(item => item.id === 140)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -119,7 +119,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                {{ itemStrings?.filter(item => item.id === 141)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ itemStrings?.filter(item => item.id === 141)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -138,7 +138,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                {{ itemStrings?.filter(item => item.id === 142)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ itemStrings?.filter(item => item.id === 142)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -160,7 +160,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                {{ itemStrings?.filter(item => item.id === 147)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ itemStrings?.filter(item => item.id === 147)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -182,7 +182,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                {{ itemStrings?.filter(item => item.id === 146)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ itemStrings?.filter(item => item.id === 146)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -204,7 +204,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                {{ itemStrings?.filter(item => item.id === 145)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ itemStrings?.filter(item => item.id === 145)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -226,7 +226,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                {{ itemStrings?.filter(item => item.id === 144)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ itemStrings?.filter(item => item.id === 144)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                             </p>
                         </li>
                         <li class="mb-5 flex items-center md:flex-col">
@@ -246,7 +246,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-sm md:text-xs lg:text-base md:text-center">
-                                {{ itemStrings?.filter(item => item.id === 143)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ itemStrings?.filter(item => item.id === 143)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                             </p>
                         </li>
                     </ul>
@@ -263,10 +263,10 @@
                         <NuxtImg loading="lazy" src="/img/index/a-decor-op.svg" class="hidden md:block md:max-w-[112px]" alt="decor" />
                         <div class="pt-5 border-t border-whiteOp-300 md:border-none md:pt-0 md:max-w-[526px]">
                             <p class="text-white opacity-50 text-sm mb-5 md:text-[14px] md:text-left">
-                                {{ itemStrings?.filter(item => item.id === 148)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ itemStrings?.filter(item => item.id === 148)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                             </p>
                             <p class="text-white opacity-50 text-sm md:text-[14px] md:text-left">
-                                {{ itemStrings?.filter(item => item.id === 149)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                                {{ itemStrings?.filter(item => item.id === 149)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                             </p>
                         </div>
                     </div>
@@ -286,10 +286,10 @@
                         class="block animate-ping2 w-[170px] h-[170px] md:w-[244px] md:h-[244px] border border-whiteOp-200 transition-all rounded-full absolute before:top-[-14px]">
                     </div>
                     <b class="block font-bold text-white md:text-[45px] lg:text-[60px] leading-[100%] text-[40px] md:mb-3">
-                        {{ itemStrings?.filter(item => item.id === 137)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.title }}
+                        {{ itemStrings?.filter(item => item.id === 137)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.title }}
                     </b>
                     <span class="text-white text-xs lg:text-base max-w-[130px]">
-                        {{ itemStrings?.filter(item => item.id === 137)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(langStore.lang))[0]?.description }}
+                        {{ itemStrings?.filter(item => item.id === 137)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.description }}
                     </span>
                 </div>
             </div>
@@ -301,8 +301,10 @@
 import Parallaxy from '@lucien144/vue3-parallaxy';
 import { useBlocksStore } from '~/stores/functions/blocks';
 
+const { t, locale } = useI18n()
+
 const modalsStore = useModalsStore()
-const langStore = useLangStore()
+// const langStore = useLangStore()
 const blocksStore = useBlocksStore()
 
 const handleOpenModal = () => {

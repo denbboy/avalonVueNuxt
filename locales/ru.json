@@ -200,5 +200,9 @@
 
     "else_articles": "Другие статьи",
 
-    "articles_title": "Статьи"
+    "else_news": "Другие новости",
+
+    "articles_title": "Статьи",
+
+    "see_google_map": "Смотреть на карте"
 }

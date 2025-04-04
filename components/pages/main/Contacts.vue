@@ -9,7 +9,7 @@
           {{ $t('want_know_more') }}
         </h2>
         <div class="flex flex-col md:flex-row gap-2 lg:gap-5">
-          <input v-model="name" type="text" placeholder="Имя"
+          <input v-model="name" type="text" :placeholder="$t('input_name')"
             class="bg-whiteOp-200 rounded-xl text-white text-sm px-5 py-4 outline-none lg:p-6 lg:text-base w-full">
           <div class="phone-vti">
             <!-- <VueTelInput :use-masking="true" placeholder="Введите номер телефона" v-model="phone" :only-countries="onlyCountries" /> -->

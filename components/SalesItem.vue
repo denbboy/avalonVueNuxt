@@ -1,6 +1,6 @@
 <template>
     <NuxtLink
-        :href="`/sales/${props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
+        :href="`/sales/${props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.slug}`"
         class="group h-full block relative rounded-2xl transition-all">
         <div :class="{
             'border-white bg-white after:bg-blue-500': props.bgdColor === 'white',
@@ -45,7 +45,7 @@
             <div v-else class="min-h-[44px]"></div>
 
             <strong class="mt-auto text-white mb-2 md:text-lg overflow-hidden h-14 line-clamp-2"
-                v-html="props?.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.subtitle"></strong>
+                v-html="props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.subtitle"></strong>
 
             <div v-if="props?.item?.location" class="flex items-center opacity-60">
                 <NuxtImg class="w-2 md:w-3" src="/img/icons/point-white.svg" alt="Image" />
@@ -58,6 +58,8 @@
 
 <script setup>
 import { ref } from 'vue';
+
+const { t, locale } = useI18n()
 
 const imageLoaded = ref(false);
 const image = ref(null);
@@ -104,6 +106,6 @@ watchEffect(() => {
 })
 
 
-const langStore = useLangStore()
+// const langStore = useLangStore()
 
 </script>
