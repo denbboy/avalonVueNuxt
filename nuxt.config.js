@@ -5,6 +5,10 @@ export default defineNuxtConfig({
     transpile: ["swiper"],
   },
 
+  pages: {
+    error: '~/pages/error.vue', // Указание пути к кастомной странице ошибки
+  },
+
   // buildModules: ['@nuxt/image'],
   image: {
     // Включите поддержку статических файлов

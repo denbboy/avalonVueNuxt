@@ -22,11 +22,11 @@
           </div>
 
           <ModalsModal3d v-if="modals[0] === 'modal3d'" />
-          <ModalsModalPresentation v-if="modals[0] === 'presentation'" />
-          <ModalsModalCalendar v-if="modals[0] === 'calendar'" />
-          <ModalsModalMessage v-if="modals[0] === 'message'" />
-          <ModalsModalVacancy v-if="modals[0] === 'vacancy'" />
-          <ModalsModalRtsp v-if="modals[0] === 'rtsp'" />
+          <ModalsModalPresentation v-else-if="modals[0] === 'presentation'" />
+          <ModalsModalCalendar v-else-if="modals[0] === 'calendar'" />
+          <ModalsModalMessage v-else-if="modals[0] === 'message'" />
+          <ModalsModalVacancy v-else-if="modals[0] === 'vacancy'" />
+          <ModalsModalRtsp v-else-if="modals[0] === 'rtsp'" />
 
         </div>
       </div>
@@ -55,11 +55,11 @@
           </div>
 
           <ModalsModal3d v-if="modals[1] === 'modal3d'" />
-          <ModalsModalPresentation v-if="modals[1] === 'presentation'" />
-          <ModalsModalCalendar v-if="modals[1] === 'calendar'" />
-          <ModalsModalMessage v-if="modals[1] === 'message'" />
-          <ModalsModalVacancy v-if="modals[1] === 'vacancy'" />
-          <ModalsModalRtsp v-if="modals[1] === 'rtsp'" />
+          <ModalsModalPresentation v-else-if="modals[1] === 'presentation'" />
+          <ModalsModalCalendar v-else-if="modals[1] === 'calendar'" />
+          <ModalsModalMessage v-else-if="modals[1] === 'message'" />
+          <ModalsModalVacancy v-else-if="modals[1] === 'vacancy'" />
+          <ModalsModalRtsp v-else-if="modals[1] === 'rtsp'" />
 
         </div>
       </div>

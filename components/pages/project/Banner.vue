@@ -321,7 +321,7 @@ const handlePlayVideo = (videoUrl, e) => {
         isPlayMobile.value = true
     }
 
-    const urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}`
+    const urlLink = `https://www.youtube.com/embed/${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}?autoplay=1&mute=1&vq=hd720&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${params?.query?.v ?? params?.pathname?.replace('/embed', '')?.replace('/', '')}`
     document.querySelector('iframe').setAttribute('src', !isPlay.value ? "" : urlLink)
 }
 </script>

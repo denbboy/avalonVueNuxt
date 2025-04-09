@@ -2,7 +2,7 @@
 
     <Head>
         <Title>
-            {{ itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+            {{itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title}}
         </Title>
         <Meta name="description"
             :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
@@ -67,22 +67,25 @@ const projectsStore = useProjectsStore();
 langStore.lang = route.params.lang || 'ru';
 
 // Загружаем данные проекта
-const { data } = await useAsyncData('ProjectItem', () => 
-  $fetch(`/api/projects/${route.params.id}`)
+const { data } = await useAsyncData('ProjectItem', () =>
+    $fetch(`/api/projects/${route.params.id}`)
 );
 
 
 // Реактивное хранение данных проекта
 const itemData = computed(() => data.value?.[0] ?? null);
 
+if (!itemData.value) throw createError({
+    statusCode: 404,
+    statusMessage: 'Not Found',
+});
+
 // Обновляем текущий проект в сторе
 projectsStore.setCurrentProject(itemData.value);
 
 // Следим за изменением языка в URL и обновляем store
 watch(() => route.params.lang, (newLang) => {
-  langStore.lang = newLang || 'ru';
+    langStore.lang = newLang || 'ru';
 });
 
 </script>
-
-
