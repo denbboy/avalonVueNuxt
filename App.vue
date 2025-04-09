@@ -57,15 +57,15 @@ nuxtApp.hook("page:finish", () => {
         modalsStore.addModal('message');
         isShowedModal.value = true;
         isSecondModalShownCookie.value = true;
-      }, 40000);
-    }, 15000);
+      }, 1);
+    }, 1);
   } else if (!isSecondModalShownCookie.value) {
     // Если первая модалка уже была показана, но вторая нет, ждем 40 секунд
     secondTimeout = setTimeout(() => {
       modalsStore.addModal('message');
       isShowedModal.value = true;
       isSecondModalShownCookie.value = true;
-    }, 40000);
+    }, 1);
   }
 });
 
