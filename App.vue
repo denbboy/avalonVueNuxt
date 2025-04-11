@@ -33,7 +33,6 @@ const isShowedModal = ref(false)
 
 const sitemap = await useAsyncData("Sitemap", () => $fetch('/api/__sitemap__'))
 
-
 let timeoutId;
 
 nuxtApp.hook("page:finish", () => {
