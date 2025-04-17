@@ -4,14 +4,14 @@
         <div v-if="!item?.video">
             <NuxtImg v-if="$viewport.isLessThan('tablet')"
                 :src="`https://api.avalonbali.com/assets/${item?.img}?width=320&height=600`"
-                class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
+                class="absolute brightness-[.5] top-0 left-0 w-full h-full change" alt="Image" />
             <NuxtImg v-else :src="`https://api.avalonbali.com/assets/${item?.img}?width=800&height=400`"
-                class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
+                class="absolute brightness-[.5] top-0 left-0 w-full h-full change" alt="Image" />
         </div>
 
         <div v-if="item?.video" class="h-full w-full">
             <NuxtImg :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'"
-                :src="`https://api.avalonbali.com/assets/${item?.img}?width=1920&height=900`" width="1920"
+                :src="`https://api.avalonbali.com/assets/${item?.img}?width=800&height=400`" width="1920"
                 height="800" class="absolute hidden md:block object-cover brightness-[.5] top-0 left-0 w-full h-full"
                 alt="Image" />
 
