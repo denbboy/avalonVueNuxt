@@ -5,6 +5,10 @@ export default defineNuxtConfig({
     transpile: ["swiper"],
   },
 
+  nitro: {
+    compressPublicAssets: true, // включает gzip/brotli для статики
+  },
+
   // buildModules: ['@nuxt/image'],
   image: {
     // Включите поддержку статических файлов
@@ -137,6 +141,10 @@ export default defineNuxtConfig({
 
   swiper: {
     modules: ["navigation", "pagination"],
+  },
+
+  headers: {
+    'Cache-Control': 'public, max-age=31536000, immutable'
   },
 
   pinia: {

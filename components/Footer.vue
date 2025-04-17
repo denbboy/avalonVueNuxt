@@ -38,7 +38,7 @@
                 <div class="hidden lg:block">
                     <video v-if="isVideoLoaded" loop class="w-full h-[392px] object-cover" muted autoplay
                         @error="handleError"
-                        :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_video"></video>
+                        :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_video + '?width=392&height=392&format=webm'"></video>
                     <NuxtImg v-else
                         :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_img"
                         loading="lazy" class="w-full h-[392px]" alt="ph" />
@@ -217,7 +217,7 @@
                 <div class="flex items-center justify-between gap-8">
 
                     <video v-if="isVideoLoaded" loop class="max-w-[96px] md:hidden" muted autoplay
-                        :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_video"
+                        :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_video + '?width=392&height=392&format=webm'"
                         @error="handleError"></video>
                     <NuxtImg v-else
                         :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_img"

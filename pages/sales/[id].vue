@@ -66,7 +66,7 @@
                                     <div class="block-bottom-point"></div>
                                     <div class="flex justify-between mb-auto">
                                         <NuxtImg class="w-[90px]" v-if="projectInclude?.logo"
-                                            :src="`https://api.avalonbali.com/assets/${projectInclude?.logo}`"
+                                            :src="`https://api.avalonbali.com/assets/${projectInclude?.logo}?width=90&height=120&format=webp`"
                                             alt="Image" loading="lazy" />
 
                                         <span v-if="projectInclude?.main_translations?.filter(item =>
