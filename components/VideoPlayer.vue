@@ -5,7 +5,7 @@
             <NuxtImg v-if="$viewport.isLessThan('tablet')"
                 :src="`https://api.avalonbali.com/assets/${item?.img}?width=320&height=600`"
                 class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
-            <NuxtImg v-else :src="`https://api.avalonbali.com/assets/${item?.img}?width=1920&height=900`"
+            <NuxtImg v-else :src="`https://api.avalonbali.com/assets/${item?.img}?width=800&height=400`"
                 class="absolute brightness-[.5] top-0 left-0 w-full h-full" alt="Image" />
         </div>
 

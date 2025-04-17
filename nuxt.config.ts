@@ -19,9 +19,9 @@ export default defineNuxtConfig({
       ],
       link: [{ rel: "stylesheet", href: "/assets/fonts/grandis/stylesheet.css" }],
     },
-    pages: {
-      error: "~/pages/error.vue",  // Указываем путь к кастомной странице ошибки
-    },
+    // pages: {
+    //   error: "~/pages/error.vue",  // Указываем путь к кастомной странице ошибки
+    // },
     loading: {
       color: "#0f0",
     },

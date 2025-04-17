@@ -5,10 +5,6 @@ export default defineNuxtConfig({
     transpile: ["swiper"],
   },
 
-  pages: {
-    error: '~/pages/error.vue', // Указание пути к кастомной странице ошибки
-  },
-
   // buildModules: ['@nuxt/image'],
   image: {
     // Включите поддержку статических файлов
@@ -63,6 +59,13 @@ export default defineNuxtConfig({
       { rel: "preconnect", href: "https://www.youtube.com" },
       { rel: "preconnect", href: "https://www.google.com" },
     ],
+    script: [
+      {
+        src: 'https://www.googletagmanager.com/gtm.js?id=GTM-NW6LBFJS',
+        async: true,
+        defer: true
+      }
+    ]
   },
 
   loading: {
@@ -71,6 +74,7 @@ export default defineNuxtConfig({
 
   experimental: {
     viewTransition: true,
+    componentIslands: true,
   },
 
   devtools: { enabled: true },
@@ -170,7 +174,7 @@ export default defineNuxtConfig({
   },
 
   gtm: {
-    id: "GTM-1",
+    id: "GTM-NW6LBFJS",
     enabled: false,
   },
 
