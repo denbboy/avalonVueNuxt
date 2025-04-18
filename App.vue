@@ -12,7 +12,7 @@
 import { useCookie } from "#app";
 
 import { useHead } from '@unhead/vue'
-
+// В setup или plugin
 useHead({
   htmlAttrs: {
     lang: 'en',
@@ -26,8 +26,18 @@ useHead({
       })(window,document,'script','dataLayer','GTM-NW6LBFJS');`,
       type: 'text/javascript'
     }
-  ]
+  ],
+  __dangerouslyDisableSanitizersByTagID: {
+    'gtm-script': ['innerHTML']
+  }
 })
+
+// Вставка <noscript> перед закрытием </body>
+useBodyClose(() => `
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NW6LBFJS"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+`)
+
 
 const nuxtApp = useNuxtApp();
 const modalsStore = useModalsStore();
