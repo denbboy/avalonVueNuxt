@@ -1,8 +1,5 @@
 <script setup>
   const error = useError();
-
-  console.log(error);
-  
 </script>
 
 <template>

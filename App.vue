@@ -12,7 +12,7 @@
 import { useCookie } from "#app";
 
 import { useHead } from '@unhead/vue'
-// В setup или plugin
+
 useHead({
   htmlAttrs: {
     lang: 'en',
@@ -27,24 +27,27 @@ useHead({
       type: 'text/javascript'
     }
   ],
+  noscript: [
+    {
+      innerHTML: `
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NW6LBFJS"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      `,
+    }
+  ],
   __dangerouslyDisableSanitizersByTagID: {
-    'gtm-script': ['innerHTML']
+    'gtm-script': ['innerHTML'],
+    'noscript': ['innerHTML'],
   }
 })
 
-// Вставка <noscript> перед закрытием </body>
-useBodyClose(() => `
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NW6LBFJS"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-`)
 
+// const nuxtApp = useNuxtApp();
+// const modalsStore = useModalsStore();
 
-const nuxtApp = useNuxtApp();
-const modalsStore = useModalsStore();
+// const isShowedModal = ref(false)
 
-const isShowedModal = ref(false)
-
-const sitemap = await useAsyncData("Sitemap", () => $fetch('/api/__sitemap__'))
+// const sitemap = await useAsyncData("Sitemap", () => $fetch('/api/__sitemap__'))
 
 // let timeoutId;
 

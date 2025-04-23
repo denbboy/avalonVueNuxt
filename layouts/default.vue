@@ -13,14 +13,12 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
-import HeaderProject from '~/components/HeaderProject.vue';
 import { useToolkit } from './../stores/functions/toolkit';
 import { useProjectsStore } from './../stores/functions/projects';
 import { useBlocksStore } from './../stores/functions/blocks';
 import { usePagesStore } from '~/stores/functions/pages';
 import { useFormsStore } from '~/stores/functions/forms';
 
-import AOS from 'aos';
 import useFetchWithCache from '~/hooks/useFetchWithCache';
 
 const route = useRoute();
@@ -53,7 +51,7 @@ watch(() => route.fullPath, (newPath) => {
 });
 
 
-const { $fbq } = useNuxtApp()
+// const { $fbq } = useNuxtApp()
 
 // onMounted(() => {
 //   $fbq('track', 'CompleteRegistration')

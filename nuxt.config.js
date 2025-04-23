@@ -1,17 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // @ts-ignore
 export default defineNuxtConfig({
-  build: {
-    transpile: ["swiper"],
-  },
+  // build: {
+  //   transpile: ["swiper"],
+  // },
 
-  nitro: {
-    compressPublicAssets: true, // включает gzip/brotli для статики
-  },
+    // nitro: {
+    //   compressPublicAssets: true, // включает gzip/brotli для статики
+    // },
 
-  // buildModules: ['@nuxt/image'],
   image: {
-    // Включите поддержку статических файлов
     dir: 'static'
   },
 
@@ -20,68 +18,64 @@ export default defineNuxtConfig({
   },
 
   // sitemap: {
-  //   sources: ["/api/__sitemap__/urls"],
+  //   sources: ["/api/__sitemap__/index"],
   //   sitemapName: "sitemap.xml",
   // },
-  sitemap: {
-    sources: ["/api/__sitemap__/index"],
-    sitemapName: "sitemap.xml",
-  },
 
-  robots: {
-    debug: false,
-    credits: false,
-  },
+  // robots: {
+  //   debug: false,
+  //   credits: false,
+  // },
 
   head: {
-    htmlAttrs: {
-      lang: "en",
-    },
-    meta: [
-      {
-        charset: "utf-8",
-      },
-      {
-        name: "viewport",
-        content:
-          "width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes",
-      },
-      {
-        "http-equiv": "x-ua-compatible",
-        content: "ie=edge",
-      },
-      {
-        hid: "csp",
-        httpEquiv: "Content-Security-Policy",
-        content:
-          "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; frame-src 'self' https://avalon-vue-nuxt.vercel.app; child-src 'self' blob:; connect-src 'self' https://avalon-vue-nuxt.vercel.app;",
-      },
-    ],
+    // htmlAttrs: {
+    //   lang: "en",
+    // },
+    // meta: [
+    //   {
+    //     charset: "utf-8",
+    //   },
+    //   {
+    //     name: "viewport",
+    //     content:
+    //       "width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes",
+    //   },
+    //   {
+    //     "http-equiv": "x-ua-compatible",
+    //     content: "ie=edge",
+    //   },
+    //   {
+    //     hid: "csp",
+    //     httpEquiv: "Content-Security-Policy",
+    //     content:
+    //       "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; frame-src 'self' https://avalon-vue-nuxt.vercel.app; child-src 'self' blob:; connect-src 'self' https://avalon-vue-nuxt.vercel.app;",
+    //   },
+    // ],
     link: [
-      { rel: "stylesheet", href: "/assets/fonts/grandis/stylesheet.css" },
-      { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
-      { rel: "preconnect", href: "https://www.youtube.com" },
-      { rel: "preconnect", href: "https://www.google.com" },
+      // { rel: "stylesheet", href: "/assets/fonts/grandis/stylesheet.css" },
+      // { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
+      // { rel: "preconnect", href: "https://www.youtube.com" },
+      // { rel: "preconnect", href: "https://www.google.com" },
     ],
-    script: [
-      {
-        src: 'https://www.googletagmanager.com/gtm.js?id=GTM-NW6LBFJS',
-        async: true,
-        defer: true
-      }
-    ]
+    // script: [
+    //   {
+    //     src: 'https://www.googletagmanager.com/gtm.js?id=GTM-NW6LBFJS',
+    //     async: true,
+    //     defer: true
+    //   }
+    // ]
   },
 
-  loading: {
-    color: "#0f0",
-  },
+  // loading: {
+  //   color: "#0f0",
+  // },
 
-  experimental: {
-    viewTransition: true,
-    componentIslands: true,
-  },
+  // experimental: {
+  //   viewTransition: true,
+  //   componentIslands: true,
+  // },
 
-  devtools: { enabled: true },
+  // devtools: { enabled: true },
 
   postcss: {
     plugins: {
@@ -95,7 +89,7 @@ export default defineNuxtConfig({
     { src: "~/plugins/vuelidate.js", ssr: false },
     { src: "~/plugins/i18n.config.js", ssr: false },
     "~/plugins/router.js",
-    "~/plugins/gtm.js",
+    // "~/plugins/gtm.js",
     // { src: '~/plugins/gtm.js', ssr: false },
   ],
 
@@ -107,13 +101,9 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "nuxt-aos",
     "@nuxtjs/i18n",
-    "nuxt-calendly",
     "nuxt-directus",
     "@nuxt/image",
-    // "@dargmuesli/nuxt-cookie-control",
-    "@zadigetvoltaire/nuxt-gtm",
-    "nuxt-meta-pixel",
-    // "nuxt-lazy-load",
+    // "nuxt-meta-pixel",
     "nuxt-viewport",
     "nuxt-simple-sitemap",
   ],
@@ -139,41 +129,41 @@ export default defineNuxtConfig({
     vueI18n: "./i18n.js",
   },
 
-  swiper: {
-    modules: ["navigation", "pagination"],
-  },
+  // swiper: {
+  //   modules: ["navigation", "pagination"],
+  // },
 
-  headers: {
-    'Cache-Control': 'public, max-age=31536000, immutable'
-  },
+  // headers: {
+  //   'Cache-Control': 'public, max-age=31536000, immutable'
+  // },
 
   pinia: {
     storesDirs: ["./stores/**", "./custom-folder/stores/**"],
     autoImports: ["defineStore"],
   },
 
-  ogImage: {
-    enabled: true,
-  },
+  // ogImage: {
+  //   enabled: true,
+  // },
 
-  seoExperiments: {
-    enabled: true,
-  },
+  // seoExperiments: {
+  //   enabled: true,
+  // },
 
-  schemaOrg: {
-    enabled: true,
-  },
+  // schemaOrg: {
+  //   enabled: true,
+  // },
 
-  linkChecker: {
-    enabled: true,
-  },
+  // linkChecker: {
+  //   enabled: true,
+  // },
 
-  site: {
-    url: "https://avalon-vue-nuxt.vercel.app",
-    name: "Avalon",
-    description: "Avalon",
-    trailingSlash: true,
-  },
+  // site: {
+  //   url: "https://avalon-vue-nuxt.vercel.app",
+  //   name: "Avalon",
+  //   description: "Avalon",
+  //   trailingSlash: true,
+  // },
 
   buildModules: ["@nuxtjs/svg-sprite", '@nuxt/image'],
 
@@ -181,10 +171,10 @@ export default defineNuxtConfig({
     input: "~/img/icons/",
   },
 
-  gtm: {
-    id: "GTM-NW6LBFJS",
-    enabled: false,
-  },
+  // gtm: {
+  //   id: "GTM-NW6LBFJS",
+  //   enabled: false,
+  // },
 
-  compatibilityDate: "2025-02-28",
+  compatibilityDate: "2025-04-23",
 });
