@@ -332,10 +332,10 @@ const pagesStore = usePagesStore();
 const langStore = useLangStore();
 const isShowArrowUp = ref(false);
 
-import { useNuxtApp } from '#app'
-const { $viewport } = useNuxtApp()
+// import { useNuxtApp } from '#app'
+// const { $viewport } = useNuxtApp()
 
-const regExp = /^\d{8,12}$/;
+// const regExp = /^\d{8,12}$/;
 
 const handleScroll = () => {
     const pointToShow = document.body.offsetHeight * 60 / 100

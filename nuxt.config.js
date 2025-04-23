@@ -5,12 +5,12 @@ export default defineNuxtConfig({
   //   transpile: ["swiper"],
   // },
 
-    // nitro: {
-    //   compressPublicAssets: true, // включает gzip/brotli для статики
-    // },
+  // nitro: {
+  //   compressPublicAssets: true, // включает gzip/brotli для статики
+  // },
 
   image: {
-    dir: 'static'
+    dir: "static",
   },
 
   router: {
@@ -94,7 +94,6 @@ export default defineNuxtConfig({
   ],
 
   css: ["~/assets/css/main.css"],
-    
 
   modules: [
     "@nuxtjs/tailwindcss",
@@ -165,7 +164,7 @@ export default defineNuxtConfig({
   //   trailingSlash: true,
   // },
 
-  buildModules: ["@nuxtjs/svg-sprite", '@nuxt/image'],
+  buildModules: ["@nuxtjs/svg-sprite", "@nuxt/image"],
 
   svgSprite: {
     input: "~/img/icons/",
