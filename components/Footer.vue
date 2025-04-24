@@ -216,12 +216,12 @@
             <div class="container">
                 <div class="flex items-center justify-between gap-8">
 
-                    <video v-if="isVideoLoaded" loop class="max-w-[96px] md:hidden" muted autoplay
+                    <!-- <video loop class="max-w-[96px] hidden md:block" muted autoplay
                         :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_video + '?width=392&height=392&format=webm'"
-                        @error="handleError"></video>
-                    <NuxtImg v-else
+                        @error="handleError"></video> -->
+                    <NuxtImg
                         :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_img"
-                        format="webp" loading="lazy" class="max-w-[96px] md:hidden" alt="ph" />
+                        format="webp" loading="lazy" class="max-w-[96px] block md:hidden" alt="ph" />
 
                     <!-- <div class="logo-clip-path md:hidden">
                         <video loop class="w-[96px] h-[100px] object-cover" muted autoplay>

@@ -33,12 +33,22 @@
 
         <div
           class="logo-clip-path max-h-[222px] max-w-[214px] lg:max-w-full md:max-h-full md:min-w-[318px] md:h-[380px] lg:min-w-[553px] lg:h-[573px] mx-auto my-auto">
-          <video loop
+          <!-- <video loop
             class="md:min-w-[318px]  md:h-[380px] lg:min-w-[553px] lg:h-[573px] min-w-[214px] w-full h-[222px] object-cover"
             muted autoplay playsinline>
             <source src="/assets/video/video-logo.webm" type="video/webm" />
-            <!-- <source src="/assets/video/video-logo.mp4" type="video/mp4" /> -->
+            <source src="/assets/img/index/island-img.png" type="video/webm" />
+          </video> -->
+
+          <video v-if="videoLoaded" @error="handleVideoError" @loadeddata="handleVideoSuccess" loop muted autoplay
+            playsinline
+            class="md:min-w-[318px] md:h-[380px] lg:min-w-[553px] lg:h-[573px] min-w-[214px] w-full h-[222px] object-cover">
+            <source src="/assets/video/video-logo.webm" type="video/webm" />
           </video>
+
+          <!-- Картинка, если видео не загрузилось -->
+          <NuxtImg v-else src="/assets/img/index/island-img.png" alt="Fallback image"
+            class="md:min-w-[318px] md:h-[380px] lg:min-w-[553px] lg:h-[573px] min-w-[214px] w-full h-[222px] object-cover" />
         </div>
 
         <ul class="flex flex-col gap-4">
@@ -114,6 +124,18 @@
 <script setup>
 import { useBlocksStore } from '~/stores/functions/blocks';
 
+import { ref } from 'vue'
+
+const videoLoaded = ref(true)
+
+function handleVideoError() {
+  videoLoaded.value = false
+}
+
+function handleVideoSuccess() {
+  videoLoaded.value = true
+}
+
 const props = defineProps(['itemStrings'])
 
 const itemStrings = ref([]);
@@ -141,7 +163,7 @@ watchEffect(() => {
     // Если это не страница проекта, обновляем itemStrings из blocksStore
     const block = blocksStore.blocks?.find(item => item?.id === 29);
     itemStrings.value = block?.strings || [];
-  }  
+  }
 
   if (itemStrings.value.length) {
 
