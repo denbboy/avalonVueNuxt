@@ -81,7 +81,8 @@
                 </div>
 
                 <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
-                    :breakpoints="breakpoints" :space-between="50" @slideChange="onSlideChange">
+                    :breakpoints="breakpoints" :space-between="50" >
+                    <!-- @slideChange="onSlideChange" -->
 
                     <swiper-slide v-for="item in articlesData?.data?.value" :key="item?.id">
                         <ArticlesItem bgdColor="blue-600" :item="item" />

@@ -30,7 +30,8 @@
         </div>
 
         <swiper class="articles-block" :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
-          :breakpoints="breakpoints" :space-between="24" @slideChange="onSlideChange">
+          :breakpoints="breakpoints" :space-between="24" >
+          <!-- @slideChange="onSlideChange" -->
 
           <swiper-slide v-for="item in articlesData?.data?.value" :key="item?.id">
             <ArticlesItem bgdColor="white" :item="item" />

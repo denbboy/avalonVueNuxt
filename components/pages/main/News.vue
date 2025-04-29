@@ -33,7 +33,8 @@
         </div>
 
         <swiper :modules="modules" :slides-per-view="1" :pagination="pagination" :navigation="navigationConfig"
-          :breakpoints="breakpoints" :space-between="24" @slideChange="onSlideChange" class="!p-3 swiper-news !-m-3">
+          :breakpoints="breakpoints" :space-between="24"  class="!p-3 swiper-news !-m-3">
+          <!-- @slideChange="onSlideChange" -->
 
           <swiper-slide v-for="item in newsData?.data?.value" :key="item.id">
             <NewsItem bgdColor="white" :item="item" />

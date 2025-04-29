@@ -27,7 +27,8 @@
 
         <swiper class="swiper team team-block" loop :modules="modules" :breakpoints="breakpoints"
           :navigation="navigationConfig" :space-between="20" :slides-per-view="2" @swiper="onSwiper"
-          @slideChange="onSlideChange">
+          >
+          <!-- @slideChange="onSlideChange" -->
 
           <swiper-slide v-for="item in team?.value">
             <div

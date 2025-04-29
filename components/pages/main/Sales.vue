@@ -33,7 +33,8 @@
         </div>
 
         <swiper class="swiper-sales" modules="modules" :slides-per-view="1" :pagination="pagination"
-          :navigation="navigationConfig" :breakpoints="breakpoints" :space-between="24" @slideChange="onSlideChange">
+          :navigation="navigationConfig" :breakpoints="breakpoints" :space-between="24" >
+          <!-- @slideChange="onSlideChange" -->
 
           <swiper-slide v-for="item in salesData" :key="item.id">
             <SalesItem bgdColor="white" :item="item" />

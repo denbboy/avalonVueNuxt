@@ -39,8 +39,7 @@
                     <video v-if="isVideoLoaded" loop class="w-full h-[392px] object-cover" muted autoplay
                         @error="handleError"
                         :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_video + '?width=392&height=392&format=webm'"></video>
-                    <NuxtImg v-else
-                        :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_img"
+                    <NuxtImg v-else :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_img"
                         loading="lazy" class="w-full h-[392px]" alt="ph" />
                 </div>
 
@@ -219,8 +218,7 @@
                     <!-- <video loop class="max-w-[96px] hidden md:block" muted autoplay
                         :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_video + '?width=392&height=392&format=webm'"
                         @error="handleError"></video> -->
-                    <NuxtImg
-                        :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_img"
+                    <NuxtImg :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_img"
                         format="webp" loading="lazy" class="max-w-[96px] block md:hidden" alt="ph" />
 
                     <!-- <div class="logo-clip-path md:hidden">
@@ -394,6 +392,33 @@ const submitForm = async () => {
     }
 
     isSending.value = true;
+
+
+
+    var data = {
+        action: 'partner-custom-form',
+        token: 'BnYxulkF_XC5Aq7Re9oO80vbIu-ZblVbALCDNDdAJE0',
+        partner_id: 19056,
+        name: name,
+        phone: phone,
+        lang: 'ua',
+        note: 'Запит з форми контактів',
+        adv_id: '123123123'
+    }
+    $.ajax({
+        url: 'https://crm.g-plus.app/api/actions',
+        method: 'post',
+        data: data
+    }).done(function (data) {
+        if (data.success) {
+            alert('Форму надіслано');
+        }
+        else {
+            alert('Помилка при відправлені форми');
+        }
+    });
+
+
 
     try {
         const { data } = await useFetch('https://crm.g-plus.app/api/actions', {
