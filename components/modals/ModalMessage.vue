@@ -130,6 +130,14 @@ const submitForm = async () => {
         }
     }
 
+    const res = await useFetch('/api/send-form', {
+        method: 'POST',
+        body: {
+            name,
+            phone
+        }
+    })
+
     try {
         if (!phone.value || phone.value.length < 10) {
             isError.value = true;

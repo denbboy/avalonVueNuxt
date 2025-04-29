@@ -3,8 +3,8 @@
     <div class="container">
       <form @submit.prevent="submitForm"
         class="flex flex-col p-5 lg:py-12 lg:px-[130px] border border-whiteOp-300 rounded-2xl text-center md:p-12 relative">
-        <NuxtImg loading="lazy" width="100" src="/img/index/dot-decor.png" class="absolute right-[-1px] bottom-[-1px] w-5 md:w-8"
-          alt="decor" />
+        <NuxtImg loading="lazy" width="100" src="/img/index/dot-decor.png"
+          class="absolute right-[-1px] bottom-[-1px] w-5 md:w-8" alt="decor" />
         <h2 class="font-bold text-white text-2xl mb-4 md:text-3xl md:mb-7 leading-[100%]">
           {{ $t('want_know_more') }}
         </h2>
@@ -87,7 +87,7 @@ const isSending = ref(false);
 const isSuccess = ref(false);
 
 const inputPhoneNumber = () => {
-    phone.value = phone.value.replace(/(?!^\+)[^\d]/g, '');
+  phone.value = phone.value.replace(/(?!^\+)[^\d]/g, '');
 }
 
 const toolkitStore = useToolkit();
@@ -117,6 +117,14 @@ const submitForm = async () => {
       return isError.value = true
     }
   }
+
+  const res = await useFetch('/api/send-form', {
+    method: 'POST',
+    body: {
+      name,
+      phone
+    }
+  })
 
   try {
     if (!name.value || !phone.value || phone.value.length < 10) {

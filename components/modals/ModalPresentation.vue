@@ -145,20 +145,14 @@ const submitForm = async () => {
         isSending.value = true;
 
         try {
-            const { data } = await useFetch('https://crm.g-plus.app/api/actions', {
+            const res = await useFetch('/api/send-form', {
                 method: 'POST',
                 body: {
-                    action: 'partner-custom-form',
-                    token: '123',
-                    partner_id: '123',
-                    name: name.value,
-                    phone: phone.value,
-                    building_id: '123',
-                    lang: 'ua',
-                    note: 'Запит з форми контактів',
-                    adv_id: '123123123'
+                    name,
+                    phone
                 }
-            });
+            })
+
 
             isSending.value = false;
             isSuccess.value = true;

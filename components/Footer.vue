@@ -394,47 +394,16 @@ const submitForm = async () => {
     isSending.value = true;
 
 
-
-    var data = {
-        action: 'partner-custom-form',
-        token: 'BnYxulkF_XC5Aq7Re9oO80vbIu-ZblVbALCDNDdAJE0',
-        partner_id: 19056,
-        name: name,
-        phone: phone,
-        lang: 'ua',
-        note: 'Запит з форми контактів',
-        adv_id: '123123123'
-    }
-    $.ajax({
-        url: 'https://crm.g-plus.app/api/actions',
-        method: 'post',
-        data: data
-    }).done(function (data) {
-        if (data.success) {
-            alert('Форму надіслано');
-        }
-        else {
-            alert('Помилка при відправлені форми');
-        }
-    });
-
-
-
     try {
-        const { data } = await useFetch('https://crm.g-plus.app/api/actions', {
+
+        const res = await useFetch('/api/send-form', {
             method: 'POST',
             body: {
-                action: 'partner-custom-form',
-                token: 'BnYxulkF_XC5Aq7Re9oO80vbIu-ZblVbALCDNDdAJE0',
-                partner_id: '25545',
-                name: name.value,
-                phone: phone.value,
-                // building_id: '123',
-                lang: 'ua',
-                note: 'Запит з форми контактів',
-                // adv_id: '123123123'
+                name,
+                phone
             }
-        });
+        })
+
 
         isSending.value = false;
         isSuccess.value = true;

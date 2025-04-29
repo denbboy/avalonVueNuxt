@@ -72,7 +72,8 @@
 
             <p class="text-center text-white text-xs lg:text-sm w-full mt-5">
                 {{ $t('m_message_text_3') }}
-                <NuxtLink href="/docs/privacy-police" class="text-blue-400 font-bold underline transition-all hover:text-blue-700">
+                <NuxtLink href="/docs/privacy-police"
+                    class="text-blue-400 font-bold underline transition-all hover:text-blue-700">
                     {{ $t('policy') }}
                 </NuxtLink>
             </p>
@@ -129,6 +130,15 @@ const handleSubmitForm = async () => {
             return isError.value = true
         }
     }
+
+    const res = await useFetch('/api/send-form', {
+        method: 'POST',
+        body: {
+            name: fullName,
+            email,
+            message
+        }
+    })
 
     try {
         if (!fullName.value || !email.value || !message.value || !file.value || !validateEmail(email.value)) {
