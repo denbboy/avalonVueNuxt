@@ -118,14 +118,6 @@ const submitForm = async () => {
     }
   }
 
-  const res = await useFetch('/api/send-form', {
-    method: 'POST',
-    body: {
-      name,
-      phone
-    }
-  })
-
   try {
     if (!name.value || !phone.value || phone.value.length < 10) {
       isError.value = true;
@@ -134,28 +126,23 @@ const submitForm = async () => {
       isError.value = false;
     }
 
-    const result = await formRequest();
     isSending.value = true;
 
     try {
-      const { data } = await useFetch('https://crm.g-plus.app/api/actions', {
+
+      await useFetch('/api/send-form', {
         method: 'POST',
         body: {
-          action: 'partner-custom-form',
-          token: '123',
-          partner_id: '123',
           name: name.value,
           phone: phone.value,
-          building_id: '123',
-          lang: 'ua',
-          note: 'Запит з форми контактів',
-          adv_id: '123123123'
+          form: "know-more"
         }
-      });
+      }).then(res => {
+        isSending.value = false;
+        isSuccess.value = true;
+        resetForm();
+      })
 
-      isSending.value = false;
-      isSuccess.value = true;
-      resetForm();
     } catch (err) {
       isSending.value = false;
     }

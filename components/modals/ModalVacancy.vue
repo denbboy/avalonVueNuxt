@@ -131,30 +131,40 @@ const handleSubmitForm = async () => {
         }
     }
 
-    const res = await useFetch('/api/send-form', {
-        method: 'POST',
-        body: {
-            name: fullName,
-            email,
-            message
-        }
-    })
-
     try {
         if (!fullName.value || !email.value || !message.value || !file.value || !validateEmail(email.value)) {
             isError.value = true;
         } else {
             isError.value = false;
-
-            const result = await formRequest();
             isSending.value = true;
 
-            setTimeout(() => {
-                isSending.value = false;
-                isSuccess.value = true;
+            const formData = new FormData()
+            formData.append('file', file.value)
 
-                resetForm();
-            }, 1000);
+            await useFetch('https://api.avalonbali.com/files', {
+                method: 'POST',
+                body: formData
+            }).then(async (res) => {
+
+                const fileId = res.data.value.data.id
+
+                await useFetch('/api/send-form', {
+                    method: 'POST',
+                    body: {
+                        name: fullName,
+                        email,
+                        message,
+                        file: fileId,
+                        form: "vacancy"
+                    }
+                }).then(() => {
+                    isSending.value = false;
+                    isSuccess.value = true;
+                    resetForm()
+                })
+
+            })
+
         }
 
     } catch (error) {
@@ -175,25 +185,5 @@ const handleFileChange = (event) => {
         isErrorFile.value = false;
     }
 };
-
-import { createDirectus, rest, readFlow } from '@directus/sdk';
-
-const client = createDirectus('https://api.avalonbali.com').with(rest());
-
-const formRequest = async () => {
-    const formData = new FormData();
-    formData.append('phone', fullName.value);
-    formData.append('email', email.value);
-    formData.append('message', message.value);
-    formData.append('file', file.value);
-
-    const result = await client.request(
-        readFlow('78957f27-5d57-49a2-bdfe-93be73e7e487', {
-            fields: ['*'],
-            body: formData, // Передаем FormData в теле запроса
-            method: 'POST' // Указываем метод запроса, если это POST-запрос
-        })
-    );
-}
 
 </script>

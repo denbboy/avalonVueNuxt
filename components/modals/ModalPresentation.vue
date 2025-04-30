@@ -141,22 +141,22 @@ const submitForm = async () => {
             isError.value = false;
         }
 
-        const result = await formRequest();
         isSending.value = true;
 
         try {
-            const res = await useFetch('/api/send-form', {
+            await useFetch('/api/send-form', {
                 method: 'POST',
                 body: {
-                    name,
-                    phone
+                    method: name.value,
+                    phone: phone.value,
+                    form: 'presentation'
                 }
+            }).then(res => {
+                isSending.value = false;
+                isSuccess.value = true;
+                resetForm();
             })
 
-
-            isSending.value = false;
-            isSuccess.value = true;
-            resetForm();
         } catch (err) {
             isSending.value = false;
         }
@@ -204,20 +204,4 @@ const inputOptions = {
     placeholder: placeholderLang[langStore.lang],
     maxlength: 15
 };
-
-const formRequest = async () => {
-    const formData = new FormData();
-    formData.append('name', name.value);
-    formData.append('phone', phone.value);
-
-    const result = await client.request(
-        readFlow('9f9a3c27-6dcc-45b9-9bef-b5bf3f3a0330', {
-            fields: ['*'],
-            body: formData, // Передаем FormData в теле запроса
-            method: 'POST' // Указываем метод запроса, если это POST-запрос
-        })
-    );
-}
-
-
 </script>

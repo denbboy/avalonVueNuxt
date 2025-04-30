@@ -384,9 +384,7 @@ const submitForm = async () => {
     if (!name.value || !phone.value || phone.value.length < 10) {
         return isError.value = true;
     }
-    // else if (!regExp.test(phone.value)) {
-    //     return isError.value = true;
-    // }
+
     else {
         isError.value = false;
     }
@@ -396,18 +394,19 @@ const submitForm = async () => {
 
     try {
 
-        const res = await useFetch('/api/send-form', {
+        await useFetch('/api/send-form', {
             method: 'POST',
             body: {
-                name,
-                phone
+                name: name.value,
+                phone: phone.value,
+                form: "footer"
             }
+        }).then(res => {
+            isSending.value = false;
+            isSuccess.value = true;
+            resetForm();
         })
 
-
-        isSending.value = false;
-        isSuccess.value = true;
-        resetForm();
     } catch (err) {
         isSending.value = false;
     }
