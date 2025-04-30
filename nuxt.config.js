@@ -125,7 +125,7 @@ export default defineNuxtConfig({
     ],
     defaultLocale: "en",
     langDir: "locales/",
-    vueI18n: "./i18n.js",
+    vueI18n: "./plugins/i18n.config.js",
   },
 
   // swiper: {
