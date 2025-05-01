@@ -9,8 +9,13 @@ export default defineNuxtConfig({
   //   compressPublicAssets: true, // включает gzip/brotli для статики
   // },
 
+  // image: {
+  //   dir: "static",
+  // },
+
   image: {
-    dir: "static",
+    provider: 'static', // заменяет IPX
+    dir: 'public', // путь, где лежат изображения
   },
 
   router: {
