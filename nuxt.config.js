@@ -10,20 +10,9 @@ export default defineNuxtConfig({
   // },
 
   // image: {
-  //   dir: "static",
+  //   provider: 'static',
+  //   dir: 'public', // важно! не 'static'
   // },
-
-  image: {
-    // provider: 'static',
-    dir: 'static',
-    // отключаем IPX
-    screens: {
-      sm: 320,
-      md: 640,
-      lg: 1024,
-      xl: 1280,
-    }
-  },
 
   router: {
     middleware: ["locale", "gtm"],
@@ -117,7 +106,7 @@ export default defineNuxtConfig({
     // "nuxt-meta-pixel",
     "nuxt-viewport",
     "nuxt-simple-sitemap",
-    "@nuxt/image-edge",
+    // "@nuxt/image-edge",
   ],
 
   directus: {
