@@ -124,6 +124,7 @@ const validateEmail = (email) => {
 
 // Функция обработки отправки формы
 const handleSubmitForm = async () => {
+
     if (currentForm?.captcha) {
         if (!recaptcha()) {
             errorText.value = 'Recaptcha error'
@@ -141,29 +142,34 @@ const handleSubmitForm = async () => {
             const formData = new FormData()
             formData.append('file', file.value)
 
-            await useFetch('https://api.avalonbali.com/files', {
+            const fileSending = await fetch('https://api.avalonbali.com/files', {
                 method: 'POST',
                 body: formData
-            }).then(async (res) => {
-
-                const fileId = res.data.value.data.id
-
-                await useFetch('/api/send-form', {
-                    method: 'POST',
-                    body: {
-                        name: fullName,
-                        email,
-                        message,
-                        file: fileId,
-                        form: "vacancy"
-                    }
-                }).then(() => {
-                    isSending.value = false;
-                    isSuccess.value = true;
-                    resetForm()
-                })
-
             })
+
+            const fileRes = await fileSending.json()
+            const fileId = fileRes?.data?.id
+
+            const { error } = await useFetch('/api/send-form', {
+                method: 'POST',
+                body: {
+                    name: fullName.value,
+                    email: email.value,
+                    message: message.value,
+                    file: fileId,
+                    form: "vacancy"
+                }
+            })
+
+            if (!error.value) {
+                isSending.value = false;
+                isSuccess.value = true;
+                resetForm()
+            } else {
+                isSending.value = false;
+                isError.value = true;
+            }
+
 
         }
 
