@@ -3,7 +3,7 @@
     <!-- <div class="absolute lg:-right-36 -top-14 lg:hidden -right-14 w-28 z-[2]"></div> -->
     <div
       class="absolute lg:bottom-[10px] top-10 lg:top-auto w-28 lg:-left-36 lg:right-auto -right-14 lg:w-72 lg:h-72 z-10">
-      <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
+      <img loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
     </div>
     <div class="container">
       <div class="md:flex md:items-center gap-8 justify-between">
@@ -17,7 +17,7 @@
               </span>
             </h2> -->
 
-            <NuxtImg loading="lazy" src="/img/new-avalon-logo.png" class="-ml-6" alt="ic a" />
+            <img loading="lazy" src="/img/new-avalon-logo.png" class="-ml-6" alt="ic a" />
           </div>
 
           <div class="relative block md:hidden mt-7 mb-10 w-full md:max-w-[567px] lg:max-w-[760px] ">
@@ -27,7 +27,7 @@
                 d="M327.488 2.83042C458.839 17.8616 520.292 159.634 505.255 291.034C493.455 394.15 381.711 441.552 278.633 429.756C146.896 414.681 -13.4797 365.183 1.60108 233.398C19.3293 78.4784 172.625 -14.8912 327.488 2.83042Z"
                 stroke="white" />
             </svg>
-            <NuxtImg loading="lazy" src="/img/index/about-photo.png" class="w-full relative z-10" alt="ph"
+            <img loading="lazy" src="/img/index/about-photo.png" class="w-full relative z-10" alt="ph"
               data-aos="fade-left" />
           </div>
 
@@ -105,7 +105,7 @@
               d="M327.488 2.83042C458.839 17.8616 520.292 159.634 505.255 291.034C493.455 394.15 381.711 441.552 278.633 429.756C146.896 414.681 -13.4797 365.183 1.60108 233.398C19.3293 78.4784 172.625 -14.8912 327.488 2.83042Z"
               stroke="white" />
           </svg>
-          <NuxtImg loading="lazy" src="/img/index/about-photo.png" class="w-full relative z-10" alt="ph"
+          <img loading="lazy" src="/img/index/about-photo.png" class="w-full relative z-10" alt="ph"
             data-aos="fade-left" />
         </div>
       </div>

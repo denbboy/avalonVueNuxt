@@ -3,17 +3,17 @@
         class="content__inner z-0 relative overflow-x-hidden overflow-y-scroll p-5 md:p-0 w-full flex flex-col items-center h-full md:rounded-[20px]">
 
         <div class="absolute right-[-34px] -top-5 md:top-5 z-0">
-            <NuxtImg src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
+            <img src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
         </div>
         <div class="absolute left-[-34px] bottom-0 md:bottom-[154px] z-0">
-            <NuxtImg src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
+            <img src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
         </div>
 
         <div class="md:flex">
             <div
                 class="pb-4 border-b border-whiteOp-300 mb-4 md:border-b-0 flex flex-col md:mb-0 md:bg-blue-600 md:p-10 md:pr-0 md:w-full">
                 <div class="hidden md:block md:mb-[65px] pb-10 border-b border-whiteOp-300 md:-ml-10">
-                    <NuxtImg src="/img/newLogo.png" width="100" class="mx-auto" alt="ic logo" />
+                    <img src="/img/newLogo.png" width="100" class="mx-auto" alt="ic logo" />
                 </div>
                 <h2 class="text-white text-lg md:text-[30px] md:leading-[30px] font-bold mb-5">
                     {{ $t('m_calendar_text_1') }}

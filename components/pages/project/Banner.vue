@@ -39,7 +39,7 @@
                             class="flex lg:-mr-20 flex-wrap items-center gap-[10px] md:gap-5">
                             <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
-                                <NuxtImg
+                                <img
                                     class="absolute top-0 left-0 -z-10 w-full h-full md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
                                     src="/img/icons/about-border-white.svg" alt="bgd" loading="lazy" />
                                 <span class="text-white text-xs md:text-sm">
@@ -52,9 +52,9 @@
                             </div>
                             <div class="con order-1 md:order-none">
                                 <div class="relative px-5 py-3 w-fit md:text-center md:px-7 min-w-[228px] md:min-w-0">
-                                    <NuxtImg class="absolute w-full h-full top-0 left-0 -z-10 md:hidden"
+                                    <img class="absolute w-full h-full top-0 left-0 -z-10 md:hidden"
                                         src="/img/index/bgd-decor.png" alt="bgd" loading="lazy" />
-                                    <NuxtImg class="absolute top-0 left-0 -z-10 hidden md:block h-full w-full"
+                                    <img class="absolute top-0 left-0 -z-10 hidden md:block h-full w-full"
                                         src="/img/index/bgd-decor-2.png" alt="bgd" loading="lazy" />
                                     <h2 v-if="itemData?.price" class="text-sm text-white">
                                         {{ $t('cost') }} <br v-if="!$viewport.isLessThan('tablet')"
@@ -121,7 +121,7 @@
                                 :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'">х</span>
                             <div :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'"
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px]">
-                                <NuxtImg src="/img/about/ribas.png" class="w-full h-full" alt="Image" loading="lazy" />
+                                <img src="/img/about/ribas.png" class="w-full h-full" alt="Image" loading="lazy" />
                             </div>
                         </div>
                         <p :class="isPlay ? 'opacity-0' : 'opacity-100'"
@@ -139,7 +139,7 @@
                             class="flex items-center mb-5 gap-5 mt-7 lg:mt-0 text-white text-sm xl:text-base xl:flex-col xl:ml-auto">
                             <div
                                 class="relative flex items-center justify-center max-w-[95px] w-full h-full xl:max-w-[165px]">
-                                <NuxtImg :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'"
+                                <img :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'"
                                     src="/img/about/playBorder.svg" class="w-full h-full" alt="ic" loading="lazy" />
                                 <svg v-if="!isPlay" class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18"
                                     height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -191,7 +191,7 @@
                                 <h3
                                     class="flex items-center gap-2 md:gap-[10px] text-blue-400 text-2xl font-bold mb-[10px] md:mb-[15px] md:text-[40px]">
                                     {{ itemData?.roi_procent }}%
-                                    <NuxtImg src="/img/icons/about-banner-A-ic.svg"
+                                    <img src="/img/icons/about-banner-A-ic.svg"
                                         class="max-w-[20px] md:max-w-[30px] w-full" alt="ic" loading="lazy" />
                                 </h3>
                                 <p class="text-white text-sm md:text-base">

@@ -25,7 +25,7 @@
         </div>
 
         <div class="absolute -right-36 bottom-36 w-72 h-72 z-10">
-            <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
+            <img loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
         </div>
         <div class="container relative z-10">
 
@@ -119,7 +119,7 @@
                                                 {{ $t('more') }}
                                             </NuxtLink>
                                             <div v-if="projectInclude?.location_name" class="flex items-center">
-                                                <NuxtImg class="w-3" src="/img/icons/point-white.svg" alt="Image"
+                                                <img class="w-3" src="/img/icons/point-white.svg" alt="Image"
                                                     loading="lazy" />
                                                 <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">
                                                     {{ projectInclude?.location_name }}

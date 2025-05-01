@@ -1,7 +1,7 @@
 <template>
   <section class="bali py-14 md:py-24 bg-blue-600 relative overflow-hidden">
     <div class="absolute lg:-right-36 -top-14 lg:hidden -right-14 w-28 z-[2]">
-      <NuxtImg src="/img/icons/vector-logo.webp" loading="lazy" format="webp" alt="vector-logo" />
+      <img src="/img/icons/vector-logo.webp" loading="lazy" format="webp" alt="vector-logo" />
     </div>
 
 
@@ -46,7 +46,7 @@
           <div class="text-white text-sm mt-2 md:text-sm lg:text-base md:mt-4" v-html="itemStrings?.filter(item => item.id === 135)[0]?.String_id?.translations?.filter(item => item.languages_code.code.includes(locale))[0]?.description">
           </div>
         </div>
-        <NuxtImg src="/img/index/a-bali-decor.svg" loading="lazy" width="110" class="m-auto md:hidden" format="webp" alt="vector-logo" />
+        <img src="/img/index/a-bali-decor.svg" loading="lazy" width="110" class="m-auto md:hidden" format="webp" alt="vector-logo" />
         <!-- </div> -->
       </div>
     </div>

@@ -2,7 +2,7 @@
     <section class="uslugi pt-[23px] pb-12 relative overflow-hidden">
         <div
             class="absolute hidden 2xl:block 2xl:-right-36 top-0 2xl:top-auto 2xl:left-auto min-h-[600px] 2xl:bottom-40 -left-14 w-28 2xl:w-72 z-[2]">
-            <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
+            <img loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
         </div>
         <div class="container">
             <div class="w-full flex flex-col items-center text-center md:flex-row md:justify-between md:mb-[44px] md:text-start"
@@ -88,7 +88,7 @@
                                         {{ $t('more') }}
                                     </NuxtLink>
                                     <div v-if="item?.location_name" class="flex items-center">
-                                        <NuxtImg class="w-3" src="/img/icons/point-white.svg" alt="Image"
+                                        <img class="w-3" src="/img/icons/point-white.svg" alt="Image"
                                             loading="lazy" />
                                         <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">
                                             {{ item?.location_name }}

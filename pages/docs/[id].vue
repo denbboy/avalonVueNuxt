@@ -26,10 +26,10 @@
         </div>
 
         <div class="absolute -right-[72px] top-[250px] w-36 z-10">
-            <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
+            <img loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
         </div>
         <div class="absolute -right-[22px] hidden md:block bottom-[300px] w-72 z-10">
-            <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
+            <img loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
         </div>
 
     </section>

@@ -41,7 +41,7 @@
         </div>
 
         <div class="absolute -right-36 bottom-40 w-72 h-72 z-10">
-            <NuxtImg src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
+            <img src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
         </div>
     </section>
 </template>

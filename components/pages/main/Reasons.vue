@@ -29,7 +29,7 @@
 
         </ul>
 
-        <!-- <NuxtImg loading="lazy" src="/img/index/island-img.png" class="my-8 max-w-56 m-auto md:max-w-[500px] md:m-0" alt="ph" data-aos="zoom-in"> -->
+        <!-- <img loading="lazy" src="/img/index/island-img.png" class="my-8 max-w-56 m-auto md:max-w-[500px] md:m-0" alt="ph" data-aos="zoom-in"> -->
 
         <div
           class="logo-clip-path max-h-[222px] max-w-[214px] lg:max-w-full md:max-h-full md:min-w-[318px] md:h-[380px] lg:min-w-[553px] lg:h-[573px] mx-auto my-auto">
@@ -47,7 +47,7 @@
           </video>
 
           <!-- Картинка, если видео не загрузилось -->
-          <NuxtImg v-else src="/assets/img/index/island-img.png" alt="Fallback image"
+          <img v-else src="/img/index/island-img.png" alt="Fallback image"
             class="md:min-w-[318px] md:h-[380px] lg:min-w-[553px] lg:h-[573px] min-w-[214px] w-full h-[222px] object-cover" />
         </div>
 
@@ -71,7 +71,7 @@
         data-aos="fade-left">
         <div
           class="flex items-center gap-4 py-7 px-5 border-b border-blue-400 md:border-r md:border-b-0 md:h-full md:px-8 md:w-full">
-          <NuxtImg loading="lazy" src="/img/index/cool.svg" class="w-16" alt="svg" />
+          <img loading="lazy" src="/img/index/cool.svg" class="w-16" alt="svg" />
           <span class="text-base text-white md:max-w-56 md:text-[14px] 3xl:text-[16px]">
             {{itemStrings?.filter(item => item.id === 126)[0]?.String_id?.translations?.filter(item =>
               item.languages_code.code.includes(locale))[0]?.title}}
@@ -103,7 +103,7 @@
           <p class="text-white text-3xl font-bold mb-2 flex md:text-[30px] lg:text-[40px] items-center">
             {{itemStrings?.filter(item => item.id === 129)[0]?.String_id?.translations?.filter(item =>
               item.languages_code.code.includes(locale))[0]?.title}}
-            <NuxtImg loading="lazy" src="/img/index/A-decor.svg" class="ml-1 max-w-5 md:max-w-5 md:-mt-1 lg:max-w-7"
+            <img loading="lazy" src="/img/index/A-decor.svg" class="ml-1 max-w-5 md:max-w-5 md:-mt-1 lg:max-w-7"
               alt="ic" />
           </p>
           <span class=" text-white text-[13px] 3xl:text-base">
@@ -116,7 +116,7 @@
     </div>
 
     <div class="absolute md:-right-36 -bottom-14 md:hidden mt-[1px] translate-y-1 -right-14 w-28 z-[2]">
-      <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
+      <img loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
     </div>
   </section>
 </template>

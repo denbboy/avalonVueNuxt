@@ -30,7 +30,7 @@
               {{projectTitleData.data.value.find(item => item.id === activeProject)?.translations?.[0]?.title ?? "All"
               }}
             </span>
-            <NuxtImg src="/img/icons/arrow-white-down.svg" alt="Arrow"
+            <img src="/img/icons/arrow-white-down.svg" alt="Arrow"
               class="w-4 transition-all group-[.active]:-scale-y-100 scale-y-100" loading="lazy" />
           </button>
           <div
@@ -77,7 +77,7 @@
     </div>
 
     <div class="absolute -right-36 bottom-40 w-72 h-72 z-10">
-      <NuxtImg src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
+      <img src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
     </div>
   </section>
 </template>

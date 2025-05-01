@@ -2,7 +2,7 @@
   <section class="lg:pb-12 pb-0 min-h-[200px]">
 
     <div class="absolute -left-36 bottom-0 w-72 h-72 z-10 hidden md:block">
-      <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
+      <img loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
     </div>
 
     <!-- :modules="modules" -->

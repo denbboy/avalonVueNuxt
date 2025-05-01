@@ -4,7 +4,7 @@
             <NuxtImg src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
         </div> -->
         <div class="absolute hidden md:block lg:-left-36 top-0 lg:top-auto lg:right-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
-            <NuxtImg src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
+            <img src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
         </div>
         <div class="container relative z-10">
             <div

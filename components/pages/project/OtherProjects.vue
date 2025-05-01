@@ -1,7 +1,7 @@
 <template>
     <section class="uslugi pt-[23px] pb-12 md:py-24 relative overflow-hidden">
         <div class="absolute lg:-right-36 top-0 lg:top-auto lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
-            <NuxtImg src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
+            <img src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" loading="lazy" />
         </div>
         <div class="container">
             <h2 data-aos="fade-up"
@@ -71,7 +71,7 @@
                                         {{ $t('more') }}
                                     </NuxtLink>
                                     <div class="flex items-center">
-                                        <NuxtImg class="w-3" src="/img/icons/point-white.svg" alt="Image"
+                                        <img class="w-3" src="/img/icons/point-white.svg" alt="Image"
                                             loading="lazy" />
                                         <span class="ml-1 text-sm md:text-xs lg:text-sm text-white">
                                             {{ $t('changu') }}

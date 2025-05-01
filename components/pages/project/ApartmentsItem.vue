@@ -90,7 +90,7 @@
                 <NuxtLink @click="handleOpenModal3D" v-if="props.itemData?.video_360"
                     :href="`#3d-object-${props.itemData?.id}`"
                     class="absolute w-full top-2 right-2 z-10 md:right-auto md:left-[30px] md:top-[30px]">
-                    <NuxtImg src="/img/about/360.png"
+                    <img src="/img/about/360.png"
                         class="max-w-[95px] active:scale-95 hover:scale-105 transition-all md:ml-0 ml-auto xl:max-w-[108px] w-full"
                         alt="ph" loading="lazy" />
                 </NuxtLink>
