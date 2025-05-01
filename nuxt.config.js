@@ -14,8 +14,15 @@ export default defineNuxtConfig({
   // },
 
   image: {
-    provider: 'static', // заменяет IPX
-    dir: 'public', // путь, где лежат изображения
+    // provider: 'static',
+    dir: 'static',
+    // отключаем IPX
+    screens: {
+      sm: 320,
+      md: 640,
+      lg: 1024,
+      xl: 1280,
+    }
   },
 
   router: {
@@ -110,6 +117,7 @@ export default defineNuxtConfig({
     // "nuxt-meta-pixel",
     "nuxt-viewport",
     "nuxt-simple-sitemap",
+    "@nuxt/image-edge",
   ],
 
   directus: {
