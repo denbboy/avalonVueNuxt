@@ -1,7 +1,7 @@
 # ========================
 # STAGE 1 - Build Stage
 # ========================
-FROM node:16-alpine AS builder
+FROM node:18-alpine AS builder
 
 # Install build dependencies for sharp
 RUN apk add --no-cache \
@@ -25,7 +25,7 @@ RUN npm run build
 # ========================
 # STAGE 2 - Production Stage
 # ========================
-FROM node:16-alpine
+FROM node:18-alpine
 
 # Install runtime dependencies for sharp
 RUN apk add --no-cache vips libc6-compat
