@@ -41,7 +41,7 @@
                     <div class="flex items-center w-full gap-5">
                         <div v-if="item?.projects[0]?.item?.due_date"
                             class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
-                            <NuxtImg
+                            <img
                                 class="absolute top-0 left-0 -z-10 md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
                                 src="/img/icons/about-border-white.svg" alt="bgd" loading="lazy" />
                             <span class="text-white text-xs md:text-sm">
@@ -53,10 +53,10 @@
                             </p>
                         </div>
                         <div class="relative px-5 py-3 w-fit md:text-center md:px-7">
-                            <NuxtImg v-if="$viewport.isLessThan('tablet')"
+                            <img v-if="$viewport.isLessThan('tablet')"
                                 class="absolute top-0 w-full left-0 -z-10 md:hidden h-full"
                                 src="/img/index/bgd-decor.png" alt="bgd" />
-                            <NuxtImg v-else class="absolute top-0 left-0 w-full -z-10 hidden md:block h-full"
+                            <img v-else class="absolute top-0 left-0 w-full -z-10 hidden md:block h-full"
                                 src="/img/index/bgd-decor-2.png" alt="bgd" />
 
                             <h2 class="text-sm text-white">
@@ -129,7 +129,7 @@
             <button data-aos="fade-up" v-if="item?.video" @click="e => handlePlayVideo(e, item?.video)" type="button"
                 class="play-button hidden md:flex items-center gap-5 md:mr-14 text-white text-sm xl:text-base w-full xl:max-w-[165px] xl:flex-col xl:ml-auto">
                 <div class="relative flex items-center justify-center max-w-[95px] w-full xl:max-w-[165px]">
-                    <NuxtImg :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'"
+                    <img :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'"
                         src="/img/about/playBorder.svg" class="w-full hidden md:block" alt="ic" loading="lazy" />
                     <svg v-if="!isVideoPlayed" class="absolute -ml-5 lg:-ml-10 animate-scaling" width="18" height="21"
                         viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -177,10 +177,10 @@
                     <div class="con md:ml-4 md:pl-5 md:px-7 relative">
                         <div class="absolute h-12 left-0 top-1/2 -translate-y-1/2 w-[1px] bg-white/20"></div>
                         <div v-if="item?.price" class="relative px-5 py-3 w-fit md:text-center mb-8 lg:mb-0">
-                            <NuxtImg v-if="$viewport.isLessThan('tablet')"
+                            <img v-if="$viewport.isLessThan('tablet')"
                                 class="absolute top-0 w-full left-0 -z-10 md:hidden h-full"
                                 src="/img/index/bgd-decor.png" alt="bgd" />
-                            <NuxtImg v-else class="absolute top-0 left-0 w-full -z-10 hidden md:block h-full"
+                            <img v-else class="absolute top-0 left-0 w-full -z-10 hidden md:block h-full"
                                 src="/img/index/bgd-decor-2.png" alt="bgd" />
 
                             <h2 class="text-sm text-white">
@@ -206,7 +206,7 @@
             </div>
 
             <div class="hidden md:block" v-if="!$viewport.isLessThan('tablet')">
-                <NuxtImg width="156" height="156" loading="lazy" src="/img/index/banner-logo.svg" alt="Image" />
+                <img width="156" height="156" loading="lazy" src="/img/index/banner-logo.svg" alt="Image" />
             </div>
 
         </div>

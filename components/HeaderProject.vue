@@ -165,7 +165,7 @@
           </div>
 
           <button @click="handleOpenBurger" id="burgerBtn" type="button" class="3xl:hidden block ">
-            <NuxtImg loading="lazy" src="/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic" />
+            <img loading="lazy" src="/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic" />
           </button>
         </div>
 
@@ -249,22 +249,22 @@
         <ul class="flex items-center gap-1 ">
           <li v-if="toolkitStore?.settings?.soc_link_whats" class="w-10 h-10">
             <NuxtLink class="w-full h-full" :href="`${toolkitStore?.settings?.soc_link_whats}`">
-              <NuxtImg class="w-full" src="/img/index/tw-burger.svg" alt="ic" />
+              <img class="w-full" src="/img/index/tw-burger.svg" alt="ic" />
             </NuxtLink>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_inst" class="w-10 h-10">
             <NuxtLink class="w-full h-full" :href="`${toolkitStore?.settings?.soc_link_inst}`">
-              <NuxtImg class="w-full" src="/img/index/inst-burger.svg" alt="ic" />
+              <img class="w-full" src="/img/index/inst-burger.svg" alt="ic" />
             </NuxtLink>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_fb" class="w-10 h-10">
             <NuxtLink class="w-full h-full" :href="`${toolkitStore?.settings?.soc_link_fb}`">
-              <NuxtImg class="w-full" src="/img/index/face-burger.svg" alt="ic" />
+              <img class="w-full" src="/img/index/face-burger.svg" alt="ic" />
             </NuxtLink>
           </li>
           <li v-if="toolkitStore?.settings?.soc_link_yt" class="w-10 h-10">
             <NuxtLink class="w-full h-full" :href="`${toolkitStore?.settings?.soc_link_yt}`">
-              <NuxtImg class="w-full" src="/img/index/yout-burger.svg" alt="ic" />
+              <img class="w-full" src="/img/index/yout-burger.svg" alt="ic" />
             </NuxtLink>
           </li>
         </ul>

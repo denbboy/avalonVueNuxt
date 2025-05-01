@@ -5,7 +5,7 @@
         <a :href="toolkitStore?.settings?.soc_link_whats" target="_blank"
             class="flex lg:hidden fixed w-full z-10 h-12 bg-blue-400 justify-center items-center transition-all duration-300"
             :class="isVisible ? 'bottom-0' : '-bottom-12 pointer-events-none'">
-            <NuxtImg src="/img/index/head-whatss.svg" class="max-w-5 w-full relative z-10" alt="ic" loading="lazy" />
+            <img src="/img/index/head-whatss.svg" class="max-w-5 w-full relative z-10" alt="ic" loading="lazy" />
             <span class="text-white ml-3">
                 {{ $t('connect_in_whatsapp') }}
             </span>
@@ -169,7 +169,7 @@
 
                 <form @submit.prevent="submitForm"
                     class="flex xl:max-w-[381px] lg:max-w-full flex-col p-5 md:px-5 md:py-12 border border-whiteOp-300 rounded-2xl text-center lg:p-12 relative mb-14 md:mb-0">
-                    <NuxtImg loading="lazy" src="/img/index/dot-decor-2.webp"
+                    <img loading="lazy" src="/img/index/dot-decor-2.webp"
                         class="absolute right-[-1px] bottom-[-1px] w-5 md:w-8" alt="decor" />
                     <h2 class="font-bold text-white md:text-2xl mb-4 3xl:text-3xl md:mb-7 leading-[100%]">
                         {{ $t('want_know_more') }}

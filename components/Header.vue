@@ -95,7 +95,7 @@
 
 
         <button @click="handleOpenBurger" v-if="isLessThenDesktop" id="burgerBtn" type="button" class="2xl:hidden block ">
-          <NuxtImg loading="lazy" src="/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic" />
+          <img loading="lazy" src="/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic" />
         </button>
 
       </div>

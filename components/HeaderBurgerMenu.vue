@@ -79,22 +79,22 @@
             <ul class="flex items-center gap-1">
                 <li v-if="toolkitStore?.settings?.soc_link_whats">
                     <a :href="`tel:${toolkitStore?.settings?.soc_link_whats}`">
-                        <NuxtImg loading="lazy" width="40" src="/img/index/tw-burger.svg" alt="ic" />
+                        <img loading="lazy" width="40" src="/img/index/tw-burger.svg" alt="ic" />
                     </a>
                 </li>
                 <li v-if="toolkitStore?.settings?.soc_link_inst">
                     <a :href="`tel:${toolkitStore?.settings?.soc_link_inst}`">
-                        <NuxtImg loading="lazy" width="40" src="/img/index/inst-burger.svg" alt="ic" />
+                        <img loading="lazy" width="40" src="/img/index/inst-burger.svg" alt="ic" />
                     </a>
                 </li>
                 <li v-if="toolkitStore?.settings?.soc_link_fb">
                     <a :href="`tel:${toolkitStore?.settings?.soc_link_fb}`">
-                        <NuxtImg loading="lazy" width="40" src="/img/index/face-burger.svg" alt="ic" />
+                        <img loading="lazy" width="40" src="/img/index/face-burger.svg" alt="ic" />
                     </a>
                 </li>
                 <li v-if="toolkitStore?.settings?.soc_link_yt">
                     <a :href="`tel:${toolkitStore?.settings?.soc_link_yt}`">
-                        <NuxtImg loading="lazy" width="40" src="/img/index/yout-burger.svg" alt="ic" />
+                        <img loading="lazy" width="40" src="/img/index/yout-burger.svg" alt="ic" />
                     </a>
                 </li>
             </ul>

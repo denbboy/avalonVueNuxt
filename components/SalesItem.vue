@@ -48,7 +48,7 @@
                 v-html="props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.subtitle"></strong>
 
             <div v-if="props?.item?.location" class="flex items-center opacity-60">
-                <NuxtImg class="w-2 md:w-3" src="/img/icons/point-white.svg" alt="Image" />
+                <img class="w-2 md:w-3" src="/img/icons/point-white.svg" alt="Image" />
                 <div class="text-white ml-1 text-xs md:text-sm" v-html="props?.item?.location"></div>
             </div>
             <div v-else class="min-h-5"></div>

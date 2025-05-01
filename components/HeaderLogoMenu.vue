@@ -1,9 +1,9 @@
 <template>
     <div class="flex 3xl:gap-10 gap-6 items-center">
         <NuxtLink :to="props.mainPageLink">
-            <NuxtImg loading="lazy" src="/img/newLogo.png"
+            <img loading="lazy" src="/img/newLogo.png"
                 class="hidden md:max-w-[55px] w-full 3xl:max-w-[95px] xl:block" alt="logo" />
-            <NuxtImg loading="lazy" format="png" width="145" height="30" src="/img/logo-mob.png" class="xl:hidden"
+            <img loading="lazy" format="png" width="145" height="30" src="/img/logo-mob.png" class="xl:hidden"
                 alt="logo" />
         </NuxtLink>
         <div class="items-center md:gap-6 3xl:gap-10 hidden md:flex">
