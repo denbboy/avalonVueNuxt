@@ -146,7 +146,8 @@ const handleSubmitForm = async () => {
                 body: formData
             }).then(async (res) => {
 
-                const fileId = res.data.value.data.id
+                const result = await res.json()
+                const fileId = result?.data?.id
 
                 await useFetch('/api/send-form', {
                     method: 'POST',
