@@ -141,7 +141,7 @@ const handleSubmitForm = async () => {
             const formData = new FormData()
             formData.append('file', file.value)
 
-            await useFetch('https://api.avalonbali.com/files', {
+            await fetch('https://api.avalonbali.com/files', {
                 method: 'POST',
                 body: formData
             }).then(async (res) => {
