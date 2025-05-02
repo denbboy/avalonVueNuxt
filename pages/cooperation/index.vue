@@ -3,7 +3,7 @@
 
         <Head>
             <Title>
-                {{ currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title }}
+                {{currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title}}
             </Title>
             <Meta name="description"
                 :content="currentPageReqest?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
@@ -19,12 +19,12 @@
                         <h2
                             class="text-3xl text-white font-bold mb-8 md:text-[45px] lg:text-[56px] leading-none md:mb-12">
                             <!-- {{ $t('agent_nedv') }} -->
-                            {{ item.translations.find(i => i.languages_code.includes(langStore.lang)).title }}
+                            {{item.translations.find(i => i.languages_code.includes(langStore.lang)).title}}
                         </h2>
                         <p class="text-sm text-white mb-8 md:mb-12 md:text-lg"
                             v-html="item.translations.find(i => i.languages_code.includes(langStore.lang)).description">
                         </p>
-                        <button @click="handleOpenModal" class="white-button hidden xl:block">
+                        <button @click="handleOpenModal(item.translations.find(i => i.languages_code.includes(langStore.lang)).title)" class="white-button hidden xl:block">
                             {{ $t('start_cooperation') }}
                         </button>
                     </div>
@@ -36,37 +36,41 @@
                     class="border border-white/20 px-[20px] py-[60px] md:p-[48px] pb-6 3xl:py-[80px] 3xl:px-[120px] rounded-[20px] overflow-hidden">
                     <h3
                         class="text-xl w-fit md:text-2xl 3xl:text-3xl pr-4 text-white font-bold mb-[30px]  relative after:absolute after:top-2/4 after:w-[6px] md:after:-mt-[4.5px] after:h-[6px] md:after:w-[10px] md:after:h-[10px] after:bg-blue-400 before:w-screen before:left-[100%] before:h-[1px] before:bg-white/20 md:after:rounded-[4px] md:before:mt-[0px] before:mt-[2.5px] before:top-2/4 before:absolute after:left-full after:rounded-sm">
-                        {{ item.translations.find(i => i.languages_code.includes(langStore.lang)).subtitle }}
+                        {{item.translations.find(i => i.languages_code.includes(langStore.lang)).subtitle}}
                     </h3>
-                    <ol v-if="item.type !== 'default'" class="flex flex-col xl:flex-row relative justify-between after:top-[89px] md:gap-5">
+                    <ol v-if="item.type !== 'default'"
+                        class="flex flex-col xl:flex-row relative justify-between after:top-[89px] md:gap-5">
                         <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
                                 class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
-                                <img loading="lazy" class="w-3 h-3 md:w-auto md:h-auto"
-                                    src="/img/icons/white-check.svg" alt="Image" />
+                                <img loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/img/icons/white-check.svg"
+                                    alt="Image" />
                             </div>
                             <p class="text-sm md:text-lg text-white ">
-                                {{ item.translations.find(i => i.languages_code.includes(langStore.lang)).first_subtitle_text }}
+                                {{item.translations.find(i =>
+                                    i.languages_code.includes(langStore.lang)).first_subtitle_text }}
                             </p>
                         </li>
                         <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
                                 class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
-                                <img loading="lazy" class="w-3 h-3 md:w-auto md:h-auto"
-                                    src="/img/icons/white-check.svg" alt="Image" />
+                                <img loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/img/icons/white-check.svg"
+                                    alt="Image" />
                             </div>
                             <p class="text-sm md:text-lg text-white ">
-                                {{ item.translations.find(i => i.languages_code.includes(langStore.lang)).second_subtitle_text }}
+                                {{item.translations.find(i =>
+                                    i.languages_code.includes(langStore.lang)).second_subtitle_text }}
                             </p>
                         </li>
                         <li class="flex gap-5 mb-8 last:mb-0 md:mb-0">
                             <div
                                 class=" num font-bold text-xs md:text-lg rounded-[10px] text-white flex items-center justify-center bg-blue-400 md:min-w-16 md:w-16 md:h-16 min-w-9 w-9 h-9">
-                                <img loading="lazy" class="w-3 h-3 md:w-auto md:h-auto"
-                                    src="/img/icons/white-check.svg" alt="Image" />
+                                <img loading="lazy" class="w-3 h-3 md:w-auto md:h-auto" src="/img/icons/white-check.svg"
+                                    alt="Image" />
                             </div>
                             <p class="text-sm md:text-lg text-white ">
-                                {{ item.translations.find(i => i.languages_code.includes(langStore.lang)).third_subtitle_text }}
+                                {{item.translations.find(i =>
+                                    i.languages_code.includes(langStore.lang)).third_subtitle_text }}
                             </p>
                         </li>
                     </ol>
@@ -84,7 +88,8 @@
                                 </div>
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
-                                {{ item.translations.find(i => i.languages_code.includes(langStore.lang)).first_subtitle_text }}
+                                {{item.translations.find(i =>
+                                    i.languages_code.includes(langStore.lang)).first_subtitle_text }}
                             </p>
                         </li>
                         <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10 mb-5 last:mb-0">
@@ -102,7 +107,8 @@
 
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
-                                {{ item.translations.find(i => i.languages_code.includes(langStore.lang)).second_subtitle_text }}
+                                {{item.translations.find(i =>
+                                    i.languages_code.includes(langStore.lang)).second_subtitle_text }}
                             </p>
                         </li>
                         <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10  mb-5 last:mb-0">
@@ -120,7 +126,8 @@
 
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center md:ml-0">
-                                {{ item.translations.find(i => i.languages_code.includes(langStore.lang)).third_subtitle_text }}
+                                {{item.translations.find(i =>
+                                    i.languages_code.includes(langStore.lang)).third_subtitle_text }}
                             </p>
                         </li>
                         <li class="flex gap-5 md:gap-0 md:flex-col items-center z-10  mb-5 last:mb-0">
@@ -138,7 +145,8 @@
 
                             </div>
                             <p class="text-sm md:text-base text-white md:px-1 md:max-w-[295px] md:text-center">
-                                {{ item.translations.find(i => i.languages_code.includes(langStore.lang)).fourth_subtitle_text }}
+                                {{item.translations.find(i =>
+                                    i.languages_code.includes(langStore.lang)).fourth_subtitle_text }}
                             </p>
                         </li>
                     </ol>
@@ -218,8 +226,17 @@ const breakpoints = {
 };
 
 // Функция открытия модального окна
-const handleOpenModal = () => {
+const handleOpenModal = (title) => {
     modalsStore.addModal('vacancy');
+    const router = useRouter()
+    const route = useRoute()
+
+    function addSearchParam(key, value) {
+        const newQuery = { ...route.query, [key]: value }
+        router.replace({ query: newQuery })
+    }
+
+    addSearchParam('title', title)
 };
 
 

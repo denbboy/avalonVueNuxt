@@ -124,6 +124,9 @@ const validateEmail = (email) => {
 
 // Функция обработки отправки формы
 const handleSubmitForm = async () => {
+    const url = useRequestURL()
+    const clearUrl = url.href.split('?')[0]
+    const vacancyTitle = url.searchParams.get('title')
 
     if (currentForm?.captcha) {
         if (!recaptcha()) {
@@ -157,7 +160,9 @@ const handleSubmitForm = async () => {
                     email: email.value,
                     message: message.value,
                     file: fileId,
-                    form: "vacancy"
+                    form: "vacancy",
+                    url: clearUrl,
+                    vanancyTitle: vacancyTitle
                 }
             })
 

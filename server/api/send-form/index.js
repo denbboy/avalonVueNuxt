@@ -1,8 +1,16 @@
 export default defineEventHandler(async (event) => {
   try {
-    const { name, phone, email, form, file, message, method } = await readBody(
-      event
-    );
+    const {
+      name,
+      phone,
+      email,
+      form,
+      file,
+      message,
+      method,
+      url,
+      vanancyTitle,
+    } = await readBody(event);
 
     const formTypes = {
       "know-more": 'Форма "Хотите узнать больше?"',
@@ -12,7 +20,10 @@ export default defineEventHandler(async (event) => {
       presentation: "Запрос на презентацию",
     };
 
-    const note = form && formTypes[form];
+    const note =
+      `Страница: ${url}\n\n` +
+      (form && `Форма: ${formTypes[form]}`) +
+      (vanancyTitle ? `\n\nВакансия: ${vanancyTitle}` : "");
 
     const rawBody = {
       action: "partner-custom-form",
@@ -23,7 +34,7 @@ export default defineEventHandler(async (event) => {
       email: email ?? "No email",
       lang: "ua",
       note: note ?? "Запит з форми контактів",
-      adv_id: "123123123",
+      adv_id: "RedLeads",
     };
 
     const formBody = new URLSearchParams(rawBody).toString();

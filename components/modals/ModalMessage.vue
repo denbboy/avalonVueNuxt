@@ -140,11 +140,15 @@ const submitForm = async () => {
 
         isSending.value = true;
 
+        const url = useRequestURL()
+        const clearUrl = url.href.split('?')[0]
+
         await useFetch('/api/send-form', {
             method: 'POST',
             body: {
                 phone: phone.value,
-                form: "message"
+                form: "message",
+                url: clearUrl
             }
         }).then(res => {
             isSending.value = false;

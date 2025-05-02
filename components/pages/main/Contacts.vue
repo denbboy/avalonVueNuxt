@@ -130,12 +130,16 @@ const submitForm = async () => {
 
     try {
 
+      const url = useRequestURL()
+      const clearUrl = url.href.split('?')[0]
+
       await useFetch('/api/send-form', {
         method: 'POST',
         body: {
           name: name.value,
           phone: phone.value,
-          form: "know-more"
+          form: "know-more",
+          url: clearUrl
         }
       }).then(res => {
         isSending.value = false;
