@@ -54,6 +54,8 @@ const pagesStore = usePagesStore();
 const langStore = useLangStore();
 const toolkitStore = useToolkit();
 
+const { t, locale } = useI18n()
+
 const pageDataFetch = await useAsyncData("Pages", () => $fetch('/api/pages'))
 
 const currentPageInfo = await pageDataFetch.data.value?.filter(item => item.slug === id)[0]?.translations
@@ -62,7 +64,7 @@ const currentPageInfo = await pageDataFetch.data.value?.filter(item => item.slug
 const description = await currentPageInfo?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description
 
 
-const pageData = pageDataFetch.data.value?.filter(item => item.slug === id)[0].translations?.filter(item => item?.languages_code?.includes(langStore?.lang))[0]
+const pageData = pageDataFetch.data.value?.filter(item => item.slug === id)[0].translations?.filter(item => item?.languages_code?.includes(locale.value))[0]
 const pageMetaTitle = pageData?.meta_title ?? ""
 const pageMetaDescription = pageData?.meta_description ?? ""
 

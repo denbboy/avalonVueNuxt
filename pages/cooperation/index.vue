@@ -239,11 +239,12 @@ const handleOpenModal = (title) => {
     addSearchParam('title', title)
 };
 
+const { t, locale } = useI18n()
 
 const cooperationFetch = await useAsyncData("Cooperation", () => $fetch('/api/cooperation'))
 const pageDataFetch = await useAsyncData("Pages", () => $fetch('/api/pages'))
 
-const pageData = pageDataFetch.data.value.filter(item => item.slug === 'cooperation')[0].translations?.filter(item => item?.languages_code?.includes(langStore?.lang))[0]
+const pageData = pageDataFetch.data.value.filter(item => item.slug === 'cooperation')[0].translations?.filter(item => item?.languages_code?.includes(locale.value))[0]
 const pageMetaTitle = pageData?.meta_title ?? ""
 const pageMetaDescription = pageData?.meta_description ?? ""
 

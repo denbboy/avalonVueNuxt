@@ -11,10 +11,11 @@ watchEffect(() => {
     currentPageReqest.value = pagesStore?.pagesList?.filter(item => item.slug === 'career')[0]?.translations
 });
 
+const { t, locale } = useI18n()
 
 const pageDataFetch = await useAsyncData("Pages", () => $fetch('/api/pages'))
 
-const pageData = pageDataFetch.data?.value?.filter(item => item.slug === 'career')[0].translations?.filter(item => item.languages_code?.includes(langStore?.lang))[0]
+const pageData = pageDataFetch.data?.value?.filter(item => item.slug === 'career')[0].translations?.filter(item => item.languages_code?.includes(locale.value))[0]
 const pageMetaTitle = pageData?.meta_title ?? ""
 const pageMetaDescription = pageData?.meta_description ?? ""
 
