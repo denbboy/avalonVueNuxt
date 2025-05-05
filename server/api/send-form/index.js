@@ -34,7 +34,7 @@ export default defineEventHandler(async (event) => {
       email: email ?? "No email",
       lang: "ua",
       note: note ?? "Запит з форми контактів",
-      adv_id: "RedLeads",
+      adv_id: "Avalon_Website",
     };
 
     const formBody = new URLSearchParams(rawBody).toString();
