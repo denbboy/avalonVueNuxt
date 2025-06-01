@@ -3,10 +3,10 @@
   <Head>
     <Title>
       {{itemData?.translations?.filter(item =>
-        item.languages_code.includes(langStore.lang))[0]?.meta_title}}
+        item.languages_code.includes(locale))[0]?.meta_title}}
     </Title>
     <Meta name="description"
-      :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+      :content="itemData?.translations?.filter(item => item.languages_code.includes(locale))[0]?.meta_description" />
   </Head>
 
   <section class="bg-blue-500 pt-32 md:pt-64 overflow-hidden">
@@ -37,7 +37,7 @@
         </div>
         <h1
           class="text-white text-[30px] md:text-[55px] lg:text-[65px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[1400px] mb-20"
-          v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title">
+          v-html="itemData?.translations?.filter(item => item.languages_code.includes(locale))[0]?.title">
         </h1>
 
         <!-- <a href="#"
@@ -46,7 +46,7 @@
         </a> -->
 
         <div class="max-w-[1000px]"
-          v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
+          v-html="itemData?.translations?.filter(item => item.languages_code.includes(locale))[0]?.description">
         </div>
 
       </div>
@@ -95,18 +95,23 @@
   </section>
 </template>
 
-<style scoped>
+<style>
 .text-content blockquote {
   padding-left: 36px;
 }
 
-
+.text-content p {
+  color: white;
+  font-size: 1.125rem /* 18px */;
+  line-height: 1.75rem /* 28px */;
+  margin-bottom: 1.75rem
+}
 
 .text-content,
 .text-content b {
   color: #fff;
   font-size: 20px;
-  margin-bottom: 8px;
+  margin: 15px 0;
   display: block;
 }
 </style>
@@ -118,13 +123,16 @@ import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-const langStore = useLangStore();
 const route = useRoute();
 
-const res = await useAsyncData('NewsItem', () => $fetch(`/api/news/${route.params.id}`));
-const itemData = res?.data?.value[0]
+const res = await useAsyncData(
+  () => `NewsItem-${route.params.id}`,
+  () => $fetch(`/api/news/${route.params.id}`)
+);
+const itemData = computed(() => res.data.value?.[0]);
 const resAll = await useAsyncData('News', () => $fetch(`/api/news`));
 const itemDataAll = resAll?.data.value
+
 
 onMounted(() => {
   if (image.value?.complete) {
@@ -134,7 +142,6 @@ onMounted(() => {
 
 SwiperCore.use([Navigation, A11y]);
 
-const salesData = await useAsyncData('Sales', () => $fetch('/api/sales'));
 const projectTitleData = await useAsyncData('ProjectTitle', () => $fetch('/api/projectsTitle'));
 const itemProjects = projectTitleData.data.value
 const projectInclude = ref({});
@@ -183,4 +190,6 @@ onMounted(() => {
     imageLoaded.value = true;
   }
 });
+
+const { t, locale } = useI18n()
 </script>

@@ -37,7 +37,7 @@
                                             :fill="item?.related_Project_id?.status ?? '#000'" />
                                     </svg>
                                     
-                                    <span class="relative z-20 -bottom-1">
+                                    <span class="relative z-20 bottom-[-7px] lg:-bottom-1">
                                         {{item?.related_Project_id?.main_translations?.filter(item =>
                                             item.languages_code?.includes(locale))[0]?.sale_alias}}
                                     </span>

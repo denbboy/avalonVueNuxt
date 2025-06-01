@@ -58,8 +58,10 @@ export default {
       screens: {
         '375':'375px',
         'md':'992px',
+        'lg-1400': '1400px',
         'lg': '1441px',
         '2xl': '1600px',
+        '2xl-1750': '1750px',
         '3xl': '1900px',
       },
       container: {

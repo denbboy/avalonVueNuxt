@@ -2,11 +2,10 @@
 
     <Head>
         <Title>
-            {{pagesStore?.pagesList.find(item => item.id === 6).translations?.filter(item =>
-                item.languages_code.includes(locale))[0]?.title}}
+            {{pagesStore?.pagesList.find(item => item.id === 6).translations?.find(item => item.languages_code.includes(locale)).meta_title}}
         </Title>
         <Meta name="description"
-            :content="pagesStore?.pagesList.find(item => item.id === 6).translations?.filter(item => item.languages_code.includes(locale))[0]?.description" />
+            :content="pagesStore?.pagesList.find(item => item.id === 6).translations?.find(item => item.languages_code.includes(locale)).meta_description" />
     </Head>
 
     <section class="pb-24 relative bg-blue-500 overflow-hidden">
@@ -61,6 +60,12 @@ const articlesData = await useAsyncData('Articles', () => $fetch('/api/articles'
 const pagesStore = usePagesStore();
 
 const { t, locale } = useI18n()
+
+console.log(locale.value);
+
+console.log(pagesStore?.pagesList.find(item => item.id === 6).translations);
+console.log(pagesStore?.pagesList.find(item => item.id === 6).translations?.find(item => item.languages_code.includes(locale.value)).meta_title);
+console.log(pagesStore?.pagesList.find(item => item.id === 6).translations?.find(item => item.languages_code.includes(locale.value)).meta_description);
 
 
 </script>

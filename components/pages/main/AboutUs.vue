@@ -1,10 +1,10 @@
 <template>
   <section id="about-company" class="us pt-14 relative overflow-hidden pb-20 -mb-20">
     <!-- <div class="absolute lg:-right-36 -top-14 lg:hidden -right-14 w-28 z-[2]"></div> -->
-    <div
+    <!-- <div
       class="absolute lg:bottom-[10px] top-10 lg:top-auto w-28 lg:-left-36 lg:right-auto -right-14 lg:w-72 lg:h-72 z-10">
       <img loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
-    </div>
+    </div> -->
     <div class="container">
       <div class="md:flex md:items-center gap-8 justify-between">
         <div class="w-full">

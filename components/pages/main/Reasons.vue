@@ -94,21 +94,19 @@
             {{itemStrings?.filter(item => item.id === 128)[0]?.String_id?.translations?.filter(item =>
               item.languages_code.code.includes(locale))[0]?.title}}
           </p>
-          <span class=" text-white text-[13px] 3xl:text-base">
-            {{itemStrings?.filter(item => item.id === 128)[0]?.String_id?.translations?.filter(item =>
-              item.languages_code.code.includes(locale))[0]?.description}}
+          <span class=" text-white text-[13px] 3xl:text-base" v-html="itemStrings?.filter(item => item.id === 128)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(locale))[0]?.description">
           </span>
         </div>
         <div class="py-7 px-5 lg:px-5 md:px-3 bg-blue-400 md:h-full flex flex-col md:justify-center md:w-full">
           <p class="text-white text-3xl font-bold mb-2 flex md:text-[30px] lg:text-[40px] items-center">
             {{itemStrings?.filter(item => item.id === 129)[0]?.String_id?.translations?.filter(item =>
               item.languages_code.code.includes(locale))[0]?.title}}
-            <img loading="lazy" src="/img/index/A-decor.svg" class="ml-1 max-w-5 md:max-w-5 md:-mt-1 lg:max-w-7"
+            <img loading="lazy" src="/img/index/A-decor.svg" class="ml-1 max-w-5 md:max-w-5 md:mt-[-2px] lg:max-w-7"
               alt="ic" />
           </p>
-          <span class=" text-white text-[13px] 3xl:text-base">
-            {{itemStrings?.filter(item => item.id === 129)[0]?.String_id?.translations?.filter(item =>
-              item.languages_code.code.includes(locale))[0]?.description}}
+          <span class=" text-white text-[13px] 3xl:text-base" v-html="itemStrings?.filter(item => item.id === 129)[0]?.String_id?.translations?.filter(item =>
+              item.languages_code.code.includes(locale))[0]?.description">
           </span>
         </div>
       </div>

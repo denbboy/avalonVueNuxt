@@ -1,13 +1,5 @@
 <template>
 
-    <Head>
-        <Title>
-            {{itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title}}
-        </Title>
-        <Meta name="description"
-            :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
-    </Head>
-
     <PagesProjectBanner :itemData="itemData" />
 
     <PagesProjectGallery v-if="itemData?.gallery?.length" :gallery="itemData?.gallery" />
@@ -70,6 +62,19 @@ langStore.lang = route.params.lang || 'ru';
 const { data } = await useAsyncData('ProjectItem', () =>
     $fetch(`/api/projects/${route.params.id}`)
 );
+
+const { t, locale } = useI18n()
+
+const pageData = data?.value[0]?.translations?.filter(item => item.languages_code?.includes(locale.value))[0]
+const pageMetaTitle = pageData?.meta_title ?? ""
+const pageMetaDescription = pageData?.meta_description ?? ""
+
+useHead({
+  title: pageMetaTitle,
+  meta: [
+    { name: 'description', content: pageMetaDescription }
+  ],
+})
 
 
 // Реактивное хранение данных проекта

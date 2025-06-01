@@ -24,7 +24,7 @@
                 </svg>
             </div>
 
-            <div class="xl:flex xl:items-center gap-5 justify-between md:mb-24">
+            <div class="sm:flex sm:items-center gap-5 justify-between md:mb-24">
 
                 <!-- v-if="$viewport.isLessThan('tablet')" -->
                 <!-- <NuxtImg v-if="toolkitStore?.settings?.footer_img && !$viewport.isLessThan('tablet')"
@@ -35,16 +35,16 @@
                     <video loop class="w-[379px] h-[392px] object-cover" muted autoplay
                         src="/assets/video/video-logo.webm"></video>
                 </div> -->
-                <div class="hidden lg:block">
+                <NuxtLink href="/" class="hidden lg:block">
                     <video v-if="isVideoLoaded" loop class="w-full h-[392px] object-cover" muted autoplay
                         @error="handleError"
                         :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_video + '?width=392&height=392&format=webm'"></video>
                     <NuxtImg v-else :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_img"
                         loading="lazy" class="w-full h-[392px]" alt="ph" />
-                </div>
+                </NuxtLink>
 
-                <div class="w-full xl:w-fit sm:flex justify-between xl:block">
-                    <div class="md:mb-[30px] md:pb-[30px] border-b border-white/10 mb-5 pb-5">
+                <div class="w-full xl:w-fit xl:block">
+                    <div class="md:mb-[30px] md:pb-[30px] w-fit border-b border-white/10 mb-5 pb-5">
                         <a :href="toolkitStore?.settings?.soc_link_whats" target="_blank"
                             class="flex items-center gap-4 mb-7 md:gap-4 lg:gap-5 group">
 
@@ -168,14 +168,14 @@
                 </div>
 
                 <form @submit.prevent="submitForm"
-                    class="flex xl:max-w-[381px] lg:max-w-full flex-col p-5 md:px-5 md:py-12 border border-whiteOp-300 rounded-2xl text-center lg:p-12 relative mb-14 md:mb-0">
+                    class="flex sm:max-w-[350px] lg:w-auto w-full lg:max-w-full flex-col p-5 md:px-5 md:py-12 border border-whiteOp-300 rounded-2xl text-center lg:p-12 relative mb-14 md:mb-0">
                     <img loading="lazy" src="/img/index/dot-decor-2.webp"
                         class="absolute right-[-1px] bottom-[-1px] w-5 md:w-8" alt="decor" />
                     <h2 class="font-bold text-white md:text-2xl mb-4 3xl:text-3xl md:mb-7 leading-[100%]">
                         {{ $t('want_know_more') }}
                     </h2>
                     <div class="flex flex-col gap-3 lg:gap-0">
-                        <input type="text" v-model="name" placeholder="Имя"
+                        <input type="text" v-model="name" :placeholder="$t('form_input_name')"
                             class="bg-white/10 lg:mb-[10px] rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-5 lg:p-6 md:text-base w-full">
                         <div class="phone-vti">
                             <VueTelInput :input-options="inputOptions" :value="phone" :autocomplete="false"
@@ -184,20 +184,20 @@
                                 :only-countries="sortedCountries" />
                         </div>
                         <p class="text-red-700 text-left transition-all h-full" :class="{
-                            'max-h-10 opacity-100 mt-2': isError,
-                            'max-h-0 opacity-0': !isError
+                            'max-h-10 visible opacity-100 mt-2': isError,
+                            'max-h-0 invisible opacity-0': !isError
                         }">
                             {{ $t('fill_all_fields') }}
                         </p>
                         <p class="text-white/50 text-left transition-all h-full" :class="{
-                            'max-h-10 opacity-100 mt-2': isSending,
-                            'max-h-0 opacity-0': !isSending
+                            'max-h-10 visible opacity-100 mt-2': isSending,
+                            'max-h-0 invisible opacity-0': !isSending
                         }">
                             {{ $t('wait_for_send') }}
                         </p>
                         <p class="text-green-500 text-left transition-all h-full" :class="{
-                            'max-h-10 opacity-100 mt-2': isSuccess,
-                            'max-h-0 opacity-0': !isSuccess
+                            'max-h-10 visible opacity-100 mt-2': isSuccess,
+                            'max-h-0 invisible opacity-0': !isSuccess
                         }">
                             {{ $t('message_sent_successfuly') }}
                         </p>

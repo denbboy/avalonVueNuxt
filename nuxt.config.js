@@ -19,8 +19,21 @@ export default defineNuxtConfig({
   },
 
   // sitemap: {
-  //   sources: ["/api/__sitemap__/index"],
-  //   sitemapName: "sitemap.xml",
+  //   siteUrl: 'https://avalonbali.com/', // 🔁 Укажи свой домен
+  //   trailingSlash: true,
+  //   gzip: true,
+  //   i18n: {
+  //     locales: ['en', 'ua'],
+  //     defaultLocale: 'en',
+  //     routesNameSeparator: '___' // по умолчанию ___
+  //   }
+  //   // Если у тебя есть динамические маршруты, можно добавить вручную
+  //   // или подключить из API
+  //   // async routes() {
+  //   //   const res = await fetch('https://example.com/api/routes')
+  //   //   const data = await res.json()
+  //   //   return data.map((item) => `/blog/${item.slug}`)
+  //   // }
   // },
 
   // robots: {
@@ -105,9 +118,50 @@ export default defineNuxtConfig({
     "@nuxt/image",
     // "nuxt-meta-pixel",
     "nuxt-viewport",
-    "nuxt-simple-sitemap",
+    "@nuxtjs/sitemap",
     // "@nuxt/image-edge",
   ],
+
+  sitemap: {
+    siteUrl: "https://avalonbali.com", // 👈 обязательно!
+    gzip: true,
+    trailingSlash: false,
+    sitemapName: 'sitemap',
+
+    async routes() {
+      const collections = [
+        "Article",
+        "News",
+        "Page",
+        "Project",
+        "Sale",
+      ];
+      const baseUrl = "https://api.avalonbali.com/items";
+      const routes = [];
+
+      for (const collection of collections) {
+        try {
+          const res = await $fetch(
+            `${baseUrl}/${collection}?limit=500&fields=translations.slug,translations.languages_code`
+          );
+          for (const item of res.data) {
+            for (const t of item.translations) {
+              if (t.slug && t.languages_code) {
+                const prefix =
+                  t.languages_code === "en-US" ? "" : `/${t.languages_code}`;
+                const collectionPath = collection.toLowerCase(); // 👈 чтобы путь был /project/slug, а не /Project/slug
+                routes.push(`${prefix}/${collectionPath}/${t.slug}`);
+              }
+            }
+          }
+        } catch (err) {
+          console.warn(`Ошибка загрузки ${collection}:`, err);
+        }
+      }
+
+      return routes;
+    },
+  },
 
   directus: {
     url: "https://api.avalonbali.com/",

@@ -42,10 +42,10 @@
 
                 <div class="relative z-10" data-aos="fade-up">
                     <img loading="lazy" src="/img/index/point-line.png"
-                        class="hidden md:block absolute md:top-[71px] lg:top-[90px] md:h-[209px] lg:h-[260px] right-[-40px] w-full md:max-w-[910px] lg:max-w-[1188px]"
+                        class="hidden md:block absolute md:top-[71px] lg:top-[90px] md:h-[185px] md:max-w-[830px] lg-1400:max-w-[1080px] lg-1400:h-[169px] lg:h-[252px] lg:max-w-[980px] 2xl-1750:max-w-[1290px] 2xl-1750:h-[204px] right-[-40px] w-full"
                         alt="line ph" />
                     <ul
-                        class="mb-7 md:mb-12 md:grid md:grid-cols-5 md:gap-5 md:after:hidden after:w-[1px] after:h-[calc(100%-30px)] after:bg-white/40 after:absolute after:bottom-0 after:left-[24.5px]">
+                        class="mb-7 md:mb-12 md:grid md:grid-cols-5 md:gap-3 md:after:hidden after:w-[1px] after:h-[calc(100%-30px)] after:bg-white/40 after:absolute after:bottom-0 after:left-[24.5px]">
                         <li class="mb-5 flex items-center md:flex-col">
                             <div
                                 class="relative w-full max-w-[50px] mr-4 md:mr-0 md:mb-14 flex items-center justify-center md:max-w-[47px] md:h-[47px] lg:max-w-[66px] lg:h-[66px]">

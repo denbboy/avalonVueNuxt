@@ -27,7 +27,7 @@
             </p>
             <div :class="bgdColor === 'white' ? 'text-blue-600' : 'text-white'"
                 class="mt-3 md:mt-4 items-center text-sm opacity-60 line-clamp-2 h-[39px] overflow-hidden"
-                v-html="props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.meta_description">
+                v-html="props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.description">
             </div>
         </div>
     </NuxtLink>
@@ -48,6 +48,7 @@ const props = defineProps({
     }
 })
 
+
 function onImageLoad() {
     imageLoaded.value = true;
 }
@@ -63,6 +64,5 @@ onMounted(async () => {
 });
 
 const { t, locale } = useI18n()
-// const langStore = useLangStore()
 
 </script>

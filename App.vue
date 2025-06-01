@@ -92,22 +92,22 @@ const route = useRoute();
 const langStore = useLangStore();
 const langCookie = useCookie('lang'); // Создаём cookie для хранения языка
 
-onMounted(() => {
-  // 1. Проверяем куки
-  if (langCookie.value) {
-    langStore.lang = langCookie.value;
-  } else {
-    // 2. Определяем язык системы
-    const systemLang = navigator.language?.split('-')[0] || 'ru';
+// onMounted(() => {
+//   // 1. Проверяем куки
+//   if (langCookie.value) {
+//     langStore.lang = langCookie.value;
+//   } else {
+//     // 2. Определяем язык системы
+//     const systemLang = navigator.language?.split('-')[0] || 'ru';
 
-    // 3. Если язык системы поддерживается, устанавливаем его
-    const supportedLangs = ['ru', 'ua', 'en']; // Список поддерживаемых языков
-    langStore.lang = supportedLangs.includes(systemLang) ? systemLang : 'ru';
+//     // 3. Если язык системы поддерживается, устанавливаем его
+//     const supportedLangs = ['ru', 'ua', 'en']; // Список поддерживаемых языков
+//     langStore.lang = supportedLangs.includes(systemLang) ? systemLang : 'ru';
 
-    // 4. Сохраняем в куки
-    langCookie.value = langStore.lang;
-  }
-});
+//     // 4. Сохраняем в куки
+//     langCookie.value = langStore.lang;
+//   }
+// });
 
 // 5. Следим за изменением языка в URL и обновляем `langStore.lang`
 watchEffect(() => {

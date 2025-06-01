@@ -7,7 +7,8 @@
                 :class="isPlay && isPlayMobile ? 'opacity-100 z-20' : 'opacity-80 -z-10'">
                 <NuxtImg v-if="itemData?.background"
                     :src="`https://api.avalonbali.com/assets/${itemData?.background}?width=1920&height=800`"
-                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0 opacity-40 hidden md:block" alt="Image" />
+                    class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0 opacity-40 hidden md:block"
+                    alt="Image" />
                 <NuxtImg v-else :src="getYoutubePreview().thumb(itemData?.video ?? '') ?? ''"
                     class="absolute top-0 left-0 w-full h-[110vh] object-cover z-0 hidden md:block" alt="Image" />
 
@@ -39,8 +40,7 @@
                             class="flex lg:-mr-20 flex-wrap items-center gap-[10px] md:gap-5">
                             <div
                                 class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]">
-                                <img
-                                    class="absolute top-0 left-0 -z-10 w-full h-full md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
+                                <img class="absolute top-0 left-0 -z-10 w-full h-full md:min-h-[86px] min-h-[60px] md:max-w-[186px] max-w-[141px]"
                                     src="/img/icons/about-border-white.svg" alt="bgd" loading="lazy" />
                                 <span class="text-white text-xs md:text-sm">
                                     {{ $t('deadline') }}
@@ -110,13 +110,13 @@
                             </div>
                         </div>
                         <div class="flex lg:gap-12 gap-6 items-center lg:mt-6 mt-5">
-                            <h2 :class="isPlay ? 'opacity-0' : 'opacity-100'"
+                            <h1 :class="isPlay ? 'opacity-0' : 'opacity-100'"
                                 class="text-3xl text-white md:text-[55px] lg:text-[65px]">
                                 <span class="font-bold leading-[120%]">
                                     {{itemData?.translations?.filter(item =>
                                         item.languages_code.includes(locale))[0]?.title}}
                                 </span>
-                            </h2>
+                            </h1>
                             <span class="text-white lg:text-[50px] text-[24px]"
                                 :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'">х</span>
                             <div :class="isPlay ? 'opacity-0 invisible' : 'visible opacity-100'"
@@ -124,10 +124,11 @@
                                 <img src="/img/about/ribas.png" class="w-full h-full" alt="Image" loading="lazy" />
                             </div>
                         </div>
-                        <p :class="isPlay ? 'opacity-0' : 'opacity-100'"
-                            class="text-white text-sm max-w-64 md:max-w-[501px] md:text-base mt-3 md:mt-6" v-html="itemData?.translations?.filter(item =>
-                                item.languages_code.includes(locale))[0]?.description">
-                        </p>
+                        <div v-if="itemData?.translations?.length" :class="isPlay ? 'opacity-0' : 'opacity-100'"
+                            class="text-white text-sm max-w-64 md:max-w-[501px] md:text-base mt-3 md:mt-6"
+                            v-html="itemData?.translations?.find(item => item.languages_code.includes(locale))?.description">
+                        </div>
+
                         <button :class="isPlay ? 'opacity-0' : 'opacity-100'" @click="handleOpenModal"
                             class="w-fit px-5 py-4 block text-sm md:text-base bg-white rounded-xl text-center font-bold whitespace-nowrap text-blue-500 hover:text-white hover:bg-blue-400 my-10 mb-0 transition-all ">
                             {{ $t('download_presentation') }}
@@ -300,7 +301,6 @@ onMounted(() => {
 
 const modalsStore = useModalsStore()
 
-const langStore = useLangStore()
 const { itemData } = defineProps(['itemData'])
 
 const handleOpenModal = () => {

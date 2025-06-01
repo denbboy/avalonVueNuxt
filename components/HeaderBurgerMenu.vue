@@ -45,7 +45,7 @@
 
         </div>
         <div class=" flex flex-col gap-4">
-            <a :href="`tel:${toolkitStore?.settings?.phone}`"
+            <a :href="`tel:${toolkitStore?.settings?.phone?.replace(/[^0-9+]/g, '')}`"
                 class="hover:text-blue-400 transition-all font-bold text-white text-base">
                 {{ toolkitStore?.settings?.phone }}
             </a>
@@ -57,19 +57,19 @@
         </div>
         <div class="flex xl:hidden mt-12 pt-7 border-t border-whiteOp-300 gap-11 justify-center">
             <ul class="flex items-center gap-4">
-                <li>
+                <li :class="locale.includes('ua') ? '*:text-blue-400' : ''">
                     <button @click="() => changeLocale('ua')"
                         class="hover:text-blue-400 transition-all text-white text-base">
                         UA
                     </button>
                 </li>
-                <li>
+                <li :class="locale.includes('ru') ? '*:text-blue-400' : ''">
                     <button @click="() => changeLocale('ru')"
                         class="hover:text-blue-400 transition-all text-white text-base">
                         RU
                     </button>
                 </li>
-                <li>
+                <li :class="locale.includes('en') ? '*:text-blue-400' : ''">
                     <button @click="() => changeLocale('en')"
                         class="hover:text-blue-400 transition-all text-white text-base">
                         EN
@@ -104,9 +104,86 @@
 
 <script setup>
 const props = defineProps(['isOpenBurger', 'projectsStore', 'langStore'])
+const emit = defineEmits(['update:isOpenBurger']);
 
 const openSubMenu = () => {
     isOpenSubMenu.value = !isOpenSubMenu.value;
 };
 const isOpenSubMenu = ref(false);
+const { t, locale } = useI18n()
+
+
+console.log('props.isOpenBurger', props.isOpenBurger);
+
+import { ref, defineProps, onMounted, computed, watchEffect } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useLangStore } from '~/stores/functions/language';
+import { useToolkit } from '~/stores/functions/toolkit';
+import { usePreloaderStore } from '~/stores/functions/preloader';
+import { useRouter, useRoute } from 'vue-router';
+import { useModalsStore } from '~/stores/functions/modals';
+
+const router = useRouter();
+const route = useRoute();
+
+const langStore = useLangStore();
+const toolkitStore = useToolkit();
+const preloaderStore = usePreloaderStore();
+const modalsStore = useModalsStore();
+
+const isLoading = ref(false);
+const mainPageLink = ref('/');
+const DEFAULT_LOCALE = 'en';
+
+const changeLanguage = (newLocale) => {
+    const currentPath = route.fullPath;
+    let pathWithoutLocale = currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
+
+    pathWithoutLocale = newLocale !== DEFAULT_LOCALE
+        ? `/${newLocale}${pathWithoutLocale}`
+        : `/${pathWithoutLocale}`;
+
+    mainPageLink.value = `/${newLocale}`;
+
+    if (router.currentRoute.value.fullPath !== pathWithoutLocale) {
+        router.push(pathWithoutLocale);
+    }
+
+    locale.value = newLocale;
+    langStore.setLang(newLocale);
+    localStorage.setItem('selectedLanguage', newLocale);
+    
+    setTimeout(preloaderStore.stop, 500);
+
+    handleCloseBurger();
+};
+
+const changeLocale = (newLocale) => {
+    isLoading.value = true;
+    preloaderStore.start();
+    setTimeout(() => changeLanguage(newLocale), 500);
+};
+
+onMounted(() => {
+    const savedLanguage = localStorage.getItem('selectedLanguage');
+    const urlLocale = route.fullPath.match(/^\/([a-z]{2})(\/|$)/)?.[1];
+    const initialLocale = urlLocale || savedLanguage || DEFAULT_LOCALE;
+
+    changeLocale(initialLocale);
+
+    if (typeof window !== 'undefined') {
+        mainPageLink.value = `/${(localStorage.getItem('selectedLanguage') || DEFAULT_LOCALE).replace('/', '')}`;
+    }
+});
+
+
+const handleCloseBurger = () => {
+    emit('update:isOpenBurger', false);
+};
+
+const handleOpenModal = () => {
+    modalsStore.addModal("calendar");
+    handleCloseBurger();
+};
+
 </script>

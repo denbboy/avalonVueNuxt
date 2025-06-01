@@ -53,7 +53,7 @@
                                             :fill="item?.status" />
                                     </svg>
 
-                                    <span class="relative z-20 -bottom-1">
+                                    <span class="relative z-20 bottom-[-7px] lg:-bottom-1">
                                         {{item?.main_translations?.filter(item =>
                                             item.languages_code?.includes(langStore.lang))[0]?.sale_alias}}
                                     </span>

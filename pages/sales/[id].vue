@@ -82,7 +82,7 @@
                                                     rx="2.11067" :fill="projectInclude?.status" />
                                             </svg>
 
-                                            <span class="relative z-20 -bottom-1">
+                                            <span class="relative z-20 bottom-[-7px] lg:-bottom-1">
                                                 {{projectInclude?.main_translations?.filter(item =>
                                                     item.languages_code?.includes(langStore.lang))[0]?.sale_alias}}
                                             </span>
@@ -231,7 +231,7 @@
     </section>
 </template>
 
-<style scoped>
+<style>
 .text-content blockquote {
     padding-left: 36px;
 }
@@ -271,9 +271,14 @@ const langStore = useLangStore();
 const route = useRoute();
 
 const salesData = await useAsyncData('Sales', () => $fetch('/api/sales'));
-const res = await useAsyncData('SalesItem', () => $fetch(`/api/sales/${route.params.id}`));
+
+const res = await useAsyncData(
+  () => `SalesItem-${route.params.id}`,
+  () => $fetch(`/api/sales/${route.params.id}`)
+);
+const itemData = computed(() => res.data.value?.[0]);
+
 const projectTitleData = await useAsyncData('ProjectTitle', () => $fetch('/api/projectsTitle'));
-const itemData = res?.data?.value[0]
 const itemProjects = projectTitleData.data.value
 const projectInclude = ref({});
 

@@ -2,11 +2,11 @@
 
   <Head>
     <Title>
-      {{pagesStore?.pagesList.find(item => item.id === 8).translations?.filter(item =>
-        item.languages_code.includes(locale))[0]?.title}}
+      {{pagesStore?.pagesList.find(item => item.id === 8).translations?.find(item =>
+        item.languages_code.includes(locale)).meta_title}}
     </Title>
     <Meta name="description"
-      :content="pagesStore?.pagesList.find(item => item.id === 8).translations?.filter(item => item.languages_code.includes(locale))[0]?.description" />
+      :content="pagesStore?.pagesList.find(item => item.id === 8).translations?.find(item => item.languages_code.includes(locale)).meta_description" />
   </Head>
 
   <section class="pb-24 relative bg-blue-500 overflow-hidden">

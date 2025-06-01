@@ -8,7 +8,7 @@
 
       <div class="header__inner px-5 flex items-center justify-between gap-3 relative z-[2]">
 
-        <LazyHeaderLogoMenu :mainPageLink="mainPageLink" :projectsStore="projectsStore" :langStore="langStore"/>
+        <LazyHeaderLogoMenu :mainPageLink="mainPageLink" :projectsStore="projectsStore" :langStore="langStore" />
 
 
         <div class="flex ml-auto 3xl:gap-6 gap-6 items-center">
@@ -94,16 +94,20 @@
         </div>
 
 
-        <button @click="handleOpenBurger" v-if="isLessThenDesktop" id="burgerBtn" type="button" class="2xl:hidden block ">
+        <button @click="handleOpenBurger" v-if="isLessThenDesktop" id="burgerBtn" type="button"
+          class="2xl:hidden block ">
           <img loading="lazy" src="/img/icons/burder.svg" class="min-w-[28px]" alt="burger ic" />
         </button>
 
       </div>
     </div>
 
-    <LazyHeaderBurgerMenu v-if="isLessThenDesktop" :isOpenBurger="isOpenBurger" :projectsStore="projectsStore" :langStore="langStore"/>
+    <LazyHeaderBurgerMenu v-if="isLessThenDesktop" v-model:isOpenBurger="isOpenBurger" :projectsStore="projectsStore"
+      :langStore="langStore" />
 
-    <div @click="handleOpenBurger" v-if="isLessThenDesktop" class="fixed -z-[30] top-0 h-screen w-full left-0 bg-black transition-all "
+
+    <div @click="handleOpenBurger" v-if="isLessThenDesktop"
+      class="fixed -z-[30] top-0 h-screen w-full left-0 bg-black transition-all "
       :class="isOpenBurger ? 'bg-opacity-60 visible pointer-events-auto' : 'bg-opacity-0 invisible pointer-events-none'">
     </div>
   </header>

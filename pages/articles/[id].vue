@@ -2,10 +2,10 @@
 
     <Head>
         <Title>
-            {{itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title}}
+            {{itemData?.translations?.filter(item => item.languages_code.includes(locale))[0]?.meta_title}}
         </Title>
         <Meta name="description"
-            :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+            :content="itemData?.translations?.filter(item => item.languages_code.includes(locale))[0]?.meta_description" />
     </Head>
 
     <section class="bg-blue-500 pt-32 md:pt-64 relative">
@@ -36,7 +36,7 @@
                 <h1
                     class="text-white text-[30px] md:text-[55px] lg:text-[65px] font-bold break-words mt-4 leading-9 md:leading-tight md:max-w-[1400px] mb-20">
 
-                    {{itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.title}}
+                    {{itemData?.translations?.filter(item => item.languages_code.includes(locale))[0]?.title}}
 
                 </h1>
                 <!-- <a href="#"
@@ -45,13 +45,13 @@
                 </a> -->
 
                 <div class="article-description max-w-[1047px]"
-                    v-html="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.description">
+                    v-html="itemData?.translations?.filter(item => item.languages_code.includes(locale))[0]?.description">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-blue-600 pt-14 z-10">
+    <section class="bg-blue-600 pt-14 z-10 border-b-[1px] border-white/10">
         <div class="container">
             <div class="">
                 <div class="flex justify-between items-center mb-8">
@@ -182,7 +182,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 const { getItems } = useDirectusItems();
-const langStore = useLangStore();
 const route = useRoute();
 
 // GET OTHER SALES
@@ -190,8 +189,11 @@ const articlesData = await useAsyncData("Articles", () => $fetch('/api/articles'
 // GET OTHER SALES
 
 // GET POST
-const res = await useAsyncData('ArticlesItem', () => $fetch(`/api/articles/${route.params.id}`));
-const itemData = res?.data?.value[0]
+const res = await useAsyncData(
+  () => `ArticlesItem-${route.params.id}`,
+  () => $fetch(`/api/articles/${route.params.id}`)
+);
+const itemData = computed(() => res.data.value?.[0]);
 // GET POST
 
 SwiperCore.use([Navigation, A11y]);
@@ -221,6 +223,8 @@ const breakpoints = {
         pagination: false,
     },
 };
+
+const { t, locale } = useI18n()
 
 
 </script>
