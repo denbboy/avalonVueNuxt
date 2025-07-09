@@ -103,9 +103,9 @@ const mainPageLink = ref('/')
 
 watchEffect(() => {
   if (typeof window !== 'undefined') {
-    onMounted(() => {
-      mainPageLink.value = `/${localStorage.getItem('selectedLanguage')?.replace('/', '')}`;
-    });
+    // onMounted(() => {
+    //   mainPageLink.value = `/${localStorage.getItem('selectedLanguage')?.replace('/', '')}`;
+    // });
   }
 });
 

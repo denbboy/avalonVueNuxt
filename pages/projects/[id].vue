@@ -56,7 +56,7 @@ const projectsStore = useProjectsStore();
 
 
 // Устанавливаем язык из URL в хранилище
-langStore.lang = route.params.lang || 'ru';
+// langStore.lang = route.params.lang || 'ru';
 
 // Загружаем данные проекта
 const { data } = await useAsyncData('ProjectItem', () =>
@@ -90,7 +90,7 @@ projectsStore.setCurrentProject(itemData.value);
 
 // Следим за изменением языка в URL и обновляем store
 watch(() => route.params.lang, (newLang) => {
-    langStore.lang = newLang || 'ru';
+    // langStore.lang = newLang || 'ru';
 });
 
 </script>

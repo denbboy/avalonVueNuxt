@@ -178,7 +178,7 @@ onMounted(() => {
   const urlLocale = route.fullPath.match(/^\/([a-z]{2})(\/|$)/)?.[1];
   const initialLocale = urlLocale || savedLanguage || DEFAULT_LOCALE;
 
-  changeLocale(initialLocale);
+  // changeLocale(initialLocale);
 
   if (typeof window !== 'undefined') {
     mainPageLink.value = `/${(localStorage.getItem('selectedLanguage') || DEFAULT_LOCALE).replace('/', '')}`;

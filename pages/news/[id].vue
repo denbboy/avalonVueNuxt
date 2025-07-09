@@ -45,7 +45,7 @@
           <NuxtImg src="/img/icons/socials.svg" class="md:w-6" alt="Soc" loading="lazy" />
         </a> -->
 
-        <div class="max-w-[1000px]"
+        <div class="max-w-[1000px] article-description"
           v-html="itemData?.translations?.filter(item => item.languages_code.includes(locale))[0]?.description">
         </div>
 

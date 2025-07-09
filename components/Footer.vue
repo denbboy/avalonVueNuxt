@@ -218,8 +218,10 @@
                     <!-- <video loop class="max-w-[96px] hidden md:block" muted autoplay
                         :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_video + '?width=392&height=392&format=webm'"
                         @error="handleError"></video> -->
-                    <NuxtImg :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_img"
-                        format="webp" loading="lazy" class="max-w-[96px] block md:hidden" alt="ph" />
+                    <NuxtLink href="/">
+                        <NuxtImg :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_img"
+                            format="webp" loading="lazy" class="max-w-[96px] block md:hidden" alt="ph" />
+                    </NuxtLink>
 
                     <!-- <div class="logo-clip-path md:hidden">
                         <video loop class="w-[96px] h-[100px] object-cover" muted autoplay>
@@ -401,7 +403,7 @@ const submitForm = async () => {
             body: {
                 name: name.value,
                 phone: phone.value,
-                form: "footer",
+                form: "Узнать больше подвал",
                 url: clearUrl
             }
         }).then(res => {

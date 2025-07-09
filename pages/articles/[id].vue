@@ -123,16 +123,42 @@ h6 {
     font-weight: bold;
 }
 
+.article-description ol li p {
+    margin: 0 !important;
+}
 .article-description ol li {
+    counter-increment: name;
+    list-style: none;
+    display: flex;
+}
+.article-description ol li:before {
+    content: counter(name);
+    background: #0E88EC;
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: block;
+    text-align: center;
+    left: 0;
+    top: 0;
+    margin-right: 10px;
+}
+
+.article-description ol li ul {
+    margin-left: 20px;
+}
+.article-description ul li {
     padding-left: 20px;
     position: relative;
 }
 
-.article-description ol li:before {
+.article-description ul li:before {
     content: "";
     background: #0E88EC;
     width: 8px;
     height: 8px;
+    min-width: 8px;
     border-radius: 50%;
     display: block;
     position: absolute;

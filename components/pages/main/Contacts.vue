@@ -138,7 +138,7 @@ const submitForm = async () => {
         body: {
           name: name.value,
           phone: phone.value,
-          form: "know-more",
+          form: "Узнать больше",
           url: clearUrl
         }
       }).then(res => {

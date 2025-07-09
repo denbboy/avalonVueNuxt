@@ -182,6 +182,10 @@ export default defineNuxtConfig({
     defaultLocale: "en",
     langDir: "locales/",
     vueI18n: "./plugins/i18n.config.js",
+    detectBrowserLanguage: {
+      useCookie: false,
+      redirectOn: "no",
+    },
   },
 
   // swiper: {

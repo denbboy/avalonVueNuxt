@@ -4,8 +4,7 @@
         :class="visibilityClass">
 
         <!-- v-if="!$viewport.isLessThan('tablet')" -->
-        <video  width="500" preload="auto" no-controls autoplay loop playsinline
-            muted>
+        <video width="500" preload="auto" no-controls autoplay loop playsinline muted>
             <source src="/img/logo-pre.mov" type="video/quicktime">
             <source src="/img/logo-pre.webm" type="video/webm">
             <!-- <source src="/img/logo-pre.mp4" type="video/mp4"> -->
@@ -31,26 +30,34 @@ const { $viewport, hook } = useNuxtApp();
 
 const isLoading = ref(true);
 const isHide = ref(false);
+const visibilityClass = ref('visible opacity-100');
 
-// Вычисляемый класс для видимости
-const visibilityClass = computed(() =>
-    isLoading.value ? 'visible opacity-100' : 'opacity-0 invisible'
-);
+
+setTimeout(() => {
+    isLoading.value = false;
+    setTimeout(() => (isHide.value = true), 200);
+    visibilityClass.value = 'invisible opacity-0'
+}, 5000);
 
 hook("page:start", () => {
     isHide.value = false;
     setTimeout(() => (isLoading.value = true), 50);
 });
 
+
 hook("page:finish", () => {
     setTimeout(() => {
         isLoading.value = false;
         setTimeout(() => (isHide.value = true), 200);
+        visibilityClass.value = 'invisible opacity-0'
     }, 500);
 });
 
 // Убираем прелоадер через 1.5 сек после монтирования
 onMounted(() => {
-    setTimeout(() => (isLoading.value = false), 1500);
+    setTimeout(() => {
+        isLoading.value = false
+        visibilityClass.value = 'invisible opacity-0'
+    }, 1500);
 });
 </script>

@@ -152,7 +152,7 @@ const submitForm = async () => {
                 body: {
                     method: name.value,
                     phone: phone.value,
-                    form: 'presentation',
+                    form: 'Получить презентацию / Получить каталог',
                     url: clearUrl
                 }
             }).then(res => {

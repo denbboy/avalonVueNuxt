@@ -147,7 +147,7 @@ const submitForm = async () => {
             method: 'POST',
             body: {
                 phone: phone.value,
-                form: "message",
+                form: "Получить консультацию",
                 url: clearUrl
             }
         }).then(res => {

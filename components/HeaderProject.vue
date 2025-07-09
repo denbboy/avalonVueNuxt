@@ -375,7 +375,7 @@ const changeLanguage = (newLocale) => {
   locale.value = newLocale;
   langStore.setLang(newLocale);
 
-  localStorage.setItem('selectedLanguage', newLocale);
+  // localStorage.setItem('selectedLanguage', newLocale);
 
   setTimeout(() => {
     preloaderStore.stop()
