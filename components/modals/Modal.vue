@@ -2,21 +2,53 @@
   <Transition>
     <div v-if="modals[0]" class="z-50 relative">
       <div
-        class="transition-all modal fixed top-0 left-0 w-full h-full z-50 flex justify-center items-center modal-special modal">
-        <div class="modal__bgd absolute top-0 left-0 bg-[#031523]/90 w-full h-full z-0" @click="closeModal">
-        </div>
+        class="transition-all modal fixed top-0 left-0 w-full h-full z-50 flex justify-center items-center modal-special modal"
+      >
         <div
-          class="modal__content relative z-10 bg-blue-500 md:rounded-[20px] h-full md:h-auto flex items-center justify-center flex-col">
-          <div class="modal__cross modal__close absolute top-2 right-2 md:-top-10 z-[1] md:-right-10 cursor-pointer group"
-            @click="closeModal">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect class="hidden md:block group-hover:opacity-80 transition-all" opacity="0.2" x="0.5" y="0.5" width="29" height="29" rx="9.5"
-                stroke="white" />
+          class="modal__bgd absolute top-0 left-0 bg-[#031523]/90 w-full h-full z-0"
+          @click="closeModal"
+        ></div>
+        <div
+          class="modal__content relative z-10 bg-blue-500 rounded-[20px] h-auto flex items-center justify-center flex-col"
+        >
+          <div
+            class="modal__cross modal__close absolute top-2 right-2 md:-top-10 z-[1] md:-right-10 cursor-pointer group"
+            @click="closeModal"
+          >
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                class="hidden md:block group-hover:opacity-80 transition-all"
+                opacity="0.2"
+                x="0.5"
+                y="0.5"
+                width="29"
+                height="29"
+                rx="9.5"
+                stroke="white"
+              />
               <g class="opacity-100 group-hover:opacity-80 transition-all md:opacity-50">
-                <rect x="8.05469" y="7" width="20.9207" height="1.49433" transform="rotate(45 8.05469 7)"
-                  fill="white" />
-                <rect x="7" y="21.9434" width="20.9207" height="1.49433" transform="rotate(-45 7 21.9434)"
-                  fill="white" />
+                <rect
+                  x="8.05469"
+                  y="7"
+                  width="20.9207"
+                  height="1.49433"
+                  transform="rotate(45 8.05469 7)"
+                  fill="white"
+                />
+                <rect
+                  x="7"
+                  y="21.9434"
+                  width="20.9207"
+                  height="1.49433"
+                  transform="rotate(-45 7 21.9434)"
+                  fill="white"
+                />
               </g>
             </svg>
           </div>
@@ -27,7 +59,7 @@
           <ModalsModalMessage v-else-if="modals[0] === 'message'" />
           <ModalsModalVacancy v-else-if="modals[0] === 'vacancy'" />
           <ModalsModalRtsp v-else-if="modals[0] === 'rtsp'" />
-
+          <ModalsModalPromo v-else-if="modals[0] === 'promo'" />
         </div>
       </div>
     </div>
@@ -35,21 +67,53 @@
   <Transition>
     <div v-if="modals[1]" class="z-50 relative">
       <div
-        class="transition-all modal fixed top-0 left-0 w-full h-full z-50 flex justify-center items-center modal-special modal">
-        <div class="modal__bgd absolute top-0 left-0 bg-[#031523]/90 w-full h-full z-0" @click="closeModal">
-        </div>
+        class="transition-all modal fixed top-0 left-0 w-full h-full z-50 flex justify-center items-center modal-special modal"
+      >
         <div
-          class="modal__content relative z-10 bg-blue-500 md:rounded-[20px] h-full md:h-auto flex items-center justify-center flex-col">
-          <div class="modal__cross modal__close absolute top-2 right-2 md:-top-10 z-[1] md:-right-10 cursor-pointer"
-            @click="closeModal">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect class="hidden md:block" opacity="0.2" x="0.5" y="0.5" width="29" height="29" rx="9.5"
-                stroke="white" />
+          class="modal__bgd absolute top-0 left-0 bg-[#031523]/90 w-full h-full z-0"
+          @click="closeModal"
+        ></div>
+        <div
+          class="modal__content relative z-10 bg-blue-500 rounded-[20px] h-auto flex items-center justify-center flex-col"
+        >
+          <div
+            class="modal__cross modal__close absolute top-2 right-2 md:-top-10 z-[1] md:-right-10 cursor-pointer"
+            @click="closeModal"
+          >
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                class="hidden md:block"
+                opacity="0.2"
+                x="0.5"
+                y="0.5"
+                width="29"
+                height="29"
+                rx="9.5"
+                stroke="white"
+              />
               <g class="opacity-100 md:opacity-50">
-                <rect x="8.05469" y="7" width="20.9207" height="1.49433" transform="rotate(45 8.05469 7)"
-                  fill="white" />
-                <rect x="7" y="21.9434" width="20.9207" height="1.49433" transform="rotate(-45 7 21.9434)"
-                  fill="white" />
+                <rect
+                  x="8.05469"
+                  y="7"
+                  width="20.9207"
+                  height="1.49433"
+                  transform="rotate(45 8.05469 7)"
+                  fill="white"
+                />
+                <rect
+                  x="7"
+                  y="21.9434"
+                  width="20.9207"
+                  height="1.49433"
+                  transform="rotate(-45 7 21.9434)"
+                  fill="white"
+                />
               </g>
             </svg>
           </div>
@@ -60,7 +124,7 @@
           <ModalsModalMessage v-else-if="modals[1] === 'message'" />
           <ModalsModalVacancy v-else-if="modals[1] === 'vacancy'" />
           <ModalsModalRtsp v-else-if="modals[1] === 'rtsp'" />
-
+          <ModalsModalPromo v-else-if="modals[1] === 'promo'" />
         </div>
       </div>
     </div>
@@ -97,7 +161,7 @@ watch(modals, (newModals) => {
 
 // Close Modal Function
 const closeModal = () => {
-  modalsStore.removeModalData()
+  modalsStore.removeModalData();
   modalsStore.removeModal(modals.value[modals.value.length - 1]);
 };
 </script>
