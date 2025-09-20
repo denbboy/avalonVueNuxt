@@ -1,17 +1,15 @@
 <template>
-
   <NuxtLayout>
     <transition name="fade">
       <NuxtPage />
     </transition>
   </NuxtLayout>
-
 </template>
 
 <script setup>
-import { useCookie } from "#app";
+import { useCookie } from '#app';
 
-import { useHead } from '@unhead/vue'
+import { useHead } from '@unhead/vue';
 
 useHead({
   htmlAttrs: {
@@ -24,8 +22,8 @@ useHead({
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-NW6LBFJS');`,
-      type: 'text/javascript'
-    }
+      type: 'text/javascript',
+    },
   ],
   noscript: [
     {
@@ -33,14 +31,13 @@ useHead({
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NW6LBFJS"
                 height="0" width="0" style="display:none;visibility:hidden"></iframe>
       `,
-    }
+    },
   ],
   __dangerouslyDisableSanitizersByTagID: {
     'gtm-script': ['innerHTML'],
-    'noscript': ['innerHTML'],
-  }
-})
-
+    noscript: ['innerHTML'],
+  },
+});
 
 // const nuxtApp = useNuxtApp();
 // const modalsStore = useModalsStore();
@@ -116,7 +113,6 @@ watchEffect(() => {
     langCookie.value = route.params.lang; // Обновляем куки при изменении языка в URL
   }
 });
-
 </script>
 
 <style>

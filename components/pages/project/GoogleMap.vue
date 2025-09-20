@@ -1,12 +1,13 @@
 <template>
-
   <section id="location" class="map py-14 md:py-24 relative overflow-hidden">
     <div
-      class="absolute hidden lg:block lg:-right-36 top-0 lg:top-0 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
+      class="absolute hidden lg:block lg:-right-36 top-0 lg:top-0 lg:left-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]"
+    >
       <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
     </div>
     <div
-      class="absolute hidden lg:block lg:-left-36 top-0 lg:top-auto lg:right-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]">
+      class="absolute hidden lg:block lg:-left-36 top-0 lg:top-auto lg:right-auto lg:bottom-40 -left-14 w-28 lg:w-72 z-[2]"
+    >
       <NuxtImg loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />
     </div>
     <div class="container relative z-10">
@@ -15,34 +16,50 @@
       </h2>
 
       <div class="overflow-hidden rounded-t-2xl lg:rounded-none lg:rounded-t-2xl">
-
         <div id="map"></div>
       </div>
 
-      <a :href="`https://www.google.com/maps?ll=${props.itemData.location.coordinates[1]},${props.itemData.location.coordinates[0]}`" target="_blank" class="text-white rounded-b-2xl md:rounded-none bg-[#0E88EC] w-full h-[40px] md:h-[60px] flex gap-[10px] justify-center items-center">
-        <svg class=" w-[15px] h-[20px] md:w-[23px] md:-[30px]" width="23" height="30" viewBox="0 0 23 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M21.5759 6.23494C20.665 4.40916 19.2939 2.86774 17.6108 1.7772C15.8164 0.614529 13.704 0 11.502 0C9.2999 0 7.18749 0.614529 5.39306 1.7772C3.70996 2.86768 2.33888 4.40916 1.42792 6.23494C0.515974 8.0627 0.10869 10.0881 0.250076 12.0921C0.400896 14.2285 1.18165 16.2892 2.50804 18.0514L11.5019 30L20.4958 18.0514C21.8222 16.2892 22.6029 14.2285 22.7537 12.0921C22.8952 10.0881 22.488 8.06276 21.5759 6.23494ZM19.5435 6.1982L16.518 10.2176C16.0278 7.89835 13.9651 6.15232 11.502 6.15232C11.3782 6.15232 11.2555 6.15701 11.1339 6.16568L14.1761 2.12407C16.3982 2.75395 18.2866 4.17391 19.5435 6.1982ZM11.502 7.91013C13.3597 7.91013 14.8711 9.42149 14.8711 11.2793C14.8711 13.137 13.3597 14.6484 11.502 14.6484C9.6442 14.6484 8.13284 13.137 8.13284 11.2793C8.13284 9.42149 9.64414 7.91013 11.502 7.91013ZM11.502 1.75781C11.7475 1.75781 11.9906 1.76724 12.2315 1.78458L7.93409 7.49364L4.44977 4.87094C6.21285 2.88889 8.71303 1.75781 11.502 1.75781ZM3.00081 7.01974C3.12696 6.76691 3.26319 6.52292 3.40692 6.28603L6.877 8.89801L2.58298 14.6027C1.65157 12.1706 1.77509 9.47639 3.00081 7.01974ZM3.46715 16.351L6.48583 12.3407C6.97597 14.66 9.03875 16.4062 11.502 16.4062C11.6257 16.4062 11.7483 16.4015 11.8699 16.3929L7.66479 21.9794L3.91252 16.9944C3.75409 16.7839 3.60637 16.569 3.46715 16.351ZM19.0914 16.9943L11.502 27.0771L8.76489 23.4408L20.4156 7.96274C21.5686 11.0152 21.0998 14.326 19.0914 16.9943Z" fill="white" style="fill:white;fill-opacity:1;"/>
+      <a
+        :href="`https://www.google.com/maps?ll=${props.itemData.location.coordinates[1]},${props.itemData.location.coordinates[0]}`"
+        target="_blank"
+        class="text-white rounded-b-2xl md:rounded-none bg-[#0E88EC] w-full h-[40px] md:h-[60px] flex gap-[10px] justify-center items-center"
+      >
+        <svg
+          class="w-[15px] h-[20px] md:w-[23px] md:-[30px]"
+          width="23"
+          height="30"
+          viewBox="0 0 23 30"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M21.5759 6.23494C20.665 4.40916 19.2939 2.86774 17.6108 1.7772C15.8164 0.614529 13.704 0 11.502 0C9.2999 0 7.18749 0.614529 5.39306 1.7772C3.70996 2.86768 2.33888 4.40916 1.42792 6.23494C0.515974 8.0627 0.10869 10.0881 0.250076 12.0921C0.400896 14.2285 1.18165 16.2892 2.50804 18.0514L11.5019 30L20.4958 18.0514C21.8222 16.2892 22.6029 14.2285 22.7537 12.0921C22.8952 10.0881 22.488 8.06276 21.5759 6.23494ZM19.5435 6.1982L16.518 10.2176C16.0278 7.89835 13.9651 6.15232 11.502 6.15232C11.3782 6.15232 11.2555 6.15701 11.1339 6.16568L14.1761 2.12407C16.3982 2.75395 18.2866 4.17391 19.5435 6.1982ZM11.502 7.91013C13.3597 7.91013 14.8711 9.42149 14.8711 11.2793C14.8711 13.137 13.3597 14.6484 11.502 14.6484C9.6442 14.6484 8.13284 13.137 8.13284 11.2793C8.13284 9.42149 9.64414 7.91013 11.502 7.91013ZM11.502 1.75781C11.7475 1.75781 11.9906 1.76724 12.2315 1.78458L7.93409 7.49364L4.44977 4.87094C6.21285 2.88889 8.71303 1.75781 11.502 1.75781ZM3.00081 7.01974C3.12696 6.76691 3.26319 6.52292 3.40692 6.28603L6.877 8.89801L2.58298 14.6027C1.65157 12.1706 1.77509 9.47639 3.00081 7.01974ZM3.46715 16.351L6.48583 12.3407C6.97597 14.66 9.03875 16.4062 11.502 16.4062C11.6257 16.4062 11.7483 16.4015 11.8699 16.3929L7.66479 21.9794L3.91252 16.9944C3.75409 16.7839 3.60637 16.569 3.46715 16.351ZM19.0914 16.9943L11.502 27.0771L8.76489 23.4408L20.4156 7.96274C21.5686 11.0152 21.0998 14.326 19.0914 16.9943Z"
+            fill="white"
+            style="fill: white; fill-opacity: 1"
+          />
         </svg>
 
-
-        <p class=" text-xs md:text-[15px] font-bold">
+        <p class="text-xs md:text-[15px] font-bold">
           {{ $t('see_google_map') }}
         </p>
       </a>
 
       <div
-        class="flex flex-col md:flex-row mt-[30px] md:items-center md:justify-between md:gap-[30px] gap-5 md:py-10 md:px-7 md:border md:border-whiteOp-300 md:rounded-b-2xl md:mt-[-1px]">
-        <p class=" text-white text-base text-center md:text-start md:text-xl lg:text-left lg:m-0">
+        class="flex flex-col md:flex-row mt-[30px] md:items-center md:justify-between md:gap-[30px] gap-5 md:py-10 md:px-7 md:border md:border-whiteOp-300 md:rounded-b-2xl md:mt-[-1px]"
+      >
+        <p class="text-white text-base text-center md:text-start md:text-xl lg:text-left lg:m-0">
           {{ $t('google_map_text_1') }}
         </p>
-        <button @click="handleOpenModal" type="button" class="white-button px-7 mx-auto lg:mx-0 xl:px-[60px]">
+        <button
+          @click="handleOpenModal"
+          type="button"
+          class="white-button px-7 mx-auto lg:mx-0 xl:px-[60px]"
+        >
           {{ $t('make_a_see') }}
         </button>
       </div>
     </div>
   </section>
-  
-
 </template>
 
 <style scoped>
@@ -58,41 +75,71 @@
 }
 </style>
 
-
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch } from 'vue';
 
-
-const modalsStore = useModalsStore()
+const modalsStore = useModalsStore();
 
 const props = defineProps(['itemData']);
 
 const handleOpenModal = () => {
-  modalsStore.addModal('presentation')
-}
+  modalsStore.addModal('message');
+};
 
 setTimeout(() => {
-  (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })({
-    key: "AIzaSyCbpqXlTw8-yA0fa9vECkTrSKJq1L1_Wkw",
-    v: "weekly",
+  ((g) => {
+    var h,
+      a,
+      k,
+      p = 'The Google Maps JavaScript API',
+      c = 'google',
+      l = 'importLibrary',
+      q = '__ib__',
+      m = document,
+      b = window;
+    b = b[c] || (b[c] = {});
+    var d = b.maps || (b.maps = {}),
+      r = new Set(),
+      e = new URLSearchParams(),
+      u = () =>
+        h ||
+        (h = new Promise(async (f, n) => {
+          await (a = m.createElement('script'));
+          e.set('libraries', [...r] + '');
+          for (k in g)
+            e.set(
+              k.replace(/[A-Z]/g, (t) => '_' + t[0].toLowerCase()),
+              g[k],
+            );
+          e.set('callback', c + '.maps.' + q);
+          a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+          d[q] = f;
+          a.onerror = () => (h = n(Error(p + ' could not load.')));
+          a.nonce = m.querySelector('script[nonce]')?.nonce || '';
+          m.head.append(a);
+        }));
+    d[l]
+      ? console.warn(p + ' only loads once. Ignoring:', g)
+      : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+  })({
+    key: 'AIzaSyCbpqXlTw8-yA0fa9vECkTrSKJq1L1_Wkw',
+    v: 'weekly',
     // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
     // Add other bootstrap parameters as needed, using camel case.
   });
-}, 10)
-
+}, 10);
 
 let map;
 
 async function initMap(cood1, cood2) {
-
   const position = { lat: cood1 ?? 0, lng: cood2 ?? 0 };
-  const { Map } = await google.maps.importLibrary("maps");
-  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+  const { Map } = await google.maps.importLibrary('maps');
+  const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
 
-  map = new Map(document.getElementById("map"), {
+  map = new Map(document.getElementById('map'), {
     zoom: 14,
     center: position,
-    mapId: "DEMO_MAP_ID",
+    mapId: 'DEMO_MAP_ID',
   });
 
   const parser = new DOMParser();
@@ -106,28 +153,24 @@ async function initMap(cood1, cood2) {
         stroke="#0E88EC" />
 
       <foreignObject x="21" y="15" width="60" height="80">
-        <img xmlns="http://www.w3.org/1999/xhtml" class="mb-3 w-14 h-18 object-contain" 
-             src="https://api.avalonbali.com/assets/${props.itemData.logo}" 
+        <img xmlns="http://www.w3.org/1999/xhtml" class="mb-3 w-14 h-18 object-contain"
+             src="https://api.avalonbali.com/assets/${props.itemData.logo}"
              alt="Marker Icon"/>
       </foreignObject>
-      
+
     </g>
   </svg>
 `;
 
-  const pinSvg = parser.parseFromString(
-    pinSvgString,
-    "image/svg+xml",
-  ).documentElement;
+  const pinSvg = parser.parseFromString(pinSvgString, 'image/svg+xml').documentElement;
 
   new AdvancedMarkerElement({
     map,
     position: position,
     content: pinSvg,
-    title: "A marker using a custom SVG image.",
+    title: 'A marker using a custom SVG image.',
   });
 }
-
 
 watch(
   () => props.itemData,
@@ -135,16 +178,14 @@ watch(
     if (newValue && newValue.location && newValue.location.coordinates) {
       setTimeout(() => {
         initMap(newValue.location.coordinates[1], newValue.location.coordinates[0]);
-      }, 500)
+      }, 500);
     }
   },
-  { immediate: true } // Можно добавить эту опцию для немедленного выполнения
+  { immediate: true }, // Можно добавить эту опцию для немедленного выполнения
 );
 
 onMounted(() => {
   initMap(props.itemData.location.coordinates[1], props.itemData.location.coordinates[0]);
 });
 console.log(props.itemData.location);
-
-
 </script>
