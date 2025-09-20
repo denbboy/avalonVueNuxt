@@ -7,8 +7,8 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import { useCookie } from '#app';
-
 import { useHead } from '@unhead/vue';
 
 useHead({
@@ -39,47 +39,56 @@ useHead({
   },
 });
 
-// const nuxtApp = useNuxtApp();
-// const modalsStore = useModalsStore();
+const nuxtApp = useNuxtApp();
+const modalsStore = useModalsStore();
 
-// const isShowedModal = ref(false)
+let promoTimeout = null;
+const promoModalDismissals = useCookie('promoModalDismissals', {
+  default: () => 0,
+  maxAge: 60 * 60 * 24 * 30,
+});
 
-// const sitemap = await useAsyncData("Sitemap", () => $fetch('/api/__sitemap__'))
+const startPromoTimer = (delay = 15000) => {
+  if (promoTimeout) {
+    clearTimeout(promoTimeout);
+  }
 
-// let timeoutId;
+  if (promoModalDismissals.value >= 2) {
+    return;
+  }
 
-// nuxtApp.hook("page:finish", () => {
-//   const isModalShownCookie = useCookie("isModalShown", { maxAge: 60 * 60 * 24 * 30 }); // срок действия: 30 дней
-//   const isSecondModalShownCookie = useCookie("isSecondModalShown", { maxAge: 60 * 60 * 24 * 30 }); // отслеживание второго показа
+  promoTimeout = setTimeout(() => {
+    modalsStore.addModal('promo');
+    if (import.meta.client) {
+      localStorage.setItem('promoModalTimerTriggered', 'true');
+    }
+  }, delay);
+};
 
-//   if (isModalShownCookie.value && isSecondModalShownCookie.value) {
-//     return; // Если обе модалки уже были показаны, ничего не делаем
-//   }
+nuxtApp.hook('page:finish', () => {
+  startPromoTimer(15000);
+});
 
-//   let firstTimeout, secondTimeout;
+if (import.meta.client) {
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'promoModalDismissals') {
+      const dismissals = parseInt(e.newValue) || 0;
+      promoModalDismissals.value = dismissals;
 
-//   if (!isModalShownCookie.value) {
-//     firstTimeout = setTimeout(() => {
-//       modalsStore.addModal('message');
-//       isShowedModal.value = true;
-//       isModalShownCookie.value = true;
+      if (dismissals === 1) {
+        startPromoTimer(40000);
+      } else if (dismissals >= 2) {
+        if (promoTimeout) {
+          clearTimeout(promoTimeout);
+          promoTimeout = null;
+        }
+      }
+    }
+  });
 
-//       // Второй показ через 40 секунд после первого
-//       secondTimeout = setTimeout(() => {
-//         modalsStore.addModal('message');
-//         isShowedModal.value = true;
-//         isSecondModalShownCookie.value = true;
-//       }, 1);
-//     }, 1);
-//   } else if (!isSecondModalShownCookie.value) {
-//     // Если первая модалка уже была показана, но вторая нет, ждем 40 секунд
-//     secondTimeout = setTimeout(() => {
-//       modalsStore.addModal('message');
-//       isShowedModal.value = true;
-//       isSecondModalShownCookie.value = true;
-//     }, 1);
-//   }
-// });
+  const localStorageDismissals = parseInt(localStorage.getItem('promoModalDismissals')) || 0;
+  promoModalDismissals.value = localStorageDismissals;
+}
 
 import { watchEffect, onMounted } from 'vue';
 import { useRoute } from 'vue-router';

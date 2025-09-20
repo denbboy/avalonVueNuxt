@@ -2,8 +2,9 @@
   <div
     class="content__inner w-full z-0 relative overflow-hidden p-5 lg:p-10 max-w-[600px] flex flex-col items-center h-full"
   >
-    <h2 class="text-white text-lg md:text-2xl font-bold text-center mb-5">
-      {{ $t('m_promo_text_1') }}
+    <h2 class="text-white text-lg md:text-2xl text-center mb-5">
+      {{ $t('m_promo_text_1') }}<br />
+      <span class="font-bold">{{ formatPromoDate() }}</span>
     </h2>
 
     <form @submit.prevent="submitForm" class="flex w-full flex-col text-center">
@@ -80,6 +81,7 @@ import 'vue-tel-input/vue-tel-input.css';
 import iso31661 from 'iso-3166-1';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import { useFormsStore } from '~/stores/functions/forms';
+import { useModalsStore } from '~/stores/functions/modals';
 
 const recaptchaInstance = useReCaptcha();
 
@@ -92,6 +94,7 @@ const recaptcha = async () => {
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
 const formsStore = useFormsStore();
+const modalsStore = useModalsStore();
 const allPages = ref([]);
 
 const currentForm =
@@ -121,6 +124,61 @@ const placeholderLang = {
   ru: 'Введите ваш номер телефона',
   en: 'Enter your phone number',
   ua: 'Введіть ваш номер телефону',
+};
+
+const formatPromoDate = () => {
+  const currentDate = new Date();
+  const day = currentDate.getDate();
+  const month = currentDate.getMonth();
+
+  const monthNames = {
+    ru: [
+      'января',
+      'февраля',
+      'марта',
+      'апреля',
+      'мая',
+      'июня',
+      'июля',
+      'августа',
+      'сентября',
+      'октября',
+      'ноября',
+      'декабря',
+    ],
+    en: [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ],
+    ua: [
+      'січня',
+      'лютого',
+      'березня',
+      'квітня',
+      'травня',
+      'червня',
+      'липня',
+      'серпня',
+      'вересня',
+      'жовтня',
+      'листопада',
+      'грудня',
+    ],
+  };
+
+  const monthName = monthNames[langStore.lang] || monthNames.ru;
+  const until = langStore.lang === 'ru' ? 'до' : langStore.lang === 'en' ? 'until' : 'до';
+  return `${until} ${day} ${monthName[month]}`;
 };
 
 const inputOptions = {
@@ -158,6 +216,10 @@ const submitForm = async () => {
       isSending.value = false;
       isSuccess.value = true;
       resetForm();
+
+      setTimeout(() => {
+        modalsStore.removeModal('promo');
+      }, 1500);
     });
   } catch (error) {
     console.error('Contact form could not be sent', error);

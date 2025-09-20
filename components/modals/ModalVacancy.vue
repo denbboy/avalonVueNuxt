@@ -126,6 +126,7 @@
 import { ref } from 'vue';
 import { useFormsStore } from '~/stores/functions/forms';
 import { useReCaptcha } from 'vue-recaptcha-v3';
+import { useModalsStore } from '~/stores/functions/modals';
 
 const recaptchaInstance = useReCaptcha();
 
@@ -144,6 +145,7 @@ const isError = ref(false);
 const isSending = ref(false);
 const isSuccess = ref(false);
 const formsStore = useFormsStore();
+const modalsStore = useModalsStore();
 
 const currentForm =
   formsStore.forms.length && formsStore.forms?.filter((item) => item.slug === 'vacancy-form')[0];
@@ -206,6 +208,11 @@ const handleSubmitForm = async () => {
         isSending.value = false;
         isSuccess.value = true;
         resetForm();
+
+        // Close modal after successful submission
+        setTimeout(() => {
+          modalsStore.removeModal('vacancy');
+        }, 1500);
       } else {
         isSending.value = false;
         isError.value = true;

@@ -161,7 +161,39 @@ watch(modals, (newModals) => {
 
 // Close Modal Function
 const closeModal = () => {
+  const currentModal = modals.value[modals.value.length - 1];
+
+  if (currentModal === 'promo' && isPromoModalTimerTriggered()) {
+    trackPromoDismissal();
+  }
+
   modalsStore.removeModalData();
-  modalsStore.removeModal(modals.value[modals.value.length - 1]);
+  modalsStore.removeModal(currentModal);
+};
+
+const isPromoModalTimerTriggered = () => {
+  if (import.meta.client) {
+    return localStorage.getItem('promoModalTimerTriggered') === 'true';
+  }
+  return false;
+};
+
+const trackPromoDismissal = () => {
+  if (import.meta.client) {
+    const currentDismissals = parseInt(localStorage.getItem('promoModalDismissals')) || 0;
+    const newDismissals = currentDismissals + 1;
+
+    localStorage.setItem('promoModalDismissals', newDismissals.toString());
+
+    localStorage.removeItem('promoModalTimerTriggered');
+
+    window.dispatchEvent(
+      new StorageEvent('storage', {
+        key: 'promoModalDismissals',
+        newValue: newDismissals.toString(),
+        oldValue: currentDismissals.toString(),
+      }),
+    );
+  }
 };
 </script>

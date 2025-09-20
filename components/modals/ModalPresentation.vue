@@ -77,11 +77,13 @@
 import { ref, watch } from 'vue';
 import { usePagesStore } from '~/stores/functions/pages';
 import { useToolkit } from '~/stores/functions/toolkit';
+import { useLangStore } from '~/stores/functions/language';
 import { VueTelInput } from 'vue-tel-input';
 import 'vue-tel-input/vue-tel-input.css';
 import iso31661 from 'iso-3166-1';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import { useFormsStore } from '~/stores/functions/forms';
+import { useModalsStore } from '~/stores/functions/modals';
 
 const recaptchaInstance = useReCaptcha();
 
@@ -94,6 +96,7 @@ const recaptcha = async () => {
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
 const formsStore = useFormsStore();
+const modalsStore = useModalsStore();
 const allPages = ref([]);
 
 const currentForm = formsStore?.forms?.filter((item) => item.slug === 'showcase-form')[0];
@@ -129,7 +132,7 @@ const submitForm = async () => {
   }
 
   try {
-    if (!name.value || !phone.value || phone.value.length < 10) {
+    if (!phone.value || phone.value.length < 10) {
       isError.value = true;
       return;
     } else {
@@ -150,6 +153,10 @@ const submitForm = async () => {
         isSending.value = false;
         isSuccess.value = true;
         resetForm();
+
+        setTimeout(() => {
+          modalsStore.removeModal('presentation');
+        }, 1500);
       });
     } catch (err) {
       isSending.value = false;
