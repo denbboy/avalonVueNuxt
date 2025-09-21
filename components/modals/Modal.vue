@@ -60,6 +60,7 @@
           <ModalsModalVacancy v-else-if="modals[0] === 'vacancy'" />
           <ModalsModalRtsp v-else-if="modals[0] === 'rtsp'" />
           <ModalsModalPromo v-else-if="modals[0] === 'promo'" />
+          <ModalsModalProject v-else-if="modals[0] === 'project'" />
         </div>
       </div>
     </div>
@@ -125,6 +126,7 @@
           <ModalsModalVacancy v-else-if="modals[1] === 'vacancy'" />
           <ModalsModalRtsp v-else-if="modals[1] === 'rtsp'" />
           <ModalsModalPromo v-else-if="modals[1] === 'promo'" />
+          <ModalsModalProject v-else-if="modals[1] === 'project'" />
         </div>
       </div>
     </div>

@@ -214,7 +214,7 @@
               @click="handleOpenModal"
               class="w-fit px-5 py-4 block text-sm md:text-base bg-white rounded-xl text-center font-bold whitespace-nowrap text-blue-500 hover:text-white hover:bg-blue-400 my-10 mb-0 transition-all"
             >
-              {{ $t('download_presentation') }}
+              {{ $t('get_a_presentation_button') }}
             </button>
           </div>
           <div class="flex flex-col xl:items-end justify-end xl:w-full">
@@ -429,7 +429,7 @@ const langStore = useLangStore();
 const { itemData } = defineProps(['itemData']);
 
 const handleOpenModal = () => {
-  modalsStore.addModal('presentation');
+  modalsStore.addModal('project');
 };
 
 const handleOpenRtsp = () => {
