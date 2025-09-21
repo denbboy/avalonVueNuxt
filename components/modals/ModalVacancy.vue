@@ -201,6 +201,7 @@ const handleSubmitForm = async () => {
           message: message.value,
           file: fileId ? fileId : null,
           form: 'vacancy',
+          source_url: window.location.href,
         },
       });
 

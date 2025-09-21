@@ -211,6 +211,7 @@ const submitForm = async () => {
       body: {
         phone: phone.value,
         form: 'message',
+        source_url: window.location.href,
       },
     }).then((res) => {
       isSending.value = false;

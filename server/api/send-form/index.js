@@ -1,6 +1,6 @@
 export default defineEventHandler(async (event) => {
   try {
-    const { name, phone, email, form, file, message, method } = await readBody(
+    const { name, phone, email, form, file, message, method, source_url } = await readBody(
       event
     );
 
@@ -13,6 +13,7 @@ export default defineEventHandler(async (event) => {
     };
 
     const note = form && formTypes[form];
+    const sourceUrlNote = source_url ? `\n\nИсточник: ${source_url}` : '';
 
     const rawBody = {
       action: "partner-custom-form",
@@ -22,7 +23,7 @@ export default defineEventHandler(async (event) => {
       phone: phone ?? "No phone",
       email: email ?? "No email",
       lang: "ua",
-      note: note ?? "Запит з форми контактів",
+      note: (note ?? "Запит з форми контактів") + sourceUrlNote,
       adv_id: "123123123",
     };
 
@@ -52,6 +53,7 @@ export default defineEventHandler(async (event) => {
         JSON.stringify({
           name: name,
           phone: phone,
+          source_url: source_url,
         })
       );
     } else if (form === "vacancy") {
@@ -63,6 +65,7 @@ export default defineEventHandler(async (event) => {
           file: file,
           email: email,
           message: message,
+          source_url: source_url,
         })
       );
     } else if (form === "presentation") {
@@ -71,6 +74,7 @@ export default defineEventHandler(async (event) => {
         JSON.stringify({
           method: method,
           phone: phone,
+          source_url: source_url,
         })
       );
     } else {
@@ -84,6 +88,7 @@ export default defineEventHandler(async (event) => {
           message: message,
           method: method,
           note: note,
+          source_url: source_url,
         })
       );
     }

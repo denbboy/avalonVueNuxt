@@ -99,27 +99,33 @@ const langStore = useLangStore();
 const langCookie = useCookie('lang'); // Создаём cookie для хранения языка
 
 onMounted(() => {
-  // 1. Проверяем куки
-  if (langCookie.value) {
+  if (route.params.lang && ['ru', 'ua', 'en'].includes(route.params.lang)) {
+    langStore.lang = route.params.lang;
+    langCookie.value = route.params.lang;
+  } else if (langCookie.value) {
     langStore.lang = langCookie.value;
   } else {
-    // 2. Определяем язык системы
-    const systemLang = navigator.language?.split('-')[0] || 'ru';
+    const systemLang = navigator.language?.split('-')[0] || 'en';
 
-    // 3. Если язык системы поддерживается, устанавливаем его
-    const supportedLangs = ['ru', 'ua', 'en']; // Список поддерживаемых языков
-    langStore.lang = supportedLangs.includes(systemLang) ? systemLang : 'ru';
+    const supportedLangs = ['ru', 'ua', 'en'];
+    if (systemLang === 'uk') {
+      langStore.lang = 'ua';
+    } else {
+      langStore.lang = supportedLangs.includes(systemLang) ? systemLang : 'en';
+    }
 
-    // 4. Сохраняем в куки
     langCookie.value = langStore.lang;
   }
 });
 
-// 5. Следим за изменением языка в URL и обновляем `langStore.lang`
 watchEffect(() => {
-  if (route.params.lang) {
+  const urlLang = route.fullPath.match(/^\/([a-z]{2})(\/|$)/)?.[1];
+  if (urlLang && ['ru', 'ua', 'en'].includes(urlLang)) {
+    langStore.lang = urlLang;
+    langCookie.value = urlLang;
+  } else if (route.params.lang) {
     langStore.lang = route.params.lang;
-    langCookie.value = route.params.lang; // Обновляем куки при изменении языка в URL
+    langCookie.value = route.params.lang;
   }
 });
 </script>
