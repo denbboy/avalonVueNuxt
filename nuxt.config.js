@@ -17,10 +17,38 @@ export default defineNuxtConfig({
     middleware: ["locale", "gtm"],
   },
 
-  // sitemap: {
-  //   sources: ["/api/__sitemap__/index"],
-  //   sitemapName: "sitemap.xml",
-  // },
+  nitro: {
+    routeRules: {
+      '/en/**': { redirect: { to: '/**', statusCode: 301 } },
+      '/en': { redirect: { to: '/', statusCode: 301 } },
+    },
+  },
+
+  sitemap: {
+    autoI18n: false,
+    urls: [
+      { url: "/", changefreq: "monthly", priority: 1.0 },
+      { url: "/en", changefreq: "monthly", priority: 0.9 },
+      { url: "/ua", changefreq: "monthly", priority: 0.9 },
+      { url: "/ru", changefreq: "monthly", priority: 0.9 },
+      { url: "/#about-company", changefreq: "monthly", priority: 0.8 },
+      { url: "/en/#about-company", changefreq: "monthly", priority: 0.8 },
+      { url: "/#island", changefreq: "monthly", priority: 0.8 },
+      { url: "/en/#island", changefreq: "monthly", priority: 0.8 },
+      { url: "/cooperation", changefreq: "monthly", priority: 0.8 },
+      { url: "/en/cooperation", changefreq: "monthly", priority: 0.8 },
+      { url: "/ua/cooperation", changefreq: "monthly", priority: 0.8 },
+      { url: "/ru/cooperation", changefreq: "monthly", priority: 0.8 },
+      { url: "/career", changefreq: "monthly", priority: 0.8 },
+      { url: "/en/career", changefreq: "monthly", priority: 0.8 },
+      { url: "/ua/career", changefreq: "monthly", priority: 0.8 },
+      { url: "/ru/career", changefreq: "monthly", priority: 0.8 },
+    ],
+    defaults: {
+      changefreq: 'monthly',
+      priority: 0.8,
+    },
+  },
 
   // robots: {
   //   debug: false,
