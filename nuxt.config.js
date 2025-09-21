@@ -21,6 +21,43 @@ export default defineNuxtConfig({
     routeRules: {
       '/en/**': { redirect: { to: '/**', statusCode: 301 } },
       '/en': { redirect: { to: '/', statusCode: 301 } },
+      '/**': {
+        headers: {
+          'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
+          'X-Frame-Options': 'SAMEORIGIN',
+          'X-Content-Type-Options': 'nosniff',
+          'Referrer-Policy': 'strict-origin-when-cross-origin',
+          'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+          'Content-Security-Policy': [
+            "default-src 'self'",
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://apis.google.com",
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+            "font-src 'self' https://fonts.gstatic.com",
+            "img-src 'self' data: https: blob:",
+            "media-src 'self' https: blob:",
+            "connect-src 'self' https://api.avalonbali.com https://www.google-analytics.com https://www.googletagmanager.com",
+            "frame-src 'self' https://www.google.com",
+            "object-src 'none'",
+            "base-uri 'self'",
+            "form-action 'self'"
+          ].join('; ')
+        }
+      }
+    },
+    experimental: {
+      wasm: true,
+    },
+  },
+
+  security: {
+    headers: {
+      crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+    },
+  },
+
+  runtimeConfig: {
+    public: {
+      apiBase: 'https://api.avalonbali.com/',
     },
   },
 
