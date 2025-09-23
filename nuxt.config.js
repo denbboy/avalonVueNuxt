@@ -49,6 +49,17 @@ export default defineNuxtConfig({
     },
   },
 
+  app: {
+    head: {
+      meta: [
+        {
+          name: 'robots',
+          content: process.env.VERCEL ? 'noindex, nofollow' : 'index, follow'
+        }
+      ]
+    }
+  },
+
   security: {
     headers: {
       crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',

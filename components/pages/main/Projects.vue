@@ -125,15 +125,10 @@
                   class="flex items-center mb-5"
                 >
                   <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]"
-                    >{{ $t('from') }}
-                    {{
-                      item?.is_price_show
-                        ? item?.price_local
-                        : '$' + String(item?.price)?.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
-                    }}</strong
+                    >{{ $t('from') }} {{ item?.price_local }}</strong
                   >
                   <span class="text-white/60 text-xs hidden md:block">
-                    {{ item?.is_price_show ? '$' + item?.price : $t('including_taxes') }}
+                    {{ $t('from') }} {{ item?.price_local }}$
                   </span>
                 </div>
 

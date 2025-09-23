@@ -1,55 +1,85 @@
 <template>
+  <Head>
+    <Title>
+      {{
+        itemData?.translations?.filter((item) => item.languages_code.includes(locale))[0]
+          ?.meta_title
+      }}
+    </Title>
+    <Meta
+      name="description"
+      :content="
+        itemData?.translations?.filter((item) => item.languages_code.includes(locale))[0]
+          ?.meta_description
+      "
+    />
+  </Head>
 
-    <Head>
-        <Title>
-            {{itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_title}}
-        </Title>
-        <Meta name="description"
-            :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
-    </Head>
+  <PagesProjectBanner :itemData="itemData" />
 
-    <PagesProjectBanner :itemData="itemData" />
+  <PagesProjectGallery v-if="itemData?.gallery?.length" :gallery="itemData?.gallery" />
 
-    <PagesProjectGallery v-if="itemData?.gallery?.length" :gallery="itemData?.gallery" />
+  <PagesProjectAbout
+    :itemInfo="itemData"
+    :itemData="itemData?.blocks?.filter((item) => item?.Block_id.id === 32)[0]?.Block_id?.strings"
+  />
 
-    <PagesProjectAbout :itemInfo="itemData"
-        :itemData="itemData?.blocks?.filter(item => item?.Block_id.id === 32)[0]?.Block_id?.strings" />
+  <PagesProjectGoogleMap v-if="itemData?.location?.coordinates?.length > 0" :itemData="itemData" />
 
-    <PagesProjectGoogleMap v-if="itemData?.location?.coordinates?.length > 0" :itemData="itemData" />
+  <PagesProjectFeatures
+    :itemStrings="
+      itemData?.blocks?.filter((item) => item?.Block_id.id === 25)[0]?.Block_id?.strings
+    "
+  />
 
-    <PagesProjectFeatures
-        :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 25)[0]?.Block_id?.strings" />
+  <PagesProjectInteractive :itemData="itemData" />
 
-    <PagesProjectInteractive :itemData="itemData" />
+  <PagesProjectApartments v-if="itemData?.apartments?.length" :itemData="itemData" />
 
-    <PagesProjectApartments v-if="itemData?.apartments?.length" :itemData="itemData" />
+  <PagesProjectInclusions
+    :itemStrings="
+      itemData?.blocks?.filter((item) => item?.Block_id.id === 28)[0]?.Block_id?.strings
+    "
+  />
 
-    <PagesProjectInclusions
-        :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 28)[0]?.Block_id?.strings" />
+  <PagesMainContacts />
 
-    <PagesMainContacts />
+  <PagesProject3D :apartments="itemData?.apartments" />
 
-    <PagesProject3D :apartments="itemData?.apartments" />
+  <PagesProjectForecast />
 
-    <PagesProjectForecast />
+  <PagesMainReasons
+    :itemStrings="
+      itemData?.blocks?.filter((item) => item?.Block_id.id === 29)[0]?.Block_id?.strings
+    "
+  />
 
-    <PagesMainReasons :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 29)[0]?.Block_id?.strings" />
+  <PagesMainNumbers
+    :itemStrings="
+      itemData?.blocks?.filter((item) => item?.Block_id.id === 30)[0]?.Block_id?.strings
+    "
+  />
 
-    <PagesMainNumbers :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 30)[0]?.Block_id?.strings" />
+  <PagesMainProcess
+    :itemStrings="
+      itemData?.blocks?.filter((item) => item?.Block_id.id === 31)[0]?.Block_id?.strings
+    "
+  />
 
-    <PagesMainProcess :itemStrings="itemData?.blocks?.filter(item => item?.Block_id.id === 31)[0]?.Block_id?.strings" />
+  <PagesProjectOtherProjects
+    v-if="itemData?.relative_projects?.length"
+    :projects="itemData?.relative_projects"
+  />
 
-    <PagesProjectOtherProjects v-if="itemData?.relative_projects?.length" :projects="itemData?.relative_projects" />
+  <PagesMainSales
+    v-if="itemData?.sales?.map((item) => item.Sale_id)?.length"
+    :list="itemData?.sales?.map((item) => item.Sale_id)"
+  />
 
-    <PagesMainSales v-if="itemData?.sales?.map(item => item.Sale_id)?.length"
-        :list="itemData?.sales?.map(item => item.Sale_id)" />
+  <PagesMainNews />
 
-    <PagesMainNews />
-
-    <PagesMainArticles />
-
+  <PagesMainArticles />
 </template>
-
 
 <script setup>
 import { computed, watch } from 'vue';
@@ -57,35 +87,46 @@ import { useRoute } from 'vue-router';
 import { useAsyncData } from '#imports';
 import { useLangStore } from '@/stores/functions/language';
 import { useProjectsStore } from '@/stores/functions/projects';
+import { useI18n } from 'vue-i18n';
 
 const route = useRoute();
 const langStore = useLangStore();
 const projectsStore = useProjectsStore();
-
+const { locale } = useI18n();
 
 // Устанавливаем язык из URL в хранилище
 langStore.lang = route.params.lang || 'ru';
 
 // Загружаем данные проекта
 const { data } = await useAsyncData('ProjectItem', () =>
-    $fetch(`/api/projects/${route.params.id}`)
+  $fetch(`/api/projects/${route.params.id}`),
 );
-
 
 // Реактивное хранение данных проекта
 const itemData = computed(() => data.value?.[0] ?? null);
 
-if (!itemData.value) throw createError({
+if (!itemData.value)
+  throw createError({
     statusCode: 404,
     statusMessage: 'Not Found',
-});
+  });
 
 // Обновляем текущий проект в сторе
 projectsStore.setCurrentProject(itemData.value);
 
 // Следим за изменением языка в URL и обновляем store
-watch(() => route.params.lang, (newLang) => {
+watch(
+  () => route.params.lang,
+  (newLang) => {
     langStore.lang = newLang || 'ru';
-});
+  },
+);
 
+// Следим за изменением i18n locale и обновляем store
+watch(
+  () => locale.value,
+  (newLocale) => {
+    langStore.lang = newLocale;
+  },
+);
 </script>

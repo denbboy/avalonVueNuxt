@@ -67,7 +67,14 @@
             class="mb-3 max-w-[100px] md:mb-0 md:mr-10"
             alt="logo"
           />
-          <div v-if="item?.projects[0]?.item?.price" class="flex items-center w-full gap-5">
+          <div
+            v-if="
+              item?.projects[0]?.item?.price &&
+              item?.projects[0]?.item?.price_local &&
+              item?.projects[0]?.item?.is_price_show
+            "
+            class="flex items-center w-full gap-5"
+          >
             <div
               v-if="item?.projects[0]?.item?.due_date"
               class="relative flex flex-col items-center justify-center w-full md:max-w-[186px] max-w-[141px] md:py-5 py-[15px]"
@@ -105,12 +112,11 @@
                 <br v-if="!$viewport.isLessThan('tablet')" class="hidden md:block" />
                 <span class="font-bold md:text-xl">
                   {{ $t('from') }}
-                  {{item?.projects[0]?.item?.price }}
-                  ₽
+                  {{ item?.projects[0]?.item?.price_local }}
                 </span>
               </h2>
               <p class="text-xs text-slate-50 opacity-60 text-center">
-                {{ item?.projects[0]?.item?.price }} $ {{ $t('in_usd') }}
+                {{ item?.projects[0]?.item?.price }}$
               </p>
             </div>
           </div>
@@ -295,9 +301,12 @@
               {{ $t('bali') }}
             </span>
           </div>
-          <div class="con md:ml-4 md:pl-5 md:px-7 relative">
+          <div
+            class="con md:ml-4 md:pl-5 md:px-7 relative"
+            v-if="item?.price && item?.price_local && item?.is_price_show"
+          >
             <div class="absolute h-12 left-0 top-1/2 -translate-y-1/2 w-[1px] bg-white/20"></div>
-            <div v-if="item?.price" class="relative px-5 py-3 w-fit md:text-center mb-8 lg:mb-0">
+            <div class="relative px-5 py-3 w-fit md:text-center mb-8 lg:mb-0">
               <NuxtImg
                 v-if="$viewport.isLessThan('tablet')"
                 class="absolute top-0 w-full left-0 -z-10 md:hidden h-full"
@@ -316,13 +325,10 @@
                 <br v-if="!$viewport.isLessThan('tablet')" class="hidden md:block" />
                 <span class="font-bold md:text-xl">
                   {{ $t('from') }}
-                  {{ item?.price }}
-                  ₽
+                  {{ item?.price_local }}
                 </span>
               </h2>
-              <p class="text-xs text-slate-50 opacity-60 text-center">
-                {{ item?.price }} $ {{ $t('in_usd') }}
-              </p>
+              <p class="text-xs text-slate-50 opacity-60 text-center">{{ item?.price }}$</p>
             </div>
           </div>
         </div>
