@@ -14,6 +14,7 @@
             v-model="phone"
             :preferred-countries="preferredCountries"
             :only-countries="sortedCountries"
+            default-country="id"
             @input="inputPhoneNumber"
           />
         </div>
@@ -107,7 +108,7 @@ const isSending = ref(false);
 const isSuccess = ref(false);
 
 const inputPhoneNumber = () => {
-  phone.value = phone.value.replace(/(?!^\+)[^\d]/g, '');
+  // Let autoFormat handle the formatting
 };
 
 const toolkitStore = useToolkit();
@@ -122,12 +123,13 @@ const placeholderLang = {
   ua: 'Введіть ваш номер телефону',
 };
 
-const inputOptions = {
+const inputOptions = computed(() => ({
   showDialCode: true,
-  autoFormat: false,
+  autoFormat: true,
   placeholder: placeholderLang[langStore.lang],
   maxlength: 15,
-};
+  mode: 'international',
+}));
 
 const submitForm = async () => {
   if (currentForm?.captcha) {

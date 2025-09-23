@@ -78,7 +78,10 @@
                   }}
                 </p>
               </div>
-              <div class="con order-1 md:order-none">
+              <div
+                v-if="itemData?.is_price_show && itemData?.price && itemData?.price_local"
+                class="con order-1 md:order-none"
+              >
                 <div
                   class="relative px-5 py-3 w-fit md:text-center md:px-7 min-w-[228px] md:min-w-0"
                 >
@@ -94,15 +97,16 @@
                     alt="bgd"
                     loading="lazy"
                   />
-                  <h2 v-if="itemData?.price" class="text-sm text-white">
+                  <h2 class="text-sm text-white">
                     {{ $t('cost') }}
                     <br v-if="!$viewport.isLessThan('tablet')" class="hidden md:block" />
                     <span class="font-bold md:text-xl">
-                      {{ $t('from') }} {{ formatAmount(convertUsdToIdr(itemData?.price)) }} ₽
+                      {{ $t('from') }}
+                      {{ itemData?.is_price_show ? itemData?.price_local : itemData?.price + ' $' }}
                     </span>
                   </h2>
                   <p class="text-xs text-slate-50 opacity-60 text-center">
-                    {{ formatAmount(itemData?.price) }} $ {{ $t('in_usd') }}
+                    {{ $t('from') }} {{ itemData?.price }}$
                   </p>
                 </div>
               </div>
@@ -367,7 +371,6 @@
 import { ref } from 'vue';
 import url from 'url';
 import { getYoutubePreview } from '~/functions/getYoutubePreview';
-import { convertUsdToIdr, formatAmount } from '~/utils/currency';
 
 const imageLoaded = ref(false);
 const image = ref(null);

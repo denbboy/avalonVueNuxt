@@ -105,12 +105,12 @@
                 <br v-if="!$viewport.isLessThan('tablet')" class="hidden md:block" />
                 <span class="font-bold md:text-xl">
                   {{ $t('from') }}
-                  {{ formatAmount(convertUsdToIdr(item?.projects[0]?.item?.price)) }}
+                  {{item?.projects[0]?.item?.price }}
                   ₽
                 </span>
               </h2>
               <p class="text-xs text-slate-50 opacity-60 text-center">
-                {{ formatAmount(item?.projects[0]?.item?.price) }} $ {{ $t('in_usd') }}
+                {{ item?.projects[0]?.item?.price }} $ {{ $t('in_usd') }}
               </p>
             </div>
           </div>
@@ -316,12 +316,12 @@
                 <br v-if="!$viewport.isLessThan('tablet')" class="hidden md:block" />
                 <span class="font-bold md:text-xl">
                   {{ $t('from') }}
-                  {{ formatAmount(convertUsdToIdr(item?.price)) }}
+                  {{ item?.price }}
                   ₽
                 </span>
               </h2>
               <p class="text-xs text-slate-50 opacity-60 text-center">
-                {{ formatAmount(item?.price) }} $ {{ $t('in_usd') }}
+                {{ item?.price }} $ {{ $t('in_usd') }}
               </p>
             </div>
           </div>
@@ -416,7 +416,6 @@
 
 <script setup>
 import { getYoutubePreview } from '~/functions/getYoutubePreview';
-import { convertUsdToIdr, formatAmount } from '~/utils/currency';
 import url from 'url';
 import { useNuxtApp } from '#app';
 import { ref, computed } from 'vue';

@@ -128,13 +128,13 @@ const placeholderLang = {
   en: 'Enter your phone number',
   ua: 'Введіть ваш номер телефону',
 };
-
-const inputOptions = {
+const inputOptions = computed(() => ({
   showDialCode: true,
-  autoFormat: false,
+  autoFormat: true,
   placeholder: placeholderLang[langStore.lang],
   maxlength: 15,
-};
+  mode: 'international',
+}));
 
 const submitForm = async () => {
   if (currentForm?.captcha) {

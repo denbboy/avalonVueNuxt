@@ -29,9 +29,9 @@
           {{ translations?.title }}
         </h2>
         <p class="text-blue-400 leading-none text-[18px] md:text-[20px] flex items-center">
-          {{ $t('from') }} <span>&nbsp;{{ formatAmount(convertUsdToIdr(itemData?.price)) }} ₽</span>
+          {{ $t('from') }} <span>&nbsp;{{ itemData?.price }} $</span>
           <span class="text-white/60 text-xs ml-2">
-            {{ formatAmount(itemData?.price) }} $ {{ $t('in_usd') }}
+            {{ itemData?.price }} $ {{ $t('in_usd') }}
           </span>
         </p>
       </div>
@@ -210,7 +210,6 @@ import { ref, computed } from 'vue';
 import { Navigation, A11y, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { useI18n } from 'vue-i18n';
-import { convertUsdToIdr, formatAmount } from '~/utils/currency';
 // import { useModalsStore } from '@/stores/modals'; // Убедись, что импорт правильный
 
 import 'swiper/css';

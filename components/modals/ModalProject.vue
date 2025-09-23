@@ -14,6 +14,7 @@
             v-model="phone"
             :preferred-countries="preferredCountries"
             :only-countries="sortedCountries"
+            default-country="id"
             @input="inputPhoneNumber"
           />
         </div>
@@ -195,10 +196,12 @@ const placeholderLang = {
   ua: '999-99-9999',
 };
 
-const inputOptions = {
+const inputOptions = computed(() => ({
   showDialCode: true,
-  autoFormat: false,
+  autoFormat: true,
   placeholder: placeholderLang[langStore.lang],
   maxlength: 15,
-};
+  mode: 'international',
+}));
+
 </script>

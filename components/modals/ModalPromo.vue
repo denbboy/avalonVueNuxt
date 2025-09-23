@@ -18,6 +18,7 @@
             v-model="phone"
             :preferred-countries="preferredCountries"
             :only-countries="sortedCountries"
+              default-country="id"
             @input="inputPhoneNumber"
           />
         </div>
@@ -181,12 +182,13 @@ const formatPromoDate = () => {
   return `${until} ${day} ${monthName[month]}`;
 };
 
-const inputOptions = {
+const inputOptions = computed(() => ({
   showDialCode: true,
-  autoFormat: false,
+  autoFormat: true,
   placeholder: placeholderLang[langStore.lang],
   maxlength: 15,
-};
+  mode: 'international',
+}));
 
 const submitForm = async () => {
   if (currentForm?.captcha) {

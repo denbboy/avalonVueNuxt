@@ -107,10 +107,10 @@
                 <div class="flex items-center mb-5">
                   <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]"
                     >от
-                    {{ formatAmount(convertUsdToIdr(item.related_Project_id?.price)) }} ₽</strong
+                    {{ item.related_Project_id?.price }} $</strong
                   >
                   <span class="text-white/60 text-xs hidden md:block">
-                    {{ formatAmount(item.related_Project_id?.price) }} $ {{ $t('in_usd') }}
+                    {{ item.related_Project_id?.price }} $ {{ $t('in_usd') }}
                   </span>
                 </div>
                 <div class="flex">
@@ -147,7 +147,6 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { convertUsdToIdr, formatAmount } from '~/utils/currency';
 
 const props = defineProps(['projects']);
 const { t, locale } = useI18n();

@@ -18,6 +18,7 @@
             v-model="phone"
             :preferred-countries="preferredCountries"
             :only-countries="sortedCountries"
+            default-country="id"
             @input="inputPhoneNumber"
           />
         </div>
@@ -112,9 +113,7 @@ const errorText = ref('');
 const isSending = ref(false);
 const isSuccess = ref(false);
 
-const inputPhoneNumber = () => {
-  phone.value = phone.value.replace(/(?!^\+)[^\d]/g, '');
-};
+const inputPhoneNumber = () => {};
 
 const toolkitStore = useToolkit();
 
@@ -199,10 +198,11 @@ const placeholderLang = {
   ua: '999-99-9999',
 };
 
-const inputOptions = {
+const inputOptions = computed(() => ({
   showDialCode: true,
-  autoFormat: false,
+  autoFormat: true,
   placeholder: placeholderLang[langStore.lang],
   maxlength: 15,
-};
+  mode: 'international',
+}));
 </script>

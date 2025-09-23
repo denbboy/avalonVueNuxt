@@ -163,10 +163,10 @@
                     <div class="flex items-center mb-5">
                       <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]"
                         >{{ $t('from') }}
-                        {{ formatAmount(convertUsdToIdr(projectInclude?.price)) }} ₽</strong
+                        {{ projectInclude?.price }} $</strong
                       >
                       <span class="text-white/60 text-xs hidden md:block">
-                        {{ formatAmount(projectInclude?.price) }} $ {{ $t('in_usd') }}
+                        {{ projectInclude?.price }} $ {{ $t('in_usd') }}
                       </span>
                     </div>
 
@@ -337,7 +337,6 @@
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
-import { convertUsdToIdr, formatAmount } from '~/utils/currency';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
