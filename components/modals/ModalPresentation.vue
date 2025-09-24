@@ -19,7 +19,6 @@
             :preferred-countries="preferredCountries"
             :only-countries="sortedCountries"
             default-country="id"
-            @input="inputPhoneNumber"
           />
         </div>
 
@@ -112,8 +111,6 @@ const isError = ref(null);
 const errorText = ref('');
 const isSending = ref(false);
 const isSuccess = ref(false);
-
-const inputPhoneNumber = () => {};
 
 const toolkitStore = useToolkit();
 

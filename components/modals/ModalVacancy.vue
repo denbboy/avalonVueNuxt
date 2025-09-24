@@ -199,7 +199,7 @@ const handleSubmitForm = async () => {
           name: fullName.value,
           email: email.value,
           message: message.value,
-          file: fileId ? fileId : null,
+          file: fileId || null,
           form: 'vacancy',
           source_url: window.location.href,
         },

@@ -38,8 +38,7 @@ export default defineEventHandler(async (event) => {
 
       getUrls(Projects, "/projects", urls);
     } catch (directusError) {
-      console.warn('Could not fetch projects from Directus:', directusError.message);
-      // Continue without projects data
+      console.warn('Could not fetch projects from Directus:', directusError && directusError.message ? directusError.message : directusError);
     }
 
     const sitemap = new SitemapStream({
