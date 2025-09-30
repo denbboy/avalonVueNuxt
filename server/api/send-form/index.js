@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
       file,
       message,
       method,
-      url,
+      source_url,
       vanancyTitle,
     } = await readBody(event);
 
@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
     };
 
     const note =
-      `Страница: ${url}\n\n` +
+      `Страница: ${source_url}\n\n` +
       (form && `Форма: ${formTypes[form]}`) +
       (vanancyTitle ? `\n\nВакансия: ${vanancyTitle}` : "");
 
@@ -74,6 +74,8 @@ export default defineEventHandler(async (event) => {
           file: file,
           email: email,
           message: message,
+          source_url: source_url,
+          vanancyTitle: vanancyTitle,
         })
       );
     } else if (form === "presentation") {
@@ -82,6 +84,7 @@ export default defineEventHandler(async (event) => {
         JSON.stringify({
           method: method,
           phone: phone,
+          source_url: source_url,
         })
       );
     } else {
@@ -95,6 +98,7 @@ export default defineEventHandler(async (event) => {
           message: message,
           method: method,
           note: note,
+          source_url: source_url,
         })
       );
     }

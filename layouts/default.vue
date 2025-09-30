@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { useToolkit } from './../stores/functions/toolkit';
 import { useProjectsStore } from './../stores/functions/projects';
@@ -27,29 +27,30 @@ const projectsStore = useProjectsStore();
 const blocksStore = useBlocksStore();
 const pagesStore = usePagesStore();
 const formsStore = useFormsStore();
-
-const settings = await useFetchWithCache('/api/settings')
+const langStore = useLangStore();
+const settings = await useFetchWithCache('/api/settings');
 toolkitStore.setSettings(settings?.value);
 
-const projects = await useFetchWithCache('/api/projects')
+const projects = await useFetchWithCache('/api/projects');
 projectsStore.setProjects(projects?.value);
 
-const forms = await useFetchWithCache('/api/forms')
-formsStore.setForms(forms?.value)
+const forms = await useFetchWithCache('/api/forms');
+formsStore.setForms(forms?.value);
 
-const pages = await useFetchWithCache('/api/navigationPages')
+const pages = await useFetchWithCache('/api/navigationPages');
 pagesStore.setPages(pages?.value);
 
-const blocks = await useFetchWithCache('/api/blocks')
+const blocks = await useFetchWithCache('/api/blocks');
 blocksStore.setBlocks(blocks?.value);
-
 
 const isProjectHeader = ref(route.fullPath.includes('/projects/'));
 
-watch(() => route.fullPath, (newPath) => {
-  isProjectHeader.value = newPath.includes('/projects/');
-});
-
+watch(
+  () => route.fullPath,
+  (newPath) => {
+    isProjectHeader.value = newPath.includes('/projects/');
+  },
+);
 
 // const { $fbq } = useNuxtApp()
 
@@ -64,7 +65,21 @@ watch(() => route.fullPath, (newPath) => {
 //   }, 500)
 // })
 
-
+watch(
+  () => route.fullPath,
+  (newPath) => {
+    isProjectHeader.value = newPath.includes('/projects/');
+  },
+);
+const currentLang = computed(() => {
+  const urlLang = route.fullPath.match(/^\/([a-z]{2})(\/|$)/)?.[1];
+  return urlLang || langStore.lang || 'en';
+});
+useHead({
+  htmlAttrs: {
+    lang: currentLang,
+  },
+});
 </script>
 
 <style>
@@ -73,14 +88,13 @@ watch(() => route.fullPath, (newPath) => {
 }
 
 .cookieControl__BarContainer {
-  background: #0A4A7F;
+  background: #0a4a7f;
   box-shadow: 0 -6px 5px 0px #012d52;
 }
 
 .grecaptcha-badge {
   opacity: 0;
 }
-
 
 .skeleton {
   width: 100%;

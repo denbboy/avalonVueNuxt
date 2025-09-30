@@ -1,17 +1,15 @@
 <template>
-
   <NuxtLayout>
     <transition name="fade">
       <NuxtPage />
     </transition>
   </NuxtLayout>
-
 </template>
 
 <script setup>
-import { useCookie } from "#app";
-
-import { useHead } from '@unhead/vue'
+import { ref } from 'vue';
+import { useCookie } from '#app';
+import { useHead } from '@unhead/vue';
 
 useHead({
   htmlAttrs: {
@@ -24,8 +22,8 @@ useHead({
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-NW6LBFJS');`,
-      type: 'text/javascript'
-    }
+      type: 'text/javascript',
+    },
   ],
   noscript: [
     {
@@ -33,56 +31,64 @@ useHead({
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NW6LBFJS"
                 height="0" width="0" style="display:none;visibility:hidden"></iframe>
       `,
-    }
+    },
   ],
   __dangerouslyDisableSanitizersByTagID: {
     'gtm-script': ['innerHTML'],
-    'noscript': ['innerHTML'],
+    noscript: ['innerHTML'],
+  },
+});
+
+const nuxtApp = useNuxtApp();
+const modalsStore = useModalsStore();
+
+let promoTimeout = null;
+const promoModalDismissals = useCookie('promoModalDismissals', {
+  default: () => 0,
+  maxAge: 60 * 60 * 24 * 30,
+});
+
+const startPromoTimer = (delay = 15000) => {
+  if (promoTimeout) {
+    clearTimeout(promoTimeout);
   }
-})
 
+  if (promoModalDismissals.value >= 2) {
+    return;
+  }
 
-// const nuxtApp = useNuxtApp();
-// const modalsStore = useModalsStore();
+  promoTimeout = setTimeout(() => {
+    modalsStore.addModal('promo');
+    if (import.meta.client) {
+      localStorage.setItem('promoModalTimerTriggered', 'true');
+    }
+  }, delay);
+};
 
-// const isShowedModal = ref(false)
+nuxtApp.hook('page:finish', () => {
+  startPromoTimer(15000);
+});
 
-// const sitemap = await useAsyncData("Sitemap", () => $fetch('/api/__sitemap__'))
+if (import.meta.client) {
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'promoModalDismissals') {
+      const dismissals = parseInt(e.newValue) || 0;
+      promoModalDismissals.value = dismissals;
 
-// let timeoutId;
+      if (dismissals === 1) {
+        startPromoTimer(40000);
+      } else if (dismissals >= 2) {
+        if (promoTimeout) {
+          clearTimeout(promoTimeout);
+          promoTimeout = null;
+        }
+      }
+    }
+  });
 
-// nuxtApp.hook("page:finish", () => {
-//   const isModalShownCookie = useCookie("isModalShown", { maxAge: 60 * 60 * 24 * 30 }); // срок действия: 30 дней
-//   const isSecondModalShownCookie = useCookie("isSecondModalShown", { maxAge: 60 * 60 * 24 * 30 }); // отслеживание второго показа
-
-//   if (isModalShownCookie.value && isSecondModalShownCookie.value) {
-//     return; // Если обе модалки уже были показаны, ничего не делаем
-//   }
-
-//   let firstTimeout, secondTimeout;
-
-//   if (!isModalShownCookie.value) {
-//     firstTimeout = setTimeout(() => {
-//       modalsStore.addModal('message');
-//       isShowedModal.value = true;
-//       isModalShownCookie.value = true;
-
-//       // Второй показ через 40 секунд после первого
-//       secondTimeout = setTimeout(() => {
-//         modalsStore.addModal('message');
-//         isShowedModal.value = true;
-//         isSecondModalShownCookie.value = true;
-//       }, 1);
-//     }, 1);
-//   } else if (!isSecondModalShownCookie.value) {
-//     // Если первая модалка уже была показана, но вторая нет, ждем 40 секунд
-//     secondTimeout = setTimeout(() => {
-//       modalsStore.addModal('message');
-//       isShowedModal.value = true;
-//       isSecondModalShownCookie.value = true;
-//     }, 1);
-//   }
-// });
+  const localStorageDismissals = parseInt(localStorage.getItem('promoModalDismissals')) || 0;
+  promoModalDismissals.value = localStorageDismissals;
+}
 
 import { watchEffect, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
@@ -92,31 +98,36 @@ const route = useRoute();
 const langStore = useLangStore();
 const langCookie = useCookie('lang'); // Создаём cookie для хранения языка
 
-// onMounted(() => {
-//   // 1. Проверяем куки
-//   if (langCookie.value) {
-//     langStore.lang = langCookie.value;
-//   } else {
-//     // 2. Определяем язык системы
-//     const systemLang = navigator.language?.split('-')[0] || 'ru';
-
-//     // 3. Если язык системы поддерживается, устанавливаем его
-//     const supportedLangs = ['ru', 'ua', 'en']; // Список поддерживаемых языков
-//     langStore.lang = supportedLangs.includes(systemLang) ? systemLang : 'ru';
-
-//     // 4. Сохраняем в куки
-//     langCookie.value = langStore.lang;
-//   }
-// });
-
-// 5. Следим за изменением языка в URL и обновляем `langStore.lang`
-watchEffect(() => {
-  if (route.params.lang) {
+onMounted(() => {
+  if (route.params.lang && ['ru', 'ua', 'en'].includes(route.params.lang)) {
     langStore.lang = route.params.lang;
-    langCookie.value = route.params.lang; // Обновляем куки при изменении языка в URL
+    langCookie.value = route.params.lang;
+  } else if (langCookie.value) {
+    langStore.lang = langCookie.value;
+  } else {
+    const systemLang = navigator.language?.split('-')[0] || 'en';
+
+    const supportedLangs = ['ru', 'ua', 'en'];
+    if (systemLang === 'uk') {
+      langStore.lang = 'ua';
+    } else {
+      langStore.lang = supportedLangs.includes(systemLang) ? systemLang : 'en';
+    }
+
+    langCookie.value = langStore.lang;
   }
 });
 
+watchEffect(() => {
+  const urlLang = route.fullPath.match(/^\/([a-z]{2})(\/|$)/)?.[1];
+  if (urlLang && ['ru', 'ua', 'en'].includes(urlLang)) {
+    langStore.lang = urlLang;
+    langCookie.value = urlLang;
+  } else if (route.params.lang) {
+    langStore.lang = route.params.lang;
+    langCookie.value = route.params.lang;
+  }
+});
 </script>
 
 <style>
