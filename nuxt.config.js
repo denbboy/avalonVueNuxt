@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   // },
 
   router: {
-    middleware: ["locale", "gtm"],
+    middleware: ["gtm"],
   },
 
   // sitemap: {
@@ -175,17 +175,15 @@ export default defineNuxtConfig({
 
   i18n: {
     locales: [
-      { code: "ua", iso: "ua-US", name: "Ukraine", file: "ua.json" },
-      { code: "ru", iso: "ru-RU", name: "Русский", file: "ru.json" },
       { code: "en", iso: "en-US", name: "English", file: "en.json" },
+      { code: "ru", iso: "ru-RU", name: "Русский", file: "ru.json" },
+      { code: "ua", iso: "ua-US", name: "Ukraine", file: "ua.json" },
     ],
     defaultLocale: "en",
     langDir: "locales/",
     vueI18n: "./plugins/i18n.config.js",
-    detectBrowserLanguage: {
-      useCookie: false,
-      redirectOn: "no",
-    },
+    strategy: "prefix_except_default",
+    detectBrowserLanguage: false,
   },
 
   // swiper: {

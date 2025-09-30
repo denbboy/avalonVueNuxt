@@ -384,7 +384,7 @@
                   pagesStore.pagesList
                     ?.filter((item) => item.slug === 'cooperation')[0]
                     ?.translations?.filter((item) =>
-                      item.languages_code.includes(langStore.lang),
+                      item.languages_code.includes(locale),
                     )[0]?.title
                 }}
               </NuxtLink>
@@ -397,7 +397,7 @@
                   pagesStore.pagesList
                     ?.filter((item) => item.slug === 'career')[0]
                     ?.translations?.filter((item) =>
-                      item.languages_code.includes(langStore.lang),
+                      item.languages_code.includes(locale),
                     )[0]?.title
                 }}
               </NuxtLink>
@@ -410,7 +410,7 @@
                   pagesStore.pagesList
                     ?.filter((item) => item.slug === 'privacy-police')[0]
                     ?.translations?.filter((item) =>
-                      item.languages_code.includes(langStore.lang),
+                      item.languages_code.includes(locale),
                     )[0]?.title
                 }}
               </NuxtLink>
@@ -423,7 +423,7 @@
                   pagesStore.pagesList
                     ?.filter((item) => item.slug === 'terms')[0]
                     ?.translations?.filter((item) =>
-                      item.languages_code.includes(langStore.lang),
+                      item.languages_code.includes(locale),
                     )[0]?.title
                 }}
               </NuxtLink>
@@ -444,9 +444,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { usePagesStore } from '~/stores/functions/pages';
 import { useToolkit } from '~/stores/functions/toolkit';
+import { useLangStore } from '~/stores/functions/language';
 import { VueTelInput } from 'vue-tel-input';
 import 'vue-tel-input/vue-tel-input.css';
 import iso31661 from 'iso-3166-1';
@@ -483,6 +485,7 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScrollWS);
 });
 
+const { locale } = useI18n();
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
 const isShowArrowUp = ref(false);
@@ -525,12 +528,12 @@ const placeholderLang = {
   ua: 'Введіть ваш номер телефону',
 };
 
-const inputOptions = {
+const inputOptions = computed(() => ({
   showDialCode: true,
   autoFormat: false,
-  placeholder: placeholderLang[langStore.lang],
+  placeholder: placeholderLang[locale.value],
   maxlength: 15,
-};
+}));
 
 const countryChanged = (newCountry) => {
   // Обрабатываем изменение страны

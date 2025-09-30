@@ -13,15 +13,18 @@
 <script setup>
 import { ref, watch, computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 import { useToolkit } from './../stores/functions/toolkit';
 import { useProjectsStore } from './../stores/functions/projects';
 import { useBlocksStore } from './../stores/functions/blocks';
 import { usePagesStore } from '~/stores/functions/pages';
 import { useFormsStore } from '~/stores/functions/forms';
+import { useLangStore } from '~/stores/functions/language';
 
 import useFetchWithCache from '~/hooks/useFetchWithCache';
 
 const route = useRoute();
+const { locale } = useI18n();
 const toolkitStore = useToolkit();
 const projectsStore = useProjectsStore();
 const blocksStore = useBlocksStore();
@@ -71,15 +74,12 @@ watch(
     isProjectHeader.value = newPath.includes('/projects/');
   },
 );
-const currentLang = computed(() => {
-  const urlLang = route.fullPath.match(/^\/([a-z]{2})(\/|$)/)?.[1];
-  return urlLang || langStore.lang || 'en';
-});
-useHead({
+// Make head reactive to locale changes
+useHead(() => ({
   htmlAttrs: {
-    lang: currentLang,
+    lang: locale.value,
   },
-});
+}));
 </script>
 
 <style>
