@@ -77,9 +77,9 @@
                 class="projectsMenu opacity-0 invisible group-hover:opacity-100 group-hover:visible flex transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-0 border border-whiteOp-300"
               >
                 <NuxtLink
-                  :href="`/${mainPageLink.replace('/', '')}/projects/${
+                  :href="`${mainPageLink === '/' ? '' : mainPageLink}/projects/${
                     item?.translations?.filter((item) =>
-                      item.languages_code.includes(langStore.lang),
+                      item.languages_code.toLowerCase().startsWith(langStore.lang.toLowerCase()),
                     )[0]?.slug
                   }`"
                   v-for="item in projectsStore.projects"
@@ -88,7 +88,7 @@
                 >
                   {{
                     item?.translations?.filter((item) =>
-                      item.languages_code.includes(langStore.lang),
+                      item.languages_code.toLowerCase().startsWith(langStore.lang.toLowerCase()),
                     )[0]?.title
                   }}
                 </NuxtLink>
@@ -328,9 +328,9 @@
           >
             <NuxtLink
               @click="handleCloseBurger"
-              :href="`/projects/${
+              :href="`${mainPageLink === '/' ? '' : mainPageLink}/projects/${
                 item?.translations?.filter((item) =>
-                  item.languages_code.includes(langStore.lang),
+                  item.languages_code.toLowerCase().startsWith(langStore.lang.toLowerCase()),
                 )[0]?.slug
               }`"
               v-for="item in projectsStore.projects"
@@ -339,7 +339,7 @@
             >
               {{
                 item?.translations?.filter((item) =>
-                  item.languages_code.includes(langStore.lang),
+                  item.languages_code.toLowerCase().startsWith(langStore.lang.toLowerCase()),
                 )[0]?.title
               }}
             </NuxtLink>
@@ -519,13 +519,27 @@ const changeLocale = async (newLocale) => {
   setTimeout(() => changeLanguage(newLocale), 500);
 };
 
-watchEffect(() => {
+onMounted(() => {
   if (typeof window !== 'undefined') {
-    onMounted(() => {
-      mainPageLink.value = `/${localStorage.getItem('selectedLanguage')?.replace('/', '')}`;
-    });
+    // Get language from current route first
+    const currentPath = route.path;
+    const routeLang = currentPath.match(/^\/([a-z]{2})(\/|$)/)?.[1];
+
+    // Use route language or fallback to stored language
+    const lang = routeLang || localStorage.getItem('selectedLanguage') || 'en';
+
+    // Set mainPageLink: empty for English, language prefix for others
+    mainPageLink.value = lang === 'en' ? '/' : `/${lang}`;
   }
 });
+
+// Watch for language changes
+watch(
+  () => langStore.lang,
+  (newLang) => {
+    mainPageLink.value = newLang === 'en' ? '/' : `/${newLang}`;
+  },
+);
 
 const changeLanguage = async (newLocale) => {
   const { $i18n } = useNuxtApp();
@@ -565,7 +579,7 @@ const changeLanguage = async (newLocale) => {
   localStorage.setItem('i18n_redirected', newLocale);
 
   // Update main page link
-  mainPageLink.value = newLocale !== DEFAULT_LOCALE ? `/${newLocale}` : '/';
+  mainPageLink.value = newLocale === 'en' ? '/' : `/${newLocale}`;
 
   // Navigate to the new URL with proper locale
   const newPath =
