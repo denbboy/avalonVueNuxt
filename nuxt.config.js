@@ -9,32 +9,89 @@ export default defineNuxtConfig({
   //   compressPublicAssets: true, // включает gzip/brotli для статики
   // },
 
-  // image: {
-  //   provider: 'static',
-  //   dir: 'public', // важно! не 'static'
-  // },
-
-  router: {
-    middleware: ["gtm"],
+  image: {
+    dir: "static",
   },
 
-  // sitemap: {
-  //   siteUrl: 'https://avalonbali.com/', // 🔁 Укажи свой домен
-  //   trailingSlash: true,
-  //   gzip: true,
-  //   i18n: {
-  //     locales: ['en', 'ua'],
-  //     defaultLocale: 'en',
-  //     routesNameSeparator: '___' // по умолчанию ___
-  //   }
-  //   // Если у тебя есть динамические маршруты, можно добавить вручную
-  //   // или подключить из API
-  //   // async routes() {
-  //   //   const res = await fetch('https://example.com/api/routes')
-  //   //   const data = await res.json()
-  //   //   return data.map((item) => `/blog/${item.slug}`)
-  //   // }
-  // },
+  router: {
+    middleware: ["locale", "gtm"],
+  },
+
+  nitro: {
+    routeRules: {
+      '/en': { redirect: { to: '/', statusCode: 301 } },
+      '/en/**': { redirect: { to: '/**', statusCode: 301 } },
+      '/**': {
+        headers: {
+          'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
+          'X-Frame-Options': 'SAMEORIGIN',
+          'X-Content-Type-Options': 'nosniff',
+          'Referrer-Policy': 'strict-origin-when-cross-origin',
+          'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+          'Content-Security-Policy': [
+            "default-src 'self'",
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://apis.google.com",
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+            "font-src 'self' https://fonts.gstatic.com",
+            "img-src 'self' data: https: blob:",
+            "media-src 'self' https: blob:",
+            "connect-src 'self' https://api.avalonbali.com https://www.google-analytics.com https://www.googletagmanager.com",
+            "frame-src 'self' https://www.google.com",
+            "object-src 'none'",
+            "base-uri 'self'",
+            "form-action 'self'"
+          ].join('; ')
+        }
+      }
+    },
+    experimental: {
+      wasm: true,
+    },
+  },
+
+  app: {
+    head: {
+      meta: [
+        {
+          name: 'robots',
+          content: process.env.VERCEL ? 'noindex, nofollow' : 'index, follow'
+        }
+      ]
+    }
+  },
+
+  security: {
+    headers: {
+      crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+    },
+  },
+
+  runtimeConfig: {
+    public: {
+      apiBase: 'https://api.avalonbali.com/',
+    },
+  },
+
+  sitemap: {
+    autoI18n: false,
+    urls: [
+      { url: "/", changefreq: "monthly", priority: 1.0 },
+      { url: "/ua", changefreq: "monthly", priority: 0.9 },
+      { url: "/ru", changefreq: "monthly", priority: 0.9 },
+      { url: "/#about-company", changefreq: "monthly", priority: 0.8 },
+      { url: "/#island", changefreq: "monthly", priority: 0.8 },
+      { url: "/cooperation", changefreq: "monthly", priority: 0.8 },
+      { url: "/ua/cooperation", changefreq: "monthly", priority: 0.8 },
+      { url: "/ru/cooperation", changefreq: "monthly", priority: 0.8 },
+      { url: "/career", changefreq: "monthly", priority: 0.8 },
+      { url: "/ua/career", changefreq: "monthly", priority: 0.8 },
+      { url: "/ru/career", changefreq: "monthly", priority: 0.8 },
+    ],
+    defaults: {
+      changefreq: 'monthly',
+      priority: 0.8,
+    },
+  },
 
   // robots: {
   //   debug: false,
@@ -118,50 +175,8 @@ export default defineNuxtConfig({
     "@nuxt/image",
     // "nuxt-meta-pixel",
     "nuxt-viewport",
-    "@nuxtjs/sitemap",
-    // "@nuxt/image-edge",
+    "nuxt-simple-sitemap",
   ],
-
-  sitemap: {
-    siteUrl: "https://avalonbali.com", // 👈 обязательно!
-    gzip: true,
-    trailingSlash: false,
-    sitemapName: 'sitemap',
-
-    async routes() {
-      const collections = [
-        "Article",
-        "News",
-        "Page",
-        "Project",
-        "Sale",
-      ];
-      const baseUrl = "https://api.avalonbali.com/items";
-      const routes = [];
-
-      for (const collection of collections) {
-        try {
-          const res = await $fetch(
-            `${baseUrl}/${collection}?limit=500&fields=translations.slug,translations.languages_code`
-          );
-          for (const item of res.data) {
-            for (const t of item.translations) {
-              if (t.slug && t.languages_code) {
-                const prefix =
-                  t.languages_code === "en-US" ? "" : `/${t.languages_code}`;
-                const collectionPath = collection.toLowerCase(); // 👈 чтобы путь был /project/slug, а не /Project/slug
-                routes.push(`${prefix}/${collectionPath}/${t.slug}`);
-              }
-            }
-          }
-        } catch (err) {
-          console.warn(`Ошибка загрузки ${collection}:`, err);
-        }
-      }
-
-      return routes;
-    },
-  },
 
   directus: {
     url: "https://api.avalonbali.com/",
@@ -175,15 +190,19 @@ export default defineNuxtConfig({
 
   i18n: {
     locales: [
-      { code: "en", iso: "en-US", name: "English", file: "en.json" },
-      { code: "ru", iso: "ru-RU", name: "Русский", file: "ru.json" },
       { code: "ua", iso: "ua-US", name: "Ukraine", file: "ua.json" },
+      { code: "ru", iso: "ru-RU", name: "Русский", file: "ru.json" },
+      { code: "en", iso: "en-US", name: "English", file: "en.json" },
     ],
     defaultLocale: "en",
     langDir: "locales/",
     vueI18n: "./plugins/i18n.config.js",
     strategy: "prefix_except_default",
-    detectBrowserLanguage: false,
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+    },
   },
 
   // swiper: {
