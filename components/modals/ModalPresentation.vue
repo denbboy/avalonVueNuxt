@@ -201,7 +201,7 @@ const placeholderLang = {
 
 const inputOptions = {
   showDialCode: true,
-  autoFormat: false,
+  autoFormat: true,
   placeholder: placeholderLang[langStore.lang],
   maxlength: 15,
 };

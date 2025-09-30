@@ -126,7 +126,7 @@
 
   "connect_in_whatsapp": "Connect on WhatsApp",
 
-  "m_vacancy_text_1": "Attach a Resume File",
+  "m_vacancy_text_1": "Attach a File",
   "m_vacancy_text_2": ".doc, .docx, .txt, .rtf, .odt, .pdf, .jpg, .png up to 5 MB.",
   "m_vacancy_text_3": "File too large",
 
@@ -139,10 +139,10 @@
   "m_project_text_1": "Leave your contact to get a presentation on the project",
   "m_promo_text_1": "Leave your contact and get a special offer",
   "m_promo_text_2": "Phone for messaging apps",
-  "m_promo_text_3": "By clicking the 'Send Resume' button, you agree to our",
+  "m_promo_text_3": "By clicking the 'Send' button, you agree to our",
   "m_message_text_1": "Enter your contact in messengers, and we will contact you.",
   "m_message_text_2": "Phone for messaging apps",
-  "m_message_text_3": "By clicking the 'Send Resume' button, you agree to our",
+  "m_message_text_3": "By clicking the 'Send Offer' button, you agree to our",
   "policy": "Privacy Policy",
 
   "deadline": "Completion",
@@ -163,7 +163,7 @@
   "show_all": "Show all",
 
   "else_sales": "Other promotions",
-  "button_vac": "Apply for a job",
+  "button_vac": "Cooperation",
   "input_name": "Your name",
   "input_textarea": "Enter the text of the cover letter",
 

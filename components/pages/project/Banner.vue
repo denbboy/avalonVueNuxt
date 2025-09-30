@@ -106,9 +106,6 @@
                   <p class="text-xs text-slate-50 opacity-60 text-center">
                     {{ $t('from') }} {{ itemData?.price }}$
                   </p>
-                  <p class="text-xs text-slate-50 opacity-60 text-center">
-                    {{ $t('including_taxes') }}
-                  </p>
                 </div>
               </div>
               <div
