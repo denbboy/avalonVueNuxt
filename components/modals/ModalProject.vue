@@ -1,16 +1,9 @@
 <template>
   <div
-    class="content__inner w-full z-0 relative overflow-hidden p-5 lg:p-10 max-w-[600px] flex flex-col items-center h-full"
+    class="content__inner z-0 relative overflow-hidden p-5 lg:p-10 max-w-[600px] flex flex-col items-center justify-center h-full"
   >
-    <div class="absolute right-[-34px] -top-5 lg:top-5 z-0">
-      <img src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
-    </div>
-    <div class="absolute left-[-34px] bottom-0 lg:bottom-[154px] z-0">
-      <img src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
-    </div>
-
     <h2 class="text-white text-lg md:text-2xl font-bold text-center mb-5">
-      {{ $t('m_message_text_1') }}
+      {{ $t('m_project_text_1') }}
     </h2>
 
     <form @submit.prevent="submitForm" class="flex w-full flex-col text-center">
@@ -21,6 +14,7 @@
             v-model="phone"
             :preferred-countries="preferredCountries"
             :only-countries="sortedCountries"
+            default-country="id"
             @input="inputPhoneNumber"
           />
         </div>
@@ -32,7 +26,7 @@
             'max-h-0 opacity-0': !isError,
           }"
         >
-          {{ $t('fill_all_fields') }}
+          {{ errorText.length ? errorText : $t('fill_all_fields') }}
         </p>
         <p
           class="text-white/50 text-left transition-all h-full"
@@ -57,17 +51,19 @@
           type="submit"
           class="white-button w-full mt-5 lg:leading-[120%] lg:py-5 leading-[90%]"
         >
-          {{ $t('send') }}
+          {{ $t('get_a_presentation') }}
         </button>
 
         <p class="text-center text-white text-xs lg:text-sm w-full mt-5">
-          {{ $t('m_message_text_3') }}
-          <NuxtLink
-            href="/docs/privacy-police"
+          {{ $t('m_calendar_text_4_1') }}
+          <a
+            target="_blank"
+            :href="toolkitStore?.settings?.soc_link_whats"
             class="text-blue-400 font-bold underline transition-all hover:text-blue-700"
           >
-            {{ $t('policy') }}
-          </NuxtLink>
+            {{ $t('m_calendar_text_4_2') }}
+          </a>
+          {{ $t('m_calendar_text_4_3') }}
         </p>
       </div>
     </form>
@@ -78,11 +74,13 @@
 import { ref, watch } from 'vue';
 import { usePagesStore } from '~/stores/functions/pages';
 import { useToolkit } from '~/stores/functions/toolkit';
+import { useLangStore } from '~/stores/functions/language';
 import { VueTelInput } from 'vue-tel-input';
 import 'vue-tel-input/vue-tel-input.css';
 import iso31661 from 'iso-3166-1';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import { useFormsStore } from '~/stores/functions/forms';
+import { useModalsStore } from '~/stores/functions/modals';
 
 const recaptchaInstance = useReCaptcha();
 
@@ -95,15 +93,16 @@ const recaptcha = async () => {
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
 const formsStore = useFormsStore();
+const modalsStore = useModalsStore();
 const allPages = ref([]);
 
-const currentForm =
-  formsStore.forms.length && formsStore.forms?.filter((item) => item.slug === 'offer-form')[0];
+const currentForm = formsStore?.forms?.filter((item) => item.slug === 'showcase-form')[0];
 
 watch(pagesStore, (newValue) => {
   allPages.value = newValue?.pagesList;
 });
 
+const name = ref(null);
 const phone = ref(null);
 const isError = ref(null);
 const errorText = ref('');
@@ -117,20 +116,8 @@ const inputPhoneNumber = () => {
 const toolkitStore = useToolkit();
 
 const resetForm = () => {
+  name.value = '';
   phone.value = '';
-};
-
-const placeholderLang = {
-  ru: 'Введите ваш номер телефона',
-  en: 'Enter your phone number',
-  ua: 'Введіть ваш номер телефону',
-};
-
-const inputOptions = {
-  showDialCode: true,
-  autoFormat: true,
-  placeholder: placeholderLang[langStore.lang],
-  maxlength: 15,
 };
 
 const submitForm = async () => {
@@ -151,21 +138,29 @@ const submitForm = async () => {
 
     isSending.value = true;
 
-    await useFetch('/api/send-form', {
-      method: 'POST',
-      body: {
-        phone: phone.value,
-        form: 'Получить консультацию',
-        source_url: window.location.href,
-      },
-    }).then((res) => {
+    try {
+      await useFetch('/api/send-form', {
+        method: 'POST',
+        body: {
+          method: name.value,
+          phone: phone.value,
+          form: 'presentation',
+          source_url: window.location.href,
+        },
+      }).then((res) => {
+        isSending.value = false;
+        isSuccess.value = true;
+        resetForm();
+
+        setTimeout(() => {
+          modalsStore.removeModal('presentation');
+        }, 1500);
+      });
+    } catch (err) {
       isSending.value = false;
-      isSuccess.value = true;
-      resetForm();
-    });
+    }
   } catch (error) {
     console.error('Contact form could not be sent', error);
-    isSending.value = false;
   }
 };
 
@@ -195,16 +190,17 @@ import { createDirectus, rest, readFlow } from '@directus/sdk';
 
 const client = createDirectus('https://api.avalonbali.com').with(rest());
 
-const formRequest = async () => {
-  const formData = new FormData();
-  formData.append('phone', phone.value);
-
-  const result = await client.request(
-    readFlow('78957f27-5d57-49a2-bdfe-93be73e7e487', {
-      fields: ['*'],
-      body: formData,
-      method: 'POST',
-    }),
-  );
+const placeholderLang = {
+  ru: '999-99-9999',
+  en: '999-99-9999',
+  ua: '999-99-9999',
 };
+
+const inputOptions = computed(() => ({
+  showDialCode: true,
+  autoFormat: true,
+  placeholder: placeholderLang[langStore.lang],
+  maxlength: 15,
+  mode: 'international',
+}));
 </script>

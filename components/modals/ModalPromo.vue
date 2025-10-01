@@ -2,25 +2,23 @@
   <div
     class="content__inner w-full z-0 relative overflow-hidden p-5 lg:p-10 max-w-[600px] flex flex-col items-center h-full"
   >
-    <div class="absolute right-[-34px] -top-5 lg:top-5 z-0">
-      <img src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
-    </div>
-    <div class="absolute left-[-34px] bottom-0 lg:bottom-[154px] z-0">
-      <img src="/img/icons/vector-logo.svg" class="w-[68px]" alt="vector-logo" />
-    </div>
-
-    <h2 class="text-white text-lg md:text-2xl font-bold text-center mb-5">
-      {{ $t('m_message_text_1') }}
+    <h2 class="text-white text-lg md:text-2xl text-center mb-5">
+      {{ $t('m_promo_text_1') }}<br />
+      <span class="font-bold">{{ formatPromoDate() }}</span>
     </h2>
 
     <form @submit.prevent="submitForm" class="flex w-full flex-col text-center">
       <div class="flex flex-col">
+        <label for="phone-modal" class="flex text-white text-xs mb-[10px]">
+          {{ $t('m_promo_text_2') }}
+        </label>
         <div class="phone-vti">
           <VueTelInput
             :input-options="inputOptions"
             v-model="phone"
             :preferred-countries="preferredCountries"
             :only-countries="sortedCountries"
+            default-country="id"
             @input="inputPhoneNumber"
           />
         </div>
@@ -61,7 +59,7 @@
         </button>
 
         <p class="text-center text-white text-xs lg:text-sm w-full mt-5">
-          {{ $t('m_message_text_3') }}
+          {{ $t('m_promo_text_3') }}
           <NuxtLink
             href="/docs/privacy-police"
             class="text-blue-400 font-bold underline transition-all hover:text-blue-700"
@@ -75,14 +73,16 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 import { usePagesStore } from '~/stores/functions/pages';
 import { useToolkit } from '~/stores/functions/toolkit';
+import { useLangStore } from '~/stores/functions/language';
 import { VueTelInput } from 'vue-tel-input';
 import 'vue-tel-input/vue-tel-input.css';
 import iso31661 from 'iso-3166-1';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import { useFormsStore } from '~/stores/functions/forms';
+import { useModalsStore } from '~/stores/functions/modals';
 
 const recaptchaInstance = useReCaptcha();
 
@@ -95,6 +95,7 @@ const recaptcha = async () => {
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
 const formsStore = useFormsStore();
+const modalsStore = useModalsStore();
 const allPages = ref([]);
 
 const currentForm =
@@ -126,12 +127,68 @@ const placeholderLang = {
   ua: 'Введіть ваш номер телефону',
 };
 
-const inputOptions = {
+const formatPromoDate = () => {
+  const currentDate = new Date();
+  const day = currentDate.getDate();
+  const month = currentDate.getMonth();
+
+  const monthNames = {
+    ru: [
+      'января',
+      'февраля',
+      'марта',
+      'апреля',
+      'мая',
+      'июня',
+      'июля',
+      'августа',
+      'сентября',
+      'октября',
+      'ноября',
+      'декабря',
+    ],
+    en: [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ],
+    ua: [
+      'січня',
+      'лютого',
+      'березня',
+      'квітня',
+      'травня',
+      'червня',
+      'липня',
+      'серпня',
+      'вересня',
+      'жовтня',
+      'листопада',
+      'грудня',
+    ],
+  };
+
+  const monthName = monthNames[langStore.lang] || monthNames.ru;
+  const until = langStore.lang === 'ru' ? 'до' : langStore.lang === 'en' ? 'until' : 'до';
+  return `${until} ${day} ${monthName[month]}`;
+};
+
+const inputOptions = computed(() => ({
   showDialCode: true,
   autoFormat: true,
   placeholder: placeholderLang[langStore.lang],
   maxlength: 15,
-};
+  mode: 'international',
+}));
 
 const submitForm = async () => {
   if (currentForm?.captcha) {
@@ -155,13 +212,17 @@ const submitForm = async () => {
       method: 'POST',
       body: {
         phone: phone.value,
-        form: 'Получить консультацию',
+        form: 'message',
         source_url: window.location.href,
       },
     }).then((res) => {
       isSending.value = false;
       isSuccess.value = true;
       resetForm();
+
+      setTimeout(() => {
+        modalsStore.removeModal('promo');
+      }, 1500);
     });
   } catch (error) {
     console.error('Contact form could not be sent', error);

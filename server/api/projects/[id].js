@@ -22,6 +22,8 @@ export default defineEventHandler(async (event) => {
           "relative_projects.related_Project_id.main_translations.*",
           "relative_projects.related_Project_id.logo",
           "relative_projects.related_Project_id.preview",
+          "relative_projects.related_Project_id.price_local",
+          "relative_projects.related_Project_id.is_price_show",
           "relative_projects.related_Project_id.price",
           "relative_projects.related_Project_id.roi_procent",
           "sales.Sale_id.translations.*",
