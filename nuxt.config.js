@@ -24,8 +24,8 @@ export default defineNuxtConfig({
       '/**': {
         headers: {
           'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
-          'X-Frame-Options': 'SAMEORIGIN',
-          'X-Content-Type-Options': 'nosniff',
+          // 'X-Frame-Options': 'SAMEORIGIN',
+          // 'X-Content-Type-Options': 'nosniff',
           'Referrer-Policy': 'strict-origin-when-cross-origin',
           'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
           'Content-Security-Policy': [
@@ -36,7 +36,7 @@ export default defineNuxtConfig({
             "img-src 'self' data: https: blob:",
             "media-src 'self' https: blob:",
             "connect-src 'self' https://api.avalonbali.com https://www.google-analytics.com https://www.googletagmanager.com",
-            "frame-src 'self' https://www.google.com",
+            "frame-src 'self' https://www.google.com https://www.youtube.com https://player.vimeo.com https://www.google.com/maps https://crm.g-plus.app https://maps.googleapis.com https://ip2c.org",
             "object-src 'none'",
             "base-uri 'self'",
             "form-action 'self'"
