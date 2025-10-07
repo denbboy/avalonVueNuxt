@@ -116,7 +116,7 @@
                 </span>
               </h2>
               <p class="text-xs text-slate-50 opacity-60 text-center">
-                {{ $t('from') }} {{ item?.projects[0]?.item?.price }}$
+                {{ $t('from') }} {{ item?.projects[0]?.item?.price }}
               </p>
             </div>
           </div>
@@ -334,7 +334,7 @@
                 </span>
               </h2>
               <p class="text-xs text-slate-50 opacity-60 text-center">
-                {{ $t('from') }} {{ item?.projects[0]?.item?.price }}$
+                {{ $t('from') }} {{ item?.projects[0]?.item?.price }}
               </p>
             </div>
           </div>

@@ -61,6 +61,7 @@
           <ModalsModalRtsp v-else-if="modals[0] === 'rtsp'" />
           <ModalsModalPromo v-else-if="modals[0] === 'promo'" />
           <ModalsModalProject v-else-if="modals[0] === 'project'" />
+          <ModalsModalCooperation v-else-if="modals[0] === 'cooperation'" />
         </div>
       </div>
     </div>
@@ -127,6 +128,7 @@
           <ModalsModalRtsp v-else-if="modals[1] === 'rtsp'" />
           <ModalsModalPromo v-else-if="modals[1] === 'promo'" />
           <ModalsModalProject v-else-if="modals[1] === 'project'" />
+          <ModalsModalCooperation v-else-if="modals[1] === 'cooperation'" />
         </div>
       </div>
     </div>

@@ -122,14 +122,12 @@
                 ></div>
                 <div
                   v-if="item?.is_price_show && item?.price && item?.price_local"
-                  class="flex items-center mb-5"
+                  class="flex flex-col mb-5"
                 >
                   <strong class="text-xl md:text-lg lg:text-2xl text-white mr-[6px]"
                     >{{ $t('from') }} {{ item?.price_local }}</strong
                   >
-                  <span class="text-white/60 text-xs hidden md:block">
-                    {{ $t('from') }} {{ item?.price }}$
-                  </span>
+                  <span class="text-white/60 text-xs"> {{ $t('from') }} {{ item?.price }} </span>
                 </div>
 
                 <div class="flex">

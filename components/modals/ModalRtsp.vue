@@ -75,6 +75,7 @@ const handleSubmitForm = async () => {
             setTimeout(() => {
                 isSending.value = false;
                 isSuccess.value = true;
+                modalsStore.removeModal('rtsp');
 
                 resetForm();
             }, 1000);

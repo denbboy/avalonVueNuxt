@@ -10,7 +10,7 @@
     </div>
 
     <h2 class="text-white text-lg lg:text-2xl font-bold text-center mb-5">
-      {{ $t('button_vac') }}
+      {{ $t('button_cooperation') }}
     </h2>
 
     <form @submit.prevent="handleSubmitForm" class="relative z-[1]">
@@ -37,14 +37,14 @@
             />
           </svg>
           <span v-if="!file" class="text-white text-xs lg:text-base font-bold lg:ml-2">
-            {{ $t('m_vacancy_text_1') }}
+            {{ $t('m_cooperation_text_1') }}
           </span>
           <span v-if="file" class="text-white text-xs lg:text-base font-bold lg:ml-2">{{
             file.name
           }}</span>
         </p>
         <p v-if="!file" class="text-white/40 mt-2 text-xs lg:text-base">
-          {{ $t('m_vacancy_text_2') }}
+          {{ $t('m_cooperation_text_2') }}
         </p>
       </label>
 
@@ -71,7 +71,7 @@
           'max-h-0 opacity-0': !isError,
         }"
       >
-        {{ $t('m_vacancy_text_3') }}
+        {{ $t('m_cooperation_text_3') }}
       </p>
 
       <p
@@ -106,11 +106,11 @@
         type="submit"
         class="white-button w-full mt-5 lg:leading-[120%] lg:py-5 leading-[90%]"
       >
-        {{ $t('send_cv') }}
+        {{ $t('send_offer') }}
       </button>
 
       <p class="text-center text-white text-xs lg:text-sm w-full mt-5">
-        {{ $t('m_message_text_3') }}
+        {{ $t('m_cooperation_text_4') }}
         <NuxtLink
           href="/docs/privacy-police"
           class="text-blue-400 font-bold underline transition-all hover:text-blue-700"
@@ -146,7 +146,8 @@ const isSuccess = ref(false);
 const formsStore = useFormsStore();
 
 const currentForm =
-  formsStore.forms.length && formsStore.forms?.filter((item) => item.slug === 'vacancy-form')[0];
+  formsStore.forms.length &&
+  formsStore.forms?.filter((item) => item.slug === 'cooperation-form')[0];
 
 // Функция для сброса формы
 const resetForm = () => {
@@ -165,7 +166,7 @@ const validateEmail = (email) => {
 const handleSubmitForm = async () => {
   const url = useRequestURL();
   const clearUrl = url.href.split('?')[0];
-  const vacancyTitle = url.searchParams.get('title');
+  const cooperationTitle = url.searchParams.get('title');
 
   if (currentForm?.captcha) {
     if (!recaptcha()) {
@@ -207,7 +208,7 @@ const handleSubmitForm = async () => {
         isSuccess.value = true;
         resetForm();
         setTimeout(() => {
-          modalsStore.removeModal('vacancy');
+          modalsStore.removeModal('cooperation');
         }, 1500);
       } else {
         isSending.value = false;

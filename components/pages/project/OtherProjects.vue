@@ -116,7 +116,7 @@
                     >{{ $t('from') }} {{ item?.related_Project_id.price_local }}</strong
                   >
                   <span class="text-white/60 text-xs hidden md:block">
-                    {{ $t('from') }} {{ item?.related_Project_id.price }}$
+                    {{ $t('from') }} {{ item?.related_Project_id.price }}
                   </span>
                 </div>
                 <div class="flex">

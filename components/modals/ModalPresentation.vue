@@ -89,8 +89,10 @@ import 'vue-tel-input/vue-tel-input.css';
 import iso31661 from 'iso-3166-1';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import { useFormsStore } from '~/stores/functions/forms';
+import { useModalsStore } from '~/stores/functions/modals';
 
 const recaptchaInstance = useReCaptcha();
+const modalsStore = useModalsStore();
 
 const recaptcha = async () => {
   await recaptchaInstance?.recaptchaLoaded();
@@ -109,7 +111,6 @@ watch(pagesStore, (newValue) => {
   allPages.value = newValue?.pagesList;
 });
 
-const name = ref(null);
 const phone = ref(null);
 const isError = ref(null);
 const errorText = ref('');
@@ -123,7 +124,6 @@ const inputPhoneNumber = () => {
 const toolkitStore = useToolkit();
 
 const resetForm = () => {
-  name.value = '';
   phone.value = '';
 };
 
@@ -136,7 +136,7 @@ const submitForm = async () => {
   }
 
   try {
-    if (!name.value || !phone.value || phone.value.length < 10) {
+    if (!phone.value || phone.value.length < 10) {
       isError.value = true;
       return;
     } else {
@@ -149,7 +149,6 @@ const submitForm = async () => {
       await useFetch('/api/send-form', {
         method: 'POST',
         body: {
-          method: name.value,
           phone: phone.value,
           form: 'Получить презентацию / Получить каталог',
           source_url: window.location.href,
@@ -158,6 +157,10 @@ const submitForm = async () => {
         isSending.value = false;
         isSuccess.value = true;
         resetForm();
+
+        setTimeout(() => {
+          modalsStore.removeModal('presentation');
+        }, 1500);
       });
     } catch (err) {
       isSending.value = false;

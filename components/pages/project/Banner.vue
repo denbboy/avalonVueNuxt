@@ -104,7 +104,7 @@
                     </span>
                   </h2>
                   <p class="text-xs text-slate-50 opacity-60 text-center">
-                    {{ $t('from') }} {{ itemData?.price }}$
+                    {{ $t('from') }} {{ itemData?.price }}
                   </p>
                 </div>
               </div>

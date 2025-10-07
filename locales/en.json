@@ -114,6 +114,7 @@
   "send_mail": "Send",
   "send": "Send",
   "get_a_presentation": "Get Offer",
+  "get_a_project_presentation": "Get presentation",
 
   "m_calendar_text_1": "Meeting with the Sales Team",
   "m_calendar_text_2": "Online Meeting with the Sales Team",
@@ -126,11 +127,19 @@
 
   "connect_in_whatsapp": "Connect on WhatsApp",
 
-  "m_vacancy_text_1": "Attach a File",
+  "m_vacancy_text_1": "Attach a File with CV",
   "m_vacancy_text_2": ".doc, .docx, .txt, .rtf, .odt, .pdf, .jpg, .png up to 5 MB.",
   "m_vacancy_text_3": "File too large",
 
-  "send_cv": "Send Offer",
+  "send_cv": "Send CV",
+  "send_offer": "Send Offer",
+
+  "m_cooperation_text_1": "Attach a File",
+  "m_cooperation_text_2": ".doc, .docx, .txt, .rtf, .odt, .pdf, .jpg, .png up to 5 MB.",
+  "m_cooperation_text_3": "File too large",
+  "m_cooperation_text_4": "By clicking the 'Send Offer' button, you agree to our",
+
+  "send_cooperation": "Send Cooperation",
 
   "m_presentation_text_1": "Leave your contact to receive catalog of our projects",
   "m_presentation_text_2": "Alternative Contact Method*",
@@ -142,7 +151,8 @@
   "m_promo_text_3": "By clicking the 'Send' button, you agree to our",
   "m_message_text_1": "Enter your contact in messengers, and we will contact you.",
   "m_message_text_2": "Phone for messaging apps",
-  "m_message_text_3": "By clicking the 'Send Offer' button, you agree to our",
+  "m_message_text_3": "By clicking the 'Send CV' button, you agree to our",
+
   "policy": "Privacy Policy",
 
   "deadline": "Completion",
@@ -163,7 +173,8 @@
   "show_all": "Show all",
 
   "else_sales": "Other promotions",
-  "button_vac": "Cooperation",
+  "button_vac": "Apply for a job",
+  "button_cooperation": "Cooperation",
   "input_name": "Your name",
   "input_textarea": "Enter the text of the cover letter",
 

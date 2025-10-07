@@ -51,7 +51,7 @@
           type="submit"
           class="white-button w-full mt-5 lg:leading-[120%] lg:py-5 leading-[90%]"
         >
-          {{ $t('get_a_presentation') }}
+          {{ $t('get_a_project_presentation') }}
         </button>
 
         <p class="text-center text-white text-xs lg:text-sm w-full mt-5">

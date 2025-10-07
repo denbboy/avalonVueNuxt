@@ -83,8 +83,10 @@ import 'vue-tel-input/vue-tel-input.css';
 import iso31661 from 'iso-3166-1';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import { useFormsStore } from '~/stores/functions/forms';
+import { useModalsStore } from '~/stores/functions/modals';
 
 const recaptchaInstance = useReCaptcha();
+const modalsStore = useModalsStore();
 
 const recaptcha = async () => {
   await recaptchaInstance?.recaptchaLoaded();
@@ -162,6 +164,10 @@ const submitForm = async () => {
       isSending.value = false;
       isSuccess.value = true;
       resetForm();
+
+      setTimeout(() => {
+        modalsStore.removeModal('message');
+      }, 1500);
     });
   } catch (error) {
     console.error('Contact form could not be sent', error);
