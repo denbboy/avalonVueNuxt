@@ -141,8 +141,8 @@ const handlePhoneInput = (e) => {
 
 const resetForm = () => {
   phone.value = '';
-  if (phoneInput.value?.intlTelInput?.instance) {
-    phoneInput.value.intlTelInput.instance.setNumber('');
+  if (phoneInput.value?.instance) {
+    phoneInput.value.instance.setNumber('');
   }
 };
 
@@ -155,6 +155,10 @@ const submitForm = async () => {
   }
 
   try {
+    if (phoneInput.value?.instance) {
+      phone.value = phoneInput.value.instance.getNumber();
+    }
+
     if (!phone.value || phone.value.length < 10) {
       isError.value = true;
       return;

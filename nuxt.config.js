@@ -158,7 +158,6 @@ export default defineNuxtConfig({
   },
 
   plugins: [
-    { src: "~/plugins/vue-tel-input.js", ssr: false },
     { src: "~/plugins/vuelidate.js", ssr: false },
     { src: "~/plugins/i18n.config.js", ssr: false },
     "~/plugins/router.js",

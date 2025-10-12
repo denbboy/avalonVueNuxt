@@ -299,7 +299,7 @@
               :placeholder="$t('form_input_name')"
               class="bg-white/10 lg:mb-[10px] rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-5 lg:p-6 md:text-base w-full"
             />
-            <div class="phone-intl">
+            <div class="phone-intl phone-intl-footer lg:mb-[10px]">
               <ClientOnly>
                 <IntlTelInput
                   ref="phoneInput"
@@ -325,7 +325,7 @@
                     placeholder="999-99-9999"
                     maxlength="15"
                     @input="handlePhoneInput"
-                    class="bg-white/10 lg:mb-[10px] rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-5 lg:p-6 md:text-base w-full"
+                    class="bg-white/10 rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-5 lg:p-6 md:text-base w-full"
                   />
                 </template>
               </ClientOnly>
@@ -526,14 +526,18 @@ const handlePhoneInput = (e) => {
 const resetForm = () => {
   name.value = '';
   phone.value = '';
-  if (phoneInput.value?.intlTelInput?.instance) {
-    phoneInput.value.intlTelInput.instance.setNumber('');
+  if (phoneInput.value?.instance) {
+    phoneInput.value.instance.setNumber('');
   }
 };
 
 const submitForm = async () => {
+  if (phoneInput.value?.instance) {
+    const fullNumber = phoneInput.value.instance.getNumber();
+    phone.value = fullNumber || phone.value;
+  }
+
   if (!name.value || !phone.value || phone.value.length < 10) {
-    console.log('error', name.value, phone.value);
     return (isError.value = true);
   } else {
     isError.value = false;
@@ -542,19 +546,19 @@ const submitForm = async () => {
   isSending.value = true;
 
   try {
-    await useFetch('/api/send-form', {
-      method: 'POST',
-      body: {
-        name: name.value,
-        phone: phone.value,
-        form: 'footer',
-        source_url: window.location.href,
-      },
-    }).then((res) => {
-      isSending.value = false;
-      isSuccess.value = true;
-      resetForm();
-    });
+    // await useFetch('/api/send-form', {
+    //   method: 'POST',
+    //   body: {
+    //     name: name.value,
+    //     phone: phone.value,
+    //     form: 'footer',
+    //     source_url: window.location.href,
+    //   },
+    // }).then((res) => {
+    //   isSending.value = false;
+    //   isSuccess.value = true;
+    //   resetForm();
+    // });
   } catch (err) {
     isSending.value = false;
   }

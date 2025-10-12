@@ -534,6 +534,22 @@ input[type='radio']:checked ~ label {
   background-color: transparent !important;
 }
 
+.phone-intl-footer input {
+  padding-left: 60px !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .phone-intl-footer input {
+    padding-left: 70px !important;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .phone-intl-footer input {
+    padding-left: 100px !important;
+  }
+}
+
 @media screen and (min-width: 1025px) {
   .container {
     max-width: 1116px;
