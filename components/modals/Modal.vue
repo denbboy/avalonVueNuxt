@@ -151,7 +151,6 @@
 import { ref, watch } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useModalsStore } from '../../stores/functions/modals.js';
-import 'vue-tel-input/vue-tel-input.css';
 
 const modalsStore = useModalsStore();
 const { modals } = storeToRefs(modalsStore);

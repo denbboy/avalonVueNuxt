@@ -2,11 +2,13 @@
 // @ts-ignore
 export default defineNuxtConfig({
   // build: {
-  //   transpile: ["swiper"],
+  //   transpile: ["intl-tel-input"],
   // },
 
-  // nitro: {
-  //   compressPublicAssets: true, // включает gzip/brotli для статики
+  // vite: {
+  //   optimizeDeps: {
+  //     include: ['intl-tel-input'],
+  //   },
   // },
 
   image: {

@@ -299,19 +299,36 @@
               :placeholder="$t('form_input_name')"
               class="bg-white/10 lg:mb-[10px] rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-5 lg:p-6 md:text-base w-full"
             />
-            <div class="phone-vti">
-              <VueTelInput
-                :input-options="inputOptions"
-                :value="phone"
-                :autocomplete="false"
-                :disabledFormatting="true"
-                :use-masking="false"
-                ref="maskedInput"
-                v-model="phone"
-                :preferred-countries="preferredCountries"
-                @input="inputPhoneNumber"
-                :only-countries="sortedCountries"
-              />
+            <div class="phone-intl">
+              <ClientOnly>
+                <IntlTelInput
+                  ref="phoneInput"
+                  :options="{
+                    initialCountry: 'id',
+                    preferredCountries: ['id', 'ua', 'ru', 'by'],
+                    separateDialCode: true,
+                    showSelectedDialCode: true,
+                    countrySearch: false,
+                    strictMode: true,
+                  }"
+                  :input-props="{
+                    placeholder: '999-99-9999',
+                    maxlength: 15,
+                    onInput: handlePhoneInput,
+                  }"
+                  @changeNumber="phone = $event"
+                />
+                <template #fallback>
+                  <input
+                    type="tel"
+                    v-model="phone"
+                    placeholder="999-99-9999"
+                    maxlength="15"
+                    @input="handlePhoneInput"
+                    class="bg-white/10 lg:mb-[10px] rounded-xl text-white text-sm py-4 leading-[90%] px-5 outline-none md:p-5 lg:p-6 md:text-base w-full"
+                  />
+                </template>
+              </ClientOnly>
             </div>
             <p
               class="text-red-700 text-left transition-all h-full"
@@ -383,9 +400,7 @@
                 {{
                   pagesStore.pagesList
                     ?.filter((item) => item.slug === 'cooperation')[0]
-                    ?.translations?.filter((item) =>
-                      item.languages_code.includes(locale),
-                    )[0]?.title
+                    ?.translations?.filter((item) => item.languages_code.includes(locale))[0]?.title
                 }}
               </NuxtLink>
             </li>
@@ -396,9 +411,7 @@
                 {{
                   pagesStore.pagesList
                     ?.filter((item) => item.slug === 'career')[0]
-                    ?.translations?.filter((item) =>
-                      item.languages_code.includes(locale),
-                    )[0]?.title
+                    ?.translations?.filter((item) => item.languages_code.includes(locale))[0]?.title
                 }}
               </NuxtLink>
             </li>
@@ -409,9 +422,7 @@
                 {{
                   pagesStore.pagesList
                     ?.filter((item) => item.slug === 'privacy-police')[0]
-                    ?.translations?.filter((item) =>
-                      item.languages_code.includes(locale),
-                    )[0]?.title
+                    ?.translations?.filter((item) => item.languages_code.includes(locale))[0]?.title
                 }}
               </NuxtLink>
             </li>
@@ -422,9 +433,7 @@
                 {{
                   pagesStore.pagesList
                     ?.filter((item) => item.slug === 'terms')[0]
-                    ?.translations?.filter((item) =>
-                      item.languages_code.includes(locale),
-                    )[0]?.title
+                    ?.translations?.filter((item) => item.languages_code.includes(locale))[0]?.title
                 }}
               </NuxtLink>
             </li>
@@ -449,10 +458,6 @@ import { useI18n } from 'vue-i18n';
 import { usePagesStore } from '~/stores/functions/pages';
 import { useToolkit } from '~/stores/functions/toolkit';
 import { useLangStore } from '~/stores/functions/language';
-import { VueTelInput } from 'vue-tel-input';
-import 'vue-tel-input/vue-tel-input.css';
-import iso31661 from 'iso-3166-1';
-import IMask from 'imask';
 
 const isVideoLoaded = ref(true);
 
@@ -504,43 +509,31 @@ const handleScrollUp = () => {
   window.scrollTo(0, 0);
 };
 
-const inputPhoneNumber = () => {
-  phone.value = phone.value.replace(/(?!^\+)[^\d]/g, '');
-};
-
 const name = ref(null);
-const phone = ref(null);
+const phone = ref('');
+const phoneInput = ref(null);
 const isError = ref(null);
 const isSending = ref(false);
 const isSuccess = ref(false);
-const maskedInput = ref(null);
 
 const toolkitStore = useToolkit();
+
+const handlePhoneInput = (e) => {
+  e.target.value = e.target.value.replace(/[^\d]/g, '');
+  phone.value = e.target.value;
+};
 
 const resetForm = () => {
   name.value = '';
   phone.value = '';
-};
-
-const placeholderLang = {
-  ru: 'Введите ваш номер телефона',
-  en: 'Enter your phone number',
-  ua: 'Введіть ваш номер телефону',
-};
-
-const inputOptions = computed(() => ({
-  showDialCode: true,
-  autoFormat: false,
-  placeholder: placeholderLang[locale.value],
-  maxlength: 15,
-}));
-
-const countryChanged = (newCountry) => {
-  // Обрабатываем изменение страны
+  if (phoneInput.value?.intlTelInput?.instance) {
+    phoneInput.value.intlTelInput.instance.setNumber('');
+  }
 };
 
 const submitForm = async () => {
   if (!name.value || !phone.value || phone.value.length < 10) {
+    console.log('error', name.value, phone.value);
     return (isError.value = true);
   } else {
     isError.value = false;
@@ -567,41 +560,11 @@ const submitForm = async () => {
   }
 };
 
-const preferredCountries = [
-  'id', // Индонезия
-  'ua', // Украина
-  'ru', // Россия
-  'by', // Беларусь
-  'kz', // Казахстан
-  'us', // США
-  'gb', // Англия
-  'fr', // Франция
-  'cn', // КНР
-];
-
-const allCountries = iso31661.all().map((country) => country.alpha2);
-
-const sortedCountries = computed(() => {
-  const preferredSet = new Set(preferredCountries);
-  const unselectedCountries = allCountries.filter((country) => !preferredSet.has(country));
-  return [...preferredCountries, ...unselectedCountries];
-});
-
 onMounted(() => {
-  //   setTimeout(() => {
-
-  //     IMask(maskedInput.value, {
-  //       mask: '+{7}(000)000-00-00' // Пример маски для телефона
-  //     });
-  //   }, 2000)
-
-  // Добавляем обработчик событий прокрутки
   window?.addEventListener('scroll', handleScroll);
 });
 
 onUnmounted(() => {
   window?.removeEventListener('scroll', handleScroll);
 });
-
-// const copyright = `© ${new Date().getFullYear()} PT Avalon Group Bali`
 </script>

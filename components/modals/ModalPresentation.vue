@@ -19,14 +19,36 @@
           {{ $t('m_message_text_2') }}
         </label>
 
-        <div class="phone-vti">
-          <VueTelInput
-            :input-options="inputOptions"
-            v-model="phone"
-            :preferred-countries="preferredCountries"
-            :only-countries="sortedCountries"
-            @input="inputPhoneNumber"
-          />
+        <div class="phone-intl">
+          <ClientOnly>
+            <IntlTelInput
+              ref="phoneInput"
+              :options="{
+                initialCountry: 'id',
+                preferredCountries: ['id', 'ua', 'ru', 'by'],
+                separateDialCode: true,
+                showSelectedDialCode: true,
+                countrySearch: false,
+                strictMode: true,
+              }"
+              :input-props="{
+                placeholder: '999-99-9999',
+                maxlength: 15,
+                onInput: handlePhoneInput,
+              }"
+              @changeNumber="phone = $event"
+            />
+            <template #fallback>
+              <input
+                type="tel"
+                v-model="phone"
+                placeholder="999-99-9999"
+                maxlength="15"
+                @input="handlePhoneInput"
+                class="bg-white/10 px-5 py-4 lg:py-6 w-full text-sm text-white leading-[120%] lg:leading-[90%] rounded-[10px] outline-none"
+              />
+            </template>
+          </ClientOnly>
         </div>
 
         <p
@@ -84,9 +106,6 @@
 import { ref, watch } from 'vue';
 import { usePagesStore } from '~/stores/functions/pages';
 import { useToolkit } from '~/stores/functions/toolkit';
-import { VueTelInput } from 'vue-tel-input';
-import 'vue-tel-input/vue-tel-input.css';
-import iso31661 from 'iso-3166-1';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import { useFormsStore } from '~/stores/functions/forms';
 import { useModalsStore } from '~/stores/functions/modals';
@@ -111,20 +130,25 @@ watch(pagesStore, (newValue) => {
   allPages.value = newValue?.pagesList;
 });
 
-const phone = ref(null);
+const phone = ref('');
+const phoneInput = ref(null);
 const isError = ref(null);
 const errorText = ref('');
 const isSending = ref(false);
 const isSuccess = ref(false);
 
-const inputPhoneNumber = () => {
-  phone.value = phone.value.replace(/(?!^\+)[^\d]/g, '');
-};
-
 const toolkitStore = useToolkit();
+
+const handlePhoneInput = (e) => {
+  e.target.value = e.target.value.replace(/[^\d]/g, '');
+  phone.value = e.target.value;
+};
 
 const resetForm = () => {
   phone.value = '';
+  if (phoneInput.value?.intlTelInput?.instance) {
+    phoneInput.value.intlTelInput.instance.setNumber('');
+  }
 };
 
 const submitForm = async () => {
@@ -168,44 +192,5 @@ const submitForm = async () => {
   } catch (error) {
     console.error('Contact form could not be sent', error);
   }
-};
-
-const preferredCountries = [
-  'id', // Индонезия
-  'ua', // Украина
-  'ru', // Россия
-  'by', // Беларусь
-  'kz', // Казахстан
-  'us', // США
-  'gb', // Англия
-  'fr', // Франция
-  'cn', // КНР
-];
-
-// Получаем список всех стран
-const allCountries = iso31661.all().map((country) => country.alpha2);
-
-// Создаем computed property, который включает все страны
-const sortedCountries = computed(() => {
-  const preferredSet = new Set(preferredCountries);
-  const unselectedCountries = allCountries.filter((country) => !preferredSet.has(country));
-  return [...preferredCountries, ...unselectedCountries];
-});
-
-import { createDirectus, rest, readFlow } from '@directus/sdk';
-
-const client = createDirectus('https://api.avalonbali.com').with(rest());
-
-const placeholderLang = {
-  ru: 'Введите ваш номер телефона',
-  en: 'Enter your phone number',
-  ua: 'Введіть ваш номер телефону',
-};
-
-const inputOptions = {
-  showDialCode: true,
-  autoFormat: true,
-  placeholder: placeholderLang[langStore.lang],
-  maxlength: 15,
 };
 </script>
