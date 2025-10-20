@@ -546,19 +546,19 @@ const submitForm = async () => {
   isSending.value = true;
 
   try {
-    // await useFetch('/api/send-form', {
-    //   method: 'POST',
-    //   body: {
-    //     name: name.value,
-    //     phone: phone.value,
-    //     form: 'footer',
-    //     source_url: window.location.href,
-    //   },
-    // }).then((res) => {
-    //   isSending.value = false;
-    //   isSuccess.value = true;
-    //   resetForm();
-    // });
+    await useFetch('/api/send-form', {
+      method: 'POST',
+      body: {
+        name: name.value,
+        phone: phone.value,
+        form: 'footer',
+        source_url: window.location.href,
+      },
+    }).then((res) => {
+      isSending.value = false;
+      isSuccess.value = true;
+      resetForm();
+    });
   } catch (err) {
     isSending.value = false;
   }
@@ -572,3 +572,96 @@ onUnmounted(() => {
   window?.removeEventListener('scroll', handleScroll);
 });
 </script>
+
+<style scoped>
+.phone-intl-footer {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .phone-intl-footer :deep(.iti) {
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  /* Override any global styles that might be setting 60px */
+  .phone-intl-footer :deep(.iti__selected-country),
+  .phone-intl-footer :deep(.iti__selected-flag) {
+    width: 80px !important;
+    min-width: 80px !important;
+    max-width: 80px !important;
+  }
+
+  .phone-intl-footer :deep(.iti__selected-country) {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 80px !important;
+    min-width: 80px !important;
+    max-width: 80px !important;
+    padding: 0 0.25rem !important;
+    display: flex !important;
+    align-items: center !important;
+    z-index: 1 !important;
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  .phone-intl-footer :deep(.iti__selected-country-primary) {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .phone-intl-footer :deep(.iti__flag) {
+    flex-shrink: 0;
+  }
+
+  .phone-intl-footer :deep(.iti__arrow) {
+    flex-shrink: 0;
+    border-top: 4px solid white;
+  }
+
+  .phone-intl-footer :deep(.iti__selected-dial-code) {
+    font-size: 0.875rem;
+    color: white !important;
+    white-space: nowrap;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .phone-intl-footer :deep(.iti__input) {
+    padding-left: 85px !important;
+    width: 100%;
+  }
+}
+
+.phone-intl-footer :deep(.iti) {
+  width: 100%;
+}
+
+.phone-intl-footer :deep(.iti__input) {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  border: none;
+  color: white;
+  font-size: 0.875rem;
+  padding: 1rem 1.25rem;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .phone-intl-footer :deep(.iti__input) {
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .phone-intl-footer :deep(.iti__input) {
+    padding: 1.5rem;
+  }
+}
+</style>

@@ -20,9 +20,9 @@
             v-model="name"
             type="text"
             :placeholder="$t('input_name')"
-            class="bg-whiteOp-200 rounded-xl text-white text-sm px-5 py-4 outline-none lg:p-6 lg:text-base w-full"
+            class="bg-whiteOp-200 rounded-xl text-white text-sm px-5 py-4 outline-none lg:p-6 lg:text-base w-full md:w-auto md:flex-shrink"
           />
-          <div class="phone-intl">
+          <div class="phone-intl md:flex-grow h-full">
             <ClientOnly>
               <IntlTelInput
                 ref="phoneInput"
@@ -48,13 +48,13 @@
                   placeholder="999-99-9999"
                   maxlength="15"
                   @input="handlePhoneInput"
-                  class="bg-whiteOp-200 rounded-xl text-white text-sm px-5 py-4 outline-none lg:p-6 lg:text-base w-full"
+                  class="bg-whiteOp-200 rounded-xl text-white text-sm px-5 py-4 outline-none lg:p-6 lg:text-base w-full md:h-full"
                 />
               </template>
             </ClientOnly>
           </div>
 
-          <button type="submit" class="white-button w-full">
+          <button type="submit" class="white-button w-full md:w-auto md:flex-shrink">
             {{ $t('send_mail') }}
           </button>
         </div>
@@ -192,3 +192,21 @@ const submitForm = async () => {
   }
 };
 </script>
+
+<style scoped>
+.phone-intl {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .phone-intl :deep(.iti) {
+    width: 100%;
+    height: 100% !important;
+  }
+
+  .phone-intl :deep(.iti__input) {
+    height: 100%;
+  }
+}
+</style>
