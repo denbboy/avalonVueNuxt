@@ -18,7 +18,7 @@
               ref="phoneInput"
               :options="{
                 initialCountry: 'id',
-                preferredCountries: ['id', 'ua', 'ru', 'by'],
+                countryOrder: ['id', 'ua', 'ru', 'by'],
                 separateDialCode: true,
                 showSelectedDialCode: true,
                 countrySearch: false,
