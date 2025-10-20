@@ -288,13 +288,13 @@
       <div class="">
         <div class="banner__item__head md:flex">
           <div class="flex mb-5 lg:mb-0">
-            <h1 class="text-white text-[45px] font-bold leading-1 md:text-[70px] mr-3">
+            <h2 class="text-white text-[45px] font-bold leading-1 md:text-[70px] mr-3">
               {{
                 item?.translations?.filter((item) =>
                   item.languages_code.includes(langStore.lang),
                 )[0]?.title
               }}
-            </h1>
+            </h2>
             <span
               class="text-white uppercase bg-blue-400 h-6 text-center flex items-center px-2 rounded-md lg:rounded-[10px] text-xs lg:text-base md:h-8 md:px-3"
             >
