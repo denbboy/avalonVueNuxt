@@ -86,64 +86,87 @@ const handleOpenModal = () => {
   modalsStore.addModal('message');
 };
 
-setTimeout(() => {
-  ((g) => {
-    var h,
-      a,
-      k,
-      p = 'The Google Maps JavaScript API',
-      c = 'google',
-      l = 'importLibrary',
-      q = '__ib__',
-      m = document,
-      b = window;
-    b = b[c] || (b[c] = {});
-    var d = b.maps || (b.maps = {}),
-      r = new Set(),
-      e = new URLSearchParams(),
-      u = () =>
-        h ||
-        (h = new Promise(async (f, n) => {
-          await (a = m.createElement('script'));
-          e.set('libraries', [...r] + '');
-          for (k in g)
-            e.set(
-              k.replace(/[A-Z]/g, (t) => '_' + t[0].toLowerCase()),
-              g[k],
-            );
-          e.set('callback', c + '.maps.' + q);
-          a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
-          d[q] = f;
-          a.onerror = () => (h = n(Error(p + ' could not load.')));
-          a.nonce = m.querySelector('script[nonce]')?.nonce || '';
-          m.head.append(a);
-        }));
-    d[l]
-      ? console.warn(p + ' only loads once. Ignoring:', g)
-      : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
-  })({
-    key: 'AIzaSyCbpqXlTw8-yA0fa9vECkTrSKJq1L1_Wkw',
-    v: 'weekly',
-    // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
-    // Add other bootstrap parameters as needed, using camel case.
-  });
-}, 10);
-
 let map;
+let googleMapsLoaded = false;
+
+function loadGoogleMapsAPI() {
+  return new Promise((resolve, reject) => {
+    if (typeof window === 'undefined') {
+      reject(new Error('Google Maps can only be loaded on the client side'));
+      return;
+    }
+
+    if (googleMapsLoaded || (typeof window !== 'undefined' && window.google?.maps)) {
+      googleMapsLoaded = true;
+      resolve();
+      return;
+    }
+
+    ((g) => {
+      var h,
+        a,
+        k,
+        p = 'The Google Maps JavaScript API',
+        c = 'google',
+        l = 'importLibrary',
+        q = '__ib__',
+        m = document,
+        b = window;
+      b = b[c] || (b[c] = {});
+      var d = b.maps || (b.maps = {}),
+        r = new Set(),
+        e = new URLSearchParams(),
+        u = () =>
+          h ||
+          (h = new Promise(async (f, n) => {
+            await (a = m.createElement('script'));
+            e.set('libraries', [...r] + '');
+            for (k in g)
+              e.set(
+                k.replace(/[A-Z]/g, (t) => '_' + t[0].toLowerCase()),
+                g[k],
+              );
+            e.set('callback', c + '.maps.' + q);
+            a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+            d[q] = () => {
+              googleMapsLoaded = true;
+              f();
+              resolve();
+            };
+            a.onerror = () => {
+              const error = Error(p + ' could not load.');
+              h = n(error);
+              reject(error);
+            };
+            a.nonce = m.querySelector('script[nonce]')?.nonce || '';
+            m.head.append(a);
+          }));
+      d[l]
+        ? console.warn(p + ' only loads once. Ignoring:', g)
+        : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+    })({
+      key: 'AIzaSyCbpqXlTw8-yA0fa9vECkTrSKJq1L1_Wkw',
+      v: 'weekly',
+    });
+  });
+}
 
 async function initMap(cood1, cood2) {
-  const position = { lat: cood1 ?? 0, lng: cood2 ?? 0 };
-  const { Map } = await google.maps.importLibrary('maps');
-  const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
+  try {
+    await loadGoogleMapsAPI();
 
-  map = new Map(document.getElementById('map'), {
-    zoom: 14,
-    center: position,
-    mapId: 'DEMO_MAP_ID',
-  });
+    const position = { lat: cood1 ?? 0, lng: cood2 ?? 0 };
+    const { Map } = await google.maps.importLibrary('maps');
+    const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
 
-  const parser = new DOMParser();
-  const pinSvgString = `
+    map = new Map(document.getElementById('map'), {
+      zoom: 14,
+      center: position,
+      // mapId: 'DEMO_MAP_ID',
+    });
+
+    const parser = new DOMParser();
+    const pinSvgString = `
   <svg width="102" height="120" viewBox="0 0 102 120" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g class="relative flex items-center justify-center">
       <path fill-rule="evenodd" clip-rule="evenodd"
@@ -162,30 +185,34 @@ async function initMap(cood1, cood2) {
   </svg>
 `;
 
-  const pinSvg = parser.parseFromString(pinSvgString, 'image/svg+xml').documentElement;
+    const pinSvg = parser.parseFromString(pinSvgString, 'image/svg+xml').documentElement;
 
-  new AdvancedMarkerElement({
-    map,
-    position: position,
-    content: pinSvg,
-    title: 'A marker using a custom SVG image.',
-  });
+    new AdvancedMarkerElement({
+      map,
+      position: position,
+      content: pinSvg,
+      title: 'A marker using a custom SVG image.',
+    });
+  } catch (error) {
+    console.error('Error initializing Google Maps:', error);
+  }
 }
 
-watch(
-  () => props.itemData,
-  (newValue) => {
-    if (newValue && newValue.location && newValue.location.coordinates) {
-      setTimeout(() => {
+if (process.client) {
+  watch(
+    () => props.itemData,
+    (newValue) => {
+      if (newValue && newValue.location && newValue.location.coordinates) {
         initMap(newValue.location.coordinates[1], newValue.location.coordinates[0]);
-      }, 500);
-    }
-  },
-  { immediate: true }, // Можно добавить эту опцию для немедленного выполнения
-);
+      }
+    },
+    { immediate: true },
+  );
 
-onMounted(() => {
-  initMap(props.itemData.location.coordinates[1], props.itemData.location.coordinates[0]);
-});
-console.log(props.itemData.location);
+  onMounted(() => {
+    if (props.itemData?.location?.coordinates) {
+      initMap(props.itemData.location.coordinates[1], props.itemData.location.coordinates[0]);
+    }
+  });
+}
 </script>

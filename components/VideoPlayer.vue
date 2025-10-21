@@ -482,7 +482,7 @@ const handlePlayVideo = (e, videoUrl) => {
     urlLink = '';
     handleVideoPause();
   } else {
-    urlLink = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${videoId}&enablejsapi=1`;
+    urlLink = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&vq=hd1080&loop=1&rel=0&modestbranding=1&fs=0&controls=0&playlist=${videoId}&enablejsapi=1`;
     handleVideoPlay();
   }
 

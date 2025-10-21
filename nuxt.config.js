@@ -32,16 +32,17 @@ export default defineNuxtConfig({
           'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
           'Content-Security-Policy': [
             "default-src 'self'",
-            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://apis.google.com",
-            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-            "font-src 'self' https://fonts.gstatic.com",
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://apis.google.com https://maps.googleapis.com https://maps.gstatic.com https://*.googleapis.com https://*.gstatic.com",
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://maps.googleapis.com https://*.googleapis.com",
+            "font-src 'self' https://fonts.gstatic.com https://maps.gstatic.com https://*.gstatic.com",
             "img-src 'self' data: https: blob:",
             "media-src 'self' https: blob:",
-            "connect-src 'self' https://api.avalonbali.com https://www.google-analytics.com https://www.googletagmanager.com",
-            "frame-src 'self' https://www.google.com https://www.youtube.com https://player.vimeo.com https://www.google.com/maps https://crm.g-plus.app https://maps.googleapis.com https://ip2c.org",
+            "connect-src 'self' https://api.avalonbali.com https://www.google-analytics.com https://www.googletagmanager.com https://maps.googleapis.com https://*.googleapis.com https://*.google.com https://*.gstatic.com",
+            "frame-src 'self' https: http:",
             "object-src 'none'",
             "base-uri 'self'",
-            "form-action 'self'"
+            "form-action 'self'",
+            "worker-src 'self' blob:"
           ].join('; ')
         }
       }
@@ -54,19 +55,16 @@ export default defineNuxtConfig({
   app: {
     head: {
       meta: [
-        {
-          name: 'robots',
-          content: process.env.VERCEL ? 'noindex, nofollow' : 'index, follow'
-        }
       ]
     }
   },
 
-  security: {
-    headers: {
-      crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
-    },
-  },
+  // Removed security headers that block 3rd party iframe APIs
+  // security: {
+  //   headers: {
+  //     crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+  //   },
+  // },
 
   runtimeConfig: {
     public: {
