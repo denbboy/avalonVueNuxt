@@ -213,6 +213,7 @@ export default defineNuxtConfig({
     "nuxt-viewport",
     "nuxt-simple-sitemap",
     "nuxt-calendly",
+    "@nuxtjs/seo",
   ],
 
   directus: {
@@ -255,28 +256,27 @@ export default defineNuxtConfig({
     autoImports: ["defineStore"],
   },
 
-  // ogImage: {
-  //   enabled: true,
-  // },
+  ogImage: {
+    enabled: true,
+  },
 
-  // seoExperiments: {
-  //   enabled: true,
-  // },
+  seoExperiments: {
+    enabled: true,
+  },
 
-  // schemaOrg: {
-  //   enabled: true,
-  // },
+  schemaOrg: {
+    enabled: true,
+  },
 
-  // linkChecker: {
-  //   enabled: true,
-  // },
+  linkChecker: {
+    enabled: true,
+  },
 
-  // site: {
-  //   url: "https://avalon-vue-nuxt.vercel.app",
-  //   name: "Avalon",
-  //   description: "Avalon",
-  //   trailingSlash: true,
-  // },
+  site: {
+    url: "https://avalonbali.com",
+    name: "Avalon",
+    trailingSlash: true,
+  },
 
   buildModules: ["@nuxtjs/svg-sprite", "@nuxt/image"],
 

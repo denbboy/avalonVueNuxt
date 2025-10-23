@@ -95,10 +95,34 @@ const pageData = computed(
 const pageMetaTitle = computed(() => pageData.value?.meta_title ?? '');
 const pageMetaDescription = computed(() => pageData.value?.meta_description ?? '');
 
-// Make head reactive to locale changes
 useHead(() => ({
   title: pageMetaTitle.value,
-  meta: [{ name: 'description', content: pageMetaDescription.value }],
+  meta: [
+    { name: 'description', content: pageMetaDescription.value },
+    { property: 'og:title', content: pageMetaTitle.value },
+    { property: 'og:description', content: pageMetaDescription.value },
+    {
+      property: 'og:image',
+      content: itemData.value?.image
+        ? `/img/projects/${itemData.value.image}`
+        : '/img/og-image.jpg',
+    },
+    {
+      property: 'og:url',
+      content: `https://avalonbali.com/projects/${route.params.id}`,
+    },
+    { property: 'og:type', content: 'article' },
+    { property: 'og:site_name', content: 'Avalon' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: pageMetaTitle.value },
+    { name: 'twitter:description', content: pageMetaDescription.value },
+    {
+      name: 'twitter:image',
+      content: itemData.value?.image
+        ? `/img/projects/${itemData.value.image}`
+        : '/img/og-image.jpg',
+    },
+  ],
 }));
 
 // Реактивное хранение данных проекта

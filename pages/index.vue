@@ -66,6 +66,18 @@ const pageMetaDescription = computed(() => pageData.value?.meta_description ?? '
 
 useHead(() => ({
   title: pageMetaTitle.value,
-  meta: [{ name: 'description', content: pageMetaDescription.value }],
+  meta: [
+    { name: 'description', content: pageMetaDescription.value },
+    { property: 'og:title', content: pageMetaTitle.value },
+    { property: 'og:description', content: pageMetaDescription.value },
+    { property: 'og:image', content: '/img/og-image.jpg' },
+    { property: 'og:url', content: 'https://avalonbali.com' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:site_name', content: 'Avalon' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: pageMetaTitle.value },
+    { name: 'twitter:description', content: pageMetaDescription.value },
+    { name: 'twitter:image', content: '/img/og-image.jpg' },
+  ],
 }));
 </script>
