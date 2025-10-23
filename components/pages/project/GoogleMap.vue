@@ -162,7 +162,7 @@ async function initMap(cood1, cood2) {
     map = new Map(document.getElementById('map'), {
       zoom: 14,
       center: position,
-      // mapId: 'DEMO_MAP_ID',
+      mapId: 'b91d1a672a335c5665776cd8',
     });
 
     const parser = new DOMParser();

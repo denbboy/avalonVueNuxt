@@ -304,11 +304,7 @@
 
           <div
             class="con md:ml-4 md:pl-5 md:px-7 relative"
-            v-if="
-              item?.projects[0]?.item?.price &&
-              item?.projects[0]?.item?.is_price_show &&
-              item?.projects[0]?.item?.price_local
-            "
+            v-if="minPrice?.min_price_local && !item?.projects?.length"
           >
             <div class="absolute h-12 left-0 top-1/2 -translate-y-1/2 w-[1px] bg-white/20"></div>
             <div class="relative px-5 py-3 w-fit md:text-center mb-8 lg:mb-0">
@@ -330,11 +326,11 @@
                 <br v-if="!$viewport.isLessThan('tablet')" class="hidden md:block" />
                 <span class="font-bold md:text-xl">
                   {{ $t('from') }}
-                  {{ item?.projects[0]?.item?.price_local }}
+                  {{ minPrice?.min_price_local }}
                 </span>
               </h2>
               <p class="text-xs text-slate-50 opacity-60 text-center">
-                {{ $t('from') }} {{ item?.projects[0]?.item?.price }}
+                {{ $t('from') }} {{ minPrice?.min_price }}
               </p>
             </div>
           </div>
@@ -439,6 +435,30 @@ const { $viewport } = useNuxtApp();
 
 const modalsStore = useModalsStore();
 const langStore = useLangStore();
+const projectsStore = useProjectsStore();
+
+const minPrice = computed(() => {
+  const validProjects = projectsStore.projects.filter(
+    (project) => project.price && project.is_price_show,
+  );
+
+  if (validProjects.length === 0) return null;
+
+  const minProject = validProjects.reduce((min, current) => {
+    const currentPrice = parseFloat(current.price.replace(/[$,]/g, ''));
+    const minPrice = parseFloat(min.price.replace(/[$,]/g, ''));
+
+    return currentPrice < minPrice ? current : min;
+  });
+
+  return {
+    min_price: minProject.price,
+    min_price_local: minProject.price_local,
+  };
+});
+
+console.log('All projects:', projectsStore.projects);
+console.log('Min price:', minPrice.value);
 
 const isActive = ref(false);
 const isVideoPlayed = ref(false);
