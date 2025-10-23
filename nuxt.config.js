@@ -212,6 +212,7 @@ export default defineNuxtConfig({
     // "nuxt-meta-pixel",
     "nuxt-viewport",
     "nuxt-simple-sitemap",
+    "nuxt-calendly",
   ],
 
   directus: {

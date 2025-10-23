@@ -587,9 +587,9 @@ onUnmounted(() => {
   /* Override any global styles that might be setting 60px */
   .phone-intl-footer :deep(.iti__selected-country),
   .phone-intl-footer :deep(.iti__selected-flag) {
-    width: 80px !important;
-    min-width: 80px !important;
-    max-width: 80px !important;
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
   }
 
   .phone-intl-footer :deep(.iti__selected-country) {
@@ -597,10 +597,10 @@ onUnmounted(() => {
     left: 0 !important;
     top: 0 !important;
     bottom: 0 !important;
-    width: 80px !important;
-    min-width: 80px !important;
-    max-width: 80px !important;
-    padding: 0 0.25rem !important;
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
+    padding: 0 0.5rem !important;
     display: flex !important;
     align-items: center !important;
     z-index: 1 !important;
@@ -632,9 +632,20 @@ onUnmounted(() => {
     opacity: 1 !important;
   }
 
-  .phone-intl-footer :deep(.iti__input) {
-    padding-left: 85px !important;
-    width: 100%;
+  .phone-intl-footer :deep(.iti__input),
+  .phone-intl-footer :deep(.iti input),
+  .phone-intl-footer :deep(input) {
+    padding-left: 100px !important;
+    width: 100% !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0.75rem !important;
+    border: none !important;
+    color: white !important;
+    font-size: 0.875rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    padding-right: 1.25rem !important;
+    outline: none !important;
   }
 }
 
@@ -642,14 +653,17 @@ onUnmounted(() => {
   width: 100%;
 }
 
-.phone-intl-footer :deep(.iti__input) {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 0.75rem;
-  border: none;
-  color: white;
-  font-size: 0.875rem;
-  padding: 1rem 1.25rem;
-  outline: none;
+.phone-intl-footer :deep(.iti__input),
+.phone-intl-footer :deep(.iti input),
+.phone-intl-footer :deep(input) {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0.75rem !important;
+  border: none !important;
+  color: white !important;
+  font-size: 0.875rem !important;
+  padding: 1rem 1.25rem !important;
+  padding-left: 100px !important;
+  outline: none !important;
 }
 
 @media (min-width: 768px) {
