@@ -15,15 +15,13 @@
               :options="{
                 initialCountry: 'id',
                 countryOrder: ['id', 'ua', 'ru', 'by'],
-                separateDialCode: true,
-                showSelectedDialCode: true,
+                separateDialCode: false,
                 countrySearch: false,
                 strictMode: true,
               }"
               :input-props="{
-                placeholder: '999-99-9999',
-                maxlength: 15,
-                onInput: handlePhoneInput,
+                placeholder: '+62 999-99-9999',
+                maxlength: 20,
               }"
               @changeNumber="phone = $event"
             />
@@ -131,7 +129,7 @@ const isSuccess = ref(false);
 const toolkitStore = useToolkit();
 
 const handlePhoneInput = (e) => {
-  e.target.value = e.target.value.replace(/[^\d]/g, '');
+  e.target.value = e.target.value.replace(/[^\d+]/g, '');
   phone.value = e.target.value;
 };
 
