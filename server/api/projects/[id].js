@@ -42,6 +42,18 @@ export default defineEventHandler(async (event) => {
       })
     );
 
+    for (const item of items ?? []) {
+      if (Array.isArray(item.sales)) {
+        item.sales = item.sales.filter((s) => s?.Sale_id);
+      }
+      if (Array.isArray(item.relative_projects)) {
+        item.relative_projects = item.relative_projects.filter((r) => r?.related_Project_id);
+      }
+      if (Array.isArray(item.blocks)) {
+        item.blocks = item.blocks.filter((b) => b?.Block_id);
+      }
+    }
+
     return items;
   } catch (e) {
     console.error("PROJECT Error fetching:", e);

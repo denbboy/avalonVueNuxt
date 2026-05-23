@@ -80,8 +80,9 @@ const projectsStore = useProjectsStore();
 // langStore.lang = route.params.lang || 'ru';
 
 // Загружаем данные проекта
-const { data } = await useAsyncData('ProjectItem', () =>
-  $fetch(`/api/projects/${route.params.id}`),
+const { data } = await useAsyncData(
+  () => `ProjectItem-${route.params.id}`,
+  () => $fetch(`/api/projects/${route.params.id}`),
 );
 
 const { t, locale } = useI18n();

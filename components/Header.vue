@@ -251,12 +251,12 @@ const changeLanguage = async (newLocale) => {
     pathWithoutLocale = pathWithoutLocale.substring(1);
   }
 
-  console.log('Language change debug:', {
-    currentPath,
-    pathWithoutLocale,
-    newLocale,
-    newPath: newLocale !== DEFAULT_LOCALE ? `/${newLocale}${pathWithoutLocale}` : pathWithoutLocale,
-  });
+  // console.log('Language change debug:', {
+  //   currentPath,
+  //   pathWithoutLocale,
+  //   newLocale,
+  //   newPath: newLocale !== DEFAULT_LOCALE ? `/${newLocale}${pathWithoutLocale}` : pathWithoutLocale,
+  // });
 
   // Set the locale in i18n first
   await $i18n.setLocale(newLocale);

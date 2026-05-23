@@ -61,11 +61,11 @@ const pagesStore = usePagesStore();
 
 const { t, locale } = useI18n()
 
-console.log(locale.value);
+// console.log(locale.value);
 
-console.log(pagesStore?.pagesList.find(item => item.id === 6).translations);
-console.log(pagesStore?.pagesList.find(item => item.id === 6).translations?.find(item => item.languages_code.includes(locale.value)).meta_title);
-console.log(pagesStore?.pagesList.find(item => item.id === 6).translations?.find(item => item.languages_code.includes(locale.value)).meta_description);
+// console.log(pagesStore?.pagesList.find(item => item.id === 6).translations);
+// console.log(pagesStore?.pagesList.find(item => item.id === 6).translations?.find(item => item.languages_code.includes(locale.value)).meta_title);
+// console.log(pagesStore?.pagesList.find(item => item.id === 6).translations?.find(item => item.languages_code.includes(locale.value)).meta_description);
 
 
 </script>

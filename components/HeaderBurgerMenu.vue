@@ -165,7 +165,7 @@ const openSubMenu = () => {
 const isOpenSubMenu = ref(false);
 const { t, locale } = useI18n();
 
-console.log('props.isOpenBurger', props.isOpenBurger);
+// console.log('props.isOpenBurger', props.isOpenBurger);
 
 import { ref, defineProps, onMounted, computed, watchEffect, watch } from 'vue';
 import { useI18n } from 'vue-i18n';

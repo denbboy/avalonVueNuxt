@@ -429,7 +429,7 @@ const { item, handleVideoPlay, handleVideoPause } = defineProps({
   handleVideoPause: Object,
 });
 
-console.log('ITEM', item);
+// console.log('ITEM', item);
 
 const { $viewport } = useNuxtApp();
 
@@ -457,8 +457,8 @@ const minPrice = computed(() => {
   };
 });
 
-console.log('All projects:', projectsStore.projects);
-console.log('Min price:', minPrice.value);
+// console.log('All projects:', projectsStore.projects);
+// console.log('Min price:', minPrice.value);
 
 const isActive = ref(false);
 const isVideoPlayed = ref(false);
