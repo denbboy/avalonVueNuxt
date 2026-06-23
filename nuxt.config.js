@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // @ts-ignore
+
+const DIRECTUS_URL = process.env.DIRECTUS_LINK || "https://api.avalonbali.com";
+
 export default defineNuxtConfig({
   // build: {
   //   transpile: ["intl-tel-input"],
@@ -68,7 +71,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiBase: 'https://api.avalonbali.com/',
+      apiBase: `${DIRECTUS_URL}/`,
     },
   },
 
@@ -76,7 +79,7 @@ export default defineNuxtConfig({
     autoI18n: false,
     urls: async () => {
       const { createDirectus, rest, readItems } = await import('@directus/sdk');
-      const API_LINK = 'https://api.avalonbali.com/';
+      const API_LINK = `${DIRECTUS_URL}/`;
       const directus = createDirectus(API_LINK).with(rest());
 
       const [articles, projects, news] = await Promise.all([
@@ -216,7 +219,7 @@ export default defineNuxtConfig({
   ],
 
   directus: {
-    url: "https://api.avalonbali.com/",
+    url: `${DIRECTUS_URL}/`,
   },
 
   calendly: {
