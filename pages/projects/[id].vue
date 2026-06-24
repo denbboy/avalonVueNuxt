@@ -16,7 +16,7 @@
     "
   />
 
-  <PagesProjectInteractive :itemData="itemData" />
+  <PagesProjectInteractive v-if="itemData?.visual_block_facade" :itemData="itemData" />
 
   <PagesProjectApartments v-if="itemData?.apartments?.length" :itemData="itemData" />
 
@@ -55,10 +55,10 @@
     :projects="itemData?.relative_projects"
   />
 
-  <PagesMainSales
+  <!-- <PagesMainSales
     v-if="itemData?.sales?.map((item) => item.Sale_id)?.length"
     :list="itemData?.sales?.map((item) => item.Sale_id)"
-  />
+  /> -->
 
   <PagesMainNews />
 

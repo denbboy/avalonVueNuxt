@@ -150,8 +150,8 @@ const placeholderLang = {
 
 const formatPromoDate = () => {
   const currentDate = new Date();
-  const day = currentDate.getDate();
   const month = currentDate.getMonth();
+  const day = new Date(currentDate.getFullYear(), month + 1, 0).getDate();
 
   const monthNames = {
     ru: [
