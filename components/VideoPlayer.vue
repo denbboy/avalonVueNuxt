@@ -370,59 +370,20 @@
     </div>
 
     <div
-      v-if="item?.strings?.length"
+      v-if="metrics.length"
       :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'"
       class="flex justify-between items-end lg:mt-10 xl:mt-10 mt-10"
     >
       <div class="flex gap-5">
         <div
-          v-if="item?.strings.some((item) => item.String_id.id === 2)"
-          class="pr-5 border-r border-whiteOp-300"
+          v-for="(metric, i) in metrics"
+          :key="i"
+          :class="i < metrics.length - 1 ? 'pr-5 border-r border-whiteOp-300' : ''"
         >
-          <div
-            class="font-bold text-white text-2xl mb-2 md:text-4xl md:mb-3"
-            v-html="
-              item?.strings
-                .filter((item) => item.String_id.id === 2)[0]
-                .String_id?.translations?.filter((item) =>
-                  item.languages_code.includes(langStore.lang),
-                )[0]?.title
-            "
-          ></div>
-          <span
-            class="text-white text-sm md:text-base"
-            v-html="
-              item?.strings
-                .filter((item) => item.String_id.id === 2)[0]
-                .String_id?.translations?.filter((item) =>
-                  item.languages_code.includes(langStore.lang),
-                )[0]?.description
-            "
-          >
-          </span>
-        </div>
-        <div v-if="item?.strings.some((item) => item.String_id.id === 3)">
-          <div
-            class="font-bold text-white text-2xl mb-2 md:text-4xl md:mb-3"
-            v-html="
-              item?.strings
-                .filter((item) => item.String_id.id === 3)[0]
-                .String_id?.translations?.filter((item) =>
-                  item.languages_code.includes(langStore.lang),
-                )[0]?.title
-            "
-          ></div>
-          <span
-            class="text-white text-sm md:text-base"
-            v-html="
-              item?.strings
-                .filter((item) => item.String_id.id === 3)[0]
-                .String_id?.translations?.filter((item) =>
-                  item.languages_code.includes(langStore.lang),
-                )[0]?.description
-            "
-          >
-          </span>
+          <div class="font-bold text-white text-2xl mb-2 md:text-4xl md:mb-3">
+            {{ metric.value }}
+          </div>
+          <span class="text-white text-sm md:text-base">{{ metric.label }}</span>
         </div>
       </div>
     </div>
@@ -449,6 +410,12 @@ const { $viewport } = useNuxtApp();
 const modalsStore = useModalsStore();
 const langStore = useLangStore();
 const projectsStore = useProjectsStore();
+
+const metrics = computed(() => {
+  const tr =
+    item?.translations?.filter((t) => t.languages_code.includes(langStore.lang))[0] || {};
+  return (tr.metrics || []).filter((m) => m && m.value);
+});
 
 const minPrice = computed(() => {
   const validProjects = projectsStore.projects.filter(
