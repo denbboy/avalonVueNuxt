@@ -337,6 +337,7 @@
         </div>
         <h1
           v-if="
+            index === 0 &&
             item?.translations?.filter((item) => item.languages_code.includes(langStore.lang))[0]
               ?.description
           "
@@ -346,6 +347,17 @@
           "
           class="text-3xl font-light text-white mt-5 md:text-[55px] lg:text-[65px] leading-[100%] md:leading-[55px] lg:leading-[75px] md:mt-8 md:max-w-[825px]"
         ></h1>
+        <p
+          v-else-if="
+            item?.translations?.filter((item) => item.languages_code.includes(langStore.lang))[0]
+              ?.description
+          "
+          v-html="
+            item?.translations?.filter((item) => item.languages_code.includes(langStore.lang))[0]
+              ?.description
+          "
+          class="text-3xl font-light text-white mt-5 md:text-[55px] lg:text-[65px] leading-[100%] md:leading-[55px] lg:leading-[75px] md:mt-8 md:max-w-[825px]"
+        ></p>
 
         <button @click="addModal" class="white-button mt-7 lg:mt-12">
           {{ $t('download_presentation') }}
@@ -423,8 +435,9 @@ import url from 'url';
 import { useNuxtApp } from '#app';
 import { ref, computed } from 'vue';
 
-const { item, handleVideoPlay, handleVideoPause } = defineProps({
+const { item, index, handleVideoPlay, handleVideoPause } = defineProps({
   item: Object,
+  index: Number,
   handleVideoPlay: Object,
   handleVideoPause: Object,
 });
