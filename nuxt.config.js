@@ -77,55 +77,10 @@ export default defineNuxtConfig({
 
   sitemap: {
     autoI18n: false,
-    urls: async () => {
-      const { createDirectus, rest, readItems } = await import('@directus/sdk');
-      const API_LINK = `${DIRECTUS_URL}/`;
-      const directus = createDirectus(API_LINK).with(rest());
-
-      const [articles, projects, news] = await Promise.all([
-        directus.request(readItems('Article', { fields: ['id', 'slug'] })),
-        directus.request(readItems('Project', { fields: ['id', 'slug'] })),
-        directus.request(readItems('News', { fields: ['id', 'slug'] })),
-      ]);
-
-      const staticUrls = [
-        { url: "/", changefreq: "monthly", priority: 1.0 },
-        { url: "/ua", changefreq: "monthly", priority: 0.9 },
-        { url: "/ru", changefreq: "monthly", priority: 0.9 },
-        { url: "/#about-company", changefreq: "monthly", priority: 0.8 },
-        { url: "/#island", changefreq: "monthly", priority: 0.8 },
-        { url: "/cooperation", changefreq: "monthly", priority: 0.8 },
-        { url: "/ua/cooperation", changefreq: "monthly", priority: 0.8 },
-        { url: "/ru/cooperation", changefreq: "monthly", priority: 0.8 },
-        { url: "/career", changefreq: "monthly", priority: 0.8 },
-        { url: "/ua/career", changefreq: "monthly", priority: 0.8 },
-        { url: "/ru/career", changefreq: "monthly", priority: 0.8 },
-        { url: "/articles", changefreq: "weekly", priority: 0.9 },
-        { url: "/ua/articles", changefreq: "weekly", priority: 0.9 },
-        { url: "/ru/articles", changefreq: "weekly", priority: 0.9 },
-        { url: "/news", changefreq: "weekly", priority: 0.9 },
-        { url: "/ua/news", changefreq: "weekly", priority: 0.9 },
-        { url: "/ru/news", changefreq: "weekly", priority: 0.9 },
-      ];
-      const articleUrls = articles.flatMap(article => [
-        { url: `/articles/${article.id}`, changefreq: "monthly", priority: 0.7 },
-        { url: `/ua/articles/${article.id}`, changefreq: "monthly", priority: 0.7 },
-        { url: `/ru/articles/${article.id}`, changefreq: "monthly", priority: 0.7 },
-      ]);
-
-      const projectUrls = projects.flatMap(project => [
-        { url: `/projects/${project.id}`, changefreq: "monthly", priority: 0.9 },
-        { url: `/ua/projects/${project.id}`, changefreq: "monthly", priority: 0.9 },
-        { url: `/ru/projects/${project.id}`, changefreq: "monthly", priority: 0.9 },
-      ]);
-
-      const newsUrls = news.flatMap(item => [
-        { url: `/news/${item.id}`, changefreq: "weekly", priority: 0.7 },
-        { url: `/ua/news/${item.id}`, changefreq: "weekly", priority: 0.7 },
-        { url: `/ru/news/${item.id}`, changefreq: "weekly", priority: 0.7 },
-      ]);
-
-      return [...staticUrls, ...articleUrls, ...projectUrls, ...newsUrls];
+    sitemaps: {
+      en: { sources: ["/api/__sitemap__/en"] },
+      ru: { sources: ["/api/__sitemap__/ru"] },
+      ua: { sources: ["/api/__sitemap__/ua"] },
     },
     defaults: {
       changefreq: 'monthly',
@@ -230,7 +185,7 @@ export default defineNuxtConfig({
 
   i18n: {
     locales: [
-      { code: "ua", iso: "ua-US", name: "Ukraine", file: "ua.json" },
+      { code: "ua", iso: "uk-UA", name: "Ukraine", file: "ua.json" },
       { code: "ru", iso: "ru-RU", name: "Русский", file: "ru.json" },
       { code: "en", iso: "en-US", name: "English", file: "en.json" },
     ],

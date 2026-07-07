@@ -7,6 +7,7 @@
         </Title>
         <Meta name="description"
             :content="itemData?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.meta_description" />
+        <Meta v-if="itemData && !itemData.is_active" name="robots" content="noindex, nofollow" />
     </Head>
 
     <section class="bg-blue-500 pt-32 md:pt-64 relative overflow-hidden">
