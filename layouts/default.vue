@@ -6,8 +6,6 @@
     <LazyModalsModal />
     <LazyFooter />
   </div>
-
-  <CookieControl locale="en" />
 </template>
 
 <script setup>
