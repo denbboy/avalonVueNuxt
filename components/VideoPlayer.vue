@@ -399,8 +399,8 @@ import { ref, computed } from 'vue';
 const { item, index, handleVideoPlay, handleVideoPause } = defineProps({
   item: Object,
   index: Number,
-  handleVideoPlay: Object,
-  handleVideoPause: Object,
+  handleVideoPlay: Function,
+  handleVideoPause: Function,
 });
 
 // console.log('ITEM', item);
