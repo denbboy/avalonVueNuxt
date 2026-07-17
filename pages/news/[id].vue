@@ -142,6 +142,8 @@ onMounted(() => {
 
 SwiperCore.use([Navigation, A11y]);
 
+const modules = [Navigation, A11y];
+
 const projectTitleData = await useAsyncData('ProjectTitle', () => $fetch('/api/projectsTitle'));
 const itemProjects = projectTitleData.data.value
 const projectInclude = ref({});

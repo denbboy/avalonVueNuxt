@@ -268,6 +268,8 @@ onMounted(() => {
 
 SwiperCore.use([Navigation, A11y]);
 
+const modules = [Navigation, A11y];
+
 const langStore = useLangStore();
 const route = useRoute();
 

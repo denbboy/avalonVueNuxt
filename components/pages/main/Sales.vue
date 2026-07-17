@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <swiper class="swiper-sales" modules="modules" :slides-per-view="1" :pagination="pagination"
+        <swiper class="swiper-sales" :modules="[Navigation, A11y, Pagination]" :slides-per-view="1" :pagination="pagination"
           :navigation="navigationConfig" :breakpoints="breakpoints" :space-between="24" >
           <!-- @slideChange="onSlideChange" -->
 

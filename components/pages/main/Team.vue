@@ -26,7 +26,7 @@
         </div>
 
         <swiper class="swiper team team-block" loop :modules="modules" :breakpoints="breakpoints"
-          :navigation="navigationConfig" :space-between="20" :slides-per-view="2" @swiper="onSwiper"
+          :navigation="navigationConfig" :space-between="20" :slides-per-view="2"
           >
           <!-- @slideChange="onSlideChange" -->
 
@@ -77,10 +77,7 @@ team.value = teamFetch;
 // Конфигурация для Swiper
 SwiperCore.use([Navigation, A11y]);
 
-const modules = {
-  navigation: true,
-  a11y: true,
-};
+const modules = [Navigation, A11y];
 
 const navigationConfig = {
   nextEl: '.button-next',

@@ -54,11 +54,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 
 const articlesData = await useAsyncData("Articles", () => $fetch('/api/articles'))
 
-const modules = {
-  Navigation,
-  A11y,
-  Pagination
-};
+const modules = [Navigation, A11y, Pagination];
 
 const navigationConfig = {
   nextEl: '.articles-button-next',

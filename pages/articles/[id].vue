@@ -252,10 +252,7 @@ const itemData = computed(() => res.data.value?.[0]);
 
 SwiperCore.use([Navigation, A11y]);
 
-const modules = {
-  Navigation,
-  A11y,
-};
+const modules = [Navigation, A11y];
 
 const navigationConfig = {
   nextEl: '.articles-button-next',
