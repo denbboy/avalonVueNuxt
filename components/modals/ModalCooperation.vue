@@ -125,15 +125,6 @@
 <script setup>
 import { ref } from 'vue';
 import { useFormsStore } from '~/stores/functions/forms';
-import { useReCaptcha } from 'vue-recaptcha-v3';
-
-const recaptchaInstance = useReCaptcha();
-
-const recaptcha = async () => {
-  await recaptchaInstance?.recaptchaLoaded();
-  const token = await recaptchaInstance?.executeRecaptcha('yourActionHere');
-  return token;
-};
 
 // Определение реактивных переменных
 const file = ref(null);
@@ -167,13 +158,6 @@ const handleSubmitForm = async () => {
   const url = useRequestURL();
   const clearUrl = url.href.split('?')[0];
   const cooperationTitle = url.searchParams.get('title');
-
-  if (currentForm?.captcha) {
-    if (!recaptcha()) {
-      errorText.value = 'Recaptcha error';
-      return (isError.value = true);
-    }
-  }
 
   try {
     if (!fullName.value || !email.value || !message.value || !validateEmail(email.value)) {

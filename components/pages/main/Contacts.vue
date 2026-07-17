@@ -98,16 +98,7 @@
 import { ref, watch } from 'vue';
 import { usePagesStore } from '~/stores/functions/pages';
 import { useToolkit } from '~/stores/functions/toolkit';
-import { useReCaptcha } from 'vue-recaptcha-v3';
 import { useFormsStore } from '~/stores/functions/forms';
-
-const recaptchaInstance = useReCaptcha();
-
-const recaptcha = async () => {
-  await recaptchaInstance?.recaptchaLoaded();
-  const token = await recaptchaInstance?.executeRecaptcha('yourActionHere');
-  return token;
-};
 
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
@@ -144,12 +135,6 @@ const resetForm = () => {
 };
 
 const submitForm = async () => {
-  if (currentForm?.captcha) {
-    if (!recaptcha()) {
-      errorText.value = 'Recaptcha error';
-      return (isError.value = true);
-    }
-  }
 
   try {
     if (phoneInput.value?.instance) {

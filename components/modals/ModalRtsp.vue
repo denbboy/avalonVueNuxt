@@ -10,7 +10,6 @@
 <script setup>
 import { ref } from 'vue';
 import { useFormsStore } from '~/stores/functions/forms';
-import { useReCaptcha } from 'vue-recaptcha-v3';
 
 const modalsStore = useModalsStore()
 
@@ -19,15 +18,6 @@ const itemData = ref({});
 watchEffect(() => {
     itemData.value = modalsStore.modalData
 })
-
-const recaptchaInstance = useReCaptcha();
-
-const recaptcha = async () => {
-    await recaptchaInstance?.recaptchaLoaded();
-    const token = await recaptchaInstance?.executeRecaptcha('yourActionHere');
-    return token;
-};
-
 
 // Определение реактивных переменных
 const file = ref(null);
@@ -56,13 +46,6 @@ const validateEmail = (email) => {
 
 // Функция обработки отправки формы
 const handleSubmitForm = async () => {
-    if (currentForm?.captcha) {
-        if (!recaptcha()) {
-            errorText.value = 'Recaptcha error'
-            return isError.value = true
-        }
-    }
-
     try {
         if (!fullName.value || !email.value || !message.value || !file.value || !validateEmail(email.value)) {
             isError.value = true;

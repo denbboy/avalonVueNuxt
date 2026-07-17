@@ -94,18 +94,9 @@ import { ref, watch } from 'vue';
 import { usePagesStore } from '~/stores/functions/pages';
 import { useToolkit } from '~/stores/functions/toolkit';
 import { useLangStore } from '~/stores/functions/language';
-import { useReCaptcha } from 'vue-recaptcha-v3';
 import { useFormsStore } from '~/stores/functions/forms';
 import { useModalsStore } from '~/stores/functions/modals';
 import 'intl-tel-input/build/css/intlTelInput.css';
-
-const recaptchaInstance = useReCaptcha();
-
-const recaptcha = async () => {
-  await recaptchaInstance?.recaptchaLoaded();
-  const token = await recaptchaInstance?.executeRecaptcha('yourActionHere');
-  return token;
-};
 
 const pagesStore = usePagesStore();
 const langStore = useLangStore();
@@ -141,13 +132,6 @@ const resetForm = () => {
 };
 
 const submitForm = async () => {
-  if (currentForm?.captcha) {
-    if (!recaptcha()) {
-      errorText.value = 'Recaptcha error';
-      return (isError.value = true);
-    }
-  }
-
   try {
     if (phoneInput.value?.instance) {
       phone.value = phoneInput.value.instance.getNumber();

@@ -90,10 +90,6 @@ useHead(() => ({
   box-shadow: 0 -6px 5px 0px #012d52;
 }
 
-.grecaptcha-badge {
-  opacity: 0;
-}
-
 .skeleton {
   width: 100%;
   height: 100%;
