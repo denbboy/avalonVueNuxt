@@ -26,8 +26,8 @@
                 {{ props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.title }}
             </p>
             <div :class="bgdColor === 'white' ? 'text-blue-600' : 'text-white'"
-                class="mt-3 md:mt-4 items-center text-sm opacity-60 line-clamp-2 h-[39px] overflow-hidden"
-                v-html="downgradeHeadings(props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.description)">
+                class="mt-3 md:mt-4 items-center text-sm opacity-60 line-clamp-2">
+                {{ props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.description }}
             </div>
         </div>
     </NuxtLink>

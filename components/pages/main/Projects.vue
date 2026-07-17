@@ -112,14 +112,13 @@
                     }}
                   </NuxtLink>
                 </h2>
-                <div
-                  class="text-white text-xs md:text-[11px] lg:text-sm mb-5 line-clamp-3"
-                  v-html="
+                <div class="text-white text-xs md:text-[11px] lg:text-sm mb-5 line-clamp-3">
+                  {{
                     item?.translations?.filter((item) =>
                       item.languages_code.includes(langStore.lang),
                     )[0]?.description
-                  "
-                ></div>
+                  }}
+                </div>
                 <div
                   v-if="item?.is_price_show && item?.price && item?.price_local"
                   class="flex flex-col mb-5"
