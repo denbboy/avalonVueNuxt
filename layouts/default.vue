@@ -6,6 +6,8 @@
     <LazyModalsModal />
     <LazyFooter />
   </div>
+
+  <Preloader />
 </template>
 
 <script setup>
@@ -66,12 +68,6 @@ watch(
 //   }, 500)
 // })
 
-watch(
-  () => route.fullPath,
-  (newPath) => {
-    isProjectHeader.value = newPath.includes('/projects/');
-  },
-);
 // Make head reactive to locale changes
 useHead(() => ({
   htmlAttrs: {

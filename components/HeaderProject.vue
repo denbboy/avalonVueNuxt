@@ -447,8 +447,6 @@
       "
     ></div>
   </header>
-
-  <Preloader :isActive="isLoading" />
 </template>
 
 <style>

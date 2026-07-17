@@ -41,6 +41,7 @@ setTimeout(() => {
 
 hook("page:start", () => {
     isHide.value = false;
+    visibilityClass.value = 'visible opacity-100';
     setTimeout(() => (isLoading.value = true), 50);
 });
 

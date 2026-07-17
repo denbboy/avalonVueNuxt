@@ -196,8 +196,6 @@
       "
     ></div>
   </header>
-
-  <Preloader :isActive="isLoading" />
 </template>
 
 <script setup>
