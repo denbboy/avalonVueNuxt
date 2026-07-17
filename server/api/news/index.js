@@ -7,7 +7,14 @@ export default defineEventHandler(async (event) => {
   try {
     const items = await directus.request(
       readItems("News", {
-        fields: ["*", "translations.*"],
+        fields: [
+          "id",
+          "preview",
+          "date_created",
+          "translations.languages_code",
+          "translations.slug",
+          "translations.title",
+        ],
         sort: ['-date_created'],
       })
     );
