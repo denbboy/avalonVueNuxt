@@ -70,11 +70,11 @@ import { computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useAsyncData } from '#imports';
 import { useLangStore } from '@/stores/functions/language';
-import { useProjectsStore } from '@/stores/functions/projects';
+import { useCurrentItemStore } from '@/stores/functions/currentItem';
 
 const route = useRoute();
 const langStore = useLangStore();
-const projectsStore = useProjectsStore();
+const currentItemStore = useCurrentItemStore();
 
 // Устанавливаем язык из URL в хранилище
 // langStore.lang = route.params.lang || 'ru';
@@ -111,8 +111,7 @@ if (!itemData.value)
     statusMessage: 'Not Found',
   });
 
-// Обновляем текущий проект в сторе
-projectsStore.setCurrentProject(itemData.value);
+currentItemStore.setCurrentItem('project', itemData.value);
 
 // Следим за изменением языка в URL и обновляем store
 watch(

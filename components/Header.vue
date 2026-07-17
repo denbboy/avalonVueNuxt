@@ -207,6 +207,7 @@ import { useProjectsStore } from '~/stores/functions/projects';
 import { usePreloaderStore } from '~/stores/functions/preloader';
 import { useRouter, useRoute } from 'vue-router';
 import { useModalsStore } from '~/stores/functions/modals';
+import { useCurrentItemStore } from '~/stores/functions/currentItem';
 
 const props = defineProps(['header']);
 
@@ -221,6 +222,7 @@ const toolkitStore = useToolkit();
 const projectsStore = useProjectsStore();
 const preloaderStore = usePreloaderStore();
 const modalsStore = useModalsStore();
+const currentItemStore = useCurrentItemStore();
 
 const isLoading = ref(false);
 const isOpenBurger = ref(false);
@@ -249,12 +251,16 @@ const changeLanguage = async (newLocale) => {
     pathWithoutLocale = pathWithoutLocale.substring(1);
   }
 
-  // console.log('Language change debug:', {
-  //   currentPath,
-  //   pathWithoutLocale,
-  //   newLocale,
-  //   newPath: newLocale !== DEFAULT_LOCALE ? `/${newLocale}${pathWithoutLocale}` : pathWithoutLocale,
-  // });
+  if (currentItemStore.item) {
+    const translation = currentItemStore.item.translations?.find((t) =>
+      t.languages_code.includes(newLocale),
+    );
+    if (translation?.slug) {
+      const segments = pathWithoutLocale.replace(/\/$/, '').split('/');
+      segments[segments.length - 1] = translation.slug;
+      pathWithoutLocale = segments.join('/');
+    }
+  }
 
   // Set the locale in i18n first
   await $i18n.setLocale(newLocale);
@@ -273,7 +279,7 @@ const changeLanguage = async (newLocale) => {
     newLocale !== DEFAULT_LOCALE ? `/${newLocale}${pathWithoutLocale}` : pathWithoutLocale;
 
   // Use navigateTo for proper navigation
-  await navigateTo(newPath);
+  await navigateTo({ path: newPath, query: route.query, hash: route.hash });
 
   setTimeout(preloaderStore.stop, 500);
 };

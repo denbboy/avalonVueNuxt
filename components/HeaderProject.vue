@@ -5,14 +5,14 @@
       :class="isOpenBurger ? 'bg-blue-500' : 'md:bg-transparent'"
     >
       <div class="header__inner px-5 flex items-center justify-between gap-4 lg:gap-8 relative">
-        <!-- :href="`/projects/${projectsStore.currentProject?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`" -->
+        <!-- :href="`/projects/${currentItemStore.item?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`" -->
         <div class="flex items-center gap-4 lg:gap-8">
           <button
             class="max-w-10 w-full md:max-w-20 lg:mr-2"
-            v-if="projectsStore.currentProject?.logo"
+            v-if="currentItemStore.type === 'project' && currentItemStore.item?.logo"
           >
             <NuxtImg
-              :src="`https://api.avalonbali.com/assets/${projectsStore.currentProject?.logo}`"
+              :src="`https://api.avalonbali.com/assets/${currentItemStore.item?.logo}`"
               loading="lazy"
               class="w-full"
               alt="Vector"
@@ -479,6 +479,7 @@ const isOpen = ref(false);
 const mainPageLink = ref('/');
 
 const langStore = useLangStore();
+const currentItemStore = useCurrentItemStore();
 
 const handleOpenBurger = () => {
   isOpenBurger.value = !isOpenBurger.value;
@@ -524,10 +525,12 @@ onMounted(() => {
     const routeLang = currentPath.match(/^\/([a-z]{2})(\/|$)/)?.[1];
 
     // Use route language or fallback to stored language
-    const lang = routeLang || localStorage.getItem('selectedLanguage') || 'en';
+    const lang = routeLang || localStorage.getItem('i18n_redirected') || 'en';
 
     // Set mainPageLink: empty for English, language prefix for others
     mainPageLink.value = lang === 'en' ? '/' : `/${lang}`;
+
+    langStore.setLang(lang);
   }
 });
 
@@ -560,12 +563,16 @@ const changeLanguage = async (newLocale) => {
     pathWithoutLocale = pathWithoutLocale.substring(1);
   }
 
-  // console.log('HeaderProject Language change debug:', {
-  //   currentPath,
-  //   pathWithoutLocale,
-  //   newLocale,
-  //   newPath: newLocale !== DEFAULT_LOCALE ? `/${newLocale}${pathWithoutLocale}` : pathWithoutLocale,
-  // });
+  if (currentItemStore.item) {
+    const translation = currentItemStore.item.translations?.find((t) =>
+      t.languages_code.includes(newLocale),
+    );
+    if (translation?.slug) {
+      const segments = pathWithoutLocale.replace(/\/$/, '').split('/');
+      segments[segments.length - 1] = translation.slug;
+      pathWithoutLocale = segments.join('/');
+    }
+  }
 
   // Set the locale in i18n first
   await $i18n.setLocale(newLocale);
@@ -584,7 +591,7 @@ const changeLanguage = async (newLocale) => {
     newLocale !== DEFAULT_LOCALE ? `/${newLocale}${pathWithoutLocale}` : pathWithoutLocale;
 
   // Use navigateTo for proper navigation
-  await navigateTo(newPath);
+  await navigateTo({ path: newPath, query: route.query, hash: route.hash });
 
   setTimeout(() => {
     preloaderStore.stop();

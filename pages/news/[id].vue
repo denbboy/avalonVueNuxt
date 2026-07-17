@@ -122,6 +122,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { useCurrentItemStore } from '~/stores/functions/currentItem';
 
 const route = useRoute();
 
@@ -130,6 +131,9 @@ const res = await useAsyncData(
   () => $fetch(`/api/news/${route.params.id}`)
 );
 const itemData = computed(() => res.data.value?.[0]);
+
+const currentItemStore = useCurrentItemStore();
+currentItemStore.setCurrentItem('news', itemData.value);
 const resAll = await useAsyncData('News', () => $fetch(`/api/news`));
 const itemDataAll = resAll?.data.value
 

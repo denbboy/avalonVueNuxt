@@ -2,7 +2,7 @@ export default defineNuxtPlugin(({ $i18n, $router }) => {
   if (process.client) {
     $router.beforeEach((to, from, next) => {
       const langStore = useLangStore();
-      const savedLanguage = localStorage.getItem('selectedLanguage');
+      const savedLanguage = localStorage.getItem('i18n_redirected');
       const currentLocale = savedLanguage || langStore.lang || 'en';
       const localePrefix = currentLocale !== 'en' ? `/${currentLocale}` : '';
 
@@ -14,7 +14,7 @@ export default defineNuxtPlugin(({ $i18n, $router }) => {
 
       // Избегаем бесконечной переадресации
       if (to.path !== newPath) {
-        return next(newPath);
+        return next({ path: newPath, query: to.query, hash: to.hash });
       }
 
       next();

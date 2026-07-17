@@ -52,28 +52,28 @@
     <div class="md:hidden flex flex-col gap-8 mb-12 pb-7 border-b border-whiteOp-300">
       <NuxtLink
         @click="handleCloseBurger"
-        :href="mainPageLink + '/#about-company'"
+        :href="(mainPageLink === '/' ? '' : mainPageLink) + '/#about-company'"
         class="hover:text-blue-400 transition-all"
       >
         {{ $t('about_company') }}
       </NuxtLink>
       <NuxtLink
         @click="handleCloseBurger"
-        :href="mainPageLink + '/#island'"
+        :href="(mainPageLink === '/' ? '' : mainPageLink) + '/#island'"
         class="hover:text-blue-400 transition-all"
       >
         {{ $t('why_bali') }}
       </NuxtLink>
       <NuxtLink
         @click="handleCloseBurger"
-        href="/cooperation"
+        :href="(mainPageLink === '/' ? '' : mainPageLink) + '/cooperation'"
         class="hover:text-blue-400 transition-all"
       >
         {{ $t('cooperation') }}
       </NuxtLink>
       <NuxtLink
         @click="handleCloseBurger"
-        href="/career"
+        :href="(mainPageLink === '/' ? '' : mainPageLink) + '/career'"
         class="hover:text-blue-400 transition-all"
       >
         {{ $t('career') }}
@@ -174,6 +174,7 @@ import { useToolkit } from '~/stores/functions/toolkit';
 import { usePreloaderStore } from '~/stores/functions/preloader';
 import { useRouter, useRoute } from 'vue-router';
 import { useModalsStore } from '~/stores/functions/modals';
+import { useCurrentItemStore } from '~/stores/functions/currentItem';
 
 const router = useRouter();
 const route = useRoute();
@@ -182,27 +183,51 @@ const langStore = useLangStore();
 const toolkitStore = useToolkit();
 const preloaderStore = usePreloaderStore();
 const modalsStore = useModalsStore();
+const currentItemStore = useCurrentItemStore();
 
 const isLoading = ref(false);
 const mainPageLink = ref('/');
 const DEFAULT_LOCALE = 'en';
 
-const changeLanguage = (newLocale) => {
-  const currentPath = route.fullPath;
-  let pathWithoutLocale = currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
+const changeLanguage = async (newLocale) => {
+  const { $i18n } = useNuxtApp();
 
-  pathWithoutLocale =
-    newLocale !== DEFAULT_LOCALE ? `/${newLocale}${pathWithoutLocale}` : `/${pathWithoutLocale}`;
+  const currentPath = route.path;
+  let pathWithoutLocale = currentPath;
+
+  if (currentPath.match(/^\/[a-z]{2}(\/|$)/)) {
+    pathWithoutLocale = currentPath.replace(/^\/[a-z]{2}/, '');
+    if (pathWithoutLocale === '') {
+      pathWithoutLocale = '/';
+    }
+  }
+
+  if (pathWithoutLocale.startsWith('//')) {
+    pathWithoutLocale = pathWithoutLocale.substring(1);
+  }
+
+  if (currentItemStore.item) {
+    const translation = currentItemStore.item.translations?.find((tr) =>
+      tr.languages_code.includes(newLocale),
+    );
+    if (translation?.slug) {
+      const segments = pathWithoutLocale.replace(/\/$/, '').split('/');
+      segments[segments.length - 1] = translation.slug;
+      pathWithoutLocale = segments.join('/');
+    }
+  }
+
+  const newPath =
+    newLocale !== DEFAULT_LOCALE ? `/${newLocale}${pathWithoutLocale}` : pathWithoutLocale;
 
   mainPageLink.value = newLocale === 'en' ? '/' : `/${newLocale}`;
 
-  if (router.currentRoute.value.fullPath !== pathWithoutLocale) {
-    router.push(pathWithoutLocale);
-  }
+  await $i18n.setLocale(newLocale);
 
-  locale.value = newLocale;
+  router.push({ path: newPath, query: route.query, hash: route.hash });
+
   langStore.setLang(newLocale);
-  localStorage.setItem('selectedLanguage', newLocale);
+  localStorage.setItem('i18n_redirected', newLocale);
 
   setTimeout(preloaderStore.stop, 500);
 
@@ -222,10 +247,12 @@ onMounted(() => {
     const routeLang = currentPath.match(/^\/([a-z]{2})(\/|$)/)?.[1];
 
     // Use route language or fallback to stored language
-    const lang = routeLang || localStorage.getItem('selectedLanguage') || 'en';
+    const lang = routeLang || localStorage.getItem('i18n_redirected') || 'en';
 
     // Set mainPageLink: empty for English, language prefix for others
     mainPageLink.value = lang === 'en' ? '/' : `/${lang}`;
+
+    langStore.setLang(lang);
   }
 });
 

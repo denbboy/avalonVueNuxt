@@ -234,6 +234,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { useCurrentItemStore } from '~/stores/functions/currentItem';
 
 const { getItems } = useDirectusItems();
 const route = useRoute();
@@ -249,6 +250,9 @@ const res = await useAsyncData(
 );
 const itemData = computed(() => res.data.value?.[0]);
 // GET POST
+
+const currentItemStore = useCurrentItemStore();
+currentItemStore.setCurrentItem('article', itemData.value);
 
 SwiperCore.use([Navigation, A11y]);
 

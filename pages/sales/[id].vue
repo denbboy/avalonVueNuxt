@@ -281,6 +281,9 @@ const res = await useAsyncData(
 );
 const itemData = computed(() => res.data.value?.[0]);
 
+const currentItemStore = useCurrentItemStore();
+currentItemStore.setCurrentItem('sale', itemData.value);
+
 const projectTitleData = await useAsyncData('ProjectTitle', () => $fetch('/api/projectsTitle'));
 const itemProjects = projectTitleData.data.value
 const projectInclude = ref({});
