@@ -1,6 +1,6 @@
 <template>
-    <NuxtLink
-        :href="`/sales/${props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.slug}`"
+    <NuxtLinkLocale
+        :to="`/sales/${props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.slug}`"
         class="group h-full block relative rounded-2xl transition-all">
         <div :class="{
             'border-white bg-white after:bg-blue-500': props.bgdColor === 'white',
@@ -53,7 +53,7 @@
             </div>
             <div v-else class="min-h-5"></div>
         </div>
-    </NuxtLink>
+    </NuxtLinkLocale>
 </template>
 
 <script setup>

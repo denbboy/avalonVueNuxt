@@ -92,11 +92,11 @@
                                     <div class="max-w-96">
                                         <h2
                                             class="text-white hover:text-blue-400 transition-all font-bold text-2xl md:text-[22px] lg:text-[30px] mb-5">
-                                            <NuxtLink
-                                                :href="`/projects/${projectInclude?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`">
+                                            <NuxtLinkLocale
+                                                :to="`/projects/${projectInclude?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`">
                                                 {{projectInclude?.translations?.filter(item =>
                                                     item.languages_code.includes(langStore.lang))[0]?.title}}
-                                            </NuxtLink>
+                                            </NuxtLinkLocale>
                                         </h2>
                                         <div class="text-white text-xs md:text-[11px] lg:text-sm mb-5 line-clamp-3"
                                             v-html="projectInclude?.translations?.filter(item =>
@@ -114,11 +114,11 @@
                                         </div>
 
                                         <div class="flex">
-                                            <NuxtLink
-                                                :href="`/projects/${projectInclude?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
+                                            <NuxtLinkLocale
+                                                :to="`/projects/${projectInclude?.translations?.filter(item => item.languages_code.includes(langStore.lang))[0]?.slug}`"
                                                 class="hover:bg-white hover:text-blue-400 transition-all border-white border-[1px] py-[12px] px-5 rounded-[10px] text-white font-bold text-sm md:text-xs lg:text-base mr-7">
                                                 {{ $t('more') }}
-                                            </NuxtLink>
+                                            </NuxtLinkLocale>
                                             <div v-if="projectInclude?.location_name" class="flex items-center">
                                                 <img class="w-3" src="/img/icons/point-white.svg" alt="Image"
                                                     loading="lazy" />

@@ -1,6 +1,6 @@
 <template>
-    <NuxtLink
-        :href="`/articles/${props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.slug}`"
+    <NuxtLinkLocale
+        :to="`/articles/${props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.slug}`"
         class="w-full rounded-[20px] overflow-hidden h-full block group transition-all hover:shadow-[0px_10px_10px_0px_rgba(0,0,0,.1)] lg:max-w-[375px]">
         <div class="relative w-full h-[300px]">
             <div :class="{
@@ -30,7 +30,7 @@
                 {{ props?.item?.translations?.filter(item => item.languages_code.includes(locale))[0]?.description }}
             </div>
         </div>
-    </NuxtLink>
+    </NuxtLinkLocale>
 </template>
 
 <script setup>

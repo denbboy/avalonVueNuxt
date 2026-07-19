@@ -12,9 +12,9 @@
       <p class="text-white md:text-lg mt-7 md:mt-12 text-center mx-auto max-w-4xl">
         {{  $t('404_text')  }}
       </p>
-      <NuxtLink to="/" class="white-button mx-auto mt-7 md:mt-12">
+      <NuxtLinkLocale to="/" class="white-button mx-auto mt-7 md:mt-12">
         {{  $t('404_button')  }}
-      </NuxtLink>
+      </NuxtLinkLocale>
 
       <div class="absolute -right-[38px] top-[200px] w-[76px] z-10 md:w-[280px] md:-right-[140px]">
         <img loading="lazy" src="/img/icons/vector-logo.svg" class="w-full" alt="vector-logo" />

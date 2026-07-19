@@ -54,7 +54,7 @@
                     <video loop class="w-[379px] h-[392px] object-cover" muted autoplay
                         src="/assets/video/video-logo.webm"></video>
                 </div> -->
-        <NuxtLink href="/" class="hidden lg:block">
+        <NuxtLinkLocale to="/" class="hidden lg:block">
           <video
             v-if="isVideoLoaded"
             loop
@@ -75,7 +75,7 @@
             class="w-full h-[392px]"
             alt="ph"
           />
-        </NuxtLink>
+        </NuxtLinkLocale>
 
         <div class="w-full xl:w-fit xl:block">
           <div class="md:mb-[30px] md:pb-[30px] w-fit border-b border-white/10 mb-5 pb-5">
@@ -373,7 +373,7 @@
           <!-- <video loop class="max-w-[96px] hidden md:block" muted autoplay
                         :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_video + '?width=392&height=392&format=webm'"
                         @error="handleError"></video> -->
-          <NuxtLink href="/">
+          <NuxtLinkLocale to="/">
             <NuxtImg
               :src="'https://api.avalonbali.com/assets/' + toolkitStore?.settings?.footer_img"
               format="webp"
@@ -381,7 +381,7 @@
               class="max-w-[96px] block md:hidden"
               alt="ph"
             />
-          </NuxtLink>
+          </NuxtLinkLocale>
 
           <!-- <div class="logo-clip-path md:hidden">
                         <video loop class="w-[96px] h-[100px] object-cover" muted autoplay>
@@ -394,46 +394,46 @@
             <li
               class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none"
             >
-              <NuxtLink href="/cooperation" class="hover:text-blue-400 transition-all">
+              <NuxtLinkLocale to="/cooperation" class="hover:text-blue-400 transition-all">
                 {{
                   pagesStore.pagesList
                     ?.filter((item) => item.slug === 'cooperation')[0]
                     ?.translations?.filter((item) => item.languages_code.includes(locale))[0]?.title
                 }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li
               class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none"
             >
-              <NuxtLink href="/career" class="hover:text-blue-400 transition-all">
+              <NuxtLinkLocale to="/career" class="hover:text-blue-400 transition-all">
                 {{
                   pagesStore.pagesList
                     ?.filter((item) => item.slug === 'career')[0]
                     ?.translations?.filter((item) => item.languages_code.includes(locale))[0]?.title
                 }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li
               class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none"
             >
-              <NuxtLink href="/docs/privacy-police" class="hover:text-blue-400 transition-all">
+              <NuxtLinkLocale to="/docs/privacy-police" class="hover:text-blue-400 transition-all">
                 {{
                   pagesStore.pagesList
                     ?.filter((item) => item.slug === 'privacy-police')[0]
                     ?.translations?.filter((item) => item.languages_code.includes(locale))[0]?.title
                 }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li
               class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none"
             >
-              <NuxtLink href="/docs/terms" class="hover:text-blue-400 transition-all">
+              <NuxtLinkLocale to="/docs/terms" class="hover:text-blue-400 transition-all">
                 {{
                   pagesStore.pagesList
                     ?.filter((item) => item.slug === 'terms')[0]
                     ?.translations?.filter((item) => item.languages_code.includes(locale))[0]?.title
                 }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li
               class="text-white/60 text-xs lg:text-sm mb-2 md:mb-0 md:border-r md:pr-[14px] md:mr-[14px] border-white/10 last:pr-0 last:mr-0 last:border-none"

@@ -12,9 +12,9 @@
           </h2>
 
           <div class="w-fit hidden md:flex" data-aos="fade-up">
-            <NuxtLink href="/sales" class="mr-12 text-blue-600 font-bold underline hover:no-underline">
+            <NuxtLinkLocale to="/sales" class="mr-12 text-blue-600 font-bold underline hover:no-underline">
               {{ $t('all_sales') }}
-            </NuxtLink>
+            </NuxtLinkLocale>
             <button type="button" class=" transition-all hover:opacity-100 sales-button-prev mr-9">
               <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -44,9 +44,9 @@
 
         </swiper>
 
-        <NuxtLink href="/sales" class="blue-border-button mx-auto mt-5 md:hidden">
+        <NuxtLinkLocale to="/sales" class="blue-border-button mx-auto mt-5 md:hidden">
           {{ $t('all_sales') }}
-        </NuxtLink>
+        </NuxtLinkLocale>
 
       </div>
     </div>

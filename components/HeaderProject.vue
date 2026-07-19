@@ -23,12 +23,12 @@
           </div> -->
 
           <div class="items-center gap-[26px] 3xl:gap-9 hidden md:flex">
-            <NuxtLink
-              href="/"
+            <NuxtLinkLocale
+              to="/"
               class="text-white text-[12px] 3xl:text-base relative transition-all before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300 after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300"
             >
               Avalon
-            </NuxtLink>
+            </NuxtLinkLocale>
             <NuxtLink
               href="#about"
               class="text-white text-[12px] 3xl:text-base relative transition-all before:block before:w-0 hover:before:w-2/3 before:h-[1px] before:bg-white before:absolute before:bottom-[-5px] before:left-0 before:transition-all before:duration-300 after:block after:w-0 hover:after:w-2/3 after:h-[1px] after:bg-white after:absolute after:bottom-[-9px] after:right-0 after:transition-all after:duration-300"
@@ -76,8 +76,8 @@
               <div
                 class="projectsMenu opacity-0 invisible group-hover:opacity-100 group-hover:visible flex transition-all flex-col p-6 rounded-xl bg-blue-500 absolute top-[30px] left-0 border border-whiteOp-300"
               >
-                <NuxtLink
-                  :href="`${mainPageLink === '/' ? '' : mainPageLink}/projects/${
+                <NuxtLinkLocale
+                  :to="`/projects/${
                     item?.translations?.filter((item) =>
                       item.languages_code.toLowerCase().startsWith(langStore.lang.toLowerCase()),
                     )[0]?.slug
@@ -91,7 +91,7 @@
                       item.languages_code.toLowerCase().startsWith(langStore.lang.toLowerCase()),
                     )[0]?.title
                   }}
-                </NuxtLink>
+                </NuxtLinkLocale>
               </div>
             </div>
             <NuxtLink
@@ -269,9 +269,9 @@
       :class="isOpenBurger ? 'opacity-100 visible' : 'opacity-0 invisible'"
     >
       <div class="md:hidden flex flex-col gap-8 mb-12 pb-7 border-b border-whiteOp-300">
-        <NuxtLink @click="handleCloseBurger" href="/" class="hover:text-blue-400 transition-all">
+        <NuxtLinkLocale @click="handleCloseBurger" to="/" class="hover:text-blue-400 transition-all">
           Avalon
-        </NuxtLink>
+        </NuxtLinkLocale>
         <NuxtLink
           @click="handleCloseBurger"
           href="#about"
@@ -326,9 +326,9 @@
             :class="isOpenSubMenu ? 'max-h-96 mt-8' : 'max-h-0 mt-0'"
             class="burger__proj_body h-full overflow-hidden flex transition-all flex-col"
           >
-            <NuxtLink
+            <NuxtLinkLocale
               @click="handleCloseBurger"
-              :href="`${mainPageLink === '/' ? '' : mainPageLink}/projects/${
+              :to="`/projects/${
                 item?.translations?.filter((item) =>
                   item.languages_code.toLowerCase().startsWith(langStore.lang.toLowerCase()),
                 )[0]?.slug
@@ -342,7 +342,7 @@
                   item.languages_code.toLowerCase().startsWith(langStore.lang.toLowerCase()),
                 )[0]?.title
               }}
-            </NuxtLink>
+            </NuxtLinkLocale>
           </div>
         </div>
         <NuxtLink
@@ -476,7 +476,6 @@ const isOpenSubMenu = ref(false);
 const isOpenBurger = ref(false);
 const isScrolled = ref(false);
 const isOpen = ref(false);
-const mainPageLink = ref('/');
 
 const langStore = useLangStore();
 const currentItemStore = useCurrentItemStore();
@@ -527,20 +526,9 @@ onMounted(() => {
     // Use route language or fallback to stored language
     const lang = routeLang || localStorage.getItem('i18n_redirected') || 'en';
 
-    // Set mainPageLink: empty for English, language prefix for others
-    mainPageLink.value = lang === 'en' ? '/' : `/${lang}`;
-
     langStore.setLang(lang);
   }
 });
-
-// Watch for language changes
-watch(
-  () => langStore.lang,
-  (newLang) => {
-    mainPageLink.value = newLang === 'en' ? '/' : `/${newLang}`;
-  },
-);
 
 const changeLanguage = async (newLocale) => {
   const { $i18n } = useNuxtApp();
@@ -582,9 +570,6 @@ const changeLanguage = async (newLocale) => {
 
   // Save to localStorage
   localStorage.setItem('i18n_redirected', newLocale);
-
-  // Update main page link
-  mainPageLink.value = newLocale === 'en' ? '/' : `/${newLocale}`;
 
   // Navigate to the new URL with proper locale
   const newPath =

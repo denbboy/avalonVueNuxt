@@ -138,7 +138,7 @@
 
         <div class="flex items-center justify-between md:block md:mt-7 mt-3 lg:mt-12">
           <!-- <NuxtLink :to="`/projects/${item?.projects[0]?.item?.slug}`" class="white-button md:mt-7 mt-3 lg:mt-12"> -->
-          <NuxtLink
+          <NuxtLinkLocale
             :class="isVideoPlayed ? 'opacity-0 invisible' : 'opacity-100 visible'"
             :to="`/projects/${
               item?.projects[0]?.item?.translations?.filter((item) =>
@@ -148,7 +148,7 @@
             class="white-button"
           >
             {{ $t('more') }}
-          </NuxtLink>
+          </NuxtLinkLocale>
 
           <button
             data-aos="fade-up"

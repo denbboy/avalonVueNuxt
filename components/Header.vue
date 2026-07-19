@@ -6,7 +6,6 @@
     >
       <div class="header__inner px-5 flex items-center justify-between gap-3 relative z-[2]">
         <LazyHeaderLogoMenu
-          :mainPageLink="mainPageLink"
           :projectsStore="projectsStore"
           :langStore="langStore"
         />
@@ -227,7 +226,6 @@ const currentItemStore = useCurrentItemStore();
 const isLoading = ref(false);
 const isOpenBurger = ref(false);
 const isScrolled = ref(false);
-const mainPageLink = ref('/');
 const DEFAULT_LOCALE = 'en';
 
 const changeLanguage = async (newLocale) => {
@@ -271,9 +269,6 @@ const changeLanguage = async (newLocale) => {
   // Save to localStorage
   localStorage.setItem('i18n_redirected', newLocale);
 
-  // Update main page link
-  mainPageLink.value = newLocale !== DEFAULT_LOCALE ? `/${newLocale}` : '/';
-
   // Navigate to the new URL with proper locale
   const newPath =
     newLocale !== DEFAULT_LOCALE ? `/${newLocale}${pathWithoutLocale}` : pathWithoutLocale;
@@ -302,9 +297,6 @@ onMounted(() => {
 
   // Update language store to match
   langStore.setLang(currentLocale);
-
-  // Update main page link
-  mainPageLink.value = currentLocale !== DEFAULT_LOCALE ? `/${currentLocale}` : '/';
 });
 
 const handleOpenBurger = () => {

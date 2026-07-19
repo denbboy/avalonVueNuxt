@@ -30,9 +30,9 @@
         :class="isOpenSubMenu ? 'max-h-96 mt-8' : 'max-h-0 mt-0'"
         class="burger__proj_body h-full overflow-hidden flex transition-all flex-col"
       >
-        <NuxtLink
+        <NuxtLinkLocale
           @click="handleCloseBurger"
-          :href="`${mainPageLink === '/' ? '' : mainPageLink}/projects/${
+          :to="`/projects/${
             item?.translations?.filter((item) =>
               item.languages_code.toLowerCase().startsWith(props.langStore.lang.toLowerCase()),
             )[0]?.slug
@@ -46,38 +46,38 @@
               item.languages_code.toLowerCase().startsWith(props.langStore.lang.toLowerCase()),
             )[0]?.title
           }}
-        </NuxtLink>
+        </NuxtLinkLocale>
       </div>
     </div>
     <div class="md:hidden flex flex-col gap-8 mb-12 pb-7 border-b border-whiteOp-300">
-      <NuxtLink
+      <NuxtLinkLocale
         @click="handleCloseBurger"
-        :href="(mainPageLink === '/' ? '' : mainPageLink) + '/#about-company'"
+        to="/#about-company"
         class="hover:text-blue-400 transition-all"
       >
         {{ $t('about_company') }}
-      </NuxtLink>
-      <NuxtLink
+      </NuxtLinkLocale>
+      <NuxtLinkLocale
         @click="handleCloseBurger"
-        :href="(mainPageLink === '/' ? '' : mainPageLink) + '/#island'"
+        to="/#island"
         class="hover:text-blue-400 transition-all"
       >
         {{ $t('why_bali') }}
-      </NuxtLink>
-      <NuxtLink
+      </NuxtLinkLocale>
+      <NuxtLinkLocale
         @click="handleCloseBurger"
-        :href="(mainPageLink === '/' ? '' : mainPageLink) + '/cooperation'"
+        to="/cooperation"
         class="hover:text-blue-400 transition-all"
       >
         {{ $t('cooperation') }}
-      </NuxtLink>
-      <NuxtLink
+      </NuxtLinkLocale>
+      <NuxtLinkLocale
         @click="handleCloseBurger"
-        :href="(mainPageLink === '/' ? '' : mainPageLink) + '/career'"
+        to="/career"
         class="hover:text-blue-400 transition-all"
       >
         {{ $t('career') }}
-      </NuxtLink>
+      </NuxtLinkLocale>
       <NuxtLink
         @click="handleCloseBurger"
         href="#contacts"
@@ -167,7 +167,7 @@ const { t, locale } = useI18n();
 
 // console.log('props.isOpenBurger', props.isOpenBurger);
 
-import { ref, defineProps, onMounted, computed, watchEffect, watch } from 'vue';
+import { ref, defineProps, onMounted, computed, watchEffect } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useLangStore } from '~/stores/functions/language';
 import { useToolkit } from '~/stores/functions/toolkit';
@@ -186,7 +186,6 @@ const modalsStore = useModalsStore();
 const currentItemStore = useCurrentItemStore();
 
 const isLoading = ref(false);
-const mainPageLink = ref('/');
 const DEFAULT_LOCALE = 'en';
 
 const changeLanguage = async (newLocale) => {
@@ -220,8 +219,6 @@ const changeLanguage = async (newLocale) => {
   const newPath =
     newLocale !== DEFAULT_LOCALE ? `/${newLocale}${pathWithoutLocale}` : pathWithoutLocale;
 
-  mainPageLink.value = newLocale === 'en' ? '/' : `/${newLocale}`;
-
   await $i18n.setLocale(newLocale);
 
   router.push({ path: newPath, query: route.query, hash: route.hash });
@@ -249,20 +246,9 @@ onMounted(() => {
     // Use route language or fallback to stored language
     const lang = routeLang || localStorage.getItem('i18n_redirected') || 'en';
 
-    // Set mainPageLink: empty for English, language prefix for others
-    mainPageLink.value = lang === 'en' ? '/' : `/${lang}`;
-
     langStore.setLang(lang);
   }
 });
-
-// Watch for language changes
-watch(
-  () => langStore.lang,
-  (newLang) => {
-    mainPageLink.value = newLang === 'en' ? '/' : `/${newLang}`;
-  },
-);
 
 const handleCloseBurger = () => {
   emit('update:isOpenBurger', false);

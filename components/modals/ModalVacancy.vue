@@ -111,12 +111,12 @@
 
       <p class="text-center text-white text-xs lg:text-sm w-full mt-5">
         {{ $t('m_message_text_3') }}
-        <NuxtLink
-          href="/docs/privacy-police"
+        <NuxtLinkLocale
+          to="/docs/privacy-police"
           class="text-blue-400 font-bold underline transition-all hover:text-blue-700"
         >
           {{ $t('policy') }}
-        </NuxtLink>
+        </NuxtLinkLocale>
       </p>
     </form>
   </div>
